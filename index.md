@@ -1,0 +1,15 @@
+# new_note
+
+dsf
+<mark>枯</mark>
+[jump to crxiaosheng.tpddns.cn](crxiaosheng.tpddns.cn)
+
+任务列表：
+* [ ] 任务1
+* [x] 任务2
+* [ ] 任务3
+
+以下是代码块：
+```
+hello world!
+```
