@@ -6,11 +6,20 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Hello Hexo</title>
+    <url>/2024/11/11/hello-world/</url>
+    <content><![CDATA[<p>我的个人主页于2024年11月11日正式搬迁到Hexo~~~</p>
+]]></content>
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Doris</title>
     <url>/2024/11/11/doris/</url>
     <content><![CDATA[<h1 id="Doris坏盘换盘方法"><a href="#Doris坏盘换盘方法" class="headerlink" title="Doris坏盘换盘方法"></a>Doris坏盘换盘方法</h1><h2 id="先换好盘"><a href="#先换好盘" class="headerlink" title="先换好盘"></a>先换好盘</h2><p>参考其它&#x2F;data，创建好目录，正确授权。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"><span class="built_in">mkdir</span> -p /doris-storage</span><br><span class="line"><span class="built_in">chown</span> -R doris:doris /doris-storage</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <h2 id="注释掉坏盘路径"><a href="#注释掉坏盘路径" class="headerlink" title="注释掉坏盘路径"></a>注释掉坏盘路径</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vi</span> /usr/local/doris-<span class="keyword">be</span>/<span class="keyword">conf</span>/be_custom.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
 <p><img src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p>
 <h2 id="重启be进程"><a href="#重启be进程" class="headerlink" title="重启be进程"></a>重启be进程</h2><p>可在Web管理控制台操作。</p>
@@ -21,18 +30,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello Hexo</title>
-    <url>/2024/11/11/hello-world/</url>
-    <content><![CDATA[<p>我的个人主页于2024年11月11日正式搬迁到Hexo~~~</p>
-]]></content>
-      <tags>
-        <tag>原创</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/2024/11/15/vx/</url>
-    <content><![CDATA[{"created_time":"2024-11-15T08:34:54Z","files":[{"attachment_folder":"","created_time":"2024-11-15T08:35:00Z","id":"5","modified_time":"2024-11-15T14:51:41Z","name":"doris.md","signature":"9405741538295089076","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T08:39:06Z","id":"9","modified_time":"2024-11-15T13:19:37Z","name":"hello-world.md","signature":"14039497246172973226","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T12:48:26Z","id":"11","modified_time":"2024-11-15T12:48:26Z","name":"dorishtml.html","signature":"17977855628084200218","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T12:48:37Z","id":"13","modified_time":"2024-11-15T12:57:44Z","name":"我的存储系统.md","signature":"10515849833937847077","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:08:49Z","id":"15","modified_time":"2024-11-15T13:57:42Z","name":"心未泯，梦不灭.md","signature":"11003736605272262625","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:11:11Z","id":"17","modified_time":"2024-11-15T13:57:36Z","name":"春梦独好.md","signature":"1668125592525424751","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:14:17Z","id":"19","modified_time":"2024-11-15T13:16:00Z","name":"大学生活1-初到农大.md","signature":"17667483711974099241","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:37:07Z","id":"21","modified_time":"2024-11-15T13:37:51Z","name":"大学生活2-求爱桥上.md","signature":"7441952881335815811","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:38:56Z","id":"23","modified_time":"2024-11-15T13:50:11Z","name":"有一种生活.md","signature":"10659369911345172208","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:40:15Z","id":"25","modified_time":"2024-11-15T15:53:22Z","name":"写在春节里.md","signature":"12250289771321446207","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T15:50:46Z","id":"27","modified_time":"2024-11-15T15:52:46Z","name":"春节这几天.md","signature":"652441495755255254","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T16:07:09Z","id":"29","modified_time":"2024-11-15T16:07:54Z","name":"暑期帮ZQY整电脑.md","signature":"7029593908765487533","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T16:09:24Z","id":"31","modified_time":"2024-11-15T16:10:07Z","name":"随想.md","signature":"7021192523237782069","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T16:12:46Z","id":"33","modified_time":"2024-11-15T16:13:46Z","name":"暑期帮WYH整电脑.md","signature":"5561676698056356606","tags":[]}],"folders":[],"id":"32","modified_time":"2024-11-15T08:34:54Z","signature":"10089042462534731694","version":3}]]></content>
+    <content><![CDATA[{"created_time":"2024-11-15T08:34:54Z","files":[{"attachment_folder":"","created_time":"2024-11-15T08:35:00Z","id":"5","modified_time":"2024-11-15T16:32:55Z","name":"doris.md","signature":"9405741538295089076","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T08:39:06Z","id":"9","modified_time":"2024-11-15T13:19:37Z","name":"hello-world.md","signature":"14039497246172973226","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T12:48:26Z","id":"11","modified_time":"2024-11-15T12:48:26Z","name":"dorishtml.html","signature":"17977855628084200218","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T12:48:37Z","id":"13","modified_time":"2024-11-15T12:57:44Z","name":"我的存储系统.md","signature":"10515849833937847077","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:08:49Z","id":"15","modified_time":"2024-11-15T13:57:42Z","name":"心未泯，梦不灭.md","signature":"11003736605272262625","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:11:11Z","id":"17","modified_time":"2024-11-15T13:57:36Z","name":"春梦独好.md","signature":"1668125592525424751","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:14:17Z","id":"19","modified_time":"2024-11-15T13:16:00Z","name":"大学生活1-初到农大.md","signature":"17667483711974099241","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:37:07Z","id":"21","modified_time":"2024-11-15T13:37:51Z","name":"大学生活2-求爱桥上.md","signature":"7441952881335815811","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:38:56Z","id":"23","modified_time":"2024-11-15T13:50:11Z","name":"有一种生活.md","signature":"10659369911345172208","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T13:40:15Z","id":"25","modified_time":"2024-11-15T15:53:22Z","name":"写在春节里.md","signature":"12250289771321446207","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T15:50:46Z","id":"27","modified_time":"2024-11-15T15:52:46Z","name":"春节这几天.md","signature":"652441495755255254","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T16:07:09Z","id":"29","modified_time":"2024-11-15T16:07:54Z","name":"暑期帮ZQY整电脑.md","signature":"7029593908765487533","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T16:09:24Z","id":"31","modified_time":"2024-11-15T16:10:07Z","name":"随想.md","signature":"7021192523237782069","tags":[]},{"attachment_folder":"","created_time":"2024-11-15T16:12:46Z","id":"33","modified_time":"2024-11-15T16:13:46Z","name":"暑期帮WYH整电脑.md","signature":"5561676698056356606","tags":[]}],"folders":[],"id":"32","modified_time":"2024-11-15T08:34:54Z","signature":"10089042462534731694","version":3}]]></content>
   </entry>
   <entry>
     <title>写在春节里</title>
@@ -68,19 +68,6 @@
       </tags>
   </entry>
   <entry>
-    <title>心未泯，梦不灭</title>
-    <url>/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
-    <content><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>
-]]></content>
-      <categories>
-        <category>原创</category>
-        <category>诗词</category>
-      </categories>
-      <tags>
-        <tag>原创</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的存储系统</title>
     <url>/2022/10/01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p>
@@ -101,10 +88,17 @@
       </tags>
   </entry>
   <entry>
-    <title>暑期帮WYH整电脑</title>
-    <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
-    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
+    <title>心未泯，梦不灭</title>
+    <url>/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
+    <content><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>
 ]]></content>
+      <categories>
+        <category>原创</category>
+        <category>诗词</category>
+      </categories>
+      <tags>
+        <tag>原创</tag>
+      </tags>
   </entry>
   <entry>
     <title>春节这几天</title>
@@ -119,6 +113,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>暑期帮WYH整电脑</title>
+    <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>随想</title>
+    <url>/2011/12/25/%E9%9A%8F%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#x72;&#64;&#x70;&#111;&#x77;&#101;&#x72;&#x6c;&#x6f;&#x6e;&#103;&#x2e;&#x66;&#x7a;&#46;&#102;&#106;&#46;&#x63;&#110;">&#x63;&#x72;&#64;&#x70;&#111;&#x77;&#101;&#x72;&#x6c;&#x6f;&#x6e;&#103;&#x2e;&#x66;&#x7a;&#46;&#102;&#106;&#46;&#x63;&#110;</a> </p>
+]]></content>
+  </entry>
+  <entry>
     <title>有一种生活</title>
     <url>/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
     <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
@@ -126,11 +132,5 @@
       <tags>
         <tag>原创</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>随想</title>
-    <url>/2011/12/25/%E9%9A%8F%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#99;&#114;&#x40;&#x70;&#111;&#x77;&#x65;&#x72;&#108;&#x6f;&#110;&#103;&#46;&#102;&#122;&#46;&#x66;&#x6a;&#x2e;&#x63;&#x6e;">&#99;&#114;&#x40;&#x70;&#111;&#x77;&#x65;&#x72;&#108;&#x6f;&#110;&#103;&#46;&#102;&#122;&#46;&#x66;&#x6a;&#x2e;&#x63;&#x6e;</a> </p>
-]]></content>
   </entry>
 </search>
