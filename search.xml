@@ -1,15 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AIX调整文件系统参考_V1.4</title>
-    <url>/2024/11/15/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Hello Hexo</title>
     <url>/2024/11/11/hello-world/</url>
     <content><![CDATA[<p>我的个人主页于2024年11月11日正式搬迁到Hexo~~~</p>
 ]]></content>
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AIX调整文件系统参考_V1.4</title>
+    <url>/2014/04/19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/</url>
+    <content><![CDATA[<h1 id="AIX调整文件系统参考-V1-4"><a href="#AIX调整文件系统参考-V1-4" class="headerlink" title="AIX调整文件系统参考_V1.4"></a>AIX调整文件系统参考_V1.4</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档描述了AIX6.1环境下，文件系统调整的具体步骤，主要包括增加文件系统，扩容&#x2F;收缩文件系统，以及删除文件系统，文档内容仅供学习参考，如需在生产环境中应用，请根据实际情况操作。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><h3 id="操作系统版本"><a href="#操作系统版本" class="headerlink" title="操作系统版本"></a>操作系统版本</h3><p>IBM AIX 6.1</p>
+<h3 id="终端软件版本"><a href="#终端软件版本" class="headerlink" title="终端软件版本"></a>终端软件版本</h3><p>SecureCRT Version 7.0.0 (x64 build 326)</p>
+<h2 id="增加文件系统"><a href="#增加文件系统" class="headerlink" title="增加文件系统"></a>增加文件系统</h2><h3 id="不指定逻辑卷"><a href="#不指定逻辑卷" class="headerlink" title="不指定逻辑卷"></a>不指定逻辑卷</h3><p>本例在不指定逻辑卷的条件下，新建一个文件系统，挂载点&#x2F;chenrong_oracle_01，分配空间大小为1G。</p>
+<ol>
+<li><p>查看文件系统现状<br><img src="/vx_images/346331369845664.png"></p>
+</li>
+<li><p>查看可用卷组<br><img src="/vx_images/31122423955458.png"></p>
+</li>
+<li><p>打开jfs2 smit菜单<br><img src="/vx_images/551062477667859.png"></p>
+</li>
+<li><p>增加文件系统<br>选中“Add an Enhanced Journaled File System”，增加一个增强日志文件系统  按【回车】。<br><img src="/vx_images/215501789409967.png"></p>
+</li>
+<li><p>选择卷组<br>选择文件系统所在卷组，选中“rootvg” ， 按【回车】。<br><img src="/vx_images/582583705711535.png"></p>
+</li>
+<li><p>配置新文件系统<br>新文件系统，单位为GB，大小为1，系统启动时自动装载。<br><img src="/vx_images/170581065393439.png"></p>
+</li>
+<li><p>确认操作<br>按【回车】，确认执行操作，操作结果为成功。<br><img src="/vx_images/406474396414574.png"></p>
+</li>
+<li><p>挂载文件系统<br><img src="/vx_images/518794484717034.png"> </p>
+</li>
+<li><p>查看新文件系统<br>如图，新建的&#x2F;chenrong_oracle_01已经可以使用。<br><img src="/vx_images/35524550231527.png"></p>
+</li>
+</ol>
+<h3 id="指定逻辑卷"><a href="#指定逻辑卷" class="headerlink" title="指定逻辑卷"></a>指定逻辑卷</h3><p>本例先新建一个逻辑卷，lv_cr_oracle_02，并使用该逻辑卷，新建一个文件系统，挂载点&#x2F;chenrong_oracle_02，分配空间大小为512M。</p>
+<ol>
+<li><p>查看文件系统现状<br> <img src="/vx_images/509046030992382.png"></p>
+</li>
+<li><p>查看rootvg信息<br>如图，该卷组剩余46336MB空间，且一个PP是256MB，本例需要2个单位的PP。<br><img src="/vx_images/34806559443403.png"></p>
+</li>
+<li><p>打开mklv smit菜单<br><img src="/vx_images/139925903778708.png"></p>
+</li>
+<li><p>选择目标卷组<br><img src="/vx_images/231915175735442.png"></p>
+</li>
+<li><p>配置逻辑卷<br>逻辑卷名：lv_cr_oracle_02<br>逻辑分区个数：2个PP单位，即512MB<br>逻辑卷格式：jfs2<br><img src="/vx_images/311036318262063.png"><br> <img src="/vx_images/405673363935000.png"><br> <img src="/vx_images/460866444690545.png"><br> <img src="/vx_images/550474180860456.png"></p>
+</li>
+<li><p>确认执行<br><img src="/vx_images/31764769685446.png"></p>
+</li>
+<li><p>查看新逻辑卷<br><img src="/vx_images/128554772428802.png"></p>
+</li>
+<li><p>打开jfs2 smit菜单<br><img src="/vx_images/206006775718084.png"><br>选择“Add an Enhanced Journaled File System on a Previously Defined Logical Volume”。<br><img src="/vx_images/337743845366196.png"></p>
+</li>
+<li><p>配置文件系统<br><img src="/vx_images/425034009749700.png"><br><img src="/vx_images/483845565199706.png"><br><img src="/vx_images/565036707011693.png"></p>
+</li>
+<li><p>确认执行<br>![](vx_images&#x2F;127823192145902.png &#x3D;)</p>
+</li>
+<li><p>装载文件系统<br><img src="/vx_images/190946659487128.png"></p>
+</li>
+<li><p>查看文件系统<br> <img src="/vx_images/246154402725009.png"></p>
+</li>
+</ol>
+<h2 id="扩容-收缩文件系统"><a href="#扩容-收缩文件系统" class="headerlink" title="扩容&#x2F;收缩文件系统"></a>扩容&#x2F;收缩文件系统</h2><ol>
+<li><p>查看文件系统现状<br><img src="/vx_images/411985340143511.png"></p>
+</li>
+<li><p>查看逻辑卷信息<br>如图，逻辑卷lv_cr_oracle_02属于卷组rootvg。<br><img src="/vx_images/475343524481066.png"> </p>
+</li>
+<li><p>查看卷组信息<br>如图，卷组rootvg有46336MB剩余空间。<br><img src="/vx_images/555194032198877.png"> </p>
+</li>
+<li><p>打开jfs2 smit菜单<br> <img src="/vx_images/22147042068251.png"><br>选择“Change &#x2F; Show Characteristics of an Enhanced Journaled File System”。<br> <img src="/vx_images/66724737675036.png"></p>
+</li>
+<li><p>选择需要扩容&#x2F;收缩的文件系统<br>本例将把文件系统，&#x2F;chenrong_oracle_02，由512M扩容为768M。<br> <img src="/vx_images/129194182165899.png"></p>
+</li>
+<li><p>配置文件系统的新参数<br>配置文件系统的新大小，如下图：<br><img src="/vx_images/212063784446542.png"> </p>
+</li>
+<li><p>确认执行<br> <img src="/vx_images/266723368681068.png"></p>
+</li>
+<li><p>查看文件系统现状<br><img src="/vx_images/323993930769124.png"></p>
+</li>
+</ol>
+<h2 id="删除文件系统"><a href="#删除文件系统" class="headerlink" title="删除文件系统"></a>删除文件系统</h2><p>本例将删除文件系统&#x2F;cr。</p>
+<ol>
+<li><p>查看文件系统现状<br> <img src="/vx_images/452625622628962.png"></p>
+</li>
+<li><p>卸载文件系统<br> <img src="/vx_images/503036936923961.png"></p>
+</li>
+<li><p>打开jfs2 smit菜单<br> <img src="/vx_images/564625996348483.png"><br>选择“Remove an Enhanced Journaled File System”。<br> <img src="/vx_images/16224269397731.png"></p>
+</li>
+<li><p>选择要卸载的挂载点<br> <img src="/vx_images/84383649769290.png"></p>
+</li>
+<li><p>确认卸载<br> <img src="/vx_images/133823070185140.png"></p>
+</li>
+<li><p>查看结果<br> <img src="/vx_images/189334619822166.png"></p>
+</li>
+<li><p>查看文件系统现状<br> <img src="/vx_images/229994311534780.png"></p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>写在春节里</title>
+    <url>/2009/01/19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
+    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
+<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
+<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
+]]></content>
+      <categories>
+        <category>原创</category>
+        <category>诗词</category>
+      </categories>
       <tags>
         <tag>原创</tag>
       </tags>
@@ -30,21 +131,6 @@
       </tags>
   </entry>
   <entry>
-    <title>写在春节里</title>
-    <url>/2009/01/19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
-    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
-<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
-<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
-]]></content>
-      <categories>
-        <category>原创</category>
-        <category>诗词</category>
-      </categories>
-      <tags>
-        <tag>原创</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大学生活2_求爱桥上</title>
     <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB2-%E6%B1%82%E7%88%B1%E6%A1%A5%E4%B8%8A/</url>
     <content><![CDATA[<h1 id="大学生活2-求爱桥上"><a href="#大学生活2-求爱桥上" class="headerlink" title="大学生活2-求爱桥上"></a>大学生活2-求爱桥上</h1><p> 听学友说，这座桥被大家称作“求爱桥”，不知有多少对恋人在此比翼成双对。<br>    小生斗胆，于求爱桥上，只身留影一张，附小调一曲，聊表敬意：<br>      求爱桥头，恋人依依，含情脉脉，比翼双飞…</p>
@@ -52,23 +138,6 @@
       <tags>
         <tag>原创</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>大学生活1_初到农大</title>
-    <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/</url>
-    <content><![CDATA[<h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>
-]]></content>
-      <tags>
-        <tag>原创</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的存储系统</title>
-    <url>/2022/10/01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p>
-<span id="more"></span>
-<p>——20221001更新——<br>　　我的存储已经使用了十余年了，总体上非常稳定。存储使用Windows的存储空间，重要数据存放于RAID1池，电影音乐存放于RAID5池，存储的基本配置如下。<br>　　CPU: Intel XEON E3-1230 V2<br>　　RAM: 32GB<br>　　SSD: 256GB<br>　　HDD: 10TB(4+4+2)<br>　　OS: Windows 10<br>　　RAID: RAID1、RAID5<br>　　硬盘(HDD)已经换了几拨了，从最早的1T盘、2T盘，逐渐替换为现在的4T盘。<br>　　早期HDD用的都是Seagate的盘，质量一般，通常运行个3~4年就会有坏道。现在换了WD的盘，希望能用得久一些。<br>　　近期打算升级存储系统，后续会陆续更新进展，以及一些监控脚本。</p>
-]]></content>
   </entry>
   <entry>
     <title>心未泯，梦不灭</title>
@@ -84,9 +153,11 @@
       </tags>
   </entry>
   <entry>
-    <title>春节这几天</title>
-    <url>/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
-    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
+    <title>我的存储系统</title>
+    <url>/2022/10/01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p>
+<span id="more"></span>
+<p>——20221001更新——<br>　　我的存储已经使用了十余年了，总体上非常稳定。存储使用Windows的存储空间，重要数据存放于RAID1池，电影音乐存放于RAID5池，存储的基本配置如下。<br>　　CPU: Intel XEON E3-1230 V2<br>　　RAM: 32GB<br>　　SSD: 256GB<br>　　HDD: 10TB(4+4+2)<br>　　OS: Windows 10<br>　　RAID: RAID1、RAID5<br>　　硬盘(HDD)已经换了几拨了，从最早的1T盘、2T盘，逐渐替换为现在的4T盘。<br>　　早期HDD用的都是Seagate的盘，质量一般，通常运行个3~4年就会有坏道。现在换了WD的盘，希望能用得久一些。<br>　　近期打算升级存储系统，后续会陆续更新进展，以及一些监控脚本。</p>
 ]]></content>
   </entry>
   <entry>
@@ -98,6 +169,15 @@
         <category>原创</category>
         <category>诗词</category>
       </categories>
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生活1_初到农大</title>
+    <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/</url>
+    <content><![CDATA[<h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>
+]]></content>
       <tags>
         <tag>原创</tag>
       </tags>
@@ -115,6 +195,12 @@
 ]]></content>
   </entry>
   <entry>
+    <title>春节这几天</title>
+    <url>/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
+]]></content>
+  </entry>
+  <entry>
     <title>有一种生活</title>
     <url>/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
     <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
@@ -126,7 +212,7 @@
   <entry>
     <title>随想</title>
     <url>/2011/12/25/%E9%9A%8F%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#x72;&#64;&#112;&#x6f;&#119;&#x65;&#x72;&#108;&#111;&#x6e;&#103;&#46;&#x66;&#122;&#46;&#x66;&#106;&#46;&#99;&#110;">&#x63;&#x72;&#64;&#112;&#x6f;&#119;&#x65;&#x72;&#108;&#111;&#x6e;&#103;&#46;&#x66;&#122;&#46;&#x66;&#106;&#46;&#99;&#110;</a> </p>
+    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#x72;&#x40;&#112;&#111;&#119;&#101;&#x72;&#x6c;&#x6f;&#x6e;&#x67;&#x2e;&#x66;&#x7a;&#46;&#102;&#106;&#x2e;&#x63;&#110;">&#x63;&#x72;&#x40;&#112;&#111;&#119;&#101;&#x72;&#x6c;&#x6f;&#x6e;&#x67;&#x2e;&#x66;&#x7a;&#46;&#102;&#106;&#x2e;&#x63;&#110;</a> </p>
 ]]></content>
   </entry>
 </search>
