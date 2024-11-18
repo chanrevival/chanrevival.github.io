@@ -1,447 +1,542 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>使用RMAN复制创建物理备用数据库无需关闭主数据库</title>
-      <link href="/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-      <url>/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-      
-        <content type="html"><![CDATA[<h1 id="使用RMAN复制创建物理备用数据库无需关闭主数据库"><a href="#使用RMAN复制创建物理备用数据库无需关闭主数据库" class="headerlink" title="使用RMAN复制创建物理备用数据库无需关闭主数据库"></a>使用RMAN复制创建物理备用数据库无需关闭主数据库</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Oracle数据库 - 企业版 - 版本10.1.0.2至10.2.0.4 [10.1至10.2]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [12.1]<br>Oracle数据库 - 企业版 - 版本11.2.0.4至11.2.0.4 [11.2]<br>Oracle数据库 - 企业版 - 版本11.1.0.7至11.1.0.7 [11.1] </p><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>以下说明描述了如何在不关闭主（生产）数据库的情况下，使用RMAN复制逐步创建物理备用数据库的过程。<br>Database Name :- prim<br>Primary db_unique_name :- prim<br>standby db_unique_name :- stdby<br>Primary Hostname :- raca.idc.oracle.com<br>standby Hostname :- core1.idc.oracle.com </p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol><li>启用强制日志记录。</li><li>创建备用重做日志（SRL）。</li><li>在主数据库的参数文件中做出适当的更改。</li><li>备份数据库，包括数据文件、归档日志和控制文件，以便备用，并将备份复制到备用服务器。</li><li>为备用数据库创建参数文件。</li><li>从主数据库到备用数据库建立连接。</li><li>将备份移动到备用服务器。 </li><li>和 9. 启动备用实例。</li><li>使用RMAN复制命令创建备用数据库。</li><li>创建SRL。</li><li>启动MRP（管理恢复进程）。</li><li>验证是否正确地将日志发送并应用到备用数据库。</li></ol><p>步骤1：在主数据库上启用强制日志记录。</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> FORCE LOGGING;</span><br></pre></td></tr></table></figure><p>注意：如果不存在，请创建密码文件，同时检查是否已启用归档。</p><p>步骤2：在主数据库上配置备用重做日志。</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">4</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log4a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">5</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log5a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">6</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log6a.log&#x27;</span> size <span class="number">50</span>m;</span><br></pre></td></tr></table></figure><p><mark>注意：<br>检查SRL（备用重做日志）的数量， （每个线程的最大日志文件数 + 1）* 最大线程数<br>SRL的大小应等于ORL（在线重做日志）的大小。</mark><br>例如，如果主数据库每个线程有3个日志文件，且有2个线程，那么备用数据库上需要8个备用重做日志文件组。 验证是否已创建备用重做日志文件组。</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">SELECT</span> <span class="keyword">GROUP</span>#,ThREAD#,<span class="keyword">SEQUENCE</span>#,ARCHIVED,STATUS <span class="keyword">FROM</span> V$STANDBY_LOG; </span><br></pre></td></tr></table></figure><p>步骤3：修改主数据库的初始化参数以配置Data Guard，具体如下：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_CONFIG</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/prim/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=prim&#x27;</span>;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_2</span>=<span class="string">&#x27;SERVICE=stdby LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=stdby&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_STATE_1</span>=ENABLE;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_SERVER</span>=stdby;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_CLIENT</span>=prim;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">DB_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/data&#x27; <span class="attribute">scope</span>=spfile;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/redo&#x27; <span class="attribute">scope</span>=spfile;</span><br></pre></td></tr></table></figure><p>步骤4：在主数据库上运行备份作业，通过连接到目标数据库和目录数据库（如果有的话）。</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">run</span><br><span class="line">&#123;</span><br><span class="line">allocate channel c1 <span class="keyword">type</span> disk;</span><br><span class="line">allocate channel c2 <span class="keyword">type</span> disk;</span><br><span class="line">backup <span class="keyword">database</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup archivelog <span class="keyword">all</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup <span class="keyword">current</span> controlfile <span class="keyword">for</span> standby <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>步骤5：在主数据库上创建参数文件，将其复制到备用数据库，并做出必要的更改。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/prim/stage/initstdby.ora&#x27;</span> <span class="keyword">from</span> spfile;</span><br></pre></td></tr></table></figure><p>步骤6：建立连接<br>在主数据库和备用数据库上都创建网络服务。<br>在prim服务器上，</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">) </span><br></pre></td></tr></table></figure><p>在standby服务器上，</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>步骤7：将文件移动到备用服务器，<br>a. 在备用服务器上创建相同的目录并复制备份。 在备用服务器操作系统上，</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mkdir</span> <span class="operator">-</span>p <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br><span class="line">[oracle<span class="meta">@raca</span> prim]$ scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span><span class="operator">*</span> core1.idc.oracle.com:<span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br></pre></td></tr></table></figure><p>b. 另外，我们可以将备份复制到备用服务器的不同目录。在备用服务器上，以主数据库为目标连接到RMAN，并以辅助实例身份登录，如果你的主数据库有目录数据库，那么以主数据库为目标、目录数据库和辅助实例身份连接。将这些备份片段编入目录，以便主数据库或目录数据库的控制文件知道备份信息。</p><p>步骤8：在备用服务器上对复制的initstdby.ora文件进行必要的更改。</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">db_name</span>=prim</span><br><span class="line"><span class="attr">db_unique_name</span>=stdby</span><br><span class="line"><span class="attr">log_archive_config</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/stdby/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=stdby&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_2</span>=<span class="string">&#x27;SERVICE=prim LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=prim&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_state_1</span>=ENABLE</span><br><span class="line"><span class="attr">db_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/data/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span></span><br><span class="line"><span class="attr">log_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/redo/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span></span><br><span class="line"><span class="attr">REMOTE_LOGIN_PASSWORDFILE</span>=EXCLUSIVE</span><br><span class="line"><span class="attr">standby_archive_dest</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/arch/&#x27;</span></span><br><span class="line"><span class="attr">standby_file_management</span>=AUTO</span><br><span class="line"><span class="attr">fal_client</span>=stdby</span><br><span class="line"><span class="attr">fal_server</span>=prim </span><br></pre></td></tr></table></figure><p>步骤9：创建备用实例。<br>创建与主数据库相同的密码。或者，我们可以从主数据库复制密码文件并在备用数据库上重命名它。<br>例如，从主数据库复制密码文件，</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>dbs<span class="regexp">/opapwprim core1.idc.oracle.com:/u</span>01<span class="regexp">/app/</span>oracle<span class="regexp">/dbs/</span> </span><br></pre></td></tr></table></figure><p>在standby上,</p><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="keyword">$mv</span> orapwprim orapwstdby</span></span><br></pre></td></tr></table></figure><p>或者创建与主数据库相同的新密码，如下所示，<br>a. 对于UNIX,</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$export</span> ORACLE_SID</span><br><span class="line"><span class="variable">$orapwd</span> <span class="attribute">file</span>=<span class="string">&#x27;$ORACLE_HOME/dbs/orapwstdby&#x27;</span> <span class="attribute">password</span>=sys <span class="attribute">entries</span>=10;</span><br></pre></td></tr></table></figure><p>对于Windows,</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d:&gt;<span class="built_in">set</span> <span class="attribute">ORACLE_SID</span>=stdby</span><br><span class="line">d:&gt;oradim -new -sid stdby -intpwd sys</span><br></pre></td></tr></table></figure><p>b. 在备用服务器上创建必要的目录并启动辅助实例。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[oracle<span class="variable">@core1</span> stdby]$ pwd</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>databases<span class="operator">/</span>stdby</span><br><span class="line">[oracle<span class="variable">@core1</span> stdby]$mkdir data redo oradata stage udump bdump cdump</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> spfile <span class="keyword">from</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/stage/initstdby.ora&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">start</span> nomount;</span><br></pre></td></tr></table></figure><p>步骤10：在备用服务器上使用RMAN复制创建备用数据库。<br>当在备用数据库的复制命令中指定’dorecover’时，请在目标数据库上执行归档日志切换，并运行复制命令。<br>例如:<br>对于primary,</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sql</span>&gt; <span class="keyword">alter</span> <span class="keyword">system</span> archive <span class="keyword">log</span> <span class="keyword">current</span>;</span><br></pre></td></tr></table></figure><p>在备用服务器上，通过连接字符串连接到目标数据库（即prim）和目录数据库（如果有的话），以及这个辅助数据库，操作如下，</p><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> /<span class="meta">@prim</span> catalog RMAN/RMAN<span class="meta">@catdb</span> auxiliary /</span><br></pre></td></tr></table></figure><p>如果是no catalog数据库,</p><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> sys/&lt;password&gt;<span class="title">@prim</span> auxiliary /</span><br><span class="line">Recovery Manager: Release <span class="number">10.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - Production on Thu Mar <span class="number">5</span> <span class="number">12</span>:<span class="number">30</span>:<span class="number">56</span> <span class="number">2009</span></span><br><span class="line">Copyright (<span class="keyword">c</span>) <span class="number">1982</span><span class="punctuation">,</span> <span class="number">2005</span><span class="punctuation">,</span> Oracle. All rights reserved.</span><br><span class="line">connected <span class="keyword">to</span> <span class="keyword">target</span> database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span>)</span><br><span class="line">connected <span class="keyword">to</span> auxiliary database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span><span class="punctuation">,</span> not open)</span><br><span class="line">RMAN&gt; duplicate <span class="keyword">target</span> database for standby dorecover<span class="comment">;</span></span><br></pre></td></tr></table></figure><p>注意：我们也可以使用不带dorecover子句的选项， 例如，</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt;duplicate target database for standby<span class="comment">;</span></span><br></pre></td></tr></table></figure><p>步骤11:创建SRL,</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line">参考步骤<span class="number">2</span></span><br></pre></td></tr></table></figure><p>步骤12：在备用数据库上启动MRP（管理恢复进程），</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">select</span> <span class="type">name</span>,db_unique_name,database_role <span class="keyword">from</span> v$<span class="keyword">database</span>;</span><br><span class="line"><span class="type">NAME</span> DB_UNIQUE_NAME DATABASE_ROLE</span><br><span class="line"><span class="comment">--------- ---------------- --------------</span></span><br><span class="line">PRIM STDBY PHYSICAL STANDBY</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> recover managed standby <span class="keyword">database</span> disconnect;</span><br></pre></td></tr></table></figure><p>步骤13：在主数据库上启用log_archive_dest_2，该参数用于将日志发送到备用服务器。</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt;<span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">set</span> log_archive_dest_state_2=<span class="keyword">enable</span>;</span><br></pre></td></tr></table></figure><p>步骤14：检查备用数据库是否与主数据库同步，<br>A. 在备用数据库上检查v$archived_log视图，</p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br></pre></td></tr></table></figure><p>B. 在主数据库上执行日志切换，</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">SYSTEM</span> SWITCH LOGFILE;</span><br></pre></td></tr></table></figure><p>C. 在备库上执行,</p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line"></span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">40 06-MAR<span class="string">-09</span> 07-MAR<span class="string">-09</span></span><br><span class="line"></span><br><span class="line">SQL&gt; select sequence#,applied from v$archived_log order by sequence#;</span><br><span class="line">SEQUENCE# APP</span><br><span class="line">---------- ---</span><br><span class="line">29 YES</span><br><span class="line">30 YES</span><br><span class="line">31 YES</span><br><span class="line">32 YES</span><br><span class="line">33 YES</span><br><span class="line">34 YES</span><br><span class="line">35 YES</span><br><span class="line">36 YES</span><br><span class="line">37 YES</span><br><span class="line">38 YES</span><br><span class="line">39 YES</span><br><span class="line">40 YES </span><br></pre></td></tr></table></figure>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>AIX调整文件系统参考_V1.4</title>
+    <url>/2014/04/19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/</url>
+    <content><![CDATA[<h1 id="AIX调整文件系统参考-V1-4"><a href="#AIX调整文件系统参考-V1-4" class="headerlink" title="AIX调整文件系统参考_V1.4"></a>AIX调整文件系统参考_V1.4</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档描述了AIX6.1环境下，文件系统调整的具体步骤，主要包括增加文件系统，扩容&#x2F;收缩文件系统，以及删除文件系统，文档内容仅供学习参考，如需在生产环境中应用，请根据实际情况操作。</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><h3 id="操作系统版本"><a href="#操作系统版本" class="headerlink" title="操作系统版本"></a>操作系统版本</h3><p>IBM AIX 6.1</p>
+<h3 id="终端软件版本"><a href="#终端软件版本" class="headerlink" title="终端软件版本"></a>终端软件版本</h3><p>SecureCRT Version 7.0.0 (x64 build 326)</p>
+<h2 id="增加文件系统"><a href="#增加文件系统" class="headerlink" title="增加文件系统"></a>增加文件系统</h2><h3 id="不指定逻辑卷"><a href="#不指定逻辑卷" class="headerlink" title="不指定逻辑卷"></a>不指定逻辑卷</h3><p>本例在不指定逻辑卷的条件下，新建一个文件系统，挂载点&#x2F;chenrong_oracle_01，分配空间大小为1G。</p>
+<ol>
+<li><p>查看文件系统现状<br><img src="/vx_images/346331369845664.png"></p>
+</li>
+<li><p>查看可用卷组<br><img src="/vx_images/31122423955458.png"></p>
+</li>
+<li><p>打开jfs2 smit菜单<br><img src="/vx_images/551062477667859.png"></p>
+</li>
+<li><p>增加文件系统<br>选中“Add an Enhanced Journaled File System”，增加一个增强日志文件系统  按【回车】。<br><img src="/vx_images/215501789409967.png"></p>
+</li>
+<li><p>选择卷组<br>选择文件系统所在卷组，选中“rootvg” ， 按【回车】。<br><img src="/vx_images/582583705711535.png"></p>
+</li>
+<li><p>配置新文件系统<br>新文件系统，单位为GB，大小为1，系统启动时自动装载。<br><img src="/vx_images/170581065393439.png"></p>
+</li>
+<li><p>确认操作<br>按【回车】，确认执行操作，操作结果为成功。<br><img src="/vx_images/406474396414574.png"></p>
+</li>
+<li><p>挂载文件系统<br><img src="/vx_images/518794484717034.png"> </p>
+</li>
+<li><p>查看新文件系统<br>如图，新建的&#x2F;chenrong_oracle_01已经可以使用。<br><img src="/vx_images/35524550231527.png"></p>
+</li>
+</ol>
+<h3 id="指定逻辑卷"><a href="#指定逻辑卷" class="headerlink" title="指定逻辑卷"></a>指定逻辑卷</h3><p>本例先新建一个逻辑卷，lv_cr_oracle_02，并使用该逻辑卷，新建一个文件系统，挂载点&#x2F;chenrong_oracle_02，分配空间大小为512M。</p>
+<ol>
+<li><p>查看文件系统现状<br> <img src="/vx_images/509046030992382.png"></p>
+</li>
+<li><p>查看rootvg信息<br>如图，该卷组剩余46336MB空间，且一个PP是256MB，本例需要2个单位的PP。<br><img src="/vx_images/34806559443403.png"></p>
+</li>
+<li><p>打开mklv smit菜单<br><img src="/vx_images/139925903778708.png"></p>
+</li>
+<li><p>选择目标卷组<br><img src="/vx_images/231915175735442.png"></p>
+</li>
+<li><p>配置逻辑卷<br>逻辑卷名：lv_cr_oracle_02<br>逻辑分区个数：2个PP单位，即512MB<br>逻辑卷格式：jfs2<br><img src="/vx_images/311036318262063.png"><br> <img src="/vx_images/405673363935000.png"><br> <img src="/vx_images/460866444690545.png"><br> <img src="/vx_images/550474180860456.png"></p>
+</li>
+<li><p>确认执行<br><img src="/vx_images/31764769685446.png"></p>
+</li>
+<li><p>查看新逻辑卷<br><img src="/vx_images/128554772428802.png"></p>
+</li>
+<li><p>打开jfs2 smit菜单<br><img src="/vx_images/206006775718084.png"><br>选择“Add an Enhanced Journaled File System on a Previously Defined Logical Volume”。<br><img src="/vx_images/337743845366196.png"></p>
+</li>
+<li><p>配置文件系统<br><img src="/vx_images/425034009749700.png"><br><img src="/vx_images/483845565199706.png"><br><img src="/vx_images/565036707011693.png"></p>
+</li>
+<li><p>确认执行<br>![](vx_images&#x2F;127823192145902.png &#x3D;)</p>
+</li>
+<li><p>装载文件系统<br><img src="/vx_images/190946659487128.png"></p>
+</li>
+<li><p>查看文件系统<br> <img src="/vx_images/246154402725009.png"></p>
+</li>
+</ol>
+<h2 id="扩容-收缩文件系统"><a href="#扩容-收缩文件系统" class="headerlink" title="扩容&#x2F;收缩文件系统"></a>扩容&#x2F;收缩文件系统</h2><ol>
+<li><p>查看文件系统现状<br><img src="/vx_images/411985340143511.png"></p>
+</li>
+<li><p>查看逻辑卷信息<br>如图，逻辑卷lv_cr_oracle_02属于卷组rootvg。<br><img src="/vx_images/475343524481066.png"> </p>
+</li>
+<li><p>查看卷组信息<br>如图，卷组rootvg有46336MB剩余空间。<br><img src="/vx_images/555194032198877.png"> </p>
+</li>
+<li><p>打开jfs2 smit菜单<br> <img src="/vx_images/22147042068251.png"><br>选择“Change &#x2F; Show Characteristics of an Enhanced Journaled File System”。<br> <img src="/vx_images/66724737675036.png"></p>
+</li>
+<li><p>选择需要扩容&#x2F;收缩的文件系统<br>本例将把文件系统，&#x2F;chenrong_oracle_02，由512M扩容为768M。<br> <img src="/vx_images/129194182165899.png"></p>
+</li>
+<li><p>配置文件系统的新参数<br>配置文件系统的新大小，如下图：<br><img src="/vx_images/212063784446542.png"> </p>
+</li>
+<li><p>确认执行<br> <img src="/vx_images/266723368681068.png"></p>
+</li>
+<li><p>查看文件系统现状<br><img src="/vx_images/323993930769124.png"></p>
+</li>
+</ol>
+<h2 id="删除文件系统"><a href="#删除文件系统" class="headerlink" title="删除文件系统"></a>删除文件系统</h2><p>本例将删除文件系统&#x2F;cr。</p>
+<ol>
+<li><p>查看文件系统现状<br> <img src="/vx_images/452625622628962.png"></p>
+</li>
+<li><p>卸载文件系统<br> <img src="/vx_images/503036936923961.png"></p>
+</li>
+<li><p>打开jfs2 smit菜单<br> <img src="/vx_images/564625996348483.png"><br>选择“Remove an Enhanced Journaled File System”。<br> <img src="/vx_images/16224269397731.png"></p>
+</li>
+<li><p>选择要卸载的挂载点<br> <img src="/vx_images/84383649769290.png"></p>
+</li>
+<li><p>确认卸载<br> <img src="/vx_images/133823070185140.png"></p>
+</li>
+<li><p>查看结果<br> <img src="/vx_images/189334619822166.png"></p>
+</li>
+<li><p>查看文件系统现状<br> <img src="/vx_images/229994311534780.png"></p>
+</li>
+</ol>
+]]></content>
       <categories>
-          
-          <category> 技术分享 </category>
-          
-          <category> 数据库技术 </category>
-          
+        <category>技术分享</category>
+        <category>操作系统技术</category>
+        <category>原创</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Oracle </tag>
-            
-            <tag> 数据库 </tag>
-            
-            <tag> RMAN </tag>
-            
-            <tag> 高可用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>测试页面</title>
-      <link href="/2024/11/17/test/"/>
-      <url>/2024/11/17/test/</url>
-      
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="5f5aeb2913700c25c4346fd9381d5e1073cd934cdd80e1cb324884902ce53fbc">73d38b3f522cc90d5ddd451cc52bad5158a2ec26a4d1589350284fe6b3122c2ebd9b8ad5e00495a434e65958f3919548bcbc3de3d4cdcc18ac1faa8fa14063ea76544e0c39540a5a66e7136b803d8f5bba5df76b9fa7cccfc7810fccc79db0cbf40fc5bfe801e39b2f0dceb108128caefa20637915cf0e45f9d29db3c0dfbfc61cdb4343eed23aaaf01aac400af0fd703f7b7856d3c4a32614232c68523af9d070b199c9327e2d4128046c30fec447d779e2110ca311779847fa74df96edaed68817dcd2f8c4165cd06368a30d2ba3f485889386be6bb0b333eb6500eb226ac79ff8183b3054e0780077f6a926b66c9c68f0d886574214086db16ee4858ccfc7bb91fc792ec7a222b791133f1a8ff7ff27582b75ada5a23500f8df95067d98555730ffc6e38d91673803df947849c2104fc705e8364f39d8bcd21f5eb1967435b522405ff9fc6b9d25edf80296518ff12107a0657c008c477cc7e2bfd90037d661ca76220cc2ab60faad83e5e132ccda8c4a325bb23099e48fa73e99d5be541bcae12e2d33b6f90e6780fc4fbaa7b952097dd8401f090a8a41750a5439ac52f6e3c011134e537f15c06da5981e2c7661a0ce800dc8c7a70220c8165725a37e92ae611b7958fab6c8524a018e47ff3861d8ea34ce656520fc79cec54931e8cf5e3e303d8e4a7d22fdcde1031c2dc0f0ed72080ed0662c69d12bb330965947879525469ab710aa8b35f72b5ea94402cd1ec6d43319821dd51c9d23afcdeca7606ba00777cb98dedf68ffcf885316300c3d240300e413c133e7da9413f122b9f6e18c623f73a1f4878800ebd3256d8902ec628848532b7f9c842f532ddcfc7a1572d8898d7670dfe3ef020d97424eb23067c5b72fc4efc2026665bcdc3469d231aff3fda1a79d3e24d586d48fd8b1699cf72836589029462a991ad4788287f950ad8310982953d23acd4297aeb35283c993a1f7d58538d9c94df74571f63efb71dda716d3de59bf9903a0f62d57623517a67f770a3da061cc8419d3793a2975a939dfafda291c53daf8da579d52a5c7ea1cddd9419cd5b9515f7b89f15385f4a20321b99c1f3af10314b7a624ad4a2f9db05d910a0e1eaf4ec6b927caf9adfc294977c4d1e53f279686e18956cd82a73505113403d0157a78c52eaea0491e5c1d6f879046613adb8dc7c5090848300f2960c2cd28e2ea0e568898dab7287eaeb14501d8a5e63ed4b4d3aa7671f279ae57fabe6bcb1f1d7c0f1f5e292c9a61db7915a088508088e13dcb0fbbcd88a3a9f138e113cfbacddb7da953742a1d253de45e746c9ca3741de210bd9ae7f528cf2f89d91ee56ddd473b24a6faa723a4e337fd8920c675eace9263dab5d3522d202d2a09d3e62b1bff28dae3ea510e85ccf526b659178414cbc4ee143ccbe1066907c34f52164107a3a172e2253a59ead7a689c71aaff55f34c21985325ffd0da2e8333ccd30275732438a9c927510397125b8eaa5972c879eecb4cab75e3ca1701e9cae4b2aed6dbcb4fd0fe39531ac9c9bf6d1df3baf38765e62672d75d24bed9ad498b7d7bea86582df6e3a26774c20ed3befc8a9455bb6a84b32ed8f97d630b6c67a0aa8b90b3a0644fbe9c901039de2798d2a099798bfa81055e3b09551f419b0414e09ccec2d36759f38d5775a972591740f84e949252dca84b678f031b4d7334947c1c2acac383be191ad9e6c69cdba21328097aff69dfc42de62682923f287df3147f9114dfee22ffb2962cec6521d1b8850fc4cd13b1939e54c7829c79b21087abccb3058bdacf73a619d25f7ef5111a078dae1f8eab1f5ad253941bf391a4fd5c930653c15c293c5d7da2a63d6ab08aa1916ecdf03de6131972d28b0619bfd1b0faab0227b974f1ebd37faf54ad58c34512ef1cf3334bb77d89c2752a92d781b14b6e94346e3556fe36eb90d87b991568c8c095cf956eb231b0a0afe9de5b6918625e0b15b501b37f25a58a34ca356a33077c817ad04a11369adb25d7e71bb8836d1bb3651720452dca95445ed1caa773663df7d6707097b1b7f446d8e0b0c57740b3ef49d61e5cd96058b8a2543d9bb2769780b2fcfb6cccb486a85c0064b53eb49532255afe30889624e72c37762942f20b46f6fa270e221b090701d4190b8c1f354e95d60a6b2d052c843a91fae13d2bf3a95a80c60a1c6480b9576731bc21251a8b849431f75f1234a44c3ed116d5e844facc793484d7d1a2740f520bb21e7a11604509044f375220441b19728aab6f5800f1005ba760e30249a5d710d3d1f1b56b7e6ab749f7f858ac802e94b4fe09e0f1eb3dd1228bc7fb95e24813150944aed4e24c6fe8438aa82477bf4cb221e27348ac2b80747a20bd86a4a79ec34caa45bf2bc37b64f619c1e1bffe78b6a5fa345b56b37682a8b860863234740735fc02d1c9294b0bee2bbec8aedccf38d248441a73f53e9f1de5f300d4f274e87e08951fda98675059599cd8dbcf4e15d40b9ed100ffb6da1bb679f1501a3b9155a376c943635d85082ae6b460574dd5f1f47320d2d8c8d93b0f05f6cb0dc436669f2c1f7a3edcbaba21750bcacf11fbf2df026ced96acee286ea3807ac7a1b044c31863994843a6eb93670dc83caf55795caddcaf1ad092237a94a462e7ee9ed1cd5165e6ad1fd8255e5c238be05feea063ce87da60214c364444b14d92e5248174aac24f07bb05bd966fd6baf71fca0a0f88f9ea6f2b9deb934dab3c492b89302be895f469241dcbe6156148685be72f27f2e7901a0b3130bf18856e8034d1dd73b91eb151094da29afaa2968a572ee9ecb37e97ddaffda6eb03d37cb9c345ee6593ae2be56f1b08ee840f7e411f52120a31f63711efd815c9c3f458acd1ddc2aad5b233854f753cd101340f51d8a8b40e543689d67d5ea49a1a7ce1eeaf54fcb58539953f69b15f869a5f975a1641ecdcb4544cdedd1839e5c1f5cb0ccaed973d2d2338e44061c99c9e20e9e7156926c4141b4451dfe09588bd564d9b541cc0271c2b6f86da2ec48bcead88cb93201eb9d60e9df21752f8dde4383d3d62fd53517aa4e9184ae21d6807cd9385d9735b3bfa3df0f43ba2c72948d3a8f4eb1ffa8deab18e14d426d449967374d636863a191c3efafe9aba720f4a11fce3c37e41fe0c8306f1e1b04765673868d953d3a9c168788c4f55d697450e2895e099463091b56e844631b41a73e08014dc743c222df24b37a1dcd0248e986259763df18b3790024258657b6f47011b33b3ad9458262f143b1f8b1a1622ec8c8b30e1dad26f52e52c53e77cb4936d734f2487ce941a701d46b1e71b7d9a3d4102be67539e01874763e1852991d47c82ce0c21bf0725d7c2aa222c8d527dc942f1b7e7d57a902d34b040b9c5d12e63dabd550212238d919a3c5851014c935bd995b6dbe78a87d5b6ce65b7b801b5074e88914863df1534669d4d3975a7a65ad761f13a2559a829071fcdd2ebcd56acda665ffa3d6a1cce959d70861a2f7a7c05840cacd2a2a4574a9843db99a4fa9ea79f396e038879d21fd231b01237221f95eec9b589ee2747892ba94d79b2d00545c021a4fced54e492a846e83e320baee95dd9dcd6e32cc1aab0771a5ba304b00b5cafbe833da542b9a715558a66726490305958b68d88caf761a412d82488e0d34473dd0aca1447c1d45b982b47b10ce7146abdb19d00189770b94c1e64024bf135014188efdd11c91147b0ade4a53360cb3341e9e636d93b62f34c8da29a482deccce6edad2cacabd729b367156605cfb0aa912bf31e5cf4060bdb72d775e7f928e81c577fd9e5ec5e9a78dcc4197ab2df74ac3ba751498af0110ae34dab177ec27f279fb680e0933f80d481bc5fd22aec42e9fae9b9062b0e444f002e04def116e1c3700c123db29945a4e46cc77d71900dc37d942a641e31e6019b3d49cc2c089e8af9d6be90f292319bfde6cf2690912985d12ca5cb39c050495948c4c4d61841e3fa9b787e562b40a0d12129e9915ca3e5228c23f7eac383750070e8200224a41cbb2ef9d63109153417df1ae02b22122bb2599d3e4dc9008fdb6b3e035006a0e594812fbcce376372cd72913c3968bf2fd0bacbc418be64cbaaf2654ebfad8c824fe8135d346e5b9de1df03955c3db85cf79d011836ecec252805a5235ff58a28b3399bf401a0f88d3a221f0512545c02d2306cc841cc9911d6acb4cb4f5c1b15f86ebcb2a134e13d5da6658dc977ba1a206465c167f8f35e926682a5e8b86701de7167223320cd0887a663aaa33b9e3202ea5bc0850237abe7c6e6839812278b1e2a91e00ca5e6dddd663e5686ce481de67dfcc6e31b220c4eb0ebf08c61a6dae37b50aca7cdc3f1233414518568cc3714eb47fd5881980caf915fe2dea2ad12d0c3e7363de35144dc7840e8cce6f707c306bc093c79450630c158d71e2100d28a8c2b9d4e6ece55b5b5f63fa8dee561e7838522172e4103e394988f24c5d0f06f5e35bfb07eed10675d3755b59cb3f0298e5cc80b4e36a6428ff0a55919db6</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">内容已加密，请输入密码后阅读</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      
-      
+      <tags>
+        <tag>数据库技术</tag>
+        <tag>AIX操作系统</tag>
+        <tag>文件系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Doris坏盘换盘方法</title>
+    <url>/2024/11/11/doris/</url>
+    <content><![CDATA[<h1 id="Doris坏盘换盘方法"><a href="#Doris坏盘换盘方法" class="headerlink" title="Doris坏盘换盘方法"></a>Doris坏盘换盘方法</h1><h2 id="先换好盘"><a href="#先换好盘" class="headerlink" title="先换好盘"></a>先换好盘</h2><p>参考其它&#x2F;data，创建好目录，正确授权。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"><span class="built_in">mkdir</span> -p /doris-storage</span><br><span class="line"><span class="built_in">chown</span> -R doris:doris /doris-storage</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="注释掉坏盘路径"><a href="#注释掉坏盘路径" class="headerlink" title="注释掉坏盘路径"></a>注释掉坏盘路径</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vi</span> /usr/local/doris-<span class="keyword">be</span>/<span class="keyword">conf</span>/be_custom.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p><img src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p>
+<h2 id="重启be进程"><a href="#重启be进程" class="headerlink" title="重启be进程"></a>重启be进程</h2><p>可在Web管理控制台操作。</p>
+]]></content>
       <categories>
-          
-          <category> 测试 </category>
-          
-          <category> 内部使用 </category>
-          
+        <category>技术分享</category>
+        <category>数据库技术</category>
+        <category>原创</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-            <tag> 内部使用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello Hexo</title>
-      <link href="/2024/11/11/hello-world/"/>
-      <url>/2024/11/11/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>几乎从2000年时，就开始筹划建设个人主页，历经了frontpage、Dreamweaver、QQ空间。<br>目前，个人主页于2024年11月11日正式使用Hexo架构。<br>这周末从QQ空间上迁移了少量内容到Hexo测试，搞定了基础配置、发文、分类、标签等等。<br>还没搞定的有相册系统、评论系统、统计分析等。<br>慢慢来吧。</p>]]></content>
-      
-      
+      <tags>
+        <tag>数据库技术</tag>
+        <tag>Doris数据库</tag>
+        <tag>故障处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello Hexo</title>
+    <url>/2024/11/11/hello-world/</url>
+    <content><![CDATA[<p>几乎从2000年时，就开始筹划建设个人主页，历经了frontpage、Dreamweaver、QQ空间。<br>目前，个人主页于2024年11月11日正式使用Hexo架构。<br>这周末从QQ空间上迁移了少量内容到Hexo测试，搞定了基础配置、发文、分类、标签等等。<br>还没搞定的有相册系统、评论系统、统计分析等。<br>慢慢来吧。</p>
+]]></content>
       <categories>
-          
-          <category> 个人生活 </category>
-          
-          <category> 原创 </category>
-          
+        <category>个人生活</category>
+        <category>原创</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-            <tag> 个人网站 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Doris坏盘换盘方法</title>
-      <link href="/2024/11/11/doris/"/>
-      <url>/2024/11/11/doris/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Doris坏盘换盘方法"><a href="#Doris坏盘换盘方法" class="headerlink" title="Doris坏盘换盘方法"></a>Doris坏盘换盘方法</h1><h2 id="先换好盘"><a href="#先换好盘" class="headerlink" title="先换好盘"></a>先换好盘</h2><p>参考其它&#x2F;data，创建好目录，正确授权。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"><span class="built_in">mkdir</span> -p /doris-storage</span><br><span class="line"><span class="built_in">chown</span> -R doris:doris /doris-storage</span><br><span class="line">ll</span><br></pre></td></tr></table></figure><span id="more"></span><h2 id="注释掉坏盘路径"><a href="#注释掉坏盘路径" class="headerlink" title="注释掉坏盘路径"></a>注释掉坏盘路径</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vi</span> /usr/local/doris-<span class="keyword">be</span>/<span class="keyword">conf</span>/be_custom.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure><p><img src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p><h2 id="重启be进程"><a href="#重启be进程" class="headerlink" title="重启be进程"></a>重启be进程</h2><p>可在Web管理控制台操作。</p>]]></content>
-      
-      
+      <tags>
+        <tag>生活</tag>
+        <tag>个人网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0</title>
+    <url>/2017/08/16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/</url>
+    <content><![CDATA[<h1 id="使用UDEV在Linux7操作系统下为磁盘配置名称"><a href="#使用UDEV在Linux7操作系统下为磁盘配置名称" class="headerlink" title="使用UDEV在Linux7操作系统下为磁盘配置名称"></a>使用UDEV在Linux7操作系统下为磁盘配置名称</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Linux操作系统 – Oracle Linux 7.0版本及更新<br>Linux x86-64</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>如何使用udev在Oracle Linux 7平台设置自定义的设备名称。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>为&#x2F;dev&#x2F;sdb设置自定义的设备名(&#x2F;dev&#x2F;asmdisk01p1)，配置udev规则如下：</p>
+<ol>
+<li><p>找出设备的UUID</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>lib<span class="regexp">/udev/</span>scsi_id -g -u <span class="regexp">/dev/</span>sdb</span><br><span class="line"><span class="number">1</span>IET_00020002</span><br></pre></td></tr></table></figure>
+<p>保存该UUID，这个ID稍后将会用到。</p>
+</li>
+<li><p>创建新的udev规划<br>在以下合适的位置创建新的udev规划文件：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vi <span class="regexp">/etc/u</span>dev<span class="regexp">/rules.d/</span><span class="number">99</span>-my-asmdevices.rules</span><br></pre></td></tr></table></figure>
+<p>在99-mydevices.rules文件里添加以下内容：</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">KERNEL==<span class="string">&quot;sd*[!0-9]&quot;</span>, <span class="keyword">ENV</span>&#123;DEVTYPE&#125;==<span class="string">&quot;disk&quot;</span>, SUBSYSTEM==<span class="string">&quot;block&quot;</span>, PROGRAM==<span class="string">&quot;/usr/lib/udev/scsi_id -g -u -d $devnode&quot;</span>, RESULT==<span class="string">&quot;1IET_00020002&quot;</span>, <span class="keyword">RUN</span><span class="language-bash">+=<span class="string">&quot;/bin/sh -c &#x27;mknod /dev/asmdisk01p1 b <span class="variable">$major</span> <span class="variable">$minor</span>; chown grid:dba /dev/asmdisk01p1; chmod 0660 /dev/asmdisk01p1&#x27;&quot;</span></span></span><br></pre></td></tr></table></figure>
+<p>保存规则文件。</p>
+</li>
+<li><p>测试新建的udev规则<br>运行以下命令或重启系统，验证新的udev规则</p>
+</li>
+</ol>
+<p>a) 检查新的设备名称：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="string">/sbin/udevadm</span> trigger <span class="params">--type=devices</span> <span class="params">--action=change</span></span><br><span class="line"><span class="string">/bin/ls</span> <span class="string">/dev/asmdisk01p1</span></span><br></pre></td></tr></table></figure>
+
+<p>b) 运行以下命令，重新载入udev规则：</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="string">/sbin/udevadm</span> control <span class="params">--reload</span></span><br></pre></td></tr></table></figure>
+
+<p>c) 运行以下命令，来为udev规则排错：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/sbin/udevadm <span class="built_in">test</span> /sys/block/sdb</span><br></pre></td></tr></table></figure>
+<p>注意：当设备文件不再需要时，要记得手动移除。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/bin/</span>rm <span class="regexp">/dev/</span>asmdisk01p1</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>NOTE:603868.1 - How to Dynamically Add and Remove SCSI Devices on Linux<br>NOTE:1521757.1 - How to set udev rule for setting the disk permission on ASM disks when using multipath on OL 6.x<br>NOTE:730996.1 - How to Create UDEV Rules for Network Cards on OEL5&#x2F;RHEL5</p>
+]]></content>
       <categories>
-          
-          <category> 技术分享 </category>
-          
-          <category> 数据库技术 </category>
-          
-          <category> 原创 </category>
-          
+        <category>技术文章</category>
+        <category>原创</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据库技术 </tag>
-            
-            <tag> Doris数据库 </tag>
-            
-            <tag> 故障处理 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>无人知晓答案的问题</title>
-      <link href="/2022/10/12/%E6%97%A0%E4%BA%BA%E7%9F%A5%E6%99%93%E7%AD%94%E6%A1%88%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-      <url>/2022/10/12/%E6%97%A0%E4%BA%BA%E7%9F%A5%E6%99%93%E7%AD%94%E6%A1%88%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<h1 id="无人知晓答案的问题"><a href="#无人知晓答案的问题" class="headerlink" title="无人知晓答案的问题"></a>无人知晓答案的问题</h1><p>Questions No One Knows the Answers to<br>无人知晓答案的问题。</p><p>On a typical day at school, endless hours are spent learning the answers to questions, but right now, we’ll do the opposite.<br>在学校的日常生活中，我们花费无尽的时间去学习问题的答案，但此刻，我们将反其道而行之。</p><p>We’re going to focus on questions where you can’t learn the answers because they’re unknown.<br>我们将专注于那些你无法找到答案的问题，因为它们是未知的。</p><p>I used to puzzle about a lot of things as a boy, for example What would it feel like to be a dog?<br>我小时候常常对很多事情感到困惑，比如，成为一只狗会是一种什么感觉？</p><p>Do fish feel pain?<br>鱼会感到疼痛吗？</p><p>How about insects?<br>那么昆虫呢？它们会感到疼痛吗？</p><p>Was the Big Bang just an accident?<br>大爆炸仅仅是一个偶然事件吗？</p><p>And is there a God?<br>那么，真的有上帝存在吗？</p><p>And if so, how are we so sure that it’s a He and not a She?<br>如果有上帝，我们是如何确信它是男性而不是女性呢？</p><p>Why do so many innocent people and animals suffer terrible things?<br>为什么那么多无辜的人和动物要遭受如此可怕的事情？</p><p>Is there really a plan for my life?<br>我的生活真的有一个既定的计划吗？</p><p>Is the future yet to be written, or is it already written and we just can’t see it?<br>未来是尚未书写的，还是已经写好而我们只是无法看到它？</p><p>But then, do I have free will?<br>但是，我拥有自由意志吗？</p><p>I mean, who am I anyway?<br>我的意思是，不管怎样，我到底是谁？</p><p>Am I just a biological machine?<br>难道我只是一台生物机器吗？</p><p>But then, why am I conscious?<br>但是，为什么我有意识呢？</p><p>What is consciousness?<br>意识究竟是什么？</p><p>Will robots become conscious one day?<br>机器人有一天会变得有意识吗？</p><p>I mean, I kind of assumed that some day I would be told the answers to all these questions.<br>我的意思是，我有点想当然地认为总有一天我会被告知所有这些问题的答案。</p><p>Someone must know, right?<br>总有人知道答案，对吧？</p><p>Guess what? No one knows.<br>猜猜看？没有人知道。</p><p>Most of those questions puzzle me more now than ever.<br>现在，这些问题比以往任何时候都更让我感到困惑。</p><p>But diving into them is exciting because it takes you to the edge of knowledge, and you never know what you’ll find there.<br>但深入探究这些问题非常激动人心，因为这会将你带到知识的边缘，而你永远不知道会在那里发现什么。</p><p>So, two questions that no one on Earth knows the answer to.<br>那么，有两个问题，地球上的任何人都不知道答案。</p><p>How many universes are there?<br>到底存在多少个宇宙？</p><p>Sometimes when I’m on a long plane flight, I gaze out at all those mountains and deserts and try to get my head around how vast our Earth is.<br>有时，当我在长途飞行中，我会凝视着那些山脉和沙漠，试图理解我们地球的辽阔。</p><p>And then I remember that there’s an object we see every day that would literally fit one million Earths inside it the Sun.<br>然后我会想起，我们每天都能看到的一个天体，它的内部实际上可以容纳一百万个地球——那就是太阳。</p><p>It seems impossibly big.<br>它似乎大得难以想象。</p><p>But in the great scheme of things, it’s a pinprick, one of about billion stars in the Milky Way galaxy, which you can see on a clear night as a pale white mist stretched across the sky.<br>但在宏大的宇宙图景中，太阳不过是一个微不足道的点，它是银河系中大约一千亿颗恒星之一，在晴朗的夜晚，你可以看到它像一片淡淡的白色薄雾横跨在天空中。</p><p>And it gets worse.<br>而且情况还远不止如此。</p><p>There are maybe billion galaxies detectable by our telescopes.<br>通过我们的望远镜可能探测到的星系数量也许有上亿个。</p><p>So if each star was the size of a single grain of sand, just the Milky Way has enough stars to fill a -foot by -foot stretch of beach three feet deep with sand.<br>所以，如果每颗恒星的大小相当于一粒沙子，仅银河系中的恒星就足以填满一个长宽各英尺、深三英尺的沙滩。</p><p>And the entire Earth doesn’t have enough beaches to represent the stars in the overall universe.<br>而且整个地球上的沙滩加起来也不足以代表整个宇宙中的恒星数量。</p><p>Such a beach would continue for literally hundreds of millions of miles.<br>这样的沙滩实际上会延伸数亿英里之长。</p><p>Holy Stephen Hawking, that is a lot of stars.<br>天哪，这真是难以置信的恒星数量，简直令人敬畏如斯蒂芬·霍金。</p><p>But he and other physicist snow believe in a reality that is unimaginably bigger still.<br>但是他和其他物理学家现在相信，现实世界比我们所能想象的还要庞大得多。</p><p>I mean, first of all, the billion galaxies within range of our telescopes are probably a minuscule fraction of the total.<br>我的意思是，首先，我们望远镜所能观测到的数十亿个星系，可能只是总数中微不足道的一小部分。</p><p>Space itself is expanding at an accelerating pace.<br>宇宙空间本身正在以加速的速度膨胀。</p><p>The vast majority of the galaxies are separating from us so fast that light from them may never reach us.<br>绝大多数星系正以如此快的速度远离我们，以至于它们的光可能永远无法到达我们这里。</p><p>Still, our physical reality here on Earth is intimately connected to those distant, invisible galaxies.<br>然而，我们地球上物理现实与那些遥远、不可见的星系紧密相连。</p><p>We can think of them as part of our universe.<br>我们可以将它们视为我们宇宙的一部分。</p><p>They make up a single, giant edifice obeying the same physical law sand all made from the same types of atoms, electrons, protons, quarks, neutrinos, that make up you and me.<br>它们构成了一个单一的、巨大的结构，遵循着相同的物理定律，而且都是由构成你我的相同类型的原子、电子、质子、夸克和中微子等组成。</p><p>However, recent theories in physics, including one called string theory, are now telling us there could be countless other universes built on different types of particles, with different properties, obeying different laws.<br>然而，物理学中的最新理论，包括所谓的弦理论，现在告诉我们可能存在无数其他由不同类型的粒子构建的宇宙，它们具有不同的属性，遵循不同的定律。</p><p>Most of these universes could never support life, and might flash in and out of existence in a nanosecond.<br>这些宇宙中的大多数可能永远无法支持生命，它们可能在纳秒之间闪现然后消失。</p><p>But nonetheless, combined, they make up a vast multiverse of possible universes in up to dimensions, featuring wonders beyond our wildest imagination.<br>但尽管如此，它们结合起来构成了一个广阔的多宇宙，其中可能存在高达维度不同的宇宙，展现了超乎我们最狂野想象之外的奇迹。</p><p>The leading version of string theory predicts a multiverse made up of to the universes.<br>弦理论的主要版本预测了一个由多达宇宙组成的多元宇宙。</p><p>That’s a one followed by zeros, a number so vast that if every atom in our observable universe had its own universe, and all of the atoms in all those universes each had their own universe, and you repeated that for two more cycles, you’d still be at a tiny fraction of the total, namely, one trillion trillion trilliontrillion trillion trillion trilliontrillion trillion trillion trilliontrillion trillion trillion trillionth.<br>这是一个1后面跟着个0的数字，如此庞大，以至于如果我们的可观测宇宙中的每一个原子都有自己的宇宙，并且所有那些宇宙中的每一个原子又都有自己的宇宙，如果你将这个过程再重复两次，你得到的总数仍然只是总量的一个小小部分，具体来说，是千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一。</p><p>But even that number is minuscule compared to another number infinity.<br>但即使这个数字与另一个数字——无穷大相比，也是微不足道的。</p><p>Some physicists think the space-time continuum is literally infinite and that it contains an infinite number of so-called pocket universes with varying properties.<br>一些物理学家认为，时空连续体实际上是无限的，并且它包含无限多个所谓的口袋宇宙，这些宇宙具有不同的属性。</p><p>How’s your brain doing?<br>你的大脑感觉如何？是不是被这些概念弄得有些晕头转向？</p><p>Quantum theory adds a whole new wrinkle.<br>量子理论又增添了全新的复杂性。</p><p>I mean, the theory’s been proven true beyond all doubt, but interpreting it is baffling, and some physicists think you can only un-baffle it if you imagine that huge numbers of parallel universes are being spawned every moment, and many of these universes would actually be very like the world we’re in, would include multiple copies of you.<br>我的意思是，这个理论已经被证明是毫无疑问的正确，但解释它却令人困惑，一些物理学家认为，只有想象在每一刻都在产生大量的平行宇宙，你才能解开这个困惑。许多这样的宇宙实际上会非常像我们所在的这个世界，甚至会包括你的多个副本。</p><p>In one such universe, you’d graduate with honors and marry the person of your dreams, and in another, not so much.<br>在这样一个宇宙中，你可能会以优异的成绩毕业，并与你梦想中的伴侣结婚；而在另一个宇宙中，情况可能就大不相同了。</p><p>Well, there are still some scientists who would say, hogwash.<br>嗯，仍有一些科学家会说，这些都是胡说八道。</p><p>The only meaningful answer to the question of how many universes there are is one.<br>关于宇宙数量的问题，唯一有意义的答案就是只有一个。</p><p>Only one universe.<br>只有一个宇宙。</p><p>And a few philosophers and mystics might argue that even our own universe is an illusion.<br>一些哲学家和神秘主义者可能会争论说，甚至我们自己的宇宙都是一个幻象。</p><p>So, as you can see, right now there is no agreement on this question, not even close.<br>所以，正如你所看到的，关于这个问题，目前还没有达成任何共识，甚至相差甚远。</p><p>All we know is the answer is somewhere between zero and infinity.<br>我们所知道的是，答案在零和无穷大之间。</p><p>Well, I guess we know one other thing.<br>嗯，我想我们还知道另一件事。</p><p>This is a pretty cool time to be studying physics.<br>这是一个研究物理学非常酷的时代。</p><p>We just might be undergoing the biggest paradigm shift in knowledge that humanity has ever seen.<br>我们可能正在经历人类历史上知识领域最大的范式转变。</p><p>Why can’t we see evidence of alien life?<br>为什么我们看不到外星生命的证据？</p><p>Somewhere out there in that vast universe there must surely be countless other planets teeming with life.<br>在那广阔的宇宙中的某个地方，肯定有无数其他的行星充满了生命。</p><p>But why don’t we see any evidence of it?<br>但为什么我们看不到任何外星生命的证据呢？</p><p>Well, this is the famous question asked by Enrico Fermi in Where is everybody?<br>嗯，这就是恩里科·费米提出的著名问题：“大家都在哪儿呢？”</p><p>Conspiracy theorists claim that UFOs are visiting all the time and the reports are just being covered up, but honestly, they aren’t very convincing.<br>阴谋论者声称不明飞行物（UFOs）一直在访问地球，而这些报告只是被掩盖了，但老实说，这些说法并不怎么令人信服。</p><p>But that leaves a real riddle.<br>但这留下了一个真正的谜团。</p><p>In the past year, the Kepler space observatory has found hundreds of planets just around nearby stars.<br>在过去的几年里，开普勒太空望远镜已经在附近的恒星周围发现了数百颗行星。</p><p>And if you extrapolate that data, it looks like there could be half a trillion planets just in our own galaxy.<br>如果你对这些数据加以外推，看起来在我们的银河系中可能会有五百亿颗行星。</p><p>If any one in , has conditions that might support a form of life, that’s still million possible life-harboring planets right here in the Milky Way.<br>如果在这些行星中的任何一个，有支持某种生命形式的条件，那仍然意味着在我们的银河系中可能有上百万个可能存在生命的行星。</p><p>So here’s the riddle our Earth didn’t form until about nine billion years after the Big Bang.<br>所以这里就是谜团：我们的地球直到大爆炸之后大约90亿年才形成。</p><p>Countless other planets in our galaxy should have formed earlier, and given life a chance to get underway billions, or certainly many millions of years earlier than happened on Earth.<br>我们银河系中的无数其他行星应该更早形成，并且给生命以数十亿年，或者至少数百万年的时间来发展，比地球上生命出现的时间要早得多。</p><p>If just a few of them had spawned intelligent life and started creating technologies, those technologies would have had millions of years to grow in complexity and power.<br>如果其中只有少数几个行星孕育出了智能生命并开始创造技术，那么这些技术就会有数百万年的时间来增长其复杂性和能力。</p><p>On Earth, we’ve seen how dramatically technology can accelerate in just years.<br>在地球上，我们已经看到技术如何在短短几年内急剧加速发展。</p><p>In millions of years,an intelligent alien civilization could easily have spread out across the galaxy, perhaps creating giant energy-harvesting artifacts or fleets of colonizing spaceships or glorious works of art that fill the night sky.<br>在数百万年的时间里，一个智能外星文明可能已经轻易地遍布整个银河系，或许创造了巨大的能量收集器、殖民宇宙的舰队，或者充满夜空的辉煌艺术作品。</p><p>At the very least, you’d think they’d be revealing their presence, deliberately or otherwise, through electromagnetic signals of one kind or another.<br>至少，你会认为他们会在有意或无意间通过一种或多种电磁信号揭示他们的存在。</p><p>And yet we see no convincing evidence of any of it.<br>然而，我们看不到任何令人信服的证据。</p><p>Why?<br>为什么？</p><p>Well, there are numerous possible answers, some of them quite dark.<br>嗯，有许多可能的答案，其中一些相当阴暗。</p><p>Maybe a single, super intelligent civilization has indeed taken over the galaxy and has imposed strict radio silence because it’s paranoid of any potential competitors.<br>也许有一个超级智能文明确实已经控制了银河系，并且实施了严格的无线电静默，因为它对任何潜在的竞争者都感到偏执。</p><p>It’s just sitting there ready to obliterate anything that becomes a threat.<br>它就在那里，随时准备消灭任何成为威胁的东西。</p><p>Or maybe they’re not that intelligent, or perhaps the evolution of an intelligence capable of creating sophisticated technology is far rarer than we’ve assumed.<br>或者也许它们并没有那么智能，又或许能够创造出精密技术的智能生命的进化比我们假设的要罕见得多。</p><p>After all, it’s only happened once on Earth in four billion years.<br>毕竟，在地球四十亿年的历史中，这样的智能生命只出现过一次。</p><p>Maybe even that was incredibly lucky.<br>也许这本身就是难以置信的幸运。</p><p>Maybe we are the first such civilization in our galaxy.<br>也许我们是银河系中第一个这样的文明。</p><p>Or, perhaps civilization carries with it the seeds of its own destruction through the inability to control the technologies it creates.<br>或者，也许文明本身就携带了自我毁灭的种子，因为它无法控制自己创造的技术。</p><p>But there are numerous more hopeful answers.<br>但也有许多更加乐观的答案。</p><p>For a start, we’re not looking that hard, and we’re spending a pitiful amount of money on it.<br>首先，我们的搜寻工作并不那么尽力，我们在这一领域投入的资金少得可怜。</p><p>Only a tiny fraction of the stars in our galaxy have really been looked at closely for signs of interesting signals.<br>我们银河系中只有极小一部分恒星被仔细搜寻过是否有有趣的信号。</p><p>And perhaps we’re not looking the right way.<br>也许我们的搜寻方式并不正确。</p><p>Maybe as civilizations develop, they quickly discover communication technologies far more sophisticated and useful than electromagnetic waves.<br>也许随着文明的发展，它们很快就会发现比电磁波更复杂、更有用的通信技术。</p><p>Maybe all the action takes place inside the mysterious recently discovered dark matter, or dark energy, that appear to account for most of the universe’s mass.<br>也许所有活动都在最近发现的神秘的暗物质或暗能量中进行，这些物质和能量似乎构成了宇宙大部分的质量。</p><p>Or, maybe we’re looking at the wrong scale.<br>或者，也许我们的关注点规模不对。</p><p>Perhaps intelligent civilizations come to realize that life is ultimately just complex patterns of information interacting with each other in a beautiful way, and that that can happen more efficiently at a small scale.<br>也许智能文明最终会意识到，生命归根结底只是复杂的信息模式以美丽的方式相互作用，而这种相互作用在小尺度上可以更高效地进行。</p><p>So, just as on Earth, clunky stereo systems have shrunk to beautiful, tiny iPods, maybe intelligent life itself, in order to reduce its footprint on the environment, has turned itself microscopic.<br>所以，就像在地球上，笨重的立体声音响系统已经缩小成了美丽的小型iPods，也许智能生命本身为了减少对环境的影响，已经变得微不足道。</p><p>So the Solar System might be teeming with aliens, and we’re just not noticing them.<br>因此，太阳系可能充满了外星人，而我们只是没有注意到他们。</p><p>Maybe the very ideas in our heads are a form of alien life.<br>也许我们头脑中的想法本身就是一种外星生命的形态。</p><p>Well, okay, that’s a crazy thought.<br>好吧，这个想法确实有点疯狂。</p><p>The aliens made me say it.<br>是外星人让我这么说的。</p><p>But it is cool that ideas do seem to have a life all of their own and that they outlive their creators.<br>但有趣的是，想法似乎确实拥有自己的生命，并且它们比创造者本身更长久。</p><p>Maybe biological life is just a passing phase.<br>也许生物生命只是一个短暂的阶段。</p><p>Well, within the next years, we could start seeing real spectroscopic information from promising nearby planets that will reveal just how life-friendly they might be.<br>在未来几年内，我们可能会开始看到来自附近有前景行星的真实光谱信息，这将揭示它们对生命有多么友好。</p><p>And meanwhile, SETI, the Search for Extra terrestrial Intelligence, is now releasing its data to the public so that millions of citizen scientists, maybe including you, can bring the power of the crowd to join the search.<br>同时，搜寻外星智能生命（SETI）现在正在向公众发布其数据，以便数百万名公民科学家，也许包括您，可以利用众人的力量加入到搜寻工作中。</p><p>And here on Earth, amazing experiments are being done to try to create life from scratch, life that might be very different from the DNA forms we know.<br>在地球上，人们正在进行惊人的实验，试图从零开始创造生命，这种生命可能与我们所知的DNA形式大不相同。</p><p>All of this will help us understand whether the universe is teeming with life or whether, indeed, it’s just us.<br>所有这些都将帮助我们理解宇宙是否充满了生命，或者实际上只有我们存在。</p><p>Either answer, in its own way, is awe-inspiring, because even if we are alone, the fact that we think and dream and ask these questions might yet turn out to be one of the most important facts about the universe.<br>无论哪个答案，都以它自己的方式令人敬畏，因为即使我们独自存在，我们思考、梦想和提出这些问题的事实，可能最终会成为关于宇宙最重要的真相之一。</p><p>And I have one more piece of good news for you.<br>还有一条好消息要告诉您。</p><p>The quest for knowledge and understanding never gets dull.<br>对知识和理解的追求永远不会变得乏味。</p><p>It doesn’t. It’s actually the opposite.<br>确实不会。实际上恰恰相反。</p><p>The more you know, the more amazing the world seems.<br>你知道得越多，世界就显得越神奇。</p><p>And it’s the crazy possibilities, the unanswered questions, that pull us forward.<br>正是这些疯狂的可能性，这些未解答的问题，推动着我们不断前进。</p><p>So stay curious.<br>所以，保持好奇心。</p>]]></content>
-      
-      
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+        <tag>UDEV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试页面</title>
+    <url>/2024/11/17/test/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="5f5aeb2913700c25c4346fd9381d5e1073cd934cdd80e1cb324884902ce53fbc">73d38b3f522cc90d5ddd451cc52bad5158a2ec26a4d1589350284fe6b3122c2ebd9b8ad5e00495a434e65958f3919548bcbc3de3d4cdcc18ac1faa8fa14063ea76544e0c39540a5a66e7136b803d8f5bba5df76b9fa7cccfc7810fccc79db0cbf40fc5bfe801e39b2f0dceb108128caefa20637915cf0e45f9d29db3c0dfbfc61cdb4343eed23aaaf01aac400af0fd703f7b7856d3c4a32614232c68523af9d070b199c9327e2d4128046c30fec447d779e2110ca311779847fa74df96edaed68817dcd2f8c4165cd06368a30d2ba3f485889386be6bb0b333eb6500eb226ac79ff8183b3054e0780077f6a926b66c9c68f0d886574214086db16ee4858ccfc7bb91fc792ec7a222b791133f1a8ff7ff27582b75ada5a23500f8df95067d98555730ffc6e38d91673803df947849c2104fc705e8364f39d8bcd21f5eb1967435b522405ff9fc6b9d25edf80296518ff12107a0657c008c477cc7e2bfd90037d661ca76220cc2ab60faad83e5e132ccda8c4a325bb23099e48fa73e99d5be541bcae12e2d33b6f90e6780fc4fbaa7b952097dd8401f090a8a41750a5439ac52f6e3c011134e537f15c06da5981e2c7661a0ce800dc8c7a70220c8165725a37e92ae611b7958fab6c8524a018e47ff3861d8ea34ce656520fc79cec54931e8cf5e3e303d8e4a7d22fdcde1031c2dc0f0ed72080ed0662c69d12bb330965947879525469ab710aa8b35f72b5ea94402cd1ec6d43319821dd51c9d23afcdeca7606ba00777cb98dedf68ffcf885316300c3d240300e413c133e7da9413f122b9f6e18c623f73a1f4878800ebd3256d8902ec628848532b7f9c842f532ddcfc7a1572d8898d7670dfe3ef020d97424eb23067c5b72fc4efc2026665bcdc3469d231aff3fda1a79d3e24d586d48fd8b1699cf72836589029462a991ad4788287f950ad8310982953d23acd4297aeb35283c993a1f7d58538d9c94df74571f63efb71dda716d3de59bf9903a0f62d57623517a67f770a3da061cc8419d3793a2975a939dfafda291c53daf8da579d52a5c7ea1cddd9419cd5b9515f7b89f15385f4a20321b99c1f3af10314b7a624ad4a2f9db05d910a0e1eaf4ec6b927caf9adfc294977c4d1e53f279686e18956cd82a73505113403d0157a78c52eaea0491e5c1d6f879046613adb8dc7c5090848300f2960c2cd28e2ea0e568898dab7287eaeb14501d8a5e63ed4b4d3aa7671f279ae57fabe6bcb1f1d7c0f1f5e292c9a61db7915a088508088e13dcb0fbbcd88a3a9f138e113cfbacddb7da953742a1d253de45e746c9ca3741de210bd9ae7f528cf2f89d91ee56ddd473b24a6faa723a4e337fd8920c675eace9263dab5d3522d202d2a09d3e62b1bff28dae3ea510e85ccf526b659178414cbc4ee143ccbe1066907c34f52164107a3a172e2253a59ead7a689c71aaff55f34c21985325ffd0da2e8333ccd30275732438a9c927510397125b8eaa5972c879eecb4cab75e3ca1701e9cae4b2aed6dbcb4fd0fe39531ac9c9bf6d1df3baf38765e62672d75d24bed9ad498b7d7bea86582df6e3a26774c20ed3befc8a9455bb6a84b32ed8f97d630b6c67a0aa8b90b3a0644fbe9c901039de2798d2a099798bfa81055e3b09551f419b0414e09ccec2d36759f38d5775a972591740f84e949252dca84b678f031b4d7334947c1c2acac383be191ad9e6c69cdba21328097aff69dfc42de62682923f287df3147f9114dfee22ffb2962cec6521d1b8850fc4cd13b1939e54c7829c79b21087abccb3058bdacf73a619d25f7ef5111a078dae1f8eab1f5ad253941bf391a4fd5c930653c15c293c5d7da2a63d6ab08aa1916ecdf03de6131972d28b0619bfd1b0faab0227b974f1ebd37faf54ad58c34512ef1cf3334bb77d89c2752a92d781b14b6e94346e3556fe36eb90d87b991568c8c095cf956eb231b0a0afe9de5b6918625e0b15b501b37f25a58a34ca356a33077c817ad04a11369adb25d7e71bb8836d1bb3651720452dca95445ed1caa773663df7d6707097b1b7f446d8e0b0c57740b3ef49d61e5cd96058b8a2543d9bb2769780b2fcfb6cccb486a85c0064b53eb49532255afe30889624e72c37762942f20b46f6fa270e221b090701d4190b8c1f354e95d60a6b2d052c843a91fae13d2bf3a95a80c60a1c6480b9576731bc21251a8b849431f75f1234a44c3ed116d5e844facc793484d7d1a2740f520bb21e7a11604509044f375220441b19728aab6f5800f1005ba760e30249a5d710d3d1f1b56b7e6ab749f7f858ac802e94b4fe09e0f1eb3dd1228bc7fb95e24813150944aed4e24c6fe8438aa82477bf4cb221e27348ac2b80747a20bd86a4a79ec34caa45bf2bc37b64f619c1e1bffe78b6a5fa345b56b37682a8b860863234740735fc02d1c9294b0bee2bbec8aedccf38d248441a73f53e9f1de5f300d4f274e87e08951fda98675059599cd8dbcf4e15d40b9ed100ffb6da1bb679f1501a3b9155a376c943635d85082ae6b460574dd5f1f47320d2d8c8d93b0f05f6cb0dc436669f2c1f7a3edcbaba21750bcacf11fbf2df026ced96acee286ea3807ac7a1b044c31863994843a6eb93670dc83caf55795caddcaf1ad092237a94a462e7ee9ed1cd5165e6ad1fd8255e5c238be05feea063ce87da60214c364444b14d92e5248174aac24f07bb05bd966fd6baf71fca0a0f88f9ea6f2b9deb934dab3c492b89302be895f469241dcbe6156148685be72f27f2e7901a0b3130bf18856e8034d1dd73b91eb151094da29afaa2968a572ee9ecb37e97ddaffda6eb03d37cb9c345ee6593ae2be56f1b08ee840f7e411f52120a31f63711efd815c9c3f458acd1ddc2aad5b233854f753cd101340f51d8a8b40e543689d67d5ea49a1a7ce1eeaf54fcb58539953f69b15f869a5f975a1641ecdcb4544cdedd1839e5c1f5cb0ccaed973d2d2338e44061c99c9e20e9e7156926c4141b4451dfe09588bd564d9b541cc0271c2b6f86da2ec48bcead88cb93201eb9d60e9df21752f8dde4383d3d62fd53517aa4e9184ae21d6807cd9385d9735b3bfa3df0f43ba2c72948d3a8f4eb1ffa8deab18e14d426d449967374d636863a191c3efafe9aba720f4a11fce3c37e41fe0c8306f1e1b04765673868d953d3a9c168788c4f55d697450e2895e099463091b56e844631b41a73e08014dc743c222df24b37a1dcd0248e986259763df18b3790024258657b6f47011b33b3ad9458262f143b1f8b1a1622ec8c8b30e1dad26f52e52c53e77cb4936d734f2487ce941a701d46b1e71b7d9a3d4102be67539e01874763e1852991d47c82ce0c21bf0725d7c2aa222c8d527dc942f1b7e7d57a902d34b040b9c5d12e63dabd550212238d919a3c5851014c935bd995b6dbe78a87d5b6ce65b7b801b5074e88914863df1534669d4d3975a7a65ad761f13a2559a829071fcdd2ebcd56acda665ffa3d6a1cce959d70861a2f7a7c05840cacd2a2a4574a9843db99a4fa9ea79f396e038879d21fd231b01237221f95eec9b589ee2747892ba94d79b2d00545c021a4fced54e492a846e83e320baee95dd9dcd6e32cc1aab0771a5ba304b00b5cafbe833da542b9a715558a66726490305958b68d88caf761a412d82488e0d34473dd0aca1447c1d45b982b47b10ce7146abdb19d00189770b94c1e64024bf135014188efdd11c91147b0ade4a53360cb3341e9e636d93b62f34c8da29a482deccce6edad2cacabd729b367156605cfb0aa912bf31e5cf4060bdb72d775e7f928e81c577fd9e5ec5e9a78dcc4197ab2df74ac3ba751498af0110ae34dab177ec27f279fb680e0933f80d481bc5fd22aec42e9fae9b9062b0e444f002e04def116e1c3700c123db29945a4e46cc77d71900dc37d942a641e31e6019b3d49cc2c089e8af9d6be90f292319bfde6cf2690912985d12ca5cb39c050495948c4c4d61841e3fa9b787e562b40a0d12129e9915ca3e5228c23f7eac383750070e8200224a41cbb2ef9d63109153417df1ae02b22122bb2599d3e4dc9008fdb6b3e035006a0e594812fbcce376372cd72913c3968bf2fd0bacbc418be64cbaaf2654ebfad8c824fe8135d346e5b9de1df03955c3db85cf79d011836ecec252805a5235ff58a28b3399bf401a0f88d3a221f0512545c02d2306cc841cc9911d6acb4cb4f5c1b15f86ebcb2a134e13d5da6658dc977ba1a206465c167f8f35e926682a5e8b86701de7167223320cd0887a663aaa33b9e3202ea5bc0850237abe7c6e6839812278b1e2a91e00ca5e6dddd663e5686ce481de67dfcc6e31b220c4eb0ebf08c61a6dae37b50aca7cdc3f1233414518568cc3714eb47fd5881980caf915fe2dea2ad12d0c3e7363de35144dc7840e8cce6f707c306bc093c79450630c158d71e2100d28a8c2b9d4e6ece55b5b5f63fa8dee561e7838522172e4103e394988f24c5d0f06f5e35bfb07eed10675d3755b59cb3f0298e5cc80b4e36a6428ff0a55919db6</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">内容已加密，请输入密码后阅读</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
-          
-          <category> 科学探索 </category>
-          
-          <category> 宇宙 </category>
-          
+        <category>测试</category>
+        <category>内部使用</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 双语 </tag>
-            
-            <tag> 宇宙 </tag>
-            
-            <tag> 生命 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我的存储系统</title>
-      <link href="/2022/10/01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/"/>
-      <url>/2022/10/01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
-      
-        <content type="html"><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p><span id="more"></span><p>——20221001更新——<br>　　我的存储已经使用了十余年了，总体上非常稳定。存储使用Windows的存储空间，重要数据存放于RAID1池，电影音乐存放于RAID5池，存储的基本配置如下。<br>　　CPU: Intel XEON E3-1230 V2<br>　　RAM: 32GB<br>　　SSD: 256GB<br>　　HDD: 10TB(4+4+2)<br>　　OS: Windows 10<br>　　RAID: RAID1、RAID5<br>　　硬盘(HDD)已经换了几拨了，从最早的1T盘、2T盘，逐渐替换为现在的4T盘。<br>　　早期HDD用的都是Seagate的盘，质量一般，通常运行个3~4年就会有坏道。现在换了WD的盘，希望能用得久一些。<br>　　近期打算升级存储系统，后续会陆续更新进展，以及一些监控脚本。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>大学生活2_求爱桥上</title>
-      <link href="/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB2-%E6%B1%82%E7%88%B1%E6%A1%A5%E4%B8%8A/"/>
-      <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB2-%E6%B1%82%E7%88%B1%E6%A1%A5%E4%B8%8A/</url>
-      
-        <content type="html"><![CDATA[<h1 id="大学生活2-求爱桥上"><a href="#大学生活2-求爱桥上" class="headerlink" title="大学生活2-求爱桥上"></a>大学生活2-求爱桥上</h1><p> 听学友说，这座桥被大家称作“求爱桥”，不知有多少对恋人在此比翼成双对。<br>    小生斗胆，于求爱桥上，只身留影一张，附小调一曲，聊表敬意：<br>      求爱桥头，恋人依依，含情脉脉，比翼双飞…</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 原创 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>心未泯，梦不灭</title>
-      <link href="/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/"/>
-      <url>/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
-      
-        <content type="html"><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<span id="more"></span><br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>]]></content>
-      
-      
+      <tags>
+        <tag>测试</tag>
+        <tag>内部使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>写在春节里</title>
+    <url>/2009/01/19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
+    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
+<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
+<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
+]]></content>
       <categories>
-          
-          <category> 诗词 </category>
-          
-          <category> 原创 </category>
-          
+        <category>原创</category>
+        <category>诗词</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 测试 </tag>
-            
-            <tag> 内部使用 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>大学生活1_初到农大</title>
-      <link href="/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/"/>
-      <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/</url>
-      
-        <content type="html"><![CDATA[<h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 原创 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>春梦独好</title>
-      <link href="/2018/09/12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/"/>
-      <url>/2018/09/12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/</url>
-      
-        <content type="html"><![CDATA[<h1 id="春梦独好"><a href="#春梦独好" class="headerlink" title="春梦独好"></a>春梦独好</h1><p>春雨乍到，<br>帘外纷纷扰扰。<br>少年惊早，<br>却道春梦独好。<br>梦入紫竹天外境，<span id="more"></span><br>珍禽倚枝鸣不停，<br>仙雾绕膝影不清。<br>少年回首寻归径，<br>径入幽林已不明。<br>另辟佳径觅知音，<br>竟得佳人路边亭，<br>伊人颦眉望少年，<br>道是无意却有情。<br>待要上前讨芳名，<br>奈何春雷醒梦魇。<br>春梦独好，<br>安能长眠不愿晓。<br>梦回兰亭，<br>喜与佳人共逍遥。<br>——陈荣 于 红旗村<br>回赠好友心源作<br>2008年4月23日夜<br>ID：CRXSPOEMRA327</p>]]></content>
-      
-      
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生活2_求爱桥上</title>
+    <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB2-%E6%B1%82%E7%88%B1%E6%A1%A5%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="大学生活2-求爱桥上"><a href="#大学生活2-求爱桥上" class="headerlink" title="大学生活2-求爱桥上"></a>大学生活2-求爱桥上</h1><p> 听学友说，这座桥被大家称作“求爱桥”，不知有多少对恋人在此比翼成双对。<br>    小生斗胆，于求爱桥上，只身留影一张，附小调一曲，聊表敬意：<br>      求爱桥头，恋人依依，含情脉脉，比翼双飞…</p>
+]]></content>
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用RMAN复制创建物理备用数据库无需关闭主数据库</title>
+    <url>/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="使用RMAN复制创建物理备用数据库无需关闭主数据库"><a href="#使用RMAN复制创建物理备用数据库无需关闭主数据库" class="headerlink" title="使用RMAN复制创建物理备用数据库无需关闭主数据库"></a>使用RMAN复制创建物理备用数据库无需关闭主数据库</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Oracle数据库 - 企业版 - 版本10.1.0.2至10.2.0.4 [10.1至10.2]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [12.1]<br>Oracle数据库 - 企业版 - 版本11.2.0.4至11.2.0.4 [11.2]<br>Oracle数据库 - 企业版 - 版本11.1.0.7至11.1.0.7 [11.1] </p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>以下说明描述了如何在不关闭主（生产）数据库的情况下，使用RMAN复制逐步创建物理备用数据库的过程。<br>Database Name :- prim<br>Primary db_unique_name :- prim<br>standby db_unique_name :- stdby<br>Primary Hostname :- raca.idc.oracle.com<br>standby Hostname :- core1.idc.oracle.com </p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>启用强制日志记录。</li>
+<li>创建备用重做日志（SRL）。</li>
+<li>在主数据库的参数文件中做出适当的更改。</li>
+<li>备份数据库，包括数据文件、归档日志和控制文件，以便备用，并将备份复制到备用服务器。</li>
+<li>为备用数据库创建参数文件。</li>
+<li>从主数据库到备用数据库建立连接。</li>
+<li>将备份移动到备用服务器。 </li>
+<li>和 9. 启动备用实例。</li>
+<li>使用RMAN复制命令创建备用数据库。</li>
+<li>创建SRL。</li>
+<li>启动MRP（管理恢复进程）。</li>
+<li>验证是否正确地将日志发送并应用到备用数据库。</li>
+</ol>
+<p>步骤1：在主数据库上启用强制日志记录。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> FORCE LOGGING;</span><br></pre></td></tr></table></figure>
+<p>注意：如果不存在，请创建密码文件，同时检查是否已启用归档。</p>
+<p>步骤2：在主数据库上配置备用重做日志。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">4</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log4a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">5</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log5a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">6</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log6a.log&#x27;</span> size <span class="number">50</span>m;</span><br></pre></td></tr></table></figure>
+<p><mark>注意：<br>检查SRL（备用重做日志）的数量， （每个线程的最大日志文件数 + 1）* 最大线程数<br>SRL的大小应等于ORL（在线重做日志）的大小。</mark><br>例如，如果主数据库每个线程有3个日志文件，且有2个线程，那么备用数据库上需要8个备用重做日志文件组。 验证是否已创建备用重做日志文件组。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">SELECT</span> <span class="keyword">GROUP</span>#,ThREAD#,<span class="keyword">SEQUENCE</span>#,ARCHIVED,STATUS <span class="keyword">FROM</span> V$STANDBY_LOG; </span><br></pre></td></tr></table></figure>
+
+<p>步骤3：修改主数据库的初始化参数以配置Data Guard，具体如下：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_CONFIG</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/prim/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=prim&#x27;</span>;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_2</span>=<span class="string">&#x27;SERVICE=stdby LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=stdby&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_STATE_1</span>=ENABLE;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_SERVER</span>=stdby;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_CLIENT</span>=prim;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">DB_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/data&#x27; <span class="attribute">scope</span>=spfile;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/redo&#x27; <span class="attribute">scope</span>=spfile;</span><br></pre></td></tr></table></figure>
+
+<p>步骤4：在主数据库上运行备份作业，通过连接到目标数据库和目录数据库（如果有的话）。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">run</span><br><span class="line">&#123;</span><br><span class="line">allocate channel c1 <span class="keyword">type</span> disk;</span><br><span class="line">allocate channel c2 <span class="keyword">type</span> disk;</span><br><span class="line">backup <span class="keyword">database</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup archivelog <span class="keyword">all</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup <span class="keyword">current</span> controlfile <span class="keyword">for</span> standby <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>步骤5：在主数据库上创建参数文件，将其复制到备用数据库，并做出必要的更改。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/prim/stage/initstdby.ora&#x27;</span> <span class="keyword">from</span> spfile;</span><br></pre></td></tr></table></figure>
+
+<p>步骤6：建立连接<br>在主数据库和备用数据库上都创建网络服务。<br>在prim服务器上，</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+<p>在standby服务器上，</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>步骤7：将文件移动到备用服务器，<br>a. 在备用服务器上创建相同的目录并复制备份。 在备用服务器操作系统上，</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="variable">$mkdir</span> <span class="operator">-</span>p <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br><span class="line">[oracle<span class="meta">@raca</span> prim]$ scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span><span class="operator">*</span> core1.idc.oracle.com:<span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br></pre></td></tr></table></figure>
+<p>b. 另外，我们可以将备份复制到备用服务器的不同目录。在备用服务器上，以主数据库为目标连接到RMAN，并以辅助实例身份登录，如果你的主数据库有目录数据库，那么以主数据库为目标、目录数据库和辅助实例身份连接。将这些备份片段编入目录，以便主数据库或目录数据库的控制文件知道备份信息。</p>
+<p>步骤8：在备用服务器上对复制的initstdby.ora文件进行必要的更改。</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">db_name</span>=prim</span><br><span class="line"><span class="attr">db_unique_name</span>=stdby</span><br><span class="line"><span class="attr">log_archive_config</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/stdby/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=stdby&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_2</span>=<span class="string">&#x27;SERVICE=prim LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=prim&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_state_1</span>=ENABLE</span><br><span class="line"><span class="attr">db_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/data/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span></span><br><span class="line"><span class="attr">log_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/redo/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span></span><br><span class="line"><span class="attr">REMOTE_LOGIN_PASSWORDFILE</span>=EXCLUSIVE</span><br><span class="line"><span class="attr">standby_archive_dest</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/arch/&#x27;</span></span><br><span class="line"><span class="attr">standby_file_management</span>=AUTO</span><br><span class="line"><span class="attr">fal_client</span>=stdby</span><br><span class="line"><span class="attr">fal_server</span>=prim </span><br></pre></td></tr></table></figure>
+
+<p>步骤9：创建备用实例。<br>创建与主数据库相同的密码。或者，我们可以从主数据库复制密码文件并在备用数据库上重命名它。<br>例如，从主数据库复制密码文件，</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>dbs<span class="regexp">/opapwprim core1.idc.oracle.com:/u</span>01<span class="regexp">/app/</span>oracle<span class="regexp">/dbs/</span> </span><br></pre></td></tr></table></figure>
+
+<p>在standby上,</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="meta"><span class="keyword">$mv</span> orapwprim orapwstdby</span></span><br></pre></td></tr></table></figure>
+
+<p>或者创建与主数据库相同的新密码，如下所示，<br>a. 对于UNIX,</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="variable">$export</span> ORACLE_SID</span><br><span class="line"><span class="variable">$orapwd</span> <span class="attribute">file</span>=<span class="string">&#x27;$ORACLE_HOME/dbs/orapwstdby&#x27;</span> <span class="attribute">password</span>=sys <span class="attribute">entries</span>=10;</span><br></pre></td></tr></table></figure>
+
+<p>对于Windows,</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">d:&gt;<span class="built_in">set</span> <span class="attribute">ORACLE_SID</span>=stdby</span><br><span class="line">d:&gt;oradim -new -sid stdby -intpwd sys</span><br></pre></td></tr></table></figure>
+
+<p>b. 在备用服务器上创建必要的目录并启动辅助实例。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">[oracle<span class="variable">@core1</span> stdby]$ pwd</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>databases<span class="operator">/</span>stdby</span><br><span class="line">[oracle<span class="variable">@core1</span> stdby]$mkdir data redo oradata stage udump bdump cdump</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> spfile <span class="keyword">from</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/stage/initstdby.ora&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">start</span> nomount;</span><br></pre></td></tr></table></figure>
+
+<p>步骤10：在备用服务器上使用RMAN复制创建备用数据库。<br>当在备用数据库的复制命令中指定’dorecover’时，请在目标数据库上执行归档日志切换，并运行复制命令。<br>例如:<br>对于primary,</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">sql</span>&gt; <span class="keyword">alter</span> <span class="keyword">system</span> archive <span class="keyword">log</span> <span class="keyword">current</span>;</span><br></pre></td></tr></table></figure>
+<p>在备用服务器上，通过连接字符串连接到目标数据库（即prim）和目录数据库（如果有的话），以及这个辅助数据库，操作如下，</p>
+<figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> /<span class="meta">@prim</span> catalog RMAN/RMAN<span class="meta">@catdb</span> auxiliary /</span><br></pre></td></tr></table></figure>
+
+<p>如果是no catalog数据库,</p>
+<figure class="highlight llvm"><table><tr><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> sys/&lt;password&gt;<span class="title">@prim</span> auxiliary /</span><br><span class="line">Recovery Manager: Release <span class="number">10.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - Production on Thu Mar <span class="number">5</span> <span class="number">12</span>:<span class="number">30</span>:<span class="number">56</span> <span class="number">2009</span></span><br><span class="line">Copyright (<span class="keyword">c</span>) <span class="number">1982</span><span class="punctuation">,</span> <span class="number">2005</span><span class="punctuation">,</span> Oracle. All rights reserved.</span><br><span class="line">connected <span class="keyword">to</span> <span class="keyword">target</span> database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span>)</span><br><span class="line">connected <span class="keyword">to</span> auxiliary database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span><span class="punctuation">,</span> not open)</span><br><span class="line">RMAN&gt; duplicate <span class="keyword">target</span> database for standby dorecover<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>注意：我们也可以使用不带dorecover子句的选项， 例如，</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt;duplicate target database for standby<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤11:创建SRL,</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line">参考步骤<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤12：在备用数据库上启动MRP（管理恢复进程），</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">select</span> <span class="type">name</span>,db_unique_name,database_role <span class="keyword">from</span> v$<span class="keyword">database</span>;</span><br><span class="line"><span class="type">NAME</span> DB_UNIQUE_NAME DATABASE_ROLE</span><br><span class="line"><span class="comment">--------- ---------------- --------------</span></span><br><span class="line">PRIM STDBY PHYSICAL STANDBY</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> recover managed standby <span class="keyword">database</span> disconnect;</span><br></pre></td></tr></table></figure>
+
+<p>步骤13：在主数据库上启用log_archive_dest_2，该参数用于将日志发送到备用服务器。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt;<span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">set</span> log_archive_dest_state_2=<span class="keyword">enable</span>;</span><br></pre></td></tr></table></figure>
+
+<p>步骤14：检查备用数据库是否与主数据库同步，<br>A. 在备用数据库上检查v$archived_log视图，</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br></pre></td></tr></table></figure>
+<p>B. 在主数据库上执行日志切换，</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">SYSTEM</span> SWITCH LOGFILE;</span><br></pre></td></tr></table></figure>
+
+<p>C. 在备库上执行,</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line"></span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">40 06-MAR<span class="string">-09</span> 07-MAR<span class="string">-09</span></span><br><span class="line"></span><br><span class="line">SQL&gt; select sequence#,applied from v$archived_log order by sequence#;</span><br><span class="line">SEQUENCE# APP</span><br><span class="line">---------- ---</span><br><span class="line">29 YES</span><br><span class="line">30 YES</span><br><span class="line">31 YES</span><br><span class="line">32 YES</span><br><span class="line">33 YES</span><br><span class="line">34 YES</span><br><span class="line">35 YES</span><br><span class="line">36 YES</span><br><span class="line">37 YES</span><br><span class="line">38 YES</span><br><span class="line">39 YES</span><br><span class="line">40 YES </span><br></pre></td></tr></table></figure>
+]]></content>
       <categories>
-          
-          <category> 原创 </category>
-          
-          <category> 诗词 </category>
-          
+        <category>技术分享</category>
+        <category>数据库技术</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 原创 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0</title>
-      <link href="/2017/08/16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/"/>
-      <url>/2017/08/16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="使用UDEV在Linux7操作系统下为磁盘配置名称"><a href="#使用UDEV在Linux7操作系统下为磁盘配置名称" class="headerlink" title="使用UDEV在Linux7操作系统下为磁盘配置名称"></a>使用UDEV在Linux7操作系统下为磁盘配置名称</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Linux操作系统 – Oracle Linux 7.0版本及更新<br>Linux x86-64</p><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>如何使用udev在Oracle Linux 7平台设置自定义的设备名称。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>为&#x2F;dev&#x2F;sdb设置自定义的设备名(&#x2F;dev&#x2F;asmdisk01p1)，配置udev规则如下：</p><ol><li><p>找出设备的UUID</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>lib<span class="regexp">/udev/</span>scsi_id -g -u <span class="regexp">/dev/</span>sdb</span><br><span class="line"><span class="number">1</span>IET_00020002</span><br></pre></td></tr></table></figure><p>保存该UUID，这个ID稍后将会用到。</p></li><li><p>创建新的udev规划<br>在以下合适的位置创建新的udev规划文件：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="regexp">/etc/u</span>dev<span class="regexp">/rules.d/</span><span class="number">99</span>-my-asmdevices.rules</span><br></pre></td></tr></table></figure><p>在99-mydevices.rules文件里添加以下内容：</p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KERNEL==<span class="string">&quot;sd*[!0-9]&quot;</span>, <span class="keyword">ENV</span>&#123;DEVTYPE&#125;==<span class="string">&quot;disk&quot;</span>, SUBSYSTEM==<span class="string">&quot;block&quot;</span>, PROGRAM==<span class="string">&quot;/usr/lib/udev/scsi_id -g -u -d $devnode&quot;</span>, RESULT==<span class="string">&quot;1IET_00020002&quot;</span>, <span class="keyword">RUN</span><span class="language-bash">+=<span class="string">&quot;/bin/sh -c &#x27;mknod /dev/asmdisk01p1 b <span class="variable">$major</span> <span class="variable">$minor</span>; chown grid:dba /dev/asmdisk01p1; chmod 0660 /dev/asmdisk01p1&#x27;&quot;</span></span></span><br></pre></td></tr></table></figure><p>保存规则文件。</p></li><li><p>测试新建的udev规则<br>运行以下命令或重启系统，验证新的udev规则</p></li></ol><p>a) 检查新的设备名称：</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/sbin/udevadm</span> trigger <span class="params">--type=devices</span> <span class="params">--action=change</span></span><br><span class="line"><span class="string">/bin/ls</span> <span class="string">/dev/asmdisk01p1</span></span><br></pre></td></tr></table></figure><p>b) 运行以下命令，重新载入udev规则：</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/sbin/udevadm</span> control <span class="params">--reload</span></span><br></pre></td></tr></table></figure><p>c) 运行以下命令，来为udev规则排错：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/udevadm <span class="built_in">test</span> /sys/block/sdb</span><br></pre></td></tr></table></figure><p>注意：当设备文件不再需要时，要记得手动移除。</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/bin/</span>rm <span class="regexp">/dev/</span>asmdisk01p1</span><br></pre></td></tr></table></figure><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>NOTE:603868.1 - How to Dynamically Add and Remove SCSI Devices on Linux<br>NOTE:1521757.1 - How to set udev rule for setting the disk permission on ASM disks when using multipath on OL 6.x<br>NOTE:730996.1 - How to Create UDEV Rules for Network Cards on OEL5&#x2F;RHEL5</p>]]></content>
-      
-      
+      <tags>
+        <tag>Oracle</tag>
+        <tag>数据库</tag>
+        <tag>RMAN</tag>
+        <tag>高可用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生活1_初到农大</title>
+    <url>/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/</url>
+    <content><![CDATA[<h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>
+]]></content>
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>心未泯，梦不灭</title>
+    <url>/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
+    <content><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<span id="more"></span><br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>
+]]></content>
       <categories>
-          
-          <category> 技术文章 </category>
-          
-          <category> 原创 </category>
-          
+        <category>诗词</category>
+        <category>原创</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-            <tag> OS </tag>
-            
-            <tag> UDEV </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>AIX调整文件系统参考_V1.4</title>
-      <link href="/2014/04/19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/"/>
-      <url>/2014/04/19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/</url>
-      
-        <content type="html"><![CDATA[<h1 id="AIX调整文件系统参考-V1-4"><a href="#AIX调整文件系统参考-V1-4" class="headerlink" title="AIX调整文件系统参考_V1.4"></a>AIX调整文件系统参考_V1.4</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档描述了AIX6.1环境下，文件系统调整的具体步骤，主要包括增加文件系统，扩容&#x2F;收缩文件系统，以及删除文件系统，文档内容仅供学习参考，如需在生产环境中应用，请根据实际情况操作。</p><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><h3 id="操作系统版本"><a href="#操作系统版本" class="headerlink" title="操作系统版本"></a>操作系统版本</h3><p>IBM AIX 6.1</p><h3 id="终端软件版本"><a href="#终端软件版本" class="headerlink" title="终端软件版本"></a>终端软件版本</h3><p>SecureCRT Version 7.0.0 (x64 build 326)</p><h2 id="增加文件系统"><a href="#增加文件系统" class="headerlink" title="增加文件系统"></a>增加文件系统</h2><h3 id="不指定逻辑卷"><a href="#不指定逻辑卷" class="headerlink" title="不指定逻辑卷"></a>不指定逻辑卷</h3><p>本例在不指定逻辑卷的条件下，新建一个文件系统，挂载点&#x2F;chenrong_oracle_01，分配空间大小为1G。</p><ol><li><p>查看文件系统现状<br><img src="/vx_images/346331369845664.png"></p></li><li><p>查看可用卷组<br><img src="/vx_images/31122423955458.png"></p></li><li><p>打开jfs2 smit菜单<br><img src="/vx_images/551062477667859.png"></p></li><li><p>增加文件系统<br>选中“Add an Enhanced Journaled File System”，增加一个增强日志文件系统  按【回车】。<br><img src="/vx_images/215501789409967.png"></p></li><li><p>选择卷组<br>选择文件系统所在卷组，选中“rootvg” ， 按【回车】。<br><img src="/vx_images/582583705711535.png"></p></li><li><p>配置新文件系统<br>新文件系统，单位为GB，大小为1，系统启动时自动装载。<br><img src="/vx_images/170581065393439.png"></p></li><li><p>确认操作<br>按【回车】，确认执行操作，操作结果为成功。<br><img src="/vx_images/406474396414574.png"></p></li><li><p>挂载文件系统<br><img src="/vx_images/518794484717034.png"> </p></li><li><p>查看新文件系统<br>如图，新建的&#x2F;chenrong_oracle_01已经可以使用。<br><img src="/vx_images/35524550231527.png"></p></li></ol><h3 id="指定逻辑卷"><a href="#指定逻辑卷" class="headerlink" title="指定逻辑卷"></a>指定逻辑卷</h3><p>本例先新建一个逻辑卷，lv_cr_oracle_02，并使用该逻辑卷，新建一个文件系统，挂载点&#x2F;chenrong_oracle_02，分配空间大小为512M。</p><ol><li><p>查看文件系统现状<br> <img src="/vx_images/509046030992382.png"></p></li><li><p>查看rootvg信息<br>如图，该卷组剩余46336MB空间，且一个PP是256MB，本例需要2个单位的PP。<br><img src="/vx_images/34806559443403.png"></p></li><li><p>打开mklv smit菜单<br><img src="/vx_images/139925903778708.png"></p></li><li><p>选择目标卷组<br><img src="/vx_images/231915175735442.png"></p></li><li><p>配置逻辑卷<br>逻辑卷名：lv_cr_oracle_02<br>逻辑分区个数：2个PP单位，即512MB<br>逻辑卷格式：jfs2<br><img src="/vx_images/311036318262063.png"><br> <img src="/vx_images/405673363935000.png"><br> <img src="/vx_images/460866444690545.png"><br> <img src="/vx_images/550474180860456.png"></p></li><li><p>确认执行<br><img src="/vx_images/31764769685446.png"></p></li><li><p>查看新逻辑卷<br><img src="/vx_images/128554772428802.png"></p></li><li><p>打开jfs2 smit菜单<br><img src="/vx_images/206006775718084.png"><br>选择“Add an Enhanced Journaled File System on a Previously Defined Logical Volume”。<br><img src="/vx_images/337743845366196.png"></p></li><li><p>配置文件系统<br><img src="/vx_images/425034009749700.png"><br><img src="/vx_images/483845565199706.png"><br><img src="/vx_images/565036707011693.png"></p></li><li><p>确认执行<br>![](vx_images&#x2F;127823192145902.png &#x3D;)</p></li><li><p>装载文件系统<br><img src="/vx_images/190946659487128.png"></p></li><li><p>查看文件系统<br> <img src="/vx_images/246154402725009.png"></p></li></ol><h2 id="扩容-收缩文件系统"><a href="#扩容-收缩文件系统" class="headerlink" title="扩容&#x2F;收缩文件系统"></a>扩容&#x2F;收缩文件系统</h2><ol><li><p>查看文件系统现状<br><img src="/vx_images/411985340143511.png"></p></li><li><p>查看逻辑卷信息<br>如图，逻辑卷lv_cr_oracle_02属于卷组rootvg。<br><img src="/vx_images/475343524481066.png"> </p></li><li><p>查看卷组信息<br>如图，卷组rootvg有46336MB剩余空间。<br><img src="/vx_images/555194032198877.png"> </p></li><li><p>打开jfs2 smit菜单<br> <img src="/vx_images/22147042068251.png"><br>选择“Change &#x2F; Show Characteristics of an Enhanced Journaled File System”。<br> <img src="/vx_images/66724737675036.png"></p></li><li><p>选择需要扩容&#x2F;收缩的文件系统<br>本例将把文件系统，&#x2F;chenrong_oracle_02，由512M扩容为768M。<br> <img src="/vx_images/129194182165899.png"></p></li><li><p>配置文件系统的新参数<br>配置文件系统的新大小，如下图：<br><img src="/vx_images/212063784446542.png"> </p></li><li><p>确认执行<br> <img src="/vx_images/266723368681068.png"></p></li><li><p>查看文件系统现状<br><img src="/vx_images/323993930769124.png"></p></li></ol><h2 id="删除文件系统"><a href="#删除文件系统" class="headerlink" title="删除文件系统"></a>删除文件系统</h2><p>本例将删除文件系统&#x2F;cr。</p><ol><li><p>查看文件系统现状<br> <img src="/vx_images/452625622628962.png"></p></li><li><p>卸载文件系统<br> <img src="/vx_images/503036936923961.png"></p></li><li><p>打开jfs2 smit菜单<br> <img src="/vx_images/564625996348483.png"><br>选择“Remove an Enhanced Journaled File System”。<br> <img src="/vx_images/16224269397731.png"></p></li><li><p>选择要卸载的挂载点<br> <img src="/vx_images/84383649769290.png"></p></li><li><p>确认卸载<br> <img src="/vx_images/133823070185140.png"></p></li><li><p>查看结果<br> <img src="/vx_images/189334619822166.png"></p></li><li><p>查看文件系统现状<br> <img src="/vx_images/229994311534780.png"></p></li></ol>]]></content>
-      
-      
+      <tags>
+        <tag>测试</tag>
+        <tag>内部使用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的存储系统</title>
+    <url>/2022/10/01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p>
+<span id="more"></span>
+<p>——20221001更新——<br>　　我的存储已经使用了十余年了，总体上非常稳定。存储使用Windows的存储空间，重要数据存放于RAID1池，电影音乐存放于RAID5池，存储的基本配置如下。<br>　　CPU: Intel XEON E3-1230 V2<br>　　RAM: 32GB<br>　　SSD: 256GB<br>　　HDD: 10TB(4+4+2)<br>　　OS: Windows 10<br>　　RAID: RAID1、RAID5<br>　　硬盘(HDD)已经换了几拨了，从最早的1T盘、2T盘，逐渐替换为现在的4T盘。<br>　　早期HDD用的都是Seagate的盘，质量一般，通常运行个3~4年就会有坏道。现在换了WD的盘，希望能用得久一些。<br>　　近期打算升级存储系统，后续会陆续更新进展，以及一些监控脚本。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>春梦独好</title>
+    <url>/2018/09/12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/</url>
+    <content><![CDATA[<h1 id="春梦独好"><a href="#春梦独好" class="headerlink" title="春梦独好"></a>春梦独好</h1><p>春雨乍到，<br>帘外纷纷扰扰。<br>少年惊早，<br>却道春梦独好。<br>梦入紫竹天外境，<span id="more"></span><br>珍禽倚枝鸣不停，<br>仙雾绕膝影不清。<br>少年回首寻归径，<br>径入幽林已不明。<br>另辟佳径觅知音，<br>竟得佳人路边亭，<br>伊人颦眉望少年，<br>道是无意却有情。<br>待要上前讨芳名，<br>奈何春雷醒梦魇。<br>春梦独好，<br>安能长眠不愿晓。<br>梦回兰亭，<br>喜与佳人共逍遥。<br>——陈荣 于 红旗村<br>回赠好友心源作<br>2008年4月23日夜<br>ID：CRXSPOEMRA327</p>
+]]></content>
       <categories>
-          
-          <category> 技术分享 </category>
-          
-          <category> 操作系统技术 </category>
-          
-          <category> 原创 </category>
-          
+        <category>原创</category>
+        <category>诗词</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 数据库技术 </tag>
-            
-            <tag> AIX操作系统 </tag>
-            
-            <tag> 文件系统 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>随想</title>
-      <link href="/2011/12/25/%E9%9A%8F%E6%83%B3/"/>
-      <url>/2011/12/25/%E9%9A%8F%E6%83%B3/</url>
-      
-        <content type="html"><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#x72;&#x40;&#x70;&#111;&#x77;&#101;&#114;&#x6c;&#111;&#110;&#103;&#46;&#x66;&#122;&#x2e;&#102;&#106;&#x2e;&#x63;&#110;">&#x63;&#x72;&#x40;&#x70;&#111;&#x77;&#101;&#114;&#x6c;&#111;&#110;&#103;&#46;&#x66;&#122;&#x2e;&#102;&#106;&#x2e;&#x63;&#110;</a> </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>春节这几天</title>
-      <link href="/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/"/>
-      <url>/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
-      
-        <content type="html"><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>]]></content>
-      
-      
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>暑期帮WYH整电脑</title>
+    <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>春节这几天</title>
+    <url>/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
+]]></content>
       <categories>
-          
-          <category> 个人生活 </category>
-          
-          <category> 原创 </category>
-          
+        <category>个人生活</category>
+        <category>原创</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 生活 </tag>
-            
-            <tag> 原创 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>写在春节里</title>
-      <link href="/2009/01/19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/"/>
-      <url>/2009/01/19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
-      
-        <content type="html"><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p><p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p><p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>]]></content>
-      
-      
+      <tags>
+        <tag>生活</tag>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无人知晓答案的问题</title>
+    <url>/2022/10/12/%E6%97%A0%E4%BA%BA%E7%9F%A5%E6%99%93%E7%AD%94%E6%A1%88%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="无人知晓答案的问题"><a href="#无人知晓答案的问题" class="headerlink" title="无人知晓答案的问题"></a>无人知晓答案的问题</h1><p>Questions No One Knows the Answers to<br>无人知晓答案的问题。</p>
+<p>On a typical day at school, endless hours are spent learning the answers to questions, but right now, we’ll do the opposite.<br>在学校的日常生活中，我们花费无尽的时间去学习问题的答案，但此刻，我们将反其道而行之。</p>
+<p>We’re going to focus on questions where you can’t learn the answers because they’re unknown.<br>我们将专注于那些你无法找到答案的问题，因为它们是未知的。</p>
+<p>I used to puzzle about a lot of things as a boy, for example What would it feel like to be a dog?<br>我小时候常常对很多事情感到困惑，比如，成为一只狗会是一种什么感觉？</p>
+<p>Do fish feel pain?<br>鱼会感到疼痛吗？</p>
+<p>How about insects?<br>那么昆虫呢？它们会感到疼痛吗？</p>
+<p>Was the Big Bang just an accident?<br>大爆炸仅仅是一个偶然事件吗？</p>
+<p>And is there a God?<br>那么，真的有上帝存在吗？</p>
+<p>And if so, how are we so sure that it’s a He and not a She?<br>如果有上帝，我们是如何确信它是男性而不是女性呢？</p>
+<p>Why do so many innocent people and animals suffer terrible things?<br>为什么那么多无辜的人和动物要遭受如此可怕的事情？</p>
+<p>Is there really a plan for my life?<br>我的生活真的有一个既定的计划吗？</p>
+<p>Is the future yet to be written, or is it already written and we just can’t see it?<br>未来是尚未书写的，还是已经写好而我们只是无法看到它？</p>
+<p>But then, do I have free will?<br>但是，我拥有自由意志吗？</p>
+<p>I mean, who am I anyway?<br>我的意思是，不管怎样，我到底是谁？</p>
+<p>Am I just a biological machine?<br>难道我只是一台生物机器吗？</p>
+<p>But then, why am I conscious?<br>但是，为什么我有意识呢？</p>
+<p>What is consciousness?<br>意识究竟是什么？</p>
+<p>Will robots become conscious one day?<br>机器人有一天会变得有意识吗？</p>
+<p>I mean, I kind of assumed that some day I would be told the answers to all these questions.<br>我的意思是，我有点想当然地认为总有一天我会被告知所有这些问题的答案。</p>
+<p>Someone must know, right?<br>总有人知道答案，对吧？</p>
+<p>Guess what? No one knows.<br>猜猜看？没有人知道。</p>
+<p>Most of those questions puzzle me more now than ever.<br>现在，这些问题比以往任何时候都更让我感到困惑。</p>
+<p>But diving into them is exciting because it takes you to the edge of knowledge, and you never know what you’ll find there.<br>但深入探究这些问题非常激动人心，因为这会将你带到知识的边缘，而你永远不知道会在那里发现什么。</p>
+<p>So, two questions that no one on Earth knows the answer to.<br>那么，有两个问题，地球上的任何人都不知道答案。</p>
+<p>How many universes are there?<br>到底存在多少个宇宙？</p>
+<p>Sometimes when I’m on a long plane flight, I gaze out at all those mountains and deserts and try to get my head around how vast our Earth is.<br>有时，当我在长途飞行中，我会凝视着那些山脉和沙漠，试图理解我们地球的辽阔。</p>
+<p>And then I remember that there’s an object we see every day that would literally fit one million Earths inside it the Sun.<br>然后我会想起，我们每天都能看到的一个天体，它的内部实际上可以容纳一百万个地球——那就是太阳。</p>
+<p>It seems impossibly big.<br>它似乎大得难以想象。</p>
+<p>But in the great scheme of things, it’s a pinprick, one of about billion stars in the Milky Way galaxy, which you can see on a clear night as a pale white mist stretched across the sky.<br>但在宏大的宇宙图景中，太阳不过是一个微不足道的点，它是银河系中大约一千亿颗恒星之一，在晴朗的夜晚，你可以看到它像一片淡淡的白色薄雾横跨在天空中。</p>
+<p>And it gets worse.<br>而且情况还远不止如此。</p>
+<p>There are maybe billion galaxies detectable by our telescopes.<br>通过我们的望远镜可能探测到的星系数量也许有上亿个。</p>
+<p>So if each star was the size of a single grain of sand, just the Milky Way has enough stars to fill a -foot by -foot stretch of beach three feet deep with sand.<br>所以，如果每颗恒星的大小相当于一粒沙子，仅银河系中的恒星就足以填满一个长宽各英尺、深三英尺的沙滩。</p>
+<p>And the entire Earth doesn’t have enough beaches to represent the stars in the overall universe.<br>而且整个地球上的沙滩加起来也不足以代表整个宇宙中的恒星数量。</p>
+<p>Such a beach would continue for literally hundreds of millions of miles.<br>这样的沙滩实际上会延伸数亿英里之长。</p>
+<p>Holy Stephen Hawking, that is a lot of stars.<br>天哪，这真是难以置信的恒星数量，简直令人敬畏如斯蒂芬·霍金。</p>
+<p>But he and other physicist snow believe in a reality that is unimaginably bigger still.<br>但是他和其他物理学家现在相信，现实世界比我们所能想象的还要庞大得多。</p>
+<p>I mean, first of all, the billion galaxies within range of our telescopes are probably a minuscule fraction of the total.<br>我的意思是，首先，我们望远镜所能观测到的数十亿个星系，可能只是总数中微不足道的一小部分。</p>
+<p>Space itself is expanding at an accelerating pace.<br>宇宙空间本身正在以加速的速度膨胀。</p>
+<p>The vast majority of the galaxies are separating from us so fast that light from them may never reach us.<br>绝大多数星系正以如此快的速度远离我们，以至于它们的光可能永远无法到达我们这里。</p>
+<p>Still, our physical reality here on Earth is intimately connected to those distant, invisible galaxies.<br>然而，我们地球上物理现实与那些遥远、不可见的星系紧密相连。</p>
+<p>We can think of them as part of our universe.<br>我们可以将它们视为我们宇宙的一部分。</p>
+<p>They make up a single, giant edifice obeying the same physical law sand all made from the same types of atoms, electrons, protons, quarks, neutrinos, that make up you and me.<br>它们构成了一个单一的、巨大的结构，遵循着相同的物理定律，而且都是由构成你我的相同类型的原子、电子、质子、夸克和中微子等组成。</p>
+<p>However, recent theories in physics, including one called string theory, are now telling us there could be countless other universes built on different types of particles, with different properties, obeying different laws.<br>然而，物理学中的最新理论，包括所谓的弦理论，现在告诉我们可能存在无数其他由不同类型的粒子构建的宇宙，它们具有不同的属性，遵循不同的定律。</p>
+<p>Most of these universes could never support life, and might flash in and out of existence in a nanosecond.<br>这些宇宙中的大多数可能永远无法支持生命，它们可能在纳秒之间闪现然后消失。</p>
+<p>But nonetheless, combined, they make up a vast multiverse of possible universes in up to dimensions, featuring wonders beyond our wildest imagination.<br>但尽管如此，它们结合起来构成了一个广阔的多宇宙，其中可能存在高达维度不同的宇宙，展现了超乎我们最狂野想象之外的奇迹。</p>
+<p>The leading version of string theory predicts a multiverse made up of to the universes.<br>弦理论的主要版本预测了一个由多达宇宙组成的多元宇宙。</p>
+<p>That’s a one followed by zeros, a number so vast that if every atom in our observable universe had its own universe, and all of the atoms in all those universes each had their own universe, and you repeated that for two more cycles, you’d still be at a tiny fraction of the total, namely, one trillion trillion trilliontrillion trillion trillion trilliontrillion trillion trillion trilliontrillion trillion trillion trillionth.<br>这是一个1后面跟着个0的数字，如此庞大，以至于如果我们的可观测宇宙中的每一个原子都有自己的宇宙，并且所有那些宇宙中的每一个原子又都有自己的宇宙，如果你将这个过程再重复两次，你得到的总数仍然只是总量的一个小小部分，具体来说，是千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一的千万亿分之一。</p>
+<p>But even that number is minuscule compared to another number infinity.<br>但即使这个数字与另一个数字——无穷大相比，也是微不足道的。</p>
+<p>Some physicists think the space-time continuum is literally infinite and that it contains an infinite number of so-called pocket universes with varying properties.<br>一些物理学家认为，时空连续体实际上是无限的，并且它包含无限多个所谓的口袋宇宙，这些宇宙具有不同的属性。</p>
+<p>How’s your brain doing?<br>你的大脑感觉如何？是不是被这些概念弄得有些晕头转向？</p>
+<p>Quantum theory adds a whole new wrinkle.<br>量子理论又增添了全新的复杂性。</p>
+<p>I mean, the theory’s been proven true beyond all doubt, but interpreting it is baffling, and some physicists think you can only un-baffle it if you imagine that huge numbers of parallel universes are being spawned every moment, and many of these universes would actually be very like the world we’re in, would include multiple copies of you.<br>我的意思是，这个理论已经被证明是毫无疑问的正确，但解释它却令人困惑，一些物理学家认为，只有想象在每一刻都在产生大量的平行宇宙，你才能解开这个困惑。许多这样的宇宙实际上会非常像我们所在的这个世界，甚至会包括你的多个副本。</p>
+<p>In one such universe, you’d graduate with honors and marry the person of your dreams, and in another, not so much.<br>在这样一个宇宙中，你可能会以优异的成绩毕业，并与你梦想中的伴侣结婚；而在另一个宇宙中，情况可能就大不相同了。</p>
+<p>Well, there are still some scientists who would say, hogwash.<br>嗯，仍有一些科学家会说，这些都是胡说八道。</p>
+<p>The only meaningful answer to the question of how many universes there are is one.<br>关于宇宙数量的问题，唯一有意义的答案就是只有一个。</p>
+<p>Only one universe.<br>只有一个宇宙。</p>
+<p>And a few philosophers and mystics might argue that even our own universe is an illusion.<br>一些哲学家和神秘主义者可能会争论说，甚至我们自己的宇宙都是一个幻象。</p>
+<p>So, as you can see, right now there is no agreement on this question, not even close.<br>所以，正如你所看到的，关于这个问题，目前还没有达成任何共识，甚至相差甚远。</p>
+<p>All we know is the answer is somewhere between zero and infinity.<br>我们所知道的是，答案在零和无穷大之间。</p>
+<p>Well, I guess we know one other thing.<br>嗯，我想我们还知道另一件事。</p>
+<p>This is a pretty cool time to be studying physics.<br>这是一个研究物理学非常酷的时代。</p>
+<p>We just might be undergoing the biggest paradigm shift in knowledge that humanity has ever seen.<br>我们可能正在经历人类历史上知识领域最大的范式转变。</p>
+<p>Why can’t we see evidence of alien life?<br>为什么我们看不到外星生命的证据？</p>
+<p>Somewhere out there in that vast universe there must surely be countless other planets teeming with life.<br>在那广阔的宇宙中的某个地方，肯定有无数其他的行星充满了生命。</p>
+<p>But why don’t we see any evidence of it?<br>但为什么我们看不到任何外星生命的证据呢？</p>
+<p>Well, this is the famous question asked by Enrico Fermi in Where is everybody?<br>嗯，这就是恩里科·费米提出的著名问题：“大家都在哪儿呢？”</p>
+<p>Conspiracy theorists claim that UFOs are visiting all the time and the reports are just being covered up, but honestly, they aren’t very convincing.<br>阴谋论者声称不明飞行物（UFOs）一直在访问地球，而这些报告只是被掩盖了，但老实说，这些说法并不怎么令人信服。</p>
+<p>But that leaves a real riddle.<br>但这留下了一个真正的谜团。</p>
+<p>In the past year, the Kepler space observatory has found hundreds of planets just around nearby stars.<br>在过去的几年里，开普勒太空望远镜已经在附近的恒星周围发现了数百颗行星。</p>
+<p>And if you extrapolate that data, it looks like there could be half a trillion planets just in our own galaxy.<br>如果你对这些数据加以外推，看起来在我们的银河系中可能会有五百亿颗行星。</p>
+<p>If any one in , has conditions that might support a form of life, that’s still million possible life-harboring planets right here in the Milky Way.<br>如果在这些行星中的任何一个，有支持某种生命形式的条件，那仍然意味着在我们的银河系中可能有上百万个可能存在生命的行星。</p>
+<p>So here’s the riddle our Earth didn’t form until about nine billion years after the Big Bang.<br>所以这里就是谜团：我们的地球直到大爆炸之后大约90亿年才形成。</p>
+<p>Countless other planets in our galaxy should have formed earlier, and given life a chance to get underway billions, or certainly many millions of years earlier than happened on Earth.<br>我们银河系中的无数其他行星应该更早形成，并且给生命以数十亿年，或者至少数百万年的时间来发展，比地球上生命出现的时间要早得多。</p>
+<p>If just a few of them had spawned intelligent life and started creating technologies, those technologies would have had millions of years to grow in complexity and power.<br>如果其中只有少数几个行星孕育出了智能生命并开始创造技术，那么这些技术就会有数百万年的时间来增长其复杂性和能力。</p>
+<p>On Earth, we’ve seen how dramatically technology can accelerate in just years.<br>在地球上，我们已经看到技术如何在短短几年内急剧加速发展。</p>
+<p>In millions of years,an intelligent alien civilization could easily have spread out across the galaxy, perhaps creating giant energy-harvesting artifacts or fleets of colonizing spaceships or glorious works of art that fill the night sky.<br>在数百万年的时间里，一个智能外星文明可能已经轻易地遍布整个银河系，或许创造了巨大的能量收集器、殖民宇宙的舰队，或者充满夜空的辉煌艺术作品。</p>
+<p>At the very least, you’d think they’d be revealing their presence, deliberately or otherwise, through electromagnetic signals of one kind or another.<br>至少，你会认为他们会在有意或无意间通过一种或多种电磁信号揭示他们的存在。</p>
+<p>And yet we see no convincing evidence of any of it.<br>然而，我们看不到任何令人信服的证据。</p>
+<p>Why?<br>为什么？</p>
+<p>Well, there are numerous possible answers, some of them quite dark.<br>嗯，有许多可能的答案，其中一些相当阴暗。</p>
+<p>Maybe a single, super intelligent civilization has indeed taken over the galaxy and has imposed strict radio silence because it’s paranoid of any potential competitors.<br>也许有一个超级智能文明确实已经控制了银河系，并且实施了严格的无线电静默，因为它对任何潜在的竞争者都感到偏执。</p>
+<p>It’s just sitting there ready to obliterate anything that becomes a threat.<br>它就在那里，随时准备消灭任何成为威胁的东西。</p>
+<p>Or maybe they’re not that intelligent, or perhaps the evolution of an intelligence capable of creating sophisticated technology is far rarer than we’ve assumed.<br>或者也许它们并没有那么智能，又或许能够创造出精密技术的智能生命的进化比我们假设的要罕见得多。</p>
+<p>After all, it’s only happened once on Earth in four billion years.<br>毕竟，在地球四十亿年的历史中，这样的智能生命只出现过一次。</p>
+<p>Maybe even that was incredibly lucky.<br>也许这本身就是难以置信的幸运。</p>
+<p>Maybe we are the first such civilization in our galaxy.<br>也许我们是银河系中第一个这样的文明。</p>
+<p>Or, perhaps civilization carries with it the seeds of its own destruction through the inability to control the technologies it creates.<br>或者，也许文明本身就携带了自我毁灭的种子，因为它无法控制自己创造的技术。</p>
+<p>But there are numerous more hopeful answers.<br>但也有许多更加乐观的答案。</p>
+<p>For a start, we’re not looking that hard, and we’re spending a pitiful amount of money on it.<br>首先，我们的搜寻工作并不那么尽力，我们在这一领域投入的资金少得可怜。</p>
+<p>Only a tiny fraction of the stars in our galaxy have really been looked at closely for signs of interesting signals.<br>我们银河系中只有极小一部分恒星被仔细搜寻过是否有有趣的信号。</p>
+<p>And perhaps we’re not looking the right way.<br>也许我们的搜寻方式并不正确。</p>
+<p>Maybe as civilizations develop, they quickly discover communication technologies far more sophisticated and useful than electromagnetic waves.<br>也许随着文明的发展，它们很快就会发现比电磁波更复杂、更有用的通信技术。</p>
+<p>Maybe all the action takes place inside the mysterious recently discovered dark matter, or dark energy, that appear to account for most of the universe’s mass.<br>也许所有活动都在最近发现的神秘的暗物质或暗能量中进行，这些物质和能量似乎构成了宇宙大部分的质量。</p>
+<p>Or, maybe we’re looking at the wrong scale.<br>或者，也许我们的关注点规模不对。</p>
+<p>Perhaps intelligent civilizations come to realize that life is ultimately just complex patterns of information interacting with each other in a beautiful way, and that that can happen more efficiently at a small scale.<br>也许智能文明最终会意识到，生命归根结底只是复杂的信息模式以美丽的方式相互作用，而这种相互作用在小尺度上可以更高效地进行。</p>
+<p>So, just as on Earth, clunky stereo systems have shrunk to beautiful, tiny iPods, maybe intelligent life itself, in order to reduce its footprint on the environment, has turned itself microscopic.<br>所以，就像在地球上，笨重的立体声音响系统已经缩小成了美丽的小型iPods，也许智能生命本身为了减少对环境的影响，已经变得微不足道。</p>
+<p>So the Solar System might be teeming with aliens, and we’re just not noticing them.<br>因此，太阳系可能充满了外星人，而我们只是没有注意到他们。</p>
+<p>Maybe the very ideas in our heads are a form of alien life.<br>也许我们头脑中的想法本身就是一种外星生命的形态。</p>
+<p>Well, okay, that’s a crazy thought.<br>好吧，这个想法确实有点疯狂。</p>
+<p>The aliens made me say it.<br>是外星人让我这么说的。</p>
+<p>But it is cool that ideas do seem to have a life all of their own and that they outlive their creators.<br>但有趣的是，想法似乎确实拥有自己的生命，并且它们比创造者本身更长久。</p>
+<p>Maybe biological life is just a passing phase.<br>也许生物生命只是一个短暂的阶段。</p>
+<p>Well, within the next years, we could start seeing real spectroscopic information from promising nearby planets that will reveal just how life-friendly they might be.<br>在未来几年内，我们可能会开始看到来自附近有前景行星的真实光谱信息，这将揭示它们对生命有多么友好。</p>
+<p>And meanwhile, SETI, the Search for Extra terrestrial Intelligence, is now releasing its data to the public so that millions of citizen scientists, maybe including you, can bring the power of the crowd to join the search.<br>同时，搜寻外星智能生命（SETI）现在正在向公众发布其数据，以便数百万名公民科学家，也许包括您，可以利用众人的力量加入到搜寻工作中。</p>
+<p>And here on Earth, amazing experiments are being done to try to create life from scratch, life that might be very different from the DNA forms we know.<br>在地球上，人们正在进行惊人的实验，试图从零开始创造生命，这种生命可能与我们所知的DNA形式大不相同。</p>
+<p>All of this will help us understand whether the universe is teeming with life or whether, indeed, it’s just us.<br>所有这些都将帮助我们理解宇宙是否充满了生命，或者实际上只有我们存在。</p>
+<p>Either answer, in its own way, is awe-inspiring, because even if we are alone, the fact that we think and dream and ask these questions might yet turn out to be one of the most important facts about the universe.<br>无论哪个答案，都以它自己的方式令人敬畏，因为即使我们独自存在，我们思考、梦想和提出这些问题的事实，可能最终会成为关于宇宙最重要的真相之一。</p>
+<p>And I have one more piece of good news for you.<br>还有一条好消息要告诉您。</p>
+<p>The quest for knowledge and understanding never gets dull.<br>对知识和理解的追求永远不会变得乏味。</p>
+<p>It doesn’t. It’s actually the opposite.<br>确实不会。实际上恰恰相反。</p>
+<p>The more you know, the more amazing the world seems.<br>你知道得越多，世界就显得越神奇。</p>
+<p>And it’s the crazy possibilities, the unanswered questions, that pull us forward.<br>正是这些疯狂的可能性，这些未解答的问题，推动着我们不断前进。</p>
+<p>So stay curious.<br>所以，保持好奇心。</p>
+]]></content>
       <categories>
-          
-          <category> 原创 </category>
-          
-          <category> 诗词 </category>
-          
+        <category>科学探索</category>
+        <category>宇宙</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 原创 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>有一种生活</title>
-      <link href="/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/"/>
-      <url>/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
-      
-        <content type="html"><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 原创 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>暑期帮WYH整电脑</title>
-      <link href="/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/"/>
-      <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
-      
-        <content type="html"><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>暑期帮ZQY整电脑</title>
-      <link href="/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEZQY%E6%95%B4%E7%94%B5%E8%84%91/"/>
-      <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEZQY%E6%95%B4%E7%94%B5%E8%84%91/</url>
-      
-        <content type="html"><![CDATA[<h1 id="暑期帮ZQY整电脑"><a href="#暑期帮ZQY整电脑" class="headerlink" title="暑期帮ZQY整电脑"></a>暑期帮ZQY整电脑</h1><p>今天履行诺言，帮ZQY搞电脑，一台是普通兼容机，大概看了下没啥大问题，QY希望重装系统，，小生遂施展GHOST大法，很快就搞定，<br>    接下来是联想的本本，配制还不错，手感挺好，原装正版VISTA，主人欲降级改装为XP，不知道Microsoft公司是何感想，顺手翻了一下硬盘文件，发现一个GHO文件，看一下大小，2G多，一定不可能是VISTA了，估计是XP的镜像，用GHOST还原一下，OK，恢复初装状态，系统问题总算搞定。<br>    接着，我们骑电驴到大利嘉，买了无线路由，说实话，小生还重没配制过路由，所以向店里的技术员要了张名片，不懂可以问嘛，不过，小生对自己的实力还是很有信心的，回到QY家，很快将硬件搭好，软件方面，进入路由配置，设网关，掩码，分配地址，输密码，重启路由，测试，OK，一切顺利，台式机与本本都能无线上网，接着，配置网络邻居，再搭个内网FTP，哇几乎完美，最最后，没忘记给路由上个防火墙，嘿嘿，小生够负责的了。<br>    随便玩了一会儿，收工回家。<br>    总结，今天，小生第一次配制无线路由，且成功完成，填补了小生计算机无线网络搭建的空白！！！</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>双语</tag>
+        <tag>宇宙</tag>
+        <tag>生命</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>暑期帮ZQY整电脑</title>
+    <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEZQY%E6%95%B4%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="暑期帮ZQY整电脑"><a href="#暑期帮ZQY整电脑" class="headerlink" title="暑期帮ZQY整电脑"></a>暑期帮ZQY整电脑</h1><p>今天履行诺言，帮ZQY搞电脑，一台是普通兼容机，大概看了下没啥大问题，QY希望重装系统，，小生遂施展GHOST大法，很快就搞定，<br>    接下来是联想的本本，配制还不错，手感挺好，原装正版VISTA，主人欲降级改装为XP，不知道Microsoft公司是何感想，顺手翻了一下硬盘文件，发现一个GHO文件，看一下大小，2G多，一定不可能是VISTA了，估计是XP的镜像，用GHOST还原一下，OK，恢复初装状态，系统问题总算搞定。<br>    接着，我们骑电驴到大利嘉，买了无线路由，说实话，小生还重没配制过路由，所以向店里的技术员要了张名片，不懂可以问嘛，不过，小生对自己的实力还是很有信心的，回到QY家，很快将硬件搭好，软件方面，进入路由配置，设网关，掩码，分配地址，输密码，重启路由，测试，OK，一切顺利，台式机与本本都能无线上网，接着，配置网络邻居，再搭个内网FTP，哇几乎完美，最最后，没忘记给路由上个防火墙，嘿嘿，小生够负责的了。<br>    随便玩了一会儿，收工回家。<br>    总结，今天，小生第一次配制无线路由，且成功完成，填补了小生计算机无线网络搭建的空白！！！</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>有一种生活</title>
+    <url>/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
+]]></content>
+      <tags>
+        <tag>原创</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>随想</title>
+    <url>/2011/12/25/%E9%9A%8F%E6%83%B3/</url>
+    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#x72;&#64;&#x70;&#111;&#x77;&#101;&#x72;&#x6c;&#x6f;&#110;&#103;&#46;&#x66;&#122;&#46;&#102;&#x6a;&#x2e;&#99;&#x6e;">&#x63;&#x72;&#64;&#x70;&#111;&#x77;&#101;&#x72;&#x6c;&#x6f;&#110;&#103;&#46;&#x66;&#122;&#46;&#102;&#x6a;&#x2e;&#99;&#x6e;</a> </p>
+]]></content>
+  </entry>
 </search>
