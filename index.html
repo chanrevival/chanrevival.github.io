@@ -128,17 +128,17 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -218,6 +218,411 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">使用RMAN复制创建物理备用数据库无需关闭主数据库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-18 14:19:34 / 修改时间：14:58:15" itemprop="dateCreated datePublished" datetime="2024-11-18T14:19:34+08:00">2024-11-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">数据库技术</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="使用RMAN复制创建物理备用数据库无需关闭主数据库"><a href="#使用RMAN复制创建物理备用数据库无需关闭主数据库" class="headerlink" title="使用RMAN复制创建物理备用数据库无需关闭主数据库"></a>使用RMAN复制创建物理备用数据库无需关闭主数据库</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Oracle数据库 - 企业版 - 版本10.1.0.2至10.2.0.4 [10.1至10.2]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [12.1]<br>Oracle数据库 - 企业版 - 版本11.2.0.4至11.2.0.4 [11.2]<br>Oracle数据库 - 企业版 - 版本11.1.0.7至11.1.0.7 [11.1] </p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>以下说明描述了如何在不关闭主（生产）数据库的情况下，使用RMAN复制逐步创建物理备用数据库的过程。<br>Database Name :- prim<br>Primary db_unique_name :- prim<br>standby db_unique_name :- stdby<br>Primary Hostname :- raca.idc.oracle.com<br>standby Hostname :- core1.idc.oracle.com </p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/17/test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/17/test/" class="post-title-link" itemprop="url">测试页面</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-17 21:32:23" itemprop="dateCreated datePublished" datetime="2024-11-17T21:32:23+08:00">2024-11-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-18 10:20:08" itemprop="dateModified" datetime="2024-11-18T10:20:08+08:00">2024-11-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B5%8B%E8%AF%95/%E5%86%85%E9%83%A8%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">内部使用</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>228</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="测试页面"><a href="#测试页面" class="headerlink" title="测试页面"></a>测试页面</h2><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>姓名</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+<th>电话</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>火警</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td>110</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>急救</td>
+<td>120</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>cmcc</td>
+<td>10086</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h3><ul>
+<li><input disabled type="checkbox"> 没完成 </li>
+<li><input checked disabled type="checkbox"> 已完成</li>
+</ul>
+<p>这是<mark>一行文字</mark>呀。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/11/17/test/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/11/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -249,8 +654,21 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-15 21:19:37" itemprop="dateModified" datetime="2024-11-15T21:19:37+08:00">2024-11-15</time>
+                <time title="修改时间：2024-11-17 21:19:26" itemprop="dateModified" datetime="2024-11-17T21:19:26+08:00">2024-11-17</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">个人生活</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%B8%AA%E4%BA%BA%E7%94%9F%E6%B4%BB/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -258,7 +676,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>30</span>
+              <span>152</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -277,7 +695,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>我的个人主页于2024年11月11日正式搬迁到Hexo~~~</p>
+          <p>几乎从2000年时，就开始筹划建设个人主页，历经了frontpage、Dreamweaver、QQ空间。<br>目前，个人主页于2024年11月11日正式使用Hexo架构。<br>这周末从QQ空间上迁移了少量内容到Hexo测试，搞定了基础配置、发文、分类、标签等等。<br>还没搞定的有相册系统、评论系统、统计分析等。<br>慢慢来吧。</p>
 
       
     </div>
@@ -311,7 +729,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/11/11/doris/" class="post-title-link" itemprop="url">Doris</a>
+            <a href="/2024/11/11/doris/" class="post-title-link" itemprop="url">Doris坏盘换盘方法</a>
         </h2>
 
         <div class="post-meta">
@@ -328,7 +746,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-17 20:30:50" itemprop="dateModified" datetime="2024-11-17T20:30:50+08:00">2024-11-17</time>
+                <time title="修改时间：2024-11-18 10:22:48" itemprop="dateModified" datetime="2024-11-18T10:22:48+08:00">2024-11-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,11 +754,15 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">技术文章</span></a>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">数据库技术</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
                 </span>
             </span>
 
@@ -558,184 +980,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chan Revival">
-      <meta itemprop="description" content="描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan Revival Sky">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/" class="post-title-link" itemprop="url">心未泯，梦不灭</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-09-12 21:08:36" itemprop="dateCreated datePublished" datetime="2018-09-12T21:08:36+08:00">2018-09-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-16 01:15:19" itemprop="dateModified" datetime="2024-11-16T01:15:19+08:00">2024-11-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8E%9F%E5%88%9B/" itemprop="url" rel="index"><span itemprop="name">原创</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8E%9F%E5%88%9B/%E8%AF%97%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">诗词</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>77</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chan Revival">
-      <meta itemprop="description" content="描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan Revival Sky">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/09/12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/" class="post-title-link" itemprop="url">大学生活1_初到农大</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-09-12 21:08:08" itemprop="dateCreated datePublished" datetime="2018-09-12T21:08:08+08:00">2018-09-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-15 21:16:00" itemprop="dateModified" datetime="2024-11-15T21:16:00+08:00">2024-11-15</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>200</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -805,30 +1049,30 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -839,7 +1083,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Title</a>
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
         </li>
     </ul>
   </div>
@@ -872,12 +1116,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
