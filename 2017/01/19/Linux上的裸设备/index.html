@@ -23,16 +23,20 @@
   <meta name="description" content="Linux 上的裸设备什么是裸设备？裸设备，也称为裸分区，是一个未被挂载且不由Linux文件系统（如ext2&#x2F;ext3、reiserfs）或Oracle集群文件系统（OCFS、OCFS2）写入的磁盘分区，而是通过字符设备驱动程序直接访问。应用程序负责组织数据如何写入磁盘分区的细节。 如何识别裸设备？所有硬件设备看起来都像是常规文件；它们可以使用与操作文件相同的、标准的系统调用来打开、关闭">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux上的裸设备">
-<meta property="og:url" content="https://chanrevival.github.io/2024/11/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/index.html">
+<meta property="og:url" content="https://chanrevival.github.io/2017/01/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/index.html">
 <meta property="og:site_name" content="Chan Revival Sky">
 <meta property="og:description" content="Linux 上的裸设备什么是裸设备？裸设备，也称为裸分区，是一个未被挂载且不由Linux文件系统（如ext2&#x2F;ext3、reiserfs）或Oracle集群文件系统（OCFS、OCFS2）写入的磁盘分区，而是通过字符设备驱动程序直接访问。应用程序负责组织数据如何写入磁盘分区的细节。 如何识别裸设备？所有硬件设备看起来都像是常规文件；它们可以使用与操作文件相同的、标准的系统调用来打开、关闭">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-11-19T13:31:42.000Z">
-<meta property="article:modified_time" content="2024-11-19T13:55:19.111Z">
+<meta property="article:published_time" content="2017-01-19T13:31:42.000Z">
+<meta property="article:modified_time" content="2024-11-19T14:04:21.183Z">
 <meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="OS">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="裸设备">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chanrevival.github.io/2024/11/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/">
+<link rel="canonical" href="https://chanrevival.github.io/2017/01/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/">
 
 
 <script id="page-configurations">
@@ -130,17 +134,17 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">26</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -221,7 +225,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2017/01/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -243,9 +247,28 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-11-19 21:31:42 / 修改时间：21:55:19" itemprop="dateCreated datePublished" datetime="2024-11-19T21:31:42+08:00">2024-11-19</time>
+              <time title="创建时间：2017-01-19 21:31:42" itemprop="dateCreated datePublished" datetime="2017-01-19T21:31:42+08:00">2017-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-11-19 22:04:21" itemprop="dateModified" datetime="2024-11-19T22:04:21+08:00">2024-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">技术文章</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
             </span>
 
           
@@ -358,6 +381,12 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/OS/" rel="tag"># OS</a>
+              <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+              <a href="/tags/%E8%A3%B8%E8%AE%BE%E5%A4%87/" rel="tag"># 裸设备</a>
+          </div>
 
         
 
@@ -365,10 +394,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/11/19/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8UDEV%EF%BC%88%E9%9D%9EASMLIB%EF%BC%89%E8%AE%BE%E7%BD%AE%E5%88%86%E5%8C%BA%E5%8C%96%E7%9A%84Linux%E5%9D%97%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%B0%86%E5%AE%83%E4%BB%AC%E5%88%86%E9%85%8D%E7%BB%99ASM%EF%BC%9F/" rel="prev" title="如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？">
-      <i class="fa fa-chevron-left"></i> 如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？
+    <a href="/2014/04/19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/" rel="prev" title="AIX调整文件系统参考_V1.4">
+      <i class="fa fa-chevron-left"></i> AIX调整文件系统参考_V1.4
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2017/08/16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/" rel="next" title="使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0">
+      使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -442,20 +474,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -509,12 +541,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">51k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -605,7 +637,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'GitTalkComment',
       owner       : 'chanrevival',
       admin       : ['chanrevival'],
-      id          : 'ca23ac476b5ac2a0cb45b5f7e0556435',
+      id          : '432f687e70a956fff660b61a2acee2c8',
         language: '',
       distractionFreeMode: true
     });
