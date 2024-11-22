@@ -147,7 +147,7 @@
       <link href="/2024/11/11/hello-world/"/>
       <url>/2024/11/11/hello-world/</url>
       
-        <content type="html"><![CDATA[<p>几乎从2000年时，就开始筹划建设个人主页，历经了frontpage、Dreamweaver、QQ空间。<br>目前，个人主页于2024年11月11日正式使用Hexo架构。<br>这周末从QQ空间上迁移了少量内容到Hexo测试，搞定了基础配置、发文、分类、标签等等。<br>2024-11-18，搞定了评论系统和统计分析。<br>还没搞定的有相册系统等。<br>慢慢来吧。</p>]]></content>
+        <content type="html"><![CDATA[<p>2024-11-22 13:47<br>Gittalk评论系统有个问题，就是必须要登录。<br>准备换成valine。</p><HR><p>2024-11-18，搞定了评论系统和统计分析。<br>还没搞定的有相册系统等。<br>慢慢来吧。</p><HR><p>几乎从2000年时，就开始筹划建设个人主页，历经了frontpage、Dreamweaver、QQ空间。<br>目前，个人主页于2024年11月11日正式使用Hexo架构。<br>这周末从QQ空间上迁移了少量内容到Hexo测试，搞定了基础配置、发文、分类、标签等等。<br>还没搞定的有评论系统、统计分析、相册系统等。<br>慢慢来吧。</p>]]></content>
       
       
       <categories>
