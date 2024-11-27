@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="内容已加密，请输入密码后阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI提示词">
+<meta property="og:url" content="https://chanrevival.github.io/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/index.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="内容已加密，请输入密码后阅读">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-26T14:13:49.000Z">
+<meta property="article:modified_time" content="2024-11-26T14:27:57.659Z">
+<meta property="article:author" content="Chan Revival">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chanrevival.github.io/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>AI提示词 | Chan Revival Sky</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN485BL2P4');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chan Revival Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天上星，亮晶晶，永灿烂，长安宁。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">28</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-internal_use">
+
+    <a href="/internal_use" rel="section"><i class="fa fa-fw"></i>internal_use</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chanrevival/" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          AI提示词
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-26 22:13:49 / 修改时间：22:27:57" itemprop="dateCreated datePublished" datetime="2024-11-26T22:13:49+08:00">2024-11-26</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="f5f41c132dffe398141c737f8c1019b1890d743031d12fc84757337f908fe98c">73d38b3f522cc90d5ddd451cc52bad51427e973db25673c5f78d06acbfbc4cebf4a4ba1a87c92abf6c3a0737e0a7e6a6936695645889bdabef5a3ace44ac7ecd34e627fb33ae6ab91a03604e184292954e24456e53c84feec8d2ffafa45f476e2149636d130754bd21c02db69e38439429968b0fcd73b51a5d0ca4e9596934a5bcb2e9ae78ad38af09035c265669a3306a8d7a54e9fe54000199075b26f70f504accbbec18da451960aadc189ba70ffeca95b25664418413271bd019e21528193c30109032489e02f9fa473f0db4e79acc104225e9d9a2e9da5f2e1338d844319e5e67f6ab8ed26e40c4eda771286886f2b451092603ca549ebc5d7892aebd550a13e116a43aba6079a6d96918ebb88fcff30b81cbc470ce7ee97eb7a7160fba91e92687cb9e8d76a65445bd4a679a16698441c740c22b1d4b5805635c135fb573a3f4f8d05f34cd644ebe3a7b5cb7b76fb7241e97d764f8fef9451ddaeabb542ea06609833f7ccb536b11678a5813b254ccdb6b75e80406dede28d56359aab621980dd1b7d116d33af32afab2bf9c60e9e57fddf7bd4b08205c70aa2c399118b631f40d07c4ebf5f3263ee14f75a8d0d60ce4254207ee61ed02b4aff64b3734701dfb4b6bc8055edd7db1d9fa232f70b3e40f0cbce08a192eab455e234723d62c714a02c395ddbb29bf025f8fe9b0292b3bde1b9f65541addf2491626644a5c4357db0708439b7b4b0890433b96ffdbcafd346727704a2393f140f5cadd29a3c8e168aa386de699e5bccc91036a0d0e747afcb06d81b7b03a5b66477d0a88a905676b535b1c7d8701bfc904c9553da2bfda7e831541b0bba3cebebece8d81593eb6962d6db40842e2a379661c32d8d8f2b67611f5f3316ab8d0b52824617e71460d041ced0e022be10c103078bcb2a1baa78f2fd3305e87d47adcb4c75bd34f8fa24a44e67088dc47c1269b46877c22c0419dbe51307ed4d246334c598d3531bb14747124420787dfae9571e5304abc672f9fe6e4828f8c16cb6e8a554f7c08d3854d0f306da91a0f47ce79869d2f246012ce811710d15a6db971e5d534bdd73849d276bf7e98778b8cabd3dc05cf70e0a1b6402b5f19ec5d94e3785a539dad796356b0539c9de0efa19d37ffb8ecedf0a61374354bcdf4b22a5f0b461e8908c587a9b009f62df6a7db26f088b53cce4a9c0875c09da50b29dafe85145065e7dadd064cd254f989e1c3603da70933de7f356fb6d6542fd139ff9584a21b84d502e6f0ca91e2dee84dda4d08fc17d65054a5f6efd9aaee28d0aac855a111fcbf3639aa1902f68334a7a002f8aa466cee694202dd4ba41fac76f3e85d7d0a8ec3bae3381c55918c9389772d62ae7ed88de67963b9b84d7379cc1494ad33dc199c77456cccf7818130753ea4bc3ca7229752f0179993c076e6e754ae7623ec05a4b33bdb68db65d886d417660777dd79f2fc51a798b72eeb7c29e8e4eaebcb4ebf49e6847d06e9492670c512b45b5e5979752bd27cb0cca800fd909431ecac924e23c3243f497f5ca6159ace85017d772734283415eeeef0dd80b84880bcd7849eeac7926e6944f9c9a93b691d04edcc5335aa5c5083f36189d4b4d3d05e0a783dafb1229adf40aeaf40331aff53634e5205327413f0da4cd0121ab9a3c2b52467c94925c486b5ddbd89bff78dc7f9ad56530399ced48856cf60e2a30fa94520f769def2e65454f14403a0d4d3863de781102375123ce19f25b84dc972437b0c9a0bf5932d6f9fe1730b0f9f2029da70a722b54e8ea2b9004c5d5cdb39bbbc130514a29d4ed091bb5bd67d7f9274e47828926dbd145bec2b9cce2d58ffcc025acd13cfa0b921de034f627c0ea28e10cf5da0544dae570c605025bdae22ae1babea555055c9bf0856f9f1ced939611743c058f2aafea1419474c2e3a22357aaed8328a71d82d08fa5d5a78d5cda9a5d33824287bce934db48d1f1ee1bff90498e845afe39f9b3e5bbb274f8a569b4c94b7392c5efa8fffb57441501aace54b3f834e84979dc28de05c642efe61fa1eef6207320a14432882523368e3b6aafe9b632f54742c15200b997591aacff6fa91bccbce289543339363642fd6acec1da4909d01ec96eac9e87f414611e8d6d05af37b7d9ecd2f1c752d65cb96c2ae0d0f5436e5af4a1c325d7829964f20c092d0bd8b91ff9f0aa0d3ee0c84315ec30d0b3dbd2984511528c5b4f64b52462365ee131d22eb2544457a3f101a32911dba6a6f6b65fc22999afef0bf346caa5c93fc0f78745dc3d1205a338435eec910b36cb81453362b1c7a7095a7694e8853ebeb99e4d53880ec5077a48295ebd319ff11d41667a7fe68b150263f0bd1cafa1f79cf3b112a911518e07d78fe66f00433caa0e953a0694435be8540c4ecccfda4f74ca631ed6b0d5a46c7ef7aae183f4edd8d27e12a5d1a19bb1908f05ab9d21b40ffa886401a54ee79c7695238e382590c13704a193e1b8501cc646aa3f2511ead5ee566136d54b52c102ee5bfea8828b02ef3a2d0ab3a3f21256b715a26c1442a3a8cffc4b25c629cc128326cf4ce7adba0b9b09c7a70a84bed9b1917d3ab82fb207e3e37840d9cf062716619d0f4caf5478062e239f9114050a82db721562d3bc1edefe757c57d4e5cf12339338ae5c5ae5fb3c8e4c4a6bfe83ac98a30de4130ac637fbd22a59b0b6a3e546952338a147638587125630e6a4dd012dfb4a1a5b41a197549df94c6cb5c04b9312735f63f8ee07d26168f677f9128e75d79b6fbd6a858f11a75be991431c73a6edc5ff53201a35ac30a8c8ab8fc0ab9a11547d1a05ac367597bd8978a7ec722d5337603d993c328f0855bfc7291f9bf67d2e8b74a9c71e8f14f3601d0b33f8d5261842bc096c6b6bba58977e1f7778cdd139887848ce2f2ca539c8696dd6a3f037ac261aca954117198bbb4e3b31c51c72e546ac3eba9cf96c61ca2a009c4e8c1a593d8e3ca0edb5ee832eeb4f4a60e2bb4e85fb79ac708a08a4f8379f4bff66768798cbdd5f376c5935e7ea112c3b1135df7b06f1cb5ab1a66640c1d5ea90d112d41ad6a06584dc3a2f059eadbef9c2548f15f94b9dd6920ed341263db3ea556ae619de6ef176bae0dc794f0708655470c533257538090bec5289ce5beed55864a8430415db9a9ca6f8e2cea636e13f6b4143978cd378ae4beb0e9edb384dacc7ab39dca91f353cc6c68948516a679baca61dda025929f0eadac8e04e5cdf9dc7ace3c716cd74f5a0e9d7f84219131b32b419cab83846f821b39c5db9ba427e6e6003c6c5e073a7d8b3d74bad6023723d0edbf47c49021179bb9496fbe80c48df85435e5945e2ec3f85dccebfd69ca945df1704b8da514ab55c37c284043a44aaa6ffaa29ec710de767dbe1ff9e9a64f66df3ea14a12446eab23b24376ddb57cd5850e397f8edc60ac499b63a9b48a5e7f746cf45069aba407c87565db78d16abd45e7c68685519f61a7df471d4766259d05467a25d482c79dec4406d37b98c13320e68a795</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">内容已加密，请输入密码后阅读</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/11/26/%E4%BD%BF%E7%94%A8yum%E4%B8%8B%E8%BD%BDrpm%E5%8C%85/" rel="prev" title="使用yum下载rpm包">
+      <i class="fa fa-chevron-left"></i> 使用yum下载rpm包
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/11/27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/" rel="next" title="PostgreSQL的pageinspect插件">
+      PostgreSQL的pageinspect插件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chan Revival</p>
+  <div class="site-description" itemprop="description">描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Revival Sky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">56k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">51 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'Ov23li6MSfENmb9Y66d7',
+      clientSecret: '4c5a5994bd199c8fcc5500a80209374b718b771a',
+      repo        : 'GitTalkComment',
+      owner       : 'chanrevival',
+      admin       : ['chanrevival'],
+      id          : 'fe74d101ec7b0eeca0169d459046caed',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

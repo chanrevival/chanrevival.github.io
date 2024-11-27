@@ -128,17 +128,17 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">28</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">32</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -219,6 +219,254 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/" class="post-title-link" itemprop="url">PostgreSQL查看表的膨胀率</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-27 22:34:07 / 修改时间：22:37:29" itemprop="dateCreated datePublished" datetime="2024-11-27T22:34:07+08:00">2024-11-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">数据库技术</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>651</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="PostgreSQL查看表的膨胀率"><a href="#PostgreSQL查看表的膨胀率" class="headerlink" title="PostgreSQL查看表的膨胀率"></a>PostgreSQL查看表的膨胀率</h1><p>查看表膨胀（对所有表进行膨胀率排序），取前10个</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    schemaname||<span class="string">&#x27;.&#x27;</span>||relname <span class="keyword">as</span> <span class="built_in">table_name</span>,</span><br><span class="line">    pg_size_pretty(pg_relation_size(schemaname||<span class="string">&#x27;.&#x27;</span>||relname)) <span class="keyword">as</span> table_size,</span><br><span class="line">    n_dead_tup,</span><br><span class="line">    n_live_tup,</span><br><span class="line">    round(n_dead_tup * <span class="number">100</span> / (n_live_tup + n_dead_tup),<span class="number">2</span>) <span class="keyword">AS</span> dead_tup_ratio</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    pg_stat_all_tables</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    n_dead_tup &gt;= <span class="number">1000</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> dead_tup_ratio <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查看单张表的膨胀率</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    schemaname||<span class="string">&#x27;.&#x27;</span>||relname <span class="keyword">as</span> <span class="built_in">table_name</span>,</span><br><span class="line">    pg_size_pretty(pg_relation_size(schemaname||<span class="string">&#x27;.&#x27;</span>||relname)) <span class="keyword">as</span> table_size,</span><br><span class="line">    n_dead_tup,</span><br><span class="line">    n_live_tup,</span><br><span class="line">    round(n_dead_tup * <span class="number">100</span> / (n_live_tup + n_dead_tup),<span class="number">2</span>) <span class="keyword">AS</span> dead_tup_ratio</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    pg_stat_all_tables</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    relname = <span class="string">&#x27;table_name&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/" class="post-title-link" itemprop="url">PostgreSQL的pageinspect插件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-27 22:28:31 / 修改时间：22:31:10" itemprop="dateCreated datePublished" datetime="2024-11-27T22:28:31+08:00">2024-11-27</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>375</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/" class="post-title-link" itemprop="url">AI提示词</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-26 22:13:49 / 修改时间：22:27:57" itemprop="dateCreated datePublished" datetime="2024-11-26T22:13:49+08:00">2024-11-26</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          内容已加密，请输入密码后阅读
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -513,294 +761,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chan Revival">
-      <meta itemprop="description" content="描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan Revival Sky">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/" class="post-title-link" itemprop="url">Python监控公网IP变化发QQ邮件通知</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-20 14:17:42 / 修改时间：14:22:08" itemprop="dateCreated datePublished" datetime="2024-11-20T14:17:42+08:00">2024-11-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">编程技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Python监控公网IP变化发QQ邮件通知"><a href="#Python监控公网IP变化发QQ邮件通知" class="headerlink" title="Python监控公网IP变化发QQ邮件通知"></a>Python监控公网IP变化发QQ邮件通知</h1><p>本次分享的代码的主要作用是：获取本机(主机可以在内网)的公网IP，并将与上一次记录在文件中的公网IP做比较，如果两个IP不相同，则将新的公网IP记录在文件中，并发送一封包含新的公网IP的电子邮件到指定的QQ邮箱。<br>注意！代码的调试环境是Windows10、Python 3.10，不同的环境、版本可能会运行失败。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib  <span class="comment"># 导入邮件发送库</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText  <span class="comment"># 导入邮件正文的MIME类型</span></span><br><span class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> formataddr  <span class="comment"># 导入对邮件地址的格式化函数</span></span><br><span class="line"><span class="keyword">import</span> requests  <span class="comment"># 导入HTTP请求库</span></span><br><span class="line"></span><br><span class="line">my_sender = <span class="string">&#x27;c******g@qq.com&#x27;</span>  <span class="comment"># 发件人邮箱</span></span><br><span class="line">my_pass = <span class="string">&#x27;z******g&#x27;</span>  <span class="comment"># 发件人邮箱密码</span></span><br><span class="line">my_user = <span class="string">&#x27;c******g@qq.com&#x27;</span>  <span class="comment"># 收件人邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mail</span>():  <span class="comment"># 定义一个发送邮件的函数</span></span><br><span class="line">    ret = <span class="literal">True</span>  <span class="comment"># 默认邮件发送成功</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        msg = MIMEText(<span class="built_in">str</span>(MyNewPublicIP), <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment"># 构造邮件正文</span></span><br><span class="line">        msg[<span class="string">&#x27;From&#x27;</span>] = formataddr([<span class="string">&quot;告警邮箱&quot;</span>, my_sender])  <span class="comment"># 设置发件人地址</span></span><br><span class="line">        msg[<span class="string">&#x27;To&#x27;</span>] = formataddr([<span class="string">&quot;告警邮箱&quot;</span>, my_user])  <span class="comment"># 设置收件人地址</span></span><br><span class="line">        msg[<span class="string">&#x27;Subject&#x27;</span>] = <span class="string">&#x27;******公网IP变更通知&#x27;</span>  <span class="comment"># 设置邮件主题</span></span><br><span class="line">        server = smtplib.SMTP_SSL(<span class="string">&quot;smtp.qq.com&quot;</span>, <span class="number">465</span>)  <span class="comment"># 连接QQ邮箱的SMTP服务器</span></span><br><span class="line">        server.login(my_sender, my_pass)  <span class="comment"># 登录发件人QQ邮箱</span></span><br><span class="line">        server.sendmail(my_sender, [my_user, ], msg.as_string())  <span class="comment"># 发送邮件</span></span><br><span class="line">        server.quit()  <span class="comment"># 关闭SMTP连接</span></span><br><span class="line">    <span class="keyword">except</span> Exception:  <span class="comment"># 如果发生异常，则表示邮件发送失败</span></span><br><span class="line">        ret = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取本机公网IP，建议先用自己的浏览器访问这个地址，看看能否获取到正确的公网IP地址</span></span><br><span class="line">MyNewPublicIP = requests.get(<span class="string">&#x27;http://api.ipify.org&#x27;</span>).text</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取磁盘上的公网IP</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:/MyPublicIP.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开指定的文件，准备读取上次记录的公网IP</span></span><br><span class="line">    MyOldPublicIP = f.read().strip()  <span class="comment"># 读取文件内容，去除空白符</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 比较新旧IP是否相同</span></span><br><span class="line"><span class="keyword">if</span> MyNewPublicIP != MyOldPublicIP:  <span class="comment"># 如果新旧IP不同</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:/MyPublicIP.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开指定的文件，准备记录新的公网IP</span></span><br><span class="line">        f.write(MyNewPublicIP)  <span class="comment"># 将新的公网IP写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IP有变化。准备发邮件给QQ邮箱。&#x27;</span>)</span><br><span class="line">    ret = mail()  <span class="comment"># 调用发送邮件函数</span></span><br><span class="line">    <span class="keyword">if</span> ret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功。&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;邮件发送失败。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:  <span class="comment"># 如果新旧IP相同</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IP无变化。退出程序。&#x27;</span>)</span><br><span class="line">    exit()  <span class="comment"># 退出程序</span></span><br></pre></td></tr></table></figure>
-
-<p>可以把这段代码保存成脚本文件，用Windows的任务计划来定时执行，如下图所示。</p>
-<p><img src="/vx_images/35135947108213.png"></p>
-<p>最后，我把QQ邮箱绑定到我的手机微信中，这样就可以很方便地获取到公网IP变更的信息了，如下图所示。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/11/20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/19/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8UDEV%EF%BC%88%E9%9D%9EASMLIB%EF%BC%89%E8%AE%BE%E7%BD%AE%E5%88%86%E5%8C%BA%E5%8C%96%E7%9A%84Linux%E5%9D%97%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%B0%86%E5%AE%83%E4%BB%AC%E5%88%86%E9%85%8D%E7%BB%99ASM%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chan Revival">
-      <meta itemprop="description" content="描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan Revival Sky">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/19/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8UDEV%EF%BC%88%E9%9D%9EASMLIB%EF%BC%89%E8%AE%BE%E7%BD%AE%E5%88%86%E5%8C%BA%E5%8C%96%E7%9A%84Linux%E5%9D%97%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%B0%86%E5%AE%83%E4%BB%AC%E5%88%86%E9%85%8D%E7%BB%99ASM%EF%BC%9F/" class="post-title-link" itemprop="url">如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-19 21:15:52 / 修改时间：21:26:54" itemprop="dateCreated datePublished" datetime="2024-11-19T21:15:52+08:00">2024-11-19</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">技术文章</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？"><a href="#如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？" class="headerlink" title="如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？"></a>如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？</h1><h2 id="本文档适用于"><a href="#本文档适用于" class="headerlink" title="本文档适用于"></a>本文档适用于</h2><p>Oracle数据库 - 标准版 - 版本10.2.0.1至12.1.0.2 [发行版10.2至12.1]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [发行版12.1]<br>本文档中的信息适用于任何平台。</p>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>本文档提供了一个示例，说明如何使用udev（非ASMLIB）设置&#x2F;配置分区化的Linux块设备，并将它们作为ASM的候选成员磁盘分配给ASM。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/11/19/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8UDEV%EF%BC%88%E9%9D%9EASMLIB%EF%BC%89%E8%AE%BE%E7%BD%AE%E5%88%86%E5%8C%BA%E5%8C%96%E7%9A%84Linux%E5%9D%97%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%B0%86%E5%AE%83%E4%BB%AC%E5%88%86%E9%85%8D%E7%BB%99ASM%EF%BC%9F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chan Revival">
-      <meta itemprop="description" content="描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan Revival Sky">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">使用RMAN复制创建物理备用数据库无需关闭主数据库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-11-18 14:19:34 / 修改时间：14:58:15" itemprop="dateCreated datePublished" datetime="2024-11-18T14:19:34+08:00">2024-11-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">数据库技术</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>7.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="使用RMAN复制创建物理备用数据库无需关闭主数据库"><a href="#使用RMAN复制创建物理备用数据库无需关闭主数据库" class="headerlink" title="使用RMAN复制创建物理备用数据库无需关闭主数据库"></a>使用RMAN复制创建物理备用数据库无需关闭主数据库</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Oracle数据库 - 企业版 - 版本10.1.0.2至10.2.0.4 [10.1至10.2]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [12.1]<br>Oracle数据库 - 企业版 - 版本11.2.0.4至11.2.0.4 [11.2]<br>Oracle数据库 - 企业版 - 版本11.1.0.7至11.1.0.7 [11.1] </p>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>以下说明描述了如何在不关闭主（生产）数据库的情况下，使用RMAN复制逐步创建物理备用数据库的过程。<br>Database Name :- prim<br>Primary db_unique_name :- prim<br>standby db_unique_name :- stdby<br>Primary Hostname :- raca.idc.oracle.com<br>standby Hostname :- core1.idc.oracle.com </p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/11/18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -870,20 +830,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -937,12 +897,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">53k</span>
+    <span title="站点总字数">56k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">48 分钟</span>
+    <span title="站点阅读时长">51 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
