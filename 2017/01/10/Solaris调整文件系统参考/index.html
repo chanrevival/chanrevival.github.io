@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Solaris调整文件系统参考总述UFS是Solaris缺省的基于磁盘的文件系统。管理基于磁盘的文件系统时，大多数情况下管理的是 UFS 文件系统。本文档描述了Oracle Solaris 10操作系统下UFS文件系统常见的配置操作。 配置硬盘设备    当前磁盘状态  123456789101112131415161718192021222324# iostat -Esd0       Soft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solaris调整文件系统参考">
+<meta property="og:url" content="https://chanrevival.github.io/2017/01/10/Solaris%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83/index.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="Solaris调整文件系统参考总述UFS是Solaris缺省的基于磁盘的文件系统。管理基于磁盘的文件系统时，大多数情况下管理的是 UFS 文件系统。本文档描述了Oracle Solaris 10操作系统下UFS文件系统常见的配置操作。 配置硬盘设备    当前磁盘状态  123456789101112131415161718192021222324# iostat -Esd0       Soft">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-01-10T08:31:12.000Z">
+<meta property="article:modified_time" content="2024-12-03T08:02:44.565Z">
+<meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="文件系统">
+<meta property="article:tag" content="Solaris">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chanrevival.github.io/2017/01/10/Solaris%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Solaris调整文件系统参考 | Chan Revival Sky</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN485BL2P4');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chan Revival Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天上星，亮晶晶，永灿烂，长安宁。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">22</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">44</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-internal_use">
+
+    <a href="/internal_use" rel="section"><i class="fa fa-fw"></i>internal_use</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chanrevival/" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2017/01/10/Solaris%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Solaris调整文件系统参考
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-01-10 16:31:12" itemprop="dateCreated datePublished" datetime="2017-01-10T16:31:12+08:00">2017-01-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-03 16:02:44" itemprop="dateModified" datetime="2024-12-03T16:02:44+08:00">2024-12-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">操作系统技术</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Solaris调整文件系统参考"><a href="#Solaris调整文件系统参考" class="headerlink" title="Solaris调整文件系统参考"></a>Solaris调整文件系统参考</h1><h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><p>UFS是Solaris缺省的基于磁盘的文件系统。管理基于磁盘的文件系统时，大多数情况下管理的是 UFS 文件系统。<br>本文档描述了Oracle Solaris 10操作系统下UFS文件系统常见的配置操作。</p>
+<h2 id="配置硬盘设备"><a href="#配置硬盘设备" class="headerlink" title="配置硬盘设备"></a>配置硬盘设备</h2><ol>
+<li>   当前磁盘状态</li>
+</ol>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iostat -E</span></span><br><span class="line">sd0       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: VMware,  Product: VMware Virtual S Revision: 1.0  Serial No:  </span><br><span class="line">Size: 137.44GB &lt;137438952960 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 4 </span>Predictive Failure Analysis:<span class="number"> 0 </span></span><br><span class="line">sd1       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: VMware,  Product: VMware Virtual S Revision: 1.0  Serial No:  </span><br><span class="line">Size: 274.88GB &lt;274877906432 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 4 </span>Predictive Failure Analysis:<span class="number"> 0 </span></span><br><span class="line">sd2       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: NECVMWar Product: VMware IDE CDR10 Revision: 1.00 Serial No:  </span><br><span class="line">Size: 2.25GB &lt;2254110720 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 12 </span>Predictive Failure Analysis: 0</span><br><span class="line"></span><br><span class="line"><span class="comment"># format</span></span><br><span class="line">Searching for disks...done</span><br><span class="line">AVAILABLE DISK SELECTIONS:</span><br><span class="line">       0. c1t0d0 &lt;VMware,-VMware Virtual -1.0  cyl<span class="number"> 16706 </span>alt<span class="number"> 2 </span>hd<span class="number"> 255 </span>sec 63&gt;</span><br><span class="line">          /pci@0,0/pci15ad,1976@10/sd@0,0</span><br><span class="line">       1. c1t1d0 &lt;VMware,-VMware Virtual -1.0  cyl<span class="number"> 33416 </span>alt<span class="number"> 2 </span>hd<span class="number"> 255 </span>sec 63&gt;</span><br><span class="line">          /pci@0,0/pci15ad,1976@10/sd@1,0</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>   添加一块10G大小的物理磁盘</p>
+</li>
+<li><p>   在线识别新设备</p>
+</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># devfsadm</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   查看新添加的磁盘</li>
+</ol>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># iostat -E</span></span><br><span class="line">sd0       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: VMware,  Product: VMware Virtual S Revision: 1.0  Serial No:  </span><br><span class="line">Size: 137.44GB &lt;137438952960 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 4 </span>Predictive Failure Analysis:<span class="number"> 0 </span></span><br><span class="line">sd1       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: VMware,  Product: VMware Virtual S Revision: 1.0  Serial No:  </span><br><span class="line">Size: 274.88GB &lt;274877906432 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 8 </span>Predictive Failure Analysis:<span class="number"> 0 </span></span><br><span class="line">sd2       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: NECVMWar Product: VMware IDE CDR10 Revision: 1.00 Serial No:  </span><br><span class="line">Size: 2.25GB &lt;2254110720 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 12 </span>Predictive Failure Analysis:<span class="number"> 0 </span></span><br><span class="line">sd3       Soft Errors:<span class="number"> 0 </span>Hard Errors:<span class="number"> 0 </span>Transport Errors:<span class="number"> 0 </span></span><br><span class="line">Vendor: VMware,  Product: VMware Virtual S Revision: 1.0  Serial No:  </span><br><span class="line">Size: 10.74GB &lt;10737417728 bytes&gt;</span><br><span class="line">Media Error:<span class="number"> 0 </span>Device Not Ready:<span class="number"> 0 </span>No Device:<span class="number"> 0 </span>Recoverable:<span class="number"> 0 </span></span><br><span class="line">Illegal Request:<span class="number"> 8 </span>Predictive Failure Analysis: 0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># format</span></span><br><span class="line">Searching for disks...done</span><br><span class="line">AVAILABLE DISK SELECTIONS:</span><br><span class="line">       0. c1t0d0 &lt;VMware,-VMware Virtual -1.0  cyl<span class="number"> 16706 </span>alt<span class="number"> 2 </span>hd<span class="number"> 255 </span>sec 63&gt;</span><br><span class="line">          /pci@0,0/pci15ad,1976@10/sd@0,0</span><br><span class="line">       1. c1t1d0 &lt;VMware,-VMware Virtual -1.0  cyl<span class="number"> 33416 </span>alt<span class="number"> 2 </span>hd<span class="number"> 255 </span>sec 63&gt;</span><br><span class="line">          /pci@0,0/pci15ad,1976@10/sd@1,0</span><br><span class="line">       2. c1t2d0 &lt;VMware,-VMware Virtual -1.0  cyl<span class="number"> 1303 </span>alt<span class="number"> 2 </span>hd<span class="number"> 255 </span>sec 63&gt;</span><br><span class="line">          /pci@0,0/pci15ad,1976@10/sd@2,0</span><br><span class="line"></span><br><span class="line"><span class="comment"># ls -l</span></span><br><span class="line">...节选...</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0p0 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:q</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0p1 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:r</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0p2 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:s</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0p3 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:t</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0p4 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:u</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s0 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:a</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s1 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:b</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s10 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:k</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s11 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:l</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s12 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:m</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s13 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:n</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s14 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:o</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s15 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:p</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s2 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:c</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s3 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:d</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s4 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:e</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s5 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:f</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s6 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:g</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s7 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:h</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s8 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:i</span><br><span class="line">lrwxrwxrwx  <span class="number"> 1 </span>root     root         <span class="number"> 46 </span>Jan<span class="number"> 12 </span>16:15 c1t2d0s9 -&gt; ../../devices/pci@0,0/pci15ad,1976@10/sd@2,0:j</span><br><span class="line">...节选...</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>   格式化新磁盘</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># format</span><br><span class="line">Searching <span class="keyword">for</span> disks...done</span><br><span class="line">AVAILABLE DISK SELECTIONS:</span><br><span class="line">       <span class="number">0.</span> c1t0d0 <span class="operator">&lt;</span>VMware,<span class="operator">-</span>VMware Virtual <span class="number">-1.0</span>  cyl <span class="number">16706</span> alt <span class="number">2</span> hd <span class="number">255</span> sec <span class="number">63</span><span class="operator">&gt;</span></span><br><span class="line">          <span class="operator">/</span>pci<span class="variable">@0</span>,<span class="number">0</span><span class="operator">/</span>pci15ad,<span class="number">1976</span><span class="variable">@10</span><span class="operator">/</span>sd<span class="variable">@0</span>,<span class="number">0</span></span><br><span class="line">       <span class="number">1.</span> c1t1d0 <span class="operator">&lt;</span>VMware,<span class="operator">-</span>VMware Virtual <span class="number">-1.0</span>  cyl <span class="number">33416</span> alt <span class="number">2</span> hd <span class="number">255</span> sec <span class="number">63</span><span class="operator">&gt;</span></span><br><span class="line">          <span class="operator">/</span>pci<span class="variable">@0</span>,<span class="number">0</span><span class="operator">/</span>pci15ad,<span class="number">1976</span><span class="variable">@10</span><span class="operator">/</span>sd<span class="variable">@1</span>,<span class="number">0</span></span><br><span class="line">       <span class="number">2.</span> c1t2d0 <span class="operator">&lt;</span>VMware,<span class="operator">-</span>VMware Virtual <span class="number">-1.0</span>  cyl <span class="number">1303</span> alt <span class="number">2</span> hd <span class="number">255</span> sec <span class="number">63</span><span class="operator">&gt;</span></span><br><span class="line">          <span class="operator">/</span>pci<span class="variable">@0</span>,<span class="number">0</span><span class="operator">/</span>pci15ad,<span class="number">1976</span><span class="variable">@10</span><span class="operator">/</span>sd<span class="variable">@2</span>,<span class="number">0</span></span><br><span class="line">Specify disk (enter its number): <span class="number">2</span></span><br><span class="line">selecting c1t2d0</span><br><span class="line">[disk formatted]</span><br><span class="line">FORMAT MENU:</span><br><span class="line">        disk       <span class="operator">-</span> <span class="keyword">select</span> a disk</span><br><span class="line">        type       <span class="operator">-</span> <span class="keyword">select</span> (<span class="keyword">define</span>) a disk type</span><br><span class="line">        <span class="keyword">partition</span>  <span class="operator">-</span> <span class="keyword">select</span> (<span class="keyword">define</span>) a <span class="keyword">partition</span> <span class="keyword">table</span></span><br><span class="line">        <span class="keyword">current</span>    <span class="operator">-</span> <span class="keyword">describe</span> the <span class="keyword">current</span> disk</span><br><span class="line">        format     <span class="operator">-</span> format <span class="keyword">and</span> analyze the disk</span><br><span class="line">        fdisk      <span class="operator">-</span> run the fdisk program</span><br><span class="line">        repair     <span class="operator">-</span> repair a defective sector</span><br><span class="line">        label      <span class="operator">-</span> write label <span class="keyword">to</span> the disk</span><br><span class="line">        analyze    <span class="operator">-</span> surface analysis</span><br><span class="line">        defect     <span class="operator">-</span> defect list management</span><br><span class="line">        backup     <span class="operator">-</span> <span class="keyword">search</span> <span class="keyword">for</span> backup labels</span><br><span class="line">        verify     <span class="operator">-</span> read <span class="keyword">and</span> display labels</span><br><span class="line">        save       <span class="operator">-</span> save <span class="keyword">new</span> disk<span class="operator">/</span><span class="keyword">partition</span> definitions</span><br><span class="line">        inquiry    <span class="operator">-</span> <span class="keyword">show</span> vendor, product <span class="keyword">and</span> revision</span><br><span class="line">        volname    <span class="operator">-</span> <span class="keyword">set</span> <span class="number">8</span><span class="operator">-</span><span class="type">character</span> volume name</span><br><span class="line">        <span class="operator">!</span><span class="operator">&lt;</span>cmd<span class="operator">&gt;</span>     <span class="operator">-</span> <span class="keyword">execute</span> <span class="operator">&lt;</span>cmd<span class="operator">&gt;</span>, <span class="keyword">then</span> <span class="keyword">return</span></span><br><span class="line">        quit</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>   低级格式化硬盘</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">format&gt; fdisk</span><br><span class="line"><span class="literal">No</span> fdisk table exists. The<span class="built_in"> default </span>partition <span class="keyword">for</span> the disk is:</span><br><span class="line">  a 100% <span class="string">&quot;SOLARIS System&quot;</span> partition<span class="built_in"></span></span><br><span class="line"><span class="built_in">Type </span><span class="string">&quot;y&quot;</span> <span class="keyword">to</span> accept the<span class="built_in"> default </span>partition,  otherwise<span class="built_in"> type </span><span class="string">&quot;n&quot;</span> <span class="keyword">to</span> <span class="built_in">edit</span> the</span><br><span class="line"> partition table.</span><br><span class="line">y</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>   显示硬盘分区</li>
+</ol>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">format&gt; p</span><br><span class="line">PARTITION MENU:</span><br><span class="line">       <span class="number"> 0 </span>     - change `0&#x27; partition</span><br><span class="line">       <span class="number"> 1 </span>     - change `1&#x27; partition</span><br><span class="line">       <span class="number"> 2 </span>     - change `2&#x27; partition</span><br><span class="line">       <span class="number"> 3 </span>     - change `3&#x27; partition</span><br><span class="line">       <span class="number"> 4 </span>     - change `4&#x27; partition</span><br><span class="line">       <span class="number"> 5 </span>     - change `5&#x27; partition</span><br><span class="line">       <span class="number"> 6 </span>     - change `6&#x27; partition</span><br><span class="line">       <span class="number"> 7 </span>     - change `7&#x27; partition</span><br><span class="line">        select - select a predefined table</span><br><span class="line">        modify - modify a predefined partition table</span><br><span class="line">        name   - name the current table</span><br><span class="line">        print  - display the current table</span><br><span class="line">        label  - write partition map and label to the disk</span><br><span class="line">        !&lt;cmd&gt; - execute &lt;cmd&gt;, then return</span><br><span class="line">        quit</span><br><span class="line"></span><br><span class="line">partition&gt; print</span><br><span class="line">Current partition table (original):</span><br><span class="line">Total disk cylinders available:<span class="number"> 1302 </span>+<span class="number"> 2 </span>(reserved cylinders)</span><br><span class="line">Part      Tag    Flag     Cylinders        Size            Blocks</span><br><span class="line"> <span class="number"> 0 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 1 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 2 </span>    backup    wu      <span class="number"> 0 </span>-<span class="number"> 1301 </span>       9.97GB    (1302/0/0) 20916630</span><br><span class="line"> <span class="number"> 3 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 4 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 5 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 6 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 7 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br><span class="line"> <span class="number"> 8 </span>      boot    wu      <span class="number"> 0 </span>-   <span class="number"> 0 </span>       7.84MB    (1/0/0)       16065</span><br><span class="line"> <span class="number"> 9 </span>unassigned    wm      <span class="number"> 0 </span>             <span class="number"> 0 </span>        (0/0/0)           0</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>   分配分区容量</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">partition</span>&gt; <span class="number">0</span></span><br><span class="line"><span class="attribute">Part</span>      Tag    Flag     Cylinders        Size            Blocks</span><br><span class="line">  <span class="attribute">0</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line"><span class="attribute">Enter</span> partition id tag[unassigned]: </span><br><span class="line"><span class="attribute">Enter</span> partition permission flags[wm]: </span><br><span class="line"><span class="attribute">Enter</span> new starting cyl[<span class="number">0</span>]: </span><br><span class="line"><span class="attribute">Enter</span> partition size[<span class="number">0</span>b, <span class="number">0</span>c, <span class="number">0</span>e, <span class="number">0</span>.<span class="number">00</span>mb, <span class="number">0</span>.<span class="number">00</span>gb]: <span class="number">9</span>.<span class="number">97</span>gb</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>   显示分区信息</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">partition</span>&gt; p</span><br><span class="line"><span class="attribute">Current</span> partition table (unnamed):</span><br><span class="line"><span class="attribute">Total</span> disk cylinders available: <span class="number">1302</span> + <span class="number">2</span> (reserved cylinders)</span><br><span class="line"></span><br><span class="line"><span class="attribute">Part</span>      Tag    Flag     Cylinders        Size            Blocks</span><br><span class="line">  <span class="attribute">0</span> unassigned    wm       <span class="number">0</span> - <span class="number">1301</span>        <span class="number">9</span>.<span class="number">97</span>GB    (<span class="number">1302</span>/<span class="number">0</span>/<span class="number">0</span>) <span class="number">20916630</span></span><br><span class="line">  <span class="attribute">1</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line">  <span class="attribute">2</span>     backup    wu       <span class="number">0</span> - <span class="number">1301</span>        <span class="number">9</span>.<span class="number">97</span>GB    (<span class="number">1302</span>/<span class="number">0</span>/<span class="number">0</span>) <span class="number">20916630</span></span><br><span class="line">  <span class="attribute">3</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line">  <span class="attribute">4</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line">  <span class="attribute">5</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line">  <span class="attribute">6</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line">  <span class="attribute">7</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line">  <span class="attribute">8</span>       boot    wu       <span class="number">0</span> -    <span class="number">0</span>        <span class="number">7</span>.<span class="number">84</span>MB    (<span class="number">1</span>/<span class="number">0</span>/<span class="number">0</span>)       <span class="number">16065</span></span><br><span class="line">  <span class="attribute">9</span> unassigned    wm       <span class="number">0</span>               <span class="number">0</span>         (<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>)           <span class="number">0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>   标记磁盘</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">partition&gt; <span class="selector-tag">label</span></span><br><span class="line">Ready <span class="selector-tag">to</span> <span class="selector-tag">label</span> disk, continue? <span class="attribute">y</span></span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>   保存分区信息</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">format</span>&gt; save</span><br><span class="line">Saving <span class="built_in">new</span> disk <span class="keyword">and</span> <span class="keyword">partition</span> definitions</span><br><span class="line">Enter file <span class="type">name</span>[&quot;./format.dat&quot;]:</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置文件系统"><a href="#配置文件系统" class="headerlink" title="配置文件系统"></a>配置文件系统</h2><ol>
+<li>   新建文件系统</li>
+</ol>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># newfs /dev/dsk/c<span class="number">1t2d0s0</span></span><br><span class="line">newfs: construct a new file system /dev/rdsk/c<span class="number">1t2d0s0</span>: (y/n)? y</span><br><span class="line">Warning: <span class="number">3690</span> sector(s) in last cylinder unallocated</span><br><span class="line">/dev/rdsk/c<span class="number">1t2d0s0</span>:     <span class="number">20916630</span> sectors in <span class="number">3405</span> cylinders of <span class="number">48</span> tracks, <span class="number">128</span> sectors</span><br><span class="line">        <span class="number">10213</span>.<span class="number">2</span>MB in <span class="number">213</span> cyl groups (<span class="number">16</span> c/g, <span class="number">48</span>.<span class="number">00</span>MB/g, <span class="number">5824</span> i/g)</span><br><span class="line">super-block backups (for fsck -F ufs -o b=#) at:</span><br><span class="line"> <span class="number">32</span>, <span class="number">98464</span>, <span class="number">196896</span>, <span class="number">295328</span>, <span class="number">393760</span>, <span class="number">492192</span>, <span class="number">590624</span>, <span class="number">689056</span>, <span class="number">787488</span>, <span class="number">885920</span>,</span><br><span class="line"> <span class="number">19957152</span>, <span class="number">20055584</span>, <span class="number">20154016</span>, <span class="number">20252448</span>, <span class="number">20350880</span>, <span class="number">20449312</span>, <span class="number">20547744</span>,</span><br><span class="line"> <span class="number">20646176</span>, <span class="number">20744608</span>, <span class="number">20843040</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   创建挂载点目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">mkdir</span> /chenrong_10g</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>   挂载分区(临时)</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mount /dev/dsk/c1t2d0s0 /chenrong_10g</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>   查看文件系统</li>
+</ol>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">#</span> <span class="variable">df</span> <span class="operator">-</span><span class="variable">h</span></span><br><span class="line"><span class="variable">Filesystem</span>             <span class="variable">size</span>   <span class="variable">used</span>  <span class="variable">avail</span> <span class="variable">capacity</span>  <span class="variable">Mounted</span> <span class="variable">on</span></span><br><span class="line"><span class="variable">rpool</span><span class="operator">/</span><span class="variable">ROOT</span><span class="operator">/</span><span class="type">s10x_u11wos</span><span class="type">_</span><span class="number">24</span><span class="variable">a</span></span><br><span class="line">                       <span class="number">125</span><span class="variable">G</span>    <span class="number">19</span><span class="variable">G</span>    <span class="number">94</span><span class="variable">G</span>    <span class="number">17</span><span class="operator">%</span>    <span class="operator">/</span></span><br><span class="line"><span class="operator">/</span><span class="variable">devices</span>                 <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">devices</span></span><br><span class="line"><span class="variable">ctfs</span>                     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">system</span><span class="operator">/</span><span class="variable">contract</span></span><br><span class="line"><span class="variable">proc</span>                     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">proc</span></span><br><span class="line"><span class="variable">mnttab</span>                   <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">etc</span><span class="operator">/</span><span class="variable">mnttab</span></span><br><span class="line"><span class="variable">swap</span>                   <span class="number">7.9</span><span class="variable">G</span>   <span class="number">380</span><span class="built_in">K</span>   <span class="number">7.9</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">etc</span><span class="operator">/</span><span class="variable">svc</span><span class="operator">/</span><span class="variable">volatile</span></span><br><span class="line"><span class="variable">objfs</span>                    <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">system</span><span class="operator">/</span><span class="variable">object</span></span><br><span class="line"><span class="variable">sharefs</span>                  <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">etc</span><span class="operator">/</span><span class="variable">dfs</span><span class="operator">/</span><span class="variable">sharetab</span></span><br><span class="line"><span class="operator">/</span><span class="variable">usr</span><span class="operator">/</span><span class="variable">lib</span><span class="operator">/</span><span class="variable">libc</span><span class="operator">/</span><span class="type">libc_hwcap1</span><span class="operator">.</span><span class="variable">so</span><span class="number">.1</span></span><br><span class="line">                       <span class="number">114</span><span class="variable">G</span>    <span class="number">19</span><span class="variable">G</span>    <span class="number">94</span><span class="variable">G</span>    <span class="number">17</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">lib</span><span class="operator">/</span><span class="variable">libc</span><span class="operator">.</span><span class="variable">so</span><span class="number">.1</span></span><br><span class="line"><span class="variable">fd</span>                       <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">dev</span><span class="operator">/</span><span class="variable">fd</span></span><br><span class="line"><span class="variable">swap</span>                   <span class="number">7.9</span><span class="variable">G</span>    <span class="number">40</span><span class="built_in">K</span>   <span class="number">7.9</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">tmp</span></span><br><span class="line"><span class="variable">swap</span>                   <span class="number">7.9</span><span class="variable">G</span>    <span class="number">32</span><span class="built_in">K</span>   <span class="number">7.9</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">var</span><span class="operator">/</span><span class="variable">run</span></span><br><span class="line"><span class="variable">rpool</span><span class="operator">/</span><span class="variable">export</span>           <span class="number">125</span><span class="variable">G</span>    <span class="number">32</span><span class="built_in">K</span>    <span class="number">94</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">export</span></span><br><span class="line"><span class="variable">rpool</span><span class="operator">/</span><span class="variable">export</span><span class="operator">/</span><span class="variable">home</span>      <span class="number">125</span><span class="variable">G</span>   <span class="number">1.8</span><span class="variable">M</span>    <span class="number">94</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">export</span><span class="operator">/</span><span class="variable">home</span></span><br><span class="line"><span class="variable">rpool</span>                  <span class="number">125</span><span class="variable">G</span>    <span class="number">42</span><span class="built_in">K</span>    <span class="number">94</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">rpool</span></span><br><span class="line"><span class="operator">/</span><span class="variable">vol</span><span class="operator">/</span><span class="variable">dev</span><span class="operator">/</span><span class="variable">dsk</span><span class="operator">/</span><span class="variable">c0t0d0</span><span class="operator">/</span><span class="type">sol_</span><span class="number">10</span><span class="type">_</span><span class="number">113</span><span class="type">_x86</span></span><br><span class="line">                       <span class="number">2.1</span><span class="variable">G</span>   <span class="number">2.1</span><span class="variable">G</span>     <span class="number">0</span><span class="built_in">K</span>   <span class="number">100</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">cdrom</span><span class="operator">/</span><span class="type">sol_</span><span class="number">10</span><span class="type">_</span><span class="number">113</span><span class="type">_x86</span></span><br><span class="line"><span class="operator">/</span><span class="variable">dev</span><span class="operator">/</span><span class="variable">dsk</span><span class="operator">/</span><span class="variable">c1t2d0s0</span>      <span class="number">9.8</span><span class="variable">G</span>  <span class="number">10.0</span><span class="variable">M</span>   <span class="number">9.7</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="type">chenrong_</span><span class="number">10</span><span class="variable">g</span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>   编辑配置文件，使挂载点永久生效</li>
+</ol>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cat /etc/vfstab</span></span><br><span class="line"><span class="comment">#device         device          mount           FS      fsck    mount   mount</span></span><br><span class="line"><span class="comment">#to mount       to fsck         point           type    pass    at boot options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">fd      -       /dev/fd fd      -       no      -</span><br><span class="line">/<span class="keyword">proc</span>   -       /<span class="keyword">proc</span><span class="title">   proc</span>    -<span class="title">       no</span>      -</span><br><span class="line">/dev/zvol/dsk/rpool/swap        -       -<span class="title">       swap</span>    -<span class="title">       no</span>      -</span><br><span class="line">/devices        -       /devices<span class="title">        devfs</span>   -<span class="title">       no</span>      -<span class="title"></span></span><br><span class="line"><span class="title">sharefs</span> -       /etc/dfs/sharetab<span class="title">       sharefs</span> -<span class="title">       no</span>      -<span class="title"></span></span><br><span class="line"><span class="title">ctfs</span>    -       /system/contract<span class="title">        ctfs</span>    -<span class="title">       no</span>      -<span class="title"></span></span><br><span class="line"><span class="title">objfs</span>   -       /system/object<span class="title">  objfs</span>   -<span class="title">       no</span>      -<span class="title"></span></span><br><span class="line"><span class="title">swap</span>    -       /tmp<span class="title">    tmpfs</span>   -<span class="title">       yes</span>     -</span><br><span class="line">/dev/dsk/c1t2d0s0  /dev/rdsk/c1t2d0s0  /chenrong_10g<span class="title">  ufs</span>  2<span class="title">  yes</span>  -</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>   重启系统，挂载点能正常使用</li>
+</ol>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Connection</span> <span class="variable">established</span><span class="operator">.</span></span><br><span class="line"><span class="variable">Escape</span> <span class="variable">character</span> <span class="variable">is</span> <span class="operator">&#x27;^@</span><span class="punctuation">]</span><span class="operator">&#x27;.</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Last</span> <span class="variable">login</span><span class="operator">:</span> <span class="variable">Mon</span> <span class="variable">Jan</span> <span class="number">12</span> <span class="number">16</span><span class="operator">:</span><span class="number">34</span><span class="operator">:</span><span class="number">10</span> <span class="number">2015</span> <span class="variable">from</span> <span class="number">192.168</span><span class="number">.137</span><span class="number">.105</span></span><br><span class="line"><span class="variable">Oracle</span> <span class="variable">Corporation</span>      <span class="variable">SunOS</span> <span class="number">5.10</span>      <span class="built_in">Generic</span> <span class="variable">Patch</span>   <span class="variable">January</span> <span class="number">2005</span></span><br><span class="line"></span><br><span class="line"><span class="type">#</span> <span class="variable">df</span> <span class="operator">-</span><span class="variable">h</span></span><br><span class="line"><span class="variable">Filesystem</span>             <span class="variable">size</span>   <span class="variable">used</span>  <span class="variable">avail</span> <span class="variable">capacity</span>  <span class="variable">Mounted</span> <span class="variable">on</span></span><br><span class="line"><span class="variable">rpool</span><span class="operator">/</span><span class="variable">ROOT</span><span class="operator">/</span><span class="type">s10x_u11wos</span><span class="type">_</span><span class="number">24</span><span class="variable">a</span></span><br><span class="line">                       <span class="number">125</span><span class="variable">G</span>    <span class="number">19</span><span class="variable">G</span>    <span class="number">94</span><span class="variable">G</span>    <span class="number">17</span><span class="operator">%</span>    <span class="operator">/</span></span><br><span class="line"><span class="operator">/</span><span class="variable">devices</span>                 <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">devices</span></span><br><span class="line"><span class="variable">ctfs</span>                     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">system</span><span class="operator">/</span><span class="variable">contract</span></span><br><span class="line"><span class="variable">proc</span>                     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">proc</span></span><br><span class="line"><span class="variable">mnttab</span>                   <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">etc</span><span class="operator">/</span><span class="variable">mnttab</span></span><br><span class="line"><span class="variable">swap</span>                   <span class="number">7.9</span><span class="variable">G</span>   <span class="number">388</span><span class="built_in">K</span>   <span class="number">7.9</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">etc</span><span class="operator">/</span><span class="variable">svc</span><span class="operator">/</span><span class="variable">volatile</span></span><br><span class="line"><span class="variable">objfs</span>                    <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">system</span><span class="operator">/</span><span class="variable">object</span></span><br><span class="line"><span class="variable">sharefs</span>                  <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">etc</span><span class="operator">/</span><span class="variable">dfs</span><span class="operator">/</span><span class="variable">sharetab</span></span><br><span class="line"><span class="operator">/</span><span class="variable">usr</span><span class="operator">/</span><span class="variable">lib</span><span class="operator">/</span><span class="variable">libc</span><span class="operator">/</span><span class="type">libc_hwcap1</span><span class="operator">.</span><span class="variable">so</span><span class="number">.1</span></span><br><span class="line">                       <span class="number">114</span><span class="variable">G</span>    <span class="number">19</span><span class="variable">G</span>    <span class="number">94</span><span class="variable">G</span>    <span class="number">17</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">lib</span><span class="operator">/</span><span class="variable">libc</span><span class="operator">.</span><span class="variable">so</span><span class="number">.1</span></span><br><span class="line"><span class="variable">fd</span>                       <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="built_in">K</span>     <span class="number">0</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">dev</span><span class="operator">/</span><span class="variable">fd</span></span><br><span class="line"><span class="variable">swap</span>                   <span class="number">7.9</span><span class="variable">G</span>    <span class="number">40</span><span class="built_in">K</span>   <span class="number">7.9</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">tmp</span></span><br><span class="line"><span class="variable">swap</span>                   <span class="number">7.9</span><span class="variable">G</span>    <span class="number">32</span><span class="built_in">K</span>   <span class="number">7.9</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">var</span><span class="operator">/</span><span class="variable">run</span></span><br><span class="line"><span class="operator">/</span><span class="variable">dev</span><span class="operator">/</span><span class="variable">dsk</span><span class="operator">/</span><span class="variable">c1t2d0s0</span>      <span class="number">9.8</span><span class="variable">G</span>  <span class="number">10.0</span><span class="variable">M</span>   <span class="number">9.7</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="type">chenrong_</span><span class="number">10</span><span class="variable">g</span></span><br><span class="line"><span class="variable">rpool</span><span class="operator">/</span><span class="variable">export</span>           <span class="number">125</span><span class="variable">G</span>    <span class="number">32</span><span class="built_in">K</span>    <span class="number">94</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">export</span></span><br><span class="line"><span class="variable">rpool</span><span class="operator">/</span><span class="variable">export</span><span class="operator">/</span><span class="variable">home</span>      <span class="number">125</span><span class="variable">G</span>   <span class="number">1.8</span><span class="variable">M</span>    <span class="number">94</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">export</span><span class="operator">/</span><span class="variable">home</span></span><br><span class="line"><span class="variable">rpool</span>                  <span class="number">125</span><span class="variable">G</span>    <span class="number">42</span><span class="built_in">K</span>    <span class="number">94</span><span class="variable">G</span>     <span class="number">1</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">rpool</span></span><br><span class="line"><span class="operator">/</span><span class="variable">vol</span><span class="operator">/</span><span class="variable">dev</span><span class="operator">/</span><span class="variable">dsk</span><span class="operator">/</span><span class="variable">c0t0d0</span><span class="operator">/</span><span class="type">sol_</span><span class="number">10</span><span class="type">_</span><span class="number">113</span><span class="type">_x86</span></span><br><span class="line">                       <span class="number">2.1</span><span class="variable">G</span>   <span class="number">2.1</span><span class="variable">G</span>     <span class="number">0</span><span class="built_in">K</span>   <span class="number">100</span><span class="operator">%</span>    <span class="operator">/</span><span class="variable">cdrom</span><span class="operator">/</span><span class="type">sol_</span><span class="number">10</span><span class="type">_</span><span class="number">113</span><span class="type">_x86</span></span><br><span class="line"><span class="type">#</span> <span class="variable">cd</span> <span class="operator">/</span><span class="type">chenrong_</span><span class="number">10</span><span class="variable">g</span></span><br><span class="line"><span class="type">#</span> <span class="variable">ls</span></span><br><span class="line"><span class="variable">lost</span><span class="operator">+</span><span class="variable">found</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增补资料"><a href="#增补资料" class="headerlink" title="增补资料"></a>增补资料</h2><p>&#x2F;etc&#x2F;vfstab文件中fsck pass一栏下的数字1和2区别？<br>fsck pass Fsck检测次数，用于决定是否需要检测文件系统，当该域是”-“号时不检测文件系统，当该域的值大于1时，则检查文件系统；等于0时，则检查非ufs文件系统，而不检查ufs文件系统，当fsck作用多个ufs文件系统，而fsck pass值大于1，并且使用了-op选择项时，fsck 自动以最高的效率并行检测不同盘上的文件系统，当fsck pass值为1时，则顺序检测文件系统，否则fsck pass值无效。</p>
+<p>在普通情况下，pass Fsck &gt;;&#x3D;1 则检查对应的文件系统，所以此时1、2、3……没区别。<br>在使用了-o p选择项时（如命令fsck -o p &#x2F;export&#x2F;home），如果该文件系统跨了多个盘，pass Fsck &gt;;1则并行检测不同盘上的文件系统，pass Fsck &#x3D;1则顺序检测不同盘上的文件系统。此时2、3、4……没区别。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" rel="tag"># 文件系统</a>
+              <a href="/tags/Solaris/" rel="tag"># Solaris</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/22/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8UDEV%EF%BC%88%E9%9D%9EASMLIB%EF%BC%89%E8%AE%BE%E7%BD%AE%E5%88%86%E5%8C%BA%E5%8C%96%E7%9A%84Linux%E5%9D%97%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%B0%86%E5%AE%83%E4%BB%AC%E5%88%86%E9%85%8D%E7%BB%99ASM%EF%BC%9F/" rel="prev" title="如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？">
+      <i class="fa fa-chevron-left"></i> 如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/01/19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/" rel="next" title="Linux上的裸设备">
+      Linux上的裸设备 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solaris%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83"><span class="nav-number">1.</span> <span class="nav-text">Solaris调整文件系统参考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">总述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%AE%BE%E5%A4%87"><span class="nav-number">1.2.</span> <span class="nav-text">配置硬盘设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.3.</span> <span class="nav-text">配置文件系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E8%A1%A5%E8%B5%84%E6%96%99"><span class="nav-number">1.4.</span> <span class="nav-text">增补资料</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chan Revival</p>
+  <div class="site-description" itemprop="description">描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Revival Sky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">125k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:54</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'Ov23li6MSfENmb9Y66d7',
+      clientSecret: '4c5a5994bd199c8fcc5500a80209374b718b771a',
+      repo        : 'GitTalkComment',
+      owner       : 'chanrevival',
+      admin       : ['chanrevival'],
+      id          : '1de9e3204e0de09cded41158f3f2e628',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
