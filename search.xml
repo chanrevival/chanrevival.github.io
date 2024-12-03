@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Doris坏盘换盘方法</title>
+    <url>/2024/11/11/Doris%E5%9D%8F%E7%9B%98%E6%8D%A2%E7%9B%98%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="Doris坏盘换盘方法"><a href="#Doris坏盘换盘方法" class="headerlink" title="Doris坏盘换盘方法"></a>Doris坏盘换盘方法</h1><h2 id="先换好盘"><a href="#先换好盘" class="headerlink" title="先换好盘"></a>先换好盘</h2><p>参考其它&#x2F;data，创建好目录，正确授权。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /dataxxx</span><br><span class="line"><span class="built_in">mkdir</span> -p /dataxxx/doris-storage</span><br><span class="line"><span class="built_in">chown</span> -R doris:doris /dataxxx/doris-storage</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="注释掉坏盘路径"><a href="#注释掉坏盘路径" class="headerlink" title="注释掉坏盘路径"></a>注释掉坏盘路径</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vi</span> /usr/local/doris-<span class="keyword">be</span>/<span class="keyword">conf</span>/be_custom.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p><img src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p>
+<h2 id="重启be进程"><a href="#重启be进程" class="headerlink" title="重启be进程"></a>重启be进程</h2><p>可在Web管理控制台操作。</p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>数据库技术</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>Doris</tag>
+        <tag>故障处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI提示词</title>
+    <url>/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="f5f41c132dffe398141c737f8c1019b1890d743031d12fc84757337f908fe98c">73d38b3f522cc90d5ddd451cc52bad51427e973db25673c5f78d06acbfbc4cebf4a4ba1a87c92abf6c3a0737e0a7e6a6936695645889bdabef5a3ace44ac7ecd34e627fb33ae6ab91a03604e184292954e24456e53c84feec8d2ffafa45f476e2149636d130754bd21c02db69e38439429968b0fcd73b51a5d0ca4e9596934a5bcb2e9ae78ad38af09035c265669a3306a8d7a54e9fe54000199075b26f70f504accbbec18da451960aadc189ba70ffeca95b25664418413271bd019e21528193c30109032489e02f9fa473f0db4e79acc104225e9d9a2e9da5f2e1338d844319e5e67f6ab8ed26e40c4eda771286886f2b451092603ca549ebc5d7892aebd550a13e116a43aba6079a6d96918ebb88fcff30b81cbc470ce7ee97eb7a7160fba91e92687cb9e8d76a65445bd4a679a16698441c740c22b1d4b5805635c135fb573a3f4f8d05f34cd644ebe3a7b5cb7b76fb7241e97d764f8fef9451ddaeabb542ea06609833f7ccb536b11678a5813b254ccdb6b75e80406dede28d56359aab621980dd1b7d116d33af32afab2bf9c60e9e57fddf7bd4b08205c70aa2c399118b631f40d07c4ebf5f3263ee14f75a8d0d60ce4254207ee61ed02b4aff64b3734701dfb4b6bc8055edd7db1d9fa232f70b3e40f0cbce08a192eab455e234723d62c714a02c395ddbb29bf025f8fe9b0292b3bde1b9f65541addf2491626644a5c4357db0708439b7b4b0890433b96ffdbcafd346727704a2393f140f5cadd29a3c8e168aa386de699e5bccc91036a0d0e747afcb06d81b7b03a5b66477d0a88a905676b535b1c7d8701bfc904c9553da2bfda7e831541b0bba3cebebece8d81593eb6962d6db40842e2a379661c32d8d8f2b67611f5f3316ab8d0b52824617e71460d041ced0e022be10c103078bcb2a1baa78f2fd3305e87d47adcb4c75bd34f8fa24a44e67088dc47c1269b46877c22c0419dbe51307ed4d246334c598d3531bb14747124420787dfae9571e5304abc672f9fe6e4828f8c16cb6e8a554f7c08d3854d0f306da91a0f47ce79869d2f246012ce811710d15a6db971e5d534bdd73849d276bf7e98778b8cabd3dc05cf70e0a1b6402b5f19ec5d94e3785a539dad796356b0539c9de0efa19d37ffb8ecedf0a61374354bcdf4b22a5f0b461e8908c587a9b009f62df6a7db26f088b53cce4a9c0875c09da50b29dafe85145065e7dadd064cd254f989e1c3603da70933de7f356fb6d6542fd139ff9584a21b84d502e6f0ca91e2dee84dda4d08fc17d65054a5f6efd9aaee28d0aac855a111fcbf3639aa1902f68334a7a002f8aa466cee694202dd4ba41fac76f3e85d7d0a8ec3bae3381c55918c9389772d62ae7ed88de67963b9b84d7379cc1494ad33dc199c77456cccf7818130753ea4bc3ca7229752f0179993c076e6e754ae7623ec05a4b33bdb68db65d886d417660777dd79f2fc51a798b72eeb7c29e8e4eaebcb4ebf49e6847d06e9492670c512b45b5e5979752bd27cb0cca800fd909431ecac924e23c3243f497f5ca6159ace85017d772734283415eeeef0dd80b84880bcd7849eeac7926e6944f9c9a93b691d04edcc5335aa5c5083f36189d4b4d3d05e0a783dafb1229adf40aeaf40331aff53634e5205327413f0da4cd0121ab9a3c2b52467c94925c486b5ddbd89bff78dc7f9ad56530399ced48856cf60e2a30fa94520f769def2e65454f14403a0d4d3863de781102375123ce19f25b84dc972437b0c9a0bf5932d6f9fe1730b0f9f2029da70a722b54e8ea2b9004c5d5cdb39bbbc130514a29d4ed091bb5bd67d7f9274e47828926dbd145bec2b9cce2d58ffcc025acd13cfa0b921de034f627c0ea28e10cf5da0544dae570c605025bdae22ae1babea555055c9bf0856f9f1ced939611743c058f2aafea1419474c2e3a22357aaed8328a71d82d08fa5d5a78d5cda9a5d33824287bce934db48d1f1ee1bff90498e845afe39f9b3e5bbb274f8a569b4c94b7392c5efa8fffb57441501aace54b3f834e84979dc28de05c642efe61fa1eef6207320a14432882523368e3b6aafe9b632f54742c15200b997591aacff6fa91bccbce289543339363642fd6acec1da4909d01ec96eac9e87f414611e8d6d05af37b7d9ecd2f1c752d65cb96c2ae0d0f5436e5af4a1c325d7829964f20c092d0bd8b91ff9f0aa0d3ee0c84315ec30d0b3dbd2984511528c5b4f64b52462365ee131d22eb2544457a3f101a32911dba6a6f6b65fc22999afef0bf346caa5c93fc0f78745dc3d1205a338435eec910b36cb81453362b1c7a7095a7694e8853ebeb99e4d53880ec5077a48295ebd319ff11d41667a7fe68b150263f0bd1cafa1f79cf3b112a911518e07d78fe66f00433caa0e953a0694435be8540c4ecccfda4f74ca631ed6b0d5a46c7ef7aae183f4edd8d27e12a5d1a19bb1908f05ab9d21b40ffa886401a54ee79c7695238e382590c13704a193e1b8501cc646aa3f2511ead5ee566136d54b52c102ee5bfea8828b02ef3a2d0ab3a3f21256b715a26c1442a3a8cffc4b25c629cc128326cf4ce7adba0b9b09c7a70a84bed9b1917d3ab82fb207e3e37840d9cf062716619d0f4caf5478062e239f9114050a82db721562d3bc1edefe757c57d4e5cf12339338ae5c5ae5fb3c8e4c4a6bfe83ac98a30de4130ac637fbd22a59b0b6a3e546952338a147638587125630e6a4dd012dfb4a1a5b41a197549df94c6cb5c04b9312735f63f8ee07d26168f677f9128e75d79b6fbd6a858f11a75be991431c73a6edc5ff53201a35ac30a8c8ab8fc0ab9a11547d1a05ac367597bd8978a7ec722d5337603d993c328f0855bfc7291f9bf67d2e8b74a9c71e8f14f3601d0b33f8d5261842bc096c6b6bba58977e1f7778cdd139887848ce2f2ca539c8696dd6a3f037ac261aca954117198bbb4e3b31c51c72e546ac3eba9cf96c61ca2a009c4e8c1a593d8e3ca0edb5ee832eeb4f4a60e2bb4e85fb79ac708a08a4f8379f4bff66768798cbdd5f376c5935e7ea112c3b1135df7b06f1cb5ab1a66640c1d5ea90d112d41ad6a06584dc3a2f059eadbef9c2548f15f94b9dd6920ed341263db3ea556ae619de6ef176bae0dc794f0708655470c533257538090bec5289ce5beed55864a8430415db9a9ca6f8e2cea636e13f6b4143978cd378ae4beb0e9edb384dacc7ab39dca91f353cc6c68948516a679baca61dda025929f0eadac8e04e5cdf9dc7ace3c716cd74f5a0e9d7f84219131b32b419cab83846f821b39c5db9ba427e6e6003c6c5e073a7d8b3d74bad6023723d0edbf47c49021179bb9496fbe80c48df85435e5945e2ec3f85dccebfd69ca945df1704b8da514ab55c37c284043a44aaa6ffaa29ec710de767dbe1ff9e9a64f66df3ea14a12446eab23b24376ddb57cd5850e397f8edc60ac499b63a9b48a5e7f746cf45069aba407c87565db78d16abd45e7c68685519f61a7df471d4766259d05467a25d482c79dec4406d37b98c13320e68a795</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">内容已加密，请输入密码后阅读</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+  </entry>
+  <entry>
     <title>AIX调整文件系统参考_V1.4</title>
     <url>/2014/04/19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/</url>
     <content><![CDATA[<h1 id="AIX调整文件系统参考-V1-4"><a href="#AIX调整文件系统参考-V1-4" class="headerlink" title="AIX调整文件系统参考_V1.4"></a>AIX调整文件系统参考_V1.4</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档描述了AIX6.1环境下，文件系统调整的具体步骤，主要包括增加文件系统，扩容&#x2F;收缩文件系统，以及删除文件系统，文档内容仅供学习参考，如需在生产环境中应用，请根据实际情况操作。</p>
@@ -102,42 +138,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI提示词</title>
-    <url>/2024/11/26/AI%E6%8F%90%E7%A4%BA%E8%AF%8D/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="f5f41c132dffe398141c737f8c1019b1890d743031d12fc84757337f908fe98c">73d38b3f522cc90d5ddd451cc52bad51427e973db25673c5f78d06acbfbc4cebf4a4ba1a87c92abf6c3a0737e0a7e6a6936695645889bdabef5a3ace44ac7ecd34e627fb33ae6ab91a03604e184292954e24456e53c84feec8d2ffafa45f476e2149636d130754bd21c02db69e38439429968b0fcd73b51a5d0ca4e9596934a5bcb2e9ae78ad38af09035c265669a3306a8d7a54e9fe54000199075b26f70f504accbbec18da451960aadc189ba70ffeca95b25664418413271bd019e21528193c30109032489e02f9fa473f0db4e79acc104225e9d9a2e9da5f2e1338d844319e5e67f6ab8ed26e40c4eda771286886f2b451092603ca549ebc5d7892aebd550a13e116a43aba6079a6d96918ebb88fcff30b81cbc470ce7ee97eb7a7160fba91e92687cb9e8d76a65445bd4a679a16698441c740c22b1d4b5805635c135fb573a3f4f8d05f34cd644ebe3a7b5cb7b76fb7241e97d764f8fef9451ddaeabb542ea06609833f7ccb536b11678a5813b254ccdb6b75e80406dede28d56359aab621980dd1b7d116d33af32afab2bf9c60e9e57fddf7bd4b08205c70aa2c399118b631f40d07c4ebf5f3263ee14f75a8d0d60ce4254207ee61ed02b4aff64b3734701dfb4b6bc8055edd7db1d9fa232f70b3e40f0cbce08a192eab455e234723d62c714a02c395ddbb29bf025f8fe9b0292b3bde1b9f65541addf2491626644a5c4357db0708439b7b4b0890433b96ffdbcafd346727704a2393f140f5cadd29a3c8e168aa386de699e5bccc91036a0d0e747afcb06d81b7b03a5b66477d0a88a905676b535b1c7d8701bfc904c9553da2bfda7e831541b0bba3cebebece8d81593eb6962d6db40842e2a379661c32d8d8f2b67611f5f3316ab8d0b52824617e71460d041ced0e022be10c103078bcb2a1baa78f2fd3305e87d47adcb4c75bd34f8fa24a44e67088dc47c1269b46877c22c0419dbe51307ed4d246334c598d3531bb14747124420787dfae9571e5304abc672f9fe6e4828f8c16cb6e8a554f7c08d3854d0f306da91a0f47ce79869d2f246012ce811710d15a6db971e5d534bdd73849d276bf7e98778b8cabd3dc05cf70e0a1b6402b5f19ec5d94e3785a539dad796356b0539c9de0efa19d37ffb8ecedf0a61374354bcdf4b22a5f0b461e8908c587a9b009f62df6a7db26f088b53cce4a9c0875c09da50b29dafe85145065e7dadd064cd254f989e1c3603da70933de7f356fb6d6542fd139ff9584a21b84d502e6f0ca91e2dee84dda4d08fc17d65054a5f6efd9aaee28d0aac855a111fcbf3639aa1902f68334a7a002f8aa466cee694202dd4ba41fac76f3e85d7d0a8ec3bae3381c55918c9389772d62ae7ed88de67963b9b84d7379cc1494ad33dc199c77456cccf7818130753ea4bc3ca7229752f0179993c076e6e754ae7623ec05a4b33bdb68db65d886d417660777dd79f2fc51a798b72eeb7c29e8e4eaebcb4ebf49e6847d06e9492670c512b45b5e5979752bd27cb0cca800fd909431ecac924e23c3243f497f5ca6159ace85017d772734283415eeeef0dd80b84880bcd7849eeac7926e6944f9c9a93b691d04edcc5335aa5c5083f36189d4b4d3d05e0a783dafb1229adf40aeaf40331aff53634e5205327413f0da4cd0121ab9a3c2b52467c94925c486b5ddbd89bff78dc7f9ad56530399ced48856cf60e2a30fa94520f769def2e65454f14403a0d4d3863de781102375123ce19f25b84dc972437b0c9a0bf5932d6f9fe1730b0f9f2029da70a722b54e8ea2b9004c5d5cdb39bbbc130514a29d4ed091bb5bd67d7f9274e47828926dbd145bec2b9cce2d58ffcc025acd13cfa0b921de034f627c0ea28e10cf5da0544dae570c605025bdae22ae1babea555055c9bf0856f9f1ced939611743c058f2aafea1419474c2e3a22357aaed8328a71d82d08fa5d5a78d5cda9a5d33824287bce934db48d1f1ee1bff90498e845afe39f9b3e5bbb274f8a569b4c94b7392c5efa8fffb57441501aace54b3f834e84979dc28de05c642efe61fa1eef6207320a14432882523368e3b6aafe9b632f54742c15200b997591aacff6fa91bccbce289543339363642fd6acec1da4909d01ec96eac9e87f414611e8d6d05af37b7d9ecd2f1c752d65cb96c2ae0d0f5436e5af4a1c325d7829964f20c092d0bd8b91ff9f0aa0d3ee0c84315ec30d0b3dbd2984511528c5b4f64b52462365ee131d22eb2544457a3f101a32911dba6a6f6b65fc22999afef0bf346caa5c93fc0f78745dc3d1205a338435eec910b36cb81453362b1c7a7095a7694e8853ebeb99e4d53880ec5077a48295ebd319ff11d41667a7fe68b150263f0bd1cafa1f79cf3b112a911518e07d78fe66f00433caa0e953a0694435be8540c4ecccfda4f74ca631ed6b0d5a46c7ef7aae183f4edd8d27e12a5d1a19bb1908f05ab9d21b40ffa886401a54ee79c7695238e382590c13704a193e1b8501cc646aa3f2511ead5ee566136d54b52c102ee5bfea8828b02ef3a2d0ab3a3f21256b715a26c1442a3a8cffc4b25c629cc128326cf4ce7adba0b9b09c7a70a84bed9b1917d3ab82fb207e3e37840d9cf062716619d0f4caf5478062e239f9114050a82db721562d3bc1edefe757c57d4e5cf12339338ae5c5ae5fb3c8e4c4a6bfe83ac98a30de4130ac637fbd22a59b0b6a3e546952338a147638587125630e6a4dd012dfb4a1a5b41a197549df94c6cb5c04b9312735f63f8ee07d26168f677f9128e75d79b6fbd6a858f11a75be991431c73a6edc5ff53201a35ac30a8c8ab8fc0ab9a11547d1a05ac367597bd8978a7ec722d5337603d993c328f0855bfc7291f9bf67d2e8b74a9c71e8f14f3601d0b33f8d5261842bc096c6b6bba58977e1f7778cdd139887848ce2f2ca539c8696dd6a3f037ac261aca954117198bbb4e3b31c51c72e546ac3eba9cf96c61ca2a009c4e8c1a593d8e3ca0edb5ee832eeb4f4a60e2bb4e85fb79ac708a08a4f8379f4bff66768798cbdd5f376c5935e7ea112c3b1135df7b06f1cb5ab1a66640c1d5ea90d112d41ad6a06584dc3a2f059eadbef9c2548f15f94b9dd6920ed341263db3ea556ae619de6ef176bae0dc794f0708655470c533257538090bec5289ce5beed55864a8430415db9a9ca6f8e2cea636e13f6b4143978cd378ae4beb0e9edb384dacc7ab39dca91f353cc6c68948516a679baca61dda025929f0eadac8e04e5cdf9dc7ace3c716cd74f5a0e9d7f84219131b32b419cab83846f821b39c5db9ba427e6e6003c6c5e073a7d8b3d74bad6023723d0edbf47c49021179bb9496fbe80c48df85435e5945e2ec3f85dccebfd69ca945df1704b8da514ab55c37c284043a44aaa6ffaa29ec710de767dbe1ff9e9a64f66df3ea14a12446eab23b24376ddb57cd5850e397f8edc60ac499b63a9b48a5e7f746cf45069aba407c87565db78d16abd45e7c68685519f61a7df471d4766259d05467a25d482c79dec4406d37b98c13320e68a795</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">内容已加密，请输入密码后阅读</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-  </entry>
-  <entry>
-    <title>Doris坏盘换盘方法</title>
-    <url>/2024/11/11/Doris%E5%9D%8F%E7%9B%98%E6%8D%A2%E7%9B%98%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="Doris坏盘换盘方法"><a href="#Doris坏盘换盘方法" class="headerlink" title="Doris坏盘换盘方法"></a>Doris坏盘换盘方法</h1><h2 id="先换好盘"><a href="#先换好盘" class="headerlink" title="先换好盘"></a>先换好盘</h2><p>参考其它&#x2F;data，创建好目录，正确授权。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /dataxxx</span><br><span class="line"><span class="built_in">mkdir</span> -p /dataxxx/doris-storage</span><br><span class="line"><span class="built_in">chown</span> -R doris:doris /dataxxx/doris-storage</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<h2 id="注释掉坏盘路径"><a href="#注释掉坏盘路径" class="headerlink" title="注释掉坏盘路径"></a>注释掉坏盘路径</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vi</span> /usr/local/doris-<span class="keyword">be</span>/<span class="keyword">conf</span>/be_custom.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
-<p><img src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p>
-<h2 id="重启be进程"><a href="#重启be进程" class="headerlink" title="重启be进程"></a>重启be进程</h2><p>可在Web管理控制台操作。</p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>数据库技术</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>Doris</tag>
-        <tag>故障处理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PostgreSQL查看表的膨胀率</title>
     <url>/2024/11/27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/</url>
     <content><![CDATA[<h1 id="PostgreSQL查看表的膨胀率"><a href="#PostgreSQL查看表的膨胀率" class="headerlink" title="PostgreSQL查看表的膨胀率"></a>PostgreSQL查看表的膨胀率</h1><p>查看表膨胀（对所有表进行膨胀率排序），取前10个</p>
@@ -157,6 +157,43 @@
         <tag>数据库</tag>
         <tag>PostgreSQL</tag>
         <tag>表膨胀</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PostgreSQL的pageinspect插件</title>
+    <url>/2024/11/27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>PostgreSQL运维常用命令</title>
+    <url>/2024/11/26/PostgreSQL%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="PostgreSQL运维常用命令"><a href="#PostgreSQL运维常用命令" class="headerlink" title="PostgreSQL运维常用命令"></a>PostgreSQL运维常用命令</h1><h2 id="查看当前连接的用户名"><a href="#查看当前连接的用户名" class="headerlink" title="查看当前连接的用户名"></a>查看当前连接的用户名</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="built_in">current_user</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="给普通用户授权"><a href="#给普通用户授权" class="headerlink" title="给普通用户授权"></a>给普通用户授权</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">USAGE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> sch_user <span class="keyword">TO</span> usr_user;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询表大小，不含索引"><a href="#查询表大小，不含索引" class="headerlink" title="查询表大小，不含索引"></a>查询表大小，不含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">8192</span> bytes</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询表大小，含索引"><a href="#查询表大小，含索引" class="headerlink" title="查询表大小，含索引"></a>查询表大小，含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">24</span> kB</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查WAL文件"><a href="#查WAL文件" class="headerlink" title="查WAL文件"></a>查WAL文件</h2><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"> select *,size/<span class="number">1024</span>/<span class="number">1024</span> <span class="built_in">as</span> <span class="string">&quot;MB&quot;</span> from pg_ls_waldir();</span><br><span class="line">           name           |   <span class="type">size</span>   |      <span class="type">modification</span>      | <span class="type">MB</span> </span><br><span class="line">--------------------------+----------+------------------------+----</span><br><span class="line"> cleanup.log              |      <span class="type">463</span> | <span class="type">2022</span><span class="number">-07</span><span class="number">-28</span> <span class="number">09</span>:<span class="number">45</span>:<span class="number">36</span>+<span class="number">08</span> |  <span class="type">0</span></span><br><span class="line"> <span class="number">000000010000000800000011</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">10</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000012</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">11</span>:<span class="number">05</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000013</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">09</span>:<span class="number">58</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000014</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">02</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000015</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">06</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line">(<span class="number">6</span> rows)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查数据库日志"><a href="#查数据库日志" class="headerlink" title="查数据库日志"></a>查数据库日志</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="PG查表大小"><a href="#PG查表大小" class="headerlink" title="PG查表大小"></a>PG查表大小</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_schema || <span class="string">&#x27;.&#x27;</span> || <span class="built_in">table_name</span> <span class="keyword">AS</span> table_full_name, pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> </span><br><span class="line">    || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>)) <span class="keyword">AS</span> size</span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">tables</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>) <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            table_full_name            |   size   </span><br><span class="line"><span class="comment">---------------------------------------+----------</span></span><br><span class="line"> xz_schema.ods1_bseg                   | <span class="number">123</span> GB</span><br><span class="line"> xz_schema.ods1_coep                   | <span class="number">15</span> GB</span><br><span class="line"> xz_schema.fj_voucher                  | <span class="number">14</span> GB</span><br><span class="line"> xz_schema.ods1_assets_card            | <span class="number">12</span> GB</span><br><span class="line"> xz_schema.ods2_ods_asset_list         | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.fj_voucher_mark             | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.ods1_anla                   | <span class="number">10218</span> MB</span><br><span class="line"> xz_schema.ods2_intf_t_install_account | <span class="number">9761</span> MB</span><br><span class="line"> fsti_schema.assets_card               | <span class="number">8662</span> MB</span><br><span class="line"> xz_schema.source_anlc                 | <span class="number">8528</span> MB</span><br><span class="line"> xz_schema.source_anlp_201901          | <span class="number">7822</span> MB</span><br><span class="line"> xz_schema.ods1_bkpf                   | <span class="number">7485</span> MB</span><br><span class="line"> xz_schema.ods1_wf_message_done        | <span class="number">7233</span> MB</span><br><span class="line"> xz_schema.source_anlp_201909          | <span class="number">7164</span> MB</span><br><span class="line"> xz_schema.source_anlp_201908          | <span class="number">7155</span> MB</span><br><span class="line"> xz_schema.source_anlp_201907          | <span class="number">7146</span> MB</span><br><span class="line"> xz_schema.source_anlp_201906          | <span class="number">7124</span> MB</span><br><span class="line"> xz_schema.ods1_anep                   | <span class="number">7112</span> MB</span><br><span class="line"> xz_schema.source_anlp_201910          | <span class="number">7082</span> MB</span><br><span class="line"> xz_schema.source_anlp_201912          | <span class="number">7063</span> MB</span><br><span class="line">(<span class="number">20</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>数据库技术</category>
+        <category>PostgreSQL</category>
+        <category>原创</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>PostgreSQL</tag>
+        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -242,43 +279,6 @@
         <tag>OS</tag>
         <tag>Oracle</tag>
         <tag>裸设备</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PostgreSQL的pageinspect插件</title>
-    <url>/2024/11/27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>PostgreSQL运维常用命令</title>
-    <url>/2024/11/26/PostgreSQL%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="PostgreSQL运维常用命令"><a href="#PostgreSQL运维常用命令" class="headerlink" title="PostgreSQL运维常用命令"></a>PostgreSQL运维常用命令</h1><h2 id="查看当前连接的用户名"><a href="#查看当前连接的用户名" class="headerlink" title="查看当前连接的用户名"></a>查看当前连接的用户名</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="built_in">current_user</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="给普通用户授权"><a href="#给普通用户授权" class="headerlink" title="给普通用户授权"></a>给普通用户授权</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">USAGE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> sch_user <span class="keyword">TO</span> usr_user;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询表大小，不含索引"><a href="#查询表大小，不含索引" class="headerlink" title="查询表大小，不含索引"></a>查询表大小，不含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">8192</span> bytes</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询表大小，含索引"><a href="#查询表大小，含索引" class="headerlink" title="查询表大小，含索引"></a>查询表大小，含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">24</span> kB</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查WAL文件"><a href="#查WAL文件" class="headerlink" title="查WAL文件"></a>查WAL文件</h2><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"> select *,size/<span class="number">1024</span>/<span class="number">1024</span> <span class="built_in">as</span> <span class="string">&quot;MB&quot;</span> from pg_ls_waldir();</span><br><span class="line">           name           |   <span class="type">size</span>   |      <span class="type">modification</span>      | <span class="type">MB</span> </span><br><span class="line">--------------------------+----------+------------------------+----</span><br><span class="line"> cleanup.log              |      <span class="type">463</span> | <span class="type">2022</span><span class="number">-07</span><span class="number">-28</span> <span class="number">09</span>:<span class="number">45</span>:<span class="number">36</span>+<span class="number">08</span> |  <span class="type">0</span></span><br><span class="line"> <span class="number">000000010000000800000011</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">10</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000012</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">11</span>:<span class="number">05</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000013</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">09</span>:<span class="number">58</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000014</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">02</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000015</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">06</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line">(<span class="number">6</span> rows)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查数据库日志"><a href="#查数据库日志" class="headerlink" title="查数据库日志"></a>查数据库日志</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="PG查表大小"><a href="#PG查表大小" class="headerlink" title="PG查表大小"></a>PG查表大小</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_schema || <span class="string">&#x27;.&#x27;</span> || <span class="built_in">table_name</span> <span class="keyword">AS</span> table_full_name, pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> </span><br><span class="line">    || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>)) <span class="keyword">AS</span> size</span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">tables</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>) <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            table_full_name            |   size   </span><br><span class="line"><span class="comment">---------------------------------------+----------</span></span><br><span class="line"> xz_schema.ods1_bseg                   | <span class="number">123</span> GB</span><br><span class="line"> xz_schema.ods1_coep                   | <span class="number">15</span> GB</span><br><span class="line"> xz_schema.fj_voucher                  | <span class="number">14</span> GB</span><br><span class="line"> xz_schema.ods1_assets_card            | <span class="number">12</span> GB</span><br><span class="line"> xz_schema.ods2_ods_asset_list         | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.fj_voucher_mark             | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.ods1_anla                   | <span class="number">10218</span> MB</span><br><span class="line"> xz_schema.ods2_intf_t_install_account | <span class="number">9761</span> MB</span><br><span class="line"> fsti_schema.assets_card               | <span class="number">8662</span> MB</span><br><span class="line"> xz_schema.source_anlc                 | <span class="number">8528</span> MB</span><br><span class="line"> xz_schema.source_anlp_201901          | <span class="number">7822</span> MB</span><br><span class="line"> xz_schema.ods1_bkpf                   | <span class="number">7485</span> MB</span><br><span class="line"> xz_schema.ods1_wf_message_done        | <span class="number">7233</span> MB</span><br><span class="line"> xz_schema.source_anlp_201909          | <span class="number">7164</span> MB</span><br><span class="line"> xz_schema.source_anlp_201908          | <span class="number">7155</span> MB</span><br><span class="line"> xz_schema.source_anlp_201907          | <span class="number">7146</span> MB</span><br><span class="line"> xz_schema.source_anlp_201906          | <span class="number">7124</span> MB</span><br><span class="line"> xz_schema.ods1_anep                   | <span class="number">7112</span> MB</span><br><span class="line"> xz_schema.source_anlp_201910          | <span class="number">7082</span> MB</span><br><span class="line"> xz_schema.source_anlp_201912          | <span class="number">7063</span> MB</span><br><span class="line">(<span class="number">20</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>数据库技术</category>
-        <category>PostgreSQL</category>
-        <category>原创</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>PostgreSQL</tag>
-        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -431,6 +431,11 @@
       </tags>
   </entry>
   <entry>
+    <title>Solaris调整文件系统参考</title>
+    <url>/2024/12/02/Solaris%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>测试页面</title>
     <url>/2024/11/17/test/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码错误，请重试" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -555,6 +560,28 @@
       </tags>
   </entry>
   <entry>
+    <title>使用yum下载rpm包</title>
+    <url>/2024/11/26/%E4%BD%BF%E7%94%A8yum%E4%B8%8B%E8%BD%BDrpm%E5%8C%85/</url>
+    <content><![CDATA[<h1 id="使用yum下载rpm包"><a href="#使用yum下载rpm包" class="headerlink" title="使用yum下载rpm包"></a>使用yum下载rpm包</h1><p>使用yum下载rpm包的命令是：</p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">yum install</span> <span class="literal">--</span><span class="comment">downloadonly</span> <span class="literal">--</span><span class="comment">downloaddir=/tmp</span> &lt;<span class="comment">package</span><span class="literal">-</span><span class="comment">name</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>请注意，如果下载的包包含未满足的依赖关系，yum将会下载所有依赖关系的包，但不会进行安装。</p>
+<p>另外，对于CentOS&#x2F;RHEL 6或更早期版本，需要安装一个名为yum-plugin-downloadonly的yum插件，才能使用–downloadonly命令选项。</p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>操作系统技术</category>
+        <category>Linux技术</category>
+        <category>原创</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>操作系统</tag>
+        <tag>rpm</tag>
+        <tag>yum</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0</title>
     <url>/2017/08/16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/</url>
     <content><![CDATA[<h1 id="使用UDEV在Linux7操作系统下为磁盘配置名称"><a href="#使用UDEV在Linux7操作系统下为磁盘配置名称" class="headerlink" title="使用UDEV在Linux7操作系统下为磁盘配置名称"></a>使用UDEV在Linux7操作系统下为磁盘配置名称</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Linux操作系统 – Oracle Linux 7.0版本及更新<br>Linux x86-64</p>
@@ -598,28 +625,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用yum下载rpm包</title>
-    <url>/2024/11/26/%E4%BD%BF%E7%94%A8yum%E4%B8%8B%E8%BD%BDrpm%E5%8C%85/</url>
-    <content><![CDATA[<h1 id="使用yum下载rpm包"><a href="#使用yum下载rpm包" class="headerlink" title="使用yum下载rpm包"></a>使用yum下载rpm包</h1><p>使用yum下载rpm包的命令是：</p>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">yum install</span> <span class="literal">--</span><span class="comment">downloadonly</span> <span class="literal">--</span><span class="comment">downloaddir=/tmp</span> &lt;<span class="comment">package</span><span class="literal">-</span><span class="comment">name</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p>请注意，如果下载的包包含未满足的依赖关系，yum将会下载所有依赖关系的包，但不会进行安装。</p>
-<p>另外，对于CentOS&#x2F;RHEL 6或更早期版本，需要安装一个名为yum-plugin-downloadonly的yum插件，才能使用–downloadonly命令选项。</p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>操作系统技术</category>
-        <category>Linux技术</category>
-        <category>原创</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>操作系统</tag>
-        <tag>rpm</tag>
-        <tag>yum</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>写在春节里</title>
     <url>/2009/01/19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
     <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
@@ -627,11 +632,10 @@
 <p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
 ]]></content>
       <categories>
-        <category>原创</category>
-        <category>诗词</category>
+        <category>诗词歌赋</category>
       </categories>
       <tags>
-        <tag>原创</tag>
+        <tag>诗词歌赋</tag>
       </tags>
   </entry>
   <entry>
@@ -738,6 +742,25 @@
       </tags>
   </entry>
   <entry>
+    <title>开启Win10卓越性能电源模式</title>
+    <url>/2024/11/28/%E5%BC%80%E5%90%AFWin10%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E7%94%B5%E6%BA%90%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="开启Win10卓越性能电源模式"><a href="#开启Win10卓越性能电源模式" class="headerlink" title="开启Win10卓越性能电源模式"></a>开启Win10卓越性能电源模式</h1><p>输入“powershell”，在弹出的“Windows PowerShell”中右击并选择“以管理员身份运行”;</p>
+<p>接下来输入代码</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">powercfg</span> -duplicatescheme e9a42b02-d5df-<span class="number">448</span>d-aa00-<span class="number">03</span>f14749eb61</span><br></pre></td></tr></table></figure>
+<p>如果一切无误，屏幕上将显示出“电源方案 GU8bba-8039c544288d (卓越性能)”字样，这时我们便成功开启了“超级性能模式”<br>(中文版翻译成“卓越性能”模式，甭管它了，哪个顺眼就叫哪个吧~)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>开启Win10无人参与系统睡眠超时</title>
+    <url>/2024/11/29/%E5%BC%80%E5%90%AFWin10%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9D%A1%E7%9C%A0%E8%B6%85%E6%97%B6/</url>
+    <content><![CDATA[<h1 id="开启Win10无人参与系统睡眠超时"><a href="#开启Win10无人参与系统睡眠超时" class="headerlink" title="开启Win10无人参与系统睡眠超时"></a>开启Win10无人参与系统睡眠超时</h1><p>regedit</p>
+<p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20\7bc4a2f9-d8fc-4469-b07b-33eb785aaca0</p>
+<p>然后在右侧双击【Attributes】，在弹出的窗口中【数值数据】改为“2”，单击【确定】</p>
+<p>电源</p>
+<p><img src="/vx_images/118114317885143.png"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？</title>
     <url>/2024/04/24/%E5%A6%82%E4%BD%95%E5%B0%86ASM%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E4%BB%8E%E4%B8%80%E4%B8%AA%E7%A3%81%E7%9B%98%E7%BB%84%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%A3%81%E7%9B%98%E7%BB%84%EF%BC%9F/</url>
     <content><![CDATA[<h1 id="如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？"><a href="#如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？" class="headerlink" title="如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？"></a>如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？</h1><p>在ASM磁盘组之间移动文件的首选方法是使用RMAN。RMAN对于自动存储管理至关重要，负责跟踪ASM文件名以及删除过时的ASM文件。由于无法通过正常的操作系统接口访问ASM文件，因此RMAN是复制ASM文件的首选方式。</p>
@@ -814,23 +837,16 @@
       </tags>
   </entry>
   <entry>
-    <title>开启Win10卓越性能电源模式</title>
-    <url>/2024/11/28/%E5%BC%80%E5%90%AFWin10%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E7%94%B5%E6%BA%90%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="开启Win10卓越性能电源模式"><a href="#开启Win10卓越性能电源模式" class="headerlink" title="开启Win10卓越性能电源模式"></a>开启Win10卓越性能电源模式</h1><p>输入“powershell”，在弹出的“Windows PowerShell”中右击并选择“以管理员身份运行”;</p>
-<p>接下来输入代码</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">powercfg</span> -duplicatescheme e9a42b02-d5df-<span class="number">448</span>d-aa00-<span class="number">03</span>f14749eb61</span><br></pre></td></tr></table></figure>
-<p>如果一切无误，屏幕上将显示出“电源方案 GU8bba-8039c544288d (卓越性能)”字样，这时我们便成功开启了“超级性能模式”<br>(中文版翻译成“卓越性能”模式，甭管它了，哪个顺眼就叫哪个吧~)</p>
+    <title>心未泯，梦不灭</title>
+    <url>/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
+    <content><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>开启Win10无人参与系统睡眠超时</title>
-    <url>/2024/11/29/%E5%BC%80%E5%90%AFWin10%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9D%A1%E7%9C%A0%E8%B6%85%E6%97%B6/</url>
-    <content><![CDATA[<h1 id="开启Win10无人参与系统睡眠超时"><a href="#开启Win10无人参与系统睡眠超时" class="headerlink" title="开启Win10无人参与系统睡眠超时"></a>开启Win10无人参与系统睡眠超时</h1><p>regedit</p>
-<p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20\7bc4a2f9-d8fc-4469-b07b-33eb785aaca0</p>
-<p>然后在右侧双击【Attributes】，在弹出的窗口中【数值数据】改为“2”，单击【确定】</p>
-<p>电源</p>
-<p><img src="/vx_images/118114317885143.png"></p>
-]]></content>
+      <categories>
+        <category>诗词歌赋</category>
+      </categories>
+      <tags>
+        <tag>诗词歌赋</tag>
+      </tags>
   </entry>
   <entry>
     <title>我的存储系统</title>
@@ -841,18 +857,36 @@
 ]]></content>
   </entry>
   <entry>
-    <title>心未泯，梦不灭</title>
-    <url>/2018/09/12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
-    <content><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<span id="more"></span><br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>
+    <title>春节这几天</title>
+    <url>/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
 ]]></content>
       <categories>
-        <category>诗词</category>
+        <category>个人生活</category>
         <category>原创</category>
       </categories>
       <tags>
-        <tag>测试</tag>
-        <tag>内部使用</tag>
+        <tag>生活</tag>
+        <tag>原创</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>春梦独好</title>
+    <url>/2018/09/12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/</url>
+    <content><![CDATA[<h1 id="春梦独好"><a href="#春梦独好" class="headerlink" title="春梦独好"></a>春梦独好</h1><p>春雨乍到，<br>帘外纷纷扰扰。<br>少年惊早，<br>却道春梦独好。<br>梦入紫竹天外境，<br>珍禽倚枝鸣不停，<br>仙雾绕膝影不清。<br>少年回首寻归径，<br>径入幽林已不明。<br>另辟佳径觅知音，<br>竟得佳人路边亭，<br>伊人颦眉望少年，<br>道是无意却有情。<br>待要上前讨芳名，<br>奈何春雷醒梦魇。<br>春梦独好，<br>安能长眠不愿晓。<br>梦回兰亭，<br>喜与佳人共逍遥。<br>——陈荣 于 红旗村<br>回赠好友心源作<br>2008年4月23日夜<br>ID：CRXSPOEMRA327</p>
+]]></content>
+      <categories>
+        <category>诗词歌赋</category>
+      </categories>
+      <tags>
+        <tag>诗词歌赋</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>暑期帮WYH整电脑</title>
+    <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
+]]></content>
   </entry>
   <entry>
     <title>无人知晓答案的问题</title>
@@ -982,29 +1016,11 @@
       </tags>
   </entry>
   <entry>
-    <title>春梦独好</title>
-    <url>/2018/09/12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/</url>
-    <content><![CDATA[<h1 id="春梦独好"><a href="#春梦独好" class="headerlink" title="春梦独好"></a>春梦独好</h1><p>春雨乍到，<br>帘外纷纷扰扰。<br>少年惊早，<br>却道春梦独好。<br>梦入紫竹天外境，<span id="more"></span><br>珍禽倚枝鸣不停，<br>仙雾绕膝影不清。<br>少年回首寻归径，<br>径入幽林已不明。<br>另辟佳径觅知音，<br>竟得佳人路边亭，<br>伊人颦眉望少年，<br>道是无意却有情。<br>待要上前讨芳名，<br>奈何春雷醒梦魇。<br>春梦独好，<br>安能长眠不愿晓。<br>梦回兰亭，<br>喜与佳人共逍遥。<br>——陈荣 于 红旗村<br>回赠好友心源作<br>2008年4月23日夜<br>ID：CRXSPOEMRA327</p>
+    <title>有一种生活</title>
+    <url>/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
 ]]></content>
-      <categories>
-        <category>原创</category>
-        <category>诗词</category>
-      </categories>
       <tags>
-        <tag>原创</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>春节这几天</title>
-    <url>/2009/02/07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
-    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
-]]></content>
-      <categories>
-        <category>个人生活</category>
-        <category>原创</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
         <tag>原创</tag>
       </tags>
   </entry>
@@ -1013,21 +1029,6 @@
     <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEZQY%E6%95%B4%E7%94%B5%E8%84%91/</url>
     <content><![CDATA[<h1 id="暑期帮ZQY整电脑"><a href="#暑期帮ZQY整电脑" class="headerlink" title="暑期帮ZQY整电脑"></a>暑期帮ZQY整电脑</h1><p>今天履行诺言，帮ZQY搞电脑，一台是普通兼容机，大概看了下没啥大问题，QY希望重装系统，，小生遂施展GHOST大法，很快就搞定，<br>    接下来是联想的本本，配制还不错，手感挺好，原装正版VISTA，主人欲降级改装为XP，不知道Microsoft公司是何感想，顺手翻了一下硬盘文件，发现一个GHO文件，看一下大小，2G多，一定不可能是VISTA了，估计是XP的镜像，用GHOST还原一下，OK，恢复初装状态，系统问题总算搞定。<br>    接着，我们骑电驴到大利嘉，买了无线路由，说实话，小生还重没配制过路由，所以向店里的技术员要了张名片，不懂可以问嘛，不过，小生对自己的实力还是很有信心的，回到QY家，很快将硬件搭好，软件方面，进入路由配置，设网关，掩码，分配地址，输密码，重启路由，测试，OK，一切顺利，台式机与本本都能无线上网，接着，配置网络邻居，再搭个内网FTP，哇几乎完美，最最后，没忘记给路由上个防火墙，嘿嘿，小生够负责的了。<br>    随便玩了一会儿，收工回家。<br>    总结，今天，小生第一次配制无线路由，且成功完成，填补了小生计算机无线网络搭建的空白！！！</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>暑期帮WYH整电脑</title>
-    <url>/2008/06/26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
-    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>有一种生活</title>
-    <url>/2009/01/01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
-    <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
-]]></content>
-      <tags>
-        <tag>原创</tag>
-      </tags>
   </entry>
   <entry>
     <title>薛定谔的猫</title>
@@ -1259,8 +1260,14 @@
   <entry>
     <title>随想</title>
     <url>/2011/12/25/%E9%9A%8F%E6%83%B3/</url>
-    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#114;&#x40;&#x70;&#111;&#119;&#x65;&#114;&#108;&#111;&#110;&#103;&#46;&#102;&#122;&#46;&#102;&#x6a;&#46;&#x63;&#110;">&#x63;&#114;&#x40;&#x70;&#111;&#119;&#x65;&#114;&#108;&#111;&#110;&#103;&#46;&#102;&#122;&#46;&#102;&#x6a;&#46;&#x63;&#110;</a> </p>
+    <content><![CDATA[<h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#99;&#114;&#x40;&#x70;&#x6f;&#119;&#x65;&#x72;&#108;&#x6f;&#110;&#103;&#x2e;&#102;&#122;&#46;&#102;&#106;&#x2e;&#x63;&#110;">&#99;&#114;&#x40;&#x70;&#x6f;&#119;&#x65;&#x72;&#108;&#x6f;&#110;&#103;&#x2e;&#102;&#122;&#46;&#102;&#106;&#x2e;&#x63;&#110;</a> </p>
 ]]></content>
+      <categories>
+        <category>诗词歌赋</category>
+      </categories>
+      <tags>
+        <tag>诗词歌赋</tag>
+      </tags>
   </entry>
   <entry>
     <title>莱瑟塔档案</title>
