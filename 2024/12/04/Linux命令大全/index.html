@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Linux命令大全Aa2p：该命令用于将awk脚本转换为Perl脚本。 abrt-action-analyze-backtrace：该命令用于分析崩溃报告中的回溯信息。 abrt-action-analyze-c：该命令用于分析C语言程序崩溃时的相关信息。 abrt-action-analyze-ccpp-local：该命令用于在本地分析C&#x2F;C++程序的崩溃报告。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux命令大全">
+<meta property="og:url" content="https://chanrevival.github.io/2024/12/04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/index.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="Linux命令大全Aa2p：该命令用于将awk脚本转换为Perl脚本。 abrt-action-analyze-backtrace：该命令用于分析崩溃报告中的回溯信息。 abrt-action-analyze-c：该命令用于分析C语言程序崩溃时的相关信息。 abrt-action-analyze-ccpp-local：该命令用于在本地分析C&#x2F;C++程序的崩溃报告。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-04T02:38:05.000Z">
+<meta property="article:modified_time" content="2024-12-04T07:21:26.099Z">
+<meta property="article:author" content="Chan Revival">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chanrevival.github.io/2024/12/04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux命令大全 | Chan Revival Sky</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN485BL2P4');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chan Revival Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天上星，亮晶晶，永灿烂，长安宁。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">39</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">47</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-internal_use">
+
+    <a href="/internal_use" rel="section"><i class="fa fa-fw"></i>internal_use</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chanrevival/" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024/12/04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux命令大全
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-04 10:38:05 / 修改时间：15:21:26" itemprop="dateCreated datePublished" datetime="2024-12-04T10:38:05+08:00">2024-12-04</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>50k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>45 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Linux命令大全"><a href="#Linux命令大全" class="headerlink" title="Linux命令大全"></a>Linux命令大全</h1><h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>a2p：该命令用于将awk脚本转换为Perl脚本。</p>
+<p>abrt-action-analyze-backtrace：该命令用于分析崩溃报告中的回溯信息。</p>
+<p>abrt-action-analyze-c：该命令用于分析C语言程序崩溃时的相关信息。</p>
+<p>abrt-action-analyze-ccpp-local：该命令用于在本地分析C&#x2F;C++程序的崩溃报告。</p>
+<p>abrt-action-analyze-core：该命令用于分析核心转储文件。</p>
+<p>abrt-action-analyze-oops：该命令用于分析内核oops信息。</p>
+<p>abrt-action-analyze-python：该命令用于分析Python程序崩溃时的相关信息。</p>
+<p>abrt-action-analyze-vmcore：该命令用于分析虚拟机核心转储文件。</p>
+<p>abrt-action-analyze-vulnerability：该命令用于分析崩溃报告中的潜在安全漏洞。</p>
+<p>abrt-action-analyze-xorg：该命令用于分析Xorg日志中的错误。</p>
+<p>abrt-action-check-oops-for-hw-error：该命令用于检查内核oops信息是否由硬件错误引起。</p>
+<p>abrt-action-generate-backtrace：该命令用于生成崩溃报告的回溯信息。</p>
+<p>abrt-action-generate-core-backtrace：该命令用于生成核心转储文件的回溯信息。</p>
+<p>abrt-action-install-debuginfo：该命令用于安装调试信息包，以便分析崩溃报告。</p>
+<p>abrt-action-list-dsos：该命令用于列出崩溃报告中涉及的所有动态链接库。</p>
+<p>abrt-action-notify：该命令用于发送崩溃报告的通知。</p>
+<p>abrt-action-perform-ccpp-analysis：该命令用于执行C&#x2F;C++程序崩溃报告的分析。</p>
+<p>abrt-action-save-kernel-data：该命令用于保存内核数据，以便分析崩溃。</p>
+<p>abrt-action-save-package-data：该命令用于保存与崩溃相关的软件包数据。</p>
+<p>abrt-action-trim-files：该命令用于清理不必要的文件，以减少磁盘空间占用。</p>
+<p>abrt-applet：该命令用于启动ABRT的图形界面小程序。</p>
+<p>abrt-auto-reporting：该命令用于配置自动报告崩溃信息。</p>
+<p>abrt-cli：该命令用于ABRT的命令行界面。</p>
+<p>abrt-configuration：该命令用于配置ABRT。</p>
+<p>abrtd：该命令是ABRT守护进程，用于处理崩溃报告。</p>
+<p>abrt-dbus：该命令用于ABRT的DBus服务。</p>
+<p>abrt-dump-oops：该命令用于收集内核oops信息。</p>
+<p>abrt-dump-xorg：该命令用于收集Xorg错误信息。</p>
+<p>abrt-handle-upload：该命令用于处理上传的崩溃报告。</p>
+<p>abrt-harvest-pstoreoops：该命令用于收集pstoreoops信息。</p>
+<p>abrt-harvest-vmcore：该命令用于收集虚拟机核心转储文件。</p>
+<p>abrt-install-ccpp-hook：该命令用于安装C&#x2F;C++程序的崩溃处理钩子。</p>
+<p>abrt-merge-pstoreoops：该命令用于合并pstoreoops信息。</p>
+<p>abrt-retrace-client：该命令用于与Retrace服务器通信，以分析崩溃报告。</p>
+<p>abrt-server：该命令用于启动ABRT服务器。</p>
+<p>abrt-watch-log：该命令用于监控日志文件，以便及时发现崩溃。</p>
+<p>abs2rel：该命令用于将绝对路径转换为相对路径。</p>
+<p>ac：该命令用于显示用户登录时间统计。</p>
+<p>accept：该命令用于在防火墙中添加允许的连接。</p>
+<p>accessdb：该命令用于查看slocate数据库的内容。</p>
+<p>accton：该命令用于开启或关闭进程记账功能。</p>
+<p>aconnect：该命令用于ALSA音序器连接管理。</p>
+<p>adcli：该命令用于加入Active Directory域。</p>
+<p>addgnupghome：该命令用于为用户添加GnuPG主目录。</p>
+<p>addpart：该命令用于在磁盘上添加一个新的分区。</p>
+<p>addr2line：该命令用于将地址转换为文件名和行号。</p>
+<p>adduser：该命令用于添加新用户。</p>
+<p>agetty：该命令用于启动一个getty进程，用于终端登录。</p>
+<p>alias：该命令用于创建命令别名。</p>
+<p>alsabat：该命令用于ALSA声卡诊断工具，测试音频播放和录音功能。</p>
+<p>alsabat-test.sh：该脚本用于自动执行alsabat测试。</p>
+<p>alsactl：该命令用于控制ALSA声卡配置，包括加载、保存和恢复声卡设置。</p>
+<p>alsa-delay：该命令用于测量ALSA音频系统的延迟。<br>alsa-info：该命令用于收集ALSA声卡和配置信息。</p>
+<p>alsa-info.sh：该脚本用于生成ALSA声卡和配置信息的报告。</p>
+<p>alsaloop：该命令用于创建ALSA音频循环设备。</p>
+<p>alsamixer：该命令用于图形化地控制ALSA声卡混音器设置。</p>
+<p>alsatplg：该命令用于ALSA声卡拓扑插件。</p>
+<p>alsaucm：该命令用于ALSA使用情况配置管理。</p>
+<p>alsaunmute：该命令用于取消ALSA声卡的所有静音设置。</p>
+<p>alternatives：该命令用于管理系统中的符号链接，以选择不同的软件版本。</p>
+<p>alt-java：该命令用于选择默认的Java版本。</p>
+<p>amidi：该命令用于发送和接收MIDI消息。</p>
+<p>amixer：该命令用于命令行控制ALSA声卡混音器设置。</p>
+<p>amuFormat.sh：该脚本用于格式化音频文件。</p>
+<p>anaconda：该命令用于CentOS系统的安装程序。</p>
+<p>anaconda-cleanup：该命令用于清理Anaconda安装程序留下的临时文件。</p>
+<p>anaconda-disable-nm-ibft-plugin：该命令用于禁用Anaconda安装程序中的网络管理器iBFT插件。</p>
+<p>anacron：该命令用于在没有运行cron守护进程的系统上执行周期性任务。</p>
+<p>analog：该命令用于显示系统统计信息。</p>
+<p>aplay：该命令用于播放音频文件。</p>
+<p>aplaymidi：该命令用于播放MIDI文件。</p>
+<p>applydeltarpm：该命令用于应用deltarpm补丁，以更新软件包。</p>
+<p>applygnupgdefaults：该脚本用于为GnuPG配置默认设置。</p>
+<p>appstream-compose：该命令用于生成AppStream元数据。</p>
+<p>appstream-util：该命令用于操作和验证AppStream元数据。</p>
+<p>apropos：该命令用于搜索手册页的描述和关键字。</p>
+<p>ar：该命令用于创建、修改和提取归档文件。</p>
+<p>arch：该命令用于显示CPU架构类型。</p>
+<p>arecord：该命令用于录制音频。</p>
+<p>arecordmidi：该命令用于录制MIDI数据。</p>
+<p>arp：该命令用于操作系统的ARP缓存。</p>
+<p>arpd：该命令用于收集ARP数据包信息。</p>
+<p>arping：该命令用于发送ARP请求并接收回应。</p>
+<p>as：该命令是GNU汇编器。</p>
+<p>aseqdump：该命令用于监控ALSA序列端口的事件。</p>
+<p>aseqnet：该命令用于通过网络发送和接收ALSA序列端口事件。</p>
+<p>aserver：该命令用于启动ALSA音序器服务器。</p>
+<p>at：该命令用于在指定时间执行命令。</p>
+<p>atd：该命令是at守护进程，用于在指定时间执行命令。</p>
+<p>atq：该命令用于列出等待执行的at作业。</p>
+<p>atrm：该命令用于删除等待执行的at作业。</p>
+<p>atrun：该命令用于运行等待执行的at作业。</p>
+<p>attr：该命令用于管理文件系统对象的扩展属性。</p>
+<p>audispd：该命令是audit dispatcher守护进程，用于处理audit日志。</p>
+<p>audit2allow：该命令用于从audit日志生成SELinux策略允许规则。</p>
+<p>audit2why：该命令用于解释audit日志中的SELinux拒绝原因。</p>
+<p>auditctl：该命令用于配置audit守护进程。</p>
+<p>auditd：该命令是audit守护进程，用于监控系统事件。</p>
+<p>augenrules：该命令用于生成audit规则文件，通常在系统启动时自动运行。</p>
+<p>aulast：该命令用于显示用户最后登录、注销的时间和tty。</p>
+<p>aulastlog：该命令用于显示用户最后一次登录尝试的日志。</p>
+<p>aureport：该命令用于生成基于audit日志的摘要报告。</p>
+<p>ausearch：该命令用于搜索audit日志中的事件。</p>
+<p>ausyscall：该命令用于列出系统调用表，并可以用来生成audit规则。</p>
+<p>authconfig：该命令用于配置系统的认证资源，如密码加密类型和认证方法。</p>
+<p>authconfig-tui：该命令提供一个文本用户界面，用于配置系统的认证资源。</p>
+<p>automount：该命令用于自动挂载文件系统，通常与autofs服务一起使用。</p>
+<p>autrace：该命令用于跟踪程序执行时的系统调用和接收到的信号。</p>
+<p>auvirt：该命令用于生成虚拟机的audit日志。</p>
+<p>avahi-daemon：该命令是Avahi服务的守护进程，用于Zeroconf网络服务发现。</p>
+<p>avcstat：该命令用于显示SELinux访问向量缓存（AVC）的统计信息。</p>
+<p>awk：该命令是一个强大的文本处理工具，用于模式扫描和处理。</p>
+<p>axfer：该命令用于列出ALSA声卡上的PCM和MIDI设备，以及它们之间的连接。</p>
+<h2 id="B"><a href="#B" class="headerlink" title="B"></a>B</h2><p>badblocks：该命令用于检查磁盘设备上的坏块。</p>
+<p>baobab：该命令是一个磁盘使用情况分析工具，用于可视化地显示磁盘使用情况。</p>
+<p>base64：该命令用于编码和解码数据使用Base64编码方案。</p>
+<p>basename：该命令用于从文件名中去除路径和后缀。</p>
+<p>bash：该命令是Bourne-Again SHell，一个用于命令行解释的强大脚本语言。</p>
+<p>bashbug：该命令用于报告bash shell的bug。</p>
+<p>bashbug-64：该命令用于报告64位bash shell的bug。</p>
+<p>batch：该命令用于在系统负载较轻时执行给定的命令。</p>
+<p>bc：该命令是一个任意精度的计算器语言。</p>
+<p>bccmd：该命令用于与Broadcom BCM43xx无线设备通信。</p>
+<p>bdftopcf：该命令用于将BDF字体格式转换为PCF字体格式。</p>
+<p>bdftruncate：该命令用于截断BDF字体文件。</p>
+<p>bd_info：该命令用于显示关于绑定挂载的信息。</p>
+<p>bdsplice：该命令用于在绑定挂载的目录之间移动子目录。</p>
+<p>bg：该命令用于将作业放在后台执行。</p>
+<p>bind：该命令用于创建C++类成员函数的绑定。</p>
+<p>biosdecode：该命令用于解码BIOS启动信息。</p>
+<p>biosdevname：该命令用于根据BIOS提供的设备名称重命名网络接口。</p>
+<p>blkdeactivate：该命令用于停用所有活动块设备。</p>
+<p>blkdiscard：该命令用于丢弃设备上的扇区。</p>
+<p>blkid：该命令用于查找和打印块设备的属性。</p>
+<p>blkiomon：该命令用于监控块设备的I&#x2F;O性能。</p>
+<p>blkmapd：该命令是逻辑卷管理器（LVM）的块映射守护进程。</p>
+<p>blkparse：该命令用于解析blktrace生成的跟踪数据。</p>
+<p>blkrawverify：该命令用于验证blktrace生成的原始跟踪数据。</p>
+<p>blktrace：该命令用于收集块设备I&#x2F;O轨迹信息。</p>
+<p>blockdev：该命令用于允许从命令行执行块设备操作。</p>
+<p>bluemoon：该命令的具体用途未在标准CentOS 7命令中找到，可能是一个特定软件的命令。</p>
+<p>bluetoothctl：该命令用于控制蓝牙设备。</p>
+<p>bluetooth-sendto：该命令用于通过蓝牙发送文件。</p>
+<p>bno_plot.py：该命令是一个Python脚本，用于绘制BNO055传感器数据。</p>
+<p>boltctl：该命令用于控制Thunderbolt设备。</p>
+<p>bond2team：该命令用于将bonding接口转换为team接口。</p>
+<p>bootctl：该命令用于查询和控制系统启动加载器。</p>
+<p>bpftool：该命令用于显示和操作eBPF程序和映射。</p>
+<p>brasero：该命令是一个CD&#x2F;DVD烧录软件。</p>
+<p>brctl：该命令用于配置和管理以太网桥接。</p>
+<p>break：该命令用于退出for、while或until循环。</p>
+<p>bridge：该命令用于配置网络桥接。</p>
+<p>brltty：该命令是用于盲人用户的屏幕阅读器。</p>
+<p>brltty-config：该命令用于配置brltty。</p>
+<p>brltty-ctb：该命令用于处理brltty的CTB（计算机电话布莱叶）数据。</p>
+<p>brltty-install：该命令用于安装brltty。</p>
+<p>brltty-trtxt：该命令用于处理brltty的TRT（文本到布莱叶）数据。</p>
+<p>brltty-ttb：该命令用于处理brltty的TTB（布莱叶到文本）数据。</p>
+<p>btattach：该命令用于附着蓝牙设备。</p>
+<p>btmon：该命令用于监控蓝牙协议。</p>
+<p>btrace：该命令用于跟踪和调试运行中的程序。</p>
+<p>btrecord：该命令用于记录蓝牙HCI事件。</p>
+<p>btreplay：该命令用于重放btrfs文件系统上的I&#x2F;O轨迹，用于测试和调试。</p>
+<p>btrfs：该命令用于管理btrfs文件系统，包括子卷管理、设备管理等。</p>
+<p>btrfsck：该命令用于检查btrfs文件系统的完整性。</p>
+<p>btrfs-convert：该命令用于将其他文件系统转换为btrfs文件系统。</p>
+<p>btrfs-debug-tree：该命令用于打印btrfs文件系统的树结构信息，用于调试。</p>
+<p>btrfs-find-root：该命令用于查找btrfs文件系统的根。</p>
+<p>btrfs-image：该命令用于创建btrfs文件系统的映像。</p>
+<p>btrfs-map-logical：该命令用于将btrfs文件系统中的逻辑地址映射到物理地址。</p>
+<p>btrfs-select-super：该命令用于选择btrfs文件系统中的超级块副本。</p>
+<p>btrfstune：该命令用于调整btrfs文件系统的某些属性。</p>
+<p>btrfs-zero-log：该命令用于清空btrfs文件系统的日志。</p>
+<p>btt：该命令用于分析blktrace生成的跟踪数据。</p>
+<p>build-classpath：该命令用于构建Java类路径。</p>
+<p>build-classpath-directory：该命令用于构建包含JAR文件的目录的类路径。</p>
+<p>build-jar-repository：该命令用于构建包含JAR文件的仓库。</p>
+<p>build-locale-archive：该命令用于构建二进制语言环境档案。</p>
+<p>builtin：该命令用于执行shell内建命令。</p>
+<p>bunzip2：该命令用于解压bzip2压缩的文件。</p>
+<p>busctl：该命令用于与D-Bus消息总线交互。</p>
+<p>bzcat：该命令用于解压并显示bzip2压缩的文件内容。</p>
+<p>bzcmp：该命令用于比较bzip2压缩的文件。</p>
+<p>bzdiff：该命令用于比较bzip2压缩的文件，并显示差异。</p>
+<p>bzgrep：该命令用于在bzip2压缩的文件中搜索指定的模式。</p>
+<p>bzip2：该命令用于压缩文件或解压bzip2格式的文件。</p>
+<p>bzip2recover：该命令用于尝试恢复损坏的bzip2压缩文件。</p>
+<p>bzless：该命令用于分页查看bzip2压缩的文件内容。</p>
+<p>bzmore：该命令用于分页查看bzip2压缩的文件内容。</p>
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>c2ph：该命令用于将C语言头文件转换为Perl语言代码。</p>
+<p>c89：该命令是C语言编译器，用于编译符合ISO C90标准的代码。</p>
+<p>c99：该命令是C语言编译器，用于编译符合ISO C99标准的代码。</p>
+<p>cacertdir_rehash：该命令用于为OpenSSL重新生成证书目录的哈希值。</p>
+<p>cache_check：该命令用于检查ext3文件系统的缓存一致性。</p>
+<p>cache_dump：该命令用于转储ext3文件系统的缓存信息。</p>
+<p>cache_metadata_size：该命令用于报告ext3文件系统元数据缓存的大小。</p>
+<p>cache_repair：该命令用于修复ext3文件系统的缓存。</p>
+<p>cache_restore：该命令用于恢复ext3文件系统的缓存。</p>
+<p>cache_writeback：该命令用于将ext3文件系统的缓存写回磁盘。</p>
+<p>cairo-sphinx：该命令用于测试cairo图形库的性能。</p>
+<p>cal：该命令用于显示日历。</p>
+<p>ca-legacy：该命令用于处理旧的CA证书。</p>
+<p>calibrate_ppa：该命令用于校准打印机的色彩配置文件。</p>
+<p>caller：该命令用于在shell脚本中显示调用栈信息。</p>
+<p>canberra-boot：该命令用于在系统启动时播放声音。</p>
+<p>canberra-gtk-play：该命令用于在GTK应用程序中播放声音。</p>
+<p>cancel：该命令用于取消打印作业。</p>
+<p>cancel.cups：该命令用于取消CUPS打印队列中的作业。</p>
+<p>capsh：该命令用于以指定的capabilities运行程序。</p>
+<p>captoinfo：该命令用于将termcap描述转换为terminfo描述。</p>
+<p>case：该命令是shell中的关键字，用于实现多分支选择结构。</p>
+<p>cat：该命令用于连接文件并打印到标准输出。</p>
+<p>catchsegv：该命令用于捕获段错误并生成核心文件。</p>
+<p>catman：该命令用于创建或更新man页面缓存。</p>
+<p>cbq：该命令用于带宽控制队列（CBQ）的配置。</p>
+<p>cc：该命令是C语言编译器的链接，通常指向gcc。</p>
+<p>cd：该命令用于更改当前工作目录。</p>
+<p>cd-create-profile：该命令用于创建色彩配置文件。</p>
+<p>cdda2ogg：该命令用于将音频CD转换为Ogg Vorbis格式。</p>
+<p>cdda2wav：该命令用于将音频CD转换为WAV格式。</p>
+<p>cdda-player：该命令用于播放音频CD。</p>
+<p>cd-drive：该命令用于获取CD-ROM驱动器的信息。</p>
+<p>cd-fix-profile：该命令用于修复色彩配置文件。</p>
+<p>cd-iccdump：该命令用于转储ICC色彩配置文件。</p>
+<p>cd-info：该命令用于获取CD-ROM的信息。</p>
+<p>cd-it8：该命令用于IT8色彩校准卡的读取和校准。</p>
+<p>cdparanoia：该命令用于从音频CD抓取音轨。</p>
+<p>cd-paranoia：该命令是cdparanoia的链接。</p>
+<p>cdrdao：该命令用于刻录CD-R和CD-RW。</p>
+<p>cd-read：该命令用于读取CD-ROM。</p>
+<p>cdrecord：该命令用于刻录CD-R和CD-RW。</p>
+<p>celtdec051：该命令用于解码CELT 0.5.1格式的音频。</p>
+<p>celtenc051：该命令用于编码音频到CELT 0.5.1格式。</p>
+<p>centrino-decode：该命令用于解码Centrino无线适配器的诊断信息。</p>
+<p>certmaster-getcert：该命令用于从证书管理器获取证书。</p>
+<p>certmonger：该命令是证书管理守护进程。</p>
+<p>certutil：该命令用于管理证书。</p>
+<p>cfdisk：该命令是一个磁盘分区工具，用于创建和修改分区表。</p>
+<p>c++filt：该命令用于解码C++符号名，使其更易于阅读。</p>
+<p>cgclassify：该命令用于将运行中的进程移动到指定的cgroup。</p>
+<p>cgclear：该命令用于删除所有的cgroup。</p>
+<p>cgconfigparser：该命令用于解析cgroup配置文件。</p>
+<p>cgcreate：该命令用于创建新的cgroup。</p>
+<p>cgdcbxd：该命令用于管理cgroup的DCBX（Data Center Bridging Exchange)设置。</p>
+<p>cgdelete：该命令用于删除指定的cgroup。</p>
+<p>cgdisk：该命令是GPT分区编辑器。</p>
+<p>cgexec：该命令用于在指定的cgroup中运行程序。</p>
+<p>cgget：该命令用于获取cgroup的参数值。</p>
+<p>cgrulesengd：该命令是cgroup规则引擎守护进程。</p>
+<p>cgset：该命令用于设置cgroup的参数值。</p>
+<p>cgsnapshot：该命令用于创建cgroup的快照。</p>
+<p>chacl：该命令用于更改文件的访问控制列表（ACL）。</p>
+<p>chage：该命令用于更改用户密码过期信息。</p>
+<p>chardetect：该命令用于检测文本文件的字符编码。</p>
+<p>charmap：该命令用于显示字符映射表。</p>
+<p>chat：该命令用于脚本化串行端口对话。</p>
+<p>chattr：该命令用于更改文件的扩展属性。</p>
+<p>chcat：该命令用于更改文件的类别。</p>
+<p>chcon：该命令用于更改文件的SELinux安全上下文。</p>
+<p>chcpu：该命令用于更改CPU的在线状态。</p>
+<p>check-binary-files：该命令用于检查二进制文件的兼容性。</p>
+<p>checkisomd5：该命令用于验证ISO文件的MD5校验和。</p>
+<p>checkmodule：该命令用于编译SELinux策略模块。</p>
+<p>checkpolicy：该命令用于编译和验证SELinux策略。</p>
+<p>checksctp：该命令用于检查SCTP（Stream Control Transmission Protocol）的支持。</p>
+<p>cheese：该命令是摄像头应用程序，用于捕捉照片和视频。</p>
+<p>chfn：该命令用于更改用户的全名和其他信息。</p>
+<p>chgpasswd：该命令用于批量更改用户密码。</p>
+<p>chgrp：该命令用于更改文件或目录的组所有权。</p>
+<p>chkconfig：该命令用于管理系统服务的运行级别。</p>
+<p>chmem：该命令用于更改进程的内存限制。</p>
+<p>chmod：该命令用于更改文件或目录的权限。</p>
+<p>chown：该命令用于更改文件或目录的所有者和组。</p>
+<p>chpasswd：该命令用于从标准输入读取用户名和密码，并更新系统密码文件。</p>
+<p>chronyc：该命令用于查询和操作网络时间协议（NTP）服务器。</p>
+<p>chronyd：该命令是NTP守护进程，用于同步系统时钟。</p>
+<p>chroot：该命令用于以指定的根目录运行命令或交互式shell。</p>
+<p>chrt：该命令用于操作实时任务的调度策略和优先级。</p>
+<p>chsh：该命令用于更改用户的登录shell。</p>
+<p>chvt：该命令用于更改虚拟终端。</p>
+<p>cifscreds：该命令用于设置CIFS（Common Internet File System）凭据。</p>
+<p>cifsdd：该命令用于在CIFS文件系统上复制文件，类似于dd命令。</p>
+<p>cifs.idmap：该命令用于管理CIFS的ID映射。</p>
+<p>cifsiostat：该命令用于报告CIFS文件系统的I&#x2F;O统计信息。</p>
+<p>cifs.upcall：该命令用于CIFS Kerberos认证。</p>
+<p>ciptool：该命令用于配置网络接口的IPsec策略。</p>
+<p>cksum：该命令用于计算文件的CRC校验和。</p>
+<p>clean-binary-files：该命令用于清理二进制文件。</p>
+<p>clear：该命令用于清除终端屏幕上的内容。</p>
+<p>clibrary：该命令可能是一个特定上下文中的脚本或工具，但不是CentOS 7的标准命令。具体用途未知。</p>
+<p>clibrary2：同上，不是CentOS 7的标准命令，具体用途未知。</p>
+<p>clock：该命令用于设置或获取系统时钟。</p>
+<p>clockdiff：该命令用于测量两个系统时钟之间的差异。</p>
+<p>clpi_dump：该命令用于转储CLPI（Content Layout Package Information）文件内容。</p>
+<p>cmp：该命令用于比较两个文件并显示它们第一个不同之处。</p>
+<p>cmsutil：该命令用于处理CMS（Cryptographic Message Syntax）数据。</p>
+<p>col：该命令用于过滤反向换行符，并正确显示列。</p>
+<p>colcrt：该命令用于模拟CRT终端显示文本文件。</p>
+<p>colormgr：该命令用于管理颜色配置。</p>
+<p>colrm：该命令用于从输入中删除指定的列。</p>
+<p>column：该命令用于将输入格式化为多列。</p>
+<p>combinedeltarpm：该命令用于创建或更新delta RPM包。</p>
+<p>comm：该命令用于比较两个已排序的文件并显示它们的公共和非公共行。</p>
+<p>command：该命令用于执行一个简单的命令，忽略任何函数或别名。</p>
+<p>command_not_found_handle：该命令是bash的一个函数，用于处理未找到命令的情况。</p>
+<p>compgen：该命令用于生成可能的补全匹配。</p>
+<p>complete：该命令用于定义命令行的补全规则。</p>
+<p>compopt：该命令用于修改shell补全选项。</p>
+<p>compress：该命令用于压缩数据文件。</p>
+<p>connection_recovery：该命令用于恢复网络连接。</p>
+<p>consolehelper：该命令用于运行需要特定权限的程序。</p>
+<p>consoletype：该命令用于打印已连接的终端类型。</p>
+<p>continue：该命令用于在shell脚本中跳过当前循环的剩余部分，并继续下一次迭代。</p>
+<p>convertquota：该命令用于转换磁盘配额文件格式。</p>
+<p>coproc：该命令在bash中用于创建协作进程。</p>
+<p>coredumpctl：该命令用于查询和操作核心转储文件。</p>
+<p>coverage：该命令用于代码覆盖率分析。</p>
+<p>coverage2：该命令可能是coverage工具的版本，用于代码覆盖率分析。</p>
+<p>coverage-2.7：同上，特定版本的代码覆盖率分析工具。</p>
+<p>cp：该命令用于复制文件和目录。</p>
+<p>cpio：该命令用于复制文件到或从档案文件或设备。</p>
+<p>cpp：该命令是C预处理器。</p>
+<p>cpupower：该命令用于显示和设置CPU相关参数。</p>
+<p>cracklib-check：该命令用于检查密码的强度。</p>
+<p>cracklib-format：该命令用于准备用于cracklib的密码文件。</p>
+<p>cracklib-packer：该命令用于创建cracklib字典数据库。</p>
+<p>cracklib-unpacker：该命令用于解包cracklib字典数据库。</p>
+<p>crash：该命令用于分析内核崩溃转储。</p>
+<p>crda：该命令用于设置无线 regulatory domain。</p>
+<p>create-cracklib-dict：该命令用于创建cracklib字典。</p>
+<p>create-jar-links：该命令用于创建JAR文件的链接。</p>
+<p>createrepo：该命令用于创建YUM仓库元数据。</p>
+<p>crlutil：该命令用于处理证书吊销列表（CRL）。</p>
+<p>crond：该命令是cron守护进程，用于执行计划任务。</p>
+<p>crontab：该命令用于维护cron计划任务的表格。</p>
+<p>cryptsetup：该命令用于设置和管理加密的块设备，通常用于LUKS（Linux Unified Key Setup）。</p>
+<p>csh：该命令是C Shell，一个提供与C语言类似的语法和功能的命令行解释器。</p>
+<p>csplit：该命令用于按照指定的模式分割文件。</p>
+<p>csslint-0.6：该命令用于检查CSS代码的质量，版本0.6。</p>
+<p>ctrlaltdel：该命令用于设置Ctrl+Alt+Del组合键的功能。</p>
+<p>ctstat：该命令用于显示连接跟踪统计信息。</p>
+<p>cue2toc：该命令用于将CUE表转换为TOC（Table of Contents）文件。</p>
+<p>cupsaccept：该命令用于允许指定的打印机接受打印作业。</p>
+<p>cupsaddsmb：该命令用于将CUPS打印机共享到SMB（Windows）网络。</p>
+<p>cups-browsed：该命令是CUPS的守护进程，用于浏览网络上的打印机。</p>
+<p>cups-calibrate：该命令用于校准CUPS打印机。</p>
+<p>cupsctl：该命令用于控制CUPS打印系统的行为。</p>
+<p>cupsd：该命令是CUPS打印系统的守护进程。</p>
+<p>cupsdisable：该命令用于禁用指定的打印机。</p>
+<p>cupsenable：该命令用于启用指定的打印机。</p>
+<p>cupsfilter：该命令用于直接调用CUPS过滤器。</p>
+<p>cups-genppd.5.2：该命令用于生成CUPS的PPD（PostScript Printer Description）文件，版本5.2。</p>
+<p>cups-genppdupdate：该命令用于更新CUPS的PPD文件。</p>
+<p>cupsreject：该命令用于拒绝指定的打印机接受打印作业。</p>
+<p>cupstestdsc：该命令用于测试PostScript打印机描述文件的正确性。</p>
+<p>cupstestppd：该命令用于测试PPD文件的正确性。</p>
+<p>curl：该命令用于向&#x2F;从服务器传输数据，支持多种协议。</p>
+<p>cut：该命令用于从文本文件或文本流中提取文本列。</p>
+<p>cvt：该命令用于转换视频文件的格式。</p>
+<p>cvtsudoers：该命令用于将sudoers文件的格式从旧版本转换为新版本。</p>
+<h2 id="D"><a href="#D" class="headerlink" title="D"></a>D</h2><p>date：该命令用于显示或设置系统日期和时间。</p>
+<p>db_archive：该命令用于归档Berkeley DB数据库日志文件。</p>
+<p>db_checkpoint：该命令用于创建Berkeley DB数据库的检查点。</p>
+<p>db_deadlock：该命令用于处理Berkeley DB数据库的死锁。</p>
+<p>db_dump：该命令用于转储Berkeley DB数据库的内容。</p>
+<p>db_dump185：该命令用于转储Berkeley DB 1.85版本数据库的内容。</p>
+<p>db_hotbackup：该命令用于执行Berkeley DB数据库的热备份。</p>
+<p>db_load：该命令用于将转储文件加载到Berkeley DB数据库。</p>
+<p>db_log_verify：该命令用于验证Berkeley DB数据库日志文件的完整性。</p>
+<p>db_printlog：该命令用于打印Berkeley DB数据库日志文件的内容。</p>
+<p>db_recover：该命令用于恢复损坏的Berkeley DB数据库。</p>
+<p>db_replicate：该命令用于管理Berkeley DB数据库的复制。</p>
+<p>db_stat：该命令用于显示Berkeley DB数据库的统计信息。</p>
+<p>db_tuner：该命令用于调整Berkeley DB数据库的配置。</p>
+<p>db_upgrade：该命令用于升级Berkeley DB数据库的版本。</p>
+<p>dbus-binding-tool：该命令用于生成DBus绑定的代码。</p>
+<p>dbus-cleanup-sockets：该命令用于清理DBus套接字文件。</p>
+<p>dbus-daemon：该命令是DBus消息总线的守护进程。</p>
+<p>dbus-launch：该命令用于启动DBus会话总线。</p>
+<p>dbus-monitor：该命令用于监控DBus消息总线上的消息。</p>
+<p>dbus-run-session：该命令用于运行一个新的DBus会话。</p>
+<p>dbus-send：该命令用于发送DBus消息。</p>
+<p>dbus-test-tool：该命令用于测试DBus接口。</p>
+<p>dbus-update-activation-environment：该命令用于更新DBus激活环境变量。</p>
+<p>dbus-uuidgen：该命令用于生成DBus UUID。</p>
+<p>db_verify：该命令用于验证Berkeley DB数据库文件的完整性。</p>
+<p>dbwrap_tool：该命令用于Berkeley DB包装工具。</p>
+<p>dc：该命令是一个任意精度计算器。</p>
+<p>dcbtool：该命令用于配置Data Center Bridging（DCB）网络。</p>
+<p>dconf：该命令用于配置Dconf数据库。</p>
+<p>dd：该命令用于复制文件，并可以转换和格式化数据。</p>
+<p>deallocvt：该命令用于释放虚拟终端。</p>
+<p>debugfs：该命令用于调试ext2&#x2F;ext3&#x2F;ext4文件系统。</p>
+<p>debuginfo-install：该命令用于安装调试信息包。</p>
+<p>declare：该命令用于声明变量或赋予变量属性。</p>
+<p>delpart：该命令用于删除分区表中的分区。</p>
+<p>delv：该命令用于解析域名，并显示解析过程。</p>
+<p>depmod：该命令用于生成模块依赖关系映射文件。</p>
+<p>dequote：该命令用于去除引号。</p>
+<p>desktop-file-edit：该命令用于编辑桌面文件。</p>
+<p>desktop-file-install：该命令用于安装桌面文件。</p>
+<p>desktop-file-validate：该命令用于验证桌面文件的正确性。</p>
+<p>detect_ppa：该命令用于检测并处理潜在的物理地址冲突。</p>
+<p>devdump：该命令用于转储设备信息。</p>
+<p>devlink：该命令用于管理设备链接。</p>
+<p>df：该命令用于显示文件系统的磁盘空间使用情况。</p>
+<p>dfu-tool：该命令用于与DFU（Device Firmware Upgrade）设备交互。</p>
+<p>dgawk：该命令是GAWK（GNU Awk）的一个版本，用于文本处理。</p>
+<p>dhclient：该命令用于配置网络接口的IPv4或IPv6地址，使用DHCP协议。</p>
+<p>dhclient-script：该命令是dhclient的辅助脚本，用于配置网络接口。</p>
+<p>diff：该命令用于比较两个文件的不同。</p>
+<p>diff3：该命令用于比较三个文件的不同。</p>
+<p>diff-jars：该命令用于比较两个JAR文件的内容。</p>
+<p>diffpp：该命令可能是一个用于比较Perl代码的工具，具体用途未知。</p>
+<p>dig：该命令用于查询DNS记录。</p>
+<p>dir：该命令是ls命令的同义词，用于列出目录内容。</p>
+<p>dircolors：该命令用于设置ls命令的输出颜色。</p>
+<p>dirname：该命令用于从给定的路径中提取目录名。</p>
+<p>dirs：该命令用于显示当前 shell 的目录堆栈。</p>
+<p>disown：该命令用于从当前 shell 的作业列表中移除作业。</p>
+<p>dm_dso_reg_tool：该命令用于注册或注销Device Mapper插件。</p>
+<p>dmesg：该命令用于显示内核相关的日志信息。</p>
+<p>dmeventd：该命令是Device Mapper事件守护进程。</p>
+<p>dmevent_tool：该命令用于与Device Mapper事件守护进程交互。</p>
+<p>dmfilemapd：该命令用于管理Device Mapper文件映射。</p>
+<p>dmidecode：该命令用于查看硬件的DMI（Desktop Management Interface）信息。</p>
+<p>dmraid：该命令用于管理软件RAID（Redundant Array of Independent Disks）。</p>
+<p>dmraid.static：该命令是静态链接版本的dmraid。</p>
+<p>dmsetup：该命令用于设置和管理Device Mapper设备。</p>
+<p>dmstats：该命令用于显示Device Mapper统计信息。</p>
+<p>dnsdomainname：该命令用于显示系统的DNS域名。</p>
+<p>dnsmasq：该命令是一个轻量级的DNS和DHCP服务器。</p>
+<p>do：该命令通常在shell脚本中使用，用于执行命令。</p>
+<p>domainname：该命令用于显示或设置系统的NIS&#x2F;YP域名。</p>
+<p>done：该命令通常在shell脚本中使用，表示循环的结束。</p>
+<p>dosfsck：该命令用于检查和修复FAT文件系统。</p>
+<p>dosfslabel：该命令用于设置或读取FAT文件系统的卷标。</p>
+<p>dracut：该命令用于创建initramfs镜像文件。</p>
+<p>drill：该命令是一个DNS查询工具。</p>
+<p>du：该命令用于估计文件或目录的磁盘使用量。</p>
+<p>dump-acct：该命令用于转储进程记账信息。</p>
+<p>dumpe2fs：该命令用于显示ext2&#x2F;ext3&#x2F;ext4文件系统的信息。</p>
+<p>dumpiso：该命令用于转储ISO文件的内容。</p>
+<p>dumpkeys：该命令用于转储键盘映射表。</p>
+<p>dump-utmp：该命令用于转储utmp文件的内容。</p>
+<p>dvcont：该命令用于控制虚拟控制台。</p>
+<p>dvd-ram-control：该命令用于控制DVD-RAM驱动器的行为。</p>
+<p>dvdrecord：该命令用于刻录DVD。</p>
+<p>dvd+rw-booktype：该命令用于设置DVD+RW驱动器的书类型。</p>
+<p>dvd+rw-format：该命令用于格式化DVD+RW驱动器。</p>
+<p>dvd+rw-mediainfo：该命令用于显示DVD+RW媒体的信息。</p>
+<p>dvipdf：该命令用于将DVI文件转换为PDF文件。</p>
+<p>dwp：该命令可能是一个特定上下文中的脚本或工具，但不是CentOS 7的标准命令。具体用途未知。</p>
+<h2 id="E"><a href="#E" class="headerlink" title="E"></a>E</h2><p>e2freefrag：该命令用于报告ext2&#x2F;ext3&#x2F;ext4文件系统的碎片情况。</p>
+<p>e2fsck：该命令用于检查和修复ext2&#x2F;ext3&#x2F;ext4文件系统。</p>
+<p>e2image：该命令用于将ext2&#x2F;ext3&#x2F;ext4文件系统的信息保存到文件中。</p>
+<p>e2label：该命令用于查看或设置ext2&#x2F;ext3&#x2F;ext4文件系统的卷标。</p>
+<p>e2undo：该命令用于撤销对ext2&#x2F;ext3&#x2F;ext4文件系统的最后一次更改。</p>
+<p>e4defrag：该命令用于在线碎片整理ext4文件系统。</p>
+<p>eapol_test：该命令用于测试EAP（Extensible Authentication Protocol）方法和认证器。</p>
+<p>easy_install：该命令用于安装Python包。</p>
+<p>easy_install-2.7：该命令用于安装Python 2.7的包。</p>
+<p>ebtables：该命令用于设置和查看以太网桥接的防火墙规则。</p>
+<p>ebtables-restore：该命令用于从文件中恢复ebtables防火墙规则。</p>
+<p>ebtables-save：该命令用于将ebtables防火墙规则保存到文件中。</p>
+<p>echo：该命令用于在终端输出文本。</p>
+<p>ed：该命令是一个简单的文本编辑器。</p>
+<p>edid-decode：该命令用于解码EDID（Extended Display Identification Data）。</p>
+<p>edquota：该命令用于编辑用户或组的磁盘配额。</p>
+<p>efibootmgr：该命令用于管理EFI启动加载器。</p>
+<p>egrep：该命令用于在文件中搜索扩展的正则表达式。</p>
+<p>eject：该命令用于弹出可移动媒体。</p>
+<p>elfedit：该命令用于编辑ELF（Executable and Linkable Format）文件。</p>
+<p>elif：该命令在shell脚本中用于表示else if条件。</p>
+<p>else：该命令在shell脚本中用于表示if条件不成立时的代码块。</p>
+<p>empathy：该命令是Empathy即时通讯客户端。</p>
+<p>enable：该命令用于启用或禁用shell内置命令。</p>
+<p>enchant：该命令用于检查单词的拼写。</p>
+<p>enscript：该命令用于将文本文件转换为PostScript或PDF。</p>
+<p>env：该命令用于运行程序并设置环境变量。</p>
+<p>envsubst：该命令用于替换环境变量。</p>
+<p>eog：该命令是Eye of GNOME图片查看器。</p>
+<p>eps2eps：该命令用于将EPS文件转换为更标准的格式。</p>
+<p>eqn：该命令用于格式化数学方程。</p>
+<p>era_check：该命令用于检查ERA（Error Recovery Algorithm）日志。</p>
+<p>era_dump：该命令用于转储ERA日志。</p>
+<p>era_invalidate：该命令用于使ERA日志无效。</p>
+<p>era_restore：该命令用于从ERA日志恢复数据。</p>
+<p>esac：该命令在shell脚本中用于结束case语句。</p>
+<p>escputil：该命令用于HP打印机的一些维护任务。</p>
+<p>espeak：该命令是一个文本到语音转换器。</p>
+<p>ether-wake：该命令用于通过网络唤醒计算机。</p>
+<p>ethtool：该命令用于查询和设置网络接口卡的信息。</p>
+<p>eu-addr2line：该命令用于将地址转换为文件名和行号。</p>
+<p>eu-ar：该命令是GNU归档工具。</p>
+<p>eu-elfcmp：该命令用于比较两个ELF文件。</p>
+<p>eu-elfcompress：该命令用于压缩ELF文件。</p>
+<p>eu-elflint：该命令用于检查ELF文件的一致性。</p>
+<p>eu-findtextrel：该命令用于查找文本重定位。</p>
+<p>eu-make-debug-archive：该命令用于创建调试存档。</p>
+<p>eu-nm：该命令用于列出ELF文件中的符号。</p>
+<p>eu-objdump：该命令用于显示ELF文件的信息。</p>
+<p>eu-ranlib：该命令用于生成索引文件。</p>
+<p>eu-readelf：该命令用于显示ELF文件的信息。</p>
+<p>eu-size：该命令用于列出ELF文件的大小。</p>
+<p>eu-stack：该命令用于显示堆栈跟踪。</p>
+<p>eu-strings：该命令用于打印ELF文件中的可打印字符串。</p>
+<p>eu-strip：该命令用于从ELF文件中移除符号。</p>
+<p>eu-unstrip：该命令用于将符号添加回ELF文件。</p>
+<p>eval：该命令用于执行参数作为shell命令。</p>
+<p>evince：该命令是Evince文档查看器。</p>
+<p>evince-previewer：该命令是Evince的预览器。</p>
+<p>evince-thumbnailer：该命令是Evince的缩略图生成器。</p>
+<p>ex：该命令是ed编辑器的扩展版本。</p>
+<p>exec：该命令用于执行命令替换当前shell。</p>
+<p>exempi：该命令用于操作XMP（Extensible Metadata Platform）数据。</p>
+<p>exit：该命令用于退出当前shell。</p>
+<p>expand：该命令用于将制表符转换为空格。</p>
+<p>export：该命令用于设置环境变量以供子进程使用。</p>
+<p>exportfs：该命令用于管理NFS导出的文件系统。</p>
+<p>expr：该命令用于计算表达式并输出结果。</p>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a>F</h2><p>factor：该命令用于分解整数的质因数。</p>
+<p>faillock：该命令用于显示或管理失败的登录尝试。</p>
+<p>fallocate：该命令用于预分配文件空间。</p>
+<p>false：该命令总是返回非零退出状态，通常用于脚本中表示失败。</p>
+<p>fatlabel：该命令用于显示或设置FAT文件系统的卷标。</p>
+<p>fc：该命令用于编辑和重新执行最近输入的命令。</p>
+<p>fc-cache：该命令用于构建字体缓存。</p>
+<p>fc-cache-64：同上，但针对64位系统。</p>
+<p>fc-cat：该命令用于显示字体配置文件的内容。</p>
+<p>fc-conflist：该命令用于列出字体配置文件。</p>
+<p>fc-list：该命令用于列出可用的字体。</p>
+<p>fc-match：该命令用于匹配给定属性的最佳字体。</p>
+<p>fcnsq：该命令用于查询字体配置。</p>
+<p>fcoeadm：该命令用于管理Fibre Channel over Ethernet (FCoE)。</p>
+<p>fcoemon：该命令是FCoE守护进程。</p>
+<p>fc-pattern：该命令用于生成字体模式。</p>
+<p>fcping：该命令用于测试Fibre Channel连接。</p>
+<p>fc-query：该命令用于查询字体信息。</p>
+<p>fcrls：该命令用于列出Fibre Channel设备。</p>
+<p>fc-scan：该命令用于扫描字体目录。</p>
+<p>fc-validate：该命令用于验证字体配置文件。</p>
+<p>fdformat：该命令用于格式化软盘。</p>
+<p>fdisk：该命令用于分区硬盘。</p>
+<p>festival：该命令是文本到语音转换器。</p>
+<p>festival_client：该命令用于与Festival服务器通信。</p>
+<p>festival_server：该命令是Festival服务器。</p>
+<p>festival_server_control：该命令用于控制Festival服务器。</p>
+<p>fg：该命令用于将后台作业带到前台。</p>
+<p>fgconsole：该命令用于显示活动的虚拟控制台。</p>
+<p>fgrep：该命令用于在文件中搜索固定字符串。</p>
+<p>fi：在shell脚本中，没有实际意义，通常用于结束if语句块。</p>
+<p>file：该命令用于确定文件类型。</p>
+<p>filefrag：该命令用于报告文件碎片信息。</p>
+<p>file-roller：该命令是文件归档管理器。</p>
+<p>find：该命令用于在目录树中搜索文件。</p>
+<p>find2perl：该命令将find命令转换为Perl脚本。</p>
+<p>findfs：该命令用于通过标签或UUID查找文件系统。</p>
+<p>find-jar：该命令用于查找包含特定类的JAR文件。</p>
+<p>findmnt：该命令用于查找挂载点。</p>
+<p>find-repos-of-install：该命令用于查找安装软件包的仓库。</p>
+<p>findsmb：该命令用于查找SMB服务器。</p>
+<p>fipscheck：该命令用于验证FIPS模块。</p>
+<p>fipshmac：该命令用于计算文件的HMAC。</p>
+<p>fipvlan：该命令用于管理IPv4 VLAN接口。</p>
+<p>firefox：该命令是Mozilla Firefox网页浏览器。</p>
+<p>firewall-cmd：该命令用于管理firewalld防火墙。</p>
+<p>firewall-config：该命令是firewalld防火墙的图形配置工具。</p>
+<p>firewalld：该命令是firewalld防火墙守护进程。</p>
+<p>firewall-offline-cmd：该命令用于离线模式下的firewalld防火墙配置。</p>
+<p>firstboot：该命令用于首次启动时的系统配置。</p>
+<p>fixfiles：该命令用于修复文件权限和上下文。</p>
+<p>fixparts：该命令用于修复MBR分区表。</p>
+<p>flatpak：该命令用于构建、安装和运行Flatpak应用程序。</p>
+<p>flite：该命令是轻量级的文本到语音转换器。</p>
+<p>flite_time：该命令用于测量Flite处理文本的时间。</p>
+<p>flock：该命令用于在文件上设置或删除锁定。</p>
+<p>fmt：该命令用于格式化文本文件。</p>
+<p>fold：该命令用于将每个输入行的宽度限制到指定长度。</p>
+<p>fonttosfnt：该命令用于将字体转换为SFNT格式。</p>
+<p>for：在shell脚本中，用于循环结构。</p>
+<p>fprintd-delete：该命令用于删除指纹。</p>
+<p>fprintd-enroll：该命令用于注册指纹。</p>
+<p>fprintd-list：该命令用于列出注册的指纹。</p>
+<p>fprintd-verify：该命令用于验证指纹。</p>
+<p>free：该命令用于显示内存使用情况。</p>
+<p>fribidi：该命令用于处理双向文本。</p>
+<p>fros：该命令可能是一个特定上下文中的脚本或工具，但不是CentOS 7的标准命令。</p>
+<p>fsadm：该命令用于文件系统调整。</p>
+<p>fsck：该命令用于检查和修复文件系统。</p>
+<p>fsck.btrfs：该命令用于检查btrfs文件系统。</p>
+<p>fsck.cramfs：该命令用于检查cramfs文件系统。</p>
+<p>fsck.ext2：该命令用于检查ext2文件系统。</p>
+<p>fsck.ext3：该命令用于检查ext3文件系统。</p>
+<p>fsck.ext4：该命令用于检查ext4文件系统。</p>
+<p>fsck.fat：该命令用于检查FAT文件系统。</p>
+<p>fsck.minix：该命令用于检查Minix文件系统。</p>
+<p>fsck.msdos：该命令用于检查MS-DOS文件系统。</p>
+<p>fsck.vfat：该命令用于检查VFAT文件系统。</p>
+<p>fsck.xfs：该命令用于检查和修复XFS文件系统。</p>
+<p>fsfreeze：该命令用于冻结（或解冻）文件系统，以便进行文件系统级别的备份。</p>
+<p>fstrim：该命令用于丢弃文件系统上的未使用块，通常用于SSD垃圾回收。</p>
+<p>function：在shell脚本中，用于定义函数。</p>
+<p>funzip：该命令用于提取zip文件中的单个文件，而不需要完全解压整个存档。</p>
+<p>fuser：该命令用于显示使用指定文件或文件系统的进程。</p>
+<p>fusermount：该命令用于挂载或卸载FUSE（文件系统用户空间）文件系统。</p>
+<p>fusermount-glusterfs：该命令用于挂载或卸载GlusterFS文件系统。</p>
+<p>fwupdmgr：该命令用于更新固件，是Linux固件更新管理器的命令行工具。</p>
+<p>fxload：该命令用于加载Firmware到USB设备，通常用于USB设备驱动程序的加载。</p>
+<h2 id="G"><a href="#G" class="headerlink" title="G"></a>G</h2><p>gapplication：用于启动GApplication，一个用于启动GIO应用程序的库。</p>
+<p>gatttool：用于与蓝牙低功耗（BLE）设备进行交互的工具。</p>
+<p>gawk：GNU版本的awk，一个用于文本处理的编程语言。</p>
+<p>gcalccmd：GNOME计算器的命令行界面。</p>
+<p>gcc：GNU编译器集合的主要C语言编译器。</p>
+<p>gcc-ar：GNU编译器集合的ar工具，用于创建、修改和提取档案文件。</p>
+<p>gcc-nm：GNU编译器集合的nm工具，用于列出对象文件中的符号。</p>
+<p>gcc-ranlib：GNU编译器集合的ranlib工具，用于生成档案索引。</p>
+<p>gcm-calibrate：用于校准颜色配置文件的工具。</p>
+<p>gcm-import：用于导入ICC颜色配置文件的工具。</p>
+<p>gcm-inspect：用于检查ICC颜色配置文件的工具。</p>
+<p>gcm-picker：用于选择颜色配置文件的工具。</p>
+<p>gcm-viewer：用于查看ICC颜色配置文件的工具。</p>
+<p>gconf-merge-tree：用于合并GConf配置树的工具。</p>
+<p>gconftool-2：用于访问和修改GConf配置数据库的工具。</p>
+<p>gcore：用于生成进程核心文件的命令。</p>
+<p>gcov：用于测试代码覆盖率的工具。</p>
+<p>gcr-viewer：用于查看证书和其他加密数据的工具。</p>
+<p>gdb：GNU调试器，用于调试程序。</p>
+<p>gdb-add-index：用于为调试信息创建索引的工具。</p>
+<p>gdbus：用于与D-Bus消息总线交互的命令行工具。</p>
+<p>gdisk：用于分区磁盘的命令行工具。</p>
+<p>gdk-pixbuf-query-loaders-64：用于查询GDK Pixbuf可用的图像格式加载器的工具。</p>
+<p>gdk-pixbuf-thumbnailer：用于生成图像缩略图的工具。</p>
+<p>gdm：GNOME显示管理器，用于管理图形登录。</p>
+<p>gdmflexiserver：用于启动GDM会话的命令。</p>
+<p>gdm-screenshot：用于捕获屏幕截图的工具。</p>
+<p>gedit：GNOME文本编辑器。</p>
+<p>gencat：用于创建消息目录文件的命令。</p>
+<p>genhomedircon：用于生成SELinux home目录策略的命令。</p>
+<p>genhostid：用于生成或设置主机ID的命令。</p>
+<p>genisoimage：用于创建ISO 9660磁盘映像的命令。</p>
+<p>genl：用于与netlink套接字交互的命令行工具。</p>
+<p>geoiplookup：用于查询IP地址的地理位置信息的工具。</p>
+<p>geoiplookup6：用于查询IPv6地址的地理位置信息的工具。</p>
+<p>geoipupdate：用于更新MaxMind GeoIP数据库的工具。</p>
+<p>geqn：用于处理eqn预处理器输入的过滤器。</p>
+<p>getcap：用于获取文件的能力（安全属性）的命令。</p>
+<p>getcert：用于获取证书的命令。</p>
+<p>getcifsacl：用于获取CIFS ACL（访问控制列表）的命令。</p>
+<p>getconf：用于获取系统配置变量的值。</p>
+<p>getenforce：用于获取当前SELinux强制模式的命令。</p>
+<p>getent：用于获取系统数据库记录的命令。</p>
+<p>getfacl：用于获取文件访问控制列表的命令。</p>
+<p>getfattr：用于获取文件扩展属性的命令。</p>
+<p>getkeycodes：用于获取键盘驱动程序编码的命令。</p>
+<p>getopt：用于解析命令行选项的命令。</p>
+<p>getopts：用于解析shell脚本中命令行选项的内置命令。</p>
+<p>getpcaps：用于获取进程能力的命令。</p>
+<p>getsebool：用于获取SELinux布尔值的命令。</p>
+<p>gettext：用于国际化和本地化的命令。</p>
+<p>gettext.sh：用于设置gettext相关环境的脚本。</p>
+<p>ghostscript：用于PostScript和PDF文件的解释器。</p>
+<p>gio：用于访问GIO文件系统操作的命令行工具。</p>
+<p>gio-querymodules-64：用于查询GIO模块的命令。</p>
+<p>gjs：用于运行JavaScript代码的工具。</p>
+<p>gkbd-keyboard-display：用于显示键盘布局的工具。</p>
+<p>glib-compile-schemas：用于编译GSettings架构文件的命令。</p>
+<p>glibc_post_upgrade.x86_64：用于在glibc升级后执行后处理任务的脚本。</p>
+<p>gluster：用于管理GlusterFS存储卷的命令。</p>
+<p>glusterfs：GlusterFS文件系统守护进程。</p>
+<p>glusterfsd：GlusterFS文件系统守护进程。</p>
+<p>glxgears：用于测试OpenGL性能的工具。</p>
+<p>glxinfo：用于显示OpenGL渲染信息。</p>
+<p>glxinfo64：同上，但针对64位系统。</p>
+<p>gmake：GNU版本的make，用于编译软件。</p>
+<p>gneqn：用于处理neqn预处理器输入的过滤器。</p>
+<p>gnome-abrt：用于处理GNOME环境中的ABRT（自动错误报告工具）问题的工具。</p>
+<p>gnome-boxes：GNOME虚拟机管理器。</p>
+<p>gnome-calculator：GNOME计算器。</p>
+<p>gnome-character-map：GNOME字符映射表。</p>
+<p>gnome-clocks：GNOME时钟应用程序。</p>
+<p>gnome-contacts：GNOME联系人管理器。</p>
+<p>gnome-control-center：GNOME控制中心。</p>
+<p>gnome-dictionary：GNOME字典应用程序。</p>
+<p>gnome-disk-image-mounter：用于挂载磁盘映像文件。</p>
+<p>gnome-disks：GNOME磁盘实用程序，用于磁盘管理和分区。</p>
+<p>gnome-font-viewer：GNOME字体查看器，用于查看和安装字体。</p>
+<p>gnome-help：GNOME帮助查看器。</p>
+<p>gnome-keyring：GNOME密钥环管理工具。</p>
+<p>gnome-keyring-3：GNOME密钥环服务的版本3。</p>
+<p>gnome-keyring-daemon：GNOME密钥环守护进程，用于存储密码和其他敏感信息。</p>
+<p>gnome-screenshot：GNOME屏幕截图工具。</p>
+<p>gnome-session：GNOME会话管理器。</p>
+<p>gnome-session-custom-session：用于自定义GNOME会话的命令。</p>
+<p>gnome-session-inhibit：用于阻止GNOME会话结束的命令。</p>
+<p>gnome-session-properties：用于配置GNOME会话属性的命令。</p>
+<p>gnome-session-quit：用于结束GNOME会话的命令。</p>
+<p>gnome-session-selector：用于选择GNOME会话的命令。</p>
+<p>gnome-shell：GNOME桌面环境的壳层。</p>
+<p>gnome-shell-extension-prefs：用于配置GNOME Shell扩展的命令。</p>
+<p>gnome-shell-extension-tool：用于管理GNOME Shell扩展的工具。</p>
+<p>gnome-shell-perf-tool：用于性能测试GNOME Shell的工具。</p>
+<p>gnome-software：GNOME软件包管理器。</p>
+<p>gnome-system-log：GNOME系统日志查看器。</p>
+<p>gnome-system-monitor：GNOME系统监视器。</p>
+<p>gnome-terminal：GNOME终端模拟器。</p>
+<p>gnome-text-editor：GNOME文本编辑器。</p>
+<p>gnome-thumbnail-font：用于生成字体缩略图的工具。</p>
+<p>gnome-tweaks：GNOME优化工具。</p>
+<p>gnome-weather：GNOME天气应用程序。</p>
+<p>gnroff：GNU版本的roff文本格式化系统。</p>
+<p>gpasswd：用于管理用户密码和组密码的命令。</p>
+<p>gpg：GNU Privacy Guard，用于加密和数字签名。</p>
+<p>gpg2：GNU Privacy Guard的新版本。</p>
+<p>gpg-agent：GPG代理守护进程。</p>
+<p>gpgconf：用于配置GPG的命令。</p>
+<p>gpg-connect-agent：用于与GPG代理守护进程通信的命令。</p>
+<p>gpg-error：GPG错误报告工具。</p>
+<p>gpgparsemail：用于解析邮件并提取PGP数据的工具。</p>
+<p>gpgsplit：用于分割GPG密钥文件的命令。</p>
+<p>gpgv：用于验证PGP签名的工具。</p>
+<p>gpgv2：GPGv的新版本。</p>
+<p>gpg-zip：用于创建加密档案的工具。</p>
+<p>gpic：用于处理pic宏语言的过滤器。</p>
+<p>gpk-application：GNOME包管理器应用程序。</p>
+<p>gpk-log：GNOME包管理器日志查看器。</p>
+<p>gpk-prefs：GNOME包管理器首选项。</p>
+<p>gpk-update-viewer：GNOME包管理器更新查看器。</p>
+<p>gprof：GNU性能分析工具。</p>
+<p>gr2fonttest：用于测试groff字体文件的命令。</p>
+<p>grep：用于在文件中搜索匹配模式的文本。</p>
+<p>grilo-test-ui-0.3：用于测试Grilo媒体框架的用户界面。</p>
+<p>grl-inspect-0.3：用于检查Grilo插件的信息。</p>
+<p>grl-launch-0.3：用于启动Grilo插件。</p>
+<p>groff：GNU版本的roff文本格式化系统。</p>
+<p>grops：groff的PostScript输出过滤器。</p>
+<p>grotty：groff的TTY输出过滤器。</p>
+<p>groupadd：用于添加新用户组的命令。</p>
+<p>groupdel：用于删除用户组的命令。</p>
+<p>groupmems：用于管理用户组成员的命令。</p>
+<p>groupmod：用于修改用户组属性的命令。</p>
+<p>groups：用于显示当前用户所属组的命令。</p>
+<p>growisofs：用于创建ISO 9660&#x2F;JOLIET&#x2F;HFS文件系统的工具。</p>
+<p>grpck：用于验证组文件的完整性的命令。</p>
+<p>grpconv：用于转换组文件格式的命令。</p>
+<p>grpunconv：用于从阴影组文件转换回传统组文件的命令。</p>
+<p>grub2-bios-setup：用于设置BIOS启动的GRUB。</p>
+<p>grub2-editenv：用于编辑GRUB环境块的命令。</p>
+<p>grub2-file：用于检查文件类型的GRUB命令。</p>
+<p>grub2-fstest：用于测试文件系统的GRUB命令。</p>
+<p>grub2-get-kernel-settings：用于获取内核设置的GRUB命令。</p>
+<p>grub2-glue-efi：用于创建EFI启动映像的GRUB命令。</p>
+<p>grub2-install：用于安装GRUB的命令。</p>
+<p>grub2-kbdcomp：用于创建键盘映射文件的GRUB命令。</p>
+<p>grub2-macbless：用于Mac OS X启动卷的GRUB命令。</p>
+<p>grub2-menulst2cfg：用于转换菜单列表的GRUB命令。</p>
+<p>grub2-mkconfig：用于生成GRUB配置文件的命令。</p>
+<p>grub2-mkfont：用于创建GRUB字体的命令。</p>
+<p>grub2-mkimage：用于创建GRUB映像文件的命令。</p>
+<p>grub2-mklayout：用于创建GRUB键盘布局文件的命令。</p>
+<p>grub2-mknetdir：用于创建包含网络启动文件的目录的GRUB命令。</p>
+<p>grub2-mkpasswd-pbkdf2：用于生成加密密码的GRUB命令。</p>
+<p>grub2-mkrelpath：用于生成相对于GRUB根目录的相对路径的命令。</p>
+<p>grub2-mkrescue：用于创建可启动的GRUB救援映像的命令。</p>
+<p>grub2-mkstandalone：用于创建独立的GRUB映像文件的命令。</p>
+<p>grub2-ofpathname：用于获取设备的Open Firmware路径名的GRUB命令。</p>
+<p>grub2-probe：用于获取文件系统信息的GRUB命令。</p>
+<p>grub2-reboot：用于重启系统的GRUB命令。</p>
+<p>grub2-render-label：用于渲染GRUB启动标签的命令。</p>
+<p>grub2-rpm-sort：用于对RPM包进行排序的GRUB命令。</p>
+<p>grub2-script-check：用于检查GRUB配置文件语法的命令。</p>
+<p>grub2-set-default：用于设置默认启动项的GRUB命令。</p>
+<p>grub2-setpassword：用于设置GRUB超级用户密码的命令。</p>
+<p>grub2-sparc64-setup：用于设置SPARC64架构的GRUB的命令。</p>
+<p>grub2-syslinux2cfg：用于将syslinux配置转换为GRUB配置的命令。</p>
+<p>grubby：用于更改默认内核和恢复内核的命令。</p>
+<p>gs：Ghostscript的命令行界面，用于处理PostScript和PDF文件。</p>
+<p>gsbj：用于将PostScript或PDF文件发送到BJ喷墨打印机的命令。</p>
+<p>gsdj：用于将PostScript或PDF文件发送到DJ系列打印机的命令。</p>
+<p>gsdj500：用于将PostScript或PDF文件发送到DJ500系列打印机的命令。</p>
+<p>gsettings：用于从命令行访问GSettings的命令。</p>
+<p>gsettings-data-convert：用于转换旧版GConf设置到GSettings的命令。</p>
+<p>gsf-office-thumbnailer：用于生成Office文档缩略图的命令。</p>
+<p>gslj：用于将PostScript或PDF文件发送到LJ系列激光打印机的命令。</p>
+<p>gslp：用于将PostScript或PDF文件发送到LP系列打印机的命令。</p>
+<p>gsnd：用于将PostScript或PDF文件发送到网络打印机的命令。</p>
+<p>gsoelim：用于预处理包含.sso宏的文件的命令。</p>
+<p>gsound-play：用于播放声音的命令。</p>
+<p>gssproxy：GSSAPI代理服务。</p>
+<p>gstack：用于打印当前进程的堆栈跟踪的命令。</p>
+<p>gst-feedback：用于收集GStreamer反馈信息的命令。</p>
+<p>gst-feedback-0.10：用于收集GStreamer 0.10版反馈信息的命令。</p>
+<p>gst-inspect：用于检查GStreamer插件和元素的命令。</p>
+<p>gst-inspect-0.10：用于检查GStreamer 0.10版插件和元素的命令。</p>
+<p>gst-inspect-1.0：用于检查GStreamer 1.0版插件和元素的命令。</p>
+<p>gst-launch：用于运行GStreamer管道的命令行工具。</p>
+<p>gst-launch-0.10：用于运行GStreamer 0.10版管道的命令行工具。</p>
+<p>gst-launch-1.0：用于运行GStreamer 1.0版管道的命令行工具。</p>
+<p>gst-stats-1.0：用于收集GStreamer 1.0版统计信息的命令。</p>
+<p>gst-typefind：用于检测媒体类型的GStreamer工具。</p>
+<p>gst-typefind-0.10：用于检测GStreamer 0.10版媒体类型的工具。</p>
+<p>gst-typefind-1.0：用于检测GStreamer 1.0版媒体类型的工具。</p>
+<p>gst-xmlinspect：用于检查GStreamer插件和元素的XML描述的命令。</p>
+<p>gst-xmlinspect-0.10：用于检查GStreamer 0.10版插件和元素的XML描述的命令。</p>
+<p>gst-xmllaunch：用于从XML文件启动GStreamer管道的命令。</p>
+<p>gst-xmllaunch-0.10：用于从XML文件启动GStreamer 0.10版管道的命令。</p>
+<p>gtar：GNU版本的tar，用于打包和解包文件。</p>
+<p>gtbl：用于处理tbl宏语言的过滤器。</p>
+<p>gtf：用于将troff输出转换为其他格式文件的命令。</p>
+<p>gtk-launch：用于启动GTK应用程序的命令。</p>
+<p>gtk-query-immodules-2.0-64：用于查询GTK 2.0输入法模块的命令。</p>
+<p>gtk-query-immodules-3.0-64：用于查询GTK 3.0输入法模块的命令。</p>
+<p>gtk-update-icon-cache：用于更新图标缓存的命令。</p>
+<p>gtroff：GNU版本的troff文本格式化系统。</p>
+<p>gucharmap：字符映射表查看器。</p>
+<p>gunzip：用于解压gzip格式的文件的命令。</p>
+<p>gupnp-dlna-info-2.0：用于获取DLNA设备信息的命令。</p>
+<p>gupnp-dlna-ls-profiles-2.0：用于列出支持的DLNA配置文件的命令。</p>
+<p>gvfs-cat：用于查看GVFS（Gnome Virtual File System）支持的文件系统中的文件内容。</p>
+<p>gvfs-copy：用于复制文件或目录到GVFS支持的文件系统。</p>
+<p>gvfs-info：用于显示GVFS支持的文件系统中的文件或目录的元数据信息。</p>
+<p>gvfs-less：用于在GVFS支持的文件系统中以分页方式查看文件内容。</p>
+<p>gvfs-ls：用于列出GVFS支持的文件系统中的目录内容。</p>
+<p>gvfs-mime：用于查询GVFS支持的文件系统中文件的MIME类型。</p>
+<p>gvfs-mkdir：用于在GVFS支持的文件系统中创建目录。</p>
+<p>gvfs-monitor-dir：用于监视GVFS支持的文件系统中的目录变化。</p>
+<p>gvfs-monitor-file：用于监视GVFS支持的文件系统中的文件变化。</p>
+<p>gvfs-mount：用于挂载GVFS支持的文件系统。</p>
+<p>gvfs-move：用于移动文件或目录到GVFS支持的文件系统中的另一个位置。</p>
+<p>gvfs-open：用于打开GVFS支持的文件系统中的文件。</p>
+<p>gvfs-rename：用于重命名GVFS支持的文件系统中的文件或目录。</p>
+<p>gvfs-rm：用于删除GVFS支持的文件系统中的文件或目录。</p>
+<p>gvfs-save：用于保存GVFS支持的文件系统中的文件。</p>
+<p>gvfs-set-attribute：用于设置GVFS支持的文件系统中文件或目录的属性。</p>
+<p>gvfs-trash：用于将文件或目录移动到GVFS支持的文件系统的回收站。</p>
+<p>gvfs-tree：用于以树状结构显示GVFS支持的文件系统中的目录内容。</p>
+<p>gzexe：用于创建可执行文件的压缩版本。</p>
+<p>gzip：用于压缩文件，使用gzip格式。</p>
+<h2 id="H"><a href="#H" class="headerlink" title="H"></a>H</h2><p>h2ph：该命令用于将哈希表文件从.h格式转换为Perl的.h兼容的.pm模块。</p>
+<p>halt：该命令用于关闭系统，等同于shutdown -h now。</p>
+<p>handle-sshpw：该命令不是标准的CentOS 7命令，可能是一个特定脚本，用于处理SSH密码。</p>
+<p>hangul：该命令用于输入韩文，通常与输入法相关。</p>
+<p>hardlink：该命令用于创建硬链接。</p>
+<p>hash：该命令用于显示或清除命令的哈希表。</p>
+<p>hciattach：该命令用于将蓝牙设备附加到HCI接口。</p>
+<p>hciconfig：该命令用于配置蓝牙设备。</p>
+<p>hcidump：该命令用于捕获和分析蓝牙HCI数据包。</p>
+<p>hcitool：该命令用于查询和操控蓝牙设备。</p>
+<p>hdmv_test：该命令不是标准的CentOS 7命令，可能是一个用于测试HD-MV（High Definition Movie）的工具。</p>
+<p>hdsploader：该命令用于加载Turtle Beach Audio Advantage HD声卡。</p>
+<p>head：该命令用于显示文件的前几行。</p>
+<p>help：该命令用于显示shell内建命令的帮助信息。</p>
+<p>hesinfo：该命令不是标准的CentOS 7命令，可能是一个用于查询硬件信息的工具。</p>
+<p>hex2hcd：该命令用于将十六进制文件转换为HCD（Hardware Control Driver）文件。</p>
+<p>hexdump：该命令用于显示文件十六进制内容。</p>
+<p>history：该命令用于显示命令历史。</p>
+<p>host：该命令用于查询DNS记录。</p>
+<p>hostid：该命令用于显示当前主机的数字标识。</p>
+<p>hostname：该命令用于显示或设置系统的主机名。</p>
+<p>hostnamectl：该命令用于查询或修改系统的主机名和相关设置。</p>
+<p>hpcups-update-ppds：该命令用于更新HPLIP（HP Linux Imaging and Printing）的PPD（PostScript Printer Description）文件。</p>
+<p>hpijs：该命令用于HP IJS（Image Job Server）打印系统。</p>
+<p>hunspell：该命令用于拼写检查。</p>
+<p>hwclock：该命令用于查询或设置硬件时钟（RTC）。</p>
+<p>hypervfcopyd：该命令是Hyper-V的文件复制守护进程，用于虚拟机备份。</p>
+<p>hypervkvpd：该命令是Hyper-V的键值对守护进程，用于与虚拟机的通信。</p>
+<p>hypervvssd：该命令是Hyper-V的卷影复制服务守护进程，用于虚拟机备份。</p>
+<h2 id="I"><a href="#I" class="headerlink" title="I"></a>I</h2><p>i386：这不是一个命令，而是指Intel 80386微处理器的架构，通常用于指定32位x86架构的二进制文件。</p>
+<p>ibus：该命令是Intelligent Input Bus的缩写，用于启动ibus输入法框架。</p>
+<p>ibus-daemon：该命令用于启动ibus输入法守护进程。</p>
+<p>ibus-setup：该命令用于配置ibus输入法。</p>
+<p>ibus-table-createdb：该命令用于创建ibus表输入法的数据库。</p>
+<p>iceauth：该命令用于管理X11 Ice连接授权。</p>
+<p>icedax：该命令用于提取CD音频轨道。</p>
+<p>iconv：该命令用于转换文件的字符编码。</p>
+<p>iconvconfig：该命令用于生成iconv配置文件。</p>
+<p>id：该命令用于显示用户和组的信息。</p>
+<p>idiag-socket-details：该命令用于显示网络套接字的详细信息。</p>
+<p>idn：该命令用于国际化域名（IDN）的转换。</p>
+<p>iecset：该命令用于设置或显示键盘映射。</p>
+<p>if：该命令是shell的条件语句关键字，不是独立的命令。</p>
+<p>ifcfg：该命令用于配置网络接口。</p>
+<p>ifconfig：该命令用于配置或显示网络接口的参数。</p>
+<p>ifdown：该命令用于禁用网络接口。</p>
+<p>ifenslave：该命令用于将网络接口附加到另一个接口作为从设备。</p>
+<p>ifstat：该命令用于显示网络接口的统计信息。</p>
+<p>ifup：该命令用于启用网络接口。</p>
+<p>igawk：该命令是GNU awk的一个版本，通常用于文本处理。</p>
+<p>ijsgutenprint.5.2：该命令与Gutenprint打印系统相关。</p>
+<p>implantisomd5：该命令用于向ISO文件植入MD5校验和。</p>
+<p>imsettings-info：该命令用于显示输入法设置信息。</p>
+<p>imsettings-list：该命令用于列出可用的输入法。</p>
+<p>imsettings-reload：该命令用于重新加载输入法设置。</p>
+<p>imsettings-switch：该命令用于切换输入法。</p>
+<p>in：该命令不是标准的CentOS 7命令，可能是一个脚本或程序。</p>
+<p>index_dump：该命令不是标准的CentOS 7命令，可能用于转储索引信息。</p>
+<p>info：该命令用于阅读Texinfo文档。</p>
+<p>infocmp：该命令用于比较或显示terminfo数据库条目。</p>
+<p>infokey：该命令用于处理info程序的键盘宏。</p>
+<p>infotocap：该命令用于将terminfo描述转换为termcap描述。</p>
+<p>init：该命令是系统的初始化进程，是所有进程的父进程。</p>
+<p>insmod：该命令用于插入内核模块。</p>
+<p>install：该命令用于安装文件。</p>
+<p>install-info：该命令用于安装或更新info目录文件。</p>
+<p>installkernel：该命令用于安装Linux内核。</p>
+<p>install-printerdriver：该命令用于安装打印机驱动程序。</p>
+<p>instperf：该命令不是标准的CentOS 7命令，可能用于性能测试。</p>
+<p>intel-microcode2ucode：该命令用于将Intel微代码转换为ucode格式。</p>
+<p>ionice：该命令用于设置进程的I&#x2F;O调度优先级。</p>
+<p>iostat：该命令用于监视系统输入&#x2F;输出设备和CPU的使用情况。</p>
+<p>ip：该命令用于显示或操作路由、设备、策略路由和隧道。</p>
+<p>ip6tables：该命令用于设置IPv6包过滤规则。</p>
+<p>ip6tables-restore：该命令用于还原ip6tables规则。</p>
+<p>ip6tables-save：该命令用于保存ip6tables规则。</p>
+<p>ipa：该命令是FreeIPA的命令行工具，用于管理IPA域。</p>
+<p>ipa-certupdate：该命令用于更新IPA证书。</p>
+<p>ipa-client-automount：该命令用于配置IPA客户端自动挂载。</p>
+<p>ipa-client-install：该命令用于安装IPA客户端。</p>
+<p>ipa-getcert：该命令用于获取IPA证书。</p>
+<p>ipa-getkeytab：该命令用于获取Kerberos密钥表。</p>
+<p>ipa-join：该命令用于将系统加入到IPA域。</p>
+<p>ipa-rmkeytab：该命令用于删除Kerberos密钥表。</p>
+<p>ipcalc：该命令用于计算IP地址和网络信息。</p>
+<p>ipcmk：该命令用于创建IPC对象。</p>
+<p>ipcrm：该命令用于删除IPC对象。</p>
+<p>ipcs：该命令用于显示IPC状态信息。</p>
+<p>ipmaddr：该命令用于管理多播地址。</p>
+<p>iprconfig：该命令用于配置IBM PowerRAID控制器。</p>
+<p>iprdbg：该命令用于调试IBM PowerRAID控制器。</p>
+<p>iprdump：该命令用于转储IBM PowerRAID控制器的信息。</p>
+<p>iprinit：该命令用于初始化IBM PowerRAID控制器。</p>
+<p>iprsos：该命令用于显示IBM PowerRAID控制器的系统信息。</p>
+<p>iprupdate：该命令用于更新IBM PowerRAID控制器的固件。</p>
+<p>ipsec：该命令用于配置IPsec安全协议。</p>
+<p>ipset：该命令用于管理IP集合。</p>
+<p>iptables：该命令用于设置IPv4包过滤规则。</p>
+<p>iptables-restore：该命令用于还原iptables规则。</p>
+<p>iptables-save：该命令用于保存iptables规则。</p>
+<p>iptables-xml：该命令用于将iptables规则转换为XML格式。</p>
+<p>iptc：该命令用于操作iptables的内核表和链，通常用于脚本中操作iptables规则。</p>
+<p>iptunnel：该命令用于配置IP隧道。</p>
+<p>irqbalance：该命令是一个守护进程，用于在多个CPU之间平衡中断请求，以提高系统性能。</p>
+<p>iscsiadm：该命令用于发现、登录和注销iSCSI目标。</p>
+<p>iscsid：该命令是iSCSI守护进程，用于管理iSCSI会话。</p>
+<p>iscsi-iname：该命令用于生成唯一的iSCSI Initiator名称。</p>
+<p>iscsistart：该命令用于手动启动iSCSI会话。</p>
+<p>iscsiuio：该命令是iSCSI用户空间I&#x2F;O守护进程，用于处理iSCSI I&#x2F;O。</p>
+<p>isdv4-serial-inputattach：该命令用于将ISDV4串行输入设备附加到系统中。</p>
+<p>isodebug：该命令用于调试ISODE协议栈。</p>
+<p>isodump：该命令用于转储ISO 9660文件系统的内容。</p>
+<p>isoinfo：该命令用于显示ISO 9660文件系统的信息。</p>
+<p>iso-info：该命令可能是用于显示ISO文件信息的工具，但不是标准的CentOS 7命令。</p>
+<p>iso-read：该命令用于读取ISO文件的内容。</p>
+<p>isosize：该命令用于显示ISO文件的大小。</p>
+<p>isovfy：该命令用于验证ISO 9660文件系统的有效性。</p>
+<p>itweb-settings：该命令用于配置或显示ITWeb互联网打印客户端设置。</p>
+<p>itweb-settings.itweb：该命令与itweb-settings相同，可能是链接或别名。</p>
+<p>iw：该命令用于配置和显示无线网络接口的参数。</p>
+<h2 id="J"><a href="#J" class="headerlink" title="J"></a>J</h2><p>java：该命令用于运行Java应用程序。</p>
+<p>javaws：该命令用于运行Java Web Start应用程序，它允许通过浏览器启动Java应用程序。</p>
+<p>javaws.itweb：该命令可能是特定于某些环境的javaws命令的变体或链接，用于通过ITWeb服务启动Java Web Start应用程序。</p>
+<p>jjs：该命令是Nashorn JavaScript引擎的命令行工具，用于执行JavaScript代码。</p>
+<p>jobs：该命令用于显示当前Shell环境中后台运行的任务列表。</p>
+<p>join：该命令用于将两个文件中具有相同字段的行连接起来。</p>
+<p>journalctl：该命令用于查询和显示systemd日志的内容。</p>
+<p>json_reformat：该命令用于重新格式化JSON数据，使其更易于阅读。</p>
+<p>json_verify：该命令用于验证JSON数据的格式是否正确。</p>
+<p>jvmjar：该命令不是标准的CentOS 7命令，但它可能是一个用于运行打包在JAR文件中的Java程序的脚本或工具。</p>
+<h2 id="K"><a href="#K" class="headerlink" title="K"></a>K</h2><p>k5srvutil：该命令用于Kerberos服务器端的管理操作。</p>
+<p>kadmin：该命令用于Kerberos administration，可以用来管理Kerberos数据库。</p>
+<p>kbdinfo：该命令用于获取键盘映射信息。</p>
+<p>kbd_mode：该命令用于设置或显示键盘模式。</p>
+<p>kbdrate：该命令用于设置键盘重复速率和延迟。</p>
+<p>kdestroy：该命令用于销毁Kerberos票据缓存。</p>
+<p>kdumpctl：该命令用于控制kdump服务，用于捕获内核崩溃时的内存转储。</p>
+<p>kernel-install：该命令用于安装和卸载内核相关文件。</p>
+<p>kexec：该命令用于加载一个新内核并立即启动，通常用于内核升级而不需要重启。</p>
+<p>keyctl：该命令用于密钥管理器的用户空间接口。</p>
+<p>key.dns_resolver：该命令不是标准的系统命令，可能是一个特定的脚本或程序，用于DNS解析。</p>
+<p>keytool：该命令用于管理Java Keystore，用于密钥和证书的管理。</p>
+<p>kill：该命令用于发送信号到进程。</p>
+<p>killall：该命令用于根据名称杀死所有匹配的进程。</p>
+<p>killall5：该命令是System V的killall命令，用于杀死除自身外的所有进程。</p>
+<p>kinit：该命令用于获取Kerberos票据。</p>
+<p>klist：该命令用于列出Kerberos票据缓存中的内容。</p>
+<p>kmod：该命令用于加载和卸载内核模块。</p>
+<p>kpartx：该命令用于为分区创建设备映射。</p>
+<p>kpasswd：该命令用于更改Kerberos密码。</p>
+<p>kpatch：该命令用于动态地应用和卸载内核补丁。</p>
+<p>ksflatten：该命令用于将Kickstart配置文件转换为平面格式。</p>
+<p>ksmtuned：该命令是ksm（Kernel Samepage Merging）的守护进程，用于优化内存使用。</p>
+<p>ksshell：该命令可能是一个用于安全shell的脚本或工具。</p>
+<p>ksu：该命令用于以另一个用户身份执行命令，类似于sudo。</p>
+<p>ksvalidator：该命令用于验证Kickstart配置文件的有效性。</p>
+<p>ksverdiff：该命令用于比较两个Kickstart版本之间的差异。</p>
+<p>kswitch：该命令用于在Kerberos环境中切换凭据缓存。</p>
+<p>ktutil：该命令用于创建、维护和查看Kerberos keytabs。</p>
+<p>kvno：该命令用于显示Kerberos服务的当前版本号。</p>
+<h2 id="L"><a href="#L" class="headerlink" title="L"></a>L</h2><p>l2ping：该命令用于测试IPv6链路层的可达性。</p>
+<p>l2test：该命令用于测试IEEE 802.1X认证。</p>
+<p>last：该命令用于显示用户登录和退出的历史记录。</p>
+<p>lastb：该命令用于显示失败的登录尝试的历史记录。</p>
+<p>lastcomm：该命令用于显示以前执行过的命令的信息。</p>
+<p>lastlog：该命令用于显示用户最后一次登录的信息。</p>
+<p>lchage：该命令用于更改用户密码的老化信息。</p>
+<p>lchfn：该命令用于更改用户的指纹信息。</p>
+<p>lchsh：该命令用于更改用户的登录shell。</p>
+<p>ld：该命令是GNU链接器。</p>
+<p>ldattach：该命令用于将一个设备附加到line discipline。</p>
+<p>ld.bfd：该命令是GNU BFD链接器的别名。</p>
+<p>ldconfig：该命令用于配置动态链接器的运行时链接路径。</p>
+<p>ldd：该命令用于打印程序或库的依赖关系。</p>
+<p>ld.gold：该命令是GNU黄金链接器。</p>
+<p>ldns-chaos：该命令用于LDNS库，处理CHAME类型的数据。</p>
+<p>ldns-compare-zones：该命令用于比较两个DNS区域文件。</p>
+<p>ldnsd：该命令是LDNS的一个守护进程。</p>
+<p>ldns-dane：该命令用于处理DANE记录。</p>
+<p>ldns-dpa：该命令用于LDNS，执行DNS解析。</p>
+<p>ldns-gen-zone：该命令用于生成DNS区域文件。</p>
+<p>ldns-key2ds：该命令用于从DNSKEY生成DS记录。</p>
+<p>ldns-keyfetcher：该命令用于获取DNSSEC密钥。</p>
+<p>ldns-keygen：该命令用于生成DNSSEC密钥。</p>
+<p>ldns-mx：该命令用于查询DNS MX记录。</p>
+<p>ldns-notify：该命令用于发送DNS NOTIFY消息。</p>
+<p>ldns-nsec3-hash：该命令用于生成NSEC3哈希。</p>
+<p>ldns-read-zone：该命令用于读取DNS区域文件。</p>
+<p>ldns-resolver：该命令是LDNS的解析器。</p>
+<p>ldns-revoke：该命令用于撤销DNSSEC密钥。</p>
+<p>ldns-rrsig：该命令用于生成或验证RRSIG记录。</p>
+<p>ldns-signzone：该命令用于签署DNS区域。</p>
+<p>ldns-test-edns：该命令用于测试EDNS支持。</p>
+<p>ldns-testns：该命令用于测试LDNS解析器。</p>
+<p>ldns-update：该命令用于执行DNS更新。</p>
+<p>ldns-verify-zone：该命令用于验证DNS区域。</p>
+<p>ldns-version：该命令用于显示LDNS版本信息。</p>
+<p>ldns-walk：该命令用于遍历DNS区域。</p>
+<p>ldns-zcat：该命令用于解压缩DNS区域文件。</p>
+<p>ldns-zsplit：该命令用于分割DNS区域文件。</p>
+<p>ledctl：该命令用于控制LED设备。</p>
+<p>ledmon：该命令用于监视LED设备。</p>
+<p>less：该命令用于分页显示文件内容。</p>
+<p>lessecho：该命令用于将输入转换为less可以安全读取的格式。</p>
+<p>lesskey：该命令用于指定less的键盘映射。</p>
+<p>lesspipe.sh：该命令是一个用于less的过滤脚本。</p>
+<p>let：该命令用于执行算术运算。</p>
+<p>lexgrog：该命令用于解析和显示man页面的名称和节号。</p>
+<p>lgroupadd：该命令用于添加一个新的组。</p>
+<p>lgroupdel：该命令用于删除一个组。</p>
+<p>lgroupmod：该命令用于修改组信息。</p>
+<p>libbluray_test：该命令用于测试libbluray库。</p>
+<p>libieee1284_test：该命令用于测试libieee1284库。</p>
+<p>libinput：该命令用于处理输入设备。</p>
+<p>libinput-debug-events：该命令用于调试libinput事件。</p>
+<p>libinput-list-devices：该命令用于列出libinput管理的设备。</p>
+<p>libtar：该命令用于创建和读取tar档案。</p>
+<p>libvirtd：该命令是libvirt守护进程，用于管理虚拟化。</p>
+<p>libwacom-list-local-devices：该命令用于列出wacom设备。</p>
+<p>lid：该命令用于获取或设置笔记本的盖子状态。</p>
+<p>link：该命令用于创建硬链接。</p>
+<p>linux32：该命令用于在64位系统上运行32位程序。</p>
+<p>linux64：该命令用于在32位系统上运行64位程序。</p>
+<p>linux-boot-prober：该命令用于探测可引导的Linux分区。</p>
+<p>list_titles：该命令用于列出光盘的标题。</p>
+<p>liveinst：该命令用于启动现场安装。</p>
+<p>ll：该命令是ls -l的别名，用于以详细列表形式显示目录内容。</p>
+<p>lldpad：该命令是LLDP（链路层发现协议）守护进程。</p>
+<p>lldptool：该命令用于配置和监控LLDP。</p>
+<p>ln：该命令用于创建链接。</p>
+<p>lnewusers：该命令用于批量创建新用户。</p>
+<p>lnstat：该命令用于显示网络接口的统计信息。</p>
+<p>loadkeys：该命令用于加载键盘映射表。</p>
+<p>load_policy：该命令用于加载SELinux策略。</p>
+<p>loadunimap：该命令用于加载Unicode到键盘映射。</p>
+<p>local：该命令通常不是一个独立的命令，而是用于指定本地化的脚本或程序。</p>
+<p>locale：该命令用于显示当前的语言环境设置。</p>
+<p>localectl：该命令用于控制系统的本地化和键盘映射设置。</p>
+<p>localedef：该命令用于编译locale定义文件，创建新的locale。</p>
+<p>local-getcert：该命令用于获取本地证书。</p>
+<p>locate：该命令用于快速查找文件名。</p>
+<p>lockdev：该命令用于锁定或解锁设备文件。</p>
+<p>logger：该命令用于将消息输入到系统日志。</p>
+<p>login：该命令用于启动一个新的登录会话。</p>
+<p>loginctl：该命令用于查看和控制systemd登录管理器。</p>
+<p>logname：该命令用于显示当前登录用户的名字。</p>
+<p>logout：该命令用于结束登录会话。</p>
+<p>logrotate：该命令用于轮转、压缩和删除日志文件。</p>
+<p>logsave：该命令用于将命令的输出保存到日志文件。</p>
+<p>logview：该命令用于查看日志文件。</p>
+<p>look：该命令用于显示文件中以特定字符串开头的行。</p>
+<p>losetup：该命令用于设置和控制循环设备。</p>
+<p>lp：该命令用于将文件发送到打印机。</p>
+<p>lpadmin：该命令用于配置CUPS打印机队列。</p>
+<p>lpasswd：该命令用于修改用户的密码。</p>
+<p>lpc：该命令用于控制打印机队列。</p>
+<p>lpc.cups：该命令是CUPS版本的lpc。</p>
+<p>lp.cups：该命令是CUPS版本的lp。</p>
+<p>lpinfo：该命令用于获取CUPS打印机信息。</p>
+<p>lpmove：该命令用于移动打印作业到另一个队列。</p>
+<p>lpoptions：该命令用于设置或显示CUPS打印选项。</p>
+<p>lppasswd：该命令用于管理CUPS打印机密码。</p>
+<p>lpq：该命令用于查看打印队列状态。</p>
+<p>lpq.cups：该命令是CUPS版本的lpq。</p>
+<p>lpr：该命令用于将文件发送到打印机队列。</p>
+<p>lpr.cups：该命令是CUPS版本的lpr。</p>
+<p>lprm：该命令用于从打印队列中删除打印作业。</p>
+<p>lprm.cups：该命令是CUPS版本的lprm。</p>
+<p>lprsetup.sh：该命令用于设置打印系统。</p>
+<p>lpstat：该命令用于显示CUPS打印机状态。</p>
+<p>lpstat.cups：该命令是CUPS版本的lpstat。</p>
+<p>ls：该命令用于列出目录内容。</p>
+<p>lsattr：该命令用于显示文件的属性。</p>
+<p>lsblk：该命令用于列出所有可用的块设备。</p>
+<p>lscgroup：该命令用于列出cgroup。</p>
+<p>lscpu：该命令用于显示CPU信息。</p>
+<p>lshw：该命令用于列出硬件配置。</p>
+<p>lsinitrd：该命令用于列出initramfs内容。</p>
+<p>lsipc：该命令用于列出进程间通信设施的状态。</p>
+<p>lslocks：该命令用于列出文件锁。</p>
+<p>lslogins：该命令用于列出或过滤登录信息。</p>
+<p>lsmcli：该命令用于管理LSM安全服务器。</p>
+<p>lsmd：该命令是LSM守护进程。</p>
+<p>lsmem：该命令用于显示内存使用情况。</p>
+<p>lsmod：该命令用于列出已加载的内核模块。</p>
+<p>lsns：该命令用于列出名称空间。</p>
+<p>lsof：该命令用于列出打开的文件。</p>
+<p>lspci：该命令用于列出PCI设备。</p>
+<p>lsscsi：该命令用于列出SCSI设备。</p>
+<p>lssubsys：该命令用于列出cgroup子系统。</p>
+<p>lsusb：该命令用于列出USB设备。</p>
+<p>lsusb.py：该命令是Python脚本，用于列出USB设备。</p>
+<p>lua：该命令用于运行Lua脚本。</p>
+<p>luac：该命令用于编译Lua脚本。</p>
+<p>luseradd：该命令用于添加新用户。</p>
+<p>luserdel：该命令用于删除用户。</p>
+<p>lusermod：该命令用于修改用户账户。</p>
+<p>lvchange：该命令用于更改逻辑卷属性。</p>
+<p>lvconvert：该命令用于转换逻辑卷的类型。</p>
+<p>lvcreate：该命令用于创建逻辑卷。</p>
+<p>lvdisplay：该命令用于显示逻辑卷信息。</p>
+<p>lvextend：该命令用于扩展逻辑卷的大小。</p>
+<p>lvm：该命令是LVM命令行工具。</p>
+<p>lvmconf：该命令用于配置LVM。</p>
+<p>lvmconfig：该命令用于显示LVM配置。</p>
+<p>lvmdiskscan：该命令用于扫描磁盘。</p>
+<p>lvmdump：该命令用于转储LVM元数据。</p>
+<p>lvmetad：该命令是LVM元数据守护进程。</p>
+<p>lvmpolld：该命令是LVM轮询守护进程。</p>
+<p>lvmsadc：该命令用于收集LVM统计信息。</p>
+<p>lvmsar：该命令用于分析LVM统计信息。</p>
+<p>lvreduce：该命令用于减小逻辑卷的大小。</p>
+<p>lvremove：该命令用于删除逻辑卷。</p>
+<p>lvrename：该命令用于重命名逻辑卷。</p>
+<p>lvresize：该命令用于调整逻辑卷的大小。</p>
+<p>lvs：该命令用于列出逻辑卷。</p>
+<p>lvscan：该命令用于扫描逻辑卷。</p>
+<p>lz：该命令不是标准命令，可能是一个别名或脚本。</p>
+<p>lz4：该命令用于压缩或解压缩数据，使用LZ4算法，它是一种快速的压缩工具。</p>
+<p>lz4c：该命令通常是指向lz4的链接或别名，用于压缩文件。</p>
+<p>lz4cat：该命令用于解压缩文件并直接将其内容输出到标准输出，类似于gunzip -c的功能。</p>
+<p>lzop：该命令用于压缩或解压缩文件，使用LZO算法，它是一种比gzip更快的压缩工具，但压缩率可能较低。</p>
+<h2 id="M"><a href="#M" class="headerlink" title="M"></a>M</h2><p>m17n-conv：该命令用于转换文本编码，通常用于多语言环境。</p>
+<p>machinectl：该命令用于管理系统服务和虚拟机的systemd工具。</p>
+<p>mail：该命令用于发送和接收邮件。</p>
+<p>mailq：该命令用于查看邮件队列的状态，通常与sendmail或Postfix邮件服务器一起使用。</p>
+<p>mailx：该命令是一个文本界面邮件用户代理，用于阅读和发送电子邮件。</p>
+<p>make：该命令用于编译软件包，根据Makefile文件中的指令。</p>
+<p>makedb：该命令用于创建简单的数据库。</p>
+<p>makedeltarpm：该命令用于创建增量RPM包。</p>
+<p>makedumpfile：该命令用于创建内核崩溃转储文件。</p>
+<p>man：该命令用于显示在线手册页。</p>
+<p>mandb：该命令用于创建或更新手册页索引数据库。</p>
+<p>manpath：该命令用于显示用于查找手册页的路径。</p>
+<p>mapfile：该命令用于从标准输入读取行并赋值给数组变量。</p>
+<p>mapscrn：该命令用于加载屏幕映射表。</p>
+<p>matchpathcon：该命令用于根据文件路径匹配SELinux安全上下文。</p>
+<p>mattrib：该命令用于修改MS-DOS文件的属性。</p>
+<p>mbadblocks：该命令用于检查MS-DOS文件系统的坏块。</p>
+<p>mbimcli：该命令用于控制和配置MBIM（移动宽带接口模型）设备。</p>
+<p>mbim-network：该命令用于配置MBIM网络接口。</p>
+<p>mcat：该命令是mtools工具集的一部分，用于在MS-DOS文件系统中显示文件内容。</p>
+<p>mcd：该命令是mtools工具集的一部分，用于更改当前目录到MS-DOS文件系统中的目录。</p>
+<p>mcheck：该命令用于检查内存分配的一致性。</p>
+<p>mclasserase：该命令用于擦除存储设备上的类。</p>
+<p>mcomp：该命令用于比较两个文件并显示它们的不同。</p>
+<p>mcookie：该命令用于生成用于X11会话管理的魔术cookie。</p>
+<p>mcopy：该命令是mtools工具集的一部分，用于复制MS-DOS文件系统中的文件。</p>
+<p>mc-tool：该命令用于配置和监控多路径设备。</p>
+<p>mc-wait-for-name：该命令用于等待指定的D-Bus名称出现。</p>
+<p>md5sum：该命令用于计算和验证文件的MD5校验和。</p>
+<p>mdadm：该命令用于管理RAID阵列。</p>
+<p>mdel：该命令是mtools工具集的一部分，用于删除MS-DOS文件系统中的文件。</p>
+<p>mdeltree：该命令是mtools工具集的一部分，用于递归删除MS-DOS文件系统中的目录。</p>
+<p>mdig：该命令是用于调试DNS查询的工具。</p>
+<p>mdir：该命令是mtools工具集的一部分，用于列出MS-DOS文件系统中的目录内容。</p>
+<p>mdmon：该命令用于监控和管理RAID设备。</p>
+<p>mdu：该命令用于显示MS-DOS文件系统目录的磁盘使用情况。</p>
+<p>mergerepo：该命令用于合并多个YUM仓库的元数据。</p>
+<p>mesg：该命令用于控制其他用户是否可以发送消息到当前终端。</p>
+<p>metacity：该命令是Metacity窗口管理器的设置工具。</p>
+<p>metacity-message：该命令用于向Metacity窗口管理器发送消息。</p>
+<p>mformat：该命令是mtools工具集的一部分，用于格式化MS-DOS文件系统。</p>
+<p>mii-diag：该命令用于诊断网络接口的MII（媒体独立接口）状态。</p>
+<p>mii-tool：该命令用于配置网络接口的MII参数。</p>
+<p>minfo：该命令用于显示MS-DOS文件系统的信息。</p>
+<p>mixartloader：该命令用于加载Creative Labs Sound Blaster Audigy声卡的内建音效。</p>
+<p>mkafmmap：该命令用于创建AFM字体映射文件。</p>
+<p>mkdict：该命令用于创建字典文件。</p>
+<p>mkdir：该命令用于创建目录。</p>
+<p>mkdosfs：该命令用于创建MS-DOS文件系统。</p>
+<p>mkdumprd：该命令用于创建用于紧急恢复的ramdisk。</p>
+<p>mke2fs：该命令用于创建ext2或ext3文件系统。</p>
+<p>mkfifo：该命令用于创建命名管道（FIFO）。</p>
+<p>mkfontdir：该命令用于创建X字体目录。</p>
+<p>mkfontscale：该命令用于创建X字体缩放数据库。</p>
+<p>mkfs：该命令用于创建各种类型的文件系统。</p>
+<p>mkfs.btrfs：该命令用于创建Btrfs文件系统。</p>
+<p>mkfs.cramfs：该命令用于创建cramfs文件系统。</p>
+<p>mkfs.ext2：该命令用于创建ext2文件系统。</p>
+<p>mkfs.ext3：该命令用于创建ext3文件系统。</p>
+<p>mkfs.ext4：该命令用于创建ext4文件系统。</p>
+<p>mkfs.fat：该命令用于创建FAT文件系统。</p>
+<p>mkfs.minix：该命令用于创建Minix文件系统。</p>
+<p>mkfs.msdos：该命令用于创建MS-DOS文件系统。</p>
+<p>mkfs.vfat：该命令用于创建VFAT文件系统。</p>
+<p>mkfs.xfs：该命令用于创建XFS文件系统。</p>
+<p>mkhomedir_helper：该命令用于创建用户的家目录。</p>
+<p>mkhybrid：该命令用于创建混合ISO映像文件。</p>
+<p>mkinitrd：该命令用于创建初始化RAM磁盘（initrd）映像。</p>
+<p>mkisofs：该命令用于创建ISO映像文件。</p>
+<p>mklost+found：该命令用于在文件系统中创建lost+found目录。</p>
+<p>mkmanifest：该命令用于创建清单文件，通常用于Solaris包。</p>
+<p>mknod：该命令用于创建特殊文件（如设备文件）。</p>
+<p>mkrfc2734：该命令用于创建RFC 2734兼容的IPsec密钥。</p>
+<p>mkswap：该命令用于创建交换分区。</p>
+<p>mktemp：该命令用于安全地创建临时文件。</p>
+<p>mlabel：该命令用于设置MS-DOS磁盘卷标。</p>
+<p>mmcli：该命令用于Modem Manager的命令行接口。</p>
+<p>mmc-tool：该命令用于多功能卡（MMC）设备的管理。</p>
+<p>mmd：该命令是mtools工具集的一部分，用于创建MS-DOS文件系统中的目录。</p>
+<p>mmount：该命令是mtools工具集的一部分，用于挂载MS-DOS文件系统。</p>
+<p>mmove：该命令是mtools工具集的一部分，用于移动或重命名MS-DOS文件系统中的文件。</p>
+<p>mobj_dump：该命令用于转储目标文件的信息。</p>
+<p>modifyrepo：该命令用于修改YUM仓库的元数据。</p>
+<p>modinfo：该命令用于显示内核模块的信息。</p>
+<p>modprobe：该命令用于插入或删除内核模块。</p>
+<p>modutil：该命令用于NSS数据库的管理。</p>
+<p>mokutil：该命令用于管理Machine Owner Key（MOK）。</p>
+<p>more：该命令用于分页显示文本文件内容。</p>
+<p>mount：该命令用于挂载文件系统。</p>
+<p>mount.cifs：该命令用于挂载CIFS（Common Internet File System）网络共享。</p>
+<p>mount.fuse：该命令用于挂载FUSE（Filesystem in Userspace）文件系统。</p>
+<p>mount.glusterfs：该命令用于挂载GlusterFS分布式文件系统。</p>
+<p>mount.nfs：该命令用于挂载NFS（Network File System）共享。</p>
+<p>mount.nfs4：该命令用于挂载NFSv4文件系统。</p>
+<p>mountpoint：该命令用于检查目录是否为挂载点。</p>
+<p>mountstats：该命令用于显示NFS客户端挂载统计信息。</p>
+<p>mousetweaks：该命令用于调整鼠标的行为，通常用于辅助技术。</p>
+<p>mpartition：该命令用于管理MS-DOS文件系统分区的分区表。</p>
+<p>mpathconf：该命令用于配置多路径。</p>
+<p>mpathpersist：该命令用于管理多路径设备的持久性。</p>
+<p>mpls_dump：该命令用于转储MPLS（多协议标签交换）路由信息。</p>
+<p>mpris-proxy：该命令用于mpris代理服务。</p>
+<p>mpstat：该命令用于显示每个CPU的统计信息。</p>
+<p>mrd：该命令是mtools工具集的一部分，用于删除MS-DOS文件系统中的目录。</p>
+<p>mren：该命令是mtools工具集的一部分，用于重命名MS-DOS文件系统中的文件。</p>
+<p>msgattrib：该命令用于修改消息目录属性。</p>
+<p>msgcat：该命令用于连接和合并消息目录。</p>
+<p>msgcmp：该命令用于比较两个消息目录。</p>
+<p>msgcomm：该命令用于找出两个消息目录的公共部分。</p>
+<p>msgconv：该命令用于转换消息目录的字符编码。</p>
+<p>msgen：该命令用于为英语创建消息目录。</p>
+<p>msgexec：该命令用于执行消息目录中的命令。</p>
+<p>msgfilter：该命令用于过滤消息目录。</p>
+<p>msgfmt：该命令用于将消息目录编译成二进制格式。</p>
+<p>msggrep：该命令用于从消息目录中提取匹配的字符串。</p>
+<p>msghack：该命令用于修改消息目录。</p>
+<p>msginit：该命令用于创建新的消息目录。</p>
+<p>msgmerge：该命令用于合并消息目录。</p>
+<p>msgunfmt：该命令用于将二进制消息目录转换回源格式。</p>
+<p>msguniq：该命令用于去除消息目录中的重复项。</p>
+<p>mshortname：该命令用于显示MS-DOS短文件名。</p>
+<p>mshowfat：该命令用于显示MS-DOS文件系统的FAT信息。</p>
+<p>mtools：该命令是MS-DOS文件系统工具集的通用前端。</p>
+<p>mtoolstest：该命令用于测试mtools配置。</p>
+<p>mtr：该命令用于网络诊断，结合了traceroute和ping的功能。</p>
+<p>mtype：该命令是mtools工具集的一部分，用于显示MS-DOS文件内容。</p>
+<p>multipath：该命令用于配置多路径设备。</p>
+<p>multipathd：该命令是多路径守护进程，用于管理多路径设备。</p>
+<p>mutter：该命令是Mutter窗口管理器的设置工具。</p>
+<p>mv：该命令用于移动或重命名文件或目录。</p>
+<p>mvxattr：该命令用于移动扩展属性。</p>
+<p>mxtar：该命令用于处理tar档案文件，它可能是一个用于创建或提取tar档案的脚本或工具，但不是CentOS 7中的标准命令。通常，tar命令用于这些操作。</p>
+<p>mzip：该命令是mtools工具集的一部分，用于压缩或解压缩MS-DOS兼容的ZIP文件。它允许在Linux环境中处理ZIP文件，就像在DOS环境中一样。</p>
+<h2 id="N"><a href="#N" class="headerlink" title="N"></a>N</h2><p>nail：该命令是一个邮件发送和接收工具，是mailx的一个变种。</p>
+<p>namei：该命令用于显示文件的路径名，并显示每个组件的inode信息。</p>
+<p>nameif：该命令用于根据MAC地址为网络接口分配名称。</p>
+<p>nano：该命令是一个简单的文本编辑器。</p>
+<p>nautilus：该命令是GNOME桌面环境中的文件管理器。</p>
+<p>nautilus-autorun-software：该命令用于处理自动运行的软件。</p>
+<p>nautilus-desktop：该命令用于管理GNOME桌面上的图标。</p>
+<p>nautilus-sendto：该命令用于从Nautilus文件管理器发送文件。</p>
+<p>nc：该命令是”netcat”的缩写，用于在网络上读取和写入数据。</p>
+<p>ncat：该命令是nc的增强版，提供了类似的功能。</p>
+<p>ncurses5-config：该命令提供了ncurses版本5库的配置信息。</p>
+<p>ncursesw5-config：该命令提供了宽字符版本的ncurses版本5库的配置信息。</p>
+<p>ndctl：该命令用于管理NVDIMM设备。</p>
+<p>ndptool：该命令用于NVIDIA设备的相关操作。</p>
+<p>needs-restarting：该命令用于检查哪些进程需要重启。</p>
+<p>nenscript：该命令用于将文本文件转换为PostScript或HTML。</p>
+<p>neqn：该命令用于格式化数学方程式。</p>
+<p>netaddr：该命令用于网络地址相关的操作。</p>
+<p>netreport：该命令用于生成网络使用情况的报告。</p>
+<p>netscsid：该命令用于与Netware服务器通信。</p>
+<p>netstat：该命令用于显示网络连接、路由表、接口统计信息等。</p>
+<p>nettle-hash：该命令用于计算文件或标准输入的hash。</p>
+<p>nettle-lfib-stream：该命令是nettle库的一部分，用于流加密。</p>
+<p>newaliases：该命令用于重建别名数据库。</p>
+<p>newgidmap：该命令用于设置用户映射的组ID。</p>
+<p>newgrp：该命令用于登录到一个新的组。</p>
+<p>new-kernel-pkg：该命令用于安装新的内核包。</p>
+<p>newuidmap：该命令用于设置用户映射的用户ID。</p>
+<p>newusers：该命令用于批量创建新用户。</p>
+<p>nf-ct-add：该命令用于添加新的Netfilter连接跟踪条目。</p>
+<p>nf-ct-list：该命令用于列出Netfilter连接跟踪条目。</p>
+<p>nf-exp-add：该命令用于添加新的Netfilter期望。</p>
+<p>nf-exp-delete：该命令用于删除Netfilter期望。</p>
+<p>nf-exp-list：该命令用于列出Netfilter期望。</p>
+<p>nf-log：该命令用于Netfilter日志子系统。</p>
+<p>nf-monitor：该命令用于监控Netfilter事件。</p>
+<p>nf-queue：该命令用于将数据包放入Netfilter队列。</p>
+<p>nfs4_editfacl：该命令用于编辑NFSv4文件访问控制列表。</p>
+<p>nfs4_getfacl：该命令用于获取NFSv4文件访问控制列表。</p>
+<p>nfs4_setfacl：该命令用于设置NFSv4文件访问控制列表。</p>
+<p>nfsdcltrack：该命令用于NFS服务器客户端跟踪。</p>
+<p>nfsidmap：该命令用于NFS ID映射。</p>
+<p>nfsiostat：该命令用于报告NFS I&#x2F;O统计信息。</p>
+<p>nfsiostat-sysstat：该命令是nfsiostat的sysstat版本。</p>
+<p>nfsstat：该命令用于显示NFS客户端和服务器统计信息。</p>
+<p>ngettext：该命令用于国际化消息，支持复数形式。</p>
+<p>nice：该命令用于以指定的优先级运行程序。</p>
+<p>nisdomainname：该命令用于显示或设置NIS域名。</p>
+<p>nl：该命令用于在文本文件中添加行号。</p>
+<p>nl-addr-add：该命令用于添加网络层地址。</p>
+<p>nl-addr-delete：该命令用于删除网络层地址。</p>
+<p>nl-addr-list：该命令用于列出网络层地址。</p>
+<p>nl-class-add：该命令用于添加网络层分类。</p>
+<p>nl-class-delete：该命令用于删除网络层分类。</p>
+<p>nl-classid-lookup：该命令用于查询网络层分类ID。</p>
+<p>nl-class-list：该命令用于列出网络层分类。</p>
+<p>nl-cls-add：该命令用于添加网络层分类器。</p>
+<p>nl-cls-delete：该命令用于删除网络层分类器。</p>
+<p>nl-cls-list：该命令用于列出网络层分类器。</p>
+<p>nl-fib-lookup：该命令用于执行FIB查找。</p>
+<p>nl-link-enslave：该命令用于将设备附加到另一个设备。</p>
+<p>nl-link-ifindex2name：该命令用于将接口索引转换为名称。</p>
+<p>nl-link-list：该命令用于列出网络链接。</p>
+<p>nl-link-name2ifindex：该命令用于将接口名称转换为索引。</p>
+<p>nl-link-release：该命令用于释放网络链接。</p>
+<p>nl-link-set：该命令用于设置网络链接属性。</p>
+<p>nl-link-stats：该命令用于显示网络链接统计信息。</p>
+<p>nl-list-caches：该命令用于列出网络缓存。</p>
+<p>nl-list-sockets：该命令用于列出网络套接字。</p>
+<p>nl-monitor：该命令用于监控网络接口上的数据包。</p>
+<p>nl-neigh-add：该命令用于添加新的邻居条目到网络邻居缓存。</p>
+<p>nl-neigh-delete：该命令用于从网络邻居缓存中删除邻居条目。</p>
+<p>nl-neigh-list：该命令用于列出网络邻居缓存中的条目。</p>
+<p>nl-neightbl-list：该命令用于列出网络邻居缓存表。</p>
+<p>nl-pktloc-lookup：该命令用于查找数据包的位置信息。</p>
+<p>nl-qdisc-add：该命令用于在网络接口上添加新的队列规则（qdisc）。</p>
+<p>nl-qdisc-delete：该命令用于删除网络接口上的队列规则。</p>
+<p>nl-qdisc-list：该命令用于列出网络接口上的队列规则。</p>
+<p>nl-route-add：该命令用于添加新的路由条目。</p>
+<p>nl-route-delete：该命令用于删除路由条目。</p>
+<p>nl-route-get：该命令用于获取特定的路由条目。</p>
+<p>nl-route-list：该命令用于列出路由表中的条目。</p>
+<p>nl-rule-list：该命令用于列出网络规则。</p>
+<p>nl-tctree-list：该命令用于列出网络流的树形结构。</p>
+<p>nl-util-addr：该命令是网络工具的一部分，用于地址相关的操作。</p>
+<p>nm：该命令不是标准命令，可能是一个别名或脚本。</p>
+<p>nmblookup：该命令用于查询NetBIOS名称。</p>
+<p>nmcli：该命令是NetworkManager的命令行工具，用于配置网络。</p>
+<p>nm-connection-editor：该命令用于编辑NetworkManager的连接。</p>
+<p>nm-online：该命令用于检查NetworkManager是否在线。</p>
+<p>nmtui：该命令提供NetworkManager的文本用户界面。</p>
+<p>nmtui-connect：该命令用于连接到网络。</p>
+<p>nmtui-edit：该命令用于编辑网络连接。</p>
+<p>nmtui-hostname：该命令用于设置系统主机名。</p>
+<p>nohup：该命令用于运行一个命令，忽略挂起信号。</p>
+<p>nologin：该命令用于显示一个消息，说明用户不能登录。</p>
+<p>notify-send：该命令用于发送桌面通知。</p>
+<p>nproc：该命令用于打印可用的处理器数量。</p>
+<p>nroff：该命令用于格式化文本文件，通常用于打印。</p>
+<p>nsenter：该命令用于在指定的命名空间中运行程序。</p>
+<p>nslookup：该命令用于查询DNS记录。</p>
+<p>nss-policy-check：该命令用于检查NSS（名称服务交换）策略。</p>
+<p>nstat：该命令用于显示网络统计信息。</p>
+<p>nsupdate：该命令用于动态更新DNS记录。</p>
+<p>ntpd：该命令是网络时间协议守护进程，用于同步系统时钟。</p>
+<p>ntpdate：该命令用于使用NTP协议设置系统日期和时间。</p>
+<p>ntpdc：该命令用于控制NTP服务器。</p>
+<p>ntp-keygen：该命令用于生成NTP密钥。</p>
+<p>ntpq：该命令用于查询NTP服务器。</p>
+<p>ntpstat：该命令用于显示NTP服务器的状态。</p>
+<p>ntptime：该命令用于打印NTP时间。</p>
+<p>ntsysv：该命令用于配置运行级别服务。</p>
+<p>numad：该命令用于优化内存分配，特别是针对NUMA系统。</p>
+<p>numfmt：该命令用于数字格式转换。</p>
+<h2 id="O"><a href="#O" class="headerlink" title="O"></a>O</h2><p>objcopy：该命令用于复制和转换目标文件。</p>
+<p>objdump：该命令用于显示二进制文件的信息，包括反汇编代码。</p>
+<p>od：该命令用于以八进制、十进制、十六进制或其他格式显示文件内容。</p>
+<p>oddjobd：该命令是oddjob服务守护进程，用于执行远程请求的操作。</p>
+<p>oddjob_request：该命令用于发送请求到oddjob服务。</p>
+<p>ogg123：该命令用于播放Ogg Vorbis音频文件。</p>
+<p>oggdec：该命令用于解码Ogg Vorbis音频文件。</p>
+<p>oggenc：该命令用于编码音频文件为Ogg Vorbis格式。</p>
+<p>ogginfo：该命令用于显示Ogg Vorbis音频文件的信息。</p>
+<p>oldfind：该命令是find命令的旧版本，用于搜索文件系统中的文件。</p>
+<p>oLschema2ldif：该命令用于将OpenLDAP schema转换为LDIF格式。</p>
+<p>on_ac_power：该命令用于检查系统是否正在使用交流电源。</p>
+<p>open：该命令用于打开文件或URL，通常与默认应用程序关联。</p>
+<p>openssl：该命令用于OpenSSL加密库的命令行工具，用于加密、解密、签名等。</p>
+<p>openvt：该命令用于在新的虚拟终端（VT）启动一个程序。</p>
+<p>orbd：该命令是CORBA对象请求代理守护进程，用于ORB服务。</p>
+<p>orca：该命令是Orca屏幕阅读器的启动命令。</p>
+<p>orc-bugreport：该命令用于生成用于报告错误的报告。</p>
+<p>osd_login：该命令用于显示登录屏幕。</p>
+<p>osinfo-db-export：该命令用于导出osinfo数据库。</p>
+<p>osinfo-db-import：该命令用于导入osinfo数据库。</p>
+<p>osinfo-db-path：该命令用于显示osinfo数据库的路径。</p>
+<p>osinfo-db-validate：该命令用于验证osinfo数据库的完整性。</p>
+<p>osinfo-detect：该命令用于检测操作系统的信息。</p>
+<p>osinfo-install-script：该命令用于生成安装脚本。</p>
+<p>osinfo-query：该命令用于查询osinfo数据库。</p>
+<p>os-prober：该命令用于检测其他操作系统。</p>
+<p>over：该命令不是标准命令，可能是一个脚本或别名。</p>
+<p>ownership：该命令不是标准命令，可能是一个脚本或别名，用于更改文件所有权。</p>
+<h2 id="P"><a href="#P" class="headerlink" title="P"></a>P</h2><p>p11-kit：该命令用于管理PKCS#11（加密令牌）模块。</p>
+<p>pacat：该命令是PulseAudio的声音播放工具。</p>
+<p>pack200：该命令用于将JAR文件转换为Pack200压缩格式。</p>
+<p>package-cleanup：该命令用于清理YUM软件包缓存和数据库。</p>
+<p>packer：该命令用于创建机器映像，如虚拟机的box文件。</p>
+<p>pacmd：该命令是PulseAudio的命令行工具，用于控制声音服务器。</p>
+<p>pactl：该命令是PulseAudio的命令行工具，用于控制声音服务器。</p>
+<p>padsp：该命令用于将非PulseAudio应用程序的声音重定向到PulseAudio服务器。</p>
+<p>page_owner_sort：该命令用于排序页所有者信息。</p>
+<p>pam_console_apply：该命令用于应用PAM控制台权限。</p>
+<p>pamon：该命令用于监控PAM模块的行为。</p>
+<p>pam_tally2：该命令用于显示和配置失败的PAM认证尝试。</p>
+<p>pam_timestamp_check：该命令用于检查PAM时间戳。</p>
+<p>panelctl：该命令用于控制面板设置。</p>
+<p>pango-list：该命令用于列出Pango支持的脚本和语言。</p>
+<p>pango-querymodules-64：该命令用于查询已安装的Pango模块。</p>
+<p>pango-view：该命令用于显示Pango文本渲染。</p>
+<p>paperconf：该命令用于获取默认的纸张配置。</p>
+<p>paperconfig：该命令用于配置打印机的纸张设置。</p>
+<p>paplay：该命令是PulseAudio的命令行声音播放工具。</p>
+<p>paps：该命令用于将PostScript文本转换为PDF。</p>
+<p>parec：该命令是PulseAudio的声音录制工具。</p>
+<p>parecord：该命令是PulseAudio的声音录制工具。</p>
+<p>parted：该命令用于磁盘分区和分区表操作。</p>
+<p>partprobe：该命令用于更新内核的分区表信息。</p>
+<p>partx：该命令用于列出或修改分区表。</p>
+<p>passwd：该命令用于设置或更改用户密码。</p>
+<p>paste：该命令用于合并文件中的行。</p>
+<p>pasuspender：该命令用于暂停PulseAudio，直到指定的命令完成。</p>
+<p>pathchk：该命令用于检查文件名的有效性。</p>
+<p>pax11publish：该命令用于发布PulseAudio服务器信息。</p>
+<p>pbm2ppa：该命令用于将PBM图像转换为PPA格式。</p>
+<p>pbmtpg：该命令不是标准命令，可能是一个脚本或自定义工具。</p>
+<p>pchrt：该命令用于实时调度器的参数设置。</p>
+<p>pdata_tools：该命令不是标准命令，可能是一个脚本或自定义工具。</p>
+<p>pdf2dsc：该命令用于将PDF文件转换为DSC（设备独立格式）文件。</p>
+<p>pdf2ps：该命令用于将PDF文件转换为PostScript文件。</p>
+<p>pdfdetach：该命令用于从PDF文件中提取嵌入的文件。</p>
+<p>pdffonts：该命令用于列出PDF文件中的字体。</p>
+<p>pdfimages：该命令用于从PDF文件中提取图像。</p>
+<p>pdfinfo：该命令用于显示PDF文件的信息。</p>
+<p>pdfseparate：该命令用于将PDF文件拆分为单独的页面。</p>
+<p>pdftocairo：该命令用于将PDF文件转换为其他格式，如PNG或PS。</p>
+<p>pdftohtml：该命令用于将PDF文件转换为HTML格式。</p>
+<p>pdftoppm：该命令用于将PDF文件转换为PPM图像格式。</p>
+<p>pdftops：该命令用于将PDF文件转换为PostScript格式。</p>
+<p>pdftotext：该命令用于从PDF文件中提取文本。</p>
+<p>pdfunite：该命令用于合并多个PDF文件。</p>
+<p>peekfd：该命令用于检查文件描述符。</p>
+<p>perl：该命令用于运行Perl脚本。</p>
+<p>perl5.16.3：该命令指向特定版本的Perl解释器。</p>
+<p>perlbug：该命令用于报告Perl相关的问题。</p>
+<p>perldoc：该命令用于显示Perl文档。</p>
+<p>perlthanks：该命令用于向Perl开发人员发送感谢。</p>
+<p>pethtool：该命令用于配置以太网接口。</p>
+<p>pf2afm：该命令用于将Type 1字体转换为AFM格式。</p>
+<p>pfbtopfa：该命令用于将PFB字体转换为PFA格式。</p>
+<p>pflags：该命令用于显示进程的标志。</p>
+<p>pgawk：该命令是GNU awk的一个版本。</p>
+<p>pgrep：该命令用于根据名称或其他属性查找进程。</p>
+<p>pic：该命令用于处理 troff 的图形语言。</p>
+<p>piconv：该命令用于转换字符编码。</p>
+<p>pidof：该命令用于查找运行中的进程的PID。</p>
+<p>pidstat：该命令用于显示进程的统计信息。</p>
+<p>pifconfig：该命令不是标准命令，可能是对ifconfig的别名或脚本。</p>
+<p>pinentry：该命令用于GPG的密码输入对话框。</p>
+<p>pinentry-curses：该命令用于在终端中提供GPG的密码输入对话框。</p>
+<p>pinentry-gtk：该命令用于提供GPG的图形密码输入对话框。</p>
+<p>pinentry-gtk-2：该命令用于提供GPG的图形密码输入对话框，针对GTK+ 2.x版本。</p>
+<p>pinfo：该命令用于查看命令的帮助信息，类似于man命令。</p>
+<p>ping：该命令用于测试网络连接和延迟。</p>
+<p>ping6：该命令用于测试IPv6网络连接和延迟。</p>
+<p>pinky：该命令用于查看系统上的用户信息。</p>
+<p>pitchplay：该命令用于播放合成的声音，通常用于语音合成。</p>
+<p>pivot_root：该命令用于改变当前的根文件系统。</p>
+<p>pk12util：该命令用于处理PKCS#12证书。</p>
+<p>pkaction：该命令用于查询PolicyKit授权规则。</p>
+<p>pkcheck：该命令用于检查PolicyKit授权。</p>
+<p>pkcon：该命令是PolicyKit的命令行工具。</p>
+<p>pkcs1-conv：该命令用于转换PKCS#1格式。</p>
+<p>pkexec：该命令用于以其他用户身份执行命令。</p>
+<p>pkg-config：该命令用于获取编译和链接库的信息。</p>
+<p>pkill：该命令用于根据名称或其他属性杀死进程。</p>
+<p>pkla-admin-identities：该命令用于管理PAM的认证标识。</p>
+<p>pkla-check-authorization：该命令用于检查PAM的授权规则。</p>
+<p>pkmon：该命令用于监控PolicyKit事件。</p>
+<p>pkttyagent：该命令用于PolicyKit的伪终端代理。</p>
+<p>pl2pm：该命令用于将Perl 4脚本转换为Perl 5模块。</p>
+<p>play：该命令用于播放音频文件。</p>
+<p>pldd：该命令用于列出进程的动态链接库。</p>
+<p>plipconfig：该命令用于配置PLIP（并行线互联网协议）设备。</p>
+<p>plistutil：该命令用于处理属性列表文件。</p>
+<p>pluginviewer：该命令用于查看GTK+插件。</p>
+<p>plymouth：该命令用于控制Plymouth系统启动画面。</p>
+<p>plymouthd：该命令是Plymouth服务的守护进程。</p>
+<p>plymouth-set-default-theme：该命令用于设置Plymouth的默认主题。</p>
+<p>pmap：该命令用于显示进程的内存映射。</p>
+<p>pm-hibernate：该命令用于使系统进入休眠状态。</p>
+<p>pm-is-supported：该命令用于检查电源管理功能是否受支持。</p>
+<p>pm-powersave：该命令用于启用节电模式。</p>
+<p>pm-suspend：该命令用于挂起系统。</p>
+<p>pm-suspend-hybrid：该命令用于混合挂起系统。</p>
+<p>pm-utils-bugreport-info.sh：该命令用于生成电源管理工具的bug报告信息。</p>
+<p>pnm2ppa：该命令用于将PNM图像转换为PPA格式。</p>
+<p>pod2html：该命令用于将Pod格式转换为HTML。</p>
+<p>pod2man：该命令用于将Pod格式转换为man页面。</p>
+<p>pod2text：该命令用于将Pod格式转换为纯文本。</p>
+<p>pod2usage：该命令用于生成使用信息。</p>
+<p>policyeditor：该命令用于编辑安全策略。</p>
+<p>policyeditor.itweb：该命令与policyeditor相同，可能是链接或别名。</p>
+<p>policytool：该命令用于管理Java安全策略。</p>
+<p>popd：该命令用于从目录栈中弹出目录。</p>
+<p>postalias：该命令用于Postfix邮件系统的别名数据库。</p>
+<p>postcat：该命令用于查看Postfix邮件队列中的邮件。</p>
+<p>postconf：该命令用于显示或修改Postfix邮件系统的配置。</p>
+<p>postdrop：该命令用于Postfix邮件系统，用于将邮件放入队列。</p>
+<p>postfix：该命令用于控制Postfix邮件系统。</p>
+<p>post-grohtml：该命令用于将groff文件转换为HTML。</p>
+<p>postkick：该命令用于Postfix邮件系统，用于唤醒队列管理器。</p>
+<p>postlock：该命令用于Postfix邮件系统，用于锁定邮件队列。</p>
+<p>postlog：该命令用于Postfix邮件系统，用于记录日志消息。</p>
+<p>postmap：该命令用于Postfix邮件系统，用于创建或查询数据库。</p>
+<p>postmulti：该命令用于Postfix邮件系统，用于管理多个实例。</p>
+<p>postqueue：该命令用于Postfix邮件系统，用于管理邮件队列。</p>
+<p>postsuper：该命令用于Postfix邮件系统，用于管理邮件队列。</p>
+<p>powernow-k8-decode：该命令用于解码AMD K8处理器的电源管理数据。</p>
+<p>poweroff：该命令用于关闭系统。</p>
+<p>ppdc：该命令用于CUPS打印系统的打印队列。</p>
+<p>ppdhtml：该命令用于将PPD文件转换为HTML。</p>
+<p>ppdi：该命令用于合并PPD文件。</p>
+<p>ppdmerge：该命令用于合并PPD文件。</p>
+<p>ppdpo：该命令用于转换PPD文件。</p>
+<p>pphs：该命令用于处理PostScript文件。</p>
+<p>pppd：该命令用于启动PPP连接。</p>
+<p>pppdump：该命令用于分析PPP数据包。</p>
+<p>pppoe-discovery：该命令用于PPPoE发现过程。</p>
+<p>pppstats：该命令用于显示PPP连接的统计信息。</p>
+<p>ppp-watch：该命令用于监控PPP连接。</p>
+<p>pr：该命令用于对文本进行分页。</p>
+<p>preconv：该命令用于预处理字符编码转换。</p>
+<p>pre-grohtml：该命令用于将groff文件预处理为HTML格式。</p>
+<p>printafm：该命令用于打印Adobe字体度量信息。</p>
+<p>printenv：该命令用于打印环境变量。</p>
+<p>printf：该命令用于格式化并打印数据。</p>
+<p>prlimit：该命令用于设置或获取进程的资源限制。</p>
+<p>prtstat：该命令用于显示进程的统计信息。</p>
+<p>ps：该命令用于显示当前运行的进程。</p>
+<p>ps2ascii：该命令用于将PostScript文件转换为ASCII文本。</p>
+<p>ps2epsi：该命令用于将PostScript文件转换为EPSI格式。</p>
+<p>ps2pdf：该命令用于将PostScript文件转换为PDF格式。</p>
+<p>ps2pdf12：该命令用于将PostScript文件转换为PDF格式，使用PDF 1.2兼容性。</p>
+<p>ps2pdf13：该命令用于将PostScript文件转换为PDF格式，使用PDF 1.3兼容性。</p>
+<p>ps2pdf14：该命令用于将PostScript文件转换为PDF格式，使用PDF 1.4兼容性。</p>
+<p>ps2pdfwr：该命令用于将PostScript文件转换为PDF格式，允许写入。</p>
+<p>ps2ps：该命令用于将PostScript文件转换为另一份PostScript文件。</p>
+<p>ps2ps2：该命令用于将PostScript文件转换为PostScript Level 2格式。</p>
+<p>psed：该命令用于流编辑器，类似于sed，但用于PostScript文件。</p>
+<p>psfaddtable：该命令用于向PSF字体文件添加映射表。</p>
+<p>psfgettable：该命令用于从PSF字体文件中提取映射表。</p>
+<p>psfstriptable：该命令用于从PSF字体文件中删除映射表。</p>
+<p>psfxtable：该命令用于组合PSF字体和映射表。</p>
+<p>pstack：该命令用于打印进程的堆栈跟踪。</p>
+<p>pstree：该命令用于以树状图显示进程。</p>
+<p>pstree.x11：该命令用于在X11窗口中显示进程树。</p>
+<p>pstruct：该命令用于打印C结构信息。</p>
+<p>ptaskset：该命令用于设置或获取进程的CPU亲和力。</p>
+<p>ptx：该命令用于将文本文件转换为表格格式。</p>
+<p>pulseaudio：该命令是PulseAudio声音服务器的守护进程。</p>
+<p>purple-client-example：该命令是Purple即时通讯库的客户端示例。</p>
+<p>purple-remote：该命令用于远程控制Purple即时通讯客户端。</p>
+<p>purple-send：该命令用于向Purple即时通讯客户端发送消息。</p>
+<p>purple-send-async：该命令用于异步发送消息到Purple即时通讯客户端。</p>
+<p>purple-url-handler：该命令用于处理Purple即时通讯客户端的URL。</p>
+<p>pushd：该命令用于将目录推入目录栈。</p>
+<p>pvchange：该命令用于更改物理卷的属性。</p>
+<p>pvck：该命令用于检查物理卷的完整性。</p>
+<p>pvcreate：该命令用于创建物理卷。</p>
+<p>pvdisplay：该命令用于显示物理卷的详细信息。</p>
+<p>pvmove：该命令用于移动物理卷上的数据。</p>
+<p>pvremove：该命令用于删除物理卷。</p>
+<p>pvresize：该命令用于调整物理卷的大小。</p>
+<p>pvs：该命令用于列出物理卷的概要信息。</p>
+<p>pvscan：该命令用于扫描所有磁盘上的物理卷。</p>
+<p>pwck：该命令用于检查密码文件的完整性。</p>
+<p>pwconv：该命令用于转换密码文件格式。</p>
+<p>pwd：该命令用于显示当前工作目录。</p>
+<p>pwdx：该命令用于显示指定进程的工作目录。</p>
+<p>pwhistory_helper：该命令用于帮助管理密码历史。</p>
+<p>pwmake：该命令用于生成安全的密码。</p>
+<p>pwscore：该命令用于评估密码的强度。</p>
+<p>pwunconv：该命令用于从阴影密码文件转换回普通密码文件。</p>
+<p>pydoc：该命令用于生成Python模块的文档。</p>
+<p>pygtk-demo：该命令用于展示PyGTK库的示例。</p>
+<p>pyinotify：该命令用于Python的inotify接口，用于监控文件系统事件。</p>
+<p>python：该命令用于运行Python解释器。</p>
+<p>python2：该命令用于运行Python 2解释器。</p>
+<p>python2.7：该命令用于运行Python 2.7解释器。</p>
+<h2 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h2><p>qemu-ga：该命令用于QEMU Guest Agent，它运行在虚拟机内部，提供主机与虚拟机之间的交互。</p>
+<p>qemu-img：该命令用于创建、转换和管理QEMU使用的镜像文件。</p>
+<p>qemu-io：该命令用于直接访问QEMU镜像文件，通常用于调试和测试。</p>
+<p>qemu-nbd：该命令用于将QEMU镜像文件作为网络块设备导出，使得可以像访问普通磁盘一样访问镜像文件。</p>
+<p>qmicli：该命令用于与Qualcomm调制解调器交互，执行各种操作和查询。</p>
+<p>qmi-network：该命令用于配置和管理基于QMI（Qualcomm Modem Interface）的网络接口。</p>
+<p>quot：该命令用于显示文件系统的磁盘使用情况和配额限制。</p>
+<p>quota：该命令用于显示磁盘使用情况和配额限制，或者编辑用户的配额。</p>
+<p>quotacheck：该命令用于检查文件系统上的配额一致性，并创建或更新配额文件。</p>
+<p>quotaoff：该命令用于关闭文件系统上的配额限制。</p>
+<p>quotaon：该命令用于开启文件系统上的配额限制。</p>
+<p>quotastats：该命令用于显示文件系统的配额统计信息。</p>
+<p>quotasync：该命令用于同步文件系统上的配额文件。</p>
+<p>quote：该命令不是标准命令，可能是一个脚本或别名，用于处理文本中的引号。</p>
+<p>quote_readline：该命令不是标准命令，可能是一个脚本或函数，用于在readline中处理引号。</p>
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><h2 id="S"><a href="#S" class="headerlink" title="S"></a>S</h2><h2 id="T"><a href="#T" class="headerlink" title="T"></a>T</h2><h2 id="U"><a href="#U" class="headerlink" title="U"></a>U</h2><h2 id="V"><a href="#V" class="headerlink" title="V"></a>V</h2><h2 id="W"><a href="#W" class="headerlink" title="W"></a>W</h2><h2 id="X"><a href="#X" class="headerlink" title="X"></a>X</h2><h2 id="Y"><a href="#Y" class="headerlink" title="Y"></a>Y</h2><h2 id="Z"><a href="#Z" class="headerlink" title="Z"></a>Z</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/12/01/%E8%8E%B1%E7%91%9F%E5%A1%94%E6%A1%A3%E6%A1%88/" rel="prev" title="莱瑟塔档案">
+      <i class="fa fa-chevron-left"></i> 莱瑟塔档案
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8"><span class="nav-number">1.</span> <span class="nav-text">Linux命令大全</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">1.1.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">1.2.</span> <span class="nav-text">B</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">1.3.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">1.4.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">1.5.</span> <span class="nav-text">E</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F"><span class="nav-number">1.6.</span> <span class="nav-text">F</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#G"><span class="nav-number">1.7.</span> <span class="nav-text">G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H"><span class="nav-number">1.8.</span> <span class="nav-text">H</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I"><span class="nav-number">1.9.</span> <span class="nav-text">I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#J"><span class="nav-number">1.10.</span> <span class="nav-text">J</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K"><span class="nav-number">1.11.</span> <span class="nav-text">K</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L"><span class="nav-number">1.12.</span> <span class="nav-text">L</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M"><span class="nav-number">1.13.</span> <span class="nav-text">M</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#N"><span class="nav-number">1.14.</span> <span class="nav-text">N</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#O"><span class="nav-number">1.15.</span> <span class="nav-text">O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P"><span class="nav-number">1.16.</span> <span class="nav-text">P</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q"><span class="nav-number">1.17.</span> <span class="nav-text">Q</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R"><span class="nav-number">1.18.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S"><span class="nav-number">1.19.</span> <span class="nav-text">S</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T"><span class="nav-number">1.20.</span> <span class="nav-text">T</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#U"><span class="nav-number">1.21.</span> <span class="nav-text">U</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V"><span class="nav-number">1.22.</span> <span class="nav-text">V</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#W"><span class="nav-number">1.23.</span> <span class="nav-text">W</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X"><span class="nav-number">1.24.</span> <span class="nav-text">X</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Y"><span class="nav-number">1.25.</span> <span class="nav-text">Y</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Z"><span class="nav-number">1.26.</span> <span class="nav-text">Z</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chan Revival</p>
+  <div class="site-description" itemprop="description">描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Revival Sky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">189k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:52</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'Ov23li6MSfENmb9Y66d7',
+      clientSecret: '4c5a5994bd199c8fcc5500a80209374b718b771a',
+      repo        : 'GitTalkComment',
+      owner       : 'chanrevival',
+      admin       : ['chanrevival'],
+      id          : 'b33384d58b991fac04516446e2024649',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
