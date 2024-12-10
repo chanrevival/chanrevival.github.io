@@ -128,17 +128,17 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章<span class="badge">39</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章<span class="badge">38</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">48</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">46</span></a>
 
   </li>
         <li class="menu-item menu-item-photos">
@@ -248,7 +248,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-12-10 11:08:05 / 修改时间：11:09:11" itemprop="dateCreated datePublished" datetime="2024-12-10T11:08:05+08:00">2024-12-10</time>
+              <time title="创建时间：2024-12-10 11:08:05 / 修改时间：11:25:48" itemprop="dateCreated datePublished" datetime="2024-12-10T11:08:05+08:00">2024-12-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>15</span>
+              <span>675</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -293,7 +293,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="PostgreSQL的密码文件"><a href="#PostgreSQL的密码文件" class="headerlink" title="PostgreSQL的密码文件"></a>PostgreSQL的密码文件</h1>
+          <h1 id="PostgreSQL的密码文件"><a href="#PostgreSQL的密码文件" class="headerlink" title="PostgreSQL的密码文件"></a>PostgreSQL的密码文件</h1><p>在用户的Home目录中，.pgpass文件可以包含连接所需的密码（如果没有其他方式指定密码）。在Windows系统中，该文件名为%APPDATA%\postgresql\pgpass.conf（其中%APPDATA%指的是用户配置文件中的应用程序数据子目录）。另外，可以通过连接参数passfile或环境变量PGPASSFILE指定要使用的密码文件。</p>
+<p>密码文件的内容如下： </p>
+<p>hostname:port:database:username:password</p>
+<p>前四个字段可以是字面值，也可以是<em>，</em>即匹配任何内容。将使用与当前连接参数匹配的第一行中的密码字段。（因此，在使用通配符时，请首先放置更具体的条目。）如果条目需要包含:或\，可以使用\来转义这些字符。 主机名字段会与指定时的主机连接参数匹配，否则与指定时的hostaddr参数匹配；如果两者都未给出，则搜索主机名localhost。当连接为Unix域套接字连接，且主机参数与libpq的默认套接字目录路径匹配时，也会搜索主机名localhost。在standby服务器中，数据库字段为replication时，将匹配到主服务器的流复制连接。否则，数据库字段的作用有限，因为用户在同一个集群中的所有数据库使用相同的密码。</p>
+<p>在Unix系统中，密码文件的权限必须禁止全局或组访问；可以通过命令如chmod 0600 ~&#x2F;.pgpass来实现这一点。如果权限未按如此严格配置，文件将被忽略。在Microsoft Windows中，假定文件存储在安全的目录中，因此不进行特殊权限检查。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/12/10/PostgreSQL%E7%9A%84%E5%AF%86%E7%A0%81%E6%96%87%E4%BB%B6/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -815,20 +827,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-count">46</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
