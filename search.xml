@@ -176,7 +176,7 @@
 <h2 id="裸存储支持Oracle-database-clusterware-12c吗？"><a href="#裸存储支持Oracle-database-clusterware-12c吗？" class="headerlink" title="裸存储支持Oracle database clusterware 12c吗？"></a>裸存储支持Oracle database clusterware 12c吗？</h2><p>不支持。从Oracle数据库12c开始，Oracle数据库及相关技术（如Oracle Clusterware）不再支持直接使用裸（块）存储设备。这意味着在升级到Oracle Clusterware 12c之前，文件必须移动到Oracle ASM或支持的共享文件系统（集群文件系统或网络文件系统（NFS））。</p>
 ]]></content>
       <categories>
-        <category>技术文章</category>
+        <category>技术分享</category>
         <category>操作系统技术</category>
         <category>Linux</category>
       </categories>
@@ -194,8 +194,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /dataxxx</span><br><span class="line"><span class="built_in">mkdir</span> -p /dataxxx/doris-storage</span><br><span class="line"><span class="built_in">chown</span> -R doris:doris /dataxxx/doris-storage</span><br><span class="line">ll</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 <h2 id="注释掉坏盘路径"><a href="#注释掉坏盘路径" class="headerlink" title="注释掉坏盘路径"></a>注释掉坏盘路径</h2><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vi</span> /usr/local/doris-<span class="keyword">be</span>/<span class="keyword">conf</span>/be_custom.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
-<p><img src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p>
+<p><img data-src="/vx_images/46833146873345.png"><br>注释掉broken_storage_path。</p>
 <h2 id="重启be进程"><a href="#重启be进程" class="headerlink" title="重启be进程"></a>重启be进程</h2><p>可在Web管理控制台操作。</p>
+<p><img data-src="/vx_images/456876443175248.png"></p>
 ]]></content>
       <categories>
         <category>技术分享</category>
@@ -3223,7 +3224,7 @@
       <categories>
         <category>技术分享</category>
         <category>操作系统技术</category>
-        <category>Linux技术</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>Linux</tag>
@@ -3266,7 +3267,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>NOTE:603868.1 - How to Dynamically Add and Remove SCSI Devices on Linux<br>NOTE:1521757.1 - How to set udev rule for setting the disk permission on ASM disks when using multipath on OL 6.x<br>NOTE:730996.1 - How to Create UDEV Rules for Network Cards on OEL5&#x2F;RHEL5</p>
 ]]></content>
       <categories>
-        <category>技术文章</category>
+        <category>技术分享</category>
         <category>操作系统技术</category>
       </categories>
       <tags>
@@ -3358,7 +3359,7 @@
 
 ]]></content>
       <categories>
-        <category>技术文章</category>
+        <category>技术分享</category>
         <category>操作系统技术</category>
         <category>Linux</category>
       </categories>
