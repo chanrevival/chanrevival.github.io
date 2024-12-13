@@ -2810,6 +2810,17 @@
 <p>zramctl：该命令用于创建和管理zram设备，zram是一种在RAM磁盘上压缩数据的机制。</p>
 <p>zsoelim：该命令用于预处理包含源代码的宏。</p>
 ]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>操作系统技术</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+        <tag>CentOS</tag>
+        <tag>shell</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python监控公网IP变化发QQ邮件通知</title>
@@ -3087,29 +3098,6 @@
         <tag>操作系统</tag>
         <tag>SunOS</tag>
         <tag>软件安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello Hexo</title>
-    <url>/2024/11/11/hello-world/</url>
-    <content><![CDATA[<p>2024-11-26 13:31<br>匿名评论也有个问题，就是可能被攻击。<br>算了，暂时保留使用Gittalk吧。<br>新增了内部使用的栏目，并进行加密。</p>
-<HR>
-
-<p>2024-11-22 13:47<br>Gittalk评论系统有个问题，就是必须要登录。<br>准备换成valine。</p>
-<HR>
-
-<p>2024-11-18，搞定了评论系统和统计分析。<br>还没搞定的有相册系统等。<br>慢慢来吧。</p>
-<HR>
-
-<p>几乎从2000年时，就开始筹划建设个人主页，历经了frontpage、Dreamweaver、QQ空间。<br>目前，个人主页于2024年11月11日正式使用Hexo架构。<br>这周末从QQ空间上迁移了少量内容到Hexo测试，搞定了基础配置、发文、分类、标签等等。<br>还没搞定的有评论系统、统计分析、相册系统等。<br>慢慢来吧。</p>
-]]></content>
-      <categories>
-        <category>个人生活</category>
-        <category>原创</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>个人网站</tag>
       </tags>
   </entry>
   <entry>
@@ -4269,6 +4257,63 @@
     <url>/2011/03/07/%E9%9A%8F%E7%AC%9420110307%E2%80%94%E2%80%94%E6%97%A9%E6%98%A5%E8%8A%B1%E9%9B%A8%E5%9B%BE/</url>
     <content><![CDATA[<h1 id="随笔20110307——早春花雨图"><a href="#随笔20110307——早春花雨图" class="headerlink" title="随笔20110307——早春花雨图"></a>随笔20110307——早春花雨图</h1><p>雨后的校园是清新的，水珠打落了叶上的尘，每片绿叶都像被悉心洗过似的。<br>青花大理石上的泥沙，也已冲刷干净，光亮可鉴，倒影着小道两旁新开的花。<br>雨后的校园是美丽的，雨点惊醒了丛里的花儿，赶集儿般的，一朝争放。<br>轻轻的细雨，潋滟的湖光，空明的鸟啼，还有花儿那窃窃的私语声。<br>雨后的校园有些凉意，行人都不大说话，大概跟我一样，醉在了这早春花雨图里。<br>我就这样走着，望着前方，但愿那里，一如此处的风景，简单而美丽。</p>
 <p>于观音湖畔腹稿 北苑成文<br>2011-3-7</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS_yum源常用命令</title>
+    <url>/2024/12/13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="CentOS-yum源常用命令"><a href="#CentOS-yum源常用命令" class="headerlink" title="CentOS_yum源常用命令"></a>CentOS_yum源常用命令</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p> 直接使用ISO镜像</p>
+<p>备份原yum源配置文件</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<p>挂载ISO镜像</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
+
+<p>编辑配置文件</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
+
+<p>配置文件内容如下</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>清理yum缓存并生成新的缓存</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置国内yum源"><a href="#配置国内yum源" class="headerlink" title="配置国内yum源"></a>配置国内yum源</h2><p>备份原yum源配置文件</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<p>下载阿里云的yum源配置文件</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
+
+<p>清理yum缓存并生成新的缓存</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>操作系统技术</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+        <tag>yum</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2012-1-1 随笔</title>
+    <url>/2012/01/01/2012-1-1_%E9%9A%8F%E7%AC%94/</url>
+    <content><![CDATA[<h1 id="2012-1-1-随笔"><a href="#2012-1-1-随笔" class="headerlink" title="2012-1-1_随笔"></a>2012-1-1_随笔</h1><p>大好的假期，闲来也无事，想着假期过后就得考试，却也没心情出去打酱油了，到底是没那么淡定。保存的喜悦是未读的CPCW2011合订本，这也算是具有我个人特色的心理平衡方法了。随手翻了几刊，2011也算发生了不少大事，比如说，拉登K.O.了。这让我纠结了一下如今的信息安全，无疑，这位大虾就是败在信息安全。当今的定位能力，一颗反辐射导弹就可以轻松跟踪，并干掉某个人。拉登当然没有那么蠢，坏事的就是那个SB信使，好好的用什么电子通讯……话说老美还真是有几把刷子，那黑鹰隐形武装直升机，竟然能突入巴基斯坦境内几百公里，而不被巴方雷达检测到。看看奥巴马观看袭击拉登的照片，打电玩似的，可见老美的信息化作战能力是多么强悍，其单兵装备的信息化水平，以及协同作战数据链都是首屈一指的。</p>
+<p>进而联想到最近IT界闹得沸沸扬扬的密码泄露事件。老实说，我是从来不相信某些所谓安全公司的云安全，云存储，云备份云云。云概念才刚刚出炉，就急着为自己的产品冠以云概念，忽悠我们纯情的消费者。这大概就是所谓的坑DADDY了。什么叫“云”：美帝那套搞定拉登的数据链才算真正意义上的云技术。不是我长它国志气，灭自己威风。人家的技术就是扎实，不像国内一些砖家级的企业，太浮躁，不踏实，满脑子商业性的水货。服务器的存储成本，维护成本，带宽成本很高的，那些以盈利为目的的企业会真的如此公益吗？我们家鱼都看不下去了，都拿头撞石头了<del>罢了</del>新年的第一天不能“愤青”，字里行间要和谐，要有爱，不解释<del>你懂的</del></p>
 ]]></content>
       <categories>
         <category>随笔</category>

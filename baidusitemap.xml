@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://chanrevival.github.io/2012/01/01/2012-1-1_%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2024-12-13</lastmod>
+  </url>
+  <url>
+    <loc>https://chanrevival.github.io/2024/12/13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2024-12-13</lastmod>
+  </url>
+  <url>
+    <loc>https://chanrevival.github.io/2024/12/04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</loc>
+    <lastmod>2024-12-13</lastmod>
+  </url>
+  <url>
     <loc>https://chanrevival.github.io/2024/11/11/Doris%E5%9D%8F%E7%9B%98%E6%8D%A2%E7%9B%98%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2024-12-13</lastmod>
   </url>
@@ -81,10 +93,6 @@
     <lastmod>2024-12-10</lastmod>
   </url>
   <url>
-    <loc>https://chanrevival.github.io/2024/12/04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</loc>
-    <lastmod>2024-12-05</lastmod>
-  </url>
-  <url>
     <loc>https://chanrevival.github.io/2013/11/10/Oracle%E6%97%A5%E5%BF%97%E6%8C%96%E6%8E%98%E6%95%B0%E4%BE%8B/</loc>
     <lastmod>2024-12-04</lastmod>
   </url>
@@ -143,10 +151,6 @@
   <url>
     <loc>https://chanrevival.github.io/2024/11/27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2024-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://chanrevival.github.io/2024/11/11/hello-world/</loc>
-    <lastmod>2024-11-26</lastmod>
   </url>
   <url>
     <loc>https://chanrevival.github.io/2024/11/20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/</loc>
