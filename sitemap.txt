@@ -1,12 +1,12 @@
+https://chanrevival.github.io/rankings/vx.json
+https://chanrevival.github.io/vx.json
 https://chanrevival.github.io/photos/index.html
 https://chanrevival.github.io/photos/vx.json
 https://chanrevival.github.io/about/index.html
 https://chanrevival.github.io/about/vx.json
 https://chanrevival.github.io/thoughts/index.html
 https://chanrevival.github.io/thoughts/vx.json
-https://chanrevival.github.io/ranking/index.html
-https://chanrevival.github.io/ranking/vx.json
-https://chanrevival.github.io/vx.json
+https://chanrevival.github.io/rankings/index.html
 https://chanrevival.github.io/2012/01/01/2012-1-1_%E9%9A%8F%E7%AC%94/
 https://chanrevival.github.io/2024/12/13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 https://chanrevival.github.io/2024/12/04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/
