@@ -387,85 +387,85 @@
 <h3 id="终端软件版本"><a href="#终端软件版本" class="headerlink" title="终端软件版本"></a>终端软件版本</h3><p>SecureCRT Version 7.0.0 (x64 build 326)</p>
 <h2 id="增加文件系统"><a href="#增加文件系统" class="headerlink" title="增加文件系统"></a>增加文件系统</h2><h3 id="不指定逻辑卷"><a href="#不指定逻辑卷" class="headerlink" title="不指定逻辑卷"></a>不指定逻辑卷</h3><p>本例在不指定逻辑卷的条件下，新建一个文件系统，挂载点&#x2F;chenrong_oracle_01，分配空间大小为1G。</p>
 <ol>
-<li><p>查看文件系统现状<br><img src="/vx_images/346331369845664.png"></p>
+<li><p>查看文件系统现状<br><img data-src="/vx_images/346331369845664.png"></p>
 </li>
-<li><p>查看可用卷组<br><img src="/vx_images/31122423955458.png"></p>
+<li><p>查看可用卷组<br><img data-src="/vx_images/31122423955458.png"></p>
 </li>
-<li><p>打开jfs2 smit菜单<br><img src="/vx_images/551062477667859.png"></p>
+<li><p>打开jfs2 smit菜单<br><img data-src="/vx_images/551062477667859.png"></p>
 </li>
-<li><p>增加文件系统<br>选中“Add an Enhanced Journaled File System”，增加一个增强日志文件系统  按【回车】。<br><img src="/vx_images/215501789409967.png"></p>
+<li><p>增加文件系统<br>选中“Add an Enhanced Journaled File System”，增加一个增强日志文件系统  按【回车】。<br><img data-src="/vx_images/215501789409967.png"></p>
 </li>
-<li><p>选择卷组<br>选择文件系统所在卷组，选中“rootvg” ， 按【回车】。<br><img src="/vx_images/582583705711535.png"></p>
+<li><p>选择卷组<br>选择文件系统所在卷组，选中“rootvg” ， 按【回车】。<br><img data-src="/vx_images/582583705711535.png"></p>
 </li>
-<li><p>配置新文件系统<br>新文件系统，单位为GB，大小为1，系统启动时自动装载。<br><img src="/vx_images/170581065393439.png"></p>
+<li><p>配置新文件系统<br>新文件系统，单位为GB，大小为1，系统启动时自动装载。<br><img data-src="/vx_images/170581065393439.png"></p>
 </li>
-<li><p>确认操作<br>按【回车】，确认执行操作，操作结果为成功。<br><img src="/vx_images/406474396414574.png"></p>
+<li><p>确认操作<br>按【回车】，确认执行操作，操作结果为成功。<br><img data-src="/vx_images/406474396414574.png"></p>
 </li>
-<li><p>挂载文件系统<br><img src="/vx_images/518794484717034.png"> </p>
+<li><p>挂载文件系统<br><img data-src="/vx_images/518794484717034.png"> </p>
 </li>
-<li><p>查看新文件系统<br>如图，新建的&#x2F;chenrong_oracle_01已经可以使用。<br><img src="/vx_images/35524550231527.png"></p>
+<li><p>查看新文件系统<br>如图，新建的&#x2F;chenrong_oracle_01已经可以使用。<br><img data-src="/vx_images/35524550231527.png"></p>
 </li>
 </ol>
 <h3 id="指定逻辑卷"><a href="#指定逻辑卷" class="headerlink" title="指定逻辑卷"></a>指定逻辑卷</h3><p>本例先新建一个逻辑卷，lv_cr_oracle_02，并使用该逻辑卷，新建一个文件系统，挂载点&#x2F;chenrong_oracle_02，分配空间大小为512M。</p>
 <ol>
-<li><p>查看文件系统现状<br> <img src="/vx_images/509046030992382.png"></p>
+<li><p>查看文件系统现状<br> <img data-src="/vx_images/509046030992382.png"></p>
 </li>
-<li><p>查看rootvg信息<br>如图，该卷组剩余46336MB空间，且一个PP是256MB，本例需要2个单位的PP。<br><img src="/vx_images/34806559443403.png"></p>
+<li><p>查看rootvg信息<br>如图，该卷组剩余46336MB空间，且一个PP是256MB，本例需要2个单位的PP。<br><img data-src="/vx_images/34806559443403.png"></p>
 </li>
-<li><p>打开mklv smit菜单<br><img src="/vx_images/139925903778708.png"></p>
+<li><p>打开mklv smit菜单<br><img data-src="/vx_images/139925903778708.png"></p>
 </li>
-<li><p>选择目标卷组<br><img src="/vx_images/231915175735442.png"></p>
+<li><p>选择目标卷组<br><img data-src="/vx_images/231915175735442.png"></p>
 </li>
-<li><p>配置逻辑卷<br>逻辑卷名：lv_cr_oracle_02<br>逻辑分区个数：2个PP单位，即512MB<br>逻辑卷格式：jfs2<br><img src="/vx_images/311036318262063.png"><br> <img src="/vx_images/405673363935000.png"><br> <img src="/vx_images/460866444690545.png"><br> <img src="/vx_images/550474180860456.png"></p>
+<li><p>配置逻辑卷<br>逻辑卷名：lv_cr_oracle_02<br>逻辑分区个数：2个PP单位，即512MB<br>逻辑卷格式：jfs2<br><img data-src="/vx_images/311036318262063.png"><br> <img data-src="/vx_images/405673363935000.png"><br> <img data-src="/vx_images/460866444690545.png"><br> <img data-src="/vx_images/550474180860456.png"></p>
 </li>
-<li><p>确认执行<br><img src="/vx_images/31764769685446.png"></p>
+<li><p>确认执行<br><img data-src="/vx_images/31764769685446.png"></p>
 </li>
-<li><p>查看新逻辑卷<br><img src="/vx_images/128554772428802.png"></p>
+<li><p>查看新逻辑卷<br><img data-src="/vx_images/128554772428802.png"></p>
 </li>
-<li><p>打开jfs2 smit菜单<br><img src="/vx_images/206006775718084.png"><br>选择“Add an Enhanced Journaled File System on a Previously Defined Logical Volume”。<br><img src="/vx_images/337743845366196.png"></p>
+<li><p>打开jfs2 smit菜单<br><img data-src="/vx_images/206006775718084.png"><br>选择“Add an Enhanced Journaled File System on a Previously Defined Logical Volume”。<br><img data-src="/vx_images/337743845366196.png"></p>
 </li>
-<li><p>配置文件系统<br><img src="/vx_images/425034009749700.png"><br><img src="/vx_images/483845565199706.png"><br><img src="/vx_images/565036707011693.png"></p>
+<li><p>配置文件系统<br><img data-src="/vx_images/425034009749700.png"><br><img data-src="/vx_images/483845565199706.png"><br><img data-src="/vx_images/565036707011693.png"></p>
 </li>
 <li><p>确认执行<br>![](vx_images&#x2F;127823192145902.png &#x3D;)</p>
 </li>
-<li><p>装载文件系统<br><img src="/vx_images/190946659487128.png"></p>
+<li><p>装载文件系统<br><img data-src="/vx_images/190946659487128.png"></p>
 </li>
-<li><p>查看文件系统<br> <img src="/vx_images/246154402725009.png"></p>
+<li><p>查看文件系统<br> <img data-src="/vx_images/246154402725009.png"></p>
 </li>
 </ol>
 <h2 id="扩容-收缩文件系统"><a href="#扩容-收缩文件系统" class="headerlink" title="扩容&#x2F;收缩文件系统"></a>扩容&#x2F;收缩文件系统</h2><ol>
-<li><p>查看文件系统现状<br><img src="/vx_images/411985340143511.png"></p>
+<li><p>查看文件系统现状<br><img data-src="/vx_images/411985340143511.png"></p>
 </li>
-<li><p>查看逻辑卷信息<br>如图，逻辑卷lv_cr_oracle_02属于卷组rootvg。<br><img src="/vx_images/475343524481066.png"> </p>
+<li><p>查看逻辑卷信息<br>如图，逻辑卷lv_cr_oracle_02属于卷组rootvg。<br><img data-src="/vx_images/475343524481066.png"> </p>
 </li>
-<li><p>查看卷组信息<br>如图，卷组rootvg有46336MB剩余空间。<br><img src="/vx_images/555194032198877.png"> </p>
+<li><p>查看卷组信息<br>如图，卷组rootvg有46336MB剩余空间。<br><img data-src="/vx_images/555194032198877.png"> </p>
 </li>
-<li><p>打开jfs2 smit菜单<br> <img src="/vx_images/22147042068251.png"><br>选择“Change &#x2F; Show Characteristics of an Enhanced Journaled File System”。<br> <img src="/vx_images/66724737675036.png"></p>
+<li><p>打开jfs2 smit菜单<br> <img data-src="/vx_images/22147042068251.png"><br>选择“Change &#x2F; Show Characteristics of an Enhanced Journaled File System”。<br> <img data-src="/vx_images/66724737675036.png"></p>
 </li>
-<li><p>选择需要扩容&#x2F;收缩的文件系统<br>本例将把文件系统，&#x2F;chenrong_oracle_02，由512M扩容为768M。<br> <img src="/vx_images/129194182165899.png"></p>
+<li><p>选择需要扩容&#x2F;收缩的文件系统<br>本例将把文件系统，&#x2F;chenrong_oracle_02，由512M扩容为768M。<br> <img data-src="/vx_images/129194182165899.png"></p>
 </li>
-<li><p>配置文件系统的新参数<br>配置文件系统的新大小，如下图：<br><img src="/vx_images/212063784446542.png"> </p>
+<li><p>配置文件系统的新参数<br>配置文件系统的新大小，如下图：<br><img data-src="/vx_images/212063784446542.png"> </p>
 </li>
-<li><p>确认执行<br> <img src="/vx_images/266723368681068.png"></p>
+<li><p>确认执行<br> <img data-src="/vx_images/266723368681068.png"></p>
 </li>
-<li><p>查看文件系统现状<br><img src="/vx_images/323993930769124.png"></p>
+<li><p>查看文件系统现状<br><img data-src="/vx_images/323993930769124.png"></p>
 </li>
 </ol>
 <h2 id="删除文件系统"><a href="#删除文件系统" class="headerlink" title="删除文件系统"></a>删除文件系统</h2><p>本例将删除文件系统&#x2F;cr。</p>
 <ol>
-<li><p>查看文件系统现状<br> <img src="/vx_images/452625622628962.png"></p>
+<li><p>查看文件系统现状<br> <img data-src="/vx_images/452625622628962.png"></p>
 </li>
-<li><p>卸载文件系统<br> <img src="/vx_images/503036936923961.png"></p>
+<li><p>卸载文件系统<br> <img data-src="/vx_images/503036936923961.png"></p>
 </li>
-<li><p>打开jfs2 smit菜单<br> <img src="/vx_images/564625996348483.png"><br>选择“Remove an Enhanced Journaled File System”。<br> <img src="/vx_images/16224269397731.png"></p>
+<li><p>打开jfs2 smit菜单<br> <img data-src="/vx_images/564625996348483.png"><br>选择“Remove an Enhanced Journaled File System”。<br> <img data-src="/vx_images/16224269397731.png"></p>
 </li>
-<li><p>选择要卸载的挂载点<br> <img src="/vx_images/84383649769290.png"></p>
+<li><p>选择要卸载的挂载点<br> <img data-src="/vx_images/84383649769290.png"></p>
 </li>
-<li><p>确认卸载<br> <img src="/vx_images/133823070185140.png"></p>
+<li><p>确认卸载<br> <img data-src="/vx_images/133823070185140.png"></p>
 </li>
-<li><p>查看结果<br> <img src="/vx_images/189334619822166.png"></p>
+<li><p>查看结果<br> <img data-src="/vx_images/189334619822166.png"></p>
 </li>
-<li><p>查看文件系统现状<br> <img src="/vx_images/229994311534780.png"></p>
+<li><p>查看文件系统现状<br> <img data-src="/vx_images/229994311534780.png"></p>
 </li>
 </ol>
 
