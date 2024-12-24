@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chanrevival.github.io/internal_use/vx.json</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/internal_use/index.html</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/internal_use/test.html</loc>
+    
+    <lastmod>2024-12-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/index.html</loc>
     
     <lastmod>2024-12-24</lastmod>
@@ -155,15 +182,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/internal_use/vx.json</loc>
-    
-    <lastmod>2024-12-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/internal_use/AI%E6%8F%90%E7%A4%BA%E8%AF%8D.html</loc>
     
     <lastmod>2024-12-18</lastmod>
@@ -183,15 +201,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/rankings/system_software/index.html</loc>
-    
-    <lastmod>2024-12-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/internal_use/index.html</loc>
     
     <lastmod>2024-12-18</lastmod>
     
@@ -428,15 +437,6 @@
     <loc>https://chanrevival.github.io/2009/12/02/%E7%A8%8B%E5%BA%8F%E8%BF%9B%E5%85%A5DLL%E6%97%B6%E4%BB%A3/</loc>
     
     <lastmod>2024-12-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/internal_use/test.html</loc>
-    
-    <lastmod>2024-12-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
