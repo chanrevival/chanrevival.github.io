@@ -202,7 +202,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
+           placeholder="搜索... - Search..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -319,7 +319,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>293</span>
+              <span>291</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -338,7 +338,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#x72;&#x40;&#112;&#111;&#x77;&#101;&#114;&#108;&#111;&#110;&#x67;&#x2e;&#102;&#x7a;&#46;&#x66;&#106;&#x2e;&#x63;&#110;">&#x63;&#x72;&#x40;&#112;&#111;&#x77;&#101;&#114;&#108;&#111;&#110;&#x67;&#x2e;&#102;&#x7a;&#46;&#x66;&#106;&#x2e;&#x63;&#110;</a> </p>
+        <h1 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<span id="more"></span><br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。<br><a href="mailto:&#x63;&#114;&#64;&#112;&#x6f;&#x77;&#101;&#114;&#x6c;&#111;&#x6e;&#x67;&#x2e;&#102;&#x7a;&#46;&#x66;&#x6a;&#x2e;&#99;&#x6e;">&#x63;&#114;&#64;&#112;&#x6f;&#x77;&#101;&#114;&#x6c;&#111;&#x6e;&#x67;&#x2e;&#102;&#x7a;&#46;&#x66;&#x6a;&#x2e;&#99;&#x6e;</a> </p>
 
     </div>
 
@@ -438,20 +438,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">46</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">日志Posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">分类Cate.</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">48</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">标签Tags</span></a>
       </div>
   </nav>
 </div>
@@ -511,8 +511,29 @@
     </span>
     <span title="站点阅读时长">3:15</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">本站使用主题 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 
   </div>
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/11/2024 11:11:11");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
 
         
 <div class="busuanzi-count">

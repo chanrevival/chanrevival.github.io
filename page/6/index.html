@@ -199,7 +199,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
+           placeholder="搜索... - Search..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -339,7 +339,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016-02-16/SunOS6-10%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E5%8F%82%E8%80%83/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -463,7 +463,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -588,7 +588,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2014-04-19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -709,7 +709,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2013-11-10/Oracle%E6%97%A5%E5%BF%97%E6%8C%96%E6%8E%98%E6%95%B0%E4%BE%8B/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1016,20 +1016,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">46</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">日志Posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">分类Cate.</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">48</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">标签Tags</span></a>
       </div>
   </nav>
 </div>
@@ -1089,8 +1089,29 @@
     </span>
     <span title="站点阅读时长">3:15</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">本站使用主题 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 
   </div>
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/11/2024 11:11:11");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
 
         
 <div class="busuanzi-count">

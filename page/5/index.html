@@ -199,7 +199,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="搜索..." spellcheck="false"
+           placeholder="搜索... - Search..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -447,7 +447,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018-04-03/RHEL6_5%E5%AE%89%E8%A3%85MongoDB3_6_3%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -569,7 +569,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017-08-16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -695,7 +695,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017-01-19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -819,7 +819,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2017-01-10/Solaris%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -945,7 +945,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016-05-22/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8UDEV%EF%BC%88%E9%9D%9EASMLIB%EF%BC%89%E8%AE%BE%E7%BD%AE%E5%88%86%E5%8C%BA%E5%8C%96%E7%9A%84Linux%E5%9D%97%E8%AE%BE%E5%A4%87%E5%B9%B6%E5%B0%86%E5%AE%83%E4%BB%AC%E5%88%86%E9%85%8D%E7%BB%99ASM%EF%BC%9F/#more" rel="contents">
-                阅读全文 &raquo;
+                阅读全文 - Read more &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -1034,20 +1034,20 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">46</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-name">日志Posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
         <span class="site-state-item-count">16</span>
-        <span class="site-state-item-name">分类</span></a>
+        <span class="site-state-item-name">分类Cate.</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
         <span class="site-state-item-count">48</span>
-        <span class="site-state-item-name">标签</span></a>
+        <span class="site-state-item-name">标签Tags</span></a>
       </div>
   </nav>
 </div>
@@ -1107,8 +1107,29 @@
     </span>
     <span title="站点阅读时长">3:15</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">本站使用主题 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 
   </div>
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/11/2024 11:11:11");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
 
         
 <div class="busuanzi-count">
