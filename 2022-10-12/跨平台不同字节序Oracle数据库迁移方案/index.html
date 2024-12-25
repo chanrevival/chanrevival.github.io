@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"Valine","storage":true,"lazyload":true,"nav":{"valine":{"order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="跨平台不同字节序Oracle数据库迁移方案概述从Oracle 10g开始，数据库支持跨平台的传输表空间。本文主要探讨如何实现 ASM 数据文件和OS文件系统数据文件的传输表空间。如果目标数据库是一个不同的字节序平台，以下是如何使用可传输表空间迁移一个数据库到一个新的平台的大致步骤：  在目标平台上创建一个新的，空的数据库。 从源库导入传输操作要求的对象到目标库。 从源库为所有的用户表空间导出可传输">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨平台不同字节序Oracle数据库迁移方案">
+<meta property="og:url" content="https://chanrevival.github.io/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="跨平台不同字节序Oracle数据库迁移方案概述从Oracle 10g开始，数据库支持跨平台的传输表空间。本文主要探讨如何实现 ASM 数据文件和OS文件系统数据文件的传输表空间。如果目标数据库是一个不同的字节序平台，以下是如何使用可传输表空间迁移一个数据库到一个新的平台的大致步骤：  在目标平台上创建一个新的，空的数据库。 从源库导入传输操作要求的对象到目标库。 从源库为所有的用户表空间导出可传输">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-12T14:40:02.000Z">
+<meta property="article:modified_time" content="2024-12-02T06:51:47.902Z">
+<meta property="article:author" content="Chan Revival">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chanrevival.github.io/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>跨平台不同字节序Oracle数据库迁移方案 | Chan Revival Sky</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN485BL2P4');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chan Revival Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天上星，亮晶晶，永灿烂，长安宁。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页 - Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">46</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 - Categories<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 - Tags<span class="badge">48</span></a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>相册 - Photos</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-thoughts">
+
+    <a href="/thoughts/" rel="section"><i class="fa fa-comment fa-fw"></i>说说 - Thoughts</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-rankings">
+
+    <a href="/rankings/" rel="section"><i class="fa fa-star fa-fw"></i>精选榜单 - Rankings</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图 - Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-internal_use">
+
+    <a href="/internal_use" rel="section"><i class="fa fa-key fa-fw"></i>内部使用 - Internal use</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 - About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 - Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chanrevival/" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          跨平台不同字节序Oracle数据库迁移方案
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-12 22:40:02" itemprop="dateCreated datePublished" datetime="2022-10-12T22:40:02+08:00">2022-10-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-02 14:51:47" itemprop="dateModified" datetime="2024-12-02T14:51:47+08:00">2024-12-02</time>
+              </span>
+
+          
+            <span id="/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/" class="post-meta-item leancloud_visitors" data-flag-title="跨平台不同字节序Oracle数据库迁移方案" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="跨平台不同字节序Oracle数据库迁移方案"><a href="#跨平台不同字节序Oracle数据库迁移方案" class="headerlink" title="跨平台不同字节序Oracle数据库迁移方案"></a>跨平台不同字节序Oracle数据库迁移方案</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>从Oracle 10g开始，数据库支持跨平台的传输表空间。本文主要探讨如何实现 ASM 数据文件和OS文件系统数据文件的传输表空间。<br>如果目标数据库是一个不同的字节序平台，以下是如何使用可传输表空间迁移一个数据库到一个新的平台的大致步骤：</p>
+<ol>
+<li>在目标平台上创建一个新的，空的数据库。</li>
+<li>从源库导入传输操作要求的对象到目标库。</li>
+<li>从源库为所有的用户表空间导出可传输的元数据。</li>
+<li>转移用户表空间的数据文件到目标系统。</li>
+<li>使用RMAN转换数据文件到目标系统的字节序格式。</li>
+<li>导入所有用户表空间的可传输元数据到目标数据库。</li>
+<li>从源库导入余下的数据库对象和元数据（传输操作未移动的部分）到目标库。</li>
+</ol>
+<p>也可以在源平台转换数据文件，转换完成后转移数据文件到目标平台。</p>
+<h2 id="迁移方案"><a href="#迁移方案" class="headerlink" title="迁移方案"></a>迁移方案</h2><h3 id="受支持的平台"><a href="#受支持的平台" class="headerlink" title="受支持的平台"></a>受支持的平台</h3><p>查询V$TRANSPORTABLE_PLATFORM来查看受支持的平台，并确定每个平台的字节序。</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; COLUMN PLATFORM_NAME FORMAT A32</span><br><span class="line">SQL&gt; SELECT * FROM V$TRANSPORTABLE_PLATFORM;</span><br><span class="line">PLATFORM_ID PLATFORM_NAME                    ENDIAN_FORMAT</span><br><span class="line">----------- -------------------------------- --------------</span><br><span class="line">          <span class="number">1</span> Solaris[tm] OE (<span class="number">32</span>-<span class="keyword">bit) </span>         <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">2</span> Solaris[tm] OE (<span class="number">64</span>-<span class="keyword">bit) </span>         <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">7</span> Microsoft Windows IA (<span class="number">32</span>-<span class="keyword">bit) </span>   Little</span><br><span class="line">         <span class="number">10</span> Linux IA (<span class="number">32</span>-<span class="keyword">bit) </span>               Little</span><br><span class="line">          <span class="number">6</span> AIX-<span class="keyword">Based </span>Systems (<span class="number">64</span>-<span class="keyword">bit) </span>      <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">3</span> HP-UX (<span class="number">64</span>-<span class="keyword">bit) </span>                  <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">5</span> HP Tru64 UNIX                    Little</span><br><span class="line">          <span class="number">4</span> HP-UX IA (<span class="number">64</span>-<span class="keyword">bit) </span>               <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>         <span class="number">11</span> Linux IA (<span class="number">64</span>-<span class="keyword">bit) </span>               Little</span><br><span class="line">         <span class="number">15</span> HP Open VMS                      Little</span><br><span class="line">          <span class="number">8</span> Microsoft Windows IA (<span class="number">64</span>-<span class="keyword">bit) </span>   Little</span><br><span class="line">          <span class="number">9</span> IBM zSeries <span class="keyword">Based </span>Linux          <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>         <span class="number">13</span> Linux <span class="number">64</span>-<span class="keyword">bit </span>for AMD             Little</span><br><span class="line">         <span class="number">16</span> Apple Mac OS                     <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>         <span class="number">12</span> Microsoft Windows <span class="number">64</span>-<span class="keyword">bit </span>for AMD Little</span><br><span class="line">         <span class="number">17</span> Solaris Operating System (x86)   Little</span><br></pre></td></tr></table></figure>
+
+<p>如果源平台和目标平台是不同的字节序，那么必须在源平台或者目标平台上做一个额外的步骤，来转换被传输的表空间到目标格式。如果它们是同样的字节序，那么不需要做转换，表空间可以像相同平台那样传输。</p>
+<h3 id="传输表空间"><a href="#传输表空间" class="headerlink" title="传输表空间"></a>传输表空间</h3><ol>
+<li>传输表空间前的准备工作<br>a) 检查表空间是自包含的：</li>
+</ol>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;<span class="built_in"> execute </span>sys.dbms_tts.transport_set_check(&#x27;TBS1,TBS2&#x27;, true);</span><br><span class="line">SQ<span class="class">L&gt; select * from sys.transport_set_violations;</span></span><br></pre></td></tr></table></figure>
+
+<p><mark>注意：在表空间被传输之前，这些违反传输标准的问题必须被解决。</mark></p>
+<p>b) 要成功的运行传输表空间导出，表空间必须在 READ ONLY 模式：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>导出元数据<br>a) 使用传统导出工具：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exp</span> userid=\<span class="string">&#x27;sys/sys as sysdba\&#x27;</span> <span class="keyword">file</span>=tbs_exp.dmp <span class="built_in">log</span>=tba_exp.<span class="built_in">log</span> transport_tablespace=<span class="keyword">y</span> tablespaces=TBS1,TBS2</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>b) 使用数据泵导出：<br>首先创建数据泵使用的目录对象，例如：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span> ;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后初始化数据泵导出：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir TRANSPORT_TABLESPACES = TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>如果你想要在执行一个传输表空间操作的同时进行严格的包含关系检查，那么使用 TRANSPORT_FULL_CHECK 参数。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp DIRECTORY = dpump_dir TRANSPORT_TABLESPACES= TBS1,TBS2 <span class="attribute">TRANSPORT_FULL_CHECK</span>=Y</span><br></pre></td></tr></table></figure>
+
+<p><mark>如果被传输的表空间集不是自包含的，那么导出会失败。</mark></p>
+<ol start="3">
+<li>   使用 V$TRANSPORTABLE_PLATFORM 来确定每个平台的字节序，你可以在每个平台实例执行如下查询：</li>
+</ol>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tp.platform_id,<span class="built_in">substr</span>(d.PLATFORM_NAME,<span class="number">1</span>,<span class="number">30</span>), ENDIAN_FORMAT</span><br><span class="line"><span class="keyword">FROM</span> V$TRANSPORTABLE_PLATFORM tp, V$<span class="keyword">DATABASE</span> d</span><br><span class="line"><span class="keyword">WHERE</span> tp.PLATFORM_NAME = d.PLATFORM_NAME;</span><br></pre></td></tr></table></figure>
+
+<p>如果你发现字节序是不同的，那么传输表空间集时必须进行转换：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; convert <span class="keyword">tablespace</span> TBS1 <span class="keyword">to</span> platform=&quot;Linux IA (32-bit)&quot; <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br><span class="line">RMAN&gt; convert <span class="keyword">tablespace</span> TBS2 <span class="keyword">to</span> platform=&quot;Linux IA (32-bit)&quot; <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后复制数据文件和导出的文件到目标环境。</p>
+<ol start="4">
+<li>   导入可传输表空间</li>
+</ol>
+<p>a)	使用传统导入工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp userid=\&#x27;sys/sys as sysdba\&#x27; file=tbs_exp.dmp <span class="built_in">log</span>=tba_imp.log transport_tablespace=y datafiles=<span class="string">&#x27;/tmp/....&#x27;</span>,<span class="string">&#x27;/tmp/...&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>b)	使用数据泵：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir <span class="attribute">TRANSPORT_DATAFILES</span>=<span class="string">&#x27;/tmp/....&#x27;</span>,&#x27;/tmp/...&#x27; REMAP_SCHEMA=(source:target) REMAP_SCHEMA=(source_sch2:target_schema_sch2)</span><br></pre></td></tr></table></figure>
+
+<p>如果你想要改变传输的数据库对象的属主，可以使用 REMAP_SCHEMA。</p>
+<ol start="5">
+<li>   将表空间置于 read&#x2F;write 模式：</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.3	使用 DBMS_FILE_TRANSFER</p>
+<p>我们也可以使用DBMS_FILE_TRANSFER来拷贝数据文件到另外一个主机。<br>从12c和11.2.0.4开始DBMS_FILE_TRANSFER默认的进行转换。若使用 DBMS_FILE_TRANSFER，当目标数据库收到一个来自不同字节序的平台的文件时，它对每一个块进行转换。作为可传输操作的一部分，在数据文件被移动到目标数据库后，不需RMAN转换，即可导入。<br>在低于 11.2.0.4 的版本上，对于 ASM 文件同样需要执行上面的步骤。但是如果字节序格式不同，那么你必须在转移文件后，使用 RMAN 转换。文件无法直接在不同平台的两个 ASM 实例间进行拷贝。<br>对于文件系统的范例如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; CONVERT DATAFILE</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_31.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_32.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_41.f&#x27;</span></span><br><span class="line">      <span class="keyword">TO</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;Solaris[tm] OE (32-bit)&quot;</span></span><br><span class="line">      <span class="keyword">FROM</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;HP TRu64 UNIX&quot;</span></span><br><span class="line">      DB_FILE_NAME_CONVERT= <span class="string">&quot;/hq/finance/work/tru/&quot;</span>, <span class="string">&quot;/hq/finance/dbs/tru&quot;</span></span><br><span class="line">      <span class="attribute">PARALLELISM</span>=5;</span><br></pre></td></tr></table></figure>
+<p>对于ASM 磁盘组的范例如下：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; CONVERT DATAFILE</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_31.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_32.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_41.f&#x27;</span></span><br><span class="line">      <span class="keyword">TO</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;Solaris[tm] OE (32-bit)&quot;</span></span><br><span class="line">      <span class="keyword">FROM</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;HP TRu64 UNIX&quot;</span></span><br><span class="line">      <span class="attribute">DB_FILE_NAME_CONVERT</span>=<span class="string">&quot;/hq/finance/work/tru/&quot;</span>, <span class="string">&quot;+diskgroup&quot;</span></span><br><span class="line">      <span class="attribute">PARALLELISM</span>=5;</span><br></pre></td></tr></table></figure>
+<p><mark>注意！当使用可传输表空间（TTS）从 Solaris，Linux 或者 AIX 迁移到 HP&#x2F;UX 时，索引组织表（IOT）可能损坏。</mark></p>
+<p>2.4	可传输表空间的使用限制<br>1)	源库和目标库必须使用相同的字符集和国家字符集。<br>2)	如果目标库上已经有一个同名的表空间，无法进行传输。然而，你可以在传输之前，重命名要传输的表空间或者目标库上的表空间。<br>3)	若对象带有下层对象（例如物化视图）或者被包含的对象（例如分区表），则无法被传输。除非所有下层对象或者被包含的对象都在这个表空间集里。<br>4)	如果表空间对象的所有者在目标库中不存在，则需要在开始可传输表空间导入之前，手动的创建用户名。<br>5)	从 Oracle Database 11gR1 开始，对于含有 XMLType 的表空间，必须使用数据泵来导出和导入表空间元数据。<br>如下的查询返回了包含 XMLType 的表空间的列表：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> p.tablespace_name</span><br><span class="line"><span class="keyword">from</span> dba_tablespaces p, dba_xml_tables x, dba_users u, all_all_tables t</span><br><span class="line"><span class="keyword">where</span> t.<span class="built_in">table_name</span>=x.<span class="built_in">table_name</span> <span class="keyword">and</span></span><br><span class="line">      t.tablespace_name=p.tablespace_name <span class="keyword">and</span></span><br><span class="line">      x.owner=u.username;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>   高级队列可传输表空间不支持带有多个容器的 8.0 兼容版高级队列。</li>
+<li>   无法传输 SYSTEM 表空间或者用户 SYS 拥有的对象。</li>
+<li>   不透明类型（例如 RAW，BFILE 和 AnyTypes）可以被传输，但是他们不会在跨平台传输操作中被转换。他们的实际框架只有应用知道，所以应用必须在这些类型被移动到新的平台后处理字节序的问题。</li>
+<li>   浮点数 BINARY_FLOAT 和 BINARY_DOUBLE 类型是可以传输的，但必须使用 Data Pump工具，不能使用早期的导出工具 EXP。</li>
+</ol>
+<p>2.5	ASM 文件的可传输表空间导出&#x2F;导入</p>
+<p>2.5.1	使用 RMAN CONVERT<br>没有直接的方法将 ASM 文件作为可传输表空间导出&#x2F;导入。但是，可以通过 RMAN 实现这个功能。<br>请务必遵照如下步骤：</p>
+<ol>
+<li>   导出表空间前的准备。<br>a)	检查表空间是自包含的：</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">execute</span> sys.dbms_tts.transport_set_check(<span class="string">&#x27;TBS1,TBS2&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sys.transport_set_violations;</span><br></pre></td></tr></table></figure>
+
+<p>注意：这些违反限制的结果必须在表空间传输前解决。<br>b)	要成功的进行可传输表空间导出，这些表空间必须处于 READ ONLY 模式。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   导出元数据。<br>a)	使用原始导出工具：</li>
+</ol>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exp</span> userid=\<span class="string">&#x27;sys/sys as sysdba\&#x27;</span> <span class="keyword">file</span>=tbs_exp.dmp <span class="built_in">log</span>=tba_exp.<span class="built_in">log</span> transport_tablespace=<span class="keyword">y</span> tablespaces=TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>b)	使用数据泵导出：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir TRANSPORT_TABLESPACES = TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>如果你想要在执行可传输表空间操作同时进行严格的包容性检查，那么使用 TRANSPORT_FULL_CHECK 参数：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp DIRECTORY = dpump_dir TRANSPORT_TABLESPACES= TBS1,TBS2 <span class="attribute">TRANSPORT_FULL_CHECK</span>=Y</span><br></pre></td></tr></table></figure>
+
+<p>如果传输的表空间不是自包含的，那么导出会出错。</p>
+<ol start="3">
+<li>   使用 V$TRANSPORTABLE_PLATFORM 找到目标库准确的平台名。你可以在目标平台实例上执行如下的查询。</li>
+</ol>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tp.platform_id,<span class="built_in">substr</span>(d.PLATFORM_NAME,<span class="number">2</span>,<span class="number">30</span>), ENDIAN_FORMAT</span><br><span class="line"><span class="keyword">FROM</span> V$TRANSPORTABLE_PLATFORM tp, V$<span class="keyword">DATABASE</span> d</span><br><span class="line"><span class="keyword">WHERE</span> tp.PLATFORM_NAME = d.PLATFORM_NAME;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   以目标平台的格式，从 ASM 文件生成一个 OS 文件。</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; CONVERT <span class="keyword">TABLESPACE</span> TBS1</span><br><span class="line">      <span class="keyword">TO</span> PLATFORM <span class="string">&#x27;HP-UX (64-bit)&#x27;</span> <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br><span class="line">RMAN&gt; CONVERT <span class="keyword">TABLESPACE</span> TBS2</span><br><span class="line">      <span class="keyword">TO</span> PLATFORM <span class="string">&#x27;HP-UX (64-bit)&#x27;</span> <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>   拷贝生成的文件到目标服务器（如果跟源服务器不是同一台机器）。</li>
+<li>   导入可传输表空间。<br>a)	使用原始的导入工具：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp userid=\&#x27;sys/sys as sysdba\&#x27; file=tbs_exp.dmp <span class="built_in">log</span>=tba_imp.log transport_tablespace=y datafiles=<span class="string">&#x27;/tmp/....&#x27;</span>,<span class="string">&#x27;/tmp/...&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>b)	使用数据泵导入：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>然后执行：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir <span class="attribute">TRANSPORT_DATAFILES</span>=<span class="string">&#x27;/tmp/....&#x27;</span>,&#x27;/tmp/...&#x27; REMAP_SCHEMA=(source:target) REMAP_SCHEMA=(source_sch2:target_schema_sch2)</span><br></pre></td></tr></table></figure>
+
+<p>如果你想要改变传输的数据库对象的属主的话，可以使用 REMAP_SCHEMA 参数。</p>
+<ol start="7">
+<li>   将表空间放置在 read&#x2F;write 模式。</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br></pre></td></tr></table></figure>
+
+<p>如果你想要将数据文件从 ASM 环境传输到文件系统，那么操作到此结束。但如果你想要在两个 ASM 环境之间传输表空间，那么你要继续下面的操作。</p>
+<ol start="8">
+<li>   使用 rman 拷贝文件’&#x2F;tmp&#x2F;….dbf’ 到 ASM 环境。</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rman nocatalog target /</span><br><span class="line">RMAN&gt; backup <span class="keyword">as</span> <span class="keyword">copy</span> datafile <span class="string">&#x27;/tmp/....dbf&#x27;</span> <span class="keyword">format</span> <span class="string">&#x27;+DGROUPA&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这里 +DGROUPA 是 ASM 磁盘组名字。</p>
+<ol start="9">
+<li>   将数据文件交换到这个拷贝。<br>如果是 10g 数据库，首先要将数据文件离线：</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> datafile <span class="string">&#x27;/tmp/....dbf&#x27;</span> offline;</span><br></pre></td></tr></table></figure>
+
+<p>文件交换到这个拷贝：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rman nocatalog target /</span><br><span class="line">RMAN&gt; <span class="keyword">switch</span> datafile <span class="string">&#x27;/tmp/....dbf&#x27;</span> <span class="keyword">to</span> <span class="keyword">copy</span>;</span><br></pre></td></tr></table></figure>
+
+<p>记下在 +DGROUPA 磁盘组中创建的拷贝的名字，例如，’+DGROUPA&#x2F;s101&#x2F;datafile&#x2F;tts.270.5’。<br>10)	使文件重新在线，我们首先要 recover 它。</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; recover datafile <span class="string">&#x27;+DGROUPA/s101/datafile/tts.270.5&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> datafile <span class="string">&#x27;+DGROUPA/s101/datafile/tts.270.5&#x27;</span> online;</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>   检查数据文件确实已经是 ASM 环境的一部分，并且在线。</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">select</span> <span class="type">name</span>, status <span class="keyword">from</span> v$datafile;</span><br></pre></td></tr></table></figure>
+
+<p>输出应该是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+DGROUPA/s101/datafile/tts.270.5 ONLINE</span><br></pre></td></tr></table></figure>
+
+<p>2.5.2	使用DBMS_FILE_TRANSFER<br>我们同样可以使用 DBMS_FILE_TRANSFER 来将数据文件从一个 ASM 磁盘组拷贝到另外一个，甚至到另外一个主机上。从 10gR2 开始，我们同样可以使用 DBMS_FILE_TRANSFER 来从 ASM 拷贝数据文件到文件系统，以及从文件系统到 ASM。<br>PUT_FILE 过程读取一个本地文件或者 ASM 并且联系远端数据库来创建一个在远端文件系统的拷贝。被拷贝的文件是源文件，拷贝带来的新文件是目标文件。直到过程成功完成，目标文件都不会被关闭。<br>语法：</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DBMS<span class="number">_</span>FILE<span class="number">_T</span>RANSFER.PUT<span class="number">_</span>FILE(</span><br><span class="line">   source<span class="number">_</span>directory<span class="number">_</span><span class="keyword">object</span>       IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   source<span class="number">_f</span>ile<span class="number">_n</span>ame              IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   destination<span class="number">_</span>directory<span class="number">_</span><span class="keyword">object</span>  IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   destination<span class="number">_f</span>ile<span class="number">_n</span>ame         IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   destination<span class="number">_</span>database          IN  VARCHAR<span class="number">2</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>其中：<br>	source_directory_object: 在本地源端拷贝的文件所在的目录对象。在源端，这个目录对象必须存在。<br>	source_file_name: 从本地文件系统拷贝的文件的名字。这个文件必须存在于本地文件系统上 source_directory_object 所指定的目录里。<br>	destination_directory_object: 这是在目标端文件所要放置的目录对象。这个目录对象必须存在于远端文件系统。<br>	destination_file_name: 放在远端文件系统的文件的名字。在远端文件系统目标目录中必须没有重名的文件。<br>	destination_database: 指向作为拷贝文件的目的地的远端数据库的数据库链接的名字。<br>如果我们想要使用 DBMS_FILE_TRANSFER.PUT_FILE 来从源端传输文件到目的地主机，步骤3，4，5做如下修改：</p>
+<ol>
+<li><p>   在目标数据库主机创建一个目录，授权给本地用户。这是文件要在目标端放置的目录对象，必须在远端的文件系统存在。<br>CREATE OR REPLACE DIRECTORY target_dir AS ‘+DGROUPA’;<br>GRANT WRITE ON DIRECTORY target_dir TO “USER”;</p>
+</li>
+<li><p>   在源数据库主机创建一个目录。这是要拷贝的文件在本地源端所存在的目录对象。这个目录对象必须在源端存在。<br>CREATE OR REPLACE DIRECTORY source_dir AS ‘+DGROUPS&#x2F;subdir’;<br>GRANT READ,WRITE ON DIRECTORY source_dir TO “USER”;<br>CREATE OR REPLACE DIRECTORY source_dir_1 AS ‘+DGROUPS&#x2F;subdir&#x2F;subdir_2’;</p>
+</li>
+<li><p>   创建一个 dblink 连接到目标数据库主机：<br>CREATE DATABASE LINK DBS2 CONNECT TO ‘user’ IDENTIFIED BY ‘password’ USING ‘target_connect’;<br>这里 target_connect 是目标数据库的连接字符串，USER 是我们将要用来转移数据文件的用户。</p>
+</li>
+<li><p>   连接到源实例。会用到如下项目：<br>	dbs1: 到源数据库的连接字符串<br>	dbs2: 到目标数据库的 dblink<br>	a1.dat: 源数据库的文件名<br>	a4.dat: 目标数据库的文件名</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">user</span><span class="operator">/</span>password<span class="variable">@dbs1</span></span><br><span class="line"><span class="comment">-- - put a1.dat to a4.dat (using dbs2 dblink)</span></span><br><span class="line"><span class="comment">-- - level 2 sub dir to parent dir</span></span><br><span class="line"><span class="comment">-- - user has read privs on source_dir_1 at dbs1 and write on target_dir</span></span><br><span class="line"><span class="comment">-- - in dbs2</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    DBMS_FILE_TRANSFER.PUT_FILE(<span class="string">&#x27;source_dir_1&#x27;</span>, <span class="string">&#x27;a1.dat&#x27;</span>,</span><br><span class="line">                                <span class="string">&#x27;target_dir&#x27;</span>, <span class="string">&#x27;a4.dat&#x27;</span>, <span class="string">&#x27;dbs2&#x27;</span> );</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022-10-12/%E6%97%A0%E4%BA%BA%E7%9F%A5%E6%99%93%E7%AD%94%E6%A1%88%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="无人知晓答案的问题">
+      <i class="fa fa-chevron-left"></i> 无人知晓答案的问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/" rel="next" title="薛定谔的猫">
+      薛定谔的猫 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88"><span class="nav-number">1.</span> <span class="nav-text">跨平台不同字节序Oracle数据库迁移方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88"><span class="nav-number">1.2.</span> <span class="nav-text">迁移方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%97%E6%94%AF%E6%8C%81%E7%9A%84%E5%B9%B3%E5%8F%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">受支持的平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E8%A1%A8%E7%A9%BA%E9%97%B4"><span class="nav-number">1.2.2.</span> <span class="nav-text">传输表空间</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chan Revival</p>
+  <div class="site-description" itemprop="description">描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Revival Sky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">214k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:15</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'u4i90Gtr4z5ltiEyAwZXwAaG-gzGzoHsz',
+      appKey     : '5QCoDhscDztlH49YntlyPmVV',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+</body>
+</html>

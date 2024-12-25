@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
+Allow: /about/
+Allow: /photos/
+Allow: /thoughts/
+Allow: /rankings/
+Allow: /sitemap.xml
+
+Sitemap: https://chanrevival.github.io/sitemap.xml

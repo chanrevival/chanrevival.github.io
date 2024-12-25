@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"Valine","storage":true,"lazyload":true,"nav":{"valine":{"order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="配置Solaris允许SSH远程登录概述Oracle Solaris 10操作系统安装完成后，默认配置下，不允许root通过SSH登录系统。本文主要描述如何配置Solaris，使得root可以远程登录。 配置过程    配置&#x2F;etc&#x2F;ssh&#x2F;sshd_config的PermitRootLogin参数  123456789101112131415161718192021">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置Solaris允许SSH远程登录">
+<meta property="og:url" content="https://chanrevival.github.io/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/index.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="配置Solaris允许SSH远程登录概述Oracle Solaris 10操作系统安装完成后，默认配置下，不允许root通过SSH登录系统。本文主要描述如何配置Solaris，使得root可以远程登录。 配置过程    配置&#x2F;etc&#x2F;ssh&#x2F;sshd_config的PermitRootLogin参数  123456789101112131415161718192021">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-01-07T08:04:43.000Z">
+<meta property="article:modified_time" content="2024-12-03T08:07:28.891Z">
+<meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="Solaris">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="SSH">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chanrevival.github.io/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>配置Solaris允许SSH远程登录 | Chan Revival Sky</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN485BL2P4');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chan Revival Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天上星，亮晶晶，永灿烂，长安宁。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页 - Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">46</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 - Categories<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 - Tags<span class="badge">48</span></a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>相册 - Photos</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-thoughts">
+
+    <a href="/thoughts/" rel="section"><i class="fa fa-comment fa-fw"></i>说说 - Thoughts</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-rankings">
+
+    <a href="/rankings/" rel="section"><i class="fa fa-star fa-fw"></i>精选榜单 - Rankings</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图 - Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-internal_use">
+
+    <a href="/internal_use" rel="section"><i class="fa fa-key fa-fw"></i>内部使用 - Internal use</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 - About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 - Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chanrevival/" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          配置Solaris允许SSH远程登录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-01-07 16:04:43" itemprop="dateCreated datePublished" datetime="2015-01-07T16:04:43+08:00">2015-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-03 16:07:28" itemprop="dateModified" datetime="2024-12-03T16:07:28+08:00">2024-12-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">技术分享</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">操作系统技术</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="配置Solaris允许SSH远程登录" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="配置Solaris允许SSH远程登录"><a href="#配置Solaris允许SSH远程登录" class="headerlink" title="配置Solaris允许SSH远程登录"></a>配置Solaris允许SSH远程登录</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Oracle Solaris 10操作系统安装完成后，默认配置下，不允许root通过SSH登录系统。本文主要描述如何配置Solaris，使得root可以远程登录。</p>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><ol>
+<li>   配置&#x2F;etc&#x2F;ssh&#x2F;sshd_config的PermitRootLogin参数</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># gedit /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># cat /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ident	&quot;@(#)sshd_config	1.10	10/10/19 SMI&quot;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Configuration file for sshd(1m)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Protocol versions supported</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The sshd shipped in this release of Solaris has support for major versions</span></span><br><span class="line"><span class="comment"># 1 and 2.  It is recommended due to security weaknesses in the v1 protocol</span></span><br><span class="line"><span class="comment"># that sites run only v2 if possible. Support for v1 is provided to help sites</span></span><br><span class="line"><span class="comment"># with existing ssh v1 clients/servers to transition. </span></span><br><span class="line"><span class="comment"># Support for v1 may not be available in a future release of Solaris.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To enable support for v1 an RSA1 key must be created with ssh-keygen(1).</span></span><br><span class="line"><span class="comment"># RSA and DSA keys for protocol v2 are created by /etc/init.d/sshd if they</span></span><br><span class="line"><span class="comment"># do not already exist, RSA1 keys for protocol v1 are not automatically created.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment ONLY ONE of the following Protocol statements.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Only v2 (recommended)</span></span><br><span class="line">Protocol 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Both v1 and v2 (not recommended)</span></span><br><span class="line"><span class="comment">#Protocol 2,1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Only v1 (not recommended)</span></span><br><span class="line"><span class="comment">#Protocol 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Listen port (the IANA registered port number for ssh is 22)</span><span class="built_in"></span></span><br><span class="line"><span class="built_in">Port </span>22</span><br><span class="line"></span><br><span class="line"><span class="comment"># The default listen address is all interfaces, this may need to be changed</span></span><br><span class="line"><span class="comment"># if you wish to restrict the interfaces sshd listens on for a multi homed host.</span></span><br><span class="line"><span class="comment"># Multiple ListenAddress entries are allowed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># IPv4 only</span></span><br><span class="line"><span class="comment">#ListenAddress 0.0.0.0</span></span><br><span class="line"><span class="comment"># IPv4 &amp; IPv6</span></span><br><span class="line">ListenAddress ::</span><br><span class="line"></span><br><span class="line"><span class="comment"># Port forwarding</span></span><br><span class="line">AllowTcpForwarding <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># If port forwarding is enabled, specify if the server can bind to INADDR_ANY. </span></span><br><span class="line"><span class="comment"># This allows the local port forwarding to work when connections are received</span></span><br><span class="line"><span class="comment"># from any remote host.</span></span><br><span class="line">GatewayPorts <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># X11 tunneling options</span></span><br><span class="line">X11Forwarding <span class="literal">yes</span></span><br><span class="line">X11DisplayOffset 10</span><br><span class="line">X11UseLocalhost <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The maximum number of concurrent unauthenticated connections to sshd.</span></span><br><span class="line"><span class="comment"># start:rate:full see sshd(1) for more information.</span></span><br><span class="line"><span class="comment"># The default is 10 unauthenticated clients.</span></span><br><span class="line"><span class="comment">#MaxStartups 10:30:60</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Banner to be printed before authentication starts.</span></span><br><span class="line"><span class="comment">#Banner /etc/issue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Should sshd print the /etc/motd file and check for mail.</span></span><br><span class="line"><span class="comment"># On Solaris it is assumed that the login shell will do these (eg /etc/profile).</span></span><br><span class="line">PrintMotd <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># KeepAlive specifies whether keep alive messages are sent to the client.</span></span><br><span class="line"><span class="comment"># See sshd(1) for detailed description of what this means.</span></span><br><span class="line"><span class="comment"># Note that the client may also be sending keep alive messages to the server.</span></span><br><span class="line">KeepAlive <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Syslog facility and level </span></span><br><span class="line">SyslogFacility auth</span><br><span class="line">LogLevel <span class="built_in">info</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Authentication configuration</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Host private key files</span></span><br><span class="line"><span class="comment"># Must be on a local disk and readable only by the root user (root:sys 600).</span></span><br><span class="line">HostKey /etc/ssh/ssh_host_rsa_key</span><br><span class="line">HostKey /etc/ssh/ssh_host_dsa_key</span><br><span class="line"></span><br><span class="line"><span class="comment"># Length of the server key</span></span><br><span class="line"><span class="comment"># Default 768, Minimum 512</span></span><br><span class="line">ServerKeyBits 768</span><br><span class="line"></span><br><span class="line"><span class="comment"># sshd regenerates the key every KeyRegenerationInterval seconds.</span></span><br><span class="line"><span class="comment"># The key is never stored anywhere except the memory of sshd.</span></span><br><span class="line"><span class="comment"># The default is 1 hour (3600 seconds).</span></span><br><span class="line">KeyRegenerationInterval 3600</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure secure permissions on users .ssh directory.</span></span><br><span class="line">StrictModes <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Length of time in seconds before a client that hasn&#x27;t completed</span></span><br><span class="line"><span class="comment"># authentication is disconnected.</span></span><br><span class="line"><span class="comment"># Default is 600 seconds. 0 means no time limit.</span></span><br><span class="line">LoginGraceTime 600</span><br><span class="line"></span><br><span class="line"><span class="comment"># Maximum number of retries for authentication</span></span><br><span class="line"><span class="comment"># Default is 6. Default (if unset) for MaxAuthTriesLog is MaxAuthTries / 2</span></span><br><span class="line">MaxAuthTries	6</span><br><span class="line">MaxAuthTriesLog	3</span><br><span class="line"></span><br><span class="line"><span class="comment"># Are logins to accounts with empty passwords allowed.</span></span><br><span class="line"><span class="comment"># If PermitEmptyPasswords is no, pass PAM_DISALLOW_NULL_AUTHTOK </span></span><br><span class="line"><span class="comment"># to pam_authenticate(3PAM).</span></span><br><span class="line">PermitEmptyPasswords <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To disable tunneled clear text passwords, change PasswordAuthentication to no.</span></span><br><span class="line">PasswordAuthentication <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use PAM via keyboard interactive method for authentication.</span></span><br><span class="line"><span class="comment"># Depending on the setup of pam.conf(4) this may allow tunneled clear text</span></span><br><span class="line"><span class="comment"># passwords even when PasswordAuthentication is set to no. This is dependent</span></span><br><span class="line"><span class="comment"># on what the individual modules request and is out of the control of sshd</span></span><br><span class="line"><span class="comment"># or the protocol.</span></span><br><span class="line">PAMAuthenticationViaKBDInt <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Are root logins permitted using sshd.</span></span><br><span class="line"><span class="comment"># Note that sshd uses pam_authenticate(3PAM) so the root (or any other) user</span></span><br><span class="line"><span class="comment"># maybe denied access by a PAM module regardless of this setting.</span></span><br><span class="line"><span class="comment"># Valid options are yes, without-password, no.</span></span><br><span class="line"><span class="comment"># PermitRootLogin no</span></span><br><span class="line">PermitRootLogin <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sftp subsystem</span></span><br><span class="line">Subsystem	sftp	internal-sftp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># SSH protocol v1 specific options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The following options only apply to the v1 protocol and provide</span></span><br><span class="line"><span class="comment"># some form of backwards compatibility with the very weak security</span></span><br><span class="line"><span class="comment"># of /usr/bin/rsh.  Their use is not recommended and the functionality</span></span><br><span class="line"><span class="comment"># will be removed when support for v1 protocol is removed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Should sshd use .rhosts and .shosts for password less authentication.</span></span><br><span class="line">IgnoreRhosts <span class="literal">yes</span></span><br><span class="line">RhostsAuthentication <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rhosts RSA Authentication</span></span><br><span class="line"><span class="comment"># For this to work you will also need host keys in /etc/ssh/ssh_known_hosts.</span></span><br><span class="line"><span class="comment"># If the user on the client side is not root then this won&#x27;t work on</span></span><br><span class="line"><span class="comment"># Solaris since /usr/bin/ssh is not installed setuid.</span></span><br><span class="line">RhostsRSAAuthentication <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment if you don&#x27;t trust ~/.ssh/known_hosts for RhostsRSAAuthentication.</span></span><br><span class="line"><span class="comment">#IgnoreUserKnownHosts yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Is pure RSA authentication allowed.</span></span><br><span class="line"><span class="comment"># Default is yes</span></span><br><span class="line">RSAAuthentication <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   重启SSH服务，使配置生效</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># svcadm restart ssh</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>   重启系统<br>可能需要重启Solaris后，root才可以远程登录。</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># reboot</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   远程登录</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Last</span> login: Wed Jan  <span class="number">7</span> <span class="number">17</span>:<span class="number">14</span>:<span class="number">15</span> <span class="number">2015</span> from <span class="number">192.168.137.105</span></span><br><span class="line"><span class="attribute">Oracle</span> Corporation      SunOS <span class="number">5</span>.<span class="number">10</span>      Generic Patch   January <span class="number">2005</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增补资料"><a href="#增补资料" class="headerlink" title="增补资料"></a>增补资料</h2><p>暂无</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Solaris/" rel="tag"># Solaris</a>
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+              <a href="/tags/SSH/" rel="tag"># SSH</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014-04-19/AIX%E8%B0%83%E6%95%B4%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%8F%82%E8%80%83-V1-4/" rel="prev" title="AIX调整文件系统参考_V1.4">
+      <i class="fa fa-chevron-left"></i> AIX调整文件系统参考_V1.4
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016-02-16/SunOS6-10%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E5%8F%82%E8%80%83/" rel="next" title="SunOS6_10安装第三方软件参考">
+      SunOS6_10安装第三方软件参考 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">配置Solaris允许SSH远程登录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">配置过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A2%9E%E8%A1%A5%E8%B5%84%E6%96%99"><span class="nav-number">1.3.</span> <span class="nav-text">增补资料</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chan Revival</p>
+  <div class="site-description" itemprop="description">描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">48</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Revival Sky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">214k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:15</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'u4i90Gtr4z5ltiEyAwZXwAaG-gzGzoHsz',
+      appKey     : '5QCoDhscDztlH49YntlyPmVV',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+</body>
+</html>
