@@ -1,3 +1,4 @@
+https://chanrevival.github.io/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/
 https://chanrevival.github.io/2024-04-24/%E5%A6%82%E4%BD%95%E5%9C%A8ASM-11gR2%E4%B8%AD%E9%87%8D%E5%91%BD%E5%90%8D%E7%A3%81%E7%9B%98%E7%BB%84%EF%BC%9F/
 https://chanrevival.github.io/thoughts/index.html
 https://chanrevival.github.io/thoughts/vx.json
@@ -140,3 +141,6 @@ https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4
 https://chanrevival.github.io/categories/%E7%B2%BE%E9%80%89%E6%A6%9C%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/
 https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/%E4%B8%8D%E6%98%8E%E5%BC%82%E5%B8%B8%E7%8E%B0%E8%B1%A1%EF%BC%88UAP%EF%BC%89/
 https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/Oracle/
+https://chanrevival.github.io/categories/Technology/
+https://chanrevival.github.io/categories/Technology/Database/
+https://chanrevival.github.io/categories/Technology/Database/Oracle/

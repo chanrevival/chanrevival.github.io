@@ -129,12 +129,12 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">46</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">47</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 - Categories<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 - Categories<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -626,7 +626,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-25 16:06:25" itemprop="dateModified" datetime="2024-12-25T16:06:25+08:00">2024-12-25</time>
+                <time title="修改时间：2024-12-26 00:04:13" itemprop="dateModified" datetime="2024-12-26T00:04:13+08:00">2024-12-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -692,7 +692,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="如何在ASM-11gR2中重命名磁盘组？"><a href="#如何在ASM-11gR2中重命名磁盘组？" class="headerlink" title="如何在ASM 11gR2中重命名磁盘组？"></a>如何在ASM 11gR2中重命名磁盘组？</h1><p>本文档提供了一个清晰的示例，关于如何在11gR2版本中重命名ASM磁盘组。请避免使用renamedg重命名OCR&#x2F;VOTE磁盘组。</p>
+          <h1 id="如何在ASM-11gR2中重命名磁盘组？"><a href="#如何在ASM-11gR2中重命名磁盘组？" class="headerlink" title="如何在ASM 11gR2中重命名磁盘组？"></a>如何在ASM 11gR2中重命名磁盘组？</h1><p>本指南详细展示了在11gR2版本中如何正确重命名ASM磁盘组的步骤。请注意，在操作过程中，应避免使用renamedg命令来重命名OCR&#x2F;VOTE磁盘组，以免引起不必要的风险。</p>
 <ol>
 <li><p>   首先，需要卸载想要重命名的磁盘组（如果是RAC配置，则从每个节点上卸载）：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># asmcmd umount <span class="string">&lt;OLD_DG_NAME&gt;</span></span></span><br></pre></td></tr></table></figure>
@@ -709,6 +709,139 @@
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># asmcmd mount &lt;NEW_DG_NAME&gt;</span></span><br><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">24567</span> <span class="number">14267</span> <span class="number">0</span> <span class="number">14267</span> <span class="number">0</span> N &lt;NEW_DG_NAME&gt;/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure></li>
 </ol>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/" class="post-title-link" itemprop="url">How to Rename a Disk Group in ASM 11gR2?</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-04-24 14:44:42" itemprop="dateCreated datePublished" datetime="2024-04-24T14:44:42+08:00">2024-04-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-26 00:13:45" itemprop="dateModified" datetime="2024-12-26T00:13:45+08:00">2024-12-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/Database/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/" class="post-meta-item leancloud_visitors" data-flag-title="How to Rename a Disk Group in ASM 11gR2?" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="How-to-Rename-a-Disk-Group-in-ASM-11gR2"><a href="#How-to-Rename-a-Disk-Group-in-ASM-11gR2" class="headerlink" title="How_to_Rename_a_Disk_Group_in_ASM_11gR2"></a>How_to_Rename_a_Disk_Group_in_ASM_11gR2</h1><p>This guide outlines the correct steps to rename an ASM disk group in the 11gR2 version. Please note that during this process, you should avoid using the renamedg command to rename the OCR&#x2F;VOTE disk groups, as it could lead to unnecessary risks.</p>
+<ol>
+<li>First, you need to unmount the disk group you want to rename (if it’s a RAC configuration, unmount it from each node):</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># asmcmd umount <span class="string">&lt;OLD_DG_NAME&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Verify that the required disk group has been unmounted:</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/#more" rel="contents">
+                阅读全文 - Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -848,131 +981,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Chan Revival">
-      <meta itemprop="description" content="描述">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chan Revival Sky">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/" class="post-title-link" itemprop="url">薛定谔的猫</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-01 20:53:45" itemprop="dateCreated datePublished" datetime="2023-05-01T20:53:45+08:00">2023-05-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-11-19 21:09:33" itemprop="dateModified" datetime="2024-11-19T21:09:33+08:00">2024-11-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/" itemprop="url" rel="index"><span itemprop="name">科学探索</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">量子力学</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/" class="post-meta-item leancloud_visitors" data-flag-title="薛定谔的猫" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Schrodinger’s cat<br>薛定谔的猫</p>
-<p>Austrian physicist Erwin Schrödinger is one of the founders of quantum mechanics, but he’s most famous for something he never actually did: a thought experiment involving a cat.<br>奥地利物理学家埃尔温·薛定谔是量子力学的创始人之一，但他最为人所知的却是他从未真正实施过的一件事：一个涉及一只猫的思维实验。</p>
-<p>He imagined taking a cat and placing it in a sealed box with a device that had a 50% chance of killing the cat in the next hour. At the end of that hour, he asked, “What is the state of the cat?”<br>他设想了一只猫，并将其放入一个密封的盒子中，盒子里有一个装置，这个装置有50%的几率在下一个小时内杀死猫。在那一小时结束时，他问道：“猫的状态如何？”</p>
-<p>Common sense suggests that the cat is either alive or dead, but Schrödinger pointed out that according to quantum physics, at the instant before the box is opened, the cat is equal parts alive and dead, at the same time.<br>常识告诉我们，猫要么活着要么死了，但薛定谔指出，根据量子物理学，在盒子打开前的瞬间，猫同时处于既活着又死了的状态。</p>
-<p>It’s only when the box is opened that we see a single definite state.<br>只有当盒子被打开时，我们才能看到一种确定的状态。</p>
-<p>Until then, the cat is a blur of probability, half one thing and half the other.<br>在此之前，猫是一种概率的模糊状态，一半是这样，一半是那样。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/#more" rel="contents">
-                阅读全文 - Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1042,14 +1050,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">日志Posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类Cate.</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1109,12 +1117,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">214k</span>
+    <span title="站点总字数">217k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:15</span>
+    <span title="站点阅读时长">3:18</span>
 </div>
   <div class="powered-by">本站使用主题 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 
   </div>
