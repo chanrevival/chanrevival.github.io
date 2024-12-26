@@ -1,3 +1,6 @@
+https://chanrevival.github.io/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/
+https://chanrevival.github.io/2024-12-13/Common_COS_Yum_Repo_Conf/
+https://chanrevival.github.io/2024-12-13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 https://chanrevival.github.io/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/
 https://chanrevival.github.io/2024-04-24/%E5%A6%82%E4%BD%95%E5%9C%A8ASM-11gR2%E4%B8%AD%E9%87%8D%E5%91%BD%E5%90%8D%E7%A3%81%E7%9B%98%E7%BB%84%EF%BC%9F/
 https://chanrevival.github.io/thoughts/index.html
@@ -27,7 +30,6 @@ https://chanrevival.github.io/rankings/vx.json
 https://chanrevival.github.io/rankings/index.html
 https://chanrevival.github.io/vx.json
 https://chanrevival.github.io/2012-01-01/2012-1-1_%E9%9A%8F%E7%AC%94/
-https://chanrevival.github.io/2024-12-13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 https://chanrevival.github.io/2024-12-04/Linux%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/
 https://chanrevival.github.io/2024-11-11/Doris%E5%9D%8F%E7%9B%98%E6%8D%A2%E7%9B%98%E6%96%B9%E6%B3%95/
 https://chanrevival.github.io/2017-08-16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/
@@ -124,6 +126,7 @@ https://chanrevival.github.io/tags/UFO/
 https://chanrevival.github.io/tags/%E9%A3%9E%E7%A2%9F/
 https://chanrevival.github.io/tags/SSH/
 https://chanrevival.github.io/tags/Database/
+https://chanrevival.github.io/tags/Migration/
 https://chanrevival.github.io/categories/%E9%9A%8F%E7%AC%94/
 https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/
 https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/
@@ -144,3 +147,5 @@ https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E
 https://chanrevival.github.io/categories/Technology/
 https://chanrevival.github.io/categories/Technology/Database/
 https://chanrevival.github.io/categories/Technology/Database/Oracle/
+https://chanrevival.github.io/categories/Technology/OS/
+https://chanrevival.github.io/categories/Technology/OS/Linux/

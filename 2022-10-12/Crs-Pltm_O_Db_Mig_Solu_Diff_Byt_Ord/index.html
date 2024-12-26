@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"Valine","storage":true,"lazyload":true,"nav":{"valine":{"order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Cross-Platform Oracle Database Migration Solution with Different Byte OrdersOverviewStarting from Oracle 10g, databases support cross-platform transportable tablespaces. This document primarily explor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cross-Platform Oracle Database Migration Solution with Different Byte Orders">
+<meta property="og:url" content="https://chanrevival.github.io/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/index.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="Cross-Platform Oracle Database Migration Solution with Different Byte OrdersOverviewStarting from Oracle 10g, databases support cross-platform transportable tablespaces. This document primarily explor">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-12T14:40:02.000Z">
+<meta property="article:modified_time" content="2024-12-26T05:05:16.629Z">
+<meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="Oracle">
+<meta property="article:tag" content="Database">
+<meta property="article:tag" content="Migration">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chanrevival.github.io/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Cross-Platform Oracle Database Migration Solution with Different Byte Orders | Chan Revival Sky</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VN485BL2P4');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Chan Revival Sky</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">天上星，亮晶晶，永灿烂，长安宁。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页 - Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">49</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类 - Categories<span class="badge">22</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签 - Tags<span class="badge">50</span></a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>相册 - Photos</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-thoughts">
+
+    <a href="/thoughts/" rel="section"><i class="fa fa-comment fa-fw"></i>说说 - Thoughts</a>
+
+  </li>
+        
+            
+  <li class="menu-item menu-item-rankings">
+
+    <a href="/rankings/" rel="section"><i class="fa fa-star fa-fw"></i>精选榜单 - Rankings</a>
+
+  </li>
+
+
+      
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图 - Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-internal_use">
+
+    <a href="/internal_use" rel="section"><i class="fa fa-key fa-fw"></i>内部使用 - Internal use</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于 - About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 - Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索... - Search..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/chanrevival/" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Cross-Platform Oracle Database Migration Solution with Different Byte Orders
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-12 22:40:02" itemprop="dateCreated datePublished" datetime="2022-10-12T22:40:02+08:00">2022-10-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-26 13:05:16" itemprop="dateModified" datetime="2024-12-26T13:05:16+08:00">2024-12-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Technology/Database/Oracle/" itemprop="url" rel="index"><span itemprop="name">Oracle</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/" class="post-meta-item leancloud_visitors" data-flag-title="Cross-Platform Oracle Database Migration Solution with Different Byte Orders" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>14k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>13 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Cross-Platform-Oracle-Database-Migration-Solution-with-Different-Byte-Orders"><a href="#Cross-Platform-Oracle-Database-Migration-Solution-with-Different-Byte-Orders" class="headerlink" title="Cross-Platform Oracle Database Migration Solution with Different Byte Orders"></a>Cross-Platform Oracle Database Migration Solution with Different Byte Orders</h1><h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>Starting from Oracle 10g, databases support cross-platform transportable tablespaces. This document primarily explores how to implement transportable tablespaces for both ASM data files and OS filesystem data files.</p>
+<p>If the target database is on a platform with a different byte order, the following steps outline how to migrate a database to a new platform using transportable tablespaces:</p>
+<ol>
+<li>Create a new, empty database on the target platform.</li>
+<li>Import the objects required for the transport operation from the source database to the target.</li>
+<li>Export the transportable metadata for all user tablespaces from the source database.</li>
+<li>Transfer the data files for the user tablespaces to the target system.</li>
+<li>Use RMAN to convert the data files to the target system’s byte order format.</li>
+<li>Import the transportable metadata for all user tablespaces into the target database.</li>
+<li>Import the remaining database objects and metadata (those not moved during the transport operation) from the source database to the target.</li>
+</ol>
+<p>Alternatively, you can convert the data files on the source platform, and after conversion, transfer them to the target platform.</p>
+<h2 id="Migration-Solution"><a href="#Migration-Solution" class="headerlink" title="Migration Solution"></a>Migration Solution</h2><h3 id="Supported-Platforms"><a href="#Supported-Platforms" class="headerlink" title="Supported Platforms"></a>Supported Platforms</h3><p>Query V$TRANSPORTABLE_PLATFORM to check supported platforms and determine the byte order for each platform.</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; COLUMN PLATFORM_NAME FORMAT A32</span><br><span class="line">SQL&gt; SELECT * FROM V$TRANSPORTABLE_PLATFORM;</span><br><span class="line">PLATFORM_ID PLATFORM_NAME                    ENDIAN_FORMAT</span><br><span class="line">----------- -------------------------------- --------------</span><br><span class="line">          <span class="number">1</span> Solaris[tm] OE (<span class="number">32</span>-<span class="keyword">bit) </span>         <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">2</span> Solaris[tm] OE (<span class="number">64</span>-<span class="keyword">bit) </span>         <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">7</span> Microsoft Windows IA (<span class="number">32</span>-<span class="keyword">bit) </span>   Little</span><br><span class="line">         <span class="number">10</span> Linux IA (<span class="number">32</span>-<span class="keyword">bit) </span>               Little</span><br><span class="line">          <span class="number">6</span> AIX-<span class="keyword">Based </span>Systems (<span class="number">64</span>-<span class="keyword">bit) </span>      <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">3</span> HP-UX (<span class="number">64</span>-<span class="keyword">bit) </span>                  <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>          <span class="number">5</span> HP Tru64 UNIX                    Little</span><br><span class="line">          <span class="number">4</span> HP-UX IA (<span class="number">64</span>-<span class="keyword">bit) </span>               <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>         <span class="number">11</span> Linux IA (<span class="number">64</span>-<span class="keyword">bit) </span>               Little</span><br><span class="line">         <span class="number">15</span> HP Open VMS                      Little</span><br><span class="line">          <span class="number">8</span> Microsoft Windows IA (<span class="number">64</span>-<span class="keyword">bit) </span>   Little</span><br><span class="line">          <span class="number">9</span> IBM zSeries <span class="keyword">Based </span>Linux          <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>         <span class="number">13</span> Linux <span class="number">64</span>-<span class="keyword">bit </span>for AMD             Little</span><br><span class="line">         <span class="number">16</span> Apple Mac OS                     <span class="keyword">Big</span></span><br><span class="line"><span class="keyword"></span>         <span class="number">12</span> Microsoft Windows <span class="number">64</span>-<span class="keyword">bit </span>for AMD Little</span><br><span class="line">         <span class="number">17</span> Solaris Operating System (x86)   Little</span><br></pre></td></tr></table></figure>
+
+<p>If the source and target platforms have different byte orders, an additional step is required either on the source or target platform to convert the transported tablespaces to the target format. If the byte orders are the same, no conversion is necessary, and the tablespace can be transported as if it were the same platform.</p>
+<h3 id="Transportable-Tablespaces"><a href="#Transportable-Tablespaces" class="headerlink" title="Transportable Tablespaces"></a>Transportable Tablespaces</h3><ol>
+<li>Preparation Before Transporting Tablespaces</li>
+</ol>
+<p>a) Check that the tablespace is self-contained.</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;<span class="built_in"> execute </span>sys.dbms_tts.transport_set_check(&#x27;TBS1,TBS2&#x27;, true);</span><br><span class="line">SQ<span class="class">L&gt; select * from sys.transport_set_violations;</span></span><br></pre></td></tr></table></figure>
+
+<p><mark>注意：在表空间被传输之前，这些违反传输标准的问题必须被解决。</mark></p>
+<p>b) To successfully export a transportable tablespace, the tablespace must be in READ ONLY mode.</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Export Metadata</li>
+</ol>
+<p>a) Use traditional export tools:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exp</span> userid=\<span class="string">&#x27;sys/sys as sysdba\&#x27;</span> <span class="keyword">file</span>=tbs_exp.dmp <span class="built_in">log</span>=tba_exp.<span class="built_in">log</span> transport_tablespace=<span class="keyword">y</span> tablespaces=TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>b) Use Data Pump export:</p>
+<p>First, create the directory object used by Data Pump, for example:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span> ;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Then, initialize Data Pump export:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir TRANSPORT_TABLESPACES = TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>If you wish to enforce strict integrity checks during the transportable tablespace operation, use the TRANSPORT_FULL_CHECK parameter.</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp DIRECTORY = dpump_dir TRANSPORT_TABLESPACES= TBS1,TBS2 <span class="attribute">TRANSPORT_FULL_CHECK</span>=Y</span><br></pre></td></tr></table></figure>
+
+
+<ol start="3">
+<li>   Use V$TRANSPORTABLE_PLATFORM to check the byte order for each platform. You can run the following query on each platform instance:</li>
+</ol>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tp.platform_id,<span class="built_in">substr</span>(d.PLATFORM_NAME,<span class="number">1</span>,<span class="number">30</span>), ENDIAN_FORMAT</span><br><span class="line"><span class="keyword">FROM</span> V$TRANSPORTABLE_PLATFORM tp, V$<span class="keyword">DATABASE</span> d</span><br><span class="line"><span class="keyword">WHERE</span> tp.PLATFORM_NAME = d.PLATFORM_NAME;</span><br></pre></td></tr></table></figure>
+
+<p>If you find that the byte order is different, the transportable tablespace set must undergo conversion during the transport process.</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; convert <span class="keyword">tablespace</span> TBS1 <span class="keyword">to</span> platform=&quot;Linux IA (32-bit)&quot; <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br><span class="line">RMAN&gt; convert <span class="keyword">tablespace</span> TBS2 <span class="keyword">to</span> platform=&quot;Linux IA (32-bit)&quot; <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Copy the data files and exported files to the target environment.</p>
+<ol start="4">
+<li>Import Transportable Tablespace</li>
+</ol>
+<p>a) Use traditional import tools:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp userid=\&#x27;sys/sys as sysdba\&#x27; file=tbs_exp.dmp <span class="built_in">log</span>=tba_imp.log transport_tablespace=y datafiles=<span class="string">&#x27;/tmp/....&#x27;</span>,<span class="string">&#x27;/tmp/...&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>b) Use Data Pump import:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Execute the import:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir <span class="attribute">TRANSPORT_DATAFILES</span>=<span class="string">&#x27;/tmp/....&#x27;</span>,&#x27;/tmp/...&#x27; REMAP_SCHEMA=(source:target) REMAP_SCHEMA=(source_sch2:target_schema_sch2)</span><br></pre></td></tr></table></figure>
+
+<p>If you want to change the owner of the transported database objects, use the REMAP_SCHEMA parameter.</p>
+<ol start="5">
+<li>   Put the tablespace into READ&#x2F;WRITE mode.</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.3	Using DBMS_FILE_TRANSFER</p>
+<p>We can also use DBMS_FILE_TRANSFER to copy data files to another host. Starting from 12c and 11.2.0.4, DBMS_FILE_TRANSFER performs automatic conversion by default. When using DBMS_FILE_TRANSFER, if the target database receives a file from a platform with a different byte order, it will convert each block during the transport operation. After the data files are moved to the target database, they can be imported without needing RMAN conversion.</p>
+<p>In versions lower than 11.2.0.4, you need to perform the steps mentioned above for ASM files. However, if the byte order is different, you must use RMAN to convert the files after they have been transferred. Files cannot be copied directly between ASM instances on different platforms.</p>
+<p>For Filesystem Examples: </p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; CONVERT DATAFILE</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_31.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_32.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_41.f&#x27;</span></span><br><span class="line">      <span class="keyword">TO</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;Solaris[tm] OE (32-bit)&quot;</span></span><br><span class="line">      <span class="keyword">FROM</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;HP TRu64 UNIX&quot;</span></span><br><span class="line">      DB_FILE_NAME_CONVERT= <span class="string">&quot;/hq/finance/work/tru/&quot;</span>, <span class="string">&quot;/hq/finance/dbs/tru&quot;</span></span><br><span class="line">      <span class="attribute">PARALLELISM</span>=5;</span><br></pre></td></tr></table></figure>
+<p>For ASM Disk Group Examples:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; CONVERT DATAFILE</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_31.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_32.f&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;/hq/finance/work/tru/tbs_41.f&#x27;</span></span><br><span class="line">      <span class="keyword">TO</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;Solaris[tm] OE (32-bit)&quot;</span></span><br><span class="line">      <span class="keyword">FROM</span> <span class="attribute">PLATFORM</span>=<span class="string">&quot;HP TRu64 UNIX&quot;</span></span><br><span class="line">      <span class="attribute">DB_FILE_NAME_CONVERT</span>=<span class="string">&quot;/hq/finance/work/tru/&quot;</span>, <span class="string">&quot;+diskgroup&quot;</span></span><br><span class="line">      <span class="attribute">PARALLELISM</span>=5;</span><br></pre></td></tr></table></figure>
+<p><mark>Note: When using transportable tablespaces (TTS) to migrate from Solaris, Linux, or AIX to HP&#x2F;UX, index-organized tables (IOTs) may get corrupted.</mark></p>
+<p>2.4	Transportable Tablespace Limitations</p>
+<ol>
+<li>The source and target databases must use the same character set and national character set.</li>
+<li>If the target database already has a tablespace with the same name, the transport operation cannot proceed. However, you can rename the tablespace to be transported or the existing tablespace in the target database before performing the transport.</li>
+<li>Objects with dependent objects (e.g., materialized views) or contained objects (e.g., partitioned tables) cannot be transported, unless all dependent or contained objects are part of the transported tablespace set.</li>
+<li>If the tablespace object owner does not exist in the target database, the username must be manually created before importing the transportable tablespace metadata.</li>
+<li>Starting from Oracle Database 11gR1, if the tablespace contains XMLType, Data Pump must be used to export and import the tablespace metadata. The following query returns a list of tablespaces containing XMLType:</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> p.tablespace_name</span><br><span class="line"><span class="keyword">from</span> dba_tablespaces p, dba_xml_tables x, dba_users u, all_all_tables t</span><br><span class="line"><span class="keyword">where</span> t.<span class="built_in">table_name</span>=x.<span class="built_in">table_name</span> <span class="keyword">and</span></span><br><span class="line">      t.tablespace_name=p.tablespace_name <span class="keyword">and</span></span><br><span class="line">      x.owner=u.username;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>Advanced Queues transportable tablespaces do not support 8.0-compatible version Advanced Queues with multiple containers.</li>
+<li>The SYSTEM tablespace or objects owned by SYS cannot be transported.</li>
+<li>Opaque types (such as RAW, BFILE, and AnyTypes) can be transported, but they will not be converted during cross-platform transport operations. Their actual format is known only to the application, so the application must handle the byte-order issue after moving these types to the new platform.</li>
+<li>Floating-point types (BINARY_FLOAT and BINARY_DOUBLE) can be transported, but they must use Data Pump tools and cannot use the older export tool (EXP).</li>
+</ol>
+<p>2.5	ASM Files Transportable Tablespace Export&#x2F;Import</p>
+<p>2.5.1 Using RMAN CONVERT</p>
+<p>There is no direct method to export&#x2F;import ASM files as transportable tablespaces, but this can be achieved through RMAN. Follow the steps below:</p>
+<p>a) Prepare the tablespace for export:</p>
+<p>Check that the tablespace is self-contained.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">execute</span> sys.dbms_tts.transport_set_check(<span class="string">&#x27;TBS1,TBS2&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sys.transport_set_violations;</span><br></pre></td></tr></table></figure>
+
+<p>Note: Any violation of restrictions must be addressed before transporting the tablespace.</p>
+<p>b) To successfully perform a transportable tablespace export, the tablespaces must be in READ ONLY mode.</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">ONLY</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   Export Metadata:<br>a) Use traditional export tools:</li>
+</ol>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exp</span> userid=\<span class="string">&#x27;sys/sys as sysdba\&#x27;</span> <span class="keyword">file</span>=tbs_exp.dmp <span class="built_in">log</span>=tba_exp.<span class="built_in">log</span> transport_tablespace=<span class="keyword">y</span> tablespaces=TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>b) Use Data Pump export:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Execute the export:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir TRANSPORT_TABLESPACES = TBS1,TBS2</span><br></pre></td></tr></table></figure>
+
+<p>If you want to perform strict inclusion checks during the transportable tablespace operation, use the TRANSPORT_FULL_CHECK parameter:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp DIRECTORY = dpump_dir TRANSPORT_TABLESPACES= TBS1,TBS2 <span class="attribute">TRANSPORT_FULL_CHECK</span>=Y</span><br></pre></td></tr></table></figure>
+
+<p>If the transported tablespace is not self-contained, the export will fail.</p>
+<ol start="3">
+<li>   Use V$TRANSPORTABLE_PLATFORM to identify the target database’s platform name. Execute the following query on the target platform instance.</li>
+</ol>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tp.platform_id,<span class="built_in">substr</span>(d.PLATFORM_NAME,<span class="number">2</span>,<span class="number">30</span>), ENDIAN_FORMAT</span><br><span class="line"><span class="keyword">FROM</span> V$TRANSPORTABLE_PLATFORM tp, V$<span class="keyword">DATABASE</span> d</span><br><span class="line"><span class="keyword">WHERE</span> tp.PLATFORM_NAME = d.PLATFORM_NAME;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   Generate an OS file from ASM files in the target platform format.</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RMAN&gt; CONVERT <span class="keyword">TABLESPACE</span> TBS1</span><br><span class="line">      <span class="keyword">TO</span> PLATFORM <span class="string">&#x27;HP-UX (64-bit)&#x27;</span> <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br><span class="line">RMAN&gt; CONVERT <span class="keyword">TABLESPACE</span> TBS2</span><br><span class="line">      <span class="keyword">TO</span> PLATFORM <span class="string">&#x27;HP-UX (64-bit)&#x27;</span> <span class="keyword">FORMAT</span> <span class="string">&#x27;/tmp/%U&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>   Copy the generated file to the target server (if not the same machine as the source).</li>
+<li>   Import Transportable Tablespace<br>a)	Use traditional import tools:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp userid=\&#x27;sys/sys as sysdba\&#x27; file=tbs_exp.dmp <span class="built_in">log</span>=tba_imp.log transport_tablespace=y datafiles=<span class="string">&#x27;/tmp/....&#x27;</span>,<span class="string">&#x27;/tmp/...&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>b)	Use Data Pump import:</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY dpump_dir <span class="keyword">AS</span> <span class="string">&#x27;/tmp/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY dpump_dir <span class="keyword">TO</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Execute the import:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">impdp system/password <span class="attribute">DUMPFILE</span>=expdat.dmp <span class="attribute">DIRECTORY</span>=dpump_dir <span class="attribute">TRANSPORT_DATAFILES</span>=<span class="string">&#x27;/tmp/....&#x27;</span>,&#x27;/tmp/...&#x27; REMAP_SCHEMA=(source:target) REMAP_SCHEMA=(source_sch2:target_schema_sch2)</span><br></pre></td></tr></table></figure>
+
+<p>If you wish to change the owner of the transported database objects, use the REMAP_SCHEMA parameter.</p>
+<ol start="7">
+<li>   Put the tablespace in READ&#x2F;WRITE mode.</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS1 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">TABLESPACE</span> TBS2 <span class="keyword">READ</span> <span class="keyword">WRITE</span>;</span><br></pre></td></tr></table></figure>
+
+<p>If you are transferring data files from ASM to the filesystem, the process ends here. However, if you want to transfer a tablespace between two ASM environments, follow the additional steps below.</p>
+<ol start="8">
+<li>   Use RMAN to copy the file to the ASM environment (e.g., &#x2F;tmp&#x2F;….dbf).</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rman nocatalog target /</span><br><span class="line">RMAN&gt; backup <span class="keyword">as</span> <span class="keyword">copy</span> datafile <span class="string">&#x27;/tmp/....dbf&#x27;</span> <span class="keyword">format</span> <span class="string">&#x27;+DGROUPA&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>The +DGROUPA represents the ASM disk group name.</p>
+<ol start="9">
+<li>   将数据文件交换到这个拷贝。<br>如果是 10g 数据库，首先要将数据文件离线：</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> datafile <span class="string">&#x27;/tmp/....dbf&#x27;</span> offline;</span><br></pre></td></tr></table></figure>
+
+<p>Switch the data files to this copy.</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rman nocatalog target /</span><br><span class="line">RMAN&gt; <span class="keyword">switch</span> datafile <span class="string">&#x27;/tmp/....dbf&#x27;</span> <span class="keyword">to</span> <span class="keyword">copy</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Note the name of the copy created in the +DGROUPA disk group, such as +DGROUPA&#x2F;s101&#x2F;datafile&#x2F;tts.270.5.</p>
+<ol start="10">
+<li>   Bring the file back online and recover it.</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; recover datafile <span class="string">&#x27;+DGROUPA/s101/datafile/tts.270.5&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> datafile <span class="string">&#x27;+DGROUPA/s101/datafile/tts.270.5&#x27;</span> online;</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>   Verify that the data file is part of the ASM environment and online. The output should indicate the file is properly online.</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; <span class="keyword">select</span> name, status from v<span class="variable">$datafile</span>;</span><br><span class="line"></span><br><span class="line">+DGROUPA/s101/datafile/tts.270.5 ONLINE</span><br></pre></td></tr></table></figure>
+
+<p>2.5.2	Using DBMS_FILE_TRANSFER<br>We can also use DBMS_FILE_TRANSFER to copy data files from one ASM disk group to another, or even to another host. Starting with 10gR2, DBMS_FILE_TRANSFER can also be used to copy data files from ASM to a filesystem and vice versa.</p>
+<p>The PUT_FILE procedure reads a local file or ASM file and connects to a remote database to create a copy of the file in the remote filesystem. The copied file is the target file, and the original file is the source. The target file is not closed until the procedure completes successfully.</p>
+<p>Syntax:</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DBMS<span class="number">_</span>FILE<span class="number">_T</span>RANSFER.PUT<span class="number">_</span>FILE(</span><br><span class="line">   source<span class="number">_</span>directory<span class="number">_</span><span class="keyword">object</span>       IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   source<span class="number">_f</span>ile<span class="number">_n</span>ame              IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   destination<span class="number">_</span>directory<span class="number">_</span><span class="keyword">object</span>  IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   destination<span class="number">_f</span>ile<span class="number">_n</span>ame         IN  VARCHAR<span class="number">2</span>,</span><br><span class="line">   destination<span class="number">_</span>database          IN  VARCHAR<span class="number">2</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Where:</p>
+<ul>
+<li>source_directory_object: The directory object where the file is located on the local source. It must exist on the source side.</li>
+<li>source_file_name: The file name to copy from the local filesystem. This file must exist in the directory specified by source_directory_object.</li>
+<li>destination_directory_object: The directory object on the target where the file will be placed. It must exist in the target filesystem.</li>
+<li>destination_file_name: The name of the file in the remote filesystem. No file with the same name should exist in the target directory.</li>
+<li>destination_database: The database link name pointing to the target database where the file will be copied.</li>
+</ul>
+<p>If we want to use DBMS_FILE_TRANSFER.PUT_FILE to transfer a file from the source to the target host, modify steps 3, 4, and 5 as follows:</p>
+<ol>
+<li>   Create a directory on the target database host and grant permissions to the local user. This directory object must exist on the remote filesystem.</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY target_dir <span class="keyword">AS</span> <span class="string">&#x27;+DGROUPA&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY target_dir <span class="keyword">TO</span> &quot;USER&quot;;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   Create a directory on the source database host for the file to be copied from. This directory must exist on the source side.</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY source_dir <span class="keyword">AS</span> <span class="string">&#x27;+DGROUPS/subdir&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">READ</span>,<span class="keyword">WRITE</span> <span class="keyword">ON</span> DIRECTORY source_dir <span class="keyword">TO</span> &quot;USER&quot;;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR REPLACE</span> DIRECTORY source_dir_1 <span class="keyword">AS</span> <span class="string">&#x27;+DGROUPS/subdir/subdir_2&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>   Create a database link to the target database host:</li>
+</ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> LINK DBS2 <span class="keyword">CONNECT</span> <span class="keyword">TO</span> <span class="string">&#x27;user&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;password&#x27;</span> <span class="keyword">USING</span> <span class="string">&#x27;target_connect&#x27;</span>;</span><br><span class="line">Here, target_connect <span class="keyword">is</span> the <span class="keyword">connection</span> string <span class="keyword">for</span> the target <span class="keyword">database</span>, <span class="keyword">and</span> <span class="keyword">USER</span> <span class="keyword">is</span> the <span class="keyword">user</span> transferring the data files.</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   Connect to the source instance. The following items will be used:</li>
+</ol>
+<ul>
+<li>dbs1: The connection string to the source database</li>
+<li>dbs2: The database link to the target database</li>
+<li>a1.dat: The source database file name</li>
+<li>a4.dat: The target database file name</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">user</span><span class="operator">/</span>password<span class="variable">@dbs1</span></span><br><span class="line"><span class="comment">-- - put a1.dat to a4.dat (using dbs2 dblink)</span></span><br><span class="line"><span class="comment">-- - level 2 sub dir to parent dir</span></span><br><span class="line"><span class="comment">-- - user has read privs on source_dir_1 at dbs1 and write on target_dir</span></span><br><span class="line"><span class="comment">-- - in dbs2</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    DBMS_FILE_TRANSFER.PUT_FILE(<span class="string">&#x27;source_dir_1&#x27;</span>, <span class="string">&#x27;a1.dat&#x27;</span>,</span><br><span class="line">                                <span class="string">&#x27;target_dir&#x27;</span>, <span class="string">&#x27;a4.dat&#x27;</span>, <span class="string">&#x27;dbs2&#x27;</span> );</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+              <a href="/tags/Database/" rel="tag"># Database</a>
+              <a href="/tags/Migration/" rel="tag"># Migration</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022-10-12/%E6%97%A0%E4%BA%BA%E7%9F%A5%E6%99%93%E7%AD%94%E6%A1%88%E7%9A%84%E9%97%AE%E9%A2%98/" rel="prev" title="无人知晓答案的问题">
+      <i class="fa fa-chevron-left"></i> 无人知晓答案的问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022-10-12/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%8D%E5%90%8C%E5%AD%97%E8%8A%82%E5%BA%8FOracle%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB%E6%96%B9%E6%A1%88/" rel="next" title="跨平台不同字节序Oracle数据库迁移方案">
+      跨平台不同字节序Oracle数据库迁移方案 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cross-Platform-Oracle-Database-Migration-Solution-with-Different-Byte-Orders"><span class="nav-number">1.</span> <span class="nav-text">Cross-Platform Oracle Database Migration Solution with Different Byte Orders</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview"><span class="nav-number">1.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Migration-Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Migration Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Supported-Platforms"><span class="nav-number">1.2.1.</span> <span class="nav-text">Supported Platforms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transportable-Tablespaces"><span class="nav-number">1.2.2.</span> <span class="nav-text">Transportable Tablespaces</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Chan Revival</p>
+  <div class="site-description" itemprop="description">描述</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志Posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类Cate.</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">标签Tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/chanrevival" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;chanrevival" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:183900561@qq.com" title="E-Mail → mailto:183900561@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://chanrevival.github.io/" title="https:&#x2F;&#x2F;chanrevival.github.io&#x2F;">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2008 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chan Revival Sky</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">232k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:31</span>
+</div>
+  <div class="powered-by">本站使用主题 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 
+  </div>
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("11/11/2024 11:11:11");//在此处修改你的建站时间
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'u4i90Gtr4z5ltiEyAwZXwAaG-gzGzoHsz',
+      appKey     : '5QCoDhscDztlH49YntlyPmVV',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+    </div>
+</body>
+</html>
