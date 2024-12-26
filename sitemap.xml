@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/</loc>
+    
+    <lastmod>2024-12-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/</loc>
+    
+    <lastmod>2024-12-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/about/vx.json</loc>
+    
+    <lastmod>2024-12-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/about/index.html</loc>
+    
+    <lastmod>2024-12-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chanrevival.github.io/2022-10-12/Crs-Pltm_O_Db_Mig_Solu_Diff_Byt_Ord/</loc>
     
     <lastmod>2024-12-26</lastmod>
@@ -174,24 +210,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/photos/20150927%E5%B9%BF%E5%B7%9E%E5%8D%97%E7%B2%A4%E5%9B%AD%E5%AE%9D%E5%A2%A8%E5%9B%AD%E6%B8%B8%E8%AE%B0/images/vx.json</loc>
-    
-    <lastmod>2024-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/about/vx.json</loc>
-    
-    <lastmod>2024-12-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/about/index.html</loc>
     
     <lastmod>2024-12-20</lastmod>
     
@@ -572,15 +590,6 @@
     <loc>https://chanrevival.github.io/2024-11-28/%E5%BC%80%E5%90%AFWin10%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E7%94%B5%E6%BA%90%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2024-11-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/</loc>
-    
-    <lastmod>2024-11-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

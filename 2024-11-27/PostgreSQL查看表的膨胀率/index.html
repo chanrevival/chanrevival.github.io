@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"Valine","storage":true,"lazyload":true,"nav":{"valine":{"order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="PostgreSQL查看表的膨胀率查看表膨胀（对所有表进行膨胀率排序），取前10个 123456789101112SELECT    schemaname||&#x27;.&#x27;||relname as table_name,    pg_size_pretty(pg_relation_size(schemaname||&#x27;.&#x27;||relname)) as table_si">
+  <meta name="description" content="谈谈PostgreSQL数据库的表膨胀什么是PostgreSQL数据库的表膨胀？PostgreSQL 数据库的 表膨胀，简单来说，就是表的数据存储空间变得比实际需要的要大。膨胀现象发生时，虽然表中的数据量没有显著增加，但数据库占用的磁盘空间却比实际数据量大很多。这种现象会影响性能，导致查询速度变慢，并且浪费磁盘空间。 为什么会产生表膨胀？表膨胀的主要原因通常有以下几个：  更新和删除操作导致的“死">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PostgreSQL查看表的膨胀率">
+<meta property="og:title" content="谈谈PostgreSQL数据库的表膨胀">
 <meta property="og:url" content="https://chanrevival.github.io/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/index.html">
 <meta property="og:site_name" content="Chan Revival Sky">
-<meta property="og:description" content="PostgreSQL查看表的膨胀率查看表膨胀（对所有表进行膨胀率排序），取前10个 123456789101112SELECT    schemaname||&#x27;.&#x27;||relname as table_name,    pg_size_pretty(pg_relation_size(schemaname||&#x27;.&#x27;||relname)) as table_si">
+<meta property="og:description" content="谈谈PostgreSQL数据库的表膨胀什么是PostgreSQL数据库的表膨胀？PostgreSQL 数据库的 表膨胀，简单来说，就是表的数据存储空间变得比实际需要的要大。膨胀现象发生时，虽然表中的数据量没有显著增加，但数据库占用的磁盘空间却比实际数据量大很多。这种现象会影响性能，导致查询速度变慢，并且浪费磁盘空间。 为什么会产生表膨胀？表膨胀的主要原因通常有以下几个：  更新和删除操作导致的“死">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-27T14:34:07.000Z">
-<meta property="article:modified_time" content="2024-11-27T14:37:29.314Z">
+<meta property="article:modified_time" content="2024-12-26T08:00:29.483Z">
 <meta property="article:author" content="Chan Revival">
 <meta property="article:tag" content="数据库">
 <meta property="article:tag" content="PostgreSQL">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>PostgreSQL查看表的膨胀率 | Chan Revival Sky</title>
+  <title>谈谈PostgreSQL数据库的表膨胀 | Chan Revival Sky</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
     <script data-pjax>
@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">49</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章 - Posts<span class="badge">50</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -258,7 +258,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PostgreSQL查看表的膨胀率
+          谈谈PostgreSQL数据库的表膨胀
         </h1>
 
         <div class="post-meta">
@@ -267,10 +267,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-11-27 22:34:07 / 修改时间：22:37:29" itemprop="dateCreated datePublished" datetime="2024-11-27T22:34:07+08:00">2024-11-27</time>
+              <time title="创建时间：2024-11-27 22:34:07" itemprop="dateCreated datePublished" datetime="2024-11-27T22:34:07+08:00">2024-11-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-26 16:00:29" itemprop="dateModified" datetime="2024-12-26T16:00:29+08:00">2024-12-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -283,10 +289,14 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">数据库技术</span></a>
                 </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/PostgreSQL/" itemprop="url" rel="index"><span itemprop="name">PostgreSQL</span></a>
+                </span>
             </span>
 
           
-            <span id="/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/" class="post-meta-item leancloud_visitors" data-flag-title="PostgreSQL查看表的膨胀率" title="阅读次数">
+            <span id="/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/" class="post-meta-item leancloud_visitors" data-flag-title="谈谈PostgreSQL数据库的表膨胀" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -319,14 +329,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>651</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -338,7 +348,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="PostgreSQL查看表的膨胀率"><a href="#PostgreSQL查看表的膨胀率" class="headerlink" title="PostgreSQL查看表的膨胀率"></a>PostgreSQL查看表的膨胀率</h1><p>查看表膨胀（对所有表进行膨胀率排序），取前10个</p>
+        <h1 id="谈谈PostgreSQL数据库的表膨胀"><a href="#谈谈PostgreSQL数据库的表膨胀" class="headerlink" title="谈谈PostgreSQL数据库的表膨胀"></a>谈谈PostgreSQL数据库的表膨胀</h1><h2 id="什么是PostgreSQL数据库的表膨胀？"><a href="#什么是PostgreSQL数据库的表膨胀？" class="headerlink" title="什么是PostgreSQL数据库的表膨胀？"></a>什么是PostgreSQL数据库的表膨胀？</h2><p>PostgreSQL 数据库的 表膨胀，简单来说，就是表的数据存储空间变得比实际需要的要大。膨胀现象发生时，虽然表中的数据量没有显著增加，但数据库占用的磁盘空间却比实际数据量大很多。这种现象会影响性能，导致查询速度变慢，并且浪费磁盘空间。</p>
+<h2 id="为什么会产生表膨胀？"><a href="#为什么会产生表膨胀？" class="headerlink" title="为什么会产生表膨胀？"></a>为什么会产生表膨胀？</h2><p>表膨胀的主要原因通常有以下几个：</p>
+<ol>
+<li><p>更新和删除操作导致的“死元组”： PostgreSQL 在执行更新（UPDATE）或删除（DELETE）操作时，不是直接修改或删除原来的数据，而是将旧数据标记为“死元组”，然后在新位置插入新数据。这意味着，原来数据的位置还是被保留在磁盘上，直到进行清理（VACUUM）。如果没有及时执行 VACUUM 操作，死元组就会不断积累，导致表膨胀。</p>
+</li>
+<li><p>MVCC（多版本并发控制）： PostgreSQL 使用多版本并发控制（MVCC）来处理事务。每个事务都会为每一行数据创建一个版本（tuple），并保持旧版本的数据直到事务完全结束。由于事务未提交或者被回滚时，旧版本不会立即清理，造成空间浪费。</p>
+</li>
+<li><p>索引膨胀： 索引在插入、删除、更新数据时，也会产生膨胀。特别是在大量数据删除或更新后，索引结构没有及时整理，导致索引占用更多空间。</p>
+</li>
+<li><p>自增列： 对于包含自增列（如 serial 或 bigserial）的表，删除某些数据后，自增的序列号并不会回收，这可能会导致空间浪费。</p>
+</li>
+</ol>
+<h2 id="检查表膨胀情况的两种方法"><a href="#检查表膨胀情况的两种方法" class="headerlink" title="检查表膨胀情况的两种方法"></a>检查表膨胀情况的两种方法</h2><h3 id="方法一-查询pg-stat-user-tables、pg-total-relation-size表"><a href="#方法一-查询pg-stat-user-tables、pg-total-relation-size表" class="headerlink" title="方法一 查询pg_stat_user_tables、pg_total_relation_size表"></a>方法一 查询pg_stat_user_tables、pg_total_relation_size表</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    relname <span class="keyword">AS</span> <span class="built_in">table_name</span>,</span><br><span class="line">    pg_size_pretty(pg_total_relation_size(relid)) <span class="keyword">AS</span> total_size,</span><br><span class="line">    pg_size_pretty(pg_relation_size(relid)) <span class="keyword">AS</span> data_size,</span><br><span class="line">    pg_size_pretty(pg_total_relation_size(relid) - pg_relation_size(relid)) <span class="keyword">AS</span> extra_size</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    pg_stat_user_tables;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h4><p>全方位空间使用情况：<br>pg_total_relation_size 不仅包括表的数据部分（由 pg_relation_size 提供），还包括索引、TOAST 表（用于存储大字段，如 TEXT、BYTEA）等的空间。因此，通过这一方法，你可以看到表占用的总空间，并能知道膨胀的具体来源（是表数据部分，还是索引，或者 TOAST 表）。<br>这种方式的优势在于，它提供了表的总体空间利用情况，能够识别出索引和 TOAST 的膨胀问题，尤其是在有大量大字段数据时，表膨胀的情况可能会集中在这些地方。</p>
+<h4 id="直观的空间差异"><a href="#直观的空间差异" class="headerlink" title="直观的空间差异"></a>直观的空间差异</h4><p> 通过计算 pg_total_relation_size 和 pg_relation_size 的差异，你能直观地看到有多少空间被“浪费”或未被有效使用，进而推测出是否存在膨胀问题。</p>
+<h4 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h4><p>这种方法提供的是空间层面的信息，更多关注的是表和索引所占用的物理空间，但它并没有直接告诉你膨胀背后的根本原因（比如死元组的数量）。即使空间看起来膨胀，背后的原因也可能是多样的：可能是死元组、索引膨胀，或者 TOAST 表的膨胀。</p>
+<h3 id="方法二-查询pg-stat-all-tables表的n-dead-tup、n-live-tup字段"><a href="#方法二-查询pg-stat-all-tables表的n-dead-tup、n-live-tup字段" class="headerlink" title="方法二 查询pg_stat_all_tables表的n_dead_tup、n_live_tup字段"></a>方法二 查询pg_stat_all_tables表的n_dead_tup、n_live_tup字段</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    relname <span class="keyword">AS</span> <span class="built_in">table_name</span>,</span><br><span class="line">    n_dead_tup <span class="keyword">AS</span> dead_tuples,</span><br><span class="line">    n_live_tup <span class="keyword">AS</span> live_tuples</span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    pg_stat_all_tables</span><br><span class="line"><span class="keyword">WHERE</span> </span><br><span class="line">    n_dead_tup &gt; <span class="number">0</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h4><p>死元组的数量：<br>通过查看 n_dead_tup（死元组数），你可以知道表中有多少数据行实际上已经被删除或者更新，但由于 PostgreSQL 使用 MVCC（多版本并发控制）机制，这些死元组并没有被及时清理，导致了表空间的浪费。<br>n_dead_tup 能够直接反映出死元组的积累情况，是判断表是否膨胀的一个非常重要的指标。通常，死元组越多，表的膨胀程度就越高。</p>
+<p>反映表的实际使用情况：<br>n_live_tup 提供的是表中的“活跃”元组数，它代表实际被有效使用的记录数。通过 n_dead_tup 和 n_live_tup 的比例，你可以评估表中死元组的比例，以及是否需要执行 VACUUM 操作来清理这些死元组。</p>
+<p>简单直接：<br>这种方法直接反映出数据库表的实际“健康”状况，特别是死元组的积累情况，适合用于判断是否存在性能问题。可以帮助你判断是否需要进行 VACUUM 或 VACUUM FULL 操作。</p>
+<h4 id="限制-1"><a href="#限制-1" class="headerlink" title="限制"></a>限制</h4><p>不能反映空间的总体使用情况：<br>这种方式只能反映死元组的数量，并无法告诉你表的总空间使用情况或是否存在索引膨胀等其他问题。它主要关注的是表的“逻辑”大小，而不涉及表的物理存储空间。</p>
+<h4 id="两种方法的对比总结"><a href="#两种方法的对比总结" class="headerlink" title="两种方法的对比总结"></a>两种方法的对比总结</h4><table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><strong>方式一（<code>pg_stat_user_tables</code> + <code>pg_total_relation_size</code>）</strong></th>
+<th><strong>方式二（<code>pg_stat_all_tables</code> + <code>n_dead_tup</code>）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>关注点</strong></td>
+<td>表和索引的实际存储空间占用，特别关注表的物理空间膨胀情况。</td>
+<td>死元组的数量，反映表的“健康”状态，是否需要清理。</td>
+</tr>
+<tr>
+<td><strong>能否检测死元组</strong></td>
+<td>不直接提供死元组的数量，但可以通过空间差异间接判断。</td>
+<td>直接显示死元组的数量，判断表的膨胀程度。</td>
+</tr>
+<tr>
+<td><strong>能否检测索引膨胀</strong></td>
+<td>能检测索引的空间占用，通过差异来判断索引膨胀情况。</td>
+<td>无法直接检测索引膨胀情况。</td>
+</tr>
+<tr>
+<td><strong>优缺点</strong></td>
+<td>提供整体的空间占用视图，能够识别空间浪费的具体位置（表、索引、TOAST等）。</td>
+<td>专注于死元组，提供的是逻辑上的膨胀信息，更简洁直观，但无法反映索引和其他因素。</td>
+</tr>
+<tr>
+<td><strong>是否适合用于定期监控</strong></td>
+<td>是，可以定期检查表的空间占用情况，发现物理空间膨胀。</td>
+<td>是，特别适用于检查死元组积累，判断是否需要清理。</td>
+</tr>
+</tbody></table>
+<h4 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h4><p>两种方式可以结合使用，互为补充：</p>
+<p>使用 pg_stat_user_tables 和 pg_total_relation_size 来定期检查表的总体空间占用情况，确保没有由于索引膨胀或其他原因导致表占用过多的空间。<br>使用 pg_stat_all_tables 的 n_dead_tup 和 n_live_tup 来专注于检查死元组的积累情况，及时发现是否需要执行 VACUUM 或 VACUUM FULL 操作。</p>
+<h2 id="其它参考SQL"><a href="#其它参考SQL" class="headerlink" title="其它参考SQL"></a>其它参考SQL</h2><p>查看表膨胀（对所有表进行膨胀率排序），取前10个</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    schemaname||<span class="string">&#x27;.&#x27;</span>||relname <span class="keyword">as</span> <span class="built_in">table_name</span>,</span><br><span class="line">    pg_size_pretty(pg_relation_size(schemaname||<span class="string">&#x27;.&#x27;</span>||relname)) <span class="keyword">as</span> table_size,</span><br><span class="line">    n_dead_tup,</span><br><span class="line">    n_live_tup,</span><br><span class="line">    round(n_dead_tup * <span class="number">100</span> / (n_live_tup + n_dead_tup),<span class="number">2</span>) <span class="keyword">AS</span> dead_tup_ratio</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    pg_stat_all_tables</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    n_dead_tup &gt;= <span class="number">1000</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> dead_tup_ratio <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 
 <p>查看单张表的膨胀率</p>
@@ -432,7 +501,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87"><span class="nav-number">1.</span> <span class="nav-text">PostgreSQL查看表的膨胀率</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%88%E8%B0%88PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%A1%A8%E8%86%A8%E8%83%80"><span class="nav-number">1.</span> <span class="nav-text">谈谈PostgreSQL数据库的表膨胀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFPostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%A1%A8%E8%86%A8%E8%83%80%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">什么是PostgreSQL数据库的表膨胀？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%BA%A7%E7%94%9F%E8%A1%A8%E8%86%A8%E8%83%80%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">为什么会产生表膨胀？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E8%A1%A8%E8%86%A8%E8%83%80%E6%83%85%E5%86%B5%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">检查表膨胀情况的两种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80-%E6%9F%A5%E8%AF%A2pg-stat-user-tables%E3%80%81pg-total-relation-size%E8%A1%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法一 查询pg_stat_user_tables、pg_total_relation_size表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E8%A7%82%E7%9A%84%E7%A9%BA%E9%97%B4%E5%B7%AE%E5%BC%82"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">直观的空间差异</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%90%E5%88%B6"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">限制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C-%E6%9F%A5%E8%AF%A2pg-stat-all-tables%E8%A1%A8%E7%9A%84n-dead-tup%E3%80%81n-live-tup%E5%AD%97%E6%AE%B5"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法二 查询pg_stat_all_tables表的n_dead_tup、n_live_tup字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF-1"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">优势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%90%E5%88%B6-1"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">两种方法的对比总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">最佳实践</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E5%8F%82%E8%80%83SQL"><span class="nav-number">1.4.</span> <span class="nav-text">其它参考SQL</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -446,7 +515,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">50</span>
           <span class="site-state-item-name">日志Posts</span>
         </a>
       </div>
@@ -513,12 +582,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">232k</span>
+    <span title="站点总字数">239k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:31</span>
+    <span title="站点阅读时长">3:37</span>
 </div>
   <div class="powered-by">本站使用主题 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 
   </div>

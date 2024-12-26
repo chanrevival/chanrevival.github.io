@@ -21,17 +21,19 @@
     var CONFIG = {"hostname":"chanrevival.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"Valine","storage":true,"lazyload":true,"nav":{"valine":{"order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="描述">
-<meta property="og:type" content="website">
+  <meta name="description" content="谈谈生产环境中PostgreSQL参数的意义archive_commandarchive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’ auto_explain.log_analyzeauto_explain.log_analyze &#x3D; true auto_explain.log_min_duration &#x3D;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Chan Revival Sky">
-<meta property="og:url" content="https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/page/3/index.html">
+<meta property="og:url" content="https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/index.html">
 <meta property="og:site_name" content="Chan Revival Sky">
-<meta property="og:description" content="描述">
+<meta property="og:description" content="谈谈生产环境中PostgreSQL参数的意义archive_commandarchive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’ auto_explain.log_analyzeauto_explain.log_analyze &#x3D; true auto_explain.log_min_duration &#x3D;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-12-26T08:42:34.245Z">
+<meta property="article:modified_time" content="2024-12-26T09:32:01.591Z">
 <meta property="article:author" content="Chan Revival">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/page/3/">
+<link rel="canonical" href="https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 技术分享 | Chan Revival Sky</title>
+  <title> | Chan Revival Sky</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script>
     <script data-pjax>
@@ -233,60 +235,145 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Chan Revival">
+      <meta itemprop="description" content="描述">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chan Revival Sky">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-26 16:42:34 / 修改时间：17:32:01" itemprop="dateCreated datePublished" datetime="2024-12-26T16:42:34+08:00">2024-12-26</time>
+            </span>
+
+          
+            <span id="/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/" class="post-meta-item leancloud_visitors" data-flag-title="" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">技术分享
-          <small>分类</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2013</span>
+        <h1 id="谈谈生产环境中PostgreSQL参数的意义"><a href="#谈谈生产环境中PostgreSQL参数的意义" class="headerlink" title="谈谈生产环境中PostgreSQL参数的意义"></a>谈谈生产环境中PostgreSQL参数的意义</h1><h1 id="archive-command"><a href="#archive-command" class="headerlink" title="archive_command"></a>archive_command</h1><p>archive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’</p>
+<h1 id="auto-explain-log-analyze"><a href="#auto-explain-log-analyze" class="headerlink" title="auto_explain.log_analyze"></a>auto_explain.log_analyze</h1><p>auto_explain.log_analyze &#x3D; true</p>
+<p>auto_explain.log_min_duration &#x3D; ‘300ms’</p>
+<p>auto_explain.log_min_duration &#x3D; ‘300mss’</p>
+<p>auto_explain.log_timing &#x3D; on</p>
+<p>auto_explain.log_verbose &#x3D; off</p>
+<p>autovacuum &#x3D; on</p>
+<p>autovacuum_analyze_scale_factor &#x3D; 0.01</p>
+<p>autovacuum_freeze_max_age &#x3D; 1200000000</p>
+<p>autovacuum_max_workers &#x3D; 12</p>
+<p>autovacuum_multixact_freeze_max_age &#x3D; 1250000000<br>autovacuum_vacuum_cost_delay &#x3D; 0ms<br>autovacuum_vacuum_scale_factor &#x3D; 0.02<br>checkpoint_completion_target &#x3D; 0.5<br>checkpoint_flush_after &#x3D; 0<br>checkpoint_timeout &#x3D; 30min<br>checkpoint_timeout &#x3D; 30min<br>default_text_search_config &#x3D; ‘pg_catalog.english’<br>enable_partitionwise_aggregate &#x3D; on<br>enable_partitionwise_join &#x3D; on<br>full_page_writes &#x3D; on<br>hot_standby_feedback &#x3D; off<br>huge_pages &#x3D; try<br>idle_in_transaction_session_timeout &#x3D; ‘6h’<br>idle_in_transaction_session_timeout&#x3D;3600000<br>jit&#x3D;off<br>lc_messages &#x3D; ‘C’<br>lc_monetary &#x3D; ‘C’<br>lc_numeric &#x3D; ‘C’<br>lc_time &#x3D; ‘C’<br>log_autovacuum_min_duration &#x3D; 0<br>log_checkpoints &#x3D; on<br>log_destination&#x3D;csvlog<br>log_error_verbosity &#x3D; verbose<br>log_filename &#x3D; ‘postgresql-%H.log’<br>log_lock_waits &#x3D; on<br>log_min_duration_statement &#x3D; 3s<br>log_rotation_age &#x3D; 1h<br>log_rotation_size &#x3D; 1GB<br>log_statement &#x3D; ‘ddl’<br>log_temp_files &#x3D; 256MB<br>log_truncate_on_rotation &#x3D; on<br>maintenance_work_mem &#x3D; 3GB<br>maintenance_work_mem &#x3D; 3GB<br>max_connections &#x3D; 5000<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers_per_gather &#x3D; 0<br>max_replication_slots &#x3D; 64<br>max_standby_archive_delay &#x3D; 120s<br>max_standby_streaming_delay &#x3D; 120s<br>max_sync_workers_per_subscription &#x3D; 8<br>max_sync_workers_per_subscription &#x3D; 8<br>max_wal_senders &#x3D; 64<br>max_wal_size &#x3D; 80GB<br>min_wal_size &#x3D; 12GB<br>old_snapshot_threshold &#x3D; 6h<br>parallel_leader_participation &#x3D; on<br>pg_stat_statements.max &#x3D; 50<br>pgsentinel_pgssh.enable &#x3D; true<br>random_page_cost &#x3D; 1.1<br>shared_buffers &#x3D; 64GB<br>shared_preload_libraries &#x3D; ‘pg_stat_statements,auto_explain,telepg_monitor’<br>statement_timeout&#x3D;’24h’<br>synchronous_commit &#x3D; remote_write<br>tcp_keepalives_count &#x3D; 10<br>tcp_keepalives_idle &#x3D; 60<br>tcp_keepalives_interval &#x3D; 10<br>temp_file_limit&#x3D;20240000<br>track_activity_query_size &#x3D; 2048<br>track_functions &#x3D; pl<br>track_io_timing &#x3D; off<br>unix_socket_directories &#x3D; ‘., &#x2F;tmp’<br>unix_socket_permissions &#x3D; 0700<br>vacuum_freeze_table_age &#x3D; 200000000<br>vacuum_multixact_freeze_table_age &#x3D; 200000000<br>wal_buffers &#x3D; 32MB<br>wal_compression &#x3D; on<br>wal_keep_segments &#x3D; 5000<br>wal_receiver_status_interval &#x3D; 1s<br>work_mem &#x3D; 32MB<br>#password_encryption &#x3D; scram-sha-256<br>#pg_stat_statements.track &#x3D; none</p>
+<h2 id="shared-buffers-64GB"><a href="#shared-buffers-64GB" class="headerlink" title="shared_buffers &#x3D; 64GB"></a>shared_buffers &#x3D; 64GB</h2><p>shared_buffers (integer)</p>
+<p>Sets the amount of memory the database server uses for shared memory buffers. The default is typically 128 megabytes (128MB), but might be less if your kernel settings will not support it (as determined during initdb). This setting must be at least 128 kilobytes. However, settings significantly higher than the minimum are usually needed for good performance. If this value is specified without units, it is taken as blocks, that is BLCKSZ bytes, typically 8kB. (Non-default values of BLCKSZ change the minimum value.) This parameter can only be set at server start.</p>
+<p>If you have a dedicated database server with 1GB or more of RAM, a reasonable starting value for shared_buffers is 25% of the memory in your system. There are some workloads where even larger settings for shared_buffers are effective, but because PostgreSQL also relies on the operating system cache, it is unlikely that an allocation of more than 40% of RAM to shared_buffers will work better than a smaller amount. Larger settings for shared_buffers usually require a corresponding increase in max_wal_size, in order to spread out the process of writing large quantities of new or changed data over a longer period of time.</p>
+<p>On systems with less than 1GB of RAM, a smaller percentage of RAM is appropriate, so as to leave adequate space for the operating system.</p>
+<p>max_connections (integer)</p>
+<pre><code>Determines the maximum number of concurrent connections to the database server. The default is typically 100 connections, but might be less if your kernel settings will not support it (as determined during initdb). This parameter can only be set at server start.
+
+When running a standby server, you must set this parameter to the same or higher value than on the master server. Otherwise, queries will not be allowed in the standby server.
+</code></pre>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2013-11-10T09:35:49+08:00"
-              content="2013-11-10">
-          11-10
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2013-11-10/Oracle%E6%97%A5%E5%BF%97%E6%8C%96%E6%8E%98%E6%95%B0%E4%BE%8B/" itemprop="url">
-            <span itemprop="name">Oracle日志挖掘数例</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024-12-18/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%82%E6%95%B0%E6%8E%A2%E7%A9%B6/" rel="prev" title="生产环境PostgreSQL数据库参数探究">
+      <i class="fa fa-chevron-left"></i> 生产环境PostgreSQL数据库参数探究
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">1</a><a class="page-number" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -333,6 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">谈谈生产环境中PostgreSQL参数的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#archive-command"><span class="nav-number">2.</span> <span class="nav-text">archive_command</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#auto-explain-log-analyze"><span class="nav-number">3.</span> <span class="nav-text">auto_explain.log_analyze</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shared-buffers-64GB"><span class="nav-number">3.1.</span> <span class="nav-text">shared_buffers &#x3D; 64GB</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
