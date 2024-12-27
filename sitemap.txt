@@ -1,5 +1,11 @@
-https://chanrevival.github.io/rankings/text_editors/index.html
+https://chanrevival.github.io/rankings/web_browser/index.html
+https://chanrevival.github.io/rankings/web_browser/vx.json
 https://chanrevival.github.io/rankings/vx.json
+https://chanrevival.github.io/rankings/data_visualization_monitoring/vx.json
+https://chanrevival.github.io/rankings/file_sync_bak/data_visualization_monitoring/vx.json
+https://chanrevival.github.io/rankings/data_visualization_monitoring/index.html
+https://chanrevival.github.io/rankings/file_sync_bak/data_visualization_monitoring/index.html
+https://chanrevival.github.io/rankings/text_editors/index.html
 https://chanrevival.github.io/rankings/file_sync_bak/index.html
 https://chanrevival.github.io/rankings/file_sync_bak/vx.json
 https://chanrevival.github.io/rankings/system_software/vx.json

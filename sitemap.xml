@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://chanrevival.github.io/rankings/text_editors/index.html</loc>
+    <loc>https://chanrevival.github.io/rankings/web_browser/index.html</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/rankings/web_browser/vx.json</loc>
     
     <lastmod>2024-12-27</lastmod>
     
@@ -12,6 +21,51 @@
   
   <url>
     <loc>https://chanrevival.github.io/rankings/vx.json</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/rankings/data_visualization_monitoring/vx.json</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/rankings/file_sync_bak/data_visualization_monitoring/vx.json</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/rankings/data_visualization_monitoring/index.html</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/rankings/file_sync_bak/data_visualization_monitoring/index.html</loc>
+    
+    <lastmod>2024-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/rankings/text_editors/index.html</loc>
     
     <lastmod>2024-12-27</lastmod>
     
