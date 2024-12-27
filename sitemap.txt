@@ -1,9 +1,10 @@
+https://chanrevival.github.io/rankings/text_editors/index.html
+https://chanrevival.github.io/rankings/vx.json
 https://chanrevival.github.io/rankings/file_sync_bak/index.html
 https://chanrevival.github.io/rankings/file_sync_bak/vx.json
-https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/
 https://chanrevival.github.io/rankings/system_software/vx.json
 https://chanrevival.github.io/rankings/system_software/index.html
-https://chanrevival.github.io/rankings/vx.json
+https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/
 https://chanrevival.github.io/2024-12-17/%E7%B2%BE%E9%80%89%E6%A6%9C%E5%8D%95_Syncthing/
 https://chanrevival.github.io/internal_use/AI%E6%8F%90%E7%A4%BA%E8%AF%8D.html
 https://chanrevival.github.io/internal_use/vx.json
