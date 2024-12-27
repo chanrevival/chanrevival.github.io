@@ -119,15 +119,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/2024-12-17/%E7%B2%BE%E9%80%89%E6%A6%9C%E5%8D%95_Syncthing/</loc>
-    
-    <lastmod>2024-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/internal_use/AI%E6%8F%90%E7%A4%BA%E8%AF%8D.html</loc>
     
     <lastmod>2024-12-27</lastmod>
@@ -1098,20 +1089,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/tags/Syncthing/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/File/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1268,13 +1245,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E7%B2%BE%E9%80%89%E6%A6%9C%E5%8D%95/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -1282,21 +1252,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E7%B2%BE%E9%80%89%E6%A6%9C%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/</loc>
-    <lastmod>2024-12-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/categories/%E7%B2%BE%E9%80%89%E6%A6%9C%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/</loc>
     <lastmod>2024-12-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
