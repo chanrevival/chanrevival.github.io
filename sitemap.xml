@@ -2,6 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chanrevival.github.io/2024-12-18/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%82%E6%95%B0%E6%8E%A2%E7%A9%B6/</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/vx.json</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/index.html</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photos/20150927%E5%B9%BF%E5%B7%9E%E5%8D%97%E7%B2%A4%E5%9B%AD%E5%AE%9D%E5%A2%A8%E5%9B%AD%E6%B8%B8%E8%AE%B0/vx.json</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photos/20150927%E5%B9%BF%E5%B7%9E%E5%8D%97%E7%B2%A4%E5%9B%AD%E5%AE%9D%E5%A2%A8%E5%9B%AD%E6%B8%B8%E8%AE%B0/index.html</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photos/20170324%E5%8C%97%E4%BA%AC%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/index.html</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photos/20170324%E5%8C%97%E4%BA%AC%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/vx.json</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/thoughts/vx.json</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/thoughts/index.html</loc>
+    
+    <lastmod>2024-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chanrevival.github.io/photos/20151024%E5%B9%BF%E5%B7%9E%E8%8E%B2%E8%8A%B1%E5%B1%B1%E6%B8%B8%E8%AE%B0/index.html</loc>
     
     <lastmod>2024-12-28</lastmod>
@@ -30,60 +111,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/photos/vx.json</loc>
-    
-    <lastmod>2024-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photos/20170324%E5%8C%97%E4%BA%AC%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/vx.json</loc>
-    
-    <lastmod>2024-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photos/20170324%E5%8C%97%E4%BA%AC%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%AE%B0/index.html</loc>
-    
-    <lastmod>2024-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photos/20150927%E5%B9%BF%E5%B7%9E%E5%8D%97%E7%B2%A4%E5%9B%AD%E5%AE%9D%E5%A2%A8%E5%9B%AD%E6%B8%B8%E8%AE%B0/vx.json</loc>
-    
-    <lastmod>2024-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photos/20150927%E5%B9%BF%E5%B7%9E%E5%8D%97%E7%B2%A4%E5%9B%AD%E5%AE%9D%E5%A2%A8%E5%9B%AD%E6%B8%B8%E8%AE%B0/index.html</loc>
-    
-    <lastmod>2024-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/vx.json</loc>
-    
-    <lastmod>2024-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/index.html</loc>
     
     <lastmod>2024-12-28</lastmod>
     
@@ -254,24 +281,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/thoughts/vx.json</loc>
-    
-    <lastmod>2024-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/thoughts/index.html</loc>
-    
-    <lastmod>2024-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/2011-12-25/Alone_Thinking_Under_the_Moon/</loc>
     
     <lastmod>2024-12-26</lastmod>
@@ -309,15 +318,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/2009-01-01/There_s_a_way_of_life/</loc>
-    
-    <lastmod>2024-12-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/2024-12-18/%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8F%82%E6%95%B0%E6%8E%A2%E7%A9%B6/</loc>
     
     <lastmod>2024-12-26</lastmod>
     
