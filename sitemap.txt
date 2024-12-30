@@ -1,11 +1,12 @@
-https://chanrevival.github.io/2024-12-30/%E6%95%85%E4%B9%A1%E2%80%94%E2%80%94%E7%A6%8F%E5%B7%9E/
+https://chanrevival.github.io/about/vx.json
+https://chanrevival.github.io/about/index.html
 https://chanrevival.github.io/vx.json
+https://chanrevival.github.io/2024-12-30/%E6%95%85%E4%B9%A1%E2%80%94%E2%80%94%E7%A6%8F%E5%B7%9E/
 https://chanrevival.github.io/thoughts/vx.json
 https://chanrevival.github.io/tags/vx.json
 https://chanrevival.github.io/rankings/vx.json
 https://chanrevival.github.io/internal_use/vx.json
 https://chanrevival.github.io/categories/vx.json
-https://chanrevival.github.io/about/vx.json
 https://chanrevival.github.io/photos/vx.json
 https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/vx.json
 https://chanrevival.github.io/photos/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8%E7%AD%89%E6%B8%B8%E8%AE%B0/index.html
@@ -32,7 +33,6 @@ https://chanrevival.github.io/rankings/system_software/index.html
 https://chanrevival.github.io/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/
 https://chanrevival.github.io/internal_use/AI%E6%8F%90%E7%A4%BA%E8%AF%8D.html
 https://chanrevival.github.io/rankings/index.html
-https://chanrevival.github.io/about/index.html
 https://chanrevival.github.io/2011-12-25/Alone_Thinking_Under_the_Moon/
 https://chanrevival.github.io/2011-12-25/%E9%9A%8F%E7%AC%9420111225%E2%80%94%E2%80%94%E6%9C%88%E4%B8%8B%E7%8B%AC%E6%80%9D/
 https://chanrevival.github.io/2009-01-19/Write_During_Spring_Festival/
