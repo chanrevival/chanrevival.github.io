@@ -125,11 +125,9 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 科技前沿 </category>
           
-          <category> 数据库技术 </category>
-          
-          <category> PostgreSQL </category>
+          <category> 数据库系统 </category>
           
       </categories>
       
@@ -261,11 +259,9 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 科技前沿 </category>
           
-          <category> 数据库技术 </category>
-          
-          <category> PostgreSQL </category>
+          <category> 数据库系统 </category>
           
       </categories>
       
@@ -392,11 +388,9 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 科技前沿 </category>
           
-          <category> 数据库技术 </category>
-          
-          <category> PostgreSQL </category>
+          <category> 数据库系统 </category>
           
       </categories>
       
@@ -422,6 +416,14 @@
       
         <content type="html"><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure><h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
+      
+      <categories>
+          
+          <category> 科技前沿 </category>
+          
+          <category> 数据库系统 </category>
+          
+      </categories>
       
       
     </entry>
@@ -473,11 +475,9 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 科技前沿 </category>
           
-          <category> 数据库技术 </category>
-          
-          <category> PostgreSQL </category>
+          <category> 数据库系统 </category>
           
       </categories>
       
@@ -1031,9 +1031,9 @@
             
             <tag> 文件系统 </tag>
             
-            <tag> Solaris </tag>
-            
             <tag> 操作系统 </tag>
+            
+            <tag> Solaris </tag>
             
         </tags>
       
@@ -1095,9 +1095,9 @@
       
         <tags>
             
-            <tag> 操作系统 </tag>
-            
             <tag> SunOS </tag>
+            
+            <tag> 操作系统 </tag>
             
             <tag> 软件安装 </tag>
             
@@ -1126,9 +1126,9 @@
       
         <tags>
             
-            <tag> Solaris </tag>
-            
             <tag> 操作系统 </tag>
+            
+            <tag> Solaris </tag>
             
             <tag> SSH </tag>
             
@@ -1181,9 +1181,9 @@
       
       <categories>
           
-          <category> 技术分享 </category>
+          <category> 科技前沿 </category>
           
-          <category> 数据库技术 </category>
+          <category> 数据库系统 </category>
           
       </categories>
       
