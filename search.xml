@@ -207,6 +207,21 @@
       </tags>
   </entry>
   <entry>
+    <title>Essays, December 25, 2011 — Alone Thinking Under the Moon</title>
+    <url>/2011-12-25/Alone_Thinking_Under_the_Moon/</url>
+    <content><![CDATA[<h1 id="Essays-December-25-2011-—-Alone-Thinking-Under-the-Moon"><a href="#Essays-December-25-2011-—-Alone-Thinking-Under-the-Moon" class="headerlink" title="Essays, December 25, 2011 — Alone Thinking Under the Moon"></a>Essays, December 25, 2011 — Alone Thinking Under the Moon</h1><p>Tonight, the moonlight is especially bright,<br>I sit alone, quietly in deep thought.<br>Brewing a pot of tea, the fragrance lingers on my hands,<br>When will I be able to gather the moon and dream of returning to my hometown?</p>
+<p>The faint starlight makes the air feel slightly cool,<br>Who would wish to drape the cloak of dreams over me?<br>What does the fairy in the moon look like,<br>And what scene does the dawn moon and gentle breeze leave behind?</p>
+<p>You once softly whispered in my ear,<br>That on the other side of the mountain lies a beautiful dream.<br>As time passes, everything changes,<br>But faith remains unchanged, soaring eternally.</p>
+<p>Yesterday’s regrets are today’s dreams,<br>Can they courageously and freely soar?<br>The musings of one, the thoughts of one,<br>Finally lead me into a dream of endless imagination.</p>
+]]></content>
+      <categories>
+        <category>Essays</category>
+      </categories>
+      <tags>
+        <tag>Essays</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS yum源常用配置</title>
     <url>/2024-12-13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="CentOS-yum源常用配置"><a href="#CentOS-yum源常用配置" class="headerlink" title="CentOS yum源常用配置"></a>CentOS yum源常用配置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p>直接挂载使用ISO镜像</p>
@@ -260,21 +275,6 @@
         <tag>OS</tag>
         <tag>yum</tag>
         <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Essays, December 25, 2011 — Alone Thinking Under the Moon</title>
-    <url>/2011-12-25/Alone_Thinking_Under_the_Moon/</url>
-    <content><![CDATA[<h1 id="Essays-December-25-2011-—-Alone-Thinking-Under-the-Moon"><a href="#Essays-December-25-2011-—-Alone-Thinking-Under-the-Moon" class="headerlink" title="Essays, December 25, 2011 — Alone Thinking Under the Moon"></a>Essays, December 25, 2011 — Alone Thinking Under the Moon</h1><p>Tonight, the moonlight is especially bright,<br>I sit alone, quietly in deep thought.<br>Brewing a pot of tea, the fragrance lingers on my hands,<br>When will I be able to gather the moon and dream of returning to my hometown?</p>
-<p>The faint starlight makes the air feel slightly cool,<br>Who would wish to drape the cloak of dreams over me?<br>What does the fairy in the moon look like,<br>And what scene does the dawn moon and gentle breeze leave behind?</p>
-<p>You once softly whispered in my ear,<br>That on the other side of the mountain lies a beautiful dream.<br>As time passes, everything changes,<br>But faith remains unchanged, soaring eternally.</p>
-<p>Yesterday’s regrets are today’s dreams,<br>Can they courageously and freely soar?<br>The musings of one, the thoughts of one,<br>Finally lead me into a dream of endless imagination.</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
       </tags>
   </entry>
   <entry>
@@ -584,6 +584,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Essays, March 7, 2011 — Early Spring Flower Rain Scene</title>
+    <url>/2011-03-07/Early_Spring_Flower_Rain_Scene/</url>
+    <content><![CDATA[<h1 id="Essays-March-7-2011-—-Early-Spring-Flower-Rain-Scene"><a href="#Essays-March-7-2011-—-Early-Spring-Flower-Rain-Scene" class="headerlink" title="Essays, March 7, 2011 — Early Spring Flower Rain Scene"></a>Essays, March 7, 2011 — Early Spring Flower Rain Scene</h1><p>Essays, March 7, 2011 — Early Spring Flower Rain Scene</p>
+<p>The campus after the rain is refreshing. The water droplets have washed away the dust from the leaves, and each green leaf seems to have been carefully cleaned.<br>The mud and sand on the blue-and-white marble have also been washed away, gleaming and reflecting the newly bloomed flowers along the path.</p>
+<p>The campus after the rain is beautiful. The raindrops have awakened the flowers in the bushes, and like a busy market, they bloom all at once.<br>The gentle drizzle, the shimmering lake, the clear bird calls, and the soft whispers of the flowers.</p>
+<p>The campus after the rain has a coolness to it. Passersby speak little, perhaps like me, intoxicated by this early spring flower rain scene.<br>I walk on, gazing ahead, hoping that there, as here, the scenery is as simple and beautiful.</p>
+<p>Written by the side of Guanyin Lake, drafted in the North Garden<br>March 7, 2011</p>
+]]></content>
+      <categories>
+        <category>Essays</category>
+      </categories>
+      <tags>
+        <tag>Essays</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Rename a Disk Group in ASM 11gR2?</title>
+    <url>/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/</url>
+    <content><![CDATA[<h1 id="How-to-Rename-a-Disk-Group-in-ASM-11gR2"><a href="#How-to-Rename-a-Disk-Group-in-ASM-11gR2" class="headerlink" title="How to Rename a Disk Group in ASM 11gR2?"></a>How to Rename a Disk Group in ASM 11gR2?</h1><p>This guide outlines the correct steps to rename an ASM disk group in the 11gR2 version. Please note that during this process, you should avoid using the renamedg command to rename the OCR&#x2F;VOTE disk groups, as it could lead to unnecessary risks.</p>
+<ol>
+<li>First, you need to unmount the disk group you want to rename (if it’s a RAC configuration, unmount it from each node):</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta"># asmcmd umount <span class="string">&lt;OLD_DG_NAME&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Verify that the required disk group has been unmounted:</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Then, execute the rename command:</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># renamedg phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=true</span></span><br><span class="line"><span class="title class_">Parsing</span> parameters..</span><br><span class="line"><span class="title class_">Parameters</span> <span class="keyword">in</span> <span class="symbol">effect:</span></span><br><span class="line"><span class="title class_">Old</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">OLD_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">New</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">NEW_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">Phases</span> :</span><br><span class="line"><span class="title class_">Phase</span> <span class="number">1</span></span><br><span class="line"><span class="title class_">Phase</span> <span class="number">2</span></span><br><span class="line"><span class="title class_">Discovery</span> str : (null)</span><br><span class="line"><span class="title class_">Clean</span> : <span class="variable constant_">TRUE</span></span><br><span class="line"><span class="title class_">Raw</span> only : <span class="variable constant_">TRUE</span></span><br><span class="line">renamedg <span class="symbol">operation:</span> phase=both dgname=&lt;<span class="variable constant_">OLD_DG_NAME</span>&gt; newdgname=&lt;<span class="variable constant_">NEW_DG_NAME</span>&gt; verbose=<span class="literal">true</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Discovering</span> the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">for</span> hearbeat...</span><br><span class="line"><span class="title class_">Re</span>-discovering the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> the diskgroup is mounted</span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">0</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> diskgroup is used by <span class="variable constant_">CSS</span></span><br><span class="line"><span class="title class_">Generating</span> configuration file..</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Terminating</span> kgfd context <span class="number">0x2af21517e0a0</span></span><br></pre></td></tr></table></figure>
+<p>If the above command fails and searches for the disks, you need to include the disk string. In that case, you should use:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">renamedg <span class="attribute">phase</span>=both <span class="attribute">dgname</span>=&lt;OLD_DG_NAME&gt; <span class="attribute">newdgname</span>=&lt;NEW_DG_NAME&gt; <span class="attribute">verbose</span>=<span class="literal">true</span> <span class="attribute">asm_diskstring</span>=<span class="string">&#x27;&lt;discoverystring1&gt;&#x27;</span>,&#x27;&lt;discoverystring2&gt;&#x27;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Finally, mount the renamed disk group and verify that it has been successfully mounted (if it’s a RAC configuration, verify on each node):<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd mount &lt;NEW_DG_NAME&gt;</span></span><br><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">24567</span> <span class="number">14267</span> <span class="number">0</span> <span class="number">14267</span> <span class="number">0</span> N &lt;NEW_DG_NAME&gt;/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Technology</category>
+        <category>Database</category>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>Database</tag>
+        <tag>Oracle</tag>
+        <tag>ASM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux上的裸设备</title>
     <url>/2017-01-19/Linux%E4%B8%8A%E7%9A%84%E8%A3%B8%E8%AE%BE%E5%A4%87/</url>
     <content><![CDATA[<h1 id="Linux-上的裸设备"><a href="#Linux-上的裸设备" class="headerlink" title="Linux 上的裸设备"></a>Linux 上的裸设备</h1><h2 id="什么是裸设备？"><a href="#什么是裸设备？" class="headerlink" title="什么是裸设备？"></a>什么是裸设备？</h2><p>裸设备，也称为裸分区，是一个未被挂载且不由Linux文件系统（如ext2&#x2F;ext3、reiserfs）或Oracle集群文件系统（OCFS、OCFS2）写入的磁盘分区，而是通过字符设备驱动程序直接访问。应用程序负责组织数据如何写入磁盘分区的细节。</p>
@@ -667,42 +719,6 @@
         <tag>OS</tag>
         <tag>Oracle</tag>
         <tag>裸设备</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Rename a Disk Group in ASM 11gR2?</title>
-    <url>/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/</url>
-    <content><![CDATA[<h1 id="How-to-Rename-a-Disk-Group-in-ASM-11gR2"><a href="#How-to-Rename-a-Disk-Group-in-ASM-11gR2" class="headerlink" title="How to Rename a Disk Group in ASM 11gR2?"></a>How to Rename a Disk Group in ASM 11gR2?</h1><p>This guide outlines the correct steps to rename an ASM disk group in the 11gR2 version. Please note that during this process, you should avoid using the renamedg command to rename the OCR&#x2F;VOTE disk groups, as it could lead to unnecessary risks.</p>
-<ol>
-<li>First, you need to unmount the disk group you want to rename (if it’s a RAC configuration, unmount it from each node):</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta"># asmcmd umount <span class="string">&lt;OLD_DG_NAME&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Verify that the required disk group has been unmounted:</li>
-</ol>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Then, execute the rename command:</li>
-</ol>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># renamedg phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=true</span></span><br><span class="line"><span class="title class_">Parsing</span> parameters..</span><br><span class="line"><span class="title class_">Parameters</span> <span class="keyword">in</span> <span class="symbol">effect:</span></span><br><span class="line"><span class="title class_">Old</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">OLD_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">New</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">NEW_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">Phases</span> :</span><br><span class="line"><span class="title class_">Phase</span> <span class="number">1</span></span><br><span class="line"><span class="title class_">Phase</span> <span class="number">2</span></span><br><span class="line"><span class="title class_">Discovery</span> str : (null)</span><br><span class="line"><span class="title class_">Clean</span> : <span class="variable constant_">TRUE</span></span><br><span class="line"><span class="title class_">Raw</span> only : <span class="variable constant_">TRUE</span></span><br><span class="line">renamedg <span class="symbol">operation:</span> phase=both dgname=&lt;<span class="variable constant_">OLD_DG_NAME</span>&gt; newdgname=&lt;<span class="variable constant_">NEW_DG_NAME</span>&gt; verbose=<span class="literal">true</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Discovering</span> the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">for</span> hearbeat...</span><br><span class="line"><span class="title class_">Re</span>-discovering the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> the diskgroup is mounted</span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">0</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> diskgroup is used by <span class="variable constant_">CSS</span></span><br><span class="line"><span class="title class_">Generating</span> configuration file..</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Terminating</span> kgfd context <span class="number">0x2af21517e0a0</span></span><br></pre></td></tr></table></figure>
-<p>If the above command fails and searches for the disks, you need to include the disk string. In that case, you should use:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">renamedg <span class="attribute">phase</span>=both <span class="attribute">dgname</span>=&lt;OLD_DG_NAME&gt; <span class="attribute">newdgname</span>=&lt;NEW_DG_NAME&gt; <span class="attribute">verbose</span>=<span class="literal">true</span> <span class="attribute">asm_diskstring</span>=<span class="string">&#x27;&lt;discoverystring1&gt;&#x27;</span>,&#x27;&lt;discoverystring2&gt;&#x27;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Finally, mount the renamed disk group and verify that it has been successfully mounted (if it’s a RAC configuration, verify on each node):<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd mount &lt;NEW_DG_NAME&gt;</span></span><br><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">24567</span> <span class="number">14267</span> <span class="number">0</span> <span class="number">14267</span> <span class="number">0</span> N &lt;NEW_DG_NAME&gt;/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Technology</category>
-        <category>Database</category>
-        <category>Oracle</category>
-      </categories>
-      <tags>
-        <tag>Database</tag>
-        <tag>Oracle</tag>
-        <tag>ASM</tag>
       </tags>
   </entry>
   <entry>
@@ -825,22 +841,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Essays, March 7, 2011 — Early Spring Flower Rain Scene</title>
-    <url>/2011-03-07/Early_Spring_Flower_Rain_Scene/</url>
-    <content><![CDATA[<h1 id="Essays-March-7-2011-—-Early-Spring-Flower-Rain-Scene"><a href="#Essays-March-7-2011-—-Early-Spring-Flower-Rain-Scene" class="headerlink" title="Essays, March 7, 2011 — Early Spring Flower Rain Scene"></a>Essays, March 7, 2011 — Early Spring Flower Rain Scene</h1><p>Essays, March 7, 2011 — Early Spring Flower Rain Scene</p>
-<p>The campus after the rain is refreshing. The water droplets have washed away the dust from the leaves, and each green leaf seems to have been carefully cleaned.<br>The mud and sand on the blue-and-white marble have also been washed away, gleaming and reflecting the newly bloomed flowers along the path.</p>
-<p>The campus after the rain is beautiful. The raindrops have awakened the flowers in the bushes, and like a busy market, they bloom all at once.<br>The gentle drizzle, the shimmering lake, the clear bird calls, and the soft whispers of the flowers.</p>
-<p>The campus after the rain has a coolness to it. Passersby speak little, perhaps like me, intoxicated by this early spring flower rain scene.<br>I walk on, gazing ahead, hoping that there, as here, the scenery is as simple and beautiful.</p>
-<p>Written by the side of Guanyin Lake, drafted in the North Garden<br>March 7, 2011</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>谈谈PostgreSQL数据库的表膨胀</title>
     <url>/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/</url>
     <content><![CDATA[<h1 id="谈谈PostgreSQL数据库的表膨胀"><a href="#谈谈PostgreSQL数据库的表膨胀" class="headerlink" title="谈谈PostgreSQL数据库的表膨胀"></a>谈谈PostgreSQL数据库的表膨胀</h1><h2 id="什么是PostgreSQL数据库的表膨胀？"><a href="#什么是PostgreSQL数据库的表膨胀？" class="headerlink" title="什么是PostgreSQL数据库的表膨胀？"></a>什么是PostgreSQL数据库的表膨胀？</h2><p>PostgreSQL 数据库的 表膨胀，简单来说，就是表的数据存储空间变得比实际需要的要大。膨胀现象发生时，虽然表中的数据量没有显著增加，但数据库占用的磁盘空间却比实际数据量大很多。这种现象会影响性能，导致查询速度变慢，并且浪费磁盘空间。</p>
@@ -922,18 +922,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PostgreSQL的pageinspect插件</title>
-    <url>/2024-11-27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
-      </categories>
-  </entry>
-  <entry>
     <title>PostgreSQL的密码文件</title>
     <url>/2024-12-10/PostgreSQL%E7%9A%84%E5%AF%86%E7%A0%81%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="PostgreSQL的密码文件"><a href="#PostgreSQL的密码文件" class="headerlink" title="PostgreSQL的密码文件"></a>PostgreSQL的密码文件</h1><p>在用户的Home目录中，.pgpass文件可以包含连接所需的密码（如果没有其他方式指定密码）。在Windows系统中，该文件名为%APPDATA%\postgresql\pgpass.conf（其中%APPDATA%指的是用户配置文件中的应用程序数据子目录）。另外，可以通过连接参数passfile或环境变量PGPASSFILE指定要使用的密码文件。</p>
@@ -950,6 +938,45 @@
         <tag>数据库</tag>
         <tag>PostgreSQL</tag>
         <tag>密码文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PostgreSQL的pageinspect插件</title>
+    <url>/2024-11-27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>数据库系统</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>PostgreSQL运维常用命令</title>
+    <url>/2024-11-26/PostgreSQL%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="PostgreSQL运维常用命令"><a href="#PostgreSQL运维常用命令" class="headerlink" title="PostgreSQL运维常用命令"></a>PostgreSQL运维常用命令</h1><h2 id="查看当前连接的用户名"><a href="#查看当前连接的用户名" class="headerlink" title="查看当前连接的用户名"></a>查看当前连接的用户名</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="built_in">current_user</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="给普通用户授权"><a href="#给普通用户授权" class="headerlink" title="给普通用户授权"></a>给普通用户授权</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">USAGE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> sch_user <span class="keyword">TO</span> usr_user;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询表大小，不含索引"><a href="#查询表大小，不含索引" class="headerlink" title="查询表大小，不含索引"></a>查询表大小，不含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">8192</span> bytes</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询表大小，含索引"><a href="#查询表大小，含索引" class="headerlink" title="查询表大小，含索引"></a>查询表大小，含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">24</span> kB</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查WAL文件"><a href="#查WAL文件" class="headerlink" title="查WAL文件"></a>查WAL文件</h2><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"> select *,size/<span class="number">1024</span>/<span class="number">1024</span> <span class="built_in">as</span> <span class="string">&quot;MB&quot;</span> from pg_ls_waldir();</span><br><span class="line">           name           |   <span class="type">size</span>   |      <span class="type">modification</span>      | <span class="type">MB</span> </span><br><span class="line">--------------------------+----------+------------------------+----</span><br><span class="line"> cleanup.log              |      <span class="type">463</span> | <span class="type">2022</span><span class="number">-07</span><span class="number">-28</span> <span class="number">09</span>:<span class="number">45</span>:<span class="number">36</span>+<span class="number">08</span> |  <span class="type">0</span></span><br><span class="line"> <span class="number">000000010000000800000011</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">10</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000012</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">11</span>:<span class="number">05</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000013</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">09</span>:<span class="number">58</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000014</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">02</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000015</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">06</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line">(<span class="number">6</span> rows)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查数据库日志"><a href="#查数据库日志" class="headerlink" title="查数据库日志"></a>查数据库日志</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="PG查表大小"><a href="#PG查表大小" class="headerlink" title="PG查表大小"></a>PG查表大小</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_schema || <span class="string">&#x27;.&#x27;</span> || <span class="built_in">table_name</span> <span class="keyword">AS</span> table_full_name, pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> </span><br><span class="line">    || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>)) <span class="keyword">AS</span> size</span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">tables</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>) <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            table_full_name            |   size   </span><br><span class="line"><span class="comment">---------------------------------------+----------</span></span><br><span class="line"> xz_schema.ods1_bseg                   | <span class="number">123</span> GB</span><br><span class="line"> xz_schema.ods1_coep                   | <span class="number">15</span> GB</span><br><span class="line"> xz_schema.fj_voucher                  | <span class="number">14</span> GB</span><br><span class="line"> xz_schema.ods1_assets_card            | <span class="number">12</span> GB</span><br><span class="line"> xz_schema.ods2_ods_asset_list         | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.fj_voucher_mark             | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.ods1_anla                   | <span class="number">10218</span> MB</span><br><span class="line"> xz_schema.ods2_intf_t_install_account | <span class="number">9761</span> MB</span><br><span class="line"> fsti_schema.assets_card               | <span class="number">8662</span> MB</span><br><span class="line"> xz_schema.source_anlc                 | <span class="number">8528</span> MB</span><br><span class="line"> xz_schema.source_anlp_201901          | <span class="number">7822</span> MB</span><br><span class="line"> xz_schema.ods1_bkpf                   | <span class="number">7485</span> MB</span><br><span class="line"> xz_schema.ods1_wf_message_done        | <span class="number">7233</span> MB</span><br><span class="line"> xz_schema.source_anlp_201909          | <span class="number">7164</span> MB</span><br><span class="line"> xz_schema.source_anlp_201908          | <span class="number">7155</span> MB</span><br><span class="line"> xz_schema.source_anlp_201907          | <span class="number">7146</span> MB</span><br><span class="line"> xz_schema.source_anlp_201906          | <span class="number">7124</span> MB</span><br><span class="line"> xz_schema.ods1_anep                   | <span class="number">7112</span> MB</span><br><span class="line"> xz_schema.source_anlp_201910          | <span class="number">7082</span> MB</span><br><span class="line"> xz_schema.source_anlp_201912          | <span class="number">7063</span> MB</span><br><span class="line">(<span class="number">20</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>数据库系统</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>PostgreSQL</tag>
+        <tag>命令</tag>
       </tags>
   </entry>
   <entry>
@@ -3390,33 +3417,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PostgreSQL运维常用命令</title>
-    <url>/2024-11-26/PostgreSQL%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="PostgreSQL运维常用命令"><a href="#PostgreSQL运维常用命令" class="headerlink" title="PostgreSQL运维常用命令"></a>PostgreSQL运维常用命令</h1><h2 id="查看当前连接的用户名"><a href="#查看当前连接的用户名" class="headerlink" title="查看当前连接的用户名"></a>查看当前连接的用户名</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="built_in">current_user</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="给普通用户授权"><a href="#给普通用户授权" class="headerlink" title="给普通用户授权"></a>给普通用户授权</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">USAGE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> sch_user <span class="keyword">TO</span> usr_user;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询表大小，不含索引"><a href="#查询表大小，不含索引" class="headerlink" title="查询表大小，不含索引"></a>查询表大小，不含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">8192</span> bytes</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询表大小，含索引"><a href="#查询表大小，含索引" class="headerlink" title="查询表大小，含索引"></a>查询表大小，含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">24</span> kB</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查WAL文件"><a href="#查WAL文件" class="headerlink" title="查WAL文件"></a>查WAL文件</h2><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"> select *,size/<span class="number">1024</span>/<span class="number">1024</span> <span class="built_in">as</span> <span class="string">&quot;MB&quot;</span> from pg_ls_waldir();</span><br><span class="line">           name           |   <span class="type">size</span>   |      <span class="type">modification</span>      | <span class="type">MB</span> </span><br><span class="line">--------------------------+----------+------------------------+----</span><br><span class="line"> cleanup.log              |      <span class="type">463</span> | <span class="type">2022</span><span class="number">-07</span><span class="number">-28</span> <span class="number">09</span>:<span class="number">45</span>:<span class="number">36</span>+<span class="number">08</span> |  <span class="type">0</span></span><br><span class="line"> <span class="number">000000010000000800000011</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">10</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000012</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">11</span>:<span class="number">05</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000013</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">09</span>:<span class="number">58</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000014</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">02</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000015</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">06</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line">(<span class="number">6</span> rows)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查数据库日志"><a href="#查数据库日志" class="headerlink" title="查数据库日志"></a>查数据库日志</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="PG查表大小"><a href="#PG查表大小" class="headerlink" title="PG查表大小"></a>PG查表大小</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_schema || <span class="string">&#x27;.&#x27;</span> || <span class="built_in">table_name</span> <span class="keyword">AS</span> table_full_name, pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> </span><br><span class="line">    || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>)) <span class="keyword">AS</span> size</span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">tables</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>) <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            table_full_name            |   size   </span><br><span class="line"><span class="comment">---------------------------------------+----------</span></span><br><span class="line"> xz_schema.ods1_bseg                   | <span class="number">123</span> GB</span><br><span class="line"> xz_schema.ods1_coep                   | <span class="number">15</span> GB</span><br><span class="line"> xz_schema.fj_voucher                  | <span class="number">14</span> GB</span><br><span class="line"> xz_schema.ods1_assets_card            | <span class="number">12</span> GB</span><br><span class="line"> xz_schema.ods2_ods_asset_list         | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.fj_voucher_mark             | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.ods1_anla                   | <span class="number">10218</span> MB</span><br><span class="line"> xz_schema.ods2_intf_t_install_account | <span class="number">9761</span> MB</span><br><span class="line"> fsti_schema.assets_card               | <span class="number">8662</span> MB</span><br><span class="line"> xz_schema.source_anlc                 | <span class="number">8528</span> MB</span><br><span class="line"> xz_schema.source_anlp_201901          | <span class="number">7822</span> MB</span><br><span class="line"> xz_schema.ods1_bkpf                   | <span class="number">7485</span> MB</span><br><span class="line"> xz_schema.ods1_wf_message_done        | <span class="number">7233</span> MB</span><br><span class="line"> xz_schema.source_anlp_201909          | <span class="number">7164</span> MB</span><br><span class="line"> xz_schema.source_anlp_201908          | <span class="number">7155</span> MB</span><br><span class="line"> xz_schema.source_anlp_201907          | <span class="number">7146</span> MB</span><br><span class="line"> xz_schema.source_anlp_201906          | <span class="number">7124</span> MB</span><br><span class="line"> xz_schema.ods1_anep                   | <span class="number">7112</span> MB</span><br><span class="line"> xz_schema.source_anlp_201910          | <span class="number">7082</span> MB</span><br><span class="line"> xz_schema.source_anlp_201912          | <span class="number">7063</span> MB</span><br><span class="line">(<span class="number">20</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>PostgreSQL</tag>
-        <tag>命令</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python监控公网IP变化发QQ邮件通知</title>
     <url>/2024-11-20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/</url>
     <content><![CDATA[<h1 id="Python监控公网IP变化发QQ邮件通知"><a href="#Python监控公网IP变化发QQ邮件通知" class="headerlink" title="Python监控公网IP变化发QQ邮件通知"></a>Python监控公网IP变化发QQ邮件通知</h1><p>本次分享的代码的主要作用是：获取本机(主机可以在内网)的公网IP，并将与上一次记录在文件中的公网IP做比较，如果两个IP不相同，则将新的公网IP记录在文件中，并发送一封包含新的公网IP的电子邮件到指定的QQ邮箱。<br>注意！代码的调试环境是Windows10、Python 3.10，不同的环境、版本可能会运行失败。</p>
@@ -3695,32 +3695,6 @@
       </tags>
   </entry>
   <entry>
-    <title>There is a way of life like this</title>
-    <url>/2009-01-01/There_s_a_way_of_life/</url>
-    <content><![CDATA[<h1 id="There-is-a-way-of-life-like-this"><a href="#There-is-a-way-of-life-like-this" class="headerlink" title="There is a way of life like this"></a>There is a way of life like this</h1><p>There is a way of life like this:<br>Holding my beloved ultra-portable laptop, I leisurely lie on the hammock on the balcony. The warm sunlight, refreshing tea, and the subtle scent of fresh grass—yes, this is life…</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Written During the Spring Festival</title>
-    <url>/2009-01-19/Write_During_Spring_Festival/</url>
-    <content><![CDATA[<h1 id="Written-During-the-Spring-Festival"><a href="#Written-During-the-Spring-Festival" class="headerlink" title="Written During the Spring Festival"></a>Written During the Spring Festival</h1><p>On a moonlit night,<br>I lean alone by the small western window.<br>Suddenly, the sound of firecrackers rises,<br>And I realize the New Year has arrived.</p>
-<p>The world is quiet,<br>Yet I still remember the joys of the past.<br>When will I return to the dreams of childhood,<br>But alas, here I am, in the turmoil of life.</p>
-<p>— At Hongqi New Village<br>January 19, 2009<br>Reflections under the Moon</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0</title>
     <url>/2017-08-16/%E4%BD%BF%E7%94%A8UDEV%E5%9C%A8Linux7%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8B%E4%B8%BA%E7%A3%81%E7%9B%98%E9%85%8D%E7%BD%AE%E5%90%8D%E7%A7%B0-v1-0/</url>
     <content><![CDATA[<h1 id="使用UDEV在Linux7操作系统下为磁盘配置名称"><a href="#使用UDEV在Linux7操作系统下为磁盘配置名称" class="headerlink" title="使用UDEV在Linux7操作系统下为磁盘配置名称"></a>使用UDEV在Linux7操作系统下为磁盘配置名称</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Linux操作系统 – Oracle Linux 7.0版本及更新<br>Linux x86-64</p>
@@ -3764,106 +3738,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用RMAN复制创建物理备用数据库无需关闭主数据库</title>
-    <url>/2024-11-18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<h1 id="使用RMAN复制创建物理备用数据库无需关闭主数据库"><a href="#使用RMAN复制创建物理备用数据库无需关闭主数据库" class="headerlink" title="使用RMAN复制创建物理备用数据库无需关闭主数据库"></a>使用RMAN复制创建物理备用数据库无需关闭主数据库</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Oracle数据库 - 企业版 - 版本10.1.0.2至10.2.0.4 [10.1至10.2]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [12.1]<br>Oracle数据库 - 企业版 - 版本11.2.0.4至11.2.0.4 [11.2]<br>Oracle数据库 - 企业版 - 版本11.1.0.7至11.1.0.7 [11.1] </p>
-<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>以下说明描述了如何在不关闭主（生产）数据库的情况下，使用RMAN复制逐步创建物理备用数据库的过程。<br>Database Name :- prim<br>Primary db_unique_name :- prim<br>standby db_unique_name :- stdby<br>Primary Hostname :- raca.idc.oracle.com<br>standby Hostname :- core1.idc.oracle.com </p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
-<li>启用强制日志记录。</li>
-<li>创建备用重做日志（SRL）。</li>
-<li>在主数据库的参数文件中做出适当的更改。</li>
-<li>备份数据库，包括数据文件、归档日志和控制文件，以便备用，并将备份复制到备用服务器。</li>
-<li>为备用数据库创建参数文件。</li>
-<li>从主数据库到备用数据库建立连接。</li>
-<li>将备份移动到备用服务器。 </li>
-<li>和 9. 启动备用实例。</li>
-<li>使用RMAN复制命令创建备用数据库。</li>
-<li>创建SRL。</li>
-<li>启动MRP（管理恢复进程）。</li>
-<li>验证是否正确地将日志发送并应用到备用数据库。</li>
-</ol>
-<p>步骤1：在主数据库上启用强制日志记录。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> FORCE LOGGING;</span><br></pre></td></tr></table></figure>
-<p>注意：如果不存在，请创建密码文件，同时检查是否已启用归档。</p>
-<p>步骤2：在主数据库上配置备用重做日志。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">4</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log4a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">5</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log5a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">6</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log6a.log&#x27;</span> size <span class="number">50</span>m;</span><br></pre></td></tr></table></figure>
-<p><mark>注意：<br>检查SRL（备用重做日志）的数量， （每个线程的最大日志文件数 + 1）* 最大线程数<br>SRL的大小应等于ORL（在线重做日志）的大小。</mark><br>例如，如果主数据库每个线程有3个日志文件，且有2个线程，那么备用数据库上需要8个备用重做日志文件组。 验证是否已创建备用重做日志文件组。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">SELECT</span> <span class="keyword">GROUP</span>#,ThREAD#,<span class="keyword">SEQUENCE</span>#,ARCHIVED,STATUS <span class="keyword">FROM</span> V$STANDBY_LOG; </span><br></pre></td></tr></table></figure>
-
-<p>步骤3：修改主数据库的初始化参数以配置Data Guard，具体如下：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_CONFIG</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/prim/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=prim&#x27;</span>;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_2</span>=<span class="string">&#x27;SERVICE=stdby LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=stdby&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_STATE_1</span>=ENABLE;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_SERVER</span>=stdby;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_CLIENT</span>=prim;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">DB_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/data&#x27; <span class="attribute">scope</span>=spfile;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/redo&#x27; <span class="attribute">scope</span>=spfile;</span><br></pre></td></tr></table></figure>
-
-<p>步骤4：在主数据库上运行备份作业，通过连接到目标数据库和目录数据库（如果有的话）。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">run</span><br><span class="line">&#123;</span><br><span class="line">allocate channel c1 <span class="keyword">type</span> disk;</span><br><span class="line">allocate channel c2 <span class="keyword">type</span> disk;</span><br><span class="line">backup <span class="keyword">database</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup archivelog <span class="keyword">all</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup <span class="keyword">current</span> controlfile <span class="keyword">for</span> standby <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>步骤5：在主数据库上创建参数文件，将其复制到备用数据库，并做出必要的更改。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/prim/stage/initstdby.ora&#x27;</span> <span class="keyword">from</span> spfile;</span><br></pre></td></tr></table></figure>
-
-<p>步骤6：建立连接<br>在主数据库和备用数据库上都创建网络服务。<br>在prim服务器上，</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">) </span><br></pre></td></tr></table></figure>
-<p>在standby服务器上，</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p>步骤7：将文件移动到备用服务器，<br>a. 在备用服务器上创建相同的目录并复制备份。 在备用服务器操作系统上，</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="variable">$mkdir</span> <span class="operator">-</span>p <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br><span class="line">[oracle<span class="meta">@raca</span> prim]$ scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span><span class="operator">*</span> core1.idc.oracle.com:<span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br></pre></td></tr></table></figure>
-<p>b. 另外，我们可以将备份复制到备用服务器的不同目录。在备用服务器上，以主数据库为目标连接到RMAN，并以辅助实例身份登录，如果你的主数据库有目录数据库，那么以主数据库为目标、目录数据库和辅助实例身份连接。将这些备份片段编入目录，以便主数据库或目录数据库的控制文件知道备份信息。</p>
-<p>步骤8：在备用服务器上对复制的initstdby.ora文件进行必要的更改。</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">db_name</span>=prim</span><br><span class="line"><span class="attr">db_unique_name</span>=stdby</span><br><span class="line"><span class="attr">log_archive_config</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/stdby/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=stdby&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_2</span>=<span class="string">&#x27;SERVICE=prim LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=prim&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_state_1</span>=ENABLE</span><br><span class="line"><span class="attr">db_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/data/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span></span><br><span class="line"><span class="attr">log_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/redo/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span></span><br><span class="line"><span class="attr">REMOTE_LOGIN_PASSWORDFILE</span>=EXCLUSIVE</span><br><span class="line"><span class="attr">standby_archive_dest</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/arch/&#x27;</span></span><br><span class="line"><span class="attr">standby_file_management</span>=AUTO</span><br><span class="line"><span class="attr">fal_client</span>=stdby</span><br><span class="line"><span class="attr">fal_server</span>=prim </span><br></pre></td></tr></table></figure>
-
-<p>步骤9：创建备用实例。<br>创建与主数据库相同的密码。或者，我们可以从主数据库复制密码文件并在备用数据库上重命名它。<br>例如，从主数据库复制密码文件，</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>dbs<span class="regexp">/opapwprim core1.idc.oracle.com:/u</span>01<span class="regexp">/app/</span>oracle<span class="regexp">/dbs/</span> </span><br></pre></td></tr></table></figure>
-
-<p>在standby上,</p>
-<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="meta"><span class="keyword">$mv</span> orapwprim orapwstdby</span></span><br></pre></td></tr></table></figure>
-
-<p>或者创建与主数据库相同的新密码，如下所示，<br>a. 对于UNIX,</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="variable">$export</span> ORACLE_SID</span><br><span class="line"><span class="variable">$orapwd</span> <span class="attribute">file</span>=<span class="string">&#x27;$ORACLE_HOME/dbs/orapwstdby&#x27;</span> <span class="attribute">password</span>=sys <span class="attribute">entries</span>=10;</span><br></pre></td></tr></table></figure>
-
-<p>对于Windows,</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">d:&gt;<span class="built_in">set</span> <span class="attribute">ORACLE_SID</span>=stdby</span><br><span class="line">d:&gt;oradim -new -sid stdby -intpwd sys</span><br></pre></td></tr></table></figure>
-
-<p>b. 在备用服务器上创建必要的目录并启动辅助实例。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">[oracle<span class="variable">@core1</span> stdby]$ pwd</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>databases<span class="operator">/</span>stdby</span><br><span class="line">[oracle<span class="variable">@core1</span> stdby]$mkdir data redo oradata stage udump bdump cdump</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> spfile <span class="keyword">from</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/stage/initstdby.ora&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">start</span> nomount;</span><br></pre></td></tr></table></figure>
-
-<p>步骤10：在备用服务器上使用RMAN复制创建备用数据库。<br>当在备用数据库的复制命令中指定’dorecover’时，请在目标数据库上执行归档日志切换，并运行复制命令。<br>例如:<br>对于primary,</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">sql</span>&gt; <span class="keyword">alter</span> <span class="keyword">system</span> archive <span class="keyword">log</span> <span class="keyword">current</span>;</span><br></pre></td></tr></table></figure>
-<p>在备用服务器上，通过连接字符串连接到目标数据库（即prim）和目录数据库（如果有的话），以及这个辅助数据库，操作如下，</p>
-<figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> /<span class="meta">@prim</span> catalog RMAN/RMAN<span class="meta">@catdb</span> auxiliary /</span><br></pre></td></tr></table></figure>
-
-<p>如果是no catalog数据库,</p>
-<figure class="highlight llvm"><table><tr><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> sys/&lt;password&gt;<span class="title">@prim</span> auxiliary /</span><br><span class="line">Recovery Manager: Release <span class="number">10.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - Production on Thu Mar <span class="number">5</span> <span class="number">12</span>:<span class="number">30</span>:<span class="number">56</span> <span class="number">2009</span></span><br><span class="line">Copyright (<span class="keyword">c</span>) <span class="number">1982</span><span class="punctuation">,</span> <span class="number">2005</span><span class="punctuation">,</span> Oracle. All rights reserved.</span><br><span class="line">connected <span class="keyword">to</span> <span class="keyword">target</span> database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span>)</span><br><span class="line">connected <span class="keyword">to</span> auxiliary database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span><span class="punctuation">,</span> not open)</span><br><span class="line">RMAN&gt; duplicate <span class="keyword">target</span> database for standby dorecover<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<p>注意：我们也可以使用不带dorecover子句的选项， 例如，</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt;duplicate target database for standby<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-
-<p>步骤11:创建SRL,</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line">参考步骤<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>步骤12：在备用数据库上启动MRP（管理恢复进程），</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">select</span> <span class="type">name</span>,db_unique_name,database_role <span class="keyword">from</span> v$<span class="keyword">database</span>;</span><br><span class="line"><span class="type">NAME</span> DB_UNIQUE_NAME DATABASE_ROLE</span><br><span class="line"><span class="comment">--------- ---------------- --------------</span></span><br><span class="line">PRIM STDBY PHYSICAL STANDBY</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> recover managed standby <span class="keyword">database</span> disconnect;</span><br></pre></td></tr></table></figure>
-
-<p>步骤13：在主数据库上启用log_archive_dest_2，该参数用于将日志发送到备用服务器。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt;<span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">set</span> log_archive_dest_state_2=<span class="keyword">enable</span>;</span><br></pre></td></tr></table></figure>
-
-<p>步骤14：检查备用数据库是否与主数据库同步，<br>A. 在备用数据库上检查v$archived_log视图，</p>
-<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br></pre></td></tr></table></figure>
-<p>B. 在主数据库上执行日志切换，</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">SYSTEM</span> SWITCH LOGFILE;</span><br></pre></td></tr></table></figure>
-
-<p>C. 在备库上执行,</p>
-<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line"></span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">40 06-MAR<span class="string">-09</span> 07-MAR<span class="string">-09</span></span><br><span class="line"></span><br><span class="line">SQL&gt; select sequence#,applied from v$archived_log order by sequence#;</span><br><span class="line">SEQUENCE# APP</span><br><span class="line">---------- ---</span><br><span class="line">29 YES</span><br><span class="line">30 YES</span><br><span class="line">31 YES</span><br><span class="line">32 YES</span><br><span class="line">33 YES</span><br><span class="line">34 YES</span><br><span class="line">35 YES</span><br><span class="line">36 YES</span><br><span class="line">37 YES</span><br><span class="line">38 YES</span><br><span class="line">39 YES</span><br><span class="line">40 YES </span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>数据库技术</category>
-      </categories>
-      <tags>
-        <tag>Oracle</tag>
-        <tag>数据库</tag>
-        <tag>RMAN</tag>
-        <tag>高可用</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用yum下载rpm包</title>
     <url>/2024-11-26/%E4%BD%BF%E7%94%A8yum%E4%B8%8B%E8%BD%BDrpm%E5%8C%85/</url>
     <content><![CDATA[<h1 id="使用yum下载rpm包"><a href="#使用yum下载rpm包" class="headerlink" title="使用yum下载rpm包"></a>使用yum下载rpm包</h1><p>使用yum下载rpm包的命令是：</p>
@@ -3885,11 +3759,11 @@
       </tags>
   </entry>
   <entry>
-    <title>写在春节里</title>
-    <url>/2009-01-19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
-    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
-<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
-<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
+    <title>吃饱瞎写——仿《锄禾》</title>
+    <url>/2011-08-01/%E5%90%83%E9%A5%B1%E7%9E%8E%E5%86%99%E2%80%94%E2%80%94%E4%BB%BF%E3%80%8A%E9%94%84%E7%A6%BE%E3%80%8B/</url>
+    <content><![CDATA[<h1 id="吃饱瞎写——仿《锄禾》"><a href="#吃饱瞎写——仿《锄禾》" class="headerlink" title="吃饱瞎写——仿《锄禾》"></a>吃饱瞎写——仿《锄禾》</h1><p>吃饱瞎写-仿《锄禾》<br>Cooking日当午，<br>汗滴池边布。<br>谁知橱中菜，<br>碟碟皆我煮。</p>
+<p>——可爱的分隔线——</p>
+<p>我不善作诗填词，事实上应该叫做根本不会，作诗填词还应讲究韵律平仄，这方面我是不懂的，顶多胡乱压个韵。但静安大师说了，创作不应太拘泥于形式，忽略了真性情，那样得不偿失，这次姑且容我断章取义吧。<br>其中夹杂英文，就算是中西合壁吧，搞不好哪个山姆大叔，水母大姐看了会有兴趣，也就能光大国学了。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -3899,11 +3773,11 @@
       </tags>
   </entry>
   <entry>
-    <title>吃饱瞎写——仿《锄禾》</title>
-    <url>/2011-08-01/%E5%90%83%E9%A5%B1%E7%9E%8E%E5%86%99%E2%80%94%E2%80%94%E4%BB%BF%E3%80%8A%E9%94%84%E7%A6%BE%E3%80%8B/</url>
-    <content><![CDATA[<h1 id="吃饱瞎写——仿《锄禾》"><a href="#吃饱瞎写——仿《锄禾》" class="headerlink" title="吃饱瞎写——仿《锄禾》"></a>吃饱瞎写——仿《锄禾》</h1><p>吃饱瞎写-仿《锄禾》<br>Cooking日当午，<br>汗滴池边布。<br>谁知橱中菜，<br>碟碟皆我煮。</p>
-<p>——可爱的分隔线——</p>
-<p>我不善作诗填词，事实上应该叫做根本不会，作诗填词还应讲究韵律平仄，这方面我是不懂的，顶多胡乱压个韵。但静安大师说了，创作不应太拘泥于形式，忽略了真性情，那样得不偿失，这次姑且容我断章取义吧。<br>其中夹杂英文，就算是中西合壁吧，搞不好哪个山姆大叔，水母大姐看了会有兴趣，也就能光大国学了。</p>
+    <title>写在春节里</title>
+    <url>/2009-01-19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
+    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
+<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
+<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -4002,6 +3876,18 @@
         <tag>OS</tag>
         <tag>Oracle</tag>
         <tag>UDEV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>There is a way of life like this</title>
+    <url>/2009-01-01/There_s_a_way_of_life/</url>
+    <content><![CDATA[<h1 id="There-is-a-way-of-life-like-this"><a href="#There-is-a-way-of-life-like-this" class="headerlink" title="There is a way of life like this"></a>There is a way of life like this</h1><p>There is a way of life like this:<br>Holding my beloved ultra-portable laptop, I leisurely lie on the hammock on the balcony. The warm sunlight, refreshing tea, and the subtle scent of fresh grass—yes, this is life…</p>
+]]></content>
+      <categories>
+        <category>Essays</category>
+      </categories>
+      <tags>
+        <tag>Essays</tag>
       </tags>
   </entry>
   <entry>
@@ -4123,16 +4009,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>开启Win10无人参与系统睡眠超时</title>
-    <url>/2024-11-29/%E5%BC%80%E5%90%AFWin10%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9D%A1%E7%9C%A0%E8%B6%85%E6%97%B6/</url>
-    <content><![CDATA[<h1 id="开启Win10无人参与系统睡眠超时"><a href="#开启Win10无人参与系统睡眠超时" class="headerlink" title="开启Win10无人参与系统睡眠超时"></a>开启Win10无人参与系统睡眠超时</h1><p>regedit</p>
-<p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20\7bc4a2f9-d8fc-4469-b07b-33eb785aaca0</p>
-<p>然后在右侧双击【Attributes】，在弹出的窗口中【数值数据】改为“2”，单击【确定】</p>
-<p>电源</p>
-<p><img src="/vx_images/118114317885143.png"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>心未泯，梦不灭</title>
     <url>/2018-09-12/%E5%BF%83%E6%9C%AA%E6%B3%AF%EF%BC%8C%E6%A2%A6%E4%B8%8D%E7%81%AD/</url>
     <content><![CDATA[<h1 id="心未泯，梦不灭"><a href="#心未泯，梦不灭" class="headerlink" title="心未泯，梦不灭"></a>心未泯，梦不灭</h1><p>人生如梦，<br>往事弹指一瞬。<br>自古红尘多少事，<br>烟雨中消逝。<br>闲来独自登高处，<br>望星辰，<br>群星闪耀。<br>暗思量，<br>一帘幽梦……<br>2007年5月31日陈荣于红旗新居</p>
@@ -4143,6 +4019,16 @@
       <tags>
         <tag>随笔</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>开启Win10无人参与系统睡眠超时</title>
+    <url>/2024-11-29/%E5%BC%80%E5%90%AFWin10%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9D%A1%E7%9C%A0%E8%B6%85%E6%97%B6/</url>
+    <content><![CDATA[<h1 id="开启Win10无人参与系统睡眠超时"><a href="#开启Win10无人参与系统睡眠超时" class="headerlink" title="开启Win10无人参与系统睡眠超时"></a>开启Win10无人参与系统睡眠超时</h1><p>regedit</p>
+<p>计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\238C9FA8-0AAD-41ED-83F4-97BE242C8F20\7bc4a2f9-d8fc-4469-b07b-33eb785aaca0</p>
+<p>然后在右侧双击【Attributes】，在弹出的窗口中【数值数据】改为“2”，单击【确定】</p>
+<p>电源</p>
+<p><img src="/vx_images/118114317885143.png"></p>
+]]></content>
   </entry>
   <entry>
     <title>我的存储系统</title>
@@ -4164,6 +4050,18 @@
 <p>第六站，福州东街口。作为福州最繁华的商业区之一，东街口不仅保留了福州传统的风貌，还融入了现代的商业气息。在这里，你可以感受到福州文化与现代气息的交织。从古老的街道到时尚的商场，每一处都充满了生机与活力。这里的小店、摊位总是充满了福州的本土风情，无论是购买手工艺品，还是品尝地道的小吃，东街口都能让你体验到福州最具魅力的一面。</p>
 <p>福州的美，不仅仅体现在这些迷人的景点上。这里还有许多历史文化和自然景观，值得每一个到访者去发现和感受。然而，福州的生活成本相对较高，尽管这里的自然与文化景点丰富多样，但由于人均收入并不高，物价也相对较高，这给许多外来居民带来了一定的生活压力。这可能与福州作为省会城市的地位，以及其逐渐发展的经济密切相关。尽管如此，福州仍然是一座让人充满期待与惊喜的城市，拥有丰富的历史文化和美丽的自然景观。</p>
 <p>总的来说，福州是一座美丽、宁静、充满诗意的城市。无论是古老的街巷，还是自然的山水，每一处都令人陶醉。我强烈建议大家亲自来这里走一走，看一看，感受这座城市的魅力。相信你会像我一样，被福州的美丽深深吸引，留下不灭的回忆。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>春梦独好</title>
+    <url>/2018-09-12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/</url>
+    <content><![CDATA[<h1 id="春梦独好"><a href="#春梦独好" class="headerlink" title="春梦独好"></a>春梦独好</h1><p>春雨乍到，<br>帘外纷纷扰扰。<br>少年惊早，<br>却道春梦独好。<br>梦入紫竹天外境，<br>珍禽倚枝鸣不停，<br>仙雾绕膝影不清。<br>少年回首寻归径，<br>径入幽林已不明。<br>另辟佳径觅知音，<br>竟得佳人路边亭，<br>伊人颦眉望少年，<br>道是无意却有情。<br>待要上前讨芳名，<br>奈何春雷醒梦魇。<br>春梦独好，<br>安能长眠不愿晓。<br>梦回兰亭，<br>喜与佳人共逍遥。<br>——陈荣 于 红旗村<br>回赠好友心源作<br>2008年4月23日夜<br>ID：CRXSPOEMRA327</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -4300,9 +4198,9 @@
       </tags>
   </entry>
   <entry>
-    <title>春梦独好</title>
-    <url>/2018-09-12/%E6%98%A5%E6%A2%A6%E7%8B%AC%E5%A5%BD/</url>
-    <content><![CDATA[<h1 id="春梦独好"><a href="#春梦独好" class="headerlink" title="春梦独好"></a>春梦独好</h1><p>春雨乍到，<br>帘外纷纷扰扰。<br>少年惊早，<br>却道春梦独好。<br>梦入紫竹天外境，<br>珍禽倚枝鸣不停，<br>仙雾绕膝影不清。<br>少年回首寻归径，<br>径入幽林已不明。<br>另辟佳径觅知音，<br>竟得佳人路边亭，<br>伊人颦眉望少年，<br>道是无意却有情。<br>待要上前讨芳名，<br>奈何春雷醒梦魇。<br>春梦独好，<br>安能长眠不愿晓。<br>梦回兰亭，<br>喜与佳人共逍遥。<br>——陈荣 于 红旗村<br>回赠好友心源作<br>2008年4月23日夜<br>ID：CRXSPOEMRA327</p>
+    <title>春节这几天</title>
+    <url>/2009-02-07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
+    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -4316,18 +4214,6 @@
     <url>/2008-06-26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
     <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>春节这几天</title>
-    <url>/2009-02-07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
-    <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
   </entry>
   <entry>
     <title>暑期帮ZQY整电脑</title>
@@ -4345,6 +4231,20 @@
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Written During the Spring Festival</title>
+    <url>/2009-01-19/Write_During_Spring_Festival/</url>
+    <content><![CDATA[<h1 id="Written-During-the-Spring-Festival"><a href="#Written-During-the-Spring-Festival" class="headerlink" title="Written During the Spring Festival"></a>Written During the Spring Festival</h1><p>On a moonlit night,<br>I lean alone by the small western window.<br>Suddenly, the sound of firecrackers rises,<br>And I realize the New Year has arrived.</p>
+<p>The world is quiet,<br>Yet I still remember the joys of the past.<br>When will I return to the dreams of childhood,<br>But alas, here I am, in the turmoil of life.</p>
+<p>— At Hongqi New Village<br>January 19, 2009<br>Reflections under the Moon</p>
+]]></content>
+      <categories>
+        <category>Essays</category>
+      </categories>
+      <tags>
+        <tag>Essays</tag>
       </tags>
   </entry>
   <entry>
@@ -4549,6 +4449,106 @@
 ]]></content>
   </entry>
   <entry>
+    <title>使用RMAN复制创建物理备用数据库无需关闭主数据库</title>
+    <url>/2024-11-18/%E4%BD%BF%E7%94%A8RMAN%E5%A4%8D%E5%88%B6%E5%88%9B%E5%BB%BA%E7%89%A9%E7%90%86%E5%A4%87%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E9%9C%80%E5%85%B3%E9%97%AD%E4%B8%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<h1 id="使用RMAN复制创建物理备用数据库无需关闭主数据库"><a href="#使用RMAN复制创建物理备用数据库无需关闭主数据库" class="headerlink" title="使用RMAN复制创建物理备用数据库无需关闭主数据库"></a>使用RMAN复制创建物理备用数据库无需关闭主数据库</h1><h2 id="适用于"><a href="#适用于" class="headerlink" title="适用于"></a>适用于</h2><p>Oracle数据库 - 企业版 - 版本10.1.0.2至10.2.0.4 [10.1至10.2]<br>Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [12.1]<br>Oracle数据库 - 企业版 - 版本11.2.0.4至11.2.0.4 [11.2]<br>Oracle数据库 - 企业版 - 版本11.1.0.7至11.1.0.7 [11.1] </p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>以下说明描述了如何在不关闭主（生产）数据库的情况下，使用RMAN复制逐步创建物理备用数据库的过程。<br>Database Name :- prim<br>Primary db_unique_name :- prim<br>standby db_unique_name :- stdby<br>Primary Hostname :- raca.idc.oracle.com<br>standby Hostname :- core1.idc.oracle.com </p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ol>
+<li>启用强制日志记录。</li>
+<li>创建备用重做日志（SRL）。</li>
+<li>在主数据库的参数文件中做出适当的更改。</li>
+<li>备份数据库，包括数据文件、归档日志和控制文件，以便备用，并将备份复制到备用服务器。</li>
+<li>为备用数据库创建参数文件。</li>
+<li>从主数据库到备用数据库建立连接。</li>
+<li>将备份移动到备用服务器。 </li>
+<li>和 9. 启动备用实例。</li>
+<li>使用RMAN复制命令创建备用数据库。</li>
+<li>创建SRL。</li>
+<li>启动MRP（管理恢复进程）。</li>
+<li>验证是否正确地将日志发送并应用到备用数据库。</li>
+</ol>
+<p>步骤1：在主数据库上启用强制日志记录。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> FORCE LOGGING;</span><br></pre></td></tr></table></figure>
+<p>注意：如果不存在，请创建密码文件，同时检查是否已启用归档。</p>
+<p>步骤2：在主数据库上配置备用重做日志。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">4</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log4a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">5</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log5a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">6</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log6a.log&#x27;</span> size <span class="number">50</span>m;</span><br></pre></td></tr></table></figure>
+<p><mark>注意：<br>检查SRL（备用重做日志）的数量， （每个线程的最大日志文件数 + 1）* 最大线程数<br>SRL的大小应等于ORL（在线重做日志）的大小。</mark><br>例如，如果主数据库每个线程有3个日志文件，且有2个线程，那么备用数据库上需要8个备用重做日志文件组。 验证是否已创建备用重做日志文件组。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">SELECT</span> <span class="keyword">GROUP</span>#,ThREAD#,<span class="keyword">SEQUENCE</span>#,ARCHIVED,STATUS <span class="keyword">FROM</span> V$STANDBY_LOG; </span><br></pre></td></tr></table></figure>
+
+<p>步骤3：修改主数据库的初始化参数以配置Data Guard，具体如下：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_CONFIG</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/prim/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=prim&#x27;</span>;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_2</span>=<span class="string">&#x27;SERVICE=stdby LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=stdby&#x27;</span>;</span><br><span class="line">SQL&gt; alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_ARCHIVE_DEST_STATE_1</span>=ENABLE;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_SERVER</span>=stdby;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">FAL_CLIENT</span>=prim;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">DB_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/data&#x27; <span class="attribute">scope</span>=spfile;</span><br><span class="line">SQL&gt;alter<span class="built_in"> system </span><span class="built_in">set</span> <span class="attribute">LOG_FILE_NAME_CONVERT</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span>,&#x27;/u01/app/oracle/databases/prim/redo&#x27; <span class="attribute">scope</span>=spfile;</span><br></pre></td></tr></table></figure>
+
+<p>步骤4：在主数据库上运行备份作业，通过连接到目标数据库和目录数据库（如果有的话）。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">run</span><br><span class="line">&#123;</span><br><span class="line">allocate channel c1 <span class="keyword">type</span> disk;</span><br><span class="line">allocate channel c2 <span class="keyword">type</span> disk;</span><br><span class="line">backup <span class="keyword">database</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup archivelog <span class="keyword">all</span> <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">backup <span class="keyword">current</span> controlfile <span class="keyword">for</span> standby <span class="keyword">format</span> <span class="string">&#x27;/u01/app/oracle/databases/stage/%U&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>步骤5：在主数据库上创建参数文件，将其复制到备用数据库，并做出必要的更改。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/prim/stage/initstdby.ora&#x27;</span> <span class="keyword">from</span> spfile;</span><br></pre></td></tr></table></figure>
+
+<p>步骤6：建立连接<br>在主数据库和备用数据库上都创建网络服务。<br>在prim服务器上，</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">) </span><br></pre></td></tr></table></figure>
+<p>在standby服务器上，</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">prim</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>raca.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> prim)</span><br><span class="line">)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="attribute">stdby</span> <span class="operator">=</span></span><br><span class="line">(DESCRIPTION <span class="operator">=</span></span><br><span class="line">(ADDRESS_LIST <span class="operator">=</span></span><br><span class="line">(ADDRESS <span class="operator">=</span> (PROTOCOL <span class="operator">=</span> TCP)(HOST <span class="operator">=</span>core1.idc.oracle.com )(PORT <span class="operator">=</span> <span class="number">1521</span>))</span><br><span class="line">)</span><br><span class="line">(CONNECT_DATA <span class="operator">=</span></span><br><span class="line">(SERVICE_NAME <span class="operator">=</span> stdby)</span><br><span class="line">)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>步骤7：将文件移动到备用服务器，<br>a. 在备用服务器上创建相同的目录并复制备份。 在备用服务器操作系统上，</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="variable">$mkdir</span> <span class="operator">-</span>p <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br><span class="line">[oracle<span class="meta">@raca</span> prim]$ scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span><span class="operator">*</span> core1.idc.oracle.com:<span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>databases<span class="regexp">/stage/</span></span><br></pre></td></tr></table></figure>
+<p>b. 另外，我们可以将备份复制到备用服务器的不同目录。在备用服务器上，以主数据库为目标连接到RMAN，并以辅助实例身份登录，如果你的主数据库有目录数据库，那么以主数据库为目标、目录数据库和辅助实例身份连接。将这些备份片段编入目录，以便主数据库或目录数据库的控制文件知道备份信息。</p>
+<p>步骤8：在备用服务器上对复制的initstdby.ora文件进行必要的更改。</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">db_name</span>=prim</span><br><span class="line"><span class="attr">db_unique_name</span>=stdby</span><br><span class="line"><span class="attr">log_archive_config</span>=<span class="string">&#x27;DG_CONFIG=(prim,stdby)&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_1</span>=<span class="string">&#x27;LOCATION=/u01/app/oracle/databases/stdby/redo/ VALID_FOR=(ALL_LOGFILES,ALL_ROLES) DB_UNIQUE_NAME=stdby&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_2</span>=<span class="string">&#x27;SERVICE=prim LGWR ASYNC VALID_FOR=(ONLINE_LOGFILES,PRIMARY_ROLE) DB_UNIQUE_NAME=prim&#x27;</span></span><br><span class="line"><span class="attr">log_archive_dest_state_1</span>=ENABLE</span><br><span class="line"><span class="attr">db_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/data/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/data/&#x27;</span></span><br><span class="line"><span class="attr">log_file_name_convert</span>=<span class="string">&#x27;/u01/app/oracle/databases/prim/redo/&#x27;</span>,<span class="string">&#x27;/u01/app/oracle/databases/stdby/redo/&#x27;</span></span><br><span class="line"><span class="attr">REMOTE_LOGIN_PASSWORDFILE</span>=EXCLUSIVE</span><br><span class="line"><span class="attr">standby_archive_dest</span>=<span class="string">&#x27;/u01/app/oracle/databases/stdby/arch/&#x27;</span></span><br><span class="line"><span class="attr">standby_file_management</span>=AUTO</span><br><span class="line"><span class="attr">fal_client</span>=stdby</span><br><span class="line"><span class="attr">fal_server</span>=prim </span><br></pre></td></tr></table></figure>
+
+<p>步骤9：创建备用实例。<br>创建与主数据库相同的密码。或者，我们可以从主数据库复制密码文件并在备用数据库上重命名它。<br>例如，从主数据库复制密码文件，</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">scp <span class="regexp">/u01/</span>app<span class="regexp">/oracle/</span>dbs<span class="regexp">/opapwprim core1.idc.oracle.com:/u</span>01<span class="regexp">/app/</span>oracle<span class="regexp">/dbs/</span> </span><br></pre></td></tr></table></figure>
+
+<p>在standby上,</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="meta"><span class="keyword">$mv</span> orapwprim orapwstdby</span></span><br></pre></td></tr></table></figure>
+
+<p>或者创建与主数据库相同的新密码，如下所示，<br>a. 对于UNIX,</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="variable">$export</span> ORACLE_SID</span><br><span class="line"><span class="variable">$orapwd</span> <span class="attribute">file</span>=<span class="string">&#x27;$ORACLE_HOME/dbs/orapwstdby&#x27;</span> <span class="attribute">password</span>=sys <span class="attribute">entries</span>=10;</span><br></pre></td></tr></table></figure>
+
+<p>对于Windows,</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">d:&gt;<span class="built_in">set</span> <span class="attribute">ORACLE_SID</span>=stdby</span><br><span class="line">d:&gt;oradim -new -sid stdby -intpwd sys</span><br></pre></td></tr></table></figure>
+
+<p>b. 在备用服务器上创建必要的目录并启动辅助实例。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">[oracle<span class="variable">@core1</span> stdby]$ pwd</span><br><span class="line"><span class="operator">/</span>u01<span class="operator">/</span>app<span class="operator">/</span>oracle<span class="operator">/</span>databases<span class="operator">/</span>stdby</span><br><span class="line">[oracle<span class="variable">@core1</span> stdby]$mkdir data redo oradata stage udump bdump cdump</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">create</span> spfile <span class="keyword">from</span> pfile<span class="operator">=</span><span class="string">&#x27;/u01/app/oracle/databases/stage/initstdby.ora&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span><span class="keyword">start</span> nomount;</span><br></pre></td></tr></table></figure>
+
+<p>步骤10：在备用服务器上使用RMAN复制创建备用数据库。<br>当在备用数据库的复制命令中指定’dorecover’时，请在目标数据库上执行归档日志切换，并运行复制命令。<br>例如:<br>对于primary,</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">sql</span>&gt; <span class="keyword">alter</span> <span class="keyword">system</span> archive <span class="keyword">log</span> <span class="keyword">current</span>;</span><br></pre></td></tr></table></figure>
+<p>在备用服务器上，通过连接字符串连接到目标数据库（即prim）和目录数据库（如果有的话），以及这个辅助数据库，操作如下，</p>
+<figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> /<span class="meta">@prim</span> catalog RMAN/RMAN<span class="meta">@catdb</span> auxiliary /</span><br></pre></td></tr></table></figure>
+
+<p>如果是no catalog数据库,</p>
+<figure class="highlight llvm"><table><tr><td class="code"><pre><span class="line">$RMAN <span class="keyword">target</span> sys/&lt;password&gt;<span class="title">@prim</span> auxiliary /</span><br><span class="line">Recovery Manager: Release <span class="number">10.2</span>.<span class="number">0.1</span>.<span class="number">0</span> - Production on Thu Mar <span class="number">5</span> <span class="number">12</span>:<span class="number">30</span>:<span class="number">56</span> <span class="number">2009</span></span><br><span class="line">Copyright (<span class="keyword">c</span>) <span class="number">1982</span><span class="punctuation">,</span> <span class="number">2005</span><span class="punctuation">,</span> Oracle. All rights reserved.</span><br><span class="line">connected <span class="keyword">to</span> <span class="keyword">target</span> database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span>)</span><br><span class="line">connected <span class="keyword">to</span> auxiliary database: PRIM (DBID<span class="operator">=</span><span class="number">3971986030</span><span class="punctuation">,</span> not open)</span><br><span class="line">RMAN&gt; duplicate <span class="keyword">target</span> database for standby dorecover<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>注意：我们也可以使用不带dorecover子句的选项， 例如，</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt;duplicate target database for standby<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤11:创建SRL,</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">ADD</span> STANDBY LOGFILE <span class="keyword">GROUP</span> <span class="number">3</span> <span class="string">&#x27;/u01/app/oracle/databases/prim/redo/log3a.log&#x27;</span> size <span class="number">50</span>m;</span><br><span class="line">参考步骤<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤12：在备用数据库上启动MRP（管理恢复进程），</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">select</span> <span class="type">name</span>,db_unique_name,database_role <span class="keyword">from</span> v$<span class="keyword">database</span>;</span><br><span class="line"><span class="type">NAME</span> DB_UNIQUE_NAME DATABASE_ROLE</span><br><span class="line"><span class="comment">--------- ---------------- --------------</span></span><br><span class="line">PRIM STDBY PHYSICAL STANDBY</span><br><span class="line"><span class="keyword">SQL</span>&gt; <span class="keyword">alter</span> <span class="keyword">database</span> recover managed standby <span class="keyword">database</span> disconnect;</span><br></pre></td></tr></table></figure>
+
+<p>步骤13：在主数据库上启用log_archive_dest_2，该参数用于将日志发送到备用服务器。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>&gt;<span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">set</span> log_archive_dest_state_2=<span class="keyword">enable</span>;</span><br></pre></td></tr></table></figure>
+
+<p>步骤14：检查备用数据库是否与主数据库同步，<br>A. 在备用数据库上检查v$archived_log视图，</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br></pre></td></tr></table></figure>
+<p>B. 在主数据库上执行日志切换，</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">SYSTEM</span> SWITCH LOGFILE;</span><br></pre></td></tr></table></figure>
+
+<p>C. 在备库上执行,</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">SQL&gt; SELECT SEQUENCE#, FIRST_TIME, NEXT_TIME FROM V$ARCHIVED_LOG ORDER BY SEQUENCE#;</span><br><span class="line"></span><br><span class="line">SEQUENCE# FIRST_TIM NEXT_TIME</span><br><span class="line">---------- --------- ---------</span><br><span class="line">29 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">30 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">31 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">32 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">33 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">34 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">35 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">36 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">37 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">38 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">39 06-MAR<span class="string">-09</span> 06-MAR<span class="string">-09</span></span><br><span class="line">40 06-MAR<span class="string">-09</span> 07-MAR<span class="string">-09</span></span><br><span class="line"></span><br><span class="line">SQL&gt; select sequence#,applied from v$archived_log order by sequence#;</span><br><span class="line">SEQUENCE# APP</span><br><span class="line">---------- ---</span><br><span class="line">29 YES</span><br><span class="line">30 YES</span><br><span class="line">31 YES</span><br><span class="line">32 YES</span><br><span class="line">33 YES</span><br><span class="line">34 YES</span><br><span class="line">35 YES</span><br><span class="line">36 YES</span><br><span class="line">37 YES</span><br><span class="line">38 YES</span><br><span class="line">39 YES</span><br><span class="line">40 YES </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>数据库技术</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>数据库</tag>
+        <tag>RMAN</tag>
+        <tag>高可用</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>薛定谔的猫</title>
     <url>/2023-05-01/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/</url>
     <content><![CDATA[<p>Schrodinger’s cat<br>薛定谔的猫</p>
@@ -4597,6 +4597,40 @@
         <tag>双语</tag>
         <tag>量子力学</tag>
         <tag>薛定谔的猫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>谈谈生产环境中PostgreSQL参数的意义</title>
+    <url>/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="谈谈生产环境中PostgreSQL参数的意义"><a href="#谈谈生产环境中PostgreSQL参数的意义" class="headerlink" title="谈谈生产环境中PostgreSQL参数的意义"></a>谈谈生产环境中PostgreSQL参数的意义</h1><h1 id="archive-command"><a href="#archive-command" class="headerlink" title="archive_command"></a>archive_command</h1><p>archive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’</p>
+<h1 id="auto-explain-log-analyze"><a href="#auto-explain-log-analyze" class="headerlink" title="auto_explain.log_analyze"></a>auto_explain.log_analyze</h1><p>auto_explain.log_analyze &#x3D; true</p>
+<p>auto_explain.log_min_duration &#x3D; ‘300ms’</p>
+<p>auto_explain.log_min_duration &#x3D; ‘300mss’</p>
+<p>auto_explain.log_timing &#x3D; on</p>
+<p>auto_explain.log_verbose &#x3D; off</p>
+<p>autovacuum &#x3D; on</p>
+<p>autovacuum_analyze_scale_factor &#x3D; 0.01</p>
+<p>autovacuum_freeze_max_age &#x3D; 1200000000</p>
+<p>autovacuum_max_workers &#x3D; 12</p>
+<p>autovacuum_multixact_freeze_max_age &#x3D; 1250000000<br>autovacuum_vacuum_cost_delay &#x3D; 0ms<br>autovacuum_vacuum_scale_factor &#x3D; 0.02<br>checkpoint_completion_target &#x3D; 0.5<br>checkpoint_flush_after &#x3D; 0<br>checkpoint_timeout &#x3D; 30min<br>checkpoint_timeout &#x3D; 30min<br>default_text_search_config &#x3D; ‘pg_catalog.english’<br>enable_partitionwise_aggregate &#x3D; on<br>enable_partitionwise_join &#x3D; on<br>full_page_writes &#x3D; on<br>hot_standby_feedback &#x3D; off<br>huge_pages &#x3D; try<br>idle_in_transaction_session_timeout &#x3D; ‘6h’<br>idle_in_transaction_session_timeout&#x3D;3600000<br>jit&#x3D;off<br>lc_messages &#x3D; ‘C’<br>lc_monetary &#x3D; ‘C’<br>lc_numeric &#x3D; ‘C’<br>lc_time &#x3D; ‘C’<br>log_autovacuum_min_duration &#x3D; 0<br>log_checkpoints &#x3D; on<br>log_destination&#x3D;csvlog<br>log_error_verbosity &#x3D; verbose<br>log_filename &#x3D; ‘postgresql-%H.log’<br>log_lock_waits &#x3D; on<br>log_min_duration_statement &#x3D; 3s<br>log_rotation_age &#x3D; 1h<br>log_rotation_size &#x3D; 1GB<br>log_statement &#x3D; ‘ddl’<br>log_temp_files &#x3D; 256MB<br>log_truncate_on_rotation &#x3D; on<br>maintenance_work_mem &#x3D; 3GB<br>maintenance_work_mem &#x3D; 3GB<br>max_connections &#x3D; 5000<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers_per_gather &#x3D; 0<br>max_replication_slots &#x3D; 64<br>max_standby_archive_delay &#x3D; 120s<br>max_standby_streaming_delay &#x3D; 120s<br>max_sync_workers_per_subscription &#x3D; 8<br>max_sync_workers_per_subscription &#x3D; 8<br>max_wal_senders &#x3D; 64<br>max_wal_size &#x3D; 80GB<br>min_wal_size &#x3D; 12GB<br>old_snapshot_threshold &#x3D; 6h<br>parallel_leader_participation &#x3D; on<br>pg_stat_statements.max &#x3D; 50<br>pgsentinel_pgssh.enable &#x3D; true<br>random_page_cost &#x3D; 1.1<br>shared_buffers &#x3D; 64GB<br>shared_preload_libraries &#x3D; ‘pg_stat_statements,auto_explain,telepg_monitor’<br>statement_timeout&#x3D;’24h’<br>synchronous_commit &#x3D; remote_write<br>tcp_keepalives_count &#x3D; 10<br>tcp_keepalives_idle &#x3D; 60<br>tcp_keepalives_interval &#x3D; 10<br>temp_file_limit&#x3D;20240000<br>track_activity_query_size &#x3D; 2048<br>track_functions &#x3D; pl<br>track_io_timing &#x3D; off<br>unix_socket_directories &#x3D; ‘., &#x2F;tmp’<br>unix_socket_permissions &#x3D; 0700<br>vacuum_freeze_table_age &#x3D; 200000000<br>vacuum_multixact_freeze_table_age &#x3D; 200000000<br>wal_buffers &#x3D; 32MB<br>wal_compression &#x3D; on<br>wal_keep_segments &#x3D; 5000<br>wal_receiver_status_interval &#x3D; 1s<br>work_mem &#x3D; 32MB<br>#password_encryption &#x3D; scram-sha-256<br>#pg_stat_statements.track &#x3D; none</p>
+<h2 id="shared-buffers-64GB"><a href="#shared-buffers-64GB" class="headerlink" title="shared_buffers &#x3D; 64GB"></a>shared_buffers &#x3D; 64GB</h2><p>shared_buffers (integer)</p>
+<p>Sets the amount of memory the database server uses for shared memory buffers. The default is typically 128 megabytes (128MB), but might be less if your kernel settings will not support it (as determined during initdb). This setting must be at least 128 kilobytes. However, settings significantly higher than the minimum are usually needed for good performance. If this value is specified without units, it is taken as blocks, that is BLCKSZ bytes, typically 8kB. (Non-default values of BLCKSZ change the minimum value.) This parameter can only be set at server start.</p>
+<p>If you have a dedicated database server with 1GB or more of RAM, a reasonable starting value for shared_buffers is 25% of the memory in your system. There are some workloads where even larger settings for shared_buffers are effective, but because PostgreSQL also relies on the operating system cache, it is unlikely that an allocation of more than 40% of RAM to shared_buffers will work better than a smaller amount. Larger settings for shared_buffers usually require a corresponding increase in max_wal_size, in order to spread out the process of writing large quantities of new or changed data over a longer period of time.</p>
+<p>On systems with less than 1GB of RAM, a smaller percentage of RAM is appropriate, so as to leave adequate space for the operating system.</p>
+<p>max_connections (integer)</p>
+<pre><code>Determines the maximum number of concurrent connections to the database server. The default is typically 100 connections, but might be less if your kernel settings will not support it (as determined during initdb). This parameter can only be set at server start.
+
+When running a standby server, you must set this parameter to the same or higher value than on the master server. Otherwise, queries will not be allowed in the standby server.
+</code></pre>
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>数据库系统</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>PostgreSQL</tag>
+        <tag>参数配置</tag>
       </tags>
   </entry>
   <entry>
@@ -4834,37 +4868,52 @@
       </tags>
   </entry>
   <entry>
-    <title>谈谈生产环境中PostgreSQL参数的意义</title>
-    <url>/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="谈谈生产环境中PostgreSQL参数的意义"><a href="#谈谈生产环境中PostgreSQL参数的意义" class="headerlink" title="谈谈生产环境中PostgreSQL参数的意义"></a>谈谈生产环境中PostgreSQL参数的意义</h1><h1 id="archive-command"><a href="#archive-command" class="headerlink" title="archive_command"></a>archive_command</h1><p>archive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’</p>
-<h1 id="auto-explain-log-analyze"><a href="#auto-explain-log-analyze" class="headerlink" title="auto_explain.log_analyze"></a>auto_explain.log_analyze</h1><p>auto_explain.log_analyze &#x3D; true</p>
-<p>auto_explain.log_min_duration &#x3D; ‘300ms’</p>
-<p>auto_explain.log_min_duration &#x3D; ‘300mss’</p>
-<p>auto_explain.log_timing &#x3D; on</p>
-<p>auto_explain.log_verbose &#x3D; off</p>
-<p>autovacuum &#x3D; on</p>
-<p>autovacuum_analyze_scale_factor &#x3D; 0.01</p>
-<p>autovacuum_freeze_max_age &#x3D; 1200000000</p>
-<p>autovacuum_max_workers &#x3D; 12</p>
-<p>autovacuum_multixact_freeze_max_age &#x3D; 1250000000<br>autovacuum_vacuum_cost_delay &#x3D; 0ms<br>autovacuum_vacuum_scale_factor &#x3D; 0.02<br>checkpoint_completion_target &#x3D; 0.5<br>checkpoint_flush_after &#x3D; 0<br>checkpoint_timeout &#x3D; 30min<br>checkpoint_timeout &#x3D; 30min<br>default_text_search_config &#x3D; ‘pg_catalog.english’<br>enable_partitionwise_aggregate &#x3D; on<br>enable_partitionwise_join &#x3D; on<br>full_page_writes &#x3D; on<br>hot_standby_feedback &#x3D; off<br>huge_pages &#x3D; try<br>idle_in_transaction_session_timeout &#x3D; ‘6h’<br>idle_in_transaction_session_timeout&#x3D;3600000<br>jit&#x3D;off<br>lc_messages &#x3D; ‘C’<br>lc_monetary &#x3D; ‘C’<br>lc_numeric &#x3D; ‘C’<br>lc_time &#x3D; ‘C’<br>log_autovacuum_min_duration &#x3D; 0<br>log_checkpoints &#x3D; on<br>log_destination&#x3D;csvlog<br>log_error_verbosity &#x3D; verbose<br>log_filename &#x3D; ‘postgresql-%H.log’<br>log_lock_waits &#x3D; on<br>log_min_duration_statement &#x3D; 3s<br>log_rotation_age &#x3D; 1h<br>log_rotation_size &#x3D; 1GB<br>log_statement &#x3D; ‘ddl’<br>log_temp_files &#x3D; 256MB<br>log_truncate_on_rotation &#x3D; on<br>maintenance_work_mem &#x3D; 3GB<br>maintenance_work_mem &#x3D; 3GB<br>max_connections &#x3D; 5000<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers_per_gather &#x3D; 0<br>max_replication_slots &#x3D; 64<br>max_standby_archive_delay &#x3D; 120s<br>max_standby_streaming_delay &#x3D; 120s<br>max_sync_workers_per_subscription &#x3D; 8<br>max_sync_workers_per_subscription &#x3D; 8<br>max_wal_senders &#x3D; 64<br>max_wal_size &#x3D; 80GB<br>min_wal_size &#x3D; 12GB<br>old_snapshot_threshold &#x3D; 6h<br>parallel_leader_participation &#x3D; on<br>pg_stat_statements.max &#x3D; 50<br>pgsentinel_pgssh.enable &#x3D; true<br>random_page_cost &#x3D; 1.1<br>shared_buffers &#x3D; 64GB<br>shared_preload_libraries &#x3D; ‘pg_stat_statements,auto_explain,telepg_monitor’<br>statement_timeout&#x3D;’24h’<br>synchronous_commit &#x3D; remote_write<br>tcp_keepalives_count &#x3D; 10<br>tcp_keepalives_idle &#x3D; 60<br>tcp_keepalives_interval &#x3D; 10<br>temp_file_limit&#x3D;20240000<br>track_activity_query_size &#x3D; 2048<br>track_functions &#x3D; pl<br>track_io_timing &#x3D; off<br>unix_socket_directories &#x3D; ‘., &#x2F;tmp’<br>unix_socket_permissions &#x3D; 0700<br>vacuum_freeze_table_age &#x3D; 200000000<br>vacuum_multixact_freeze_table_age &#x3D; 200000000<br>wal_buffers &#x3D; 32MB<br>wal_compression &#x3D; on<br>wal_keep_segments &#x3D; 5000<br>wal_receiver_status_interval &#x3D; 1s<br>work_mem &#x3D; 32MB<br>#password_encryption &#x3D; scram-sha-256<br>#pg_stat_statements.track &#x3D; none</p>
-<h2 id="shared-buffers-64GB"><a href="#shared-buffers-64GB" class="headerlink" title="shared_buffers &#x3D; 64GB"></a>shared_buffers &#x3D; 64GB</h2><p>shared_buffers (integer)</p>
-<p>Sets the amount of memory the database server uses for shared memory buffers. The default is typically 128 megabytes (128MB), but might be less if your kernel settings will not support it (as determined during initdb). This setting must be at least 128 kilobytes. However, settings significantly higher than the minimum are usually needed for good performance. If this value is specified without units, it is taken as blocks, that is BLCKSZ bytes, typically 8kB. (Non-default values of BLCKSZ change the minimum value.) This parameter can only be set at server start.</p>
-<p>If you have a dedicated database server with 1GB or more of RAM, a reasonable starting value for shared_buffers is 25% of the memory in your system. There are some workloads where even larger settings for shared_buffers are effective, but because PostgreSQL also relies on the operating system cache, it is unlikely that an allocation of more than 40% of RAM to shared_buffers will work better than a smaller amount. Larger settings for shared_buffers usually require a corresponding increase in max_wal_size, in order to spread out the process of writing large quantities of new or changed data over a longer period of time.</p>
-<p>On systems with less than 1GB of RAM, a smaller percentage of RAM is appropriate, so as to leave adequate space for the operating system.</p>
-<p>max_connections (integer)</p>
-<pre><code>Determines the maximum number of concurrent connections to the database server. The default is typically 100 connections, but might be less if your kernel settings will not support it (as determined during initdb). This parameter can only be set at server start.
+    <title>配置Solaris允许SSH远程登录</title>
+    <url>/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="配置Solaris允许SSH远程登录"><a href="#配置Solaris允许SSH远程登录" class="headerlink" title="配置Solaris允许SSH远程登录"></a>配置Solaris允许SSH远程登录</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Oracle Solaris 10操作系统安装完成后，默认配置下，不允许root通过SSH登录系统。本文主要描述如何配置Solaris，使得root可以远程登录。</p>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><ol>
+<li>   配置&#x2F;etc&#x2F;ssh&#x2F;sshd_config的PermitRootLogin参数</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># gedit /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># cat /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ident	&quot;@(#)sshd_config	1.10	10/10/19 SMI&quot;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Configuration file for sshd(1m)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Protocol versions supported</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The sshd shipped in this release of Solaris has support for major versions</span></span><br><span class="line"><span class="comment"># 1 and 2.  It is recommended due to security weaknesses in the v1 protocol</span></span><br><span class="line"><span class="comment"># that sites run only v2 if possible. Support for v1 is provided to help sites</span></span><br><span class="line"><span class="comment"># with existing ssh v1 clients/servers to transition. </span></span><br><span class="line"><span class="comment"># Support for v1 may not be available in a future release of Solaris.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To enable support for v1 an RSA1 key must be created with ssh-keygen(1).</span></span><br><span class="line"><span class="comment"># RSA and DSA keys for protocol v2 are created by /etc/init.d/sshd if they</span></span><br><span class="line"><span class="comment"># do not already exist, RSA1 keys for protocol v1 are not automatically created.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment ONLY ONE of the following Protocol statements.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Only v2 (recommended)</span></span><br><span class="line">Protocol 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Both v1 and v2 (not recommended)</span></span><br><span class="line"><span class="comment">#Protocol 2,1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Only v1 (not recommended)</span></span><br><span class="line"><span class="comment">#Protocol 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Listen port (the IANA registered port number for ssh is 22)</span><span class="built_in"></span></span><br><span class="line"><span class="built_in">Port </span>22</span><br><span class="line"></span><br><span class="line"><span class="comment"># The default listen address is all interfaces, this may need to be changed</span></span><br><span class="line"><span class="comment"># if you wish to restrict the interfaces sshd listens on for a multi homed host.</span></span><br><span class="line"><span class="comment"># Multiple ListenAddress entries are allowed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># IPv4 only</span></span><br><span class="line"><span class="comment">#ListenAddress 0.0.0.0</span></span><br><span class="line"><span class="comment"># IPv4 &amp; IPv6</span></span><br><span class="line">ListenAddress ::</span><br><span class="line"></span><br><span class="line"><span class="comment"># Port forwarding</span></span><br><span class="line">AllowTcpForwarding <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># If port forwarding is enabled, specify if the server can bind to INADDR_ANY. </span></span><br><span class="line"><span class="comment"># This allows the local port forwarding to work when connections are received</span></span><br><span class="line"><span class="comment"># from any remote host.</span></span><br><span class="line">GatewayPorts <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># X11 tunneling options</span></span><br><span class="line">X11Forwarding <span class="literal">yes</span></span><br><span class="line">X11DisplayOffset 10</span><br><span class="line">X11UseLocalhost <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The maximum number of concurrent unauthenticated connections to sshd.</span></span><br><span class="line"><span class="comment"># start:rate:full see sshd(1) for more information.</span></span><br><span class="line"><span class="comment"># The default is 10 unauthenticated clients.</span></span><br><span class="line"><span class="comment">#MaxStartups 10:30:60</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Banner to be printed before authentication starts.</span></span><br><span class="line"><span class="comment">#Banner /etc/issue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Should sshd print the /etc/motd file and check for mail.</span></span><br><span class="line"><span class="comment"># On Solaris it is assumed that the login shell will do these (eg /etc/profile).</span></span><br><span class="line">PrintMotd <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># KeepAlive specifies whether keep alive messages are sent to the client.</span></span><br><span class="line"><span class="comment"># See sshd(1) for detailed description of what this means.</span></span><br><span class="line"><span class="comment"># Note that the client may also be sending keep alive messages to the server.</span></span><br><span class="line">KeepAlive <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Syslog facility and level </span></span><br><span class="line">SyslogFacility auth</span><br><span class="line">LogLevel <span class="built_in">info</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Authentication configuration</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Host private key files</span></span><br><span class="line"><span class="comment"># Must be on a local disk and readable only by the root user (root:sys 600).</span></span><br><span class="line">HostKey /etc/ssh/ssh_host_rsa_key</span><br><span class="line">HostKey /etc/ssh/ssh_host_dsa_key</span><br><span class="line"></span><br><span class="line"><span class="comment"># Length of the server key</span></span><br><span class="line"><span class="comment"># Default 768, Minimum 512</span></span><br><span class="line">ServerKeyBits 768</span><br><span class="line"></span><br><span class="line"><span class="comment"># sshd regenerates the key every KeyRegenerationInterval seconds.</span></span><br><span class="line"><span class="comment"># The key is never stored anywhere except the memory of sshd.</span></span><br><span class="line"><span class="comment"># The default is 1 hour (3600 seconds).</span></span><br><span class="line">KeyRegenerationInterval 3600</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure secure permissions on users .ssh directory.</span></span><br><span class="line">StrictModes <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Length of time in seconds before a client that hasn&#x27;t completed</span></span><br><span class="line"><span class="comment"># authentication is disconnected.</span></span><br><span class="line"><span class="comment"># Default is 600 seconds. 0 means no time limit.</span></span><br><span class="line">LoginGraceTime 600</span><br><span class="line"></span><br><span class="line"><span class="comment"># Maximum number of retries for authentication</span></span><br><span class="line"><span class="comment"># Default is 6. Default (if unset) for MaxAuthTriesLog is MaxAuthTries / 2</span></span><br><span class="line">MaxAuthTries	6</span><br><span class="line">MaxAuthTriesLog	3</span><br><span class="line"></span><br><span class="line"><span class="comment"># Are logins to accounts with empty passwords allowed.</span></span><br><span class="line"><span class="comment"># If PermitEmptyPasswords is no, pass PAM_DISALLOW_NULL_AUTHTOK </span></span><br><span class="line"><span class="comment"># to pam_authenticate(3PAM).</span></span><br><span class="line">PermitEmptyPasswords <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To disable tunneled clear text passwords, change PasswordAuthentication to no.</span></span><br><span class="line">PasswordAuthentication <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use PAM via keyboard interactive method for authentication.</span></span><br><span class="line"><span class="comment"># Depending on the setup of pam.conf(4) this may allow tunneled clear text</span></span><br><span class="line"><span class="comment"># passwords even when PasswordAuthentication is set to no. This is dependent</span></span><br><span class="line"><span class="comment"># on what the individual modules request and is out of the control of sshd</span></span><br><span class="line"><span class="comment"># or the protocol.</span></span><br><span class="line">PAMAuthenticationViaKBDInt <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Are root logins permitted using sshd.</span></span><br><span class="line"><span class="comment"># Note that sshd uses pam_authenticate(3PAM) so the root (or any other) user</span></span><br><span class="line"><span class="comment"># maybe denied access by a PAM module regardless of this setting.</span></span><br><span class="line"><span class="comment"># Valid options are yes, without-password, no.</span></span><br><span class="line"><span class="comment"># PermitRootLogin no</span></span><br><span class="line">PermitRootLogin <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sftp subsystem</span></span><br><span class="line">Subsystem	sftp	internal-sftp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># SSH protocol v1 specific options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The following options only apply to the v1 protocol and provide</span></span><br><span class="line"><span class="comment"># some form of backwards compatibility with the very weak security</span></span><br><span class="line"><span class="comment"># of /usr/bin/rsh.  Their use is not recommended and the functionality</span></span><br><span class="line"><span class="comment"># will be removed when support for v1 protocol is removed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Should sshd use .rhosts and .shosts for password less authentication.</span></span><br><span class="line">IgnoreRhosts <span class="literal">yes</span></span><br><span class="line">RhostsAuthentication <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rhosts RSA Authentication</span></span><br><span class="line"><span class="comment"># For this to work you will also need host keys in /etc/ssh/ssh_known_hosts.</span></span><br><span class="line"><span class="comment"># If the user on the client side is not root then this won&#x27;t work on</span></span><br><span class="line"><span class="comment"># Solaris since /usr/bin/ssh is not installed setuid.</span></span><br><span class="line">RhostsRSAAuthentication <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment if you don&#x27;t trust ~/.ssh/known_hosts for RhostsRSAAuthentication.</span></span><br><span class="line"><span class="comment">#IgnoreUserKnownHosts yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Is pure RSA authentication allowed.</span></span><br><span class="line"><span class="comment"># Default is yes</span></span><br><span class="line">RSAAuthentication <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
 
-When running a standby server, you must set this parameter to the same or higher value than on the master server. Otherwise, queries will not be allowed in the standby server.
-</code></pre>
+<ol start="2">
+<li>   重启SSH服务，使配置生效</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># svcadm restart ssh</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>   重启系统<br>可能需要重启Solaris后，root才可以远程登录。</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># reboot</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   远程登录</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Last</span> login: Wed Jan  <span class="number">7</span> <span class="number">17</span>:<span class="number">14</span>:<span class="number">15</span> <span class="number">2015</span> from <span class="number">192.168.137.105</span></span><br><span class="line"><span class="attribute">Oracle</span> Corporation      SunOS <span class="number">5</span>.<span class="number">10</span>      Generic Patch   January <span class="number">2005</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增补资料"><a href="#增补资料" class="headerlink" title="增补资料"></a>增补资料</h2><p>暂无</p>
 ]]></content>
       <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
+        <category>技术分享</category>
+        <category>操作系统技术</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
-        <tag>PostgreSQL</tag>
-        <tag>参数配置</tag>
+        <tag>Solaris</tag>
+        <tag>操作系统</tag>
+        <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>随笔20110307——早春花雨图</title>
+    <url>/2011-03-07/%E9%9A%8F%E7%AC%9420110307%E2%80%94%E2%80%94%E6%97%A9%E6%98%A5%E8%8A%B1%E9%9B%A8%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="随笔20110307——早春花雨图"><a href="#随笔20110307——早春花雨图" class="headerlink" title="随笔20110307——早春花雨图"></a>随笔20110307——早春花雨图</h1><p>雨后的校园是清新的，水珠打落了叶上的尘，每片绿叶都像被悉心洗过似的。<br>青花大理石上的泥沙，也已冲刷干净，光亮可鉴，倒影着小道两旁新开的花。<br>雨后的校园是美丽的，雨点惊醒了丛里的花儿，赶集儿般的，一朝争放。<br>轻轻的细雨，潋滟的湖光，空明的鸟啼，还有花儿那窃窃的私语声。<br>雨后的校园有些凉意，行人都不大说话，大概跟我一样，醉在了这早春花雨图里。<br>我就这样走着，望着前方，但愿那里，一如此处的风景，简单而美丽。</p>
+<p>于观音湖畔腹稿 北苑成文<br>2011-3-7</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -5042,55 +5091,6 @@ When running a standby server, you must set this parameter to the same or higher
 </li>
 </ol>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">user</span><span class="operator">/</span>password<span class="variable">@dbs1</span></span><br><span class="line"><span class="comment">-- - put a1.dat to a4.dat (using dbs2 dblink)</span></span><br><span class="line"><span class="comment">-- - level 2 sub dir to parent dir</span></span><br><span class="line"><span class="comment">-- - user has read privs on source_dir_1 at dbs1 and write on target_dir</span></span><br><span class="line"><span class="comment">-- - in dbs2</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    DBMS_FILE_TRANSFER.PUT_FILE(<span class="string">&#x27;source_dir_1&#x27;</span>, <span class="string">&#x27;a1.dat&#x27;</span>,</span><br><span class="line">                                <span class="string">&#x27;target_dir&#x27;</span>, <span class="string">&#x27;a4.dat&#x27;</span>, <span class="string">&#x27;dbs2&#x27;</span> );</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>]]></content>
-  </entry>
-  <entry>
-    <title>配置Solaris允许SSH远程登录</title>
-    <url>/2015-01-07/%E9%85%8D%E7%BD%AESolaris%E5%85%81%E8%AE%B8SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</url>
-    <content><![CDATA[<h1 id="配置Solaris允许SSH远程登录"><a href="#配置Solaris允许SSH远程登录" class="headerlink" title="配置Solaris允许SSH远程登录"></a>配置Solaris允许SSH远程登录</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Oracle Solaris 10操作系统安装完成后，默认配置下，不允许root通过SSH登录系统。本文主要描述如何配置Solaris，使得root可以远程登录。</p>
-<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><ol>
-<li>   配置&#x2F;etc&#x2F;ssh&#x2F;sshd_config的PermitRootLogin参数</li>
-</ol>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># gedit /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># cat /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># Copyright (c) 2001, 2010, Oracle and/or its affiliates. All rights reserved.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># ident	&quot;@(#)sshd_config	1.10	10/10/19 SMI&quot;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Configuration file for sshd(1m)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Protocol versions supported</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The sshd shipped in this release of Solaris has support for major versions</span></span><br><span class="line"><span class="comment"># 1 and 2.  It is recommended due to security weaknesses in the v1 protocol</span></span><br><span class="line"><span class="comment"># that sites run only v2 if possible. Support for v1 is provided to help sites</span></span><br><span class="line"><span class="comment"># with existing ssh v1 clients/servers to transition. </span></span><br><span class="line"><span class="comment"># Support for v1 may not be available in a future release of Solaris.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># To enable support for v1 an RSA1 key must be created with ssh-keygen(1).</span></span><br><span class="line"><span class="comment"># RSA and DSA keys for protocol v2 are created by /etc/init.d/sshd if they</span></span><br><span class="line"><span class="comment"># do not already exist, RSA1 keys for protocol v1 are not automatically created.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment ONLY ONE of the following Protocol statements.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Only v2 (recommended)</span></span><br><span class="line">Protocol 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Both v1 and v2 (not recommended)</span></span><br><span class="line"><span class="comment">#Protocol 2,1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Only v1 (not recommended)</span></span><br><span class="line"><span class="comment">#Protocol 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Listen port (the IANA registered port number for ssh is 22)</span><span class="built_in"></span></span><br><span class="line"><span class="built_in">Port </span>22</span><br><span class="line"></span><br><span class="line"><span class="comment"># The default listen address is all interfaces, this may need to be changed</span></span><br><span class="line"><span class="comment"># if you wish to restrict the interfaces sshd listens on for a multi homed host.</span></span><br><span class="line"><span class="comment"># Multiple ListenAddress entries are allowed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># IPv4 only</span></span><br><span class="line"><span class="comment">#ListenAddress 0.0.0.0</span></span><br><span class="line"><span class="comment"># IPv4 &amp; IPv6</span></span><br><span class="line">ListenAddress ::</span><br><span class="line"></span><br><span class="line"><span class="comment"># Port forwarding</span></span><br><span class="line">AllowTcpForwarding <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># If port forwarding is enabled, specify if the server can bind to INADDR_ANY. </span></span><br><span class="line"><span class="comment"># This allows the local port forwarding to work when connections are received</span></span><br><span class="line"><span class="comment"># from any remote host.</span></span><br><span class="line">GatewayPorts <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># X11 tunneling options</span></span><br><span class="line">X11Forwarding <span class="literal">yes</span></span><br><span class="line">X11DisplayOffset 10</span><br><span class="line">X11UseLocalhost <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The maximum number of concurrent unauthenticated connections to sshd.</span></span><br><span class="line"><span class="comment"># start:rate:full see sshd(1) for more information.</span></span><br><span class="line"><span class="comment"># The default is 10 unauthenticated clients.</span></span><br><span class="line"><span class="comment">#MaxStartups 10:30:60</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Banner to be printed before authentication starts.</span></span><br><span class="line"><span class="comment">#Banner /etc/issue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Should sshd print the /etc/motd file and check for mail.</span></span><br><span class="line"><span class="comment"># On Solaris it is assumed that the login shell will do these (eg /etc/profile).</span></span><br><span class="line">PrintMotd <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># KeepAlive specifies whether keep alive messages are sent to the client.</span></span><br><span class="line"><span class="comment"># See sshd(1) for detailed description of what this means.</span></span><br><span class="line"><span class="comment"># Note that the client may also be sending keep alive messages to the server.</span></span><br><span class="line">KeepAlive <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Syslog facility and level </span></span><br><span class="line">SyslogFacility auth</span><br><span class="line">LogLevel <span class="built_in">info</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Authentication configuration</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Host private key files</span></span><br><span class="line"><span class="comment"># Must be on a local disk and readable only by the root user (root:sys 600).</span></span><br><span class="line">HostKey /etc/ssh/ssh_host_rsa_key</span><br><span class="line">HostKey /etc/ssh/ssh_host_dsa_key</span><br><span class="line"></span><br><span class="line"><span class="comment"># Length of the server key</span></span><br><span class="line"><span class="comment"># Default 768, Minimum 512</span></span><br><span class="line">ServerKeyBits 768</span><br><span class="line"></span><br><span class="line"><span class="comment"># sshd regenerates the key every KeyRegenerationInterval seconds.</span></span><br><span class="line"><span class="comment"># The key is never stored anywhere except the memory of sshd.</span></span><br><span class="line"><span class="comment"># The default is 1 hour (3600 seconds).</span></span><br><span class="line">KeyRegenerationInterval 3600</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ensure secure permissions on users .ssh directory.</span></span><br><span class="line">StrictModes <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Length of time in seconds before a client that hasn&#x27;t completed</span></span><br><span class="line"><span class="comment"># authentication is disconnected.</span></span><br><span class="line"><span class="comment"># Default is 600 seconds. 0 means no time limit.</span></span><br><span class="line">LoginGraceTime 600</span><br><span class="line"></span><br><span class="line"><span class="comment"># Maximum number of retries for authentication</span></span><br><span class="line"><span class="comment"># Default is 6. Default (if unset) for MaxAuthTriesLog is MaxAuthTries / 2</span></span><br><span class="line">MaxAuthTries	6</span><br><span class="line">MaxAuthTriesLog	3</span><br><span class="line"></span><br><span class="line"><span class="comment"># Are logins to accounts with empty passwords allowed.</span></span><br><span class="line"><span class="comment"># If PermitEmptyPasswords is no, pass PAM_DISALLOW_NULL_AUTHTOK </span></span><br><span class="line"><span class="comment"># to pam_authenticate(3PAM).</span></span><br><span class="line">PermitEmptyPasswords <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To disable tunneled clear text passwords, change PasswordAuthentication to no.</span></span><br><span class="line">PasswordAuthentication <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use PAM via keyboard interactive method for authentication.</span></span><br><span class="line"><span class="comment"># Depending on the setup of pam.conf(4) this may allow tunneled clear text</span></span><br><span class="line"><span class="comment"># passwords even when PasswordAuthentication is set to no. This is dependent</span></span><br><span class="line"><span class="comment"># on what the individual modules request and is out of the control of sshd</span></span><br><span class="line"><span class="comment"># or the protocol.</span></span><br><span class="line">PAMAuthenticationViaKBDInt <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Are root logins permitted using sshd.</span></span><br><span class="line"><span class="comment"># Note that sshd uses pam_authenticate(3PAM) so the root (or any other) user</span></span><br><span class="line"><span class="comment"># maybe denied access by a PAM module regardless of this setting.</span></span><br><span class="line"><span class="comment"># Valid options are yes, without-password, no.</span></span><br><span class="line"><span class="comment"># PermitRootLogin no</span></span><br><span class="line">PermitRootLogin <span class="literal">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sftp subsystem</span></span><br><span class="line">Subsystem	sftp	internal-sftp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># SSH protocol v1 specific options</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The following options only apply to the v1 protocol and provide</span></span><br><span class="line"><span class="comment"># some form of backwards compatibility with the very weak security</span></span><br><span class="line"><span class="comment"># of /usr/bin/rsh.  Their use is not recommended and the functionality</span></span><br><span class="line"><span class="comment"># will be removed when support for v1 protocol is removed.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Should sshd use .rhosts and .shosts for password less authentication.</span></span><br><span class="line">IgnoreRhosts <span class="literal">yes</span></span><br><span class="line">RhostsAuthentication <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rhosts RSA Authentication</span></span><br><span class="line"><span class="comment"># For this to work you will also need host keys in /etc/ssh/ssh_known_hosts.</span></span><br><span class="line"><span class="comment"># If the user on the client side is not root then this won&#x27;t work on</span></span><br><span class="line"><span class="comment"># Solaris since /usr/bin/ssh is not installed setuid.</span></span><br><span class="line">RhostsRSAAuthentication <span class="literal">no</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Uncomment if you don&#x27;t trust ~/.ssh/known_hosts for RhostsRSAAuthentication.</span></span><br><span class="line"><span class="comment">#IgnoreUserKnownHosts yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Is pure RSA authentication allowed.</span></span><br><span class="line"><span class="comment"># Default is yes</span></span><br><span class="line">RSAAuthentication <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>   重启SSH服务，使配置生效</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># svcadm restart ssh</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>   重启系统<br>可能需要重启Solaris后，root才可以远程登录。</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="meta"># reboot</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>   远程登录</li>
-</ol>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Last</span> login: Wed Jan  <span class="number">7</span> <span class="number">17</span>:<span class="number">14</span>:<span class="number">15</span> <span class="number">2015</span> from <span class="number">192.168.137.105</span></span><br><span class="line"><span class="attribute">Oracle</span> Corporation      SunOS <span class="number">5</span>.<span class="number">10</span>      Generic Patch   January <span class="number">2005</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="增补资料"><a href="#增补资料" class="headerlink" title="增补资料"></a>增补资料</h2><p>暂无</p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>操作系统技术</category>
-      </categories>
-      <tags>
-        <tag>Solaris</tag>
-        <tag>操作系统</tag>
-        <tag>SSH</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>随笔20110307——早春花雨图</title>
-    <url>/2011-03-07/%E9%9A%8F%E7%AC%9420110307%E2%80%94%E2%80%94%E6%97%A9%E6%98%A5%E8%8A%B1%E9%9B%A8%E5%9B%BE/</url>
-    <content><![CDATA[<h1 id="随笔20110307——早春花雨图"><a href="#随笔20110307——早春花雨图" class="headerlink" title="随笔20110307——早春花雨图"></a>随笔20110307——早春花雨图</h1><p>雨后的校园是清新的，水珠打落了叶上的尘，每片绿叶都像被悉心洗过似的。<br>青花大理石上的泥沙，也已冲刷干净，光亮可鉴，倒影着小道两旁新开的花。<br>雨后的校园是美丽的，雨点惊醒了丛里的花儿，赶集儿般的，一朝争放。<br>轻轻的细雨，潋滟的湖光，空明的鸟啼，还有花儿那窃窃的私语声。<br>雨后的校园有些凉意，行人都不大说话，大概跟我一样，醉在了这早春花雨图里。<br>我就这样走着，望着前方，但愿那里，一如此处的风景，简单而美丽。</p>
-<p>于观音湖畔腹稿 北苑成文<br>2011-3-7</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
   </entry>
   <entry>
     <title>随笔20111225——月下独思</title>
