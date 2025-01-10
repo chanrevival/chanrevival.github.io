@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://chanrevival.github.io/photography_art/vx.json</loc>
+    
+    <lastmod>2025-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/photography_art/index.html</loc>
+    
+    <lastmod>2025-01-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://chanrevival.github.io/2024-12-30/%E6%95%85%E4%B9%A1%E2%80%94%E2%80%94%E7%A6%8F%E5%B7%9E/</loc>
     
     <lastmod>2025-01-10</lastmod>
@@ -38,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/photography_art/vx.json</loc>
-    
-    <lastmod>2025-01-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/photography_art/20170321%E5%8C%97%E4%BA%AC%E7%B4%AB%E7%AB%B9%E9%99%A2%E5%85%AC%E5%9B%AD/vx.json</loc>
     
     <lastmod>2025-01-10</lastmod>
@@ -66,15 +75,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/photography_art/20150415%E5%8C%97%E4%BA%AC%E5%A4%A9%E5%AE%89%E9%97%A8/vx.json</loc>
-    
-    <lastmod>2025-01-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/photography_art/index.html</loc>
     
     <lastmod>2025-01-10</lastmod>
     
