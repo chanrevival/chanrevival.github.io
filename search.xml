@@ -86,27 +86,26 @@
       </tags>
   </entry>
   <entry>
-    <title>NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元</title>
-    <url>/2025-01-07/20250107NVIDIA%E5%8F%91%E5%B8%83%E6%96%B0%E5%8D%A1/</url>
-    <content><![CDATA[<h1 id="NVIDIA发布新一代旗舰显卡RTX-5090：史上最强性能，售价1999美元"><a href="#NVIDIA发布新一代旗舰显卡RTX-5090：史上最强性能，售价1999美元" class="headerlink" title="NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元"></a>NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元</h1><p>2025年1月7日，全球瞩目的CES消费电子展在美国拉斯维加斯正式开幕，NVIDIA发布了新一代旗舰显卡RTX 50系列，其中RTX 5090以1999美元的价格成为史上最昂贵的消费级显卡，同时也刷新了性能新高度。其他型号包括次旗舰RTX 5080售价999美元、RTX 5070 Ti售价749美元、RTX 5070售价549美元。</p>
-<p>硬件规格与性能突破<br>RTX 5090搭载全新的GB202 GPU，内建21,760个CUDA核心，成为首款核心数量突破20,000的GeForce显卡。这一代显卡全系升级至PCIe 5.0接口，采用DisplayPort 2.1a和16针电源接口，并配备最新的GDDR7显存。</p>
-<p>旗舰RTX 5090提供32GB GDDR7显存，512bit位宽，显存速率为26Gbps，功耗高达575W。接口方面，提供三个DP 2.1a接口和一个HDMI 2.1接口，全面提升带宽和显示输出能力。</p>
-<p>次旗舰RTX 5080则配备10752个CUDA核心，16GB GDDR7显存，速率更快，达到30Gbps，功耗为360W。官方数据显示，RTX 5080和RTX 5090均为高端玩家和专业用户量身打造，支持极限的AI计算、视频渲染和游戏性能。</p>
-<p>AI性能优化与专业应用<br>相比标准版RTX 5090，轻量化的RTX 5090D在AI计算性能上稍有削减，但依然保持高达2375 TOPS的强劲表现，为开发者和数据科学家提供更多选择。</p>
-<p>NVIDIA表示，RTX 5090在性能和功耗的平衡上达到了新高度，为下一代AI、游戏开发以及创意领域提供了强大的硬件支撑。</p>
-<p>高性能GPU对AI计算的意义</p>
-<p>高性能GPU对AI计算具有以下重要意义：</p>
+    <title>NVIDIA Launches Next-Gen Flagship GPU RTX 5090 The Strongest Performance Ever, Priced at 1999</title>
+    <url>/2025-01-07/20250107NVIDIA/</url>
+    <content><![CDATA[<h1 id="NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999"><a href="#NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999" class="headerlink" title="NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999"></a>NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999</h1><p>On January 7, 2025, the highly anticipated CES Consumer Electronics Show officially opened in Las Vegas, USA. NVIDIA unveiled its next-generation flagship GPU in the RTX 50 series, with the RTX 5090 becoming the most expensive consumer-grade graphics card ever, priced at $1999. At the same time, it set a new benchmark for performance. Other models include the second-tier RTX 5080 priced at $999, the RTX 5070 Ti at $749, and the RTX 5070 at $549.<br>Hardware Specifications and Performance Breakthrough</p>
+<p>The RTX 5090 is equipped with the brand-new GB202 GPU, featuring 21,760 CUDA cores, making it the first GeForce GPU to surpass 20,000 cores. This generation of graphics cards has all been upgraded to PCIe 5.0 interfaces, featuring DisplayPort 2.1a and a 16-pin power connector, and comes with the latest GDDR7 memory.</p>
+<p>The flagship RTX 5090 offers 32GB of GDDR7 memory with a 512-bit memory interface and a memory speed of 26Gbps, with a power consumption of up to 575W. It provides three DP 2.1a ports and one HDMI 2.1 port, enhancing bandwidth and display output capabilities.</p>
+<p>The second-tier RTX 5080 comes with 10,752 CUDA cores, 16GB of GDDR7 memory with a faster speed of 30Gbps, and a power consumption of 360W. According to official data, both the RTX 5080 and RTX 5090 are designed for high-end gamers and professional users, supporting extreme AI computing, video rendering, and gaming performance.<br>AI Performance Optimization and Professional Applications</p>
+<p>Compared to the standard RTX 5090, the lighter version RTX 5090D offers slightly reduced AI computing performance but still maintains a strong output of up to 2375 TOPS, providing more options for developers and data scientists.</p>
+<p>NVIDIA claims that the RTX 5090 achieves a new level of balance between performance and power consumption, offering powerful hardware support for next-generation AI, game development, and creative fields.<br>The Significance of High-Performance GPUs in AI Computing</p>
+<p>High-performance GPUs have the following important significance for AI computing:</p>
 <ol>
-<li><p>提升训练效率<br> 高性能GPU可以显著加速深度学习模型的训练过程。例如，数万个CUDA核心和数百TOPS的AI算力可以实现大规模并行计算，缩短模型训练时间，从而提高科研和商业开发效率。</p>
+<li><p>Enhancing Training Efficiency<br>High-performance GPUs can significantly accelerate the training process of deep learning models. For instance, thousands of CUDA cores and hundreds of TOPS in AI computing power can enable large-scale parallel computations, reducing model training time and thus improving research and commercial development efficiency.</p>
 </li>
-<li><p>支持更复杂的模型<br> 随着AI技术的不断进步，模型规模和复杂度也在快速增加。高性能GPU的大显存和高带宽支持更大的参数模型，例如 GPT 和 Vision Transformer，可以处理海量数据和参数运算需求。</p>
+<li><p>Supporting More Complex Models<br>With the continuous advancement of AI technology, the scale and complexity of models are rapidly increasing. The large memory and high bandwidth of high-performance GPUs support larger parameter models, such as GPT and Vision Transformers, which can handle massive data and parameter computation requirements.</p>
 </li>
-<li><p>实时推理与边缘计算<br> 在自动驾驶、智能家居和机器人等领域，GPU的实时计算能力是实现复杂场景推理的关键。NVIDIA RTX系列显卡的AI加速特性，使边缘设备也能实现高效推理。</p>
+<li><p>Real-Time Inference and Edge Computing<br>In fields like autonomous driving, smart homes, and robotics, the real-time computational power of GPUs is crucial for complex scene inference. NVIDIA’s RTX series GPUs’ AI acceleration features enable efficient inference even on edge devices.</p>
 </li>
-<li><p>普惠AI技术发展<br> 更强大的GPU降低了AI技术的进入门槛，让更多中小型企业、独立开发者能够使用高端计算资源，推动AI技术的普及和创新。</p>
+<li><p>Democratizing AI Technology<br>More powerful GPUs lower the entry barriers for AI technology, allowing more small and medium-sized enterprises, as well as independent developers, to access high-end computing resources, thus promoting the spread and innovation of AI technology.</p>
 </li>
 </ol>
-<p>NVIDIA RTX 50系列的发布标志着GPU性能进入新纪元，其AI计算能力将继续推动人工智能、科学研究和创意产业的革新发展。</p>
+<p>The release of the NVIDIA RTX 50 series marks the beginning of a new era in GPU performance. Its AI computing capabilities will continue to drive innovation in artificial intelligence, scientific research, and the creative industry.</p>
 ]]></content>
       <categories>
         <category>科技前沿</category>
@@ -114,7 +113,7 @@
       </categories>
       <tags>
         <tag>NVIDIA</tag>
-        <tag>显卡</tag>
+        <tag>Graphics Cards</tag>
         <tag>GPU</tag>
         <tag>5090</tag>
         <tag>5070</tag>
@@ -144,26 +143,27 @@
       </tags>
   </entry>
   <entry>
-    <title>NVIDIA Launches Next-Gen Flagship GPU RTX 5090 The Strongest Performance Ever, Priced at 1999</title>
-    <url>/2025-01-07/20250107NVIDIA/</url>
-    <content><![CDATA[<h1 id="NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999"><a href="#NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999" class="headerlink" title="NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999"></a>NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999</h1><p>On January 7, 2025, the highly anticipated CES Consumer Electronics Show officially opened in Las Vegas, USA. NVIDIA unveiled its next-generation flagship GPU in the RTX 50 series, with the RTX 5090 becoming the most expensive consumer-grade graphics card ever, priced at $1999. At the same time, it set a new benchmark for performance. Other models include the second-tier RTX 5080 priced at $999, the RTX 5070 Ti at $749, and the RTX 5070 at $549.<br>Hardware Specifications and Performance Breakthrough</p>
-<p>The RTX 5090 is equipped with the brand-new GB202 GPU, featuring 21,760 CUDA cores, making it the first GeForce GPU to surpass 20,000 cores. This generation of graphics cards has all been upgraded to PCIe 5.0 interfaces, featuring DisplayPort 2.1a and a 16-pin power connector, and comes with the latest GDDR7 memory.</p>
-<p>The flagship RTX 5090 offers 32GB of GDDR7 memory with a 512-bit memory interface and a memory speed of 26Gbps, with a power consumption of up to 575W. It provides three DP 2.1a ports and one HDMI 2.1 port, enhancing bandwidth and display output capabilities.</p>
-<p>The second-tier RTX 5080 comes with 10,752 CUDA cores, 16GB of GDDR7 memory with a faster speed of 30Gbps, and a power consumption of 360W. According to official data, both the RTX 5080 and RTX 5090 are designed for high-end gamers and professional users, supporting extreme AI computing, video rendering, and gaming performance.<br>AI Performance Optimization and Professional Applications</p>
-<p>Compared to the standard RTX 5090, the lighter version RTX 5090D offers slightly reduced AI computing performance but still maintains a strong output of up to 2375 TOPS, providing more options for developers and data scientists.</p>
-<p>NVIDIA claims that the RTX 5090 achieves a new level of balance between performance and power consumption, offering powerful hardware support for next-generation AI, game development, and creative fields.<br>The Significance of High-Performance GPUs in AI Computing</p>
-<p>High-performance GPUs have the following important significance for AI computing:</p>
+    <title>NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元</title>
+    <url>/2025-01-07/20250107NVIDIA%E5%8F%91%E5%B8%83%E6%96%B0%E5%8D%A1/</url>
+    <content><![CDATA[<h1 id="NVIDIA发布新一代旗舰显卡RTX-5090：史上最强性能，售价1999美元"><a href="#NVIDIA发布新一代旗舰显卡RTX-5090：史上最强性能，售价1999美元" class="headerlink" title="NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元"></a>NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元</h1><p>2025年1月7日，全球瞩目的CES消费电子展在美国拉斯维加斯正式开幕，NVIDIA发布了新一代旗舰显卡RTX 50系列，其中RTX 5090以1999美元的价格成为史上最昂贵的消费级显卡，同时也刷新了性能新高度。其他型号包括次旗舰RTX 5080售价999美元、RTX 5070 Ti售价749美元、RTX 5070售价549美元。</p>
+<p>硬件规格与性能突破<br>RTX 5090搭载全新的GB202 GPU，内建21,760个CUDA核心，成为首款核心数量突破20,000的GeForce显卡。这一代显卡全系升级至PCIe 5.0接口，采用DisplayPort 2.1a和16针电源接口，并配备最新的GDDR7显存。</p>
+<p>旗舰RTX 5090提供32GB GDDR7显存，512bit位宽，显存速率为26Gbps，功耗高达575W。接口方面，提供三个DP 2.1a接口和一个HDMI 2.1接口，全面提升带宽和显示输出能力。</p>
+<p>次旗舰RTX 5080则配备10752个CUDA核心，16GB GDDR7显存，速率更快，达到30Gbps，功耗为360W。官方数据显示，RTX 5080和RTX 5090均为高端玩家和专业用户量身打造，支持极限的AI计算、视频渲染和游戏性能。</p>
+<p>AI性能优化与专业应用<br>相比标准版RTX 5090，轻量化的RTX 5090D在AI计算性能上稍有削减，但依然保持高达2375 TOPS的强劲表现，为开发者和数据科学家提供更多选择。</p>
+<p>NVIDIA表示，RTX 5090在性能和功耗的平衡上达到了新高度，为下一代AI、游戏开发以及创意领域提供了强大的硬件支撑。</p>
+<p>高性能GPU对AI计算的意义</p>
+<p>高性能GPU对AI计算具有以下重要意义：</p>
 <ol>
-<li><p>Enhancing Training Efficiency<br>High-performance GPUs can significantly accelerate the training process of deep learning models. For instance, thousands of CUDA cores and hundreds of TOPS in AI computing power can enable large-scale parallel computations, reducing model training time and thus improving research and commercial development efficiency.</p>
+<li><p>提升训练效率<br> 高性能GPU可以显著加速深度学习模型的训练过程。例如，数万个CUDA核心和数百TOPS的AI算力可以实现大规模并行计算，缩短模型训练时间，从而提高科研和商业开发效率。</p>
 </li>
-<li><p>Supporting More Complex Models<br>With the continuous advancement of AI technology, the scale and complexity of models are rapidly increasing. The large memory and high bandwidth of high-performance GPUs support larger parameter models, such as GPT and Vision Transformers, which can handle massive data and parameter computation requirements.</p>
+<li><p>支持更复杂的模型<br> 随着AI技术的不断进步，模型规模和复杂度也在快速增加。高性能GPU的大显存和高带宽支持更大的参数模型，例如 GPT 和 Vision Transformer，可以处理海量数据和参数运算需求。</p>
 </li>
-<li><p>Real-Time Inference and Edge Computing<br>In fields like autonomous driving, smart homes, and robotics, the real-time computational power of GPUs is crucial for complex scene inference. NVIDIA’s RTX series GPUs’ AI acceleration features enable efficient inference even on edge devices.</p>
+<li><p>实时推理与边缘计算<br> 在自动驾驶、智能家居和机器人等领域，GPU的实时计算能力是实现复杂场景推理的关键。NVIDIA RTX系列显卡的AI加速特性，使边缘设备也能实现高效推理。</p>
 </li>
-<li><p>Democratizing AI Technology<br>More powerful GPUs lower the entry barriers for AI technology, allowing more small and medium-sized enterprises, as well as independent developers, to access high-end computing resources, thus promoting the spread and innovation of AI technology.</p>
+<li><p>普惠AI技术发展<br> 更强大的GPU降低了AI技术的进入门槛，让更多中小型企业、独立开发者能够使用高端计算资源，推动AI技术的普及和创新。</p>
 </li>
 </ol>
-<p>The release of the NVIDIA RTX 50 series marks the beginning of a new era in GPU performance. Its AI computing capabilities will continue to drive innovation in artificial intelligence, scientific research, and the creative industry.</p>
+<p>NVIDIA RTX 50系列的发布标志着GPU性能进入新纪元，其AI计算能力将继续推动人工智能、科学研究和创意产业的革新发展。</p>
 ]]></content>
       <categories>
         <category>科技前沿</category>
@@ -174,7 +174,7 @@
         <tag>GPU</tag>
         <tag>5090</tag>
         <tag>5070</tag>
-        <tag>Graphics Cards</tag>
+        <tag>显卡</tag>
       </tags>
   </entry>
   <entry>
@@ -352,6 +352,121 @@
         <tag>数据库技术</tag>
         <tag>AIX操作系统</tag>
         <tag>文件系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS yum源常用配置</title>
+    <url>/2024-12-13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="CentOS-yum源常用配置"><a href="#CentOS-yum源常用配置" class="headerlink" title="CentOS yum源常用配置"></a>CentOS yum源常用配置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p>直接挂载使用ISO镜像</p>
+<ol>
+<li>备份原yum源配置文件</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>挂载ISO镜像</li>
+</ol>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>编辑配置文件</li>
+</ol>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
+
+<p>配置文件内容如下</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>清理yum缓存并生成新的缓存</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="配置中国国内yum源"><a href="#配置中国国内yum源" class="headerlink" title="配置中国国内yum源"></a>配置中国国内yum源</h2><ol>
+<li>备份原yum源配置文件</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>下载阿里云的yum源配置文件</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>清理yum缓存并生成新的缓存</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>操作系统技术</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+        <tag>yum</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Common CentOS Yum Repository Configurations</title>
+    <url>/2024-12-13/Common_COS_Yum_Repo_Conf/</url>
+    <content><![CDATA[<h1 id="Common-CentOS-Yum-Repository-Configurations"><a href="#Common-CentOS-Yum-Repository-Configurations" class="headerlink" title="Common CentOS Yum Repository Configurations"></a>Common CentOS Yum Repository Configurations</h1><h2 id="Configuring-a-Local-Yum-Repository"><a href="#Configuring-a-Local-Yum-Repository" class="headerlink" title="Configuring a Local Yum Repository"></a>Configuring a Local Yum Repository</h2><p>Mount and Use an ISO Image Directly</p>
+<ol>
+<li>Backup the original yum repository configuration file</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Mount the ISO image</li>
+</ol>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Edit the configuration file</li>
+</ol>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
+
+<p>The content of the configuration file is as follows:</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Clear Yum Cache and Generate a New Cache</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuring-a-Yum-Repository-for-China"><a href="#Configuring-a-Yum-Repository-for-China" class="headerlink" title="Configuring a Yum Repository for China"></a>Configuring a Yum Repository for China</h2><ol>
+<li>Backup the original yum repository configuration file</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Download the Alibaba Cloud Yum repository configuration file</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Clear Yum cache and generate a new cache</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Technology</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+        <tag>yum</tag>
+        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -633,62 +748,39 @@
       </tags>
   </entry>
   <entry>
-    <title>Common CentOS Yum Repository Configurations</title>
-    <url>/2024-12-13/Common_COS_Yum_Repo_Conf/</url>
-    <content><![CDATA[<h1 id="Common-CentOS-Yum-Repository-Configurations"><a href="#Common-CentOS-Yum-Repository-Configurations" class="headerlink" title="Common CentOS Yum Repository Configurations"></a>Common CentOS Yum Repository Configurations</h1><h2 id="Configuring-a-Local-Yum-Repository"><a href="#Configuring-a-Local-Yum-Repository" class="headerlink" title="Configuring a Local Yum Repository"></a>Configuring a Local Yum Repository</h2><p>Mount and Use an ISO Image Directly</p>
+    <title>How to Rename a Disk Group in ASM 11gR2?</title>
+    <url>/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/</url>
+    <content><![CDATA[<h1 id="How-to-Rename-a-Disk-Group-in-ASM-11gR2"><a href="#How-to-Rename-a-Disk-Group-in-ASM-11gR2" class="headerlink" title="How to Rename a Disk Group in ASM 11gR2?"></a>How to Rename a Disk Group in ASM 11gR2?</h1><p>This guide outlines the correct steps to rename an ASM disk group in the 11gR2 version. Please note that during this process, you should avoid using the renamedg command to rename the OCR&#x2F;VOTE disk groups, as it could lead to unnecessary risks.</p>
 <ol>
-<li>Backup the original yum repository configuration file</li>
+<li>First, you need to unmount the disk group you want to rename (if it’s a RAC configuration, unmount it from each node):</li>
 </ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta"># asmcmd umount <span class="string">&lt;OLD_DG_NAME&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>Mount the ISO image</li>
+<li>Verify that the required disk group has been unmounted:</li>
 </ol>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>Edit the configuration file</li>
+<li>Then, execute the rename command:</li>
 </ol>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
-
-<p>The content of the configuration file is as follows:</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># renamedg phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=true</span></span><br><span class="line"><span class="title class_">Parsing</span> parameters..</span><br><span class="line"><span class="title class_">Parameters</span> <span class="keyword">in</span> <span class="symbol">effect:</span></span><br><span class="line"><span class="title class_">Old</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">OLD_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">New</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">NEW_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">Phases</span> :</span><br><span class="line"><span class="title class_">Phase</span> <span class="number">1</span></span><br><span class="line"><span class="title class_">Phase</span> <span class="number">2</span></span><br><span class="line"><span class="title class_">Discovery</span> str : (null)</span><br><span class="line"><span class="title class_">Clean</span> : <span class="variable constant_">TRUE</span></span><br><span class="line"><span class="title class_">Raw</span> only : <span class="variable constant_">TRUE</span></span><br><span class="line">renamedg <span class="symbol">operation:</span> phase=both dgname=&lt;<span class="variable constant_">OLD_DG_NAME</span>&gt; newdgname=&lt;<span class="variable constant_">NEW_DG_NAME</span>&gt; verbose=<span class="literal">true</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Discovering</span> the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">for</span> hearbeat...</span><br><span class="line"><span class="title class_">Re</span>-discovering the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> the diskgroup is mounted</span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">0</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> diskgroup is used by <span class="variable constant_">CSS</span></span><br><span class="line"><span class="title class_">Generating</span> configuration file..</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Terminating</span> kgfd context <span class="number">0x2af21517e0a0</span></span><br></pre></td></tr></table></figure>
+<p>If the above command fails and searches for the disks, you need to include the disk string. In that case, you should use:</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">renamedg <span class="attribute">phase</span>=both <span class="attribute">dgname</span>=&lt;OLD_DG_NAME&gt; <span class="attribute">newdgname</span>=&lt;NEW_DG_NAME&gt; <span class="attribute">verbose</span>=<span class="literal">true</span> <span class="attribute">asm_diskstring</span>=<span class="string">&#x27;&lt;discoverystring1&gt;&#x27;</span>,&#x27;&lt;discoverystring2&gt;&#x27;</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
-<li>Clear Yum Cache and Generate a New Cache</li>
+<li>Finally, mount the renamed disk group and verify that it has been successfully mounted (if it’s a RAC configuration, verify on each node):<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd mount &lt;NEW_DG_NAME&gt;</span></span><br><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">24567</span> <span class="number">14267</span> <span class="number">0</span> <span class="number">14267</span> <span class="number">0</span> N &lt;NEW_DG_NAME&gt;/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure></li>
 </ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuring-a-Yum-Repository-for-China"><a href="#Configuring-a-Yum-Repository-for-China" class="headerlink" title="Configuring a Yum Repository for China"></a>Configuring a Yum Repository for China</h2><ol>
-<li>Backup the original yum repository configuration file</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Download the Alibaba Cloud Yum repository configuration file</li>
-</ol>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Clear Yum cache and generate a new cache</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
 ]]></content>
       <categories>
         <category>Technology</category>
-        <category>OS</category>
-        <category>Linux</category>
+        <category>Database</category>
+        <category>Oracle</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
-        <tag>yum</tag>
-        <tag>CentOS</tag>
+        <tag>Database</tag>
+        <tag>Oracle</tag>
+        <tag>ASM</tag>
       </tags>
   </entry>
   <entry>
@@ -771,102 +863,10 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Oracle</tag>
         <tag>Linux</tag>
         <tag>OS</tag>
+        <tag>Oracle</tag>
         <tag>裸设备</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS yum源常用配置</title>
-    <url>/2024-12-13/CentOS_yum%E6%BA%90%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="CentOS-yum源常用配置"><a href="#CentOS-yum源常用配置" class="headerlink" title="CentOS yum源常用配置"></a>CentOS yum源常用配置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p>直接挂载使用ISO镜像</p>
-<ol>
-<li>备份原yum源配置文件</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>挂载ISO镜像</li>
-</ol>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>编辑配置文件</li>
-</ol>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
-
-<p>配置文件内容如下</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>清理yum缓存并生成新的缓存</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="配置中国国内yum源"><a href="#配置中国国内yum源" class="headerlink" title="配置中国国内yum源"></a>配置中国国内yum源</h2><ol>
-<li>备份原yum源配置文件</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>下载阿里云的yum源配置文件</li>
-</ol>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>清理yum缓存并生成新的缓存</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>操作系统技术</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
-        <tag>yum</tag>
-        <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Rename a Disk Group in ASM 11gR2?</title>
-    <url>/2024-04-24/How_to_Rename_a_Disk_Group_in_ASM_11gR2/</url>
-    <content><![CDATA[<h1 id="How-to-Rename-a-Disk-Group-in-ASM-11gR2"><a href="#How-to-Rename-a-Disk-Group-in-ASM-11gR2" class="headerlink" title="How to Rename a Disk Group in ASM 11gR2?"></a>How to Rename a Disk Group in ASM 11gR2?</h1><p>This guide outlines the correct steps to rename an ASM disk group in the 11gR2 version. Please note that during this process, you should avoid using the renamedg command to rename the OCR&#x2F;VOTE disk groups, as it could lead to unnecessary risks.</p>
-<ol>
-<li>First, you need to unmount the disk group you want to rename (if it’s a RAC configuration, unmount it from each node):</li>
-</ol>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta"># asmcmd umount <span class="string">&lt;OLD_DG_NAME&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Verify that the required disk group has been unmounted:</li>
-</ol>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Then, execute the rename command:</li>
-</ol>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># renamedg phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=true</span></span><br><span class="line"><span class="title class_">Parsing</span> parameters..</span><br><span class="line"><span class="title class_">Parameters</span> <span class="keyword">in</span> <span class="symbol">effect:</span></span><br><span class="line"><span class="title class_">Old</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">OLD_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">New</span> <span class="variable constant_">DG</span> name : &lt;<span class="variable constant_">NEW_DG_NAME</span>&gt;</span><br><span class="line"><span class="title class_">Phases</span> :</span><br><span class="line"><span class="title class_">Phase</span> <span class="number">1</span></span><br><span class="line"><span class="title class_">Phase</span> <span class="number">2</span></span><br><span class="line"><span class="title class_">Discovery</span> str : (null)</span><br><span class="line"><span class="title class_">Clean</span> : <span class="variable constant_">TRUE</span></span><br><span class="line"><span class="title class_">Raw</span> only : <span class="variable constant_">TRUE</span></span><br><span class="line">renamedg <span class="symbol">operation:</span> phase=both dgname=&lt;<span class="variable constant_">OLD_DG_NAME</span>&gt; newdgname=&lt;<span class="variable constant_">NEW_DG_NAME</span>&gt; verbose=<span class="literal">true</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Discovering</span> the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">for</span> hearbeat...</span><br><span class="line"><span class="title class_">Re</span>-discovering the group</span><br><span class="line"><span class="title class_">Performing</span> discovery with <span class="symbol">string:</span></span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span> with disk <span class="symbol">number:</span><span class="number">0</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span> with disk <span class="symbol">number:</span><span class="number">1</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Identified</span> disk <span class="variable constant_">ASM</span><span class="symbol">:/opt/oracle/extapi/</span><span class="number">64</span>/asm/orcl/<span class="number">1</span>/libasm.<span class="symbol">so:</span><span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span> with disk <span class="symbol">number:</span><span class="number">2</span> <span class="keyword">and</span> timestamp (<span class="number">32925601</span> -<span class="number">972709888</span>)</span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> the diskgroup is mounted</span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">0</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Checking</span> disk <span class="symbol">number:</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Checking</span> <span class="keyword">if</span> diskgroup is used by <span class="variable constant_">CSS</span></span><br><span class="line"><span class="title class_">Generating</span> configuration file..</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">1</span></span><br><span class="line"><span class="title class_">Executing</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">1</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">2</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Looking</span> <span class="keyword">for</span> <span class="variable constant_">ORCL</span><span class="symbol">:&lt;DISK_NAME&gt;</span><span class="number">3</span></span><br><span class="line"><span class="title class_">Modifying</span> the header</span><br><span class="line"><span class="title class_">Completed</span> phase <span class="number">2</span></span><br><span class="line"><span class="title class_">Terminating</span> kgfd context <span class="number">0x2af21517e0a0</span></span><br></pre></td></tr></table></figure>
-<p>If the above command fails and searches for the disks, you need to include the disk string. In that case, you should use:</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">renamedg <span class="attribute">phase</span>=both <span class="attribute">dgname</span>=&lt;OLD_DG_NAME&gt; <span class="attribute">newdgname</span>=&lt;NEW_DG_NAME&gt; <span class="attribute">verbose</span>=<span class="literal">true</span> <span class="attribute">asm_diskstring</span>=<span class="string">&#x27;&lt;discoverystring1&gt;&#x27;</span>,&#x27;&lt;discoverystring2&gt;&#x27;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Finally, mount the renamed disk group and verify that it has been successfully mounted (if it’s a RAC configuration, verify on each node):<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd mount &lt;NEW_DG_NAME&gt;</span></span><br><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">State</span> Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> NORMAL N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">32756</span> <span class="number">31828</span> <span class="number">244</span> <span class="number">15792</span> <span class="number">0</span> N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"></span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">24567</span> <span class="number">14267</span> <span class="number">0</span> <span class="number">14267</span> <span class="number">0</span> N &lt;NEW_DG_NAME&gt;/</span><br><span class="line"><span class="attribute">MOUNTED</span> EXTERN N <span class="number">512</span> <span class="number">4096</span> <span class="number">1048576</span> <span class="number">16378</span> <span class="number">10134</span> <span class="number">0</span> <span class="number">10134</span> <span class="number">0</span> N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Technology</category>
-        <category>Database</category>
-        <category>Oracle</category>
-      </categories>
-      <tags>
-        <tag>Database</tag>
-        <tag>Oracle</tag>
-        <tag>ASM</tag>
       </tags>
   </entry>
   <entry>
@@ -989,6 +989,18 @@
       </tags>
   </entry>
   <entry>
+    <title>PostgreSQL的pageinspect插件</title>
+    <url>/2024-11-27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>数据库系统</category>
+      </categories>
+  </entry>
+  <entry>
     <title>谈谈PostgreSQL数据库的表膨胀</title>
     <url>/2024-11-27/PostgreSQL%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%9A%84%E8%86%A8%E8%83%80%E7%8E%87/</url>
     <content><![CDATA[<h1 id="谈谈PostgreSQL数据库的表膨胀"><a href="#谈谈PostgreSQL数据库的表膨胀" class="headerlink" title="谈谈PostgreSQL数据库的表膨胀"></a>谈谈PostgreSQL数据库的表膨胀</h1><h2 id="什么是PostgreSQL数据库的表膨胀？"><a href="#什么是PostgreSQL数据库的表膨胀？" class="headerlink" title="什么是PostgreSQL数据库的表膨胀？"></a>什么是PostgreSQL数据库的表膨胀？</h2><p>PostgreSQL 数据库的 表膨胀，简单来说，就是表的数据存储空间变得比实际需要的要大。膨胀现象发生时，虽然表中的数据量没有显著增加，但数据库占用的磁盘空间却比实际数据量大很多。这种现象会影响性能，导致查询速度变慢，并且浪费磁盘空间。</p>
@@ -1070,18 +1082,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PostgreSQL的pageinspect插件</title>
-    <url>/2024-11-27/PostgreSQL%E7%9A%84pageinspect%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="PostgreSQL的pageinspect插件"><a href="#PostgreSQL的pageinspect插件" class="headerlink" title="PostgreSQL的pageinspect插件"></a>PostgreSQL的pageinspect插件</h1><h2 id="安装编译"><a href="#安装编译" class="headerlink" title="安装编译"></a>安装编译</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su - root</span><br><span class="line"><span class="built_in">cd</span> /home/postgresql-12.11/contrib/pageinspect</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装pageinspect"><a href="#安装pageinspect" class="headerlink" title="安装pageinspect"></a>安装pageinspect</h2><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">psql</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">extension</span> pageinspect<span class="punctuation">;</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">EXTENSION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> lp <span class="keyword">as</span> <span class="keyword">tuple</span>,t_xmin,t_xmax,t_field3 <span class="keyword">as</span> t_cid,t_ctid  <span class="keyword">from</span> heap_page_items(get_raw_page(<span class="string">&#x27;tbl&#x27;</span>,<span class="number">0</span>))<span class="punctuation">;</span></span><br><span class="line"> <span class="keyword">tuple</span> | t_xmin  | t_xmax | t_cid | t_ctid </span><br><span class="line">-------+---------+--------+-------+--------</span><br><span class="line">     <span class="number">1</span> | <span class="number">6342159</span> |      <span class="number">0</span> |     <span class="number">0</span> | (<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">(<span class="number">1</span> row)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
-      </categories>
-  </entry>
-  <entry>
     <title>PostgreSQL的密码文件</title>
     <url>/2024-12-10/PostgreSQL%E7%9A%84%E5%AF%86%E7%A0%81%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h1 id="PostgreSQL的密码文件"><a href="#PostgreSQL的密码文件" class="headerlink" title="PostgreSQL的密码文件"></a>PostgreSQL的密码文件</h1><p>在用户的Home目录中，.pgpass文件可以包含连接所需的密码（如果没有其他方式指定密码）。在Windows系统中，该文件名为%APPDATA%\postgresql\pgpass.conf（其中%APPDATA%指的是用户配置文件中的应用程序数据子目录）。另外，可以通过连接参数passfile或环境变量PGPASSFILE指定要使用的密码文件。</p>
@@ -1098,6 +1098,54 @@
         <tag>数据库</tag>
         <tag>PostgreSQL</tag>
         <tag>密码文件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PostgreSQL运维常用命令</title>
+    <url>/2024-11-26/PostgreSQL%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="PostgreSQL运维常用命令"><a href="#PostgreSQL运维常用命令" class="headerlink" title="PostgreSQL运维常用命令"></a>PostgreSQL运维常用命令</h1><h2 id="查看当前连接的用户名"><a href="#查看当前连接的用户名" class="headerlink" title="查看当前连接的用户名"></a>查看当前连接的用户名</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="built_in">current_user</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="给普通用户授权"><a href="#给普通用户授权" class="headerlink" title="给普通用户授权"></a>给普通用户授权</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">USAGE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> sch_user <span class="keyword">TO</span> usr_user;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询表大小，不含索引"><a href="#查询表大小，不含索引" class="headerlink" title="查询表大小，不含索引"></a>查询表大小，不含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">8192</span> bytes</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询表大小，含索引"><a href="#查询表大小，含索引" class="headerlink" title="查询表大小，含索引"></a>查询表大小，含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">24</span> kB</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查WAL文件"><a href="#查WAL文件" class="headerlink" title="查WAL文件"></a>查WAL文件</h2><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"> select *,size/<span class="number">1024</span>/<span class="number">1024</span> <span class="built_in">as</span> <span class="string">&quot;MB&quot;</span> from pg_ls_waldir();</span><br><span class="line">           name           |   <span class="type">size</span>   |      <span class="type">modification</span>      | <span class="type">MB</span> </span><br><span class="line">--------------------------+----------+------------------------+----</span><br><span class="line"> cleanup.log              |      <span class="type">463</span> | <span class="type">2022</span><span class="number">-07</span><span class="number">-28</span> <span class="number">09</span>:<span class="number">45</span>:<span class="number">36</span>+<span class="number">08</span> |  <span class="type">0</span></span><br><span class="line"> <span class="number">000000010000000800000011</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">10</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000012</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">11</span>:<span class="number">05</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000013</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">09</span>:<span class="number">58</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000014</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">02</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000015</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">06</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line">(<span class="number">6</span> rows)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查数据库日志"><a href="#查数据库日志" class="headerlink" title="查数据库日志"></a>查数据库日志</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="PG查表大小"><a href="#PG查表大小" class="headerlink" title="PG查表大小"></a>PG查表大小</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_schema || <span class="string">&#x27;.&#x27;</span> || <span class="built_in">table_name</span> <span class="keyword">AS</span> table_full_name, pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> </span><br><span class="line">    || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>)) <span class="keyword">AS</span> size</span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">tables</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>) <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            table_full_name            |   size   </span><br><span class="line"><span class="comment">---------------------------------------+----------</span></span><br><span class="line"> xz_schema.ods1_bseg                   | <span class="number">123</span> GB</span><br><span class="line"> xz_schema.ods1_coep                   | <span class="number">15</span> GB</span><br><span class="line"> xz_schema.fj_voucher                  | <span class="number">14</span> GB</span><br><span class="line"> xz_schema.ods1_assets_card            | <span class="number">12</span> GB</span><br><span class="line"> xz_schema.ods2_ods_asset_list         | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.fj_voucher_mark             | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.ods1_anla                   | <span class="number">10218</span> MB</span><br><span class="line"> xz_schema.ods2_intf_t_install_account | <span class="number">9761</span> MB</span><br><span class="line"> fsti_schema.assets_card               | <span class="number">8662</span> MB</span><br><span class="line"> xz_schema.source_anlc                 | <span class="number">8528</span> MB</span><br><span class="line"> xz_schema.source_anlp_201901          | <span class="number">7822</span> MB</span><br><span class="line"> xz_schema.ods1_bkpf                   | <span class="number">7485</span> MB</span><br><span class="line"> xz_schema.ods1_wf_message_done        | <span class="number">7233</span> MB</span><br><span class="line"> xz_schema.source_anlp_201909          | <span class="number">7164</span> MB</span><br><span class="line"> xz_schema.source_anlp_201908          | <span class="number">7155</span> MB</span><br><span class="line"> xz_schema.source_anlp_201907          | <span class="number">7146</span> MB</span><br><span class="line"> xz_schema.source_anlp_201906          | <span class="number">7124</span> MB</span><br><span class="line"> xz_schema.ods1_anep                   | <span class="number">7112</span> MB</span><br><span class="line"> xz_schema.source_anlp_201910          | <span class="number">7082</span> MB</span><br><span class="line"> xz_schema.source_anlp_201912          | <span class="number">7063</span> MB</span><br><span class="line">(<span class="number">20</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>数据库系统</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>PostgreSQL</tag>
+        <tag>命令</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python监控公网IP变化发QQ邮件通知</title>
+    <url>/2024-11-20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<h1 id="Python监控公网IP变化发QQ邮件通知"><a href="#Python监控公网IP变化发QQ邮件通知" class="headerlink" title="Python监控公网IP变化发QQ邮件通知"></a>Python监控公网IP变化发QQ邮件通知</h1><p>本次分享的代码的主要作用是：获取本机(主机可以在内网)的公网IP，并将与上一次记录在文件中的公网IP做比较，如果两个IP不相同，则将新的公网IP记录在文件中，并发送一封包含新的公网IP的电子邮件到指定的QQ邮箱。<br>注意！代码的调试环境是Windows10、Python 3.10，不同的环境、版本可能会运行失败。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib  <span class="comment"># 导入邮件发送库</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText  <span class="comment"># 导入邮件正文的MIME类型</span></span><br><span class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> formataddr  <span class="comment"># 导入对邮件地址的格式化函数</span></span><br><span class="line"><span class="keyword">import</span> requests  <span class="comment"># 导入HTTP请求库</span></span><br><span class="line"></span><br><span class="line">my_sender = <span class="string">&#x27;c******g@qq.com&#x27;</span>  <span class="comment"># 发件人邮箱</span></span><br><span class="line">my_pass = <span class="string">&#x27;z******g&#x27;</span>  <span class="comment"># 发件人邮箱密码</span></span><br><span class="line">my_user = <span class="string">&#x27;c******g@qq.com&#x27;</span>  <span class="comment"># 收件人邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mail</span>():  <span class="comment"># 定义一个发送邮件的函数</span></span><br><span class="line">    ret = <span class="literal">True</span>  <span class="comment"># 默认邮件发送成功</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        msg = MIMEText(<span class="built_in">str</span>(MyNewPublicIP), <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment"># 构造邮件正文</span></span><br><span class="line">        msg[<span class="string">&#x27;From&#x27;</span>] = formataddr([<span class="string">&quot;告警邮箱&quot;</span>, my_sender])  <span class="comment"># 设置发件人地址</span></span><br><span class="line">        msg[<span class="string">&#x27;To&#x27;</span>] = formataddr([<span class="string">&quot;告警邮箱&quot;</span>, my_user])  <span class="comment"># 设置收件人地址</span></span><br><span class="line">        msg[<span class="string">&#x27;Subject&#x27;</span>] = <span class="string">&#x27;******公网IP变更通知&#x27;</span>  <span class="comment"># 设置邮件主题</span></span><br><span class="line">        server = smtplib.SMTP_SSL(<span class="string">&quot;smtp.qq.com&quot;</span>, <span class="number">465</span>)  <span class="comment"># 连接QQ邮箱的SMTP服务器</span></span><br><span class="line">        server.login(my_sender, my_pass)  <span class="comment"># 登录发件人QQ邮箱</span></span><br><span class="line">        server.sendmail(my_sender, [my_user, ], msg.as_string())  <span class="comment"># 发送邮件</span></span><br><span class="line">        server.quit()  <span class="comment"># 关闭SMTP连接</span></span><br><span class="line">    <span class="keyword">except</span> Exception:  <span class="comment"># 如果发生异常，则表示邮件发送失败</span></span><br><span class="line">        ret = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取本机公网IP，建议先用自己的浏览器访问这个地址，看看能否获取到正确的公网IP地址</span></span><br><span class="line">MyNewPublicIP = requests.get(<span class="string">&#x27;http://api.ipify.org&#x27;</span>).text</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取磁盘上的公网IP</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:/MyPublicIP.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开指定的文件，准备读取上次记录的公网IP</span></span><br><span class="line">    MyOldPublicIP = f.read().strip()  <span class="comment"># 读取文件内容，去除空白符</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 比较新旧IP是否相同</span></span><br><span class="line"><span class="keyword">if</span> MyNewPublicIP != MyOldPublicIP:  <span class="comment"># 如果新旧IP不同</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:/MyPublicIP.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开指定的文件，准备记录新的公网IP</span></span><br><span class="line">        f.write(MyNewPublicIP)  <span class="comment"># 将新的公网IP写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IP有变化。准备发邮件给QQ邮箱。&#x27;</span>)</span><br><span class="line">    ret = mail()  <span class="comment"># 调用发送邮件函数</span></span><br><span class="line">    <span class="keyword">if</span> ret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功。&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;邮件发送失败。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:  <span class="comment"># 如果新旧IP相同</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IP无变化。退出程序。&#x27;</span>)</span><br><span class="line">    exit()  <span class="comment"># 退出程序</span></span><br></pre></td></tr></table></figure>
+
+<p>可以把这段代码保存成脚本文件，用Windows的任务计划来定时执行，如下图所示。</p>
+<p><img src="/vx_images/35135947108213.png"></p>
+<p>最后，我把QQ邮箱绑定到我的手机微信中，这样就可以很方便地获取到公网IP变更的信息了，如下图所示。</p>
+<p><img src="/vx_images/496505159401696.png"></p>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>编程技术</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>公网IP</tag>
+        <tag>网络监控</tag>
       </tags>
   </entry>
   <entry>
@@ -3538,54 +3586,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PostgreSQL运维常用命令</title>
-    <url>/2024-11-26/PostgreSQL%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="PostgreSQL运维常用命令"><a href="#PostgreSQL运维常用命令" class="headerlink" title="PostgreSQL运维常用命令"></a>PostgreSQL运维常用命令</h1><h2 id="查看当前连接的用户名"><a href="#查看当前连接的用户名" class="headerlink" title="查看当前连接的用户名"></a>查看当前连接的用户名</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="built_in">current_user</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">user</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="给普通用户授权"><a href="#给普通用户授权" class="headerlink" title="给普通用户授权"></a>给普通用户授权</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">USAGE</span> <span class="keyword">ON</span> <span class="keyword">SCHEMA</span> sch_user <span class="keyword">TO</span> usr_user;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询表大小，不含索引"><a href="#查询表大小，不含索引" class="headerlink" title="查询表大小，不含索引"></a>查询表大小，不含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">8192</span> bytes</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询表大小，含索引"><a href="#查询表大小，含索引" class="headerlink" title="查询表大小，含索引"></a>查询表大小，含索引</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">db_database=&gt; <span class="keyword">select</span> pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;sch_admin.tab_table0&#x27;</span>));</span><br><span class="line"> pg_size_pretty </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> <span class="number">24</span> kB</span><br><span class="line">(<span class="number">1</span> <span class="keyword">row</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查WAL文件"><a href="#查WAL文件" class="headerlink" title="查WAL文件"></a>查WAL文件</h2><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"> select *,size/<span class="number">1024</span>/<span class="number">1024</span> <span class="built_in">as</span> <span class="string">&quot;MB&quot;</span> from pg_ls_waldir();</span><br><span class="line">           name           |   <span class="type">size</span>   |      <span class="type">modification</span>      | <span class="type">MB</span> </span><br><span class="line">--------------------------+----------+------------------------+----</span><br><span class="line"> cleanup.log              |      <span class="type">463</span> | <span class="type">2022</span><span class="number">-07</span><span class="number">-28</span> <span class="number">09</span>:<span class="number">45</span>:<span class="number">36</span>+<span class="number">08</span> |  <span class="type">0</span></span><br><span class="line"> <span class="number">000000010000000800000011</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">10</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000012</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">11</span>:<span class="number">05</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000013</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">09</span>:<span class="number">58</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000014</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">02</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line"> <span class="number">000000010000000800000015</span> | <span class="type">16777216</span> | <span class="type">2022</span><span class="number">-08</span><span class="number">-24</span> <span class="number">10</span>:<span class="number">06</span>:<span class="number">01</span>+<span class="number">08</span> | <span class="type">16</span></span><br><span class="line">(<span class="number">6</span> rows)</span><br></pre></td></tr></table></figure>
-
-<h2 id="查数据库日志"><a href="#查数据库日志" class="headerlink" title="查数据库日志"></a>查数据库日志</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="PG查表大小"><a href="#PG查表大小" class="headerlink" title="PG查表大小"></a>PG查表大小</h2><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> table_schema || <span class="string">&#x27;.&#x27;</span> || <span class="built_in">table_name</span> <span class="keyword">AS</span> table_full_name, pg_size_pretty(pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> </span><br><span class="line">    || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>)) <span class="keyword">AS</span> size</span><br><span class="line"><span class="keyword">FROM</span> information_schema.<span class="keyword">tables</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">pg_total_relation_size(<span class="string">&#x27;&quot;&#x27;</span> || table_schema || <span class="string">&#x27;&quot;.&quot;&#x27;</span> || <span class="built_in">table_name</span> || <span class="string">&#x27;&quot;&#x27;</span>) <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">            table_full_name            |   size   </span><br><span class="line"><span class="comment">---------------------------------------+----------</span></span><br><span class="line"> xz_schema.ods1_bseg                   | <span class="number">123</span> GB</span><br><span class="line"> xz_schema.ods1_coep                   | <span class="number">15</span> GB</span><br><span class="line"> xz_schema.fj_voucher                  | <span class="number">14</span> GB</span><br><span class="line"> xz_schema.ods1_assets_card            | <span class="number">12</span> GB</span><br><span class="line"> xz_schema.ods2_ods_asset_list         | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.fj_voucher_mark             | <span class="number">11</span> GB</span><br><span class="line"> xz_schema.ods1_anla                   | <span class="number">10218</span> MB</span><br><span class="line"> xz_schema.ods2_intf_t_install_account | <span class="number">9761</span> MB</span><br><span class="line"> fsti_schema.assets_card               | <span class="number">8662</span> MB</span><br><span class="line"> xz_schema.source_anlc                 | <span class="number">8528</span> MB</span><br><span class="line"> xz_schema.source_anlp_201901          | <span class="number">7822</span> MB</span><br><span class="line"> xz_schema.ods1_bkpf                   | <span class="number">7485</span> MB</span><br><span class="line"> xz_schema.ods1_wf_message_done        | <span class="number">7233</span> MB</span><br><span class="line"> xz_schema.source_anlp_201909          | <span class="number">7164</span> MB</span><br><span class="line"> xz_schema.source_anlp_201908          | <span class="number">7155</span> MB</span><br><span class="line"> xz_schema.source_anlp_201907          | <span class="number">7146</span> MB</span><br><span class="line"> xz_schema.source_anlp_201906          | <span class="number">7124</span> MB</span><br><span class="line"> xz_schema.ods1_anep                   | <span class="number">7112</span> MB</span><br><span class="line"> xz_schema.source_anlp_201910          | <span class="number">7082</span> MB</span><br><span class="line"> xz_schema.source_anlp_201912          | <span class="number">7063</span> MB</span><br><span class="line">(<span class="number">20</span> <span class="keyword">rows</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>PostgreSQL</tag>
-        <tag>命令</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python监控公网IP变化发QQ邮件通知</title>
-    <url>/2024-11-20/Python%E7%9B%91%E6%8E%A7%E5%85%AC%E7%BD%91IP%E5%8F%98%E5%8C%96%E5%8F%91QQ%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5/</url>
-    <content><![CDATA[<h1 id="Python监控公网IP变化发QQ邮件通知"><a href="#Python监控公网IP变化发QQ邮件通知" class="headerlink" title="Python监控公网IP变化发QQ邮件通知"></a>Python监控公网IP变化发QQ邮件通知</h1><p>本次分享的代码的主要作用是：获取本机(主机可以在内网)的公网IP，并将与上一次记录在文件中的公网IP做比较，如果两个IP不相同，则将新的公网IP记录在文件中，并发送一封包含新的公网IP的电子邮件到指定的QQ邮箱。<br>注意！代码的调试环境是Windows10、Python 3.10，不同的环境、版本可能会运行失败。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> smtplib  <span class="comment"># 导入邮件发送库</span></span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText  <span class="comment"># 导入邮件正文的MIME类型</span></span><br><span class="line"><span class="keyword">from</span> email.utils <span class="keyword">import</span> formataddr  <span class="comment"># 导入对邮件地址的格式化函数</span></span><br><span class="line"><span class="keyword">import</span> requests  <span class="comment"># 导入HTTP请求库</span></span><br><span class="line"></span><br><span class="line">my_sender = <span class="string">&#x27;c******g@qq.com&#x27;</span>  <span class="comment"># 发件人邮箱</span></span><br><span class="line">my_pass = <span class="string">&#x27;z******g&#x27;</span>  <span class="comment"># 发件人邮箱密码</span></span><br><span class="line">my_user = <span class="string">&#x27;c******g@qq.com&#x27;</span>  <span class="comment"># 收件人邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">mail</span>():  <span class="comment"># 定义一个发送邮件的函数</span></span><br><span class="line">    ret = <span class="literal">True</span>  <span class="comment"># 默认邮件发送成功</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        msg = MIMEText(<span class="built_in">str</span>(MyNewPublicIP), <span class="string">&#x27;plain&#x27;</span>, <span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment"># 构造邮件正文</span></span><br><span class="line">        msg[<span class="string">&#x27;From&#x27;</span>] = formataddr([<span class="string">&quot;告警邮箱&quot;</span>, my_sender])  <span class="comment"># 设置发件人地址</span></span><br><span class="line">        msg[<span class="string">&#x27;To&#x27;</span>] = formataddr([<span class="string">&quot;告警邮箱&quot;</span>, my_user])  <span class="comment"># 设置收件人地址</span></span><br><span class="line">        msg[<span class="string">&#x27;Subject&#x27;</span>] = <span class="string">&#x27;******公网IP变更通知&#x27;</span>  <span class="comment"># 设置邮件主题</span></span><br><span class="line">        server = smtplib.SMTP_SSL(<span class="string">&quot;smtp.qq.com&quot;</span>, <span class="number">465</span>)  <span class="comment"># 连接QQ邮箱的SMTP服务器</span></span><br><span class="line">        server.login(my_sender, my_pass)  <span class="comment"># 登录发件人QQ邮箱</span></span><br><span class="line">        server.sendmail(my_sender, [my_user, ], msg.as_string())  <span class="comment"># 发送邮件</span></span><br><span class="line">        server.quit()  <span class="comment"># 关闭SMTP连接</span></span><br><span class="line">    <span class="keyword">except</span> Exception:  <span class="comment"># 如果发生异常，则表示邮件发送失败</span></span><br><span class="line">        ret = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取本机公网IP，建议先用自己的浏览器访问这个地址，看看能否获取到正确的公网IP地址</span></span><br><span class="line">MyNewPublicIP = requests.get(<span class="string">&#x27;http://api.ipify.org&#x27;</span>).text</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取磁盘上的公网IP</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:/MyPublicIP.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开指定的文件，准备读取上次记录的公网IP</span></span><br><span class="line">    MyOldPublicIP = f.read().strip()  <span class="comment"># 读取文件内容，去除空白符</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 比较新旧IP是否相同</span></span><br><span class="line"><span class="keyword">if</span> MyNewPublicIP != MyOldPublicIP:  <span class="comment"># 如果新旧IP不同</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:/MyPublicIP.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:  <span class="comment"># 打开指定的文件，准备记录新的公网IP</span></span><br><span class="line">        f.write(MyNewPublicIP)  <span class="comment"># 将新的公网IP写入文件</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IP有变化。准备发邮件给QQ邮箱。&#x27;</span>)</span><br><span class="line">    ret = mail()  <span class="comment"># 调用发送邮件函数</span></span><br><span class="line">    <span class="keyword">if</span> ret:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;邮件发送成功。&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;邮件发送失败。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span>:  <span class="comment"># 如果新旧IP相同</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;IP无变化。退出程序。&#x27;</span>)</span><br><span class="line">    exit()  <span class="comment"># 退出程序</span></span><br></pre></td></tr></table></figure>
-
-<p>可以把这段代码保存成脚本文件，用Windows的任务计划来定时执行，如下图所示。</p>
-<p><img src="/vx_images/35135947108213.png"></p>
-<p>最后，我把QQ邮箱绑定到我的手机微信中，这样就可以很方便地获取到公网IP变更的信息了，如下图所示。</p>
-<p><img src="/vx_images/496505159401696.png"></p>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>编程技术</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>公网IP</tag>
-        <tag>网络监控</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RHEL6.5安装MongoDB3.6.3参考文档</title>
     <url>/2018-04-03/RHEL6_5%E5%AE%89%E8%A3%85MongoDB3_6_3%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<h1 id="RHEL6-5安装MongoDB3-6-3参考文档"><a href="#RHEL6-5安装MongoDB3-6-3参考文档" class="headerlink" title="RHEL6.5安装MongoDB3.6.3参考文档"></a>RHEL6.5安装MongoDB3.6.3参考文档</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>NoSql即Not only Sql！是非关系型数据库。著名的MongoDB属于NoSql的一种，是基于分布式文件存储的文档型数据库。<br>多种方式都可以实现安装MongoDB，如yum安装，源码安装等。本知识文档主要介绍通过源码安装的方式，在Redhat Enterprise Linux x64平台上安装MongoDB。</p>
@@ -3790,18 +3790,6 @@
       </tags>
   </entry>
   <entry>
-    <title>There is a way of life like this</title>
-    <url>/2009-01-01/There_s_a_way_of_life/</url>
-    <content><![CDATA[<h1 id="There-is-a-way-of-life-like-this"><a href="#There-is-a-way-of-life-like-this" class="headerlink" title="There is a way of life like this"></a>There is a way of life like this</h1><p>There is a way of life like this:<br>Holding my beloved ultra-portable laptop, I leisurely lie on the hammock on the balcony. The warm sunlight, refreshing tea, and the subtle scent of fresh grass—yes, this is life…</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SunOS6_10安装第三方软件参考</title>
     <url>/2016-02-16/SunOS6-10%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6%E5%8F%82%E8%80%83/</url>
     <content><![CDATA[<h1 id="SunOS6-10安装第三方软件参考"><a href="#SunOS6-10安装第三方软件参考" class="headerlink" title="SunOS6_10安装第三方软件参考"></a>SunOS6_10安装第三方软件参考</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="检查操作系统环境"><a href="#检查操作系统环境" class="headerlink" title="检查操作系统环境"></a>检查操作系统环境</h3><figure class="highlight nestedtext"><table><tr><td class="code"><pre><span class="line"><span class="comment"># showrev</span></span><br><span class="line"><span class="attribute">Hostname</span><span class="punctuation">:</span> <span class="string">xmds13</span></span><br><span class="line"><span class="attribute">Hostid</span><span class="punctuation">:</span> <span class="string">860faf96</span></span><br><span class="line"><span class="attribute">Release</span><span class="punctuation">:</span> <span class="string">5.10</span></span><br><span class="line"><span class="attribute">Kernel architecture</span><span class="punctuation">:</span> <span class="string">sun4v</span></span><br><span class="line"><span class="attribute">Application architecture</span><span class="punctuation">:</span> <span class="string">sparc</span></span><br><span class="line"><span class="attribute">Hardware provider</span><span class="punctuation">:</span> <span class="string">Oracle Corporation</span></span><br><span class="line"><span class="attribute">Domain</span><span class="punctuation">: </span></span><br><span class="line"><span class="attribute">Kernel version</span><span class="punctuation">:</span> <span class="string">SunOS 5.10 Generic_148888-01</span></span><br></pre></td></tr></table></figure>
@@ -3852,6 +3840,18 @@
         <tag>操作系统</tag>
         <tag>SunOS</tag>
         <tag>软件安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>There is a way of life like this</title>
+    <url>/2009-01-01/There_s_a_way_of_life/</url>
+    <content><![CDATA[<h1 id="There-is-a-way-of-life-like-this"><a href="#There-is-a-way-of-life-like-this" class="headerlink" title="There is a way of life like this"></a>There is a way of life like this</h1><p>There is a way of life like this:<br>Holding my beloved ultra-portable laptop, I leisurely lie on the hammock on the balcony. The warm sunlight, refreshing tea, and the subtle scent of fresh grass—yes, this is life…</p>
+]]></content>
+      <categories>
+        <category>Essays</category>
+      </categories>
+      <tags>
+        <tag>Essays</tag>
       </tags>
   </entry>
   <entry>
@@ -3969,20 +3969,6 @@
       </tags>
   </entry>
   <entry>
-    <title>写在春节里</title>
-    <url>/2009-01-19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
-    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
-<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
-<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用yum下载rpm包</title>
     <url>/2024-11-26/%E4%BD%BF%E7%94%A8yum%E4%B8%8B%E8%BD%BDrpm%E5%8C%85/</url>
     <content><![CDATA[<h1 id="使用yum下载rpm包"><a href="#使用yum下载rpm包" class="headerlink" title="使用yum下载rpm包"></a>使用yum下载rpm包</h1><p>使用yum下载rpm包的命令是：</p>
@@ -4047,11 +4033,37 @@
       </tags>
   </entry>
   <entry>
+    <title>写在春节里</title>
+    <url>/2009-01-19/%E5%86%99%E5%9C%A8%E6%98%A5%E8%8A%82%E9%87%8C/</url>
+    <content><![CDATA[<h1 id="写在春节里"><a href="#写在春节里" class="headerlink" title="写在春节里"></a>写在春节里</h1><p>明月夜，<br>独倚小轩西。<br>忽闻爆竹声声起，<br>方觉新春至。</p>
+<p>人寂寥，<br>犹记旧时喜。<br>何日回归童时梦，<br>奈何红尘里。</p>
+<p>——陈荣 于 红旗村<br>2009-1-19 对月有感 </p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>吃饱瞎写——仿《锄禾》</title>
     <url>/2011-08-01/%E5%90%83%E9%A5%B1%E7%9E%8E%E5%86%99%E2%80%94%E2%80%94%E4%BB%BF%E3%80%8A%E9%94%84%E7%A6%BE%E3%80%8B/</url>
     <content><![CDATA[<h1 id="吃饱瞎写——仿《锄禾》"><a href="#吃饱瞎写——仿《锄禾》" class="headerlink" title="吃饱瞎写——仿《锄禾》"></a>吃饱瞎写——仿《锄禾》</h1><p>吃饱瞎写-仿《锄禾》<br>Cooking日当午，<br>汗滴池边布。<br>谁知橱中菜，<br>碟碟皆我煮。</p>
 <p>——可爱的分隔线——</p>
 <p>我不善作诗填词，事实上应该叫做根本不会，作诗填词还应讲究韵律平仄，这方面我是不懂的，顶多胡乱压个韵。但静安大师说了，创作不应太拘泥于形式，忽略了真性情，那样得不偿失，这次姑且容我断章取义吧。<br>其中夹杂英文，就算是中西合壁吧，搞不好哪个山姆大叔，水母大姐看了会有兴趣，也就能光大国学了。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大学生活1_初到农大</title>
+    <url>/2018-09-12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/</url>
+    <content><![CDATA[<h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -4073,9 +4085,9 @@
       </tags>
   </entry>
   <entry>
-    <title>大学生活1_初到农大</title>
-    <url>/2018-09-12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB1-%E5%88%9D%E5%88%B0%E5%86%9C%E5%A4%A7/</url>
-    <content><![CDATA[<h1 id="大学生活1-初到农大"><a href="#大学生活1-初到农大" class="headerlink" title="大学生活1-初到农大"></a>大学生活1-初到农大</h1><p>小生的大学生活一个月了，感触颇多，现小叙一下。<br>初到农大，食宿为首。小生找生管部教员，弄到农大最优的宿舍[桃山新区]。<br>餐厅在宿舍百步开内，十分方便。<br>尔后，单车逛校区，风景颇佳，绿树环绕青山，小桥流水人家，亭台小景阁轩，秋风拂面，略带着凉意，而，斜阳倚照湖面，光影迷离，漪涟闪烁，又暖上心头。若有佳肴美酒，当把酒言欢，是乃快哉。奈何伊人他乡，妮友远去，独我闲趣在今朝，意何如，情难书。 </p>
+    <title>大学生活2_求爱桥上</title>
+    <url>/2018-09-12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB2-%E6%B1%82%E7%88%B1%E6%A1%A5%E4%B8%8A/</url>
+    <content><![CDATA[<h1 id="大学生活2-求爱桥上"><a href="#大学生活2-求爱桥上" class="headerlink" title="大学生活2-求爱桥上"></a>大学生活2-求爱桥上</h1><p> 听学友说，这座桥被大家称作“求爱桥”，不知有多少对恋人在此比翼成双对。<br>    小生斗胆，于求爱桥上，只身留影一张，附小调一曲，聊表敬意：<br>      求爱桥头，恋人依依，含情脉脉，比翼双飞…</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -4134,9 +4146,9 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Oracle</tag>
         <tag>Linux</tag>
         <tag>OS</tag>
+        <tag>Oracle</tag>
         <tag>UDEV</tag>
       </tags>
   </entry>
@@ -4174,103 +4186,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大学生活2_求爱桥上</title>
-    <url>/2018-09-12/%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB2-%E6%B1%82%E7%88%B1%E6%A1%A5%E4%B8%8A/</url>
-    <content><![CDATA[<h1 id="大学生活2-求爱桥上"><a href="#大学生活2-求爱桥上" class="headerlink" title="大学生活2-求爱桥上"></a>大学生活2-求爱桥上</h1><p> 听学友说，这座桥被大家称作“求爱桥”，不知有多少对恋人在此比翼成双对。<br>    小生斗胆，于求爱桥上，只身留影一张，附小调一曲，聊表敬意：<br>      求爱桥头，恋人依依，含情脉脉，比翼双飞…</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？</title>
-    <url>/2024-04-24/%E5%A6%82%E4%BD%95%E5%B0%86ASM%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E4%BB%8E%E4%B8%80%E4%B8%AA%E7%A3%81%E7%9B%98%E7%BB%84%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%A3%81%E7%9B%98%E7%BB%84%EF%BC%9F/</url>
-    <content><![CDATA[<h1 id="如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？"><a href="#如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？" class="headerlink" title="如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？"></a>如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？</h1><p>在ASM磁盘组之间移动文件的首选方法是使用RMAN。RMAN对于自动存储管理至关重要，负责跟踪ASM文件名以及删除过时的ASM文件。由于无法通过正常的操作系统接口访问ASM文件，因此RMAN是复制ASM文件的首选方式。</p>
-<p><mark>注意：从12c开始，您可以使用ALTER DATABASE MOVE DATAFILE SQL语句来重命名或重新定位在线数据文件。</mark></p>
-<p>以下示例将数据文件从Oracle ASM的一个位置移动到另一个Oracle ASM位置。</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">MOVE</span> DATAFILE <span class="string">&#x27;+dgroup_01/data/orcl/datafile/user1.dbf&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;+dgroup_02/data/orcl/datafile/user1.dbf&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p>移动数据文件从一个磁盘组到另一个磁盘组的步骤如下：</p>
-<ol>
-<li>确定要移动的数据文件</li>
-<li>确定要将文件移动到的目标磁盘组</li>
-<li>将文件离线</li>
-<li>使用RMAN或DBMS_FILE_TRANSFER将文件复制到新的磁盘组</li>
-<li>重命名文件以指向新的位置</li>
-<li>恢复文件</li>
-<li>将文件上线</li>
-<li>验证新文件的位置</li>
-<li>删除原始位置的文件</li>
-</ol>
-<p>以下是详细过程：<br>1)	确定要移动的数据文件</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">在数据库实例中执行</span><br><span class="line">SQL:ORCL&gt; SELECT FILE_NAME <span class="keyword">FROM</span> DBA_DATA_FILES:</span><br><span class="line">                            +ASMDSK2<span class="regexp">/orcl/</span>datafile/users.<span class="number">256.565313879</span> &lt;======= Move <span class="keyword">this</span> to ASMDSK1.</span><br><span class="line">                            +ASMDSK1<span class="regexp">/orcl/</span>sysaux01.dbf</span><br><span class="line">                            +ASMDSK1<span class="regexp">/orcl/u</span>ndotbs01.dbf</span><br><span class="line">                            +ASMDSK1<span class="regexp">/orcl/</span>system01.dbf</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li><p>   确定要将文件移动到的目标磁盘组</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">在ASM实例中执行</span><br><span class="line">         <span class="keyword">SQL</span>:ASM&gt; <span class="keyword">SELECT</span> GROUP_NUMBER, <span class="type">NAME</span> <span class="keyword">FROM</span> V$ASM_DISKGROUP;</span><br><span class="line">                           GROUP_NUMBER <span class="type">NAME</span></span><br><span class="line">                             <span class="comment">------------ ---------</span></span><br><span class="line">                                             <span class="number">1</span> ASMDSK1</span><br><span class="line">                                             <span class="number">2</span> ASMDSK2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   将文件离线</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>:ORCL&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> DATAFILE <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> OFFLINE;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   使用RMAN或DBMS_FILE_TRANSFER将文件复制到新的磁盘组</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">方法一：使用DBMS_FILE_TRANSFER包</span><br><span class="line">SQL:ORCL&gt;create <span class="keyword">or</span> replace directory orcl1 as <span class="string">&#x27;+asmdsk1/orcl/datafile&#x27;</span>;</span><br><span class="line">        SQL:ASM&gt; Alter disgroup asmdsk2 <span class="built_in">add</span> directory  <span class="string">&#x27;+asmdsk2/test&#x27;</span>;</span><br><span class="line">        SQL:ORCL&gt; create <span class="keyword">or</span> replace directory orcl2 as <span class="string">&#x27;+asmdsk2/test&#x27;</span>;</span><br><span class="line">        SQL:ORCL&gt;</span><br><span class="line">                BEGIN</span><br><span class="line">                  DBMS_FILE_TRANSFER.COPY_FILE(</span><br><span class="line">                  source_directory_object =&gt; <span class="string">&#x27;ORCL1&#x27;</span>,</span><br><span class="line">                  source_file_name =&gt; <span class="string">&#x27;users.259.565359071&#x27;</span>,</span><br><span class="line">                  destination_directory_object =&gt; <span class="string">&#x27;ORCL2&#x27;</span>,</span><br><span class="line">                  destination_file_name =&gt; <span class="string">&#x27;USERS01.DBF&#x27;</span>);</span><br><span class="line">                END;                            Database altered.</span><br><span class="line">方法二：使用RMAN copy</span><br><span class="line">$ rman target system@orcl10</span><br><span class="line">            target database Password:</span><br><span class="line">            connected <span class="keyword">to</span> target database: ORCL (<span class="attribute">DBID</span>=1089529226)</span><br><span class="line">            RMAN&gt;</span><br><span class="line">            RMAN&gt; COPY DATAFILE <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;+ASMDSK1&#x27;</span>;</span><br><span class="line">                   Starting backup at 03-AUG-05</span><br><span class="line">                   using target database controlfile instead of recovery catalog</span><br><span class="line">                   allocated channel: ORA_DISK_1</span><br><span class="line">                   channel ORA_DISK_1: <span class="attribute">sid</span>=146 <span class="attribute">devtype</span>=DISK</span><br><span class="line">                   channel ORA_DISK_1: starting datafile copy</span><br><span class="line">                   input datafile <span class="attribute">fno</span>=00004 <span class="attribute">name</span>=+ASMDSK2/orcl/datafile/users.256.565313879</span><br><span class="line">                   output <span class="attribute">filename</span>=+ASMDSK1/orcl/datafile/users.259.565359071 <span class="attribute">tag</span>=TAG20050803T12110</span><br><span class="line">                   9 <span class="attribute">recid</span>=2 <span class="attribute">stamp</span>=565359071</span><br><span class="line">                   channel ORA_DISK_1: datafile copy complete, elapsed time: 00:00:03</span><br><span class="line">                   Finished backup at 03-AUG-05</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   重命名文件以指向新的位置</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">方法一：使用DBMS_FILE_TRANSFER包</span><br><span class="line"><span class="keyword">SQL</span>:ORCL&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">RENAME</span> FILE <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> <span class="keyword">TO</span></span><br><span class="line">                                                                                               <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span></span><br><span class="line"></span><br><span class="line">                           <span class="keyword">Database</span> altered.</span><br><span class="line">方法二：使用RMAN <span class="keyword">copy</span></span><br><span class="line">RMAN run &#123;</span><br><span class="line">                                      <span class="keyword">set</span> newname <span class="keyword">for</span> datafile <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> </span><br><span class="line">                                                                        <span class="keyword">to</span> <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span> ;</span><br><span class="line">                                    switch datafile <span class="keyword">all</span>;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                    </span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   恢复文件</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">SQL</span><span class="symbol">:ORCL&gt;</span> <span class="variable constant_">RECOVER</span> <span class="variable constant_">DATAFILE</span> <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span></span><br><span class="line">                             <span class="title class_">Media</span> recovery complete.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   将文件上线</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>:ORCL&gt;<span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> DATAFILE <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span> ONLINE</span><br><span class="line">                                 <span class="keyword">Database</span> altered.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   验证新文件的位置</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">SQL:</span>ORCL&gt; SELECT FILE_NAME FROM DBA_DATA_FILES<span class="punctuation">;</span></span><br><span class="line">                    FILE_NAME</span><br><span class="line">                   ------------------------------------------------------------</span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>datafile/users<span class="number">.259</span><span class="number">.565359071</span></span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>sysaux01.dbf</span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>undotbs01.dbf</span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>system01.dbf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   删除原始位置的文件</p>
-<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">SQL:ASM&gt; <span class="keyword">ALTER</span> DISKGROUP ASMDSK2 <span class="keyword">DROP</span> <span class="keyword">FILE</span> users.256.565313879;</span><br><span class="line">或者</span><br><span class="line">ASMCMD&gt; rm -rf &lt;<span class="keyword">filename</span>&gt;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><mark>注意： 大多数自动存储管理文件不需要手动删除，因为作为Oracle管理的文件，当它们不再需要时会被自动移除。</mark></p>
-<p>然而，如果您需要手动删除一个Oracle管理文件（OMF），如果您引用该文件，您应该使用完全限定的文件名。否则，您将收到一个错误（例如 ORA-15177）。</p>
-<p><mark>注意：上面提供的步骤假设数据库是OPEN的，并且处于归档日志模式。</mark></p>
-<p>此外，这些步骤不适用于system或sysaux数据文件。对于system和sysaux，可以使用以下类似的方法：</p>
-<ol>
-<li><p>   在目标磁盘组中创建数据文件的副本</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">RMAN&gt; backup <span class="keyword">as</span> <span class="keyword">copy</span> <span class="keyword">tablespace</span> <span class="keyword">system</span> <span class="keyword">format</span> <span class="string">&#x27;&lt;New DG&gt;&#x27;</span>; </span><br><span class="line">RMAN&gt; backup <span class="keyword">as</span> <span class="keyword">copy</span> <span class="keyword">tablespace</span> sysaux <span class="keyword">format</span> <span class="string">&#x27;&lt;New DG&gt;&#x27;</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   然后关闭数据库并重新启动到已挂载状态</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt; shutdown immediate<span class="comment">;</span></span><br><span class="line">RMAN&gt; startup mount<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   切换数据文件到副本</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">RMAN&gt; switch <span class="keyword">tablespace</span> <span class="keyword">system</span> <span class="keyword">to</span> <span class="keyword">copy</span>;</span><br><span class="line">RMAN&gt; switch <span class="keyword">tablespace</span> sysaux <span class="keyword">to</span> <span class="keyword">copy</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>   恢复对这些表空间所做的更改</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt; recover database<span class="comment">;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术分享</category>
-        <category>数据库技术</category>
-      </categories>
-      <tags>
-        <tag>Oracle</tag>
-        <tag>数据库</tag>
-        <tag>ASM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开启Win10卓越性能电源模式</title>
-    <url>/2024-11-28/%E5%BC%80%E5%90%AFWin10%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E7%94%B5%E6%BA%90%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="开启Win10卓越性能电源模式"><a href="#开启Win10卓越性能电源模式" class="headerlink" title="开启Win10卓越性能电源模式"></a>开启Win10卓越性能电源模式</h1><p>输入“powershell”，在弹出的“Windows PowerShell”中右击并选择“以管理员身份运行”;</p>
-<p>接下来输入代码</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">powercfg</span> -duplicatescheme e9a42b02-d5df-<span class="number">448</span>d-aa00-<span class="number">03</span>f14749eb61</span><br></pre></td></tr></table></figure>
-<p>如果一切无误，屏幕上将显示出“电源方案 GU8bba-8039c544288d (卓越性能)”字样，这时我们便成功开启了“超级性能模式”<br>(中文版翻译成“卓越性能”模式，甭管它了，哪个顺眼就叫哪个吧~)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>开启Win10无人参与系统睡眠超时</title>
     <url>/2024-11-29/%E5%BC%80%E5%90%AFWin10%E6%97%A0%E4%BA%BA%E5%8F%82%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%9D%A1%E7%9C%A0%E8%B6%85%E6%97%B6/</url>
     <content><![CDATA[<h1 id="开启Win10无人参与系统睡眠超时"><a href="#开启Win10无人参与系统睡眠超时" class="headerlink" title="开启Win10无人参与系统睡眠超时"></a>开启Win10无人参与系统睡眠超时</h1><p>regedit</p>
@@ -4281,11 +4196,12 @@
 ]]></content>
   </entry>
   <entry>
-    <title>我的存储系统</title>
-    <url>/2022-10-01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p>
-<span id="more"></span>
-<p>——20221001更新——<br>　　我的存储已经使用了十余年了，总体上非常稳定。存储使用Windows的存储空间，重要数据存放于RAID1池，电影音乐存放于RAID5池，存储的基本配置如下。<br>　　CPU: Intel XEON E3-1230 V2<br>　　RAM: 32GB<br>　　SSD: 256GB<br>　　HDD: 10TB(4+4+2)<br>　　OS: Windows 10<br>　　RAID: RAID1、RAID5<br>　　硬盘(HDD)已经换了几拨了，从最早的1T盘、2T盘，逐渐替换为现在的4T盘。<br>　　早期HDD用的都是Seagate的盘，质量一般，通常运行个3~4年就会有坏道。现在换了WD的盘，希望能用得久一些。<br>　　近期打算升级存储系统，后续会陆续更新进展，以及一些监控脚本。</p>
+    <title>开启Win10卓越性能电源模式</title>
+    <url>/2024-11-28/%E5%BC%80%E5%90%AFWin10%E5%8D%93%E8%B6%8A%E6%80%A7%E8%83%BD%E7%94%B5%E6%BA%90%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="开启Win10卓越性能电源模式"><a href="#开启Win10卓越性能电源模式" class="headerlink" title="开启Win10卓越性能电源模式"></a>开启Win10卓越性能电源模式</h1><p>输入“powershell”，在弹出的“Windows PowerShell”中右击并选择“以管理员身份运行”;</p>
+<p>接下来输入代码</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">powercfg</span> -duplicatescheme e9a42b02-d5df-<span class="number">448</span>d-aa00-<span class="number">03</span>f14749eb61</span><br></pre></td></tr></table></figure>
+<p>如果一切无误，屏幕上将显示出“电源方案 GU8bba-8039c544288d (卓越性能)”字样，这时我们便成功开启了“超级性能模式”<br>(中文版翻译成“卓越性能”模式，甭管它了，哪个顺眼就叫哪个吧~)</p>
 ]]></content>
   </entry>
   <entry>
@@ -4299,6 +4215,14 @@
       <tags>
         <tag>随笔</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>我的存储系统</title>
+    <url>/2022-10-01/%E6%88%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="我的存储系统"><a href="#我的存储系统" class="headerlink" title="我的存储系统"></a>我的存储系统</h1><p>——20221012更新——<br>　　新加入1块4TB盘到存储池。<br>　　ST4000NC001-1FS168<br><img src="/vx_images/111287650876912.png"></p>
+<span id="more"></span>
+<p>——20221001更新——<br>　　我的存储已经使用了十余年了，总体上非常稳定。存储使用Windows的存储空间，重要数据存放于RAID1池，电影音乐存放于RAID5池，存储的基本配置如下。<br>　　CPU: Intel XEON E3-1230 V2<br>　　RAM: 32GB<br>　　SSD: 256GB<br>　　HDD: 10TB(4+4+2)<br>　　OS: Windows 10<br>　　RAID: RAID1、RAID5<br>　　硬盘(HDD)已经换了几拨了，从最早的1T盘、2T盘，逐渐替换为现在的4T盘。<br>　　早期HDD用的都是Seagate的盘，质量一般，通常运行个3~4年就会有坏道。现在换了WD的盘，希望能用得久一些。<br>　　近期打算升级存储系统，后续会陆续更新进展，以及一些监控脚本。</p>
+]]></content>
   </entry>
   <entry>
     <title>故乡——福州</title>
@@ -4468,12 +4392,6 @@
       </tags>
   </entry>
   <entry>
-    <title>暑期帮WYH整电脑</title>
-    <url>/2008-06-26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
-    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>春节这几天</title>
     <url>/2009-02-07/%E6%98%A5%E8%8A%82%E8%BF%99%E5%87%A0%E5%A4%A9/</url>
     <content><![CDATA[<h1 id="春节这几天"><a href="#春节这几天" class="headerlink" title="春节这几天"></a>春节这几天</h1><p>又是一个月明星稀的夜晚，我抱着心爱的本本，独自在阳台写程序。冬天的夜里挺冷的，我漫不经心地翻阅着客户发过来的《程序功能要求稿件》，心里思量着如何对程序代码做最后的优化。<br>这是一个网络层的管理程序，服务器端，客户机端，控制台端，三个程序。要求能够躲过360的查杀，不被侦测出自启动，还要不与杀毒软件的主动防御起冲突。接手这个项目也有一周多了，程序的核心代码都写得差不多了，现在反而闲得无聊了。<span id="more"></span>家里的无线网络还挺快，360和nod32杀毒软件的病毒库都更新成最新版本了，全面扫描了一下，没有报告程序有恶意行为，一周的努力，总算有点成绩，差不多能交付客户使用了，心里蛮高兴的。我站起身来，伸了个懒腰，惬意极了。<br>夜已经深了，冷风吹在身上，凉凉的，有点冷，而我却也懒得再加一件衣裳。突然想起前天在“中华美食网”上学了如何制作热奶昔，心里痒痒的，于是乎，就飞奔到厨房，从冰箱里翻出，酸奶，香蕉，黄桃，果汁，柠檬，放进搅拌机稍微处理了一下，再放到微波炉里转了两圈，OK，总算大功告成。味道还不错，很浓郁的水果香。<br>回到阳台，看到本本的屏幕还亮着，满屏的代码，我心里既充实，又觉得空空的。新春佳节，是不是应该好好玩玩？朋友们的盛意相邀，我多想答应呀，可是我最终选择了程序，虽然好累好累，我不止一次产生再不写程序的想法，可是……<br>算了,写完这个项目，我会好好休息一下，至于程序嘛，呵，这可是我一直以来的最爱……</p>
@@ -4484,24 +4402,6 @@
       <tags>
         <tag>随笔</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>有一种生活</title>
-    <url>/2009-01-01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
-    <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>暑期帮ZQY整电脑</title>
-    <url>/2008-06-26/%E6%9A%91%E6%9C%9F%E5%B8%AEZQY%E6%95%B4%E7%94%B5%E8%84%91/</url>
-    <content><![CDATA[<h1 id="暑期帮ZQY整电脑"><a href="#暑期帮ZQY整电脑" class="headerlink" title="暑期帮ZQY整电脑"></a>暑期帮ZQY整电脑</h1><p>今天履行诺言，帮ZQY搞电脑，一台是普通兼容机，大概看了下没啥大问题，QY希望重装系统，，小生遂施展GHOST大法，很快就搞定，<br>    接下来是联想的本本，配制还不错，手感挺好，原装正版VISTA，主人欲降级改装为XP，不知道Microsoft公司是何感想，顺手翻了一下硬盘文件，发现一个GHO文件，看一下大小，2G多，一定不可能是VISTA了，估计是XP的镜像，用GHOST还原一下，OK，恢复初装状态，系统问题总算搞定。<br>    接着，我们骑电驴到大利嘉，买了无线路由，说实话，小生还重没配制过路由，所以向店里的技术员要了张名片，不懂可以问嘛，不过，小生对自己的实力还是很有信心的，回到QY家，很快将硬件搭好，软件方面，进入路由配置，设网关，掩码，分配地址，输密码，重启路由，测试，OK，一切顺利，台式机与本本都能无线上网，接着，配置网络邻居，再搭个内网FTP，哇几乎完美，最最后，没忘记给路由上个防火墙，嘿嘿，小生够负责的了。<br>    随便玩了一会儿，收工回家。<br>    总结，今天，小生第一次配制无线路由，且成功完成，填补了小生计算机无线网络搭建的空白！！！</p>
-]]></content>
   </entry>
   <entry>
     <title>生产环境PostgreSQL数据库操作系统参数探究</title>
@@ -4698,6 +4598,88 @@
       </tags>
   </entry>
   <entry>
+    <title>如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？</title>
+    <url>/2024-04-24/%E5%A6%82%E4%BD%95%E5%B0%86ASM%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E4%BB%8E%E4%B8%80%E4%B8%AA%E7%A3%81%E7%9B%98%E7%BB%84%E7%A7%BB%E5%8A%A8%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%A3%81%E7%9B%98%E7%BB%84%EF%BC%9F/</url>
+    <content><![CDATA[<h1 id="如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？"><a href="#如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？" class="headerlink" title="如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？"></a>如何将ASM数据库文件从一个磁盘组移动到另一个磁盘组？</h1><p>在ASM磁盘组之间移动文件的首选方法是使用RMAN。RMAN对于自动存储管理至关重要，负责跟踪ASM文件名以及删除过时的ASM文件。由于无法通过正常的操作系统接口访问ASM文件，因此RMAN是复制ASM文件的首选方式。</p>
+<p><mark>注意：从12c开始，您可以使用ALTER DATABASE MOVE DATAFILE SQL语句来重命名或重新定位在线数据文件。</mark></p>
+<p>以下示例将数据文件从Oracle ASM的一个位置移动到另一个Oracle ASM位置。</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">MOVE</span> DATAFILE <span class="string">&#x27;+dgroup_01/data/orcl/datafile/user1.dbf&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;+dgroup_02/data/orcl/datafile/user1.dbf&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>移动数据文件从一个磁盘组到另一个磁盘组的步骤如下：</p>
+<ol>
+<li>确定要移动的数据文件</li>
+<li>确定要将文件移动到的目标磁盘组</li>
+<li>将文件离线</li>
+<li>使用RMAN或DBMS_FILE_TRANSFER将文件复制到新的磁盘组</li>
+<li>重命名文件以指向新的位置</li>
+<li>恢复文件</li>
+<li>将文件上线</li>
+<li>验证新文件的位置</li>
+<li>删除原始位置的文件</li>
+</ol>
+<p>以下是详细过程：<br>1)	确定要移动的数据文件</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">在数据库实例中执行</span><br><span class="line">SQL:ORCL&gt; SELECT FILE_NAME <span class="keyword">FROM</span> DBA_DATA_FILES:</span><br><span class="line">                            +ASMDSK2<span class="regexp">/orcl/</span>datafile/users.<span class="number">256.565313879</span> &lt;======= Move <span class="keyword">this</span> to ASMDSK1.</span><br><span class="line">                            +ASMDSK1<span class="regexp">/orcl/</span>sysaux01.dbf</span><br><span class="line">                            +ASMDSK1<span class="regexp">/orcl/u</span>ndotbs01.dbf</span><br><span class="line">                            +ASMDSK1<span class="regexp">/orcl/</span>system01.dbf</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>   确定要将文件移动到的目标磁盘组</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">在ASM实例中执行</span><br><span class="line">         <span class="keyword">SQL</span>:ASM&gt; <span class="keyword">SELECT</span> GROUP_NUMBER, <span class="type">NAME</span> <span class="keyword">FROM</span> V$ASM_DISKGROUP;</span><br><span class="line">                           GROUP_NUMBER <span class="type">NAME</span></span><br><span class="line">                             <span class="comment">------------ ---------</span></span><br><span class="line">                                             <span class="number">1</span> ASMDSK1</span><br><span class="line">                                             <span class="number">2</span> ASMDSK2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   将文件离线</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>:ORCL&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> DATAFILE <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> OFFLINE;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   使用RMAN或DBMS_FILE_TRANSFER将文件复制到新的磁盘组</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">方法一：使用DBMS_FILE_TRANSFER包</span><br><span class="line">SQL:ORCL&gt;create <span class="keyword">or</span> replace directory orcl1 as <span class="string">&#x27;+asmdsk1/orcl/datafile&#x27;</span>;</span><br><span class="line">        SQL:ASM&gt; Alter disgroup asmdsk2 <span class="built_in">add</span> directory  <span class="string">&#x27;+asmdsk2/test&#x27;</span>;</span><br><span class="line">        SQL:ORCL&gt; create <span class="keyword">or</span> replace directory orcl2 as <span class="string">&#x27;+asmdsk2/test&#x27;</span>;</span><br><span class="line">        SQL:ORCL&gt;</span><br><span class="line">                BEGIN</span><br><span class="line">                  DBMS_FILE_TRANSFER.COPY_FILE(</span><br><span class="line">                  source_directory_object =&gt; <span class="string">&#x27;ORCL1&#x27;</span>,</span><br><span class="line">                  source_file_name =&gt; <span class="string">&#x27;users.259.565359071&#x27;</span>,</span><br><span class="line">                  destination_directory_object =&gt; <span class="string">&#x27;ORCL2&#x27;</span>,</span><br><span class="line">                  destination_file_name =&gt; <span class="string">&#x27;USERS01.DBF&#x27;</span>);</span><br><span class="line">                END;                            Database altered.</span><br><span class="line">方法二：使用RMAN copy</span><br><span class="line">$ rman target system@orcl10</span><br><span class="line">            target database Password:</span><br><span class="line">            connected <span class="keyword">to</span> target database: ORCL (<span class="attribute">DBID</span>=1089529226)</span><br><span class="line">            RMAN&gt;</span><br><span class="line">            RMAN&gt; COPY DATAFILE <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> <span class="keyword">TO</span> <span class="string">&#x27;+ASMDSK1&#x27;</span>;</span><br><span class="line">                   Starting backup at 03-AUG-05</span><br><span class="line">                   using target database controlfile instead of recovery catalog</span><br><span class="line">                   allocated channel: ORA_DISK_1</span><br><span class="line">                   channel ORA_DISK_1: <span class="attribute">sid</span>=146 <span class="attribute">devtype</span>=DISK</span><br><span class="line">                   channel ORA_DISK_1: starting datafile copy</span><br><span class="line">                   input datafile <span class="attribute">fno</span>=00004 <span class="attribute">name</span>=+ASMDSK2/orcl/datafile/users.256.565313879</span><br><span class="line">                   output <span class="attribute">filename</span>=+ASMDSK1/orcl/datafile/users.259.565359071 <span class="attribute">tag</span>=TAG20050803T12110</span><br><span class="line">                   9 <span class="attribute">recid</span>=2 <span class="attribute">stamp</span>=565359071</span><br><span class="line">                   channel ORA_DISK_1: datafile copy complete, elapsed time: 00:00:03</span><br><span class="line">                   Finished backup at 03-AUG-05</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   重命名文件以指向新的位置</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">方法一：使用DBMS_FILE_TRANSFER包</span><br><span class="line"><span class="keyword">SQL</span>:ORCL&gt; <span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> <span class="keyword">RENAME</span> FILE <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> <span class="keyword">TO</span></span><br><span class="line">                                                                                               <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span></span><br><span class="line"></span><br><span class="line">                           <span class="keyword">Database</span> altered.</span><br><span class="line">方法二：使用RMAN <span class="keyword">copy</span></span><br><span class="line">RMAN run &#123;</span><br><span class="line">                                      <span class="keyword">set</span> newname <span class="keyword">for</span> datafile <span class="string">&#x27;+ASMDSK2/orcl/datafile/users.256.565313879&#x27;</span> </span><br><span class="line">                                                                        <span class="keyword">to</span> <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span> ;</span><br><span class="line">                                    switch datafile <span class="keyword">all</span>;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                    </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   恢复文件</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="variable constant_">SQL</span><span class="symbol">:ORCL&gt;</span> <span class="variable constant_">RECOVER</span> <span class="variable constant_">DATAFILE</span> <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span></span><br><span class="line">                             <span class="title class_">Media</span> recovery complete.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   将文件上线</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span>:ORCL&gt;<span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> DATAFILE <span class="string">&#x27;+ASMDSK1/orcl/datafile/users.259.565359071&#x27;</span> ONLINE</span><br><span class="line">                                 <span class="keyword">Database</span> altered.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   验证新文件的位置</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">SQL:</span>ORCL&gt; SELECT FILE_NAME FROM DBA_DATA_FILES<span class="punctuation">;</span></span><br><span class="line">                    FILE_NAME</span><br><span class="line">                   ------------------------------------------------------------</span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>datafile/users<span class="number">.259</span><span class="number">.565359071</span></span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>sysaux01.dbf</span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>undotbs01.dbf</span><br><span class="line">                  +ASMDSK1<span class="keyword">/orcl/</span>system01.dbf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   删除原始位置的文件</p>
+<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">SQL:ASM&gt; <span class="keyword">ALTER</span> DISKGROUP ASMDSK2 <span class="keyword">DROP</span> <span class="keyword">FILE</span> users.256.565313879;</span><br><span class="line">或者</span><br><span class="line">ASMCMD&gt; rm -rf &lt;<span class="keyword">filename</span>&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><mark>注意： 大多数自动存储管理文件不需要手动删除，因为作为Oracle管理的文件，当它们不再需要时会被自动移除。</mark></p>
+<p>然而，如果您需要手动删除一个Oracle管理文件（OMF），如果您引用该文件，您应该使用完全限定的文件名。否则，您将收到一个错误（例如 ORA-15177）。</p>
+<p><mark>注意：上面提供的步骤假设数据库是OPEN的，并且处于归档日志模式。</mark></p>
+<p>此外，这些步骤不适用于system或sysaux数据文件。对于system和sysaux，可以使用以下类似的方法：</p>
+<ol>
+<li><p>   在目标磁盘组中创建数据文件的副本</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">RMAN&gt; backup <span class="keyword">as</span> <span class="keyword">copy</span> <span class="keyword">tablespace</span> <span class="keyword">system</span> <span class="keyword">format</span> <span class="string">&#x27;&lt;New DG&gt;&#x27;</span>; </span><br><span class="line">RMAN&gt; backup <span class="keyword">as</span> <span class="keyword">copy</span> <span class="keyword">tablespace</span> sysaux <span class="keyword">format</span> <span class="string">&#x27;&lt;New DG&gt;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   然后关闭数据库并重新启动到已挂载状态</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt; shutdown immediate<span class="comment">;</span></span><br><span class="line">RMAN&gt; startup mount<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   切换数据文件到副本</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">RMAN&gt; switch <span class="keyword">tablespace</span> <span class="keyword">system</span> <span class="keyword">to</span> <span class="keyword">copy</span>;</span><br><span class="line">RMAN&gt; switch <span class="keyword">tablespace</span> sysaux <span class="keyword">to</span> <span class="keyword">copy</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>   恢复对这些表空间所做的更改</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">RMAN&gt; recover database<span class="comment">;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术分享</category>
+        <category>数据库技术</category>
+      </categories>
+      <tags>
+        <tag>Oracle</tag>
+        <tag>数据库</tag>
+        <tag>ASM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>暑期帮WYH整电脑</title>
+    <url>/2008-06-26/%E6%9A%91%E6%9C%9F%E5%B8%AEWYH%E6%95%B4%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="暑期帮WYH整电脑"><a href="#暑期帮WYH整电脑" class="headerlink" title="暑期帮WYH整电脑"></a>暑期帮WYH整电脑</h1><p>YH同学早就向我抱怨老爸公司的电脑有问题，让我帮他看看，好歹N年同桌(N≤2)，同桌有难，小生即使两肋插刀也豁出去了(夸张了点)，<br>OK，也是一路电驴，YH把我带到他爸公司，他们也真客气，要我先解决2块西瓜，再开工。OK，解决西瓜真没什么技术含量，三两口就搞定了，还打了两个响嗝，威风极了。[众人狂]。<br>办正事了，看了一下配制，上个年代的古董，不过，手写板还是挺抢眼的，进系统超卡，估计中毒不轻，开任务管理器一瞧，差点没跌到椅子下，病毒进程几十个，这样的系统基本废了，干脆重装[虽然这是不负责任的做法，不过HY老爸指明要重装]，翻了一下硬盘，没见到GHO，搜*.GHO也没有，看来上一位做电脑的前辈太不负责了，没办法，GHOSTXP吧，半个多小时后系统安装完毕，配制优化一下，上网拉个OFFICE，安装一下驱动，搞定。<br>午餐是一点西式面包，不提……<br>还有一台是HP的本本，看下配制，PM4，马马虎虎啦，不过，主人没要求装系统，就体验了一番了事。<br>总结，此行体验了一下HP的本本，做工还好，就是端口的布局觉得比较合理。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>程序进入DLL时代</title>
     <url>/2009-12-02/%E7%A8%8B%E5%BA%8F%E8%BF%9B%E5%85%A5DLL%E6%97%B6%E4%BB%A3/</url>
     <content><![CDATA[<h1 id="程序进入DLL时代"><a href="#程序进入DLL时代" class="headerlink" title="程序进入DLL时代"></a>程序进入DLL时代</h1><p>今天挺高兴的，因为我的一款小程序“桌面便笺”，终于正式发布了。<br>早期，我写这款程序也只是为了能快速收集资料，所以，也没有进行比较人性化的设计，后来，我们宿舍的胖榕榕认为这款程序正合他的需求，就拷贝走了，经过试用，感觉良好，并提出了具建设意义的建议。我感觉还是挺开心的。于是，我干脆用Delphi 2007 重写了一遍，并追踪更新了3个版本。<br>原先，我都是把所有的代码封装进同一个可执行文件中，今天，我决定在这款程序中加入正版认证功能，并将注册的文件封装为一个DLL文件，可爱的榕榕舍友再次帮我测试了这个功能，并获得了成功，在这里还是应该好好感谢一下他。<br>同时，我也希望，在计算机人工智能技术高度发达的今天，我对计算机领域的一点点探究，能够给身边的人，带来更具个性化的数字体验。</p>
@@ -4756,38 +4738,10 @@
       </tags>
   </entry>
   <entry>
-    <title>谈谈生产环境中PostgreSQL参数的意义</title>
-    <url>/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="谈谈生产环境中PostgreSQL参数的意义"><a href="#谈谈生产环境中PostgreSQL参数的意义" class="headerlink" title="谈谈生产环境中PostgreSQL参数的意义"></a>谈谈生产环境中PostgreSQL参数的意义</h1><h1 id="archive-command"><a href="#archive-command" class="headerlink" title="archive_command"></a>archive_command</h1><p>archive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’</p>
-<h1 id="auto-explain-log-analyze"><a href="#auto-explain-log-analyze" class="headerlink" title="auto_explain.log_analyze"></a>auto_explain.log_analyze</h1><p>auto_explain.log_analyze &#x3D; true</p>
-<p>auto_explain.log_min_duration &#x3D; ‘300ms’</p>
-<p>auto_explain.log_min_duration &#x3D; ‘300mss’</p>
-<p>auto_explain.log_timing &#x3D; on</p>
-<p>auto_explain.log_verbose &#x3D; off</p>
-<p>autovacuum &#x3D; on</p>
-<p>autovacuum_analyze_scale_factor &#x3D; 0.01</p>
-<p>autovacuum_freeze_max_age &#x3D; 1200000000</p>
-<p>autovacuum_max_workers &#x3D; 12</p>
-<p>autovacuum_multixact_freeze_max_age &#x3D; 1250000000<br>autovacuum_vacuum_cost_delay &#x3D; 0ms<br>autovacuum_vacuum_scale_factor &#x3D; 0.02<br>checkpoint_completion_target &#x3D; 0.5<br>checkpoint_flush_after &#x3D; 0<br>checkpoint_timeout &#x3D; 30min<br>checkpoint_timeout &#x3D; 30min<br>default_text_search_config &#x3D; ‘pg_catalog.english’<br>enable_partitionwise_aggregate &#x3D; on<br>enable_partitionwise_join &#x3D; on<br>full_page_writes &#x3D; on<br>hot_standby_feedback &#x3D; off<br>huge_pages &#x3D; try<br>idle_in_transaction_session_timeout &#x3D; ‘6h’<br>idle_in_transaction_session_timeout&#x3D;3600000<br>jit&#x3D;off<br>lc_messages &#x3D; ‘C’<br>lc_monetary &#x3D; ‘C’<br>lc_numeric &#x3D; ‘C’<br>lc_time &#x3D; ‘C’<br>log_autovacuum_min_duration &#x3D; 0<br>log_checkpoints &#x3D; on<br>log_destination&#x3D;csvlog<br>log_error_verbosity &#x3D; verbose<br>log_filename &#x3D; ‘postgresql-%H.log’<br>log_lock_waits &#x3D; on<br>log_min_duration_statement &#x3D; 3s<br>log_rotation_age &#x3D; 1h<br>log_rotation_size &#x3D; 1GB<br>log_statement &#x3D; ‘ddl’<br>log_temp_files &#x3D; 256MB<br>log_truncate_on_rotation &#x3D; on<br>maintenance_work_mem &#x3D; 3GB<br>maintenance_work_mem &#x3D; 3GB<br>max_connections &#x3D; 5000<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers_per_gather &#x3D; 0<br>max_replication_slots &#x3D; 64<br>max_standby_archive_delay &#x3D; 120s<br>max_standby_streaming_delay &#x3D; 120s<br>max_sync_workers_per_subscription &#x3D; 8<br>max_sync_workers_per_subscription &#x3D; 8<br>max_wal_senders &#x3D; 64<br>max_wal_size &#x3D; 80GB<br>min_wal_size &#x3D; 12GB<br>old_snapshot_threshold &#x3D; 6h<br>parallel_leader_participation &#x3D; on<br>pg_stat_statements.max &#x3D; 50<br>pgsentinel_pgssh.enable &#x3D; true<br>random_page_cost &#x3D; 1.1<br>shared_buffers &#x3D; 64GB<br>shared_preload_libraries &#x3D; ‘pg_stat_statements,auto_explain,telepg_monitor’<br>statement_timeout&#x3D;’24h’<br>synchronous_commit &#x3D; remote_write<br>tcp_keepalives_count &#x3D; 10<br>tcp_keepalives_idle &#x3D; 60<br>tcp_keepalives_interval &#x3D; 10<br>temp_file_limit&#x3D;20240000<br>track_activity_query_size &#x3D; 2048<br>track_functions &#x3D; pl<br>track_io_timing &#x3D; off<br>unix_socket_directories &#x3D; ‘., &#x2F;tmp’<br>unix_socket_permissions &#x3D; 0700<br>vacuum_freeze_table_age &#x3D; 200000000<br>vacuum_multixact_freeze_table_age &#x3D; 200000000<br>wal_buffers &#x3D; 32MB<br>wal_compression &#x3D; on<br>wal_keep_segments &#x3D; 5000<br>wal_receiver_status_interval &#x3D; 1s<br>work_mem &#x3D; 32MB<br>#password_encryption &#x3D; scram-sha-256<br>#pg_stat_statements.track &#x3D; none</p>
-<h2 id="shared-buffers-64GB"><a href="#shared-buffers-64GB" class="headerlink" title="shared_buffers &#x3D; 64GB"></a>shared_buffers &#x3D; 64GB</h2><p>shared_buffers (integer)</p>
-<p>Sets the amount of memory the database server uses for shared memory buffers. The default is typically 128 megabytes (128MB), but might be less if your kernel settings will not support it (as determined during initdb). This setting must be at least 128 kilobytes. However, settings significantly higher than the minimum are usually needed for good performance. If this value is specified without units, it is taken as blocks, that is BLCKSZ bytes, typically 8kB. (Non-default values of BLCKSZ change the minimum value.) This parameter can only be set at server start.</p>
-<p>If you have a dedicated database server with 1GB or more of RAM, a reasonable starting value for shared_buffers is 25% of the memory in your system. There are some workloads where even larger settings for shared_buffers are effective, but because PostgreSQL also relies on the operating system cache, it is unlikely that an allocation of more than 40% of RAM to shared_buffers will work better than a smaller amount. Larger settings for shared_buffers usually require a corresponding increase in max_wal_size, in order to spread out the process of writing large quantities of new or changed data over a longer period of time.</p>
-<p>On systems with less than 1GB of RAM, a smaller percentage of RAM is appropriate, so as to leave adequate space for the operating system.</p>
-<p>max_connections (integer)</p>
-<pre><code>Determines the maximum number of concurrent connections to the database server. The default is typically 100 connections, but might be less if your kernel settings will not support it (as determined during initdb). This parameter can only be set at server start.
-
-When running a standby server, you must set this parameter to the same or higher value than on the master server. Otherwise, queries will not be allowed in the standby server.
-</code></pre>
+    <title>暑期帮ZQY整电脑</title>
+    <url>/2008-06-26/%E6%9A%91%E6%9C%9F%E5%B8%AEZQY%E6%95%B4%E7%94%B5%E8%84%91/</url>
+    <content><![CDATA[<h1 id="暑期帮ZQY整电脑"><a href="#暑期帮ZQY整电脑" class="headerlink" title="暑期帮ZQY整电脑"></a>暑期帮ZQY整电脑</h1><p>今天履行诺言，帮ZQY搞电脑，一台是普通兼容机，大概看了下没啥大问题，QY希望重装系统，，小生遂施展GHOST大法，很快就搞定，<br>    接下来是联想的本本，配制还不错，手感挺好，原装正版VISTA，主人欲降级改装为XP，不知道Microsoft公司是何感想，顺手翻了一下硬盘文件，发现一个GHO文件，看一下大小，2G多，一定不可能是VISTA了，估计是XP的镜像，用GHOST还原一下，OK，恢复初装状态，系统问题总算搞定。<br>    接着，我们骑电驴到大利嘉，买了无线路由，说实话，小生还重没配制过路由，所以向店里的技术员要了张名片，不懂可以问嘛，不过，小生对自己的实力还是很有信心的，回到QY家，很快将硬件搭好，软件方面，进入路由配置，设网关，掩码，分配地址，输密码，重启路由，测试，OK，一切顺利，台式机与本本都能无线上网，接着，配置网络邻居，再搭个内网FTP，哇几乎完美，最最后，没忘记给路由上个防火墙，嘿嘿，小生够负责的了。<br>    随便玩了一会儿，收工回家。<br>    总结，今天，小生第一次配制无线路由，且成功完成，填补了小生计算机无线网络搭建的空白！！！</p>
 ]]></content>
-      <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
-      </categories>
-      <tags>
-        <tag>数据库</tag>
-        <tag>PostgreSQL</tag>
-        <tag>参数配置</tag>
-      </tags>
   </entry>
   <entry>
     <title>跨平台不同字节序Oracle数据库迁移方案</title>
@@ -4999,6 +4953,76 @@ When running a standby server, you must set this parameter to the same or higher
         <tag>Solaris</tag>
         <tag>操作系统</tag>
         <tag>SSH</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有一种生活</title>
+    <url>/2009-01-01/%E6%9C%89%E4%B8%80%E7%A7%8D%E7%94%9F%E6%B4%BB/</url>
+    <content><![CDATA[<h1 id="有一种生活"><a href="#有一种生活" class="headerlink" title="有一种生活"></a>有一种生活</h1><p>有一种生活是这样的：<br>    怀抱着心爱的超便携本本，悠闲地躺在阳台的吊床上，温暖的阳光，清新的茶，还有那淡淡的青草香，对——这就是生活…</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>谈谈生产环境中PostgreSQL参数的意义</title>
+    <url>/2024-12-26/%E8%B0%88%E8%B0%88%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83%E4%B8%ADPostgreSQL%E5%8F%82%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="谈谈生产环境中PostgreSQL参数的意义"><a href="#谈谈生产环境中PostgreSQL参数的意义" class="headerlink" title="谈谈生产环境中PostgreSQL参数的意义"></a>谈谈生产环境中PostgreSQL参数的意义</h1><h1 id="archive-command"><a href="#archive-command" class="headerlink" title="archive_command"></a>archive_command</h1><p>archive_command &#x3D; ‘$pg_data_dir&#x2F;..&#x2F;arch.sh %f %p’</p>
+<h1 id="auto-explain-log-analyze"><a href="#auto-explain-log-analyze" class="headerlink" title="auto_explain.log_analyze"></a>auto_explain.log_analyze</h1><p>auto_explain.log_analyze &#x3D; true</p>
+<p>auto_explain.log_min_duration &#x3D; ‘300ms’</p>
+<p>auto_explain.log_min_duration &#x3D; ‘300mss’</p>
+<p>auto_explain.log_timing &#x3D; on</p>
+<p>auto_explain.log_verbose &#x3D; off</p>
+<p>autovacuum &#x3D; on</p>
+<p>autovacuum_analyze_scale_factor &#x3D; 0.01</p>
+<p>autovacuum_freeze_max_age &#x3D; 1200000000</p>
+<p>autovacuum_max_workers &#x3D; 12</p>
+<p>autovacuum_multixact_freeze_max_age &#x3D; 1250000000<br>autovacuum_vacuum_cost_delay &#x3D; 0ms<br>autovacuum_vacuum_scale_factor &#x3D; 0.02<br>checkpoint_completion_target &#x3D; 0.5<br>checkpoint_flush_after &#x3D; 0<br>checkpoint_timeout &#x3D; 30min<br>checkpoint_timeout &#x3D; 30min<br>default_text_search_config &#x3D; ‘pg_catalog.english’<br>enable_partitionwise_aggregate &#x3D; on<br>enable_partitionwise_join &#x3D; on<br>full_page_writes &#x3D; on<br>hot_standby_feedback &#x3D; off<br>huge_pages &#x3D; try<br>idle_in_transaction_session_timeout &#x3D; ‘6h’<br>idle_in_transaction_session_timeout&#x3D;3600000<br>jit&#x3D;off<br>lc_messages &#x3D; ‘C’<br>lc_monetary &#x3D; ‘C’<br>lc_numeric &#x3D; ‘C’<br>lc_time &#x3D; ‘C’<br>log_autovacuum_min_duration &#x3D; 0<br>log_checkpoints &#x3D; on<br>log_destination&#x3D;csvlog<br>log_error_verbosity &#x3D; verbose<br>log_filename &#x3D; ‘postgresql-%H.log’<br>log_lock_waits &#x3D; on<br>log_min_duration_statement &#x3D; 3s<br>log_rotation_age &#x3D; 1h<br>log_rotation_size &#x3D; 1GB<br>log_statement &#x3D; ‘ddl’<br>log_temp_files &#x3D; 256MB<br>log_truncate_on_rotation &#x3D; on<br>maintenance_work_mem &#x3D; 3GB<br>maintenance_work_mem &#x3D; 3GB<br>max_connections &#x3D; 5000<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers &#x3D; 32<br>max_parallel_workers_per_gather &#x3D; 0<br>max_replication_slots &#x3D; 64<br>max_standby_archive_delay &#x3D; 120s<br>max_standby_streaming_delay &#x3D; 120s<br>max_sync_workers_per_subscription &#x3D; 8<br>max_sync_workers_per_subscription &#x3D; 8<br>max_wal_senders &#x3D; 64<br>max_wal_size &#x3D; 80GB<br>min_wal_size &#x3D; 12GB<br>old_snapshot_threshold &#x3D; 6h<br>parallel_leader_participation &#x3D; on<br>pg_stat_statements.max &#x3D; 50<br>pgsentinel_pgssh.enable &#x3D; true<br>random_page_cost &#x3D; 1.1<br>shared_buffers &#x3D; 64GB<br>shared_preload_libraries &#x3D; ‘pg_stat_statements,auto_explain,telepg_monitor’<br>statement_timeout&#x3D;’24h’<br>synchronous_commit &#x3D; remote_write<br>tcp_keepalives_count &#x3D; 10<br>tcp_keepalives_idle &#x3D; 60<br>tcp_keepalives_interval &#x3D; 10<br>temp_file_limit&#x3D;20240000<br>track_activity_query_size &#x3D; 2048<br>track_functions &#x3D; pl<br>track_io_timing &#x3D; off<br>unix_socket_directories &#x3D; ‘., &#x2F;tmp’<br>unix_socket_permissions &#x3D; 0700<br>vacuum_freeze_table_age &#x3D; 200000000<br>vacuum_multixact_freeze_table_age &#x3D; 200000000<br>wal_buffers &#x3D; 32MB<br>wal_compression &#x3D; on<br>wal_keep_segments &#x3D; 5000<br>wal_receiver_status_interval &#x3D; 1s<br>work_mem &#x3D; 32MB<br>#password_encryption &#x3D; scram-sha-256<br>#pg_stat_statements.track &#x3D; none</p>
+<h2 id="shared-buffers-64GB"><a href="#shared-buffers-64GB" class="headerlink" title="shared_buffers &#x3D; 64GB"></a>shared_buffers &#x3D; 64GB</h2><p>shared_buffers (integer)</p>
+<p>Sets the amount of memory the database server uses for shared memory buffers. The default is typically 128 megabytes (128MB), but might be less if your kernel settings will not support it (as determined during initdb). This setting must be at least 128 kilobytes. However, settings significantly higher than the minimum are usually needed for good performance. If this value is specified without units, it is taken as blocks, that is BLCKSZ bytes, typically 8kB. (Non-default values of BLCKSZ change the minimum value.) This parameter can only be set at server start.</p>
+<p>If you have a dedicated database server with 1GB or more of RAM, a reasonable starting value for shared_buffers is 25% of the memory in your system. There are some workloads where even larger settings for shared_buffers are effective, but because PostgreSQL also relies on the operating system cache, it is unlikely that an allocation of more than 40% of RAM to shared_buffers will work better than a smaller amount. Larger settings for shared_buffers usually require a corresponding increase in max_wal_size, in order to spread out the process of writing large quantities of new or changed data over a longer period of time.</p>
+<p>On systems with less than 1GB of RAM, a smaller percentage of RAM is appropriate, so as to leave adequate space for the operating system.</p>
+<p>max_connections (integer)</p>
+<pre><code>Determines the maximum number of concurrent connections to the database server. The default is typically 100 connections, but might be less if your kernel settings will not support it (as determined during initdb). This parameter can only be set at server start.
+
+When running a standby server, you must set this parameter to the same or higher value than on the master server. Otherwise, queries will not be allowed in the standby server.
+</code></pre>
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>数据库系统</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>PostgreSQL</tag>
+        <tag>参数配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>随笔20111225——月下独思</title>
+    <url>/2011-12-25/%E9%9A%8F%E7%AC%9420111225%E2%80%94%E2%80%94%E6%9C%88%E4%B8%8B%E7%8B%AC%E6%80%9D/</url>
+    <content><![CDATA[<h1 id="随笔20111225——月下独思"><a href="#随笔20111225——月下独思" class="headerlink" title="随笔20111225——月下独思"></a>随笔20111225——月下独思</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>随笔 无题</title>
+    <url>/2012-03-29/%E9%9A%8F%E7%AC%94_%E6%97%A0%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="随笔-无题"><a href="#随笔-无题" class="headerlink" title="随笔_无题"></a>随笔_无题</h1><p>孤灯影独伴，<br>倦笔行渐慢。<br>目滞案前草，<br>邈邈意正酣。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -5246,30 +5270,6 @@ When running a standby server, you must set this parameter to the same or higher
         <tag>UAP</tag>
         <tag>UFO</tag>
         <tag>飞碟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>随笔20111225——月下独思</title>
-    <url>/2011-12-25/%E9%9A%8F%E7%AC%9420111225%E2%80%94%E2%80%94%E6%9C%88%E4%B8%8B%E7%8B%AC%E6%80%9D/</url>
-    <content><![CDATA[<h1 id="随笔20111225——月下独思"><a href="#随笔20111225——月下独思" class="headerlink" title="随笔20111225——月下独思"></a>随笔20111225——月下独思</h1><p>今夜的月光格外明亮，<br>我一个人在静静冥想，<br>沏一壶清茶手留余香，<br>何时才能揽月梦回故乡。<br>淡淡的星光气氛微凉，<br>谁愿为我披上梦的衣裳，<br>月里的仙子是何模样，<br>晓月清风留下怎样景象。<br>你曾在我耳边轻轻地讲，<br>山那头藏着美美梦想，<br>岁月流逝一切都变了样，<br>唯信念不改永恒飞扬。<br>昨日的残念今日梦想，<br>可否勇敢自由翱翔？<br>一个人的追思一个人的想，<br>终进入梦乡无尽想象。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>随笔 无题</title>
-    <url>/2012-03-29/%E9%9A%8F%E7%AC%94_%E6%97%A0%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="随笔-无题"><a href="#随笔-无题" class="headerlink" title="随笔_无题"></a>随笔_无题</h1><p>孤灯影独伴，<br>倦笔行渐慢。<br>目滞案前草，<br>邈邈意正酣。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
