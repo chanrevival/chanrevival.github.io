@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/photography_art/index.html</loc>
+    <loc>https://chanrevival.github.io/%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/index.html</loc>
     
     <lastmod>2025-01-13</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/photography_art/vx.json</loc>
+    <loc>https://chanrevival.github.io/%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/vx.json</loc>
     
     <lastmod>2025-01-13</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/domestic_focus/index.html</loc>
+    <loc>https://chanrevival.github.io/domestic_focus/vx.json</loc>
     
     <lastmod>2025-01-09</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/domestic_focus/vx.json</loc>
+    <loc>https://chanrevival.github.io/domestic_focus/index.html</loc>
     
     <lastmod>2025-01-09</lastmod>
     
@@ -362,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/rankings/web_browser/index.html</loc>
+    <loc>https://chanrevival.github.io/rankings/web_browser/vx.json</loc>
     
     <lastmod>2024-12-27</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/rankings/web_browser/vx.json</loc>
+    <loc>https://chanrevival.github.io/rankings/web_browser/index.html</loc>
     
     <lastmod>2024-12-27</lastmod>
     
@@ -982,13 +982,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/tags/%E7%B4%AB%E7%AB%B9%E9%99%A2%E5%85%AC%E5%9B%AD/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/tags/%E5%A4%A9%E5%AE%89%E9%97%A8/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -1004,6 +997,20 @@
   
   <url>
     <loc>https://chanrevival.github.io/tags/%E5%AE%9D%E5%A2%A8%E5%9B%AD/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/%E7%B4%AB%E7%AB%B9%E9%99%A2%E5%85%AC%E5%9B%AD/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1045,7 +1052,35 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/tags/%E5%A5%A5%E6%9E%97%E5%8C%B9%E5%85%8B%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD/</loc>
+    <loc>https://chanrevival.github.io/tags/NVIDIA/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/Graphics-Cards/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/GPU/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/5090/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/5070/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1087,7 +1122,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/tags/NVIDIA/</loc>
+    <loc>https://chanrevival.github.io/tags/%E5%9C%B0%E9%9C%87/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/%E8%A5%BF%E8%97%8F/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1095,27 +1137,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/tags/%E6%98%BE%E5%8D%A1/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/GPU/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/5090/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/5070/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1144,27 +1165,6 @@
   
   <url>
     <loc>https://chanrevival.github.io/tags/USA/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/Graphics-Cards/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/%E5%9C%B0%E9%9C%87/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/%E8%A5%BF%E8%97%8F/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1318,13 +1318,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/tags/shell/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/tags/%E5%AF%86%E7%A0%81%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -1354,6 +1347,13 @@
   
   <url>
     <loc>https://chanrevival.github.io/tags/%E7%BD%91%E7%BB%9C%E7%9B%91%E6%8E%A7/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/shell/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1514,6 +1514,27 @@
   </url>
   
   <url>
+    <loc>https://chanrevival.github.io/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/tags/SSH/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://chanrevival.github.io/tags/%E5%A4%96%E6%98%9F%E6%96%87%E6%98%8E/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -1555,27 +1576,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://chanrevival.github.io/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/tags/SSH/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -1593,13 +1593,6 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Political-Analysis/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://chanrevival.github.io/categories/%E6%96%87%E5%8C%96%E7%BA%B5%E8%A7%88/%E6%91%84%E5%BD%B1%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -1607,7 +1600,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E6%94%BF%E6%B2%BB%E8%A7%82%E5%AF%9F/</loc>
+    <loc>https://chanrevival.github.io/categories/Political-Analysis/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1621,7 +1614,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Current-Affairs/</loc>
+    <loc>https://chanrevival.github.io/categories/%E6%94%BF%E6%B2%BB%E8%A7%82%E5%AF%9F/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1635,14 +1628,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Essays/</loc>
+    <loc>https://chanrevival.github.io/categories/Current-Affairs/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Political-Analysis/International-Politics/</loc>
+    <loc>https://chanrevival.github.io/categories/Essays/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1663,14 +1656,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E6%94%BF%E6%B2%BB%E8%A7%82%E5%AF%9F/%E5%9B%BD%E9%99%85%E6%94%BF%E6%B2%BB/</loc>
-    <lastmod>2025-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://chanrevival.github.io/categories/%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://chanrevival.github.io/categories/Political-Analysis/International-Politics/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1684,7 +1670,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Current-Affairs/Global-News/</loc>
+    <loc>https://chanrevival.github.io/categories/%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/categories/%E6%94%BF%E6%B2%BB%E8%A7%82%E5%AF%9F/%E5%9B%BD%E9%99%85%E6%94%BF%E6%B2%BB/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1698,14 +1691,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E6%97%B6%E4%BA%8B%E7%83%AD%E7%82%B9/%E5%85%A8%E7%90%83%E5%8A%A8%E6%80%81/</loc>
+    <loc>https://chanrevival.github.io/categories/Current-Affairs/Global-News/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://chanrevival.github.io/categories/%E6%97%B6%E4%BA%8B%E7%83%AD%E7%82%B9/%E5%85%A8%E7%90%83%E5%8A%A8%E6%80%81/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1719,14 +1712,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Technology/OS/</loc>
+    <loc>https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/</loc>
+    <loc>https://chanrevival.github.io/categories/Technology/OS/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1740,7 +1733,7 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/</loc>
+    <loc>https://chanrevival.github.io/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1768,14 +1761,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/Technology/OS/Linux/</loc>
+    <loc>https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/Oracle/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/%E5%AE%87%E5%AE%99/</loc>
+    <loc>https://chanrevival.github.io/categories/Technology/OS/Linux/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1789,14 +1782,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/PostgreSQL/</loc>
+    <loc>https://chanrevival.github.io/categories/%E7%A7%91%E5%AD%A6%E6%8E%A2%E7%B4%A2/%E5%AE%87%E5%AE%99/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/%E4%B8%8D%E6%98%8E%E5%BC%82%E5%B8%B8%E7%8E%B0%E8%B1%A1%EF%BC%88UAP%EF%BC%89/</loc>
+    <loc>https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/PostgreSQL/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1810,7 +1803,14 @@
   </url>
   
   <url>
-    <loc>https://chanrevival.github.io/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%8A%80%E6%9C%AF/Oracle/</loc>
+    <loc>https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://chanrevival.github.io/categories/%E5%AE%87%E5%AE%99%E6%8E%A2%E7%B4%A2%E4%B8%8E%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/%E4%B8%8D%E6%98%8E%E5%BC%82%E5%B8%B8%E7%8E%B0%E8%B1%A1%EF%BC%88UAP%EF%BC%89/</loc>
     <lastmod>2025-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
