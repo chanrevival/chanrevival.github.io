@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://chanrevival.github.io/2025-01-07/20250107%E8%A5%BF%E8%97%8F%E5%BC%BA%E9%9C%87/</loc>
+    <lastmod>2025-01-22</lastmod>
+  </url>
+  <url>
+    <loc>https://chanrevival.github.io/2024-12-31/20241231%E5%9B%BD%E5%AE%B6%E4%B8%BB%E5%B8%AD%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%8F%91%E8%A1%A8%E4%BA%8C%E3%80%87%E4%BA%8C%E4%BA%94%E5%B9%B4%E6%96%B0%E5%B9%B4%E8%B4%BA%E8%AF%8D/</loc>
+    <lastmod>2025-01-22</lastmod>
+  </url>
+  <url>
+    <loc>https://chanrevival.github.io/%E5%9B%BD%E5%86%85%E6%96%B0%E9%97%BB/index.html</loc>
+    <lastmod>2025-01-22</lastmod>
+  </url>
+  <url>
+    <loc>https://chanrevival.github.io/%E5%BD%B1%E8%A7%86%E8%89%BA%E6%9C%AF/index.html</loc>
+    <lastmod>2025-01-22</lastmod>
+  </url>
+  <url>
     <loc>https://chanrevival.github.io/%E9%9F%B3%E4%B9%90%E6%BD%AE%E6%B5%81/index.html</loc>
-    <lastmod>2025-01-21</lastmod>
+    <lastmod>2025-01-22</lastmod>
   </url>
   <url>
     <loc>https://chanrevival.github.io/%E5%9C%B0%E5%A4%96%E6%96%87%E6%98%8E/index.html</loc>
@@ -93,14 +109,6 @@
     <lastmod>2025-01-15</lastmod>
   </url>
   <url>
-    <loc>https://chanrevival.github.io/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC/index.html</loc>
-    <lastmod>2025-01-14</lastmod>
-  </url>
-  <url>
-    <loc>https://chanrevival.github.io/%E8%AF%BB%E8%80%85%E5%A3%B0%E9%9F%B3/index.html</loc>
-    <lastmod>2025-01-14</lastmod>
-  </url>
-  <url>
     <loc>https://chanrevival.github.io/2018-04-03/RHEL6_5%E5%AE%89%E8%A3%85MongoDB3_6_3%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</loc>
     <lastmod>2025-01-14</lastmod>
   </url>
@@ -153,19 +161,11 @@
     <lastmod>2025-01-14</lastmod>
   </url>
   <url>
-    <loc>https://chanrevival.github.io/%E5%BD%B1%E8%A7%86%E8%89%BA%E6%9C%AF/index.html</loc>
-    <lastmod>2025-01-14</lastmod>
-  </url>
-  <url>
     <loc>https://chanrevival.github.io/%E6%96%87%E5%AD%A6%E9%A3%8E%E4%BA%91/index.html</loc>
     <lastmod>2025-01-14</lastmod>
   </url>
   <url>
     <loc>https://chanrevival.github.io/%E4%B8%AD%E5%9B%BD%E6%94%BF%E6%B2%BB/index.html</loc>
-    <lastmod>2025-01-14</lastmod>
-  </url>
-  <url>
-    <loc>https://chanrevival.github.io/2024-12-31/20241231%E5%9B%BD%E5%AE%B6%E4%B8%BB%E5%B8%AD%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%8F%91%E8%A1%A8%E4%BA%8C%E3%80%87%E4%BA%8C%E4%BA%94%E5%B9%B4%E6%96%B0%E5%B9%B4%E8%B4%BA%E8%AF%8D/</loc>
     <lastmod>2025-01-14</lastmod>
   </url>
   <url>
@@ -233,20 +233,12 @@
     <lastmod>2025-01-09</lastmod>
   </url>
   <url>
-    <loc>https://chanrevival.github.io/%E5%9B%BD%E5%86%85%E7%84%A6%E7%82%B9/index.html</loc>
-    <lastmod>2025-01-09</lastmod>
-  </url>
-  <url>
     <loc>https://chanrevival.github.io/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/index.html</loc>
     <lastmod>2025-01-09</lastmod>
   </url>
   <url>
     <loc>https://chanrevival.github.io/2013-11-10/Oracle%E6%97%A5%E5%BF%97%E6%8C%96%E6%8E%98%E6%95%B0%E4%BE%8B/</loc>
     <lastmod>2025-01-09</lastmod>
-  </url>
-  <url>
-    <loc>https://chanrevival.github.io/2025-01-07/20250107%E8%A5%BF%E8%97%8F%E5%BC%BA%E9%9C%87/</loc>
-    <lastmod>2025-01-07</lastmod>
   </url>
   <url>
     <loc>https://chanrevival.github.io/2011-12-25/Alone_Thinking_Under_the_Moon/</loc>
