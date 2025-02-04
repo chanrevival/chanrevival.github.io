@@ -9,23 +9,151 @@
 
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025020358492.html</loc>
-        <lastmod>2025-02-03T15:26:41.611Z</lastmod>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/sheng-chan-huan-jing-postgresql-shu-ju-ku-can-shu-tan-jiu/index.html</loc>
+        <lastmod>2025-02-04T15:17:53.547Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025012458492.html</loc>
-        <lastmod>2025-02-03T15:23:27.301Z</lastmod>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap/index.html</loc>
+        <lastmod>2025-02-04T15:16:43.547Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2012032954520.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20250115-ri-ben-gong-qi-xian-fa-sheng-qiang-zhen/index.html</loc>
+        <lastmod>2025-02-04T15:16:17.819Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/lai-se-ta-dang-an-jian-jie/index.html</loc>
+        <lastmod>2025-02-04T15:15:21.612Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/lai-se-ta-dang-an-1/index.html</loc>
+        <lastmod>2025-02-04T15:15:07.259Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/lai-se-ta-dang-an-2/index.html</loc>
+        <lastmod>2025-02-04T15:14:51.475Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/zhan-zhu-zhi-sheng/index.html</loc>
+        <lastmod>2025-02-04T15:13:48.019Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/3000/index.html</loc>
+        <lastmod>2025-02-04T15:13:17.323Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/the-lacerta-files/index.html</loc>
+        <lastmod>2025-02-04T15:12:28.661Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/bu-guan-bi-zhu-ku-shi-yong-rman-fu-zhi-chuang-jian-wu-li-bei-ku/index.html</loc>
+        <lastmod>2025-02-04T15:11:10.882Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/fu-zhou/index.html</loc>
+        <lastmod>2025-02-04T15:06:33.291Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/zai-hexo-zhong-cha-ru-yin-le-bo-fang-qi/index.html</loc>
+        <lastmod>2025-02-04T15:06:07.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/oracle-ri-zhi-wa-jue-an-li/index.html</loc>
+        <lastmod>2025-02-04T14:52:17.913Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/ru-he-zai-asm-11gr2-zhong-chong-ming-ming-ci-pan-zu/index.html</loc>
+        <lastmod>2025-02-04T06:10:31.426Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/ru-he-jiang-asm-shu-ju-ku-wen-jian-cong-yi-ge-ci-pan-zu-yi-dong-dao-ling-yi-ge-ci-pan-zu/index.html</loc>
+        <lastmod>2025-02-04T06:09:41.229Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/rhel6-5-an-zhuang-mongodb3-6-3-can-kao-wen-dang/index.html</loc>
+        <lastmod>2025-02-04T06:08:09.028Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/kua-ping-tai-bu-tong-zi-jie-xu-oracle-shu-ju-ku-qian-yi-fang-an/index.html</loc>
+        <lastmod>2025-02-04T06:08:02.068Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/ru-he-shi-yong-udev-fei-asmlib-she-zhi-fen-qu-hua-de-linux-kuai-she-bei-bing-jiang-ta-men-fen-pei-gei-asm/index.html</loc>
+        <lastmod>2025-02-04T05:42:22.453Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/sui-bi-20111225-yue-xia-du-si/index.html</loc>
         <lastmod>2025-02-03T14:52:35.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -33,7 +161,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2011122553945.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/sui-bi-wu-ti/index.html</loc>
         <lastmod>2025-02-03T14:52:35.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -41,7 +169,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2011030732807.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/sui-bi-20110307-zao-chun-hua-yu-tu/index.html</loc>
         <lastmod>2025-02-03T14:52:35.410Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -49,7 +177,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/202210124845.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/pei-zhi-solaris-yun-xu-ssh-yuan-cheng-deng-lu/index.html</loc>
         <lastmod>2025-02-03T14:52:35.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -57,23 +185,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2015010760209.html</loc>
-        <lastmod>2025-02-03T14:52:35.409Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024120129639.html</loc>
-        <lastmod>2025-02-03T14:52:35.408Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2023050136281.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/xie-ding-e-de-mao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.407Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -81,7 +193,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024122657700.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/tan-tan-sheng-chan-huan-jing-zhong-postgresql-can-shu-de-yi-yi/index.html</loc>
         <lastmod>2025-02-03T14:52:35.407Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -89,31 +201,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024120134802.html</loc>
-        <lastmod>2025-02-03T14:52:35.406Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024111162645.html</loc>
-        <lastmod>2025-02-03T14:52:35.405Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024120120840.html</loc>
-        <lastmod>2025-02-03T14:52:35.405Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2009120262006.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/cheng-xu-jin-ru-dll-shi-dai/index.html</loc>
         <lastmod>2025-02-03T14:52:35.404Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -121,23 +209,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024121817412.html</loc>
-        <lastmod>2025-02-03T14:52:35.403Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024123046546.html</loc>
-        <lastmod>2025-02-03T14:52:35.403Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2009010123863.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/you-yi-chong-sheng-huo/index.html</loc>
         <lastmod>2025-02-03T14:52:35.402Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -145,15 +217,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025011524522.html</loc>
-        <lastmod>2025-02-03T14:52:35.402Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2008062662378.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/shu-qi-bang-zqy-zheng-dian-nao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.401Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -161,7 +225,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2009020762713.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/chun-jie-zhe-ji-tian/index.html</loc>
         <lastmod>2025-02-03T14:52:35.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -169,7 +233,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/200806264157.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/shu-qi-bang-wyh-zheng-dian-nao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -177,7 +241,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2018091234780.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/chun-meng-du-hao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.399Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -185,7 +249,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20221012358.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/wu-ren-zhi-xiao-da-an-de-wen-ti/index.html</loc>
         <lastmod>2025-02-03T14:52:35.397Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -193,7 +257,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2022100122146.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/wo-de-cun-chu-xi-tong/index.html</loc>
         <lastmod>2025-02-03T14:52:35.396Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -201,7 +265,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024112917904.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/kai-qi-win10-wu-ren-can-yu-xi-tong-shui-mian-chao-shi/index.html</loc>
         <lastmod>2025-02-03T14:52:35.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -209,7 +273,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2018091217690.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/xin-wei-min-meng-bu-mie/index.html</loc>
         <lastmod>2025-02-03T14:52:35.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -217,7 +281,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/202411289267.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/kai-qi-win10-zhuo-yue-xing-neng-dian-yuan-mo-shi/index.html</loc>
         <lastmod>2025-02-03T14:52:35.394Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -225,31 +289,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024042450774.html</loc>
-        <lastmod>2025-02-03T14:52:35.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024042455382.html</loc>
-        <lastmod>2025-02-03T14:52:35.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2016052239792.html</loc>
-        <lastmod>2025-02-03T14:52:35.392Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2018091219266.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/da-xue-sheng-huo-2-qiu-ai-qiao-shang/index.html</loc>
         <lastmod>2025-02-03T14:52:35.391Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -257,7 +297,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2012011264306.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/chu-lun/index.html</loc>
         <lastmod>2025-02-03T14:52:35.390Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -265,7 +305,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2018091224589.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/da-xue-sheng-huo-1-chu-dao-nong-da/index.html</loc>
         <lastmod>2025-02-03T14:52:35.390Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -273,7 +313,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2011080145578.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/chi-bao-xia-xie-fang-chu-he/index.html</loc>
         <lastmod>2025-02-03T14:52:35.389Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -281,15 +321,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025012354303.html</loc>
-        <lastmod>2025-02-03T14:52:35.389Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2009011955231.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/xie-zai-chun-jie-li/index.html</loc>
         <lastmod>2025-02-03T14:52:35.388Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -297,7 +329,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024112658862.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/shi-yong-yum-xia-zai-rpm-bao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -305,7 +337,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025011464409.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/qian-nu-you-hun-1987/index.html</loc>
         <lastmod>2025-02-03T14:52:35.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -313,7 +345,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2017081612535.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/shi-yong-udev-zai-linux7-cao-zuo-xi-tong-xia-wei-ci-pan-pei-zhi-ming-cheng-v1-0/index.html</loc>
         <lastmod>2025-02-03T14:52:35.385Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -321,7 +353,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20090119861.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/write-during-spring-festival/index.html</loc>
         <lastmod>2025-02-03T14:52:35.384Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -329,15 +361,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024111827544.html</loc>
-        <lastmod>2025-02-03T14:52:35.384Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2009010140990.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/there-s-a-way-of-life/index.html</loc>
         <lastmod>2025-02-03T14:52:35.383Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -345,7 +369,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024111542187.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/syncthing/index.html</loc>
         <lastmod>2025-02-03T14:52:35.381Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -353,7 +377,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2016021657654.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/sunos6-10-an-zhuang-di-san-fang-ruan-jian-can-kao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.380Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -361,7 +385,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/201804032227.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/solaris-diao-zheng-wen-jian-xi-tong-can-kao/index.html</loc>
         <lastmod>2025-02-03T14:52:35.379Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -369,15 +393,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2017011057657.html</loc>
-        <lastmod>2025-02-03T14:52:35.379Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024112664339.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/postgresql-yun-wei-chang-yong-ming-ling/index.html</loc>
         <lastmod>2025-02-03T14:52:35.378Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -385,7 +401,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024112018571.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/python-jian-kong-gong-wang-ip-bian-hua-fa-qq-you-jian-tong-zhi/index.html</loc>
         <lastmod>2025-02-03T14:52:35.378Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -393,7 +409,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024121056892.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/postgresql-de-mi-ma-wen-jian/index.html</loc>
         <lastmod>2025-02-03T14:52:35.377Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -401,7 +417,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024120457763.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/linux-ming-ling-da-quan/index.html</loc>
         <lastmod>2025-02-03T14:52:35.376Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -409,7 +425,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024112725216.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/postgresql-de-pageinspect-cha-jian/index.html</loc>
         <lastmod>2025-02-03T14:52:35.375Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -417,7 +433,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024112724055.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/postgresql-cha-kan-biao-de-peng-zhang-lu/index.html</loc>
         <lastmod>2025-02-03T14:52:35.374Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -425,7 +441,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024121345658.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/common-cos-yum-repo-conf/index.html</loc>
         <lastmod>2025-02-03T14:52:35.373Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -433,15 +449,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2013111039096.html</loc>
-        <lastmod>2025-02-03T14:52:35.373Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2017011953068.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/linux-shang-de-luo-she-bei/index.html</loc>
         <lastmod>2025-02-03T14:52:35.372Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -449,7 +457,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2011030756478.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/early-spring-flower-rain-scene/index.html</loc>
         <lastmod>2025-02-03T14:52:35.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -457,7 +465,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024042412554.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/how-to-rename-a-disk-group-in-asm-11gr2/index.html</loc>
         <lastmod>2025-02-03T14:52:35.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -465,7 +473,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024111149402.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/doris-pi-pan-huan-pan-fang-fa/index.html</loc>
         <lastmod>2025-02-03T14:52:35.370Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -473,7 +481,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2022101257882.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/crs-pltm-o-db-mig-solu-diff-byt-ord/index.html</loc>
         <lastmod>2025-02-03T14:52:35.369Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -481,7 +489,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024121343210.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/centos-yum-yuan-chang-yong-ming-ling/index.html</loc>
         <lastmod>2025-02-03T14:52:35.364Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -489,7 +497,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2011122537254.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/aix-diao-zheng-wen-jian-xi-tong-can-kao-v1-4/index.html</loc>
         <lastmod>2025-02-03T14:52:35.363Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -497,7 +505,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2014041915798.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/alone-thinking-under-the-moon/index.html</loc>
         <lastmod>2025-02-03T14:52:35.363Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -505,15 +513,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025011531134.html</loc>
-        <lastmod>2025-02-03T14:52:35.362Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025011128876.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20250111-luo-shan-ji-ye-huo-niang-can-lie-zai-qing/index.html</loc>
         <lastmod>2025-02-03T14:52:35.361Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -521,7 +521,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025011128164.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20250111wildfire/index.html</loc>
         <lastmod>2025-02-03T14:52:35.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -529,7 +529,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/202501076232.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20250107-xi-cang-qiang-zhen/index.html</loc>
         <lastmod>2025-02-03T14:52:35.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -537,7 +537,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/202501079984.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20250107nvidia-fa-bu-xin-qia/index.html</loc>
         <lastmod>2025-02-03T14:52:35.358Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -545,7 +545,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2025010727269.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20250107nvidia/index.html</loc>
         <lastmod>2025-02-03T14:52:35.357Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -553,7 +553,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024123153497.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20241231-guo-jia-zhu-xi-xi-jin-ping-fa-biao-er-0er-wu-nian-xin-nian-he-ci/index.html</loc>
         <lastmod>2025-02-03T14:52:35.356Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -561,7 +561,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024110613141.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20241106-te-lang-pu-zai-du-sheng-xuan/index.html</loc>
         <lastmod>2025-02-03T14:52:35.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -569,7 +569,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2024110610560.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20241106trump-wins-reelection/index.html</loc>
         <lastmod>2025-02-03T14:52:35.354Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -577,7 +577,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20170324800.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20170324-bei-jing-ao-lin-pi-ke-sen-lin-gong-yuan/index.html</loc>
         <lastmod>2025-02-03T14:52:35.353Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -585,7 +585,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/201703214239.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20170321-bei-jing-zi-zhu-yuan-gong-yuan/index.html</loc>
         <lastmod>2025-02-03T14:52:35.352Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -593,7 +593,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2015092748333.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20150927-guang-zhou-nan-yue-yuan-bao-mo-yuan/index.html</loc>
         <lastmod>2025-02-03T14:52:35.351Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -601,7 +601,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2015102442599.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20151024-guang-zhou-lian-hua-shan/index.html</loc>
         <lastmod>2025-02-03T14:52:35.351Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -609,7 +609,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2015041536666.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/20150415-bei-jing-tian-an-men/index.html</loc>
         <lastmod>2025-02-03T14:52:35.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -617,7 +617,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2012010126419.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/2012-1-1-sui-bi/index.html</loc>
         <lastmod>2025-02-03T14:52:35.348Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
