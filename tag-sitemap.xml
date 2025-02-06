@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/tags/%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6%C2%B7Data-replication/</loc>
+        <lastmod>2025-02-06T11:46:19.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/tags/PostgreSQL/</loc>
+        <lastmod>2025-02-06T11:46:19.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%C2%B7Databases/</loc>
+        <lastmod>2025-02-06T11:46:19.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/tags/ASM/</loc>
         <lastmod>2025-02-05T13:40:40.034Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -11,13 +32,6 @@
 
     <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/tags/Oracle/</loc>
-        <lastmod>2025-02-05T13:40:40.034Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%C2%B7Databases/</loc>
         <lastmod>2025-02-05T13:40:40.034Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -81,13 +95,6 @@
 
     <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/tags/%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/</loc>
-        <lastmod>2025-02-05T09:30:50.821Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/tags/PostgreSQL/</loc>
         <lastmod>2025-02-05T09:30:50.821Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -173,13 +180,6 @@
     <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/tags/Database/</loc>
         <lastmod>2025-02-05T08:27:15.910Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/tags/%E6%95%B0%E6%8D%AE%E5%A4%8D%E5%88%B6%C2%B7Data-replication/</loc>
-        <lastmod>2025-02-05T08:18:45.230Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

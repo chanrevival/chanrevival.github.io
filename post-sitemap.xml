@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/postgresql-huan-jing-xia-de-fu-zhi-gai-shu.html</loc>
+        <lastmod>2025-02-06T11:46:19.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/posts/ru-he-jiang-asm-shu-ju-ku-wen-jian-cong-yi-ge-ci-pan-zu-yi-dong-dao-ling-yi-ge-ci-pan-zu.html</loc>
         <lastmod>2025-02-05T13:40:40.034Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -313,7 +321,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/kai-qi-win10-wu-ren-can-yu-xi-tong-shui-mian-chao-shi.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/xin-wei-min-meng-bu-mie.html</loc>
         <lastmod>2025-02-03T14:52:35.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -321,7 +329,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/xin-wei-min-meng-bu-mie.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/kai-qi-win10-wu-ren-can-yu-xi-tong-shui-mian-chao-shi.html</loc>
         <lastmod>2025-02-03T14:52:35.395Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -473,7 +481,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/early-spring-flower-rain-scene.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</loc>
         <lastmod>2025-02-03T14:52:35.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -481,7 +489,7 @@
     </url>
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/posts/early-spring-flower-rain-scene.html</loc>
         <lastmod>2025-02-03T14:52:35.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
