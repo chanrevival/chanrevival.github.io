@@ -9,14 +9,49 @@
 
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
-        <lastmod>2025-02-06T11:46:19.311Z</lastmod>
+        <loc>http://crxiaosheng.tpddns.cn:60000/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD%25C2%25B7AI/</loc>
+        <lastmod>2025-02-10T15:25:37.708Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
+        <lastmod>2025-02-10T15:25:37.708Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/categories/%25E8%258B%25B1%25E8%25AF%25AD%25C2%25B7English/</loc>
+        <lastmod>2025-02-09T09:44:13.482Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/Database/Oracle/</loc>
+        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/Database/</loc>
+        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/</loc>
+        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
         <lastmod>2025-02-06T11:46:19.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -179,27 +214,6 @@
     <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/OS/</loc>
         <lastmod>2025-02-03T14:52:35.373Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/</loc>
-        <lastmod>2025-02-03T14:52:35.373Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/Database/Oracle/</loc>
-        <lastmod>2025-02-03T14:52:35.371Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/categories/Technology/Database/</loc>
-        <lastmod>2025-02-03T14:52:35.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
