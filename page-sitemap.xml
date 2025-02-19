@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/</loc>
+        <loc>https://www.crsky.uk/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/linux_toolbox/</loc>
+        <loc>https://www.crsky.uk/linux_toolbox/</loc>
         <lastmod>2025-02-17T15:29:11.795Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/news/</loc>
+        <loc>https://www.crsky.uk/news/</loc>
         <lastmod>2025-02-17T14:55:17.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/photography/</loc>
+        <loc>https://www.crsky.uk/photography/</loc>
         <lastmod>2025-02-16T14:17:26.174Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -37,7 +37,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/exoplanets/</loc>
+        <loc>https://www.crsky.uk/exoplanets/</loc>
         <lastmod>2025-02-05T11:21:21.460Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -46,7 +46,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/databases/</loc>
+        <loc>https://www.crsky.uk/databases/</loc>
         <lastmod>2025-02-05T08:22:34.266Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -55,7 +55,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E9%259F%25B3%25E4%25B9%2590%25E6%25BD%25AE%25E6%25B5%2581/</loc>
+        <loc>https://www.crsky.uk/%25E9%259F%25B3%25E4%25B9%2590%25E6%25BD%25AE%25E6%25B5%2581/</loc>
         <lastmod>2025-02-03T16:23:14.920Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -64,7 +64,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF/</loc>
+        <loc>https://www.crsky.uk/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF/</loc>
         <lastmod>2025-01-24T16:01:16.266Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -73,7 +73,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E9%259F%25B3%25E4%25B9%2590%25E6%25BD%25AE%25E6%25B5%2581/%25E6%259E%2597%25E5%25BF%2586%25E8%258E%25B2_%25E8%2587%25B3%25E5%25B0%2591%25E8%25BF%2598%25E6%259C%2589%25E4%25BD%25A0.html</loc>
+        <loc>https://www.crsky.uk/%25E9%259F%25B3%25E4%25B9%2590%25E6%25BD%25AE%25E6%25B5%2581/%25E6%259E%2597%25E5%25BF%2586%25E8%258E%25B2_%25E8%2587%25B3%25E5%25B0%2591%25E8%25BF%2598%25E6%259C%2589%25E4%25BD%25A0.html</loc>
         <lastmod>2025-01-23T09:30:38.850Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -82,7 +82,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E9%259F%25B3%25E4%25B9%2590%25E6%25BD%25AE%25E6%25B5%2581/%25E9%2587%2591%25E6%25B5%25B7%25E5%25BF%2583_%25E9%2582%25A3%25E4%25B9%2588%25E9%25AA%2584%25E5%2582%25B2.html</loc>
+        <loc>https://www.crsky.uk/%25E9%259F%25B3%25E4%25B9%2590%25E6%25BD%25AE%25E6%25B5%2581/%25E9%2587%2591%25E6%25B5%25B7%25E5%25BF%2583_%25E9%2582%25A3%25E4%25B9%2588%25E9%25AA%2584%25E5%2582%25B2.html</loc>
         <lastmod>2025-01-23T09:30:31.227Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -91,7 +91,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0/</loc>
+        <loc>https://www.crsky.uk/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0/</loc>
         <lastmod>2025-01-22T14:44:09.053Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -100,7 +100,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E8%25AF%25BB%25E8%2580%2585%25E5%25A3%25B0%25E9%259F%25B3/</loc>
+        <loc>https://www.crsky.uk/%25E8%25AF%25BB%25E8%2580%2585%25E5%25A3%25B0%25E9%259F%25B3/</loc>
         <lastmod>2025-01-22T14:18:43.744Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -109,7 +109,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E7%25BD%2591%25E7%25AB%2599%25E6%259B%25B4%25E6%2596%25B0/</loc>
+        <loc>https://www.crsky.uk/%25E7%25BD%2591%25E7%25AB%2599%25E6%259B%25B4%25E6%2596%25B0/</loc>
         <lastmod>2025-01-22T14:02:59.424Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -118,7 +118,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E8%2581%2594%25E7%25B3%25BB%25E6%2588%2591%25E4%25BB%25AC/</loc>
+        <loc>https://www.crsky.uk/%25E8%2581%2594%25E7%25B3%25BB%25E6%2588%2591%25E4%25BB%25AC/</loc>
         <lastmod>2025-01-22T14:00:53.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -127,7 +127,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E8%25BD%25AF%25E4%25BB%25B6/</loc>
+        <loc>https://www.crsky.uk/%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E8%25BD%25AF%25E4%25BB%25B6/</loc>
         <lastmod>2025-01-15T08:10:26.820Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -136,7 +136,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E6%2596%2587%25E5%25AD%25A6%25E9%25A3%258E%25E4%25BA%2591/</loc>
+        <loc>https://www.crsky.uk/%25E6%2596%2587%25E5%25AD%25A6%25E9%25A3%258E%25E4%25BA%2591/</loc>
         <lastmod>2025-01-14T05:15:35.688Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -145,7 +145,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/about/</loc>
+        <loc>https://www.crsky.uk/about/</loc>
         <lastmod>2024-12-30T05:30:59.698Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -154,7 +154,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/thoughts/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0.html</loc>
+        <loc>https://www.crsky.uk/thoughts/</loc>
         <lastmod>2024-12-28T11:51:25.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -163,7 +163,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/thoughts/</loc>
+        <loc>https://www.crsky.uk/thoughts/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0.html</loc>
         <lastmod>2024-12-28T11:51:25.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -172,7 +172,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/rankings/web_browser/</loc>
+        <loc>https://www.crsky.uk/rankings/web_browser/</loc>
         <lastmod>2024-12-27T15:33:47.807Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -181,7 +181,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/rankings/data_visualization_monitoring/</loc>
+        <loc>https://www.crsky.uk/rankings/data_visualization_monitoring/</loc>
         <lastmod>2024-12-27T15:16:42.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -190,7 +190,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/rankings/file_sync_bak/data_visualization_monitoring/</loc>
+        <loc>https://www.crsky.uk/rankings/file_sync_bak/data_visualization_monitoring/</loc>
         <lastmod>2024-12-27T15:16:42.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -199,7 +199,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/rankings/text_editors/</loc>
+        <loc>https://www.crsky.uk/rankings/text_editors/</loc>
         <lastmod>2024-12-27T14:30:06.503Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -208,7 +208,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/rankings/system_software/</loc>
+        <loc>https://www.crsky.uk/rankings/system_software/</loc>
         <lastmod>2024-12-27T14:18:31.661Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -217,7 +217,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/internal_use/AI%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D.html</loc>
+        <loc>https://www.crsky.uk/internal_use/AI%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D.html</loc>
         <lastmod>2024-12-27T09:27:54.622Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -226,7 +226,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/rankings/</loc>
+        <loc>https://www.crsky.uk/rankings/</loc>
         <lastmod>2024-12-27T09:14:07.839Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -235,7 +235,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/internal_use/</loc>
+        <loc>https://www.crsky.uk/internal_use/</loc>
         <lastmod>2024-12-24T14:29:41.337Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -244,7 +244,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/internal_use/test.html</loc>
+        <loc>https://www.crsky.uk/internal_use/test.html</loc>
         <lastmod>2024-12-24T14:28:02.765Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -253,7 +253,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/internal_use/%25E5%2585%25AC%25E7%25BD%2591IP.html</loc>
+        <loc>https://www.crsky.uk/internal_use/%25E5%2585%25AC%25E7%25BD%2591IP.html</loc>
         <lastmod>2024-11-26T04:49:55.394Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -262,7 +262,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/tags/</loc>
+        <loc>https://www.crsky.uk/tags/</loc>
         <lastmod>2024-11-17T12:38:16.402Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -271,7 +271,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/categories/</loc>
+        <loc>https://www.crsky.uk/categories/</loc>
         <lastmod>2024-11-17T12:35:08.787Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
