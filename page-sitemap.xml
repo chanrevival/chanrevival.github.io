@@ -10,7 +10,34 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/Exoplanets/</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/linux_toolbox/</loc>
+        <lastmod>2025-02-17T15:29:11.795Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/news/</loc>
+        <lastmod>2025-02-17T14:55:17.539Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/photography/</loc>
+        <lastmod>2025-02-16T14:17:26.174Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>http://crxiaosheng.tpddns.cn:60000/exoplanets/</loc>
         <lastmod>2025-02-05T11:21:21.460Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,17 +46,8 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/Databases/</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/databases/</loc>
         <lastmod>2025-02-05T08:22:34.266Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/Photography/</loc>
-        <lastmod>2025-02-05T05:51:54.251Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -48,15 +66,6 @@
     <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF/</loc>
         <lastmod>2025-01-24T16:01:16.266Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E5%259B%25BD%25E5%2586%2585%25E6%2596%25B0%25E9%2597%25BB/</loc>
-        <lastmod>2025-01-24T06:40:57.797Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -136,33 +145,6 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E4%25B8%25AD%25E5%259B%25BD%25E6%2594%25BF%25E6%25B2%25BB/</loc>
-        <lastmod>2025-01-14T05:00:01.152Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E5%259B%25BD%25E9%2599%2585%25E6%2594%25BF%25E6%25B2%25BB/</loc>
-        <lastmod>2025-01-13T04:53:48.688Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/%25E5%2585%25A8%25E7%2590%2583%25E5%258A%25A8%25E6%2580%2581/</loc>
-        <lastmod>2025-01-11T13:16:00.111Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>http://crxiaosheng.tpddns.cn:60000/about/</loc>
         <lastmod>2024-12-30T05:30:59.698Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -172,7 +154,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/thoughts/</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/thoughts/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0.html</loc>
         <lastmod>2024-12-28T11:51:25.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -181,7 +163,7 @@
     
     
     <url>
-        <loc>http://crxiaosheng.tpddns.cn:60000/thoughts/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0.html</loc>
+        <loc>http://crxiaosheng.tpddns.cn:60000/thoughts/</loc>
         <lastmod>2024-12-28T11:51:25.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
