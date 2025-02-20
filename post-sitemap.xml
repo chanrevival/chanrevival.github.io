@@ -9,8 +9,24 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
+        <lastmod>2025-02-20T15:53:58.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-awk.html</loc>
+        <lastmod>2025-02-20T15:53:45.678Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd-ss.html</loc>
-        <lastmod>2025-02-18T06:33:44.553Z</lastmod>
+        <lastmod>2025-02-20T10:42:16.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +34,7 @@
 
     <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd-arp.html</loc>
-        <lastmod>2025-02-18T03:10:28.717Z</lastmod>
+        <lastmod>2025-02-20T10:42:07.724Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
