@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>https://crsky.uk/post-sitemap.xml</loc>
+        <loc>https://blog.crsky.uk/post-sitemap.xml</loc>
         <lastmod>2025-02-18T06:33:44.553Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://crsky.uk/page-sitemap.xml</loc>
+        <loc>https://blog.crsky.uk/page-sitemap.xml</loc>
         <lastmod>2025-02-17T15:29:11.795Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://crsky.uk/category-sitemap.xml</loc>
+        <loc>https://blog.crsky.uk/category-sitemap.xml</loc>
         <lastmod>2025-02-18T06:33:44.553Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://crsky.uk/tag-sitemap.xml</loc>
+        <loc>https://blog.crsky.uk/tag-sitemap.xml</loc>
         <lastmod>2025-02-18T06:33:44.553Z</lastmod>
     </sitemap>
 
