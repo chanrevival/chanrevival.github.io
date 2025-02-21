@@ -10,14 +10,21 @@
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/Linux%25E5%25B7%25A5%25E5%2585%25B7%25E7%25AE%25B1%25C2%25B7Linux-Toolbox/</loc>
-        <lastmod>2025-02-20T15:53:58.628Z</lastmod>
+        <lastmod>2025-02-21T07:59:39.102Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
-        <lastmod>2025-02-20T15:53:58.628Z</lastmod>
+        <lastmod>2025-02-21T07:59:39.102Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E5%259C%25B0%25E5%25A4%2596%25E6%2596%2587%25E6%2598%258E%25C2%25B7Exoplanets/</loc>
+        <lastmod>2025-02-21T05:43:22.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -86,13 +93,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E5%259C%25B0%25E5%25A4%2596%25E6%2596%2587%25E6%2598%258E%25C2%25B7Exoplanets/</loc>
-        <lastmod>2025-02-05T11:23:22.527Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB/%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E6%258A%2580%25E6%259C%25AF/Linux/</loc>
         <lastmod>2025-02-05T08:27:39.038Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -116,13 +116,6 @@
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25E5%2589%258D%25E6%25B2%25BF/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E7%25B3%25BB%25E7%25BB%259F/</loc>
         <lastmod>2025-02-05T08:27:15.910Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25E5%2589%258D%25E6%25B2%25BF/%25E5%259C%25B0%25E5%25A4%2596%25E6%2596%2587%25E6%2598%258E/</loc>
-        <lastmod>2025-02-04T16:05:58.922Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

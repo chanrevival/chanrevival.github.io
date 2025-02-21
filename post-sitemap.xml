@@ -9,8 +9,16 @@
 
 
     <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
-        <lastmod>2025-02-20T15:53:58.628Z</lastmod>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-blkid.html</loc>
+        <lastmod>2025-02-21T07:59:39.102Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-arping.html</loc>
+        <lastmod>2025-02-21T07:39:24.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +26,23 @@
 
     <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd-awk.html</loc>
-        <lastmod>2025-02-20T15:53:45.678Z</lastmod>
+        <lastmod>2025-02-21T07:22:48.547Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/the-lacerta-files.html</loc>
+        <lastmod>2025-02-21T05:43:22.866Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
+        <lastmod>2025-02-20T15:53:58.628Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -283,14 +307,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/bu-guan-bi-zhu-ku-shi-yong-rman-fu-zhi-chuang-jian-wu-li-bei-ku.html</loc>
         <lastmod>2025-02-05T08:18:45.230Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/the-lacerta-files.html</loc>
-        <lastmod>2025-02-04T16:05:58.922Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

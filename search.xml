@@ -1,24 +1,637 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>arping命令</title>
+    <url>/posts/linux-cmd-arping.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>arping 是一个用于向邻居主机发送 ARP 请求的命令，通常用于检查网络中某个设备是否在线，或者检测网络上的 MAC 地址是否响应。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>发送一个 ARP 请求到目标主机</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">60 bytes from 192.168.1.1 (00:11:22:33:44:55): icmp_seq=1 ttl=64 <span class="keyword">time</span>=1.234 ms</span><br></pre></td></tr></table></figure>
+<p> 该命令向 IP 地址 192.168.1.1 发送 ARP 请求，并接收到来自该地址的 ARP 响应。</p>
+</li>
+<li><p>指定网络接口发送 ARP 请求</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -I eth0 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>同上，只是 ARP 请求通过 eth0 接口发送。</p>
+</li>
+<li><p>发送指定数量的 ARP 请求并退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -c 5 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">5 packets transmitted, 5 received, 0% packet loss</span><br></pre></td></tr></table></figure>
+<p>发送 5 次 ARP 请求，并在收到 5 次响应后退出。</p>
+</li>
+<li><p>无声模式（不输出任何内容）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -q 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>无任何输出，命令执行后无显示信息。</p>
+</li>
+<li><p>检测目标 IP 地址的 MAC 地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -A 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100 (00:11:22:33:44:55) using eth0</span><br></pre></td></tr></table></figure>
+<p>该命令发送 ARP 请求并使用 ARP 回复更新目标主机的缓存。</p>
+</li>
+<li><p>设置 ARP 请求的源 IP 地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -s 192.168.1.100 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100 using eth0</span><br></pre></td></tr></table></figure>
+<p> 使用指定的源 IP 地址发送 ARP 请求。</p>
+</li>
+<li><p>执行重复地址检测（DAD）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -D 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 0.0.0.0 using eth0</span><br><span class="line">Duplicate address detected</span><br></pre></td></tr></table></figure>
+<p>执行重复地址检测，检查目标 IP 是否已经被其他主机使用。</p>
+</li>
+<li><p>设置超时并限制发送次数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -w 10 -c 5 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">5 packets transmitted, 5 received, 0% packet loss</span><br></pre></td></tr></table></figure>
+<p>设置 10 秒超时，发送 5 次 ARP 请求，完成后退出。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
+<li><p>-A<br>使用 ARP 回复包，而不是 ARP 请求包进行通信。</p>
+</li>
+<li><p>-b<br>仅发送 MAC 层的广播，而非单播。</p>
+</li>
+<li><p>-c count<br>指定发送的 ARP 请求次数，命令将执行指定次数的请求后退出。</p>
+</li>
+<li><p>-D<br>启用重复地址检测模式（DAD），检查目标地址是否已被其他主机占用。</p>
+</li>
+<li><p>-f<br>在收到第一个 ARP 回复后立即退出，适用于快速检测目标是否在线。</p>
+</li>
+<li><p>-I interface<br>指定发送 ARP 请求的网络接口。</p>
+</li>
+<li><p>-h<br>显示帮助信息并退出，提供命令的用法说明。</p>
+</li>
+<li><p>-q<br>启用静默模式，执行命令时不会显示任何输出。</p>
+</li>
+</ul>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>NAME </p>
+<pre><code>   arping - send ARP REQUEST to a neighbour host
+</code></pre>
+<p>SYNOPSIS </p>
+<pre><code>   arping [-AbDfhqUV] [-c count] [-w deadline] [-i interval]
+          [-s source] [-I interface] &#123;destination&#125;
+</code></pre>
+<p>DESCRIPTION </p>
+<pre><code>   Ping destination on device interface by ARP packets, using source
+   address source.
+
+   arping supports IPv4 addresses only. For IPv6, see ndisc6(8).
+</code></pre>
+<p>OPTIONS </p>
+<pre><code>   -A
+       The same as -U, but ARP REPLY packets used instead of ARP
+       REQUEST.
+
+   -b
+       Send only MAC level broadcasts. Normally arping starts from
+       sending broadcast, and switch to unicast after reply received.
+
+   -c count
+       Stop after sending count ARP REQUEST packets. With deadline
+       option, instead wait for count ARP REPLY packets, or until the
+       timeout expires.
+
+   -D
+       Duplicate address detection mode (DAD). See RFC2131, 4.4.1.
+       Returns 0, if DAD succeeded i.e. no replies are received.
+
+   -f
+       Finish after the first reply confirming that target is alive.
+
+   -I interface
+       Name of network device where to send ARP REQUEST packets.
+
+   -h
+       Print help page and exit.
+
+   -q
+       Quiet output. Nothing is displayed.
+
+   -s source
+       IP source address to use in ARP packets. If this option is
+       absent, source address is:
+
+           • In DAD mode (with option -D) set to 0.0.0.0.
+
+           • In Unsolicited ARP mode (with options -U or -A) set to
+           destination.
+
+           • Otherwise, it is calculated from routing tables.
+
+   -U
+       Unsolicited ARP mode to update neighbours&#39; ARP caches. No
+       replies are expected.
+
+   -V
+       Print version of the program and exit.
+
+   -w deadline
+       Specify a timeout, in seconds, before arping exits regardless
+       of how many packets have been sent or received. If any replies
+       are received, exit with status 0, otherwise status 1. When
+       combined with the count option, exit with status 0 if count
+       replies are received before the deadline expiration, otherwise
+       status 1.
+
+   -i interval
+       Specify an interval, in seconds, between packets.
+</code></pre>
+<p>SEE ALSO </p>
+<pre><code>   ndisc6(8), ping(8), clockdiff(8), tracepath(8).
+</code></pre>
+<p>AUTHOR </p>
+<pre><code>   arping was written by Alexey Kuznetsov &lt;kuznet@ms2.inr.ac.ru&gt;.
+</code></pre>
+<p>SECURITY </p>
+<pre><code>   arping requires CAP_NET_RAW capability to be executed. It is not
+   recommended to be used as set-uid root, because it allows user to
+   modify ARP caches of neighbour hosts.
+</code></pre>
+<p>AVAILABILITY </p>
+<pre><code>   arping is part of iputils package.
+</code></pre>
+<p>COLOPHON </p>
+<pre><code>   This page is part of the iputils (IP utilities) project.
+   Information about the project can be found at 
+   ⟨http://www.skbuff.net/iputils/⟩.  If you have a bug report for
+   this manual page, send it to yoshfuji@skbuff.net,
+   netdev@vger.kernel.org.  This page was obtained from the project&#39;s
+   upstream Git repository ⟨https://github.com/iputils/iputils.git⟩
+   on 2025-02-02.  (At that time, the date of the most recent commit
+   that was found in the repository was 2025-01-13.)  If you discover
+   any rendering problems in this HTML version of the page, or you
+   believe there is a better or more up-to-date source for the page,
+   or you have corrections or improvements to the information in this
+   COLOPHON (which is not part of the original manual page), send a
+   mail to man-pages@man7.org
+</code></pre>
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>Linux工具箱·Linux Toolbox</category>
+      </categories>
+      <tags>
+        <tag>科技·Tech</tag>
+        <tag>Linux工具箱·Linux Toolbox</tag>
+        <tag>arping</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>blkid命令</title>
+    <url>/posts/linux-cmd-blkid.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>blkid 命令用于定位和打印块设备的属性，主要用于识别存储设备（如磁盘、分区等）的类型、标签、UUID（通用唯一标识符）等信息。通过 blkid，用户可以迅速查找设备的相关信息，尤其是在进行文件系统管理时非常有用。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>查看所有块设备的信息</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure>
+<p>列出所有块设备及其属性（如UUID、标签、文件系统类型等）。</p>
+</li>
+<li><p>查看某个设备的UUID</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid /dev/sda1</span><br><span class="line">/dev/sda1: UUID=<span class="string">&quot;e9a2c3f9-0e7d-4db8-b5a6-fb83616e5f6b&quot;</span> TYPE=<span class="string">&quot;ext4&quot;</span></span><br></pre></td></tr></table></figure>
+<p>显示 &#x2F;dev&#x2F;sda1 的UUID。</p>
+</li>
+<li><p>使用标签查找设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid -L <span class="string">&quot;mylabel&quot;</span></span><br><span class="line">/dev/sdb1: UUID=<span class="string">&quot;e9a2c3f9-0e7d-4db8-b5a6-fb83616e5f6b&quot;</span> TYPE=<span class="string">&quot;ext4&quot;</span></span><br></pre></td></tr></table></figure>
+<p>找到与标签 mylabel 匹配的设备。</p>
+</li>
+<li><p>列出所有支持的文件系统</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid -k</span><br></pre></td></tr></table></figure>
+<p>列出所有已知的文件系统类型和RAID类型。</p>
+</li>
+<li><p>查看块设备的文件系统类型</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid -o value -s TYPE /dev/sda1</span><br><span class="line">ext4</span><br></pre></td></tr></table></figure>
+<p>返回 &#x2F;dev&#x2F;sda1 的文件系统类型.</p>
+</li>
+<li><p>低级探测块设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid -p /dev/sda1</span><br></pre></td></tr></table></figure>
+<p>显示包括分区信息在内的详细设备信息。</p>
+</li>
+<li><p>查询设备的UUID</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid -U e9a2c3f9-0e7d-4db8-b5a6-fb83616e5f6b</span><br></pre></td></tr></table></figure>
+<p>返回具有指定UUID的设备路径。</p>
+</li>
+<li><p>按设备标签查找设备</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">blkid --match-token LABEL=mylabel</span><br></pre></td></tr></table></figure>
+<p>显示符合指定标签的设备信息。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
+<li><p>-c, –cache-file cachefile<br>使用指定的缓存文件，而不是默认的缓存文件。用于提升查询效率，尤其在缓存信息量大的情况下。</p>
+</li>
+<li><p>-d, –no-encoding<br>不对非打印字符进行编码。默认情况下，非打印字符会用 ^ 或 M- 进行表示。</p>
+</li>
+<li><p>-g, –garbage-collect<br>对 blkid 缓存进行垃圾回收，移除不再存在的设备。</p>
+</li>
+<li><p>-L, –label label<br>查找使用指定标签的设备。例如，查找所有标签为 mylabel 的设备。</p>
+</li>
+<li><p>-n, –match-types list<br>限制探测功能，仅对指定的超级块类型进行探测。支持 no 前缀来忽略特定类型。</p>
+</li>
+<li><p>-o, –output format<br>指定输出格式。常见格式有 full、value、list、device 等，分别显示详细信息、仅显示值、简洁格式或设备名。</p>
+</li>
+<li><p>-p, –probe<br>切换到低级别探测模式，绕过缓存，提供更详细的设备信息。</p>
+</li>
+<li><p>-U, –uuid uuid<br>根据指定的UUID查找设备。这是通过UUID快速识别设备的一种方式。</p>
+</li>
+</ul>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>NAME </p>
+<pre><code>   blkid - locate/print block device attributes
+</code></pre>
+<p>SYNOPSIS </p>
+<pre><code>   blkid --label label | --uuid uuid
+
+   blkid [--no-encoding --garbage-collect --list-one --cache-file
+   file] [--output format] [--match-tag tag] [--match-token
+   NAME=value] [device...]
+
+   blkid --probe [--offset offset] [--output format] [--size size]
+   [--match-tag tag] [--match-types list] [--usages list]
+   [--no-part-details] device...
+
+   blkid --info [--output format] [--match-tag tag] device...
+</code></pre>
+<p>DESCRIPTION </p>
+<pre><code>   The blkid program is the command-line interface to working with
+   the libblkid(3) library. It can determine the type of content
+   (e.g., filesystem or swap) that a block device holds, and also the
+   attributes (tokens, NAME=value pairs) from the content metadata
+   (e.g., LABEL or UUID fields).
+
+   It is recommended to use lsblk(8) command to get information about
+   block devices, or lsblk --fs to get an overview of filesystems, or
+   findmnt(8) to search in already mounted filesystems.
+
+      lsblk(8) provides more information, better control on
+      output formatting, easy to use in scripts and it does not
+      require root permissions to get actual information. blkid
+      reads information directly from devices and for non-root
+      users it returns cached unverified information. blkid is
+      mostly designed for system services and to test
+      libblkid(3) functionality.
+
+   When device is specified, tokens from only this device are
+   displayed. It is possible to specify multiple device arguments on
+   the command line. If none is given, all partitions or
+   unpartitioned devices which appear in /proc/partitions are shown,
+   if they are recognized.
+
+   blkid has two main forms of operation: either searching for a
+   device with a specific NAME=value pair, or displaying NAME=value
+   pairs for one or more specified devices.
+
+   For security reasons blkid silently ignores all devices where the
+   probing result is ambivalent (multiple colliding filesystems are
+   detected). The low-level probing mode (-p) provides more
+   information and extra exit status in this case. It’s recommended
+   to use wipefs(8) to get a detailed overview and to erase obsolete
+   stuff (magic strings) from the device.
+</code></pre>
+<p>OPTIONS </p>
+<pre><code>   The size and offset arguments may be followed by the
+   multiplicative suffixes like KiB (=1024), MiB (=1024*1024), and so
+   on for GiB, TiB, PiB, EiB, ZiB and YiB (the &quot;iB&quot; is optional,
+   e.g., &quot;K&quot; has the same meaning as &quot;KiB&quot;), or the suffixes KB
+   (=1000), MB (=1000*1000), and so on for GB, TB, PB, EB, ZB and YB.
+
+   -c, --cache-file cachefile
+       Read from cachefile instead of reading from the default cache
+       file (see the CONFIGURATION FILE section for more details). If
+       you want to start with a clean cache (i.e., don’t report
+       devices previously scanned but not necessarily available at
+       this time), specify /dev/null.
+
+   -d, --no-encoding
+       Don’t encode non-printing characters. The non-printing
+       characters are encoded by ^ and M- notation by default. Note
+       that the --output udev output format uses a different encoding
+       which cannot be disabled.
+
+   -D, --no-part-details
+       Don’t print information (PART_ENTRY_* tags) from partition
+       table in low-level probing mode.
+
+   -g, --garbage-collect
+       Perform a garbage collection pass on the blkid cache to remove
+       devices which no longer exist.
+
+   -H, --hint setting
+       Set probing hint. The hints are an optional way to force
+       probing functions to check, for example, another location. The
+       currently supported is &quot;session_offset=number&quot; to set session
+       offset on multi-session UDF.
+
+   -i, --info
+       Display information about I/O Limits (aka I/O topology). The
+       &#39;export&#39; output format is automatically enabled. This option
+       can be used together with the --probe option.
+
+   -k, --list-filesystems
+       List all known filesystems and RAIDs and exit.
+
+   -l, --list-one
+       Look up only one device that matches the search parameter
+       specified with the --match-token option. If there are multiple
+       devices that match the specified search parameter, then the
+       device with the highest priority is returned, and/or the first
+       device found at a given priority (but see below note about
+       udev). Device types in order of decreasing priority are:
+       Device Mapper, EVMS, LVM, MD, and finally regular block
+       devices. If this option is not specified, blkid will print all
+       of the devices that match the search parameter.
+
+       This option forces blkid to use udev when used for LABEL or
+       UUID tokens in --match-token. The goal is to provide output
+       consistent with other utils (like mount(8), etc.) on systems
+       where the same tag is used for multiple devices.
+
+   -L, --label label
+       Look up the device that uses this filesystem label; this is
+       equal to --list-one --output device --match-token LABEL=label.
+       This lookup method is able to reliably use /dev/disk/by-label
+       udev symlinks (dependent on a setting in /etc/blkid.conf).
+       Avoid using the symlinks directly; it is not reliable to use
+       the symlinks without verification. The --label option works on
+       systems with and without udev.
+
+       Unfortunately, the original blkid(8) from e2fsprogs uses the
+       -L option as a synonym for -o list. For better portability,
+       use -l -o device -t LABEL=label and -o list in your scripts
+       rather than the -L option.
+
+   -n, --match-types list
+       Restrict the probing functions to the specified
+       (comma-separated) list of superblock types (names). The list
+       items may be prefixed with &quot;no&quot; to specify the types which
+       should be ignored. For example:
+
+       blkid --probe --match-types vfat,ext3,ext4 /dev/sda1
+
+       probes for vfat, ext3 and ext4 filesystems, and
+
+       blkid --probe --match-types nominix /dev/sda1
+
+       probes for all supported formats except minix filesystems.
+       This option is only useful together with --probe.
+
+   -o, --output format
+       Use the specified output format. Note that the order of
+       variables and devices is not fixed. See also option -s. The
+       format parameter may be:
+
+       full
+           print all tags (the default)
+
+       value
+           print the value of the tags
+
+       list
+           print the devices in a user-friendly format; this output
+           format is unsupported for low-level probing (--probe or
+           --info).
+
+           This output format is DEPRECATED in favour of the lsblk(8)
+           command.
+
+       device
+           print the device name only; this output format is always
+           enabled for the --label and --uuid options
+
+       udev
+           print key=&quot;value&quot; pairs for easy import into the udev
+           environment; the keys are prefixed by ID_FS_ or ID_PART_
+           prefixes. The value may be modified to be safe for udev
+           environment; allowed is plain ASCII, hex-escaping and
+           valid UTF-8, everything else (including whitespaces) is
+           replaced with &#39;_&#39;. The keys with _ENC postfix use
+           hex-escaping for unsafe chars.
+
+           The udev output returns the ID_FS_AMBIVALENT tag if more
+           superblocks are detected, and ID_PART_ENTRY_* tags are
+           always returned for all partitions including empty
+           partitions.
+
+           This output format is DEPRECATED.
+
+       export
+           print key=value pairs for easy import into the
+           environment; this output format is automatically enabled
+           when I/O Limits (--info option) are requested.
+
+           The non-printing characters are encoded by ^ and M-
+           notation and all potentially unsafe characters are
+           escaped.
+
+       json
+           Print the tags entries in JSON objects.
+
+   -O, --offset offset
+       Probe at the given offset (only useful with --probe). This
+       option can be used together with the --info option.
+
+   -p, --probe
+       Switch to low-level superblock probing mode (bypassing the
+       cache).
+
+       Note that low-level probing also returns information about
+       partition table type (PTTYPE tag) and partitions (PART_ENTRY_*
+       tags). The tag names produced by low-level probing are based
+       on names used internally by libblkid and it may be different
+       than when executed without --probe (for example
+       PART_ENTRY_UUID= vs PARTUUID=). See also --no-part-details.
+
+   -s, --match-tag tag
+       For each (specified) device, show only the tags that match
+       tag. It is possible to specify multiple --match-tag options.
+       If no tag is specified, then all tokens are shown for all
+       (specified) devices. In order to just refresh the cache
+       without showing any tokens, use --match-tag none with no other
+       options.
+
+   -S, --size size
+       Override the size of device/file (only useful with --probe).
+
+   -t, --match-token NAME=value
+       Search for block devices with tokens named NAME that have the
+       value value, and display any devices which are found. Common
+       values for NAME include TYPE, LABEL, and UUID. If there are no
+       devices specified on the command line, all block devices will
+       be searched; otherwise only the specified devices are
+       searched.
+
+   -u, --usages list
+       Restrict the probing functions to the specified
+       (comma-separated) list of &quot;usage&quot; types. Supported usage types
+       are: filesystem, raid, crypto and other. The list items may be
+       prefixed with &quot;no&quot; to specify the usage types which should be
+       ignored. For example:
+
+       blkid --probe --usages filesystem,other /dev/sda1
+
+       probes for all filesystem and other (e.g., swap) formats, and
+
+       blkid --probe --usages noraid /dev/sda1
+
+       probes for all supported formats except RAIDs. This option is
+       only useful together with --probe.
+
+   -U, --uuid uuid
+       Look up the device that uses this filesystem uuid. For more
+       details see the --label option.
+
+   -h, --help
+       Display help text and exit.
+
+   -V, --version
+       Print version and exit.
+</code></pre>
+<p>EXIT STATUS </p>
+<pre><code>   If the specified device or device addressed by specified token
+   (option --match-token) was found and it’s possible to gather any
+   information about the device, an exit status 0 is returned. Note
+   the option --match-tag filters output tags, but it does not affect
+   exit status.
+
+   If the specified token was not found, or no (specified) devices
+   could be identified, or it is impossible to gather any information
+   about the device identifiers or device content an exit status of 2
+   is returned.
+
+   For usage or other errors, an exit status of 4 is returned.
+
+   If an ambivalent probing result was detected by low-level probing
+   mode (-p), an exit status of 8 is returned.
+</code></pre>
+<p>CONFIGURATION FILE </p>
+<pre><code>   The standard location of the /etc/blkid.conf config file can be
+   overridden by the environment variable BLKID_CONF. The following
+   options control the libblkid library:
+
+   SEND_UEVENT=&lt;yes|not&gt;
+       Sends uevent when
+       /dev/disk/by-&#123;label,uuid,partuuid,partlabel&#125;/ symlink does not
+       match with LABEL, UUID, PARTUUID or PARTLABEL on the device.
+       Default is &quot;yes&quot;.
+
+   CACHE_FILE=&lt;path&gt;
+       Overrides the standard location of the cache file. This
+       setting can be overridden by the environment variable
+       BLKID_FILE. Default is /run/blkid/blkid.tab, or /etc/blkid.tab
+       on systems without a /run directory.
+
+   EVALUATE=&lt;methods&gt;
+       Defines LABEL and UUID evaluation method(s). Currently, the
+       libblkid library supports the &quot;udev&quot; and &quot;scan&quot; methods. More
+       than one method may be specified in a comma-separated list.
+       Default is &quot;udev,scan&quot;. The &quot;udev&quot; method uses udev
+       /dev/disk/by-* symlinks and the &quot;scan&quot; method scans all block
+       devices from the /proc/partitions file.
+</code></pre>
+<p>ENVIRONMENT </p>
+<pre><code>   Setting LIBBLKID_DEBUG=all enables debug output.
+</code></pre>
+<p>AUTHORS </p>
+<pre><code>   blkid was written by Andreas Dilger for libblkid and improved by
+   Theodore Ts’o and Karel Zak.
+</code></pre>
+<p>SEE ALSO </p>
+<pre><code>   libblkid(3), findfs(8), lsblk(8), wipefs(8)
+</code></pre>
+<p>REPORTING BUGS </p>
+<pre><code>   For bug reports, use the issue tracker
+   &lt;https://github.com/util-linux/util-linux/issues&gt;.
+</code></pre>
+<p>AVAILABILITY </p>
+<pre><code>   The blkid command is part of the util-linux package which can be
+   downloaded from Linux Kernel Archive
+   &lt;https://www.kernel.org/pub/linux/utils/util-linux/&gt;. This page is
+   part of the util-linux (a random collection of Linux utilities)
+   project. Information about the project can be found at 
+   ⟨https://www.kernel.org/pub/linux/utils/util-linux/⟩. If you have a
+   bug report for this manual page, send it to
+   util-linux@vger.kernel.org. This page was obtained from the
+   project&#39;s upstream Git repository
+   ⟨git://git.kernel.org/pub/scm/utils/util-linux/util-linux.git⟩ on
+   2025-02-02. (At that time, the date of the most recent commit that
+   was found in the repository was 2025-01-30.) If you discover any
+   rendering problems in this HTML version of the page, or you
+   believe there is a better or more up-to-date source for the page,
+   or you have corrections or improvements to the information in this
+   COLOPHON (which is not part of the original manual page), send a
+   mail to man-pages@man7.org
+</code></pre>
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>Linux工具箱·Linux Toolbox</category>
+      </categories>
+      <tags>
+        <tag>科技·Tech</tag>
+        <tag>Linux工具箱·Linux Toolbox</tag>
+        <tag>blkid</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>awk命令</title>
     <url>/posts/linux-cmd-awk.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>PROLOG         top</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>awk 是一个强大的文本处理工具，广泛用于模式扫描和处理任务。它能够逐行读取输入，匹配模式并执行相应的动作。awk 被设计用于在输入数据中根据特定模式进行搜索、筛选和处理，常用于日志分析、数据处理等场景。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>打印文件中的每一行</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> <span class="string">&#x27;&#123;print&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令将文件 filename 中的每一行打印出来。</p>
+</li>
+<li><p>打印特定字段</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> <span class="string">&#x27;&#123;print <span class="variable">$1</span>&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令打印文件中每一行的第一个字段（以空格或制表符为分隔符）。</p>
+</li>
+<li><p>根据条件筛选并打印匹配的行</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> <span class="string">&#x27;<span class="variable">$1</span> == &quot;John&quot; &#123;print <span class="variable">$0</span>&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令筛选出第一列为 “John” 的行，并打印整个行。</p>
+</li>
+<li><p>计算文件中第二列的和</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">awk &#x27;&#123;<span class="built_in">sum</span> += $<span class="number">2</span>&#125; END &#123;<span class="built_in">print</span> <span class="built_in">sum</span>&#125;&#x27; filename</span><br></pre></td></tr></table></figure>
+<p>该命令计算文件中第二列所有数值的总和。</p>
+</li>
+<li><p>以逗号分隔的文件中打印特定字段</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> -F, <span class="string">&#x27;&#123;print <span class="variable">$3</span>&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令将字段分隔符设置为逗号，并打印每行的第三个字段。</p>
+</li>
+<li><p>打印匹配多个条件的行</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> &#x27;$<span class="number">1</span> == <span class="string">&quot;John&quot;</span> &amp;&amp; $<span class="number">2</span> &gt; <span class="number">50</span> &#123;print $<span class="number">0</span>&#125;&#x27; filename</span><br></pre></td></tr></table></figure>
+<p>该命令筛选出第一列为 “John” 且第二列大于50的行。</p>
+</li>
+<li><p>打印每行的行号</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> <span class="string">&#x27;&#123;print NR, <span class="variable">$0</span>&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令打印文件中每一行的行号和内容。</p>
+</li>
+<li><p>替换字段中的内容</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">awk</span> <span class="string">&#x27;&#123;gsub(/apple/, &quot;orange&quot;); print <span class="variable">$0</span>&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令将每行中的 “apple” 替换为 “orange” 并打印结果。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ol>
+<li><p>-F sepstring<br>设置输入字段分隔符。<br>awk -F”:” ‘{print $1}’ filename<br>将字段分隔符设置为冒号，打印文件中每行的第一个字段。</p>
+</li>
+<li><p>-f progfile<br>指定包含 awk 程序的文件。<br>awk -f program.awk filename<br>从 program.awk 文件中读取 awk 程序，并应用于文件 filename。</p>
+</li>
+<li><p>-v assignment<br>在执行 awk 程序前先进行变量赋值。<br>awk -v var&#x3D;10 ‘{print var}’ filename<br>为 var 变量赋值为 10，并打印该变量的值。</p>
+</li>
+<li><p>-v FS&#x3D;sepstring<br>设置输入记录的字段分隔符。<br>awk -v FS&#x3D;”;” ‘{print $1}’ filename<br>将字段分隔符设置为分号，并打印每行的第一个字段。</p>
+</li>
+<li><p>BEGIN<br>在处理输入文件之前执行的代码块。<br>awk ‘BEGIN {print “Start Processing”} {print $1}’ filename<br>在处理文件之前，先打印 “Start Processing”。</p>
+</li>
+<li><p>END<br>在处理完输入文件之后执行的代码块。<br>awk ‘END {print “Processing Completed”}’ filename<br>在处理完所有行后打印 “Processing Completed”。</p>
+</li>
+<li><p>-F,<br>指定逗号作为字段分隔符。<br>awk -F, ‘{print $2}’ filename<br>将字段分隔符设置为逗号，并打印第二个字段。</p>
+</li>
+<li><p>NR<br>表示当前行号。<br>awk ‘{print NR, $0}’ filename<br>打印每行的行号及其内容。</p>
+</li>
+</ol>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>PROLOG </p>
 <pre><code>   This manual page is part of the POSIX Programmer&#39;s Manual.  The
    Linux implementation of this interface may differ (consult the
    corresponding Linux manual page for details of Linux behavior), or
    the interface may not be implemented on Linux.
 </code></pre>
-<p>NAME         top</p>
+<p>NAME </p>
 <pre><code>   awk — pattern scanning and processing language
 </code></pre>
-<p>SYNOPSIS         top</p>
+<p>SYNOPSIS </p>
 <pre><code>   awk [-F sepstring] [-v assignment]... program [argument...]
 
    awk [-F sepstring] -f progfile [-f progfile]... [-v assignment]...
         [argument...]
 </code></pre>
-<p>DESCRIPTION         top</p>
+<p>DESCRIPTION </p>
 <pre><code>   The awk utility shall execute programs written in the awk
    programming language, which is specialized for textual data
    manipulation. An awk program is a sequence of patterns and
@@ -41,7 +654,7 @@
    evaluation of $0. Assigning to $0 shall reset the values of all
    other fields and the NF built-in variable.
 </code></pre>
-<p>OPTIONS         top</p>
+<p>OPTIONS </p>
 <pre><code>   The awk utility shall conform to the Base Definitions volume of
    POSIX.1‐2017, Section 12.2, Utility Syntax Guidelines.
 
@@ -77,7 +690,7 @@
              associated with BEGIN patterns (if any). Multiple
              occurrences of this option can be specified.
 </code></pre>
-<p>OPERANDS         top</p>
+<p>OPERANDS </p>
 <pre><code>   The following operands shall be supported:
 
    program   If no -f option is specified, the first operand to awk
@@ -132,7 +745,7 @@
                        assignments shall be executed before
                        processing the standard input.
 </code></pre>
-<p>STDIN         top</p>
+<p>STDIN </p>
 <pre><code>   The standard input shall be used only if no file operands are
    specified, or if a file operand is &#39;-&#39;, or if a progfile option-
    argument is &#39;-&#39;; see the INPUT FILES section. If the awk program
@@ -140,7 +753,7 @@
    program, standard input and any file operands shall not be read
    and awk shall exit with a return status of zero.
 </code></pre>
-<p>INPUT FILES         top</p>
+<p>INPUT FILES </p>
 <pre><code>   Input files to the awk program from any of the following sources
    shall be text files:
 
@@ -161,7 +774,7 @@
    files and their concatenation, in the same order as they appear in
    the arguments, is an awk program.
 </code></pre>
-<p>ENVIRONMENT VARIABLES         top</p>
+<p>ENVIRONMENT VARIABLES </p>
 <pre><code>   The following environment variables shall affect the execution of
    awk:
 
@@ -216,19 +829,19 @@
    In addition, all environment variables shall be visible via the
    awk variable ENVIRON.
 </code></pre>
-<p>ASYNCHRONOUS EVENTS         top</p>
+<p>ASYNCHRONOUS EVENTS </p>
 <pre><code>   Default.
 </code></pre>
-<p>STDOUT         top</p>
+<p>STDOUT </p>
 <pre><code>   The nature of the output files depends on the awk program.
 </code></pre>
-<p>STDERR         top</p>
+<p>STDERR </p>
 <pre><code>   The standard error shall be used only for diagnostic messages.
 </code></pre>
-<p>OUTPUT FILES         top</p>
+<p>OUTPUT FILES </p>
 <pre><code>   The nature of the output files depends on the awk program.
 </code></pre>
-<p>EXTENDED DESCRIPTION         top</p>
+<p>EXTENDED DESCRIPTION </p>
 <p>   Overall Program Structure<br>       An awk program is composed of pairs of the form:</p>
 <pre><code>       pattern &#123; action &#125;
 
@@ -1582,7 +2195,7 @@
    could appear as the next token in a valid program, the token ERE
    shall be recognized.
 </code></pre>
-<p>EXIT STATUS         top</p>
+<p>EXIT STATUS </p>
 <pre><code>   The following exit values shall be returned:
 
     0    All input files were processed successfully.
@@ -1592,7 +2205,7 @@
    The exit status can be altered within the program by using an exit
    expression.
 </code></pre>
-<p>CONSEQUENCES OF ERRORS         top</p>
+<p>CONSEQUENCES OF ERRORS </p>
 <pre><code>   If any file operand is specified and the named file cannot be
    accessed, awk shall write a diagnostic message to standard error
    and terminate without any further action.
@@ -1603,7 +2216,7 @@
 
    The following sections are informative.
 </code></pre>
-<p>APPLICATION USAGE         top</p>
+<p>APPLICATION USAGE </p>
 <pre><code>   The index, length, match, and substr functions should not be
    confused with similar functions in the ISO C standard; the awk
    versions deal with characters, while the ISO C standard deals with
@@ -1634,7 +2247,7 @@
 
        a &lt;= b &amp;&amp; a &gt;= b
 </code></pre>
-<p>EXAMPLES         top</p>
+<p>EXAMPLES </p>
 <pre><code>   The awk program specified in the command line is most easily
    specified within single-quotes (for example, &#39;program&#39;) for
    applications using sh, because awk programs commonly contain
@@ -1765,7 +2378,7 @@
 
        prints the file input, filling in page numbers starting at 5.
 </code></pre>
-<p>RATIONALE         top</p>
+<p>RATIONALE </p>
 <pre><code>   This description is based on the new awk, ``nawk&#39;&#39;, (see the
    referenced The AWK Programming Language), which introduced a
    number of new features to the historical awk:
@@ -2181,12 +2794,12 @@
    formerly had the value 0 because &quot;-INF&quot; converted to 0, but now it
    may have the value 0 or 1.
 </code></pre>
-<p>FUTURE DIRECTIONS         top</p>
+<p>FUTURE DIRECTIONS </p>
 <pre><code>   A future version of this standard may require the &quot;!=&quot; and &quot;==&quot;
    operators to perform string comparisons by checking if the strings
    are identical (and not by checking if they collate equally).
 </code></pre>
-<p>SEE ALSO         top</p>
+<p>SEE ALSO </p>
 <pre><code>   Section 1.3, Grammar Conventions, grep(1p), lex(1p), sed(1p)
 
    The Base Definitions volume of POSIX.1‐2017, Chapter 5, File
@@ -2197,7 +2810,7 @@
    The System Interfaces volume of POSIX.1‐2017, atof(3p), exec(1p),
    isspace(3p), popen(3p), setlocale(3p), strtod(3p)
 </code></pre>
-<p>COPYRIGHT         top</p>
+<p>COPYRIGHT </p>
 <pre><code>   Portions of this text are reprinted and reproduced in electronic
    form from IEEE Std 1003.1-2017, Standard for Information
    Technology -- Portable Operating System Interface (POSIX), The
@@ -3518,8 +4131,8 @@
 
 ]]></content>
       <categories>
-        <category>科技前沿</category>
-        <category>地外文明</category>
+        <category>科技·Tech</category>
+        <category>地外文明·Exoplanets</category>
       </categories>
       <tags>
         <tag>莱瑟塔</tag>
@@ -3665,6 +4278,42 @@
       </tags>
   </entry>
   <entry>
+    <title>20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟</title>
+    <url>/posts/20250111-luo-shan-ji-ye-huo-niang-can-lie-zai-qing.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟"><a href="#20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟" class="headerlink" title="20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟"></a>20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟</h1><p>美国洛杉矶持续多日的野火已造成重大损失。截至1月9日，这场自1月7日开始肆虐的灾难已导致10人死亡、18万人撤离，过火土地接近14,000公顷，超过10,000栋房屋遭到破坏或烧毁。总统拜登称，这是加州历史上最严重的一场火灾，并紧急采取措施应对。</p>
+<p>拜登在白宫召开的特别会议上宣布，联邦政府将全额承担头180天的救灾费用，并向洛杉矶增派400名消防员、30架消防飞机及直升机，同时调动五角大楼的资源参与救灾。洛杉矶县警长卢纳形容，部分灾区犹如被“原子弹轰炸”，预计死亡人数可能继续上升。</p>
+<p>帕西菲克帕利塞兹和伊顿峡谷是火情最为严重的地区，目前仍未得到控制。洛杉矶人民在火海中失去了家园和生活，有13万居民被迫疏散。多名国际名流的住宅被烧毁，其中包括帕丽斯·希尔顿、安东尼·霍普金斯和曼蒂·摩尔。部分明星呼吁社会关注火灾并捐助灾后重建。</p>
+<p>此外，这场灾难也引发了政界争论。共和党当选总统特朗普批评加州州长纽森应辞职，称灾情暴露了“严重无能”。对此，拜登回应称，不应将自然灾害政治化，重要的是尽快控制火势、保障民众安全。</p>
+<p>私人预测机构估算，此次灾害带来的经济损失可能高达1,500亿美元，灾后重建任务艰巨。</p>
+<h1 id="科普专栏：认识野火"><a href="#科普专栏：认识野火" class="headerlink" title="科普专栏：认识野火"></a>科普专栏：认识野火</h1><h2 id="什么是野火？"><a href="#什么是野火？" class="headerlink" title="什么是野火？"></a>什么是野火？</h2><p>野火是指在林地、草原或其他自然环境中自发发生的失控火灾，常见于干旱地区或植被茂密的地方。</p>
+<h2 id="野火为何发生？"><a href="#野火为何发生？" class="headerlink" title="野火为何发生？"></a>野火为何发生？</h2><p>野火的发生通常与以下因素有关：</p>
+<ul>
+<li>自然原因：如雷击、高温干旱或火山活动。</li>
+<li>人为因素：如乱丢烟头、焚烧垃圾或露天篝火未及时扑灭。</li>
+</ul>
+<h2 id="野火的危害"><a href="#野火的危害" class="headerlink" title="野火的危害"></a>野火的危害</h2><ul>
+<li>生命财产损失：造成人员伤亡、房屋被毁、基础设施损坏。</li>
+<li>生态破坏：森林植被被烧毁，野生动物失去栖息地，土壤结构受损。</li>
+<li>空气污染：释放大量烟尘和有害气体，影响空气质量和健康。</li>
+<li>气候影响：野火加剧二氧化碳排放，加速全球变暖。</li>
+</ul>
+<h2 id="如何预防野火？"><a href="#如何预防野火？" class="headerlink" title="如何预防野火？"></a>如何预防野火？</h2><ul>
+<li>严格管控火源：禁止在林区随意用火，丢弃烟蒂等。</li>
+<li>加强监测和预警：利用现代技术监控森林火情，及时发现并控制火势。</li>
+<li>科学管理植被：清理易燃物，合理规划林地防火带。</li>
+<li>全民参与防火宣传：提高公众防火意识，参与野火防控行动。</li>
+</ul>
+<p>野火是自然灾害的一种，其危害难以估量。面对频发的野火灾害，我们需要共同努力，从根源上减少野火的发生，为地球生态环境和人类生活安全贡献力量。</p>
+]]></content>
+      <categories>
+        <category>新闻·News</category>
+      </categories>
+      <tags>
+        <tag>野火，洛杉矶，拜登</tag>
+        <tag>美国</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>20250111 Tragic Wildfire Disaster in Los Angeles 10 Dead Biden Takes Emergency Action Celebrity Mansions Reduced to Ashes</title>
     <url>/posts/20250111wildfire.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="20250111-Tragic-Wildfire-Disaster-in-Los-Angeles-10-Dead-Biden-Takes-Emergency-Action-Celebrity-Mansions-Reduced-to-Ashes"><a href="#20250111-Tragic-Wildfire-Disaster-in-Los-Angeles-10-Dead-Biden-Takes-Emergency-Action-Celebrity-Mansions-Reduced-to-Ashes" class="headerlink" title="20250111 Tragic Wildfire Disaster in Los Angeles 10 Dead Biden Takes Emergency Action Celebrity Mansions Reduced to Ashes"></a>20250111 Tragic Wildfire Disaster in Los Angeles 10 Dead Biden Takes Emergency Action Celebrity Mansions Reduced to Ashes</h1><p>The ongoing wildfire in Los Angeles, USA, has caused significant devastation over several days. As of January 9, the disaster, which began on January 7, has resulted in 10 fatalities, the evacuation of 180,000 people, and nearly 14,000 hectares of scorched land. More than 10,000 buildings have been damaged or destroyed. President Joe Biden described the wildfire as the worst in California’s history and has taken swift emergency measures.  </p>
@@ -3700,42 +4349,6 @@
         <tag>Los Angeles</tag>
         <tag>Biden</tag>
         <tag>USA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟</title>
-    <url>/posts/20250111-luo-shan-ji-ye-huo-niang-can-lie-zai-qing.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟"><a href="#20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟" class="headerlink" title="20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟"></a>20250111洛杉矶野火酿惨烈灾情：10人遇难，拜登紧急应对，明星豪宅成废墟</h1><p>美国洛杉矶持续多日的野火已造成重大损失。截至1月9日，这场自1月7日开始肆虐的灾难已导致10人死亡、18万人撤离，过火土地接近14,000公顷，超过10,000栋房屋遭到破坏或烧毁。总统拜登称，这是加州历史上最严重的一场火灾，并紧急采取措施应对。</p>
-<p>拜登在白宫召开的特别会议上宣布，联邦政府将全额承担头180天的救灾费用，并向洛杉矶增派400名消防员、30架消防飞机及直升机，同时调动五角大楼的资源参与救灾。洛杉矶县警长卢纳形容，部分灾区犹如被“原子弹轰炸”，预计死亡人数可能继续上升。</p>
-<p>帕西菲克帕利塞兹和伊顿峡谷是火情最为严重的地区，目前仍未得到控制。洛杉矶人民在火海中失去了家园和生活，有13万居民被迫疏散。多名国际名流的住宅被烧毁，其中包括帕丽斯·希尔顿、安东尼·霍普金斯和曼蒂·摩尔。部分明星呼吁社会关注火灾并捐助灾后重建。</p>
-<p>此外，这场灾难也引发了政界争论。共和党当选总统特朗普批评加州州长纽森应辞职，称灾情暴露了“严重无能”。对此，拜登回应称，不应将自然灾害政治化，重要的是尽快控制火势、保障民众安全。</p>
-<p>私人预测机构估算，此次灾害带来的经济损失可能高达1,500亿美元，灾后重建任务艰巨。</p>
-<h1 id="科普专栏：认识野火"><a href="#科普专栏：认识野火" class="headerlink" title="科普专栏：认识野火"></a>科普专栏：认识野火</h1><h2 id="什么是野火？"><a href="#什么是野火？" class="headerlink" title="什么是野火？"></a>什么是野火？</h2><p>野火是指在林地、草原或其他自然环境中自发发生的失控火灾，常见于干旱地区或植被茂密的地方。</p>
-<h2 id="野火为何发生？"><a href="#野火为何发生？" class="headerlink" title="野火为何发生？"></a>野火为何发生？</h2><p>野火的发生通常与以下因素有关：</p>
-<ul>
-<li>自然原因：如雷击、高温干旱或火山活动。</li>
-<li>人为因素：如乱丢烟头、焚烧垃圾或露天篝火未及时扑灭。</li>
-</ul>
-<h2 id="野火的危害"><a href="#野火的危害" class="headerlink" title="野火的危害"></a>野火的危害</h2><ul>
-<li>生命财产损失：造成人员伤亡、房屋被毁、基础设施损坏。</li>
-<li>生态破坏：森林植被被烧毁，野生动物失去栖息地，土壤结构受损。</li>
-<li>空气污染：释放大量烟尘和有害气体，影响空气质量和健康。</li>
-<li>气候影响：野火加剧二氧化碳排放，加速全球变暖。</li>
-</ul>
-<h2 id="如何预防野火？"><a href="#如何预防野火？" class="headerlink" title="如何预防野火？"></a>如何预防野火？</h2><ul>
-<li>严格管控火源：禁止在林区随意用火，丢弃烟蒂等。</li>
-<li>加强监测和预警：利用现代技术监控森林火情，及时发现并控制火势。</li>
-<li>科学管理植被：清理易燃物，合理规划林地防火带。</li>
-<li>全民参与防火宣传：提高公众防火意识，参与野火防控行动。</li>
-</ul>
-<p>野火是自然灾害的一种，其危害难以估量。面对频发的野火灾害，我们需要共同努力，从根源上减少野火的发生，为地球生态环境和人类生活安全贡献力量。</p>
-]]></content>
-      <categories>
-        <category>新闻·News</category>
-      </categories>
-      <tags>
-        <tag>野火，洛杉矶，拜登</tag>
-        <tag>美国</tag>
       </tags>
   </entry>
   <entry>
@@ -7529,10 +8142,10 @@ When running a standby server, you must set this parameter to the same or higher
         <category>数据库系统</category>
       </categories>
       <tags>
-        <tag>数据库</tag>
-        <tag>故障处理</tag>
         <tag>Database</tag>
         <tag>Oracle</tag>
+        <tag>数据库</tag>
+        <tag>故障处理</tag>
         <tag>ASM</tag>
       </tags>
   </entry>
@@ -8477,8 +9090,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术</category>
       </categories>
       <tags>
-        <tag>北京</tag>
         <tag>旅游</tag>
+        <tag>北京</tag>
         <tag>奥林匹克森林公园</tag>
       </tags>
   </entry>
@@ -8498,8 +9111,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术</category>
       </categories>
       <tags>
-        <tag>北京</tag>
         <tag>旅游</tag>
+        <tag>北京</tag>
         <tag>紫竹院公园</tag>
       </tags>
   </entry>
@@ -8683,8 +9296,8 @@ When running a standby server, you must set this parameter to the same or higher
       </categories>
       <tags>
         <tag>文件系统</tag>
-        <tag>操作系统</tag>
         <tag>Solaris</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -8791,8 +9404,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>操作系统技术</category>
       </categories>
       <tags>
-        <tag>SunOS</tag>
         <tag>操作系统</tag>
+        <tag>SunOS</tag>
         <tag>软件安装</tag>
       </tags>
   </entry>
@@ -8814,8 +9427,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>广州</tag>
+        <tag>旅游</tag>
         <tag>莲花山</tag>
       </tags>
   </entry>
@@ -8838,10 +9451,10 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>广州</tag>
         <tag>南粤园</tag>
         <tag>宝墨园</tag>
+        <tag>旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -8886,9 +9499,9 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术</category>
       </categories>
       <tags>
+        <tag>旅游</tag>
         <tag>北京</tag>
         <tag>天安门</tag>
-        <tag>旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -8922,8 +9535,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>计算机软件</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>Solaris</tag>
+        <tag>操作系统</tag>
         <tag>SSH</tag>
       </tags>
   </entry>
