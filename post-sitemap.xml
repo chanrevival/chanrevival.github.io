@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-groupadd.html</loc>
+        <lastmod>2025-02-24T13:59:46.841Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-find.html</loc>
+        <lastmod>2025-02-24T13:45:17.544Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
+        <lastmod>2025-02-24T13:24:12.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
         <lastmod>2025-02-22T16:11:06.229Z</lastmod>
         <changefreq>weekly</changefreq>
