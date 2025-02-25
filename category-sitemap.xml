@@ -9,15 +9,22 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
+        <lastmod>2025-02-25T06:55:19.196Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/Linux%25E5%25B7%25A5%25E5%2585%25B7%25E7%25AE%25B1%25C2%25B7Linux-Toolbox/</loc>
-        <lastmod>2025-02-24T13:59:46.841Z</lastmod>
+        <lastmod>2025-02-25T01:27:11.356Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
-        <lastmod>2025-02-24T13:59:46.841Z</lastmod>
+        <lastmod>2025-02-25T01:27:11.356Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -53,13 +60,6 @@
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25E5%2589%258D%25E6%25B2%25BF/</loc>
         <lastmod>2025-02-18T02:32:56.123Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
-        <lastmod>2025-02-15T14:40:44.362Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
