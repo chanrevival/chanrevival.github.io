@@ -3,36 +3,36 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
+        <lastmod>2025-02-25T14:59:46.708Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/OpenAI/</loc>
+        <lastmod>2025-02-25T14:59:46.708Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/tags/AI/</loc>
-        <lastmod>2025-02-25T06:55:19.196Z</lastmod>
+        <lastmod>2025-02-25T14:59:46.708Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/tags/DeepSeek/</loc>
-        <lastmod>2025-02-25T06:55:19.196Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/5070/</loc>
-        <lastmod>2025-02-25T06:55:19.196Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/5090/</loc>
-        <lastmod>2025-02-25T06:55:19.196Z</lastmod>
+        <lastmod>2025-02-25T14:59:46.708Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/tags/GPU/</loc>
-        <lastmod>2025-02-25T06:55:19.196Z</lastmod>
+        <lastmod>2025-02-25T14:59:46.708Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -460,6 +460,20 @@
     <url>
         <loc>https://blog.crsky.uk/tags/%E4%B8%AD%E5%9B%BD/</loc>
         <lastmod>2025-02-15T14:34:17.700Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/5070/</loc>
+        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/5090/</loc>
+        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
