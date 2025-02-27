@@ -9,6 +9,54 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/respect-and-understanding-the-love-in-the-details-between-parents-and-children.html</loc>
+        <lastmod>2025-02-27T14:11:40.202Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/zun-chong-yu-li-jie-fu-mu-yu-hai-zi-zhi-jian-de-xi-jie-zhi-ai.html</loc>
+        <lastmod>2025-02-27T14:11:16.014Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/xin-wei-min-meng-bu-mie.html</loc>
+        <lastmod>2025-02-27T14:00:03.970Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/xie-zai-chun-jie-li.html</loc>
+        <lastmod>2025-02-26T07:51:41.310Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-pidstat.html</loc>
+        <lastmod>2025-02-26T02:35:40.243Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
+        <lastmod>2025-02-26T02:11:38.679Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/20250225-is-deepseek-the-disruptor-of-the-new-era-of-artificial-intelligence-or-a-time-bomb-in-the-global-race.html</loc>
         <lastmod>2025-02-25T14:59:46.708Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -51,14 +99,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
         <lastmod>2025-02-24T13:24:12.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
-        <lastmod>2025-02-22T16:11:06.229Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -585,14 +625,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/xin-wei-min-meng-bu-mie.html</loc>
-        <lastmod>2025-02-03T14:52:35.395Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/kai-qi-win10-zhuo-yue-xing-neng-dian-yuan-mo-shi.html</loc>
         <lastmod>2025-02-03T14:52:35.394Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -627,14 +659,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/chi-bao-xia-xie-fang-chu-he.html</loc>
         <lastmod>2025-02-03T14:52:35.389Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/xie-zai-chun-jie-li.html</loc>
-        <lastmod>2025-02-03T14:52:35.388Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

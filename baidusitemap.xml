@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.crsky.uk/posts/respect-and-understanding-the-love-in-the-details-between-parents-and-children.html</loc>
+    <lastmod>2025-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/zun-chong-yu-li-jie-fu-mu-yu-hai-zi-zhi-jian-de-xi-jie-zhi-ai.html</loc>
+    <lastmod>2025-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/xin-wei-min-meng-bu-mie.html</loc>
+    <lastmod>2025-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/literature/index.html</loc>
+    <lastmod>2025-02-27</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/xie-zai-chun-jie-li.html</loc>
+    <lastmod>2025-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/music/index.html</loc>
+    <lastmod>2025-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-pidstat.html</loc>
+    <lastmod>2025-02-26</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
+    <lastmod>2025-02-26</lastmod>
+  </url>
+  <url>
     <loc>https://blog.crsky.uk/posts/20250225-is-deepseek-the-disruptor-of-the-new-era-of-artificial-intelligence-or-a-time-bomb-in-the-global-race.html</loc>
     <lastmod>2025-02-25</lastmod>
   </url>
@@ -23,10 +55,6 @@
   <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
     <lastmod>2025-02-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
-    <lastmod>2025-02-22</lastmod>
   </url>
   <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd-dnf.html</loc>
@@ -81,7 +109,7 @@
     <lastmod>2025-02-22</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/linux_toolbox/index.html</loc>
+    <loc>https://blog.crsky.uk/linux_tools/index.html</loc>
     <lastmod>2025-02-21</lastmod>
   </url>
   <url>
@@ -253,10 +281,6 @@
     <lastmod>2025-02-04</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/%E9%9F%B3%E4%B9%90%E6%BD%AE%E6%B5%81/index.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
     <loc>https://blog.crsky.uk/posts/sui-bi-20111225-yue-xia-du-si.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
@@ -313,10 +337,6 @@
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/xin-wei-min-meng-bu-mie.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
     <loc>https://blog.crsky.uk/posts/kai-qi-win10-zhuo-yue-xing-neng-dian-yuan-mo-shi.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
@@ -334,10 +354,6 @@
   </url>
   <url>
     <loc>https://blog.crsky.uk/posts/chi-bao-xia-xie-fang-chu-he.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/xie-zai-chun-jie-li.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
@@ -433,24 +449,20 @@
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/%E5%BD%B1%E8%A7%86%E8%89%BA%E6%9C%AF/index.html</loc>
+    <loc>https://blog.crsky.uk/cinema/index.html</loc>
     <lastmod>2025-01-24</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/%E9%9F%B3%E4%B9%90%E6%BD%AE%E6%B5%81/%E6%9E%97%E5%BF%86%E8%8E%B2_%E8%87%B3%E5%B0%91%E8%BF%98%E6%9C%89%E4%BD%A0.html</loc>
+    <loc>https://blog.crsky.uk/music/%E6%9E%97%E5%BF%86%E8%8E%B2_%E8%87%B3%E5%B0%91%E8%BF%98%E6%9C%89%E4%BD%A0.html</loc>
     <lastmod>2025-01-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/%E9%9F%B3%E4%B9%90%E6%BD%AE%E6%B5%81/%E9%87%91%E6%B5%B7%E5%BF%83_%E9%82%A3%E4%B9%88%E9%AA%84%E5%82%B2.html</loc>
+    <loc>https://blog.crsky.uk/music/%E9%87%91%E6%B5%B7%E5%BF%83_%E9%82%A3%E4%B9%88%E9%AA%84%E5%82%B2.html</loc>
     <lastmod>2025-01-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/index.html</loc>
+    <loc>https://blog.crsky.uk/software/index.html</loc>
     <lastmod>2025-01-15</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/%E6%96%87%E5%AD%A6%E9%A3%8E%E4%BA%91/index.html</loc>
-    <lastmod>2025-01-14</lastmod>
   </url>
   <url>
     <loc>https://blog.crsky.uk/internal_use/test.html</loc>
