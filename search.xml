@@ -9121,10 +9121,10 @@ When running a standby server, you must set this parameter to the same or higher
         <category>数据库系统</category>
       </categories>
       <tags>
-        <tag>Database</tag>
-        <tag>Oracle</tag>
         <tag>数据库</tag>
         <tag>故障处理</tag>
+        <tag>Database</tag>
+        <tag>Oracle</tag>
         <tag>ASM</tag>
       </tags>
   </entry>
@@ -10275,8 +10275,8 @@ When running a standby server, you must set this parameter to the same or higher
       </categories>
       <tags>
         <tag>文件系统</tag>
-        <tag>操作系统</tag>
         <tag>Solaris</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -10383,8 +10383,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>操作系统技术</category>
       </categories>
       <tags>
-        <tag>SunOS</tag>
         <tag>操作系统</tag>
+        <tag>SunOS</tag>
         <tag>软件安装</tag>
       </tags>
   </entry>
@@ -10514,8 +10514,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>计算机软件</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>Solaris</tag>
+        <tag>操作系统</tag>
         <tag>SSH</tag>
       </tags>
   </entry>
