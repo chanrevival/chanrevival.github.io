@@ -9,14 +9,21 @@
 
 
     <url>
-        <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E7%25BE%258E%25E6%2596%2587%25E5%2585%25B1%25E8%25B5%258F%25C2%25B7Literature/</loc>
-        <lastmod>2025-02-28T07:35:09.902Z</lastmod>
+        <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E6%2591%2584%25E5%25BD%25B1%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Photography/</loc>
+        <lastmod>2025-03-03T13:33:20.795Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/</loc>
+        <lastmod>2025-03-03T13:33:20.795Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E7%25BE%258E%25E6%2596%2587%25E5%2585%25B1%25E8%25B5%258F%25C2%25B7Literature/</loc>
         <lastmod>2025-02-28T07:35:09.902Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -149,20 +156,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/%25E6%2591%2584%25E5%25BD%25B1%25E8%2589%25BA%25E6%259C%25AF/</loc>
-        <lastmod>2025-02-04T15:06:33.291Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/</loc>
-        <lastmod>2025-02-04T15:06:33.291Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25E5%2589%258D%25E6%25B2%25BF/hexo%25E5%25BB%25BA%25E7%25AB%2599/</loc>
         <lastmod>2025-02-04T15:06:07.482Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -171,6 +164,13 @@
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/%25E6%2596%2587%25E5%25AD%25A6%25E9%25A3%258E%25E4%25BA%2591/</loc>
+        <lastmod>2025-02-03T14:52:35.411Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/</loc>
         <lastmod>2025-02-03T14:52:35.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
