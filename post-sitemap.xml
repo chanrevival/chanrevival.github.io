@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
+        <lastmod>2025-03-04T14:32:28.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-hostnamectl.html</loc>
+        <lastmod>2025-03-04T14:22:28.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-kill.html</loc>
+        <lastmod>2025-03-04T14:10:54.108Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/fu-zhou.html</loc>
         <lastmod>2025-03-03T13:33:20.795Z</lastmod>
         <changefreq>weekly</changefreq>

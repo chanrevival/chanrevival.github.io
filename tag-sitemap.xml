@@ -3,6 +3,41 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/tags/id/</loc>
+        <lastmod>2025-03-04T14:32:28.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
+        <lastmod>2025-03-04T14:32:28.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
+        <lastmod>2025-03-04T14:32:28.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/hostnamectl/</loc>
+        <lastmod>2025-03-04T14:22:28.409Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/kill/</loc>
+        <lastmod>2025-03-04T14:10:54.108Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/tags/%E9%99%88%E8%8D%A3/</loc>
         <lastmod>2025-03-03T13:33:20.795Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -137,20 +172,6 @@
 
     <url>
         <loc>https://blog.crsky.uk/tags/pidstat/</loc>
-        <lastmod>2025-02-26T02:35:40.243Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
-        <lastmod>2025-02-26T02:35:40.243Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
         <lastmod>2025-02-26T02:35:40.243Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -605,6 +626,13 @@
     </url>
 
     <url>
+        <loc>https://blog.crsky.uk/tags/Graphics-Cards/</loc>
+        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/tags/5070/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -613,13 +641,6 @@
 
     <url>
         <loc>https://blog.crsky.uk/tags/5090/</loc>
-        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/Graphics-Cards/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -787,14 +808,14 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/Database/</loc>
+        <loc>https://blog.crsky.uk/tags/Oracle/</loc>
         <lastmod>2025-02-08T09:31:55.031Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/Oracle/</loc>
+        <loc>https://blog.crsky.uk/tags/Database/</loc>
         <lastmod>2025-02-08T09:31:55.031Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
