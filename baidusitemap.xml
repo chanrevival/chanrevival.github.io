@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-nohup.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-ls.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-ln.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-ld.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-lastb.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-last.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-jobs.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
     <lastmod>2025-03-04</lastmod>
   </url>

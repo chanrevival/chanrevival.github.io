@@ -9,6 +9,86 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
+        <lastmod>2025-03-05T07:19:25.295Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-nohup.html</loc>
+        <lastmod>2025-03-05T07:17:46.129Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-ls.html</loc>
+        <lastmod>2025-03-05T07:01:24.317Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd.html</loc>
+        <lastmod>2025-03-05T06:55:15.964Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-ln.html</loc>
+        <lastmod>2025-03-05T06:52:42.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
+        <lastmod>2025-03-05T06:46:10.830Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-ld.html</loc>
+        <lastmod>2025-03-05T06:16:42.909Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-lastb.html</loc>
+        <lastmod>2025-03-05T05:00:25.266Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-last.html</loc>
+        <lastmod>2025-03-05T04:48:29.687Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-jobs.html</loc>
+        <lastmod>2025-03-05T04:32:41.955Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
         <lastmod>2025-03-04T14:32:28.241Z</lastmod>
         <changefreq>weekly</changefreq>
