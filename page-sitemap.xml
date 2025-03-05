@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>https://blog.crsky.uk/linux_tools/</loc>
+        <lastmod>2025-03-05T07:54:33.355Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.crsky.uk/photography2/</loc>
         <lastmod>2025-03-03T13:37:43.382Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,15 +75,6 @@
     <url>
         <loc>https://blog.crsky.uk/updates/</loc>
         <lastmod>2025-02-22T15:30:36.414Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.crsky.uk/linux_tools/</loc>
-        <lastmod>2025-02-21T15:47:23.876Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

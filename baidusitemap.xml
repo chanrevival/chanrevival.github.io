@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.crsky.uk/posts/20250225-is-deepseek-the-disruptor-of-the-new-era-of-artificial-intelligence-or-a-time-bomb-in-the-global-race.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/20250225-deepseek-ren-gong-zhi-neng-xin-shi-dai-de-po-ju-zhe-huan-shi-quan-qiu-jing-sai-zhong-de-yi-ke-ding-shi-zha-dan.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/linux_tools/index.html</loc>
+    <lastmod>2025-03-05</lastmod>
+  </url>
+  <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
     <lastmod>2025-03-05</lastmod>
   </url>
@@ -125,14 +137,6 @@
     <lastmod>2025-02-26</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/20250225-is-deepseek-the-disruptor-of-the-new-era-of-artificial-intelligence-or-a-time-bomb-in-the-global-race.html</loc>
-    <lastmod>2025-02-25</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/20250225-deepseek-ren-gong-zhi-neng-xin-shi-dai-de-po-ju-zhe-huan-shi-quan-qiu-jing-sai-zhong-de-yi-ke-ding-shi-zha-dan.html</loc>
-    <lastmod>2025-02-25</lastmod>
-  </url>
-  <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd-groupdel.html</loc>
     <lastmod>2025-02-25</lastmod>
   </url>
@@ -199,10 +203,6 @@
   <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd-arp.html</loc>
     <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/linux_tools/index.html</loc>
-    <lastmod>2025-02-21</lastmod>
   </url>
   <url>
     <loc>https://blog.crsky.uk/posts/the-lacerta-files.html</loc>
@@ -433,11 +433,11 @@
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/shi-yong-yum-xia-zai-rpm-bao.html</loc>
+    <loc>https://blog.crsky.uk/posts/qian-nu-you-hun-1987.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/qian-nu-you-hun-1987.html</loc>
+    <loc>https://blog.crsky.uk/posts/shi-yong-yum-xia-zai-rpm-bao.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
