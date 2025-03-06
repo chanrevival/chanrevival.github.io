@@ -33,6 +33,52 @@
       </tags>
   </entry>
   <entry>
+    <title>How to Avoid Being Manipulated by PUA in Your Career or Life</title>
+    <url>/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>There are all kinds of people in this world! If someone keeps trying to manipulate you by pointing out these traits or labeling you, just flip the script with these responses:</p>
+<ul>
+<li>Introverted or unsociable? – When someone says you’re reclusive or not a team player, simply say you’re independent and self-reliant.</li>
+<li>Overly dependent? – If they claim you rely too much on others, say you’re excellent at collaborating.</li>
+<li>Broke? – If you’re short on cash, say you have enormous potential to build wealth.</li>
+<li>Materialistic? – When accused of caring only about money, claim that you’re highly driven in your career.</li>
+<li>Hindsight genius but clueless beforehand? – If they say you’re only smart after the fact, reply that you’re great at learning from your experiences.</li>
+<li>All talk and no action? – When criticized for poor execution, say you excel at strategic planning.</li>
+<li>Poor at noticing details? – If they point out your lack of observational skills, assert that you know how to focus on what’s important.</li>
+<li>Easily distracted? – When accused of browsing random news all day, explain that you’re just keeping up with developments across various fields.</li>
+<li>No standout qualities? – If you’re told you blend into the crowd, say you’re modest and low-key.</li>
+<li>Too flashy? – If they claim you’re overly confident or boastful, simply say you’re confident.</li>
+<li>Scattered focus? – When criticized for dabbling in too many things, say you’re curious with a wide range of interests.</li>
+<li>Lacking personal hobbies? – If someone points out that you don’t have many passions, say you’re capable of deep focus without getting sidetracked.</li>
+<li>Emotionally sensitive? – When labeled as having a “glass heart,” reply that you’re skilled at perceiving changes in your environment.</li>
+<li>Emotionally unresponsive? – If you’re seen as dull or insensitive to change, say you maintain a stable mindset.</li>
+<li>Stubborn and dismissive? – When accused of not listening to advice, say you’re firm in your beliefs.</li>
+<li>Indecisive? – If others say you lack your own opinions and are easily influenced, claim that you’re open to constructive feedback.</li>
+<li>Speaks without thinking? – When criticized for blurting out thoughts, say you’re sincere and straightforward.</li>
+<li>Slow to respond? – If you’re known for long pauses in conversation, say you speak carefully and thoughtfully.</li>
+<li>Always daydreaming? – When someone accuses you of letting your mind wander, say you have a rich inner world.</li>
+<li>Never thinking? – If you’re told you rarely use your brain, say that you’re pure-hearted.</li>
+<li>Bad at everything except eating? – When joked about for excelling only in eating, say that you’re passionate about food and that there’s nothing wrong with that.</li>
+<li>Finishes every bite? – If you’re noted for never leaving food behind, say you’re mindful about not wasting resources.</li>
+<li>Jack of all trades, master of none? – When accused of knowing a little bit about everything but not excelling at anything, say you have a broad knowledge base.</li>
+<li>Only a few quirky habits? – If someone criticizes you for having only a few eccentricities, say you’re deeply focused on your areas of interest.</li>
+<li>Constantly failing? – When you’re told you keep failing, reply that you’re resilient and always ready to try again.</li>
+<li>Stuck in your comfort zone? – If you’re afraid to step out of your comfort zone, say that you understand your own limits.</li>
+<li>Self-destructive? – When accused of giving up on yourself, say you’re good at recognizing your own weaknesses.</li>
+<li>Aspirations high but execution low? – If someone says you aim too high without the skills to match, claim that you have high aspirations.</li>
+<li>No ambitions at all? – When criticized for lacking drive, simply say you’re down-to-earth.</li>
+</ul>
+<p>Let’s gear up, move forward boldly, and face the world with courage!<br>Any additional thoughts? Feel free to leave a comment.</p>
+]]></content>
+      <categories>
+        <category>休闲·Leisure</category>
+        <category>美文共赏·Literature</category>
+      </categories>
+      <tags>
+        <tag>休闲·Leisure</tag>
+        <tag>美文共赏·Literature</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>nohup命令</title>
     <url>/posts/linux-cmd-nohup.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
@@ -296,7 +342,8 @@
     <title>pwd命令</title>
     <url>/posts/linux-cmd-pwd.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
-<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NAME</span><br><span class="line"></span><br><span class="line">       <span class="built_in">pwd</span> - <span class="built_in">print</span> name of current/working directory</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line"></span><br><span class="line">       <span class="built_in">pwd</span> [OPTION]...</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line"></span><br><span class="line">       Print the full filename of the current working directory.</span><br><span class="line"></span><br><span class="line">       -L, --logical</span><br><span class="line">              use PWD from environment, even <span class="keyword">if</span> it contains symlinks</span><br><span class="line"></span><br><span class="line">       -P, --physical</span><br><span class="line">              resolve all symlinks</span><br><span class="line"></span><br><span class="line">       --<span class="built_in">help</span> display this <span class="built_in">help</span> and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       --version</span><br><span class="line">              output version information and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       If no option is specified, -P is assumed.</span><br><span class="line"></span><br><span class="line">       Your shell may have its own version of <span class="built_in">pwd</span>, <span class="built_in">which</span> usually</span><br><span class="line">       supersedes the version described here.  Please refer to your</span><br><span class="line">       shell<span class="string">&#x27;s documentation for details about the options it supports.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">AUTHOR</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Written by Jim Meyering.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">REPORTING BUGS</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GNU coreutils online help:</span></span><br><span class="line"><span class="string">       &lt;https://www.gnu.org/software/coreutils/&gt;</span></span><br><span class="line"><span class="string">       Report any translation bugs to</span></span><br><span class="line"><span class="string">       &lt;https://translationproject.org/team/&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COPYRIGHT</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Copyright © 2025 Free Software Foundation, Inc.  License GPLv3+:</span></span><br><span class="line"><span class="string">       GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span></span><br><span class="line"><span class="string">       This is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="string">       There is NO WARRANTY, to the extent permitted by law.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SEE ALSO</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       getcwd(3)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Full documentation &lt;https://www.gnu.org/software/coreutils/pwd&gt;</span></span><br><span class="line"><span class="string">       or available locally via: info &#x27;</span>(coreutils) <span class="built_in">pwd</span> invocation<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COLOPHON</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       This page is part of the coreutils (basic file, shell and text</span></span><br><span class="line"><span class="string">       manipulation utilities) project.  Information about the project</span></span><br><span class="line"><span class="string">       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you</span></span><br><span class="line"><span class="string">       have a bug report for this manual page, see</span></span><br><span class="line"><span class="string">       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained</span></span><br><span class="line"><span class="string">       from the tarball coreutils-9.6.tar.xz fetched from</span></span><br><span class="line"><span class="string">       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2025-02-02.  If you</span></span><br><span class="line"><span class="string">       discover any rendering problems in this HTML version of the page,</span></span><br><span class="line"><span class="string">       or you believe there is a better or more up-to-date source for the</span></span><br><span class="line"><span class="string">       page, or you have corrections or improvements to the information</span></span><br><span class="line"><span class="string">       in this COLOPHON (which is not part of the original manual page),</span></span><br><span class="line"><span class="string">       send a mail to man-pages@man7.org</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p><i class="fas fa-angle-right post-meta-separator"></i></p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NAME</span><br><span class="line"></span><br><span class="line">       <span class="built_in">pwd</span> - <span class="built_in">print</span> name of current/working directory</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line"></span><br><span class="line">       <span class="built_in">pwd</span> [OPTION]...</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line"></span><br><span class="line">       Print the full filename of the current working directory.</span><br><span class="line"></span><br><span class="line">       -L, --logical</span><br><span class="line">              use PWD from environment, even <span class="keyword">if</span> it contains symlinks</span><br><span class="line"></span><br><span class="line">       -P, --physical</span><br><span class="line">              resolve all symlinks</span><br><span class="line"></span><br><span class="line">       --<span class="built_in">help</span> display this <span class="built_in">help</span> and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       --version</span><br><span class="line">              output version information and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       If no option is specified, -P is assumed.</span><br><span class="line"></span><br><span class="line">       Your shell may have its own version of <span class="built_in">pwd</span>, <span class="built_in">which</span> usually</span><br><span class="line">       supersedes the version described here.  Please refer to your</span><br><span class="line">       shell<span class="string">&#x27;s documentation for details about the options it supports.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">AUTHOR</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Written by Jim Meyering.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">REPORTING BUGS</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GNU coreutils online help:</span></span><br><span class="line"><span class="string">       &lt;https://www.gnu.org/software/coreutils/&gt;</span></span><br><span class="line"><span class="string">       Report any translation bugs to</span></span><br><span class="line"><span class="string">       &lt;https://translationproject.org/team/&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COPYRIGHT</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Copyright © 2025 Free Software Foundation, Inc.  License GPLv3+:</span></span><br><span class="line"><span class="string">       GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span></span><br><span class="line"><span class="string">       This is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="string">       There is NO WARRANTY, to the extent permitted by law.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SEE ALSO</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       getcwd(3)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Full documentation &lt;https://www.gnu.org/software/coreutils/pwd&gt;</span></span><br><span class="line"><span class="string">       or available locally via: info &#x27;</span>(coreutils) <span class="built_in">pwd</span> invocation<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COLOPHON</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       This page is part of the coreutils (basic file, shell and text</span></span><br><span class="line"><span class="string">       manipulation utilities) project.  Information about the project</span></span><br><span class="line"><span class="string">       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you</span></span><br><span class="line"><span class="string">       have a bug report for this manual page, see</span></span><br><span class="line"><span class="string">       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained</span></span><br><span class="line"><span class="string">       from the tarball coreutils-9.6.tar.xz fetched from</span></span><br><span class="line"><span class="string">       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2025-02-02.  If you</span></span><br><span class="line"><span class="string">       discover any rendering problems in this HTML version of the page,</span></span><br><span class="line"><span class="string">       or you believe there is a better or more up-to-date source for the</span></span><br><span class="line"><span class="string">       page, or you have corrections or improvements to the information</span></span><br><span class="line"><span class="string">       in this COLOPHON (which is not part of the original manual page),</span></span><br><span class="line"><span class="string">       send a mail to man-pages@man7.org</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>科技·Tech</category>
@@ -803,7 +850,7 @@
   </entry>
   <entry>
     <title>尊重孩子的小习惯</title>
-    <url>/posts/zun-chong-yu-li-jie-fu-mu-yu-hai-zi-zhi-jian-de-xi-jie-zhi-ai.html</url>
+    <url>/posts/zun-chong-hai-zi-de-xiao-xi-guan.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>我儿子吃泡面，是必须泡不能煮。并且如果是桶装的，还非要用那个桶，坚决不能用家里的碗。这还不算，泡完后，他还执意要把叉子叉在盖上的那层纸和桶上面，避免那层纸翘起来。我老公觉得麻烦，无法理解，非要拿来盆，直接给他盖上，认为这样省事又高效。但被我好言劝一边去了，就按我儿子的方式来。在我看来这不是溺爱，儿子也不是事多。我很清楚，他是坐火车的时候，多次见到别人这样泡面。而那样的画面，也许是在路上别样饥饿感的加持下，在脑海中多了层滤镜，让他感觉格外美好。所以，那样的泡面方式，也成为这美好中的一部分。要想保留这份美好，泡面的每个环节，都要按那个画面照搬，少一个细节都不行。这份面吃的不只是面，更是一种意境，一种情愫，一种带着特定标签的幸福。这看似是件小事，其实是件大事。如果能把类似的一件件小事处理好，和孩子成为朋友的道路，就算是又前进了一步。</p>
 <p>我能十分清楚的记得，我十几岁的时候，也有相似的心态。我妈摘菜习惯马马虎虎，她每次做豆角面条，我几乎都能从面条里找到虫子，那是豆角上的。因为她摘豆角，向来是看都不看一眼，直接咔咔断扔水里，哗啦哗啦淘上一把，就丢锅里。吃到虫子，会让我的心情低落好几天。我就跟她提出，以后摘豆角的事，交给我，我必须要把所有带虫眼的部位，都摘掉才放心。可是，她经常忘了这事，还是看都不看，咔咔，哗哗淘，潇洒往锅里一丢。于是，每次当我兴致冲冲去摘豆角，却发现面条已经上桌时，那种崩溃的心情无法用语言描述。吃吧，总会见到糟心的虫子。不吃吧，又着实饿得发慌。次数多了，难免情绪失控，对妈妈发火。她不能理解，但也只是不说话，其实我的火气虽大，很快就能过去。可是我爸却总会在一旁插话，说我不懂事，有火只会朝家里人发，在外面屁都不敢放一个之类的。他的话无疑是火上浇油，让我的情绪愈加失控。这样的事还有很多。比如夏天的一些时候，某天早上我妈提前宣布：今天中午做凉面条。我听到消息后就会特别期待，想象着炎热烈日下，我端着一碗凉凉的面条，是多么惬意，多么幸福。然而，盼来中午，面条上桌，毫无凉意，顶多是不烫嘴的程度。这种巨大的落差感，瞬间就把我对凉面条的美好打击得粉碎。原因就是，我妈担心吃太凉会拉肚子，故意没做成凉的。她有错吗？毫无过错。她对我的好，对我健康的关心，我不知道吗？全部知道。但这能抵消心里的落差感吗？不能，完全不能，因为这种落差，本质上是对事不对人的。很多事情，都是十几岁时的事，我现在依然能清晰的记得，记得那些时刻的心情，以及那些时刻的期待。</p>
 <p>时至今日，我依旧认为，十几岁的很多情绪，其实都是很简单的。家长眼中的暴风骤雨，不过是孩子觉得不被理解后的崩溃。这和孝顺不孝顺无关。就像那时我和我妈之间的这些事，我妈往往是沉默收场，而她的沉默会让我迅速冷静，我能很清楚的知道，我那样的脾气是不妥的，应该好好和妈妈说。但就是在那一刻，控制不住。而我爸的无端指责，却又会在一瞬间加速这些情绪的扩张，激烈处甚至会不顾一切的爆炸。十几岁正是青春期，单看个头和模样，似乎已和成人无异。但从心智上来说，这个年龄段的孩子，并不成熟，身心正处于飞快发展期。他们有了强烈的自我意识，渴望被看见，被尊重，被包容，被理解。题目中女儿的年纪，正是这个阶段。</p>
@@ -6081,6 +6128,39 @@
       </tags>
   </entry>
   <entry>
+    <title>NVIDIA Launches Next-Gen Flagship GPU RTX 5090 The Strongest Performance Ever, Priced at 1999</title>
+    <url>/posts/20250107nvidia.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999"><a href="#NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999" class="headerlink" title="NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999"></a>NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999</h1><p>On January 7, 2025, the highly anticipated CES Consumer Electronics Show officially opened in Las Vegas, USA. NVIDIA unveiled its next-generation flagship GPU in the RTX 50 series, with the RTX 5090 becoming the most expensive consumer-grade graphics card ever, priced at $1999. At the same time, it set a new benchmark for performance. Other models include the second-tier RTX 5080 priced at $999, the RTX 5070 Ti at $749, and the RTX 5070 at $549.<br>Hardware Specifications and Performance Breakthrough</p>
+<p>The RTX 5090 is equipped with the brand-new GB202 GPU, featuring 21,760 CUDA cores, making it the first GeForce GPU to surpass 20,000 cores. This generation of graphics cards has all been upgraded to PCIe 5.0 interfaces, featuring DisplayPort 2.1a and a 16-pin power connector, and comes with the latest GDDR7 memory.</p>
+<p>The flagship RTX 5090 offers 32GB of GDDR7 memory with a 512-bit memory interface and a memory speed of 26Gbps, with a power consumption of up to 575W. It provides three DP 2.1a ports and one HDMI 2.1 port, enhancing bandwidth and display output capabilities.</p>
+<p>The second-tier RTX 5080 comes with 10,752 CUDA cores, 16GB of GDDR7 memory with a faster speed of 30Gbps, and a power consumption of 360W. According to official data, both the RTX 5080 and RTX 5090 are designed for high-end gamers and professional users, supporting extreme AI computing, video rendering, and gaming performance.<br>AI Performance Optimization and Professional Applications</p>
+<p>Compared to the standard RTX 5090, the lighter version RTX 5090D offers slightly reduced AI computing performance but still maintains a strong output of up to 2375 TOPS, providing more options for developers and data scientists.</p>
+<p>NVIDIA claims that the RTX 5090 achieves a new level of balance between performance and power consumption, offering powerful hardware support for next-generation AI, game development, and creative fields.<br>The Significance of High-Performance GPUs in AI Computing</p>
+<p>High-performance GPUs have the following important significance for AI computing:</p>
+<ol>
+<li><p>Enhancing Training Efficiency<br>High-performance GPUs can significantly accelerate the training process of deep learning models. For instance, thousands of CUDA cores and hundreds of TOPS in AI computing power can enable large-scale parallel computations, reducing model training time and thus improving research and commercial development efficiency.</p>
+</li>
+<li><p>Supporting More Complex Models<br>With the continuous advancement of AI technology, the scale and complexity of models are rapidly increasing. The large memory and high bandwidth of high-performance GPUs support larger parameter models, such as GPT and Vision Transformers, which can handle massive data and parameter computation requirements.</p>
+</li>
+<li><p>Real-Time Inference and Edge Computing<br>In fields like autonomous driving, smart homes, and robotics, the real-time computational power of GPUs is crucial for complex scene inference. NVIDIA’s RTX series GPUs’ AI acceleration features enable efficient inference even on edge devices.</p>
+</li>
+<li><p>Democratizing AI Technology<br>More powerful GPUs lower the entry barriers for AI technology, allowing more small and medium-sized enterprises, as well as independent developers, to access high-end computing resources, thus promoting the spread and innovation of AI technology.</p>
+</li>
+</ol>
+<p>The release of the NVIDIA RTX 50 series marks the beginning of a new era in GPU performance. Its AI computing capabilities will continue to drive innovation in artificial intelligence, scientific research, and the creative industry.</p>
+]]></content>
+      <categories>
+        <category>新闻·News</category>
+      </categories>
+      <tags>
+        <tag>NVIDIA</tag>
+        <tag>Graphics Cards</tag>
+        <tag>GPU</tag>
+        <tag>5090</tag>
+        <tag>5070</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元</title>
     <url>/posts/20250107nvidia-fa-bu-xin-qia.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="NVIDIA发布新一代旗舰显卡RTX-5090：史上最强性能，售价1999美元"><a href="#NVIDIA发布新一代旗舰显卡RTX-5090：史上最强性能，售价1999美元" class="headerlink" title="NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元"></a>NVIDIA发布新一代旗舰显卡RTX 5090：史上最强性能，售价1999美元</h1><p>2025年1月7日，全球瞩目的CES消费电子展在美国拉斯维加斯正式开幕，NVIDIA发布了新一代旗舰显卡RTX 50系列，其中RTX 5090以1999美元的价格成为史上最昂贵的消费级显卡，同时也刷新了性能新高度。其他型号包括次旗舰RTX 5080售价999美元、RTX 5070 Ti售价749美元、RTX 5070售价549美元。</p>
@@ -6108,43 +6188,10 @@
       </categories>
       <tags>
         <tag>NVIDIA</tag>
+        <tag>GPU</tag>
+        <tag>5090</tag>
+        <tag>5070</tag>
         <tag>显卡</tag>
-        <tag>GPU</tag>
-        <tag>5090</tag>
-        <tag>5070</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NVIDIA Launches Next-Gen Flagship GPU RTX 5090 The Strongest Performance Ever, Priced at 1999</title>
-    <url>/posts/20250107nvidia.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999"><a href="#NVIDIA-Launches-Next-Gen-Flagship-GPU-RTX-5090-The-Strongest-Performance-Ever-Priced-at-1999" class="headerlink" title="NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999"></a>NVIDIA Launches Next-Gen Flagship GPU RTX 5090: The Strongest Performance Ever, Priced at 1999</h1><p>On January 7, 2025, the highly anticipated CES Consumer Electronics Show officially opened in Las Vegas, USA. NVIDIA unveiled its next-generation flagship GPU in the RTX 50 series, with the RTX 5090 becoming the most expensive consumer-grade graphics card ever, priced at $1999. At the same time, it set a new benchmark for performance. Other models include the second-tier RTX 5080 priced at $999, the RTX 5070 Ti at $749, and the RTX 5070 at $549.<br>Hardware Specifications and Performance Breakthrough</p>
-<p>The RTX 5090 is equipped with the brand-new GB202 GPU, featuring 21,760 CUDA cores, making it the first GeForce GPU to surpass 20,000 cores. This generation of graphics cards has all been upgraded to PCIe 5.0 interfaces, featuring DisplayPort 2.1a and a 16-pin power connector, and comes with the latest GDDR7 memory.</p>
-<p>The flagship RTX 5090 offers 32GB of GDDR7 memory with a 512-bit memory interface and a memory speed of 26Gbps, with a power consumption of up to 575W. It provides three DP 2.1a ports and one HDMI 2.1 port, enhancing bandwidth and display output capabilities.</p>
-<p>The second-tier RTX 5080 comes with 10,752 CUDA cores, 16GB of GDDR7 memory with a faster speed of 30Gbps, and a power consumption of 360W. According to official data, both the RTX 5080 and RTX 5090 are designed for high-end gamers and professional users, supporting extreme AI computing, video rendering, and gaming performance.<br>AI Performance Optimization and Professional Applications</p>
-<p>Compared to the standard RTX 5090, the lighter version RTX 5090D offers slightly reduced AI computing performance but still maintains a strong output of up to 2375 TOPS, providing more options for developers and data scientists.</p>
-<p>NVIDIA claims that the RTX 5090 achieves a new level of balance between performance and power consumption, offering powerful hardware support for next-generation AI, game development, and creative fields.<br>The Significance of High-Performance GPUs in AI Computing</p>
-<p>High-performance GPUs have the following important significance for AI computing:</p>
-<ol>
-<li><p>Enhancing Training Efficiency<br>High-performance GPUs can significantly accelerate the training process of deep learning models. For instance, thousands of CUDA cores and hundreds of TOPS in AI computing power can enable large-scale parallel computations, reducing model training time and thus improving research and commercial development efficiency.</p>
-</li>
-<li><p>Supporting More Complex Models<br>With the continuous advancement of AI technology, the scale and complexity of models are rapidly increasing. The large memory and high bandwidth of high-performance GPUs support larger parameter models, such as GPT and Vision Transformers, which can handle massive data and parameter computation requirements.</p>
-</li>
-<li><p>Real-Time Inference and Edge Computing<br>In fields like autonomous driving, smart homes, and robotics, the real-time computational power of GPUs is crucial for complex scene inference. NVIDIA’s RTX series GPUs’ AI acceleration features enable efficient inference even on edge devices.</p>
-</li>
-<li><p>Democratizing AI Technology<br>More powerful GPUs lower the entry barriers for AI technology, allowing more small and medium-sized enterprises, as well as independent developers, to access high-end computing resources, thus promoting the spread and innovation of AI technology.</p>
-</li>
-</ol>
-<p>The release of the NVIDIA RTX 50 series marks the beginning of a new era in GPU performance. Its AI computing capabilities will continue to drive innovation in artificial intelligence, scientific research, and the creative industry.</p>
-]]></content>
-      <categories>
-        <category>新闻·News</category>
-      </categories>
-      <tags>
-        <tag>NVIDIA</tag>
-        <tag>GPU</tag>
-        <tag>5090</tag>
-        <tag>5070</tag>
-        <tag>Graphics Cards</tag>
       </tags>
   </entry>
   <entry>
@@ -6483,8 +6530,8 @@ When running a standby server, you must set this parameter to the same or higher
 </tbody></table>
 <h2 id="数据库参数"><a href="#数据库参数" class="headerlink" title="数据库参数"></a>数据库参数</h2>]]></content>
       <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
+        <category>科技·Tech</category>
+        <category>数据库技术·Databases</category>
       </categories>
       <tags>
         <tag>数据库</tag>
@@ -9681,8 +9728,9 @@ When running a standby server, you must set this parameter to the same or higher
 <p><img src="/vx_images/456876443175248.png"></p>
 ]]></content>
       <categories>
-        <category>技术分享</category>
-        <category>数据库技术</category>
+        <category>科技·Tech</category>
+        <category>数据库技术·Databases</category>
+        <category>Doris</category>
       </categories>
       <tags>
         <tag>数据库</tag>
@@ -9867,8 +9915,8 @@ When running a standby server, you must set this parameter to the same or higher
 </ol>
 ]]></content>
       <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
+        <category>科技·Tech</category>
+        <category>数据库技术·Databases</category>
       </categories>
       <tags>
         <tag>Database</tag>
@@ -10413,8 +10461,8 @@ When running a standby server, you must set this parameter to the same or higher
 </ol>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CONNECT</span> <span class="keyword">user</span><span class="operator">/</span>password<span class="variable">@dbs1</span></span><br><span class="line"><span class="comment">-- - put a1.dat to a4.dat (using dbs2 dblink)</span></span><br><span class="line"><span class="comment">-- - level 2 sub dir to parent dir</span></span><br><span class="line"><span class="comment">-- - user has read privs on source_dir_1 at dbs1 and write on target_dir</span></span><br><span class="line"><span class="comment">-- - in dbs2</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    DBMS_FILE_TRANSFER.PUT_FILE(<span class="string">&#x27;source_dir_1&#x27;</span>, <span class="string">&#x27;a1.dat&#x27;</span>,</span><br><span class="line">                                <span class="string">&#x27;target_dir&#x27;</span>, <span class="string">&#x27;a4.dat&#x27;</span>, <span class="string">&#x27;dbs2&#x27;</span> );</span><br><span class="line"><span class="keyword">END</span>;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>科技前沿</category>
-        <category>数据库系统</category>
+        <category>科技·Tech</category>
+        <category>数据库技术·Databases</category>
       </categories>
   </entry>
   <entry>
@@ -11025,8 +11073,8 @@ When running a standby server, you must set this parameter to the same or higher
       </categories>
       <tags>
         <tag>文件系统</tag>
-        <tag>Solaris</tag>
         <tag>操作系统</tag>
+        <tag>Solaris</tag>
       </tags>
   </entry>
   <entry>
@@ -11133,8 +11181,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>操作系统技术</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>SunOS</tag>
+        <tag>操作系统</tag>
         <tag>软件安装</tag>
       </tags>
   </entry>
@@ -11264,8 +11312,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>计算机软件</category>
       </categories>
       <tags>
-        <tag>Solaris</tag>
         <tag>操作系统</tag>
+        <tag>Solaris</tag>
         <tag>SSH</tag>
       </tags>
   </entry>

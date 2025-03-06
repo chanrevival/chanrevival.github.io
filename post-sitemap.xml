@@ -9,6 +9,54 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</loc>
+        <lastmod>2025-03-06T05:31:37.823Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
+        <lastmod>2025-03-05T15:17:03.537Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/sheng-chan-huan-jing-postgresql-shu-ju-ku-can-shu-tan-jiu.html</loc>
+        <lastmod>2025-03-05T15:01:21.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/doris-pi-pan-huan-pan-fang-fa.html</loc>
+        <lastmod>2025-03-05T14:59:24.254Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/ru-he-zai-asm-11gr2-zhong-chong-ming-ming-ci-pan-zu.html</loc>
+        <lastmod>2025-03-05T14:54:39.479Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/kua-ping-tai-bu-tong-zi-jie-xu-oracle-shu-ju-ku-qian-yi-fang-an.html</loc>
+        <lastmod>2025-03-05T13:59:59.096Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/20250225-is-deepseek-the-disruptor-of-the-new-era-of-artificial-intelligence-or-a-time-bomb-in-the-global-race.html</loc>
         <lastmod>2025-03-05T08:24:01.387Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,14 +67,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/20250225-deepseek-ren-gong-zhi-neng-xin-shi-dai-de-po-ju-zhe-huan-shi-quan-qiu-jing-sai-zhong-de-yi-ke-ding-shi-zha-dan.html</loc>
         <lastmod>2025-03-05T08:22:19.670Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
-        <lastmod>2025-03-05T07:19:25.295Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -185,7 +225,7 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/zun-chong-yu-li-jie-fu-mu-yu-hai-zi-zhi-jian-de-xi-jie-zhi-ai.html</loc>
+        <loc>https://blog.crsky.uk/posts/zun-chong-hai-zi-de-xiao-xi-guan.html</loc>
         <lastmod>2025-02-28T07:05:30.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -601,24 +641,8 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/ru-he-zai-asm-11gr2-zhong-chong-ming-ming-ci-pan-zu.html</loc>
-        <lastmod>2025-02-05T08:27:15.910Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/bu-guan-bi-zhu-ku-shi-yong-rman-fu-zhi-chuang-jian-wu-li-bei-ku.html</loc>
         <lastmod>2025-02-05T08:18:45.230Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/sheng-chan-huan-jing-postgresql-shu-ju-ku-can-shu-tan-jiu.html</loc>
-        <lastmod>2025-02-04T15:17:53.547Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -643,14 +667,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/zai-hexo-zhong-cha-ru-yin-le-bo-fang-qi.html</loc>
         <lastmod>2025-02-04T15:06:07.482Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/kua-ping-tai-bu-tong-zi-jie-xu-oracle-shu-ju-ku-qian-yi-fang-an.html</loc>
-        <lastmod>2025-02-04T06:08:02.068Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -899,14 +915,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/early-spring-flower-rain-scene.html</loc>
         <lastmod>2025-02-03T14:52:35.371Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/doris-pi-pan-huan-pan-fang-fa.html</loc>
-        <lastmod>2025-02-03T14:52:35.370Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
