@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/tags/rpm/</loc>
+        <lastmod>2025-03-06T13:31:51.032Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
+        <lastmod>2025-03-06T13:31:51.032Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
+        <lastmod>2025-03-06T13:31:51.032Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/rm/</loc>
+        <lastmod>2025-03-06T13:28:51.062Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/tags/%E7%BE%8E%E6%96%87%E5%85%B1%E8%B5%8F%C2%B7Literature/</loc>
         <lastmod>2025-03-06T05:31:37.823Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,20 +46,6 @@
 
     <url>
         <loc>https://blog.crsky.uk/tags/pwd/</loc>
-        <lastmod>2025-03-05T15:17:03.537Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
-        <lastmod>2025-03-05T15:17:03.537Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
         <lastmod>2025-03-05T15:17:03.537Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1102,14 +1116,14 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/Solaris/</loc>
+        <loc>https://blog.crsky.uk/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
         <lastmod>2025-02-03T14:52:35.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+        <loc>https://blog.crsky.uk/tags/Solaris/</loc>
         <lastmod>2025-02-03T14:52:35.409Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1187,13 +1201,6 @@
 
     <url>
         <loc>https://blog.crsky.uk/tags/%E5%BD%B1%E8%A7%86%E8%89%BA%E6%9C%AF/</loc>
-        <lastmod>2025-02-03T14:52:35.387Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/rpm/</loc>
         <lastmod>2025-02-03T14:52:35.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

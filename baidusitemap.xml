@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-rpm.html</loc>
+    <lastmod>2025-03-06</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-rm.html</loc>
+    <lastmod>2025-03-06</lastmod>
+  </url>
+  <url>
     <loc>https://blog.crsky.uk/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</loc>
     <lastmod>2025-03-06</lastmod>
   </url>
@@ -429,11 +437,11 @@
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/chu-lun.html</loc>
+    <loc>https://blog.crsky.uk/posts/da-xue-sheng-huo-1-chu-dao-nong-da.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/da-xue-sheng-huo-1-chu-dao-nong-da.html</loc>
+    <loc>https://blog.crsky.uk/posts/chu-lun.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>

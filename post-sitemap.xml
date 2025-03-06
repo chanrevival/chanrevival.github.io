@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-rpm.html</loc>
+        <lastmod>2025-03-06T13:31:51.032Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-rm.html</loc>
+        <lastmod>2025-03-06T13:28:51.062Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</loc>
         <lastmod>2025-03-06T05:31:37.823Z</lastmod>
         <changefreq>weekly</changefreq>
