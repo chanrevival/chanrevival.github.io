@@ -1,0 +1,2498 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>awk命令 | Chan Revival Sky</title><meta name="author" content="Chan Revival"><meta name="copyright" content="Chan Revival"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="回到手册索引  命令用途awk 是一个强大的文本处理工具，广泛用于模式扫描和处理任务。它能够逐行读取输入，匹配模式并执行相应的动作。awk 被设计用于在输入数据中根据特定模式进行搜索、筛选和处理，常用于日志分析、数据处理等场景。 常用用法示例 打印文件中的每一行 1awk &#x27;&#123;print&#125;&#x27; filename 该命令将文件 filename 中的每一行打印出">
+<meta property="og:type" content="article">
+<meta property="og:title" content="awk命令">
+<meta property="og:url" content="https://blog.crsky.uk/posts/linux-cmd-awk.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="回到手册索引  命令用途awk 是一个强大的文本处理工具，广泛用于模式扫描和处理任务。它能够逐行读取输入，匹配模式并执行相应的动作。awk 被设计用于在输入数据中根据特定模式进行搜索、筛选和处理，常用于日志分析、数据处理等场景。 常用用法示例 打印文件中的每一行 1awk &#x27;&#123;print&#125;&#x27; filename 该命令将文件 filename 中的每一行打印出">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.crsky.uk/images/linux.jpg">
+<meta property="article:published_time" content="2025-02-20T15:52:00.000Z">
+<meta property="article:modified_time" content="2025-02-22T10:34:29.387Z">
+<meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="Linux工具箱·Linux Toolbox">
+<meta property="article:tag" content="科技·Tech">
+<meta property="article:tag" content="awk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.crsky.uk/images/linux.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "awk命令",
+  "url": "https://blog.crsky.uk/posts/linux-cmd-awk.html",
+  "image": "https://blog.crsky.uk/images/linux.jpg",
+  "datePublished": "2025-02-20T15:52:00.000Z",
+  "dateModified": "2025-02-22T10:34:29.387Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Chan Revival",
+      "url": "https://blog.crsky.uk/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.crsky.uk/posts/linux-cmd-awk.html"><link rel="preconnect"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-1930969495144394',
+  enable_page_level_ads: 'true'
+});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-VN485BL2P4')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-VN485BL2P4', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'awk命令',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="/pluginsSrc/pace-js/themes/blue/pace-theme-minimal.css"/><script src="/pluginsSrc/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">128</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">192</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页·Home</span></a></div><div class="menus_item"><a class="site-page" href="/news/"><i class="fa-fw fas fa-newspaper"></i><span> 新闻·News</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-cogs"></i><span> 技术·Tech</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/exoplanets/"><i class="fa-fw fas fa-globe"></i><span> 地外文明·Exoplanets</span></a></li><li><a class="site-page child" href="/software/"><i class="fa-fw fas fa-code"></i><span> 软件技术·Software</span></a></li><li><a class="site-page child" href="/database/"><i class="fa-fw fas fa-database"></i><span> 数据库技术·Databases</span></a></li><li><a class="site-page child" href="/linux_tools/"><i class="fa-fw fas fa-terminal"></i><span> Linux工具箱·Linux Tools</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 休闲·Leisure</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/literature/"><i class="fa-fw fas fa-newspaper"></i><span> 美文共赏·Literature</span></a></li><li><a class="site-page child" href="/photography2/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影艺术·Photography</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐潮流·Music</span></a></li><li><a class="site-page child" href="/cinema/"><i class="fa-fw fas fa-film"></i><span> 影视艺术·Cinema</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-comments"></i><span> 关于·About</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/feedback/"><i class="fa-fw fas fa-comments"></i><span> 留言板·Feedback</span></a></li><li><a class="site-page child" href="/voice/"><i class="fa-fw fas fa-user"></i><span> 站主之声·Voice</span></a></li><li><a class="site-page child" href="/updates/"><i class="fa-fw fas fa-cogs"></i><span> 网站更新·Updates</span></a></li><li><a class="site-page child" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系我们·Contact</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Chan Revival Sky</span></a><a class="nav-page-title" href="/"><span class="site-name">awk命令</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页·Home</span></a></div><div class="menus_item"><a class="site-page" href="/news/"><i class="fa-fw fas fa-newspaper"></i><span> 新闻·News</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-cogs"></i><span> 技术·Tech</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/exoplanets/"><i class="fa-fw fas fa-globe"></i><span> 地外文明·Exoplanets</span></a></li><li><a class="site-page child" href="/software/"><i class="fa-fw fas fa-code"></i><span> 软件技术·Software</span></a></li><li><a class="site-page child" href="/database/"><i class="fa-fw fas fa-database"></i><span> 数据库技术·Databases</span></a></li><li><a class="site-page child" href="/linux_tools/"><i class="fa-fw fas fa-terminal"></i><span> Linux工具箱·Linux Tools</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 休闲·Leisure</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/literature/"><i class="fa-fw fas fa-newspaper"></i><span> 美文共赏·Literature</span></a></li><li><a class="site-page child" href="/photography2/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影艺术·Photography</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐潮流·Music</span></a></li><li><a class="site-page child" href="/cinema/"><i class="fa-fw fas fa-film"></i><span> 影视艺术·Cinema</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-comments"></i><span> 关于·About</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/feedback/"><i class="fa-fw fas fa-comments"></i><span> 留言板·Feedback</span></a></li><li><a class="site-page child" href="/voice/"><i class="fa-fw fas fa-user"></i><span> 站主之声·Voice</span></a></li><li><a class="site-page child" href="/updates/"><i class="fa-fw fas fa-cogs"></i><span> 网站更新·Updates</span></a></li><li><a class="site-page child" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系我们·Contact</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">awk命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-20T15:52:00.000Z" title="发表于 2025-02-20 23:52:00">2025-02-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-22T10:34:29.387Z" title="更新于 2025-02-22 18:34:29">2025-02-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80%C2%B7Tech/">科技·Tech</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80%C2%B7Tech/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/">Linux工具箱·Linux Toolbox</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-22 18:34:29&quot;}" hidden></div><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>awk 是一个强大的文本处理工具，广泛用于模式扫描和处理任务。它能够逐行读取输入，匹配模式并执行相应的动作。awk 被设计用于在输入数据中根据特定模式进行搜索、筛选和处理，常用于日志分析、数据处理等场景。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>打印文件中的每一行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;&#123;print&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令将文件 filename 中的每一行打印出来。</p>
+</li>
+<li><p>打印特定字段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令打印文件中每一行的第一个字段（以空格或制表符为分隔符）。</p>
+</li>
+<li><p>根据条件筛选并打印匹配的行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;$1 == &quot;John&quot; &#123;print $0&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令筛选出第一列为 “John” 的行，并打印整个行。</p>
+</li>
+<li><p>计算文件中第二列的和</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;&#123;sum += $2&#125; END &#123;print sum&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令计算文件中第二列所有数值的总和。</p>
+</li>
+<li><p>以逗号分隔的文件中打印特定字段</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F, <span class="string">&#x27;&#123;print $3&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令将字段分隔符设置为逗号，并打印每行的第三个字段。</p>
+</li>
+<li><p>打印匹配多个条件的行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;$1 == &quot;John&quot; &amp;&amp; $2 &gt; 50 &#123;print $0&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令筛选出第一列为 “John” 且第二列大于50的行。</p>
+</li>
+<li><p>打印每行的行号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;&#123;print NR, $0&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令打印文件中每一行的行号和内容。</p>
+</li>
+<li><p>替换字段中的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;&#123;gsub(/apple/, &quot;orange&quot;); print $0&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
+<p>该命令将每行中的 “apple” 替换为 “orange” 并打印结果。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ol>
+<li><p>-F sepstring<br>设置输入字段分隔符。<br>awk -F”:” ‘{print $1}’ filename<br>将字段分隔符设置为冒号，打印文件中每行的第一个字段。</p>
+</li>
+<li><p>-f progfile<br>指定包含 awk 程序的文件。<br>awk -f program.awk filename<br>从 program.awk 文件中读取 awk 程序，并应用于文件 filename。</p>
+</li>
+<li><p>-v assignment<br>在执行 awk 程序前先进行变量赋值。<br>awk -v var&#x3D;10 ‘{print var}’ filename<br>为 var 变量赋值为 10，并打印该变量的值。</p>
+</li>
+<li><p>-v FS&#x3D;sepstring<br>设置输入记录的字段分隔符。<br>awk -v FS&#x3D;”;” ‘{print $1}’ filename<br>将字段分隔符设置为分号，并打印每行的第一个字段。</p>
+</li>
+<li><p>BEGIN<br>在处理输入文件之前执行的代码块。<br>awk ‘BEGIN {print “Start Processing”} {print $1}’ filename<br>在处理文件之前，先打印 “Start Processing”。</p>
+</li>
+<li><p>END<br>在处理完输入文件之后执行的代码块。<br>awk ‘END {print “Processing Completed”}’ filename<br>在处理完所有行后打印 “Processing Completed”。</p>
+</li>
+<li><p>-F,<br>指定逗号作为字段分隔符。<br>awk -F, ‘{print $2}’ filename<br>将字段分隔符设置为逗号，并打印第二个字段。</p>
+</li>
+<li><p>NR<br>表示当前行号。<br>awk ‘{print NR, $0}’ filename<br>打印每行的行号及其内容。</p>
+</li>
+</ol>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>PROLOG </p>
+<pre><code>   This manual page is part of the POSIX Programmer&#39;s Manual.  The
+   Linux implementation of this interface may differ (consult the
+   corresponding Linux manual page for details of Linux behavior), or
+   the interface may not be implemented on Linux.
+</code></pre>
+<p>NAME </p>
+<pre><code>   awk — pattern scanning and processing language
+</code></pre>
+<p>SYNOPSIS </p>
+<pre><code>   awk [-F sepstring] [-v assignment]... program [argument...]
+
+   awk [-F sepstring] -f progfile [-f progfile]... [-v assignment]...
+        [argument...]
+</code></pre>
+<p>DESCRIPTION </p>
+<pre><code>   The awk utility shall execute programs written in the awk
+   programming language, which is specialized for textual data
+   manipulation. An awk program is a sequence of patterns and
+   corresponding actions. When input is read that matches a pattern,
+   the action associated with that pattern is carried out.
+
+   Input shall be interpreted as a sequence of records. By default, a
+   record is a line, less its terminating &lt;newline&gt;, but this can be
+   changed by using the RS built-in variable. Each record of input
+   shall be matched in turn against each pattern in the program. For
+   each pattern matched, the associated action shall be executed.
+
+   The awk utility shall interpret each input record as a sequence of
+   fields where, by default, a field is a string of non-&lt;blank&gt;
+   non-&lt;newline&gt; characters. This default &lt;blank&gt; and &lt;newline&gt; field
+   delimiter can be changed by using the FS built-in variable or the
+   -F sepstring option. The awk utility shall denote the first field
+   in a record $1, the second $2, and so on. The symbol $0 shall
+   refer to the entire record; setting any other field causes the re-
+   evaluation of $0. Assigning to $0 shall reset the values of all
+   other fields and the NF built-in variable.
+</code></pre>
+<p>OPTIONS </p>
+<pre><code>   The awk utility shall conform to the Base Definitions volume of
+   POSIX.1‐2017, Section 12.2, Utility Syntax Guidelines.
+
+   The following options shall be supported:
+
+   -F sepstring
+             Define the input field separator. This option shall be
+             equivalent to:
+
+                 -v FS=sepstring
+
+             except that if -F sepstring and -v FS=sepstring are both
+             used, it is unspecified whether the FS assignment
+             resulting from -F sepstring is processed in command line
+             order or is processed after the last -v FS=sepstring.
+             See the description of the FS built-in variable, and how
+             it is used, in the EXTENDED DESCRIPTION section.
+
+   -f progfile
+             Specify the pathname of the file progfile containing an
+             awk program. A pathname of &#39;-&#39; shall denote the standard
+             input. If multiple instances of this option are
+             specified, the concatenation of the files specified as
+             progfile in the order specified shall be the awk
+             program. The awk program can alternatively be specified
+             in the command line as a single argument.
+
+   -v assignment
+             The application shall ensure that the assignment
+             argument is in the same form as an assignment operand.
+             The specified variable assignment shall occur prior to
+             executing the awk program, including the actions
+             associated with BEGIN patterns (if any). Multiple
+             occurrences of this option can be specified.
+</code></pre>
+<p>OPERANDS </p>
+<pre><code>   The following operands shall be supported:
+
+   program   If no -f option is specified, the first operand to awk
+             shall be the text of the awk program. The application
+             shall supply the program operand as a single argument to
+             awk.  If the text does not end in a &lt;newline&gt;, awk shall
+             interpret the text as if it did.
+
+   argument  Either of the following two types of argument can be
+             intermixed:
+
+             file      A pathname of a file that contains the input
+                       to be read, which is matched against the set
+                       of patterns in the program. If no file
+                       operands are specified, or if a file operand
+                       is &#39;-&#39;, the standard input shall be used.
+
+             assignment
+                       An operand that begins with an &lt;underscore&gt; or
+                       alphabetic character from the portable
+                       character set (see the table in the Base
+                       Definitions volume of POSIX.1‐2017, Section
+                       6.1, Portable Character Set), followed by a
+                       sequence of underscores, digits, and
+                       alphabetics from the portable character set,
+                       followed by the &#39;=&#39; character, shall specify a
+                       variable assignment rather than a pathname.
+                       The characters before the &#39;=&#39; represent the
+                       name of an awk variable; if that name is an
+                       awk reserved word (see Grammar) the behavior
+                       is undefined. The characters following the
+                       &lt;equals-sign&gt; shall be interpreted as if they
+                       appeared in the awk program preceded and
+                       followed by a double-quote (&#39;&quot;&#39;) character, as
+                       a STRING token (see Grammar), except that if
+                       the last character is an unescaped
+                       &lt;backslash&gt;, it shall be interpreted as a
+                       literal &lt;backslash&gt; rather than as the first
+                       character of the sequence &quot;\&quot;&quot;.  The variable
+                       shall be assigned the value of that STRING
+                       token and, if appropriate, shall be considered
+                       a numeric string (see Expressions in awk), the
+                       variable shall also be assigned its numeric
+                       value. Each such variable assignment shall
+                       occur just prior to the processing of the
+                       following file, if any. Thus, an assignment
+                       before the first file argument shall be
+                       executed after the BEGIN actions (if any),
+                       while an assignment after the last file
+                       argument shall occur before the END actions
+                       (if any). If there are no file arguments,
+                       assignments shall be executed before
+                       processing the standard input.
+</code></pre>
+<p>STDIN </p>
+<pre><code>   The standard input shall be used only if no file operands are
+   specified, or if a file operand is &#39;-&#39;, or if a progfile option-
+   argument is &#39;-&#39;; see the INPUT FILES section. If the awk program
+   contains no actions and no patterns, but is otherwise a valid awk
+   program, standard input and any file operands shall not be read
+   and awk shall exit with a return status of zero.
+</code></pre>
+<p>INPUT FILES </p>
+<pre><code>   Input files to the awk program from any of the following sources
+   shall be text files:
+
+    *  Any file operands or their equivalents, achieved by modifying
+       the awk variables ARGV and ARGC
+
+    *  Standard input in the absence of any file operands
+
+    *  Arguments to the getline function
+
+   Whether the variable RS is set to a value other than a &lt;newline&gt;
+   or not, for these files, implementations shall support records
+   terminated with the specified separator up to &#123;LINE_MAX&#125; bytes and
+   may support longer records.
+
+   If -f progfile is specified, the application shall ensure that the
+   files named by each of the progfile option-arguments are text
+   files and their concatenation, in the same order as they appear in
+   the arguments, is an awk program.
+</code></pre>
+<p>ENVIRONMENT VARIABLES </p>
+<pre><code>   The following environment variables shall affect the execution of
+   awk:
+
+   LANG      Provide a default value for the internationalization
+             variables that are unset or null. (See the Base
+             Definitions volume of POSIX.1‐2017, Section 8.2,
+             Internationalization Variables for the precedence of
+             internationalization variables used to determine the
+             values of locale categories.)
+
+   LC_ALL    If set to a non-empty string value, override the values
+             of all the other internationalization variables.
+
+   LC_COLLATE
+             Determine the locale for the behavior of ranges,
+             equivalence classes, and multi-character collating
+             elements within regular expressions and in comparisons
+             of string values.
+
+   LC_CTYPE  Determine the locale for the interpretation of sequences
+             of bytes of text data as characters (for example,
+             single-byte as opposed to multi-byte characters in
+             arguments and input files), the behavior of character
+             classes within regular expressions, the identification
+             of characters as letters, and the mapping of uppercase
+             and lowercase characters for the toupper and tolower
+             functions.
+
+   LC_MESSAGES
+             Determine the locale that should be used to affect the
+             format and contents of diagnostic messages written to
+             standard error.
+
+   LC_NUMERIC
+             Determine the radix character used when interpreting
+             numeric input, performing conversions between numeric
+             and string values, and formatting numeric output.
+             Regardless of locale, the &lt;period&gt; character (the
+             decimal-point character of the POSIX locale) is the
+             decimal-point character recognized in processing awk
+             programs (including assignments in command line
+             arguments).
+
+   NLSPATH   Determine the location of message catalogs for the
+             processing of LC_MESSAGES.
+
+   PATH      Determine the search path when looking for commands
+             executed by system(expr), or input and output pipes; see
+             the Base Definitions volume of POSIX.1‐2017, Chapter 8,
+             Environment Variables.
+
+   In addition, all environment variables shall be visible via the
+   awk variable ENVIRON.
+</code></pre>
+<p>ASYNCHRONOUS EVENTS </p>
+<pre><code>   Default.
+</code></pre>
+<p>STDOUT </p>
+<pre><code>   The nature of the output files depends on the awk program.
+</code></pre>
+<p>STDERR </p>
+<pre><code>   The standard error shall be used only for diagnostic messages.
+</code></pre>
+<p>OUTPUT FILES </p>
+<pre><code>   The nature of the output files depends on the awk program.
+</code></pre>
+<p>EXTENDED DESCRIPTION </p>
+<p>   Overall Program Structure<br>       An awk program is composed of pairs of the form:</p>
+<pre><code>       pattern &#123; action &#125;
+
+   Either the pattern or the action (including the enclosing brace
+   characters) can be omitted.
+
+   A missing pattern shall match any record of input, and a missing
+   action shall be equivalent to:
+
+       &#123; print &#125;
+
+   Execution of the awk program shall start by first executing the
+   actions associated with all BEGIN patterns in the order they occur
+   in the program. Then each file operand (or standard input if no
+   files were specified) shall be processed in turn by reading data
+   from the file until a record separator is seen (&lt;newline&gt; by
+   default). Before the first reference to a field in the record is
+   evaluated, the record shall be split into fields, according to the
+   rules in Regular Expressions, using the value of FS that was
+   current at the time the record was read. Each pattern in the
+   program then shall be evaluated in the order of occurrence, and
+   the action associated with each pattern that matches the current
+   record executed. The action for a matching pattern shall be
+   executed before evaluating subsequent patterns. Finally, the
+   actions associated with all END patterns shall be executed in the
+   order they occur in the program.
+</code></pre>
+<p>   Expressions in awk<br>       Expressions describe computations used in patterns and actions.<br>       In the following table, valid expression operations are given in<br>       groups from highest precedence first to lowest precedence last,<br>       with equal-precedence operators grouped between horizontal lines.<br>       In expression evaluation, where the grammar is formally ambiguous,<br>       higher precedence operators shall be evaluated before lower<br>       precedence operators. In this table expr, expr1, expr2, and expr3<br>       represent any expression, while lvalue represents any entity that<br>       can be assigned to (that is, on the left side of an assignment<br>       operator).  The precise syntax of expressions is given in Grammar.</p>
+<pre><code>         Table 4-1: Expressions in Decreasing Precedence in awk
+</code></pre>
+<p>┌──────────────────────┬─────────────────────────┬────────────────┬──────────────┐<br>│        Syntax        │          Name           │ Type of Result │Associativity │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ ( expr )             │Grouping                 │Type of expr    │N&#x2F;A           │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ $expr                │Field reference          │String          │N&#x2F;A           │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ lvalue ++            │Post-increment           │Numeric         │N&#x2F;A           │<br>│ lvalue –            │Post-decrement           │Numeric         │N&#x2F;A           │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ ++ lvalue            │Pre-increment            │Numeric         │N&#x2F;A           │<br>│ – lvalue            │Pre-decrement            │Numeric         │N&#x2F;A           │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr ^ expr          │Exponentiation           │Numeric         │Right         │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ ! expr               │Logical not              │Numeric         │N&#x2F;A           │<br>│ + expr               │Unary plus               │Numeric         │N&#x2F;A           │<br>│ - expr               │Unary minus              │Numeric         │N&#x2F;A           │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr * expr          │Multiplication           │Numeric         │Left          │<br>│ expr &#x2F; expr          │Division                 │Numeric         │Left          │<br>│ expr % expr          │Modulus                  │Numeric         │Left          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr + expr          │Addition                 │Numeric         │Left          │<br>│ expr - expr          │Subtraction              │Numeric         │Left          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr expr            │String concatenation     │String          │Left          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr &lt; expr          │Less than                │Numeric         │None          │<br>│ expr &lt;&#x3D; expr         │Less than or equal to    │Numeric         │None          │<br>│ expr !&#x3D; expr         │Not equal to             │Numeric         │None          │<br>│ expr &#x3D;&#x3D; expr         │Equal to                 │Numeric         │None          │<br>│ expr &gt; expr          │Greater than             │Numeric         │None          │<br>│ expr &gt;&#x3D; expr         │Greater than or equal to │Numeric         │None          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr ~ expr          │ERE match                │Numeric         │None          │<br>│ expr !~ expr         │ERE non-match            │Numeric         │None          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr in array        │Array membership         │Numeric         │Left          │<br>│ ( index ) in array   │Multi-dimension array    │Numeric         │Left          │<br>│                      │membership               │                │              │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr &amp;&amp; expr         │Logical AND              │Numeric         │Left          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr || expr         │Logical OR               │Numeric         │Left          │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ expr1 ? expr2 : expr3│Conditional expression   │Type of selected│Right         │<br>│                      │                         │expr2 or expr3  │              │<br>├──────────────────────┼─────────────────────────┼────────────────┼──────────────┤<br>│ lvalue ^&#x3D; expr       │Exponentiation assignment│Numeric         │Right         │<br>│ lvalue %&#x3D; expr       │Modulus assignment       │Numeric         │Right         │<br>│ lvalue *&#x3D; expr       │Multiplication assignment│Numeric         │Right         │<br>│ lvalue &#x2F;&#x3D; expr       │Division assignment      │Numeric         │Right         │<br>│ lvalue +&#x3D; expr       │Addition assignment      │Numeric         │Right         │<br>│ lvalue -&#x3D; expr       │Subtraction assignment   │Numeric         │Right         │<br>│ lvalue &#x3D; expr        │Assignment               │Type of expr    │Right         │<br>└──────────────────────┴─────────────────────────┴────────────────┴──────────────┘</p>
+<pre><code>   Each expression shall have either a string value, a numeric value,
+   or both. Except as stated for specific contexts, the value of an
+   expression shall be implicitly converted to the type needed for
+   the context in which it is used. A string value shall be converted
+   to a numeric value either by the equivalent of the following calls
+   to functions defined by the ISO C standard:
+
+       setlocale(LC_NUMERIC, &quot;&quot;);
+       numeric_value = atof(string_value);
+
+   or by converting the initial portion of the string to type double
+   representation as follows:
+
+          The input string is decomposed into two parts: an initial,
+          possibly empty, sequence of white-space characters (as
+          specified by isspace()) and a subject sequence interpreted
+          as a floating-point constant.
+
+          The expected form of the subject sequence is an optional
+          &#39;+&#39; or &#39;-&#39; sign, then a non-empty sequence of digits
+          optionally containing a &lt;period&gt;, then an optional exponent
+          part. An exponent part consists of &#39;e&#39; or &#39;E&#39;, followed by
+          an optional sign, followed by one or more decimal digits.
+
+          The sequence starting with the first digit or the &lt;period&gt;
+          (whichever occurs first) is interpreted as a floating
+          constant of the C language, and if neither an exponent part
+          nor a &lt;period&gt; appears, a &lt;period&gt; is assumed to follow the
+          last digit in the string. If the subject sequence begins
+          with a &lt;hyphen-minus&gt;, the value resulting from the
+          conversion is negated.
+
+   A numeric value that is exactly equal to the value of an integer
+   (see Section 1.1.2, Concepts Derived from the ISO C Standard)
+   shall be converted to a string by the equivalent of a call to the
+   sprintf function (see String Functions) with the string &quot;%d&quot; as
+   the fmt argument and the numeric value being converted as the
+   first and only expr argument. Any other numeric value shall be
+   converted to a string by the equivalent of a call to the sprintf
+   function with the value of the variable CONVFMT as the fmt
+   argument and the numeric value being converted as the first and
+   only expr argument. The result of the conversion is unspecified if
+   the value of CONVFMT is not a floating-point format specification.
+   This volume of POSIX.1‐2017 specifies no explicit conversions
+   between numbers and strings. An application can force an
+   expression to be treated as a number by adding zero to it, or can
+   force it to be treated as a string by concatenating the null
+   string (&quot;&quot;) to it.
+
+   A string value shall be considered a numeric string if it comes
+   from one of the following:
+
+    1. Field variables
+
+    2. Input from the getline() function
+
+    3. FILENAME
+
+    4. ARGV array elements
+
+    5. ENVIRON array elements
+
+    6. Array elements created by the split() function
+
+    7. A command line variable assignment
+
+    8. Variable assignment from another numeric string variable
+
+   and an implementation-dependent condition corresponding to either
+   case (a) or (b) below is met.
+
+    a. After the equivalent of the following calls to functions
+       defined by the ISO C standard, string_value_end would differ
+       from string_value, and any characters before the terminating
+       null character in string_value_end would be &lt;blank&gt;
+       characters:
+
+           char *string_value_end;
+           setlocale(LC_NUMERIC, &quot;&quot;);
+           numeric_value = strtod (string_value, &amp;string_value_end);
+
+    b. After all the following conversions have been applied, the
+       resulting string would lexically be recognized as a NUMBER
+       token as described by the lexical conventions in Grammar:
+
+       --  All leading and trailing &lt;blank&gt; characters are discarded.
+
+       --  If the first non-&lt;blank&gt; is &#39;+&#39; or &#39;-&#39;, it is discarded.
+
+       --  Each occurrence of the decimal point character from the
+           current locale is changed to a &lt;period&gt;.
+   In case (a) the numeric value of the numeric string shall be the
+   value that would be returned by the strtod() call. In case (b) if
+   the first non-&lt;blank&gt; is &#39;-&#39;, the numeric value of the numeric
+   string shall be the negation of the numeric value of the
+   recognized NUMBER token; otherwise, the numeric value of the
+   numeric string shall be the numeric value of the recognized NUMBER
+   token. Whether or not a string is a numeric string shall be
+   relevant only in contexts where that term is used in this section.
+
+   When an expression is used in a Boolean context, if it has a
+   numeric value, a value of zero shall be treated as false and any
+   other value shall be treated as true. Otherwise, a string value of
+   the null string shall be treated as false and any other value
+   shall be treated as true.  A Boolean context shall be one of the
+   following:
+
+    *  The first subexpression of a conditional expression
+
+    *  An expression operated on by logical NOT, logical AND, or
+       logical OR
+
+    *  The second expression of a for statement
+
+    *  The expression of an if statement
+
+    *  The expression of the while clause in either a while or
+       do...while statement
+
+    *  An expression used as a pattern (as in Overall Program
+       Structure)
+
+   All arithmetic shall follow the semantics of floating-point
+   arithmetic as specified by the ISO C standard (see Section 1.1.2,
+   Concepts Derived from the ISO C Standard).
+
+   The value of the expression:
+
+       expr1 ^ expr2
+
+   shall be equivalent to the value returned by the ISO C standard
+   function call:
+
+       pow(expr1, expr2)
+
+   The expression:
+
+       lvalue ^= expr
+
+   shall be equivalent to the ISO C standard expression:
+
+       lvalue = pow(lvalue, expr)
+
+   except that lvalue shall be evaluated only once. The value of the
+   expression:
+
+       expr1 % expr2
+
+   shall be equivalent to the value returned by the ISO C standard
+   function call:
+
+       fmod(expr1, expr2)
+
+   The expression:
+
+       lvalue %= expr
+
+   shall be equivalent to the ISO C standard expression:
+
+       lvalue = fmod(lvalue, expr)
+
+   except that lvalue shall be evaluated only once.
+
+   Variables and fields shall be set by the assignment statement:
+
+       lvalue = expression
+
+   and the type of expression shall determine the resulting variable
+   type. The assignment includes the arithmetic assignments (&quot;+=&quot;,
+   &quot;-=&quot;, &quot;*=&quot;, &quot;/=&quot;, &quot;%=&quot;, &quot;^=&quot;, &quot;++&quot;, &quot;--&quot;) all of which shall
+   produce a numeric result. The left-hand side of an assignment and
+   the target of increment and decrement operators can be one of a
+   variable, an array with index, or a field selector.
+
+   The awk language supplies arrays that are used for storing numbers
+   or strings.  Arrays need not be declared. They shall initially be
+   empty, and their sizes shall change dynamically. The subscripts,
+   or element identifiers, are strings, providing a type of
+   associative array capability. An array name followed by a
+   subscript within square brackets can be used as an lvalue and thus
+   as an expression, as described in the grammar; see Grammar.
+   Unsubscripted array names can be used in only the following
+   contexts:
+
+    *  A parameter in a function definition or function call
+
+    *  The NAME token following any use of the keyword in as
+       specified in the grammar (see Grammar); if the name used in
+       this context is not an array name, the behavior is undefined
+
+   A valid array index shall consist of one or more &lt;comma&gt;-separated
+   expressions, similar to the way in which multi-dimensional arrays
+   are indexed in some programming languages. Because awk arrays are
+   really one-dimensional, such a &lt;comma&gt;-separated list shall be
+   converted to a single string by concatenating the string values of
+   the separate expressions, each separated from the other by the
+   value of the SUBSEP variable. Thus, the following two index
+   operations shall be equivalent:
+
+       var[expr1, expr2, ... exprn]
+
+       var[expr1 SUBSEP expr2 SUBSEP ... SUBSEP exprn]
+
+   The application shall ensure that a multi-dimensioned index used
+   with the in operator is parenthesized. The in operator, which
+   tests for the existence of a particular array element, shall not
+   cause that element to exist. Any other reference to a nonexistent
+   array element shall automatically create it.
+
+   Comparisons (with the &#39;&lt;&#39;, &quot;&lt;=&quot;, &quot;!=&quot;, &quot;==&quot;, &#39;&gt;&#39;, and &quot;&gt;=&quot;
+   operators) shall be made numerically if both operands are numeric,
+   if one is numeric and the other has a string value that is a
+   numeric string, or if one is numeric and the other has the
+   uninitialized value.  Otherwise, operands shall be converted to
+   strings as required and a string comparison shall be made as
+   follows:
+
+    *  For the &quot;!=&quot; and &quot;==&quot; operators, the strings should be
+       compared to check if they are identical but may be compared
+       using the locale-specific collation sequence to check if they
+       collate equally.
+
+    *  For the other operators, the strings shall be compared using
+       the locale-specific collation sequence.
+
+   The value of the comparison expression shall be 1 if the relation
+   is true, or 0 if the relation is false.
+</code></pre>
+<p>   Variables and Special Variables<br>       Variables can be used in an awk program by referencing them. With<br>       the exception of function parameters (see User-Defined Functions),<br>       they are not explicitly declared. Function parameter names shall<br>       be local to the function; all other variable names shall be<br>       global. The same name shall not be used as both a function<br>       parameter name and as the name of a function or a special awk<br>       variable. The same name shall not be used both as a variable name<br>       with global scope and as the name of a function. The same name<br>       shall not be used within the same scope both as a scalar variable<br>       and as an array.  Uninitialized variables, including scalar<br>       variables, array elements, and field variables, shall have an<br>       uninitialized value. An uninitialized value shall have both a<br>       numeric value of zero and a string value of the empty string.<br>       Evaluation of variables with an uninitialized value, to either<br>       string or numeric, shall be determined by the context in which<br>       they are used.</p>
+<pre><code>   Field variables shall be designated by a &#39;$&#39; followed by a number
+   or numerical expression. The effect of the field number expression
+   evaluating to anything other than a non-negative integer is
+   unspecified; uninitialized variables or string values need not be
+   converted to numeric values in this context. New field variables
+   can be created by assigning a value to them. References to
+   nonexistent fields (that is, fields after $NF), shall evaluate to
+   the uninitialized value. Such references shall not create new
+   fields. However, assigning to a nonexistent field (for example,
+   $(NF+2)=5) shall increase the value of NF; create any intervening
+   fields with the uninitialized value; and cause the value of $0 to
+   be recomputed, with the fields being separated by the value of
+   OFS.  Each field variable shall have a string value or an
+   uninitialized value when created. Field variables shall have the
+   uninitialized value when created from $0 using FS and the variable
+   does not contain any characters. If appropriate, the field
+   variable shall be considered a numeric string (see Expressions in
+   awk).
+
+   Implementations shall support the following other special
+   variables that are set by awk:
+
+   ARGC      The number of elements in the ARGV array.
+
+   ARGV      An array of command line arguments, excluding options
+             and the program argument, numbered from zero to ARGC-1.
+
+             The arguments in ARGV can be modified or added to; ARGC
+             can be altered. As each input file ends, awk shall treat
+             the next non-null element of ARGV, up to the current
+             value of ARGC-1, inclusive, as the name of the next
+             input file. Thus, setting an element of ARGV to null
+             means that it shall not be treated as an input file. The
+             name &#39;-&#39; indicates the standard input. If an argument
+             matches the format of an assignment operand, this
+             argument shall be treated as an assignment rather than a
+             file argument.
+
+   CONVFMT   The printf format for converting numbers to strings
+             (except for output statements, where OFMT is used);
+             &quot;%.6g&quot; by default.
+
+   ENVIRON   An array representing the value of the environment, as
+             described in the exec functions defined in the System
+             Interfaces volume of POSIX.1‐2017. The indices of the
+             array shall be strings consisting of the names of the
+             environment variables, and the value of each array
+             element shall be a string consisting of the value of
+             that variable. If appropriate, the environment variable
+             shall be considered a numeric string (see Expressions in
+             awk); the array element shall also have its numeric
+             value.
+
+             In all cases where the behavior of awk is affected by
+             environment variables (including the environment of any
+             commands that awk executes via the system function or
+             via pipeline redirections with the print statement, the
+             printf statement, or the getline function), the
+             environment used shall be the environment at the time
+             awk began executing; it is implementation-defined
+             whether any modification of ENVIRON affects this
+             environment.
+
+   FILENAME  A pathname of the current input file. Inside a BEGIN
+             action the value is undefined. Inside an END action the
+             value shall be the name of the last input file
+             processed.
+
+   FNR       The ordinal number of the current record in the current
+             file. Inside a BEGIN action the value shall be zero.
+             Inside an END action the value shall be the number of
+             the last record processed in the last file processed.
+
+   FS        Input field separator regular expression; a &lt;space&gt; by
+             default.
+
+   NF        The number of fields in the current record. Inside a
+             BEGIN action, the use of NF is undefined unless a
+             getline function without a var argument is executed
+             previously. Inside an END action, NF shall retain the
+             value it had for the last record read, unless a
+             subsequent, redirected, getline function without a var
+             argument is performed prior to entering the END action.
+
+   NR        The ordinal number of the current record from the start
+             of input.  Inside a BEGIN action the value shall be
+             zero. Inside an END action the value shall be the number
+             of the last record processed.
+
+   OFMT      The printf format for converting numbers to strings in
+             output statements (see Output Statements); &quot;%.6g&quot; by
+             default. The result of the conversion is unspecified if
+             the value of OFMT is not a floating-point format
+             specification.
+
+   OFS       The print statement output field separator; &lt;space&gt; by
+             default.
+
+   ORS       The print statement output record separator; a &lt;newline&gt;
+             by default.
+
+   RLENGTH   The length of the string matched by the match function.
+
+   RS        The first character of the string value of RS shall be
+             the input record separator; a &lt;newline&gt; by default. If
+             RS contains more than one character, the results are
+             unspecified. If RS is null, then records are separated
+             by sequences consisting of a &lt;newline&gt; plus one or more
+             blank lines, leading or trailing blank lines shall not
+             result in empty records at the beginning or end of the
+             input, and a &lt;newline&gt; shall always be a field
+             separator, no matter what the value of FS is.
+
+   RSTART    The starting position of the string matched by the match
+             function, numbering from 1. This shall always be
+             equivalent to the return value of the match function.
+
+   SUBSEP    The subscript separator string for multi-dimensional
+             arrays; the default value is implementation-defined.
+</code></pre>
+<p>   Regular Expressions<br>       The awk utility shall make use of the extended regular expression<br>       notation (see the Base Definitions volume of POSIX.1‐2017, Section<br>       9.4, Extended Regular Expressions) except that it shall allow the<br>       use of C-language conventions for escaping special characters<br>       within the EREs, as specified in the table in the Base Definitions<br>       volume of POSIX.1‐2017, Chapter 5, File Format Notation (‘\‘,<br>       ‘\a’, ‘\b’, ‘\f’, ‘\n’, ‘\r’, ‘\t’, ‘\v’) and the following table;<br>       these escape sequences shall be recognized both inside and outside<br>       bracket expressions. Note that records need not be separated by<br>       <newline> characters and string constants can contain <newline><br>       characters, so even the “\n” sequence is valid in awk EREs. Using<br>       a <slash> character within an ERE requires the escaping shown in<br>       the following table.</p>
+<pre><code>                   Table 4-2: Escape Sequences in awk
+</code></pre>
+<p>┌──────────┬────────────────────────────────────┬────────────────────────────────────┐<br>│  Escape  │                                    │                                    │<br>│ Sequence │            Description             │              Meaning               │<br>├──────────┼────────────────────────────────────┼────────────────────────────────────┤<br>│ &quot;       │ <backslash> <quotation-mark>       │ <quotation-mark> character         │<br>├──────────┼────────────────────────────────────┼────────────────────────────────────┤<br>│ /       │ <backslash> <slash>                │ <slash> character                  │<br>├──────────┼────────────────────────────────────┼────────────────────────────────────┤<br>│ \ddd     │ A <backslash> character followed   │ The character whose encoding is    │<br>│          │ by the longest sequence of one,    │ represented by the one, two, or    │<br>│          │ two, or three octal-digit          │ three-digit octal integer. Multi-  │<br>│          │ characters (01234567). If all of   │ byte characters require multiple,  │<br>│          │ the digits are 0 (that is,         │ concatenated escape sequences of   │<br>│          │ representation of the NUL          │ this type, including the leading   │<br>│          │ character), the behavior is        │ <backslash> for each byte.         │<br>│          │ undefined.                         │                                    │<br>├──────────┼────────────────────────────────────┼────────────────────────────────────┤<br>│ \c       │ A <backslash> character followed   │ Undefined                          │<br>│          │ by any character not described in  │                                    │<br>│          │ this table or in the table in the  │                                    │<br>│          │ Base Definitions volume of         │                                    │<br>│          │ POSIX.1‐2017, Chapter 5, File      │                                    │<br>│          │ Format Notation (‘\‘, ‘\a’, ‘\b’, │                                    │<br>│          │ ‘\f’, ‘\n’, ‘\r’, ‘\t’, ‘\v’).     │                                    │<br>└──────────┴────────────────────────────────────┴────────────────────────────────────┘</p>
+<pre><code>   A  regular  expression  can be matched against a specific field or
+   string by  using  one  of  the  two  regular  expression  matching
+   operators,  &#39;~&#39;  and  &quot;!~&quot;.  These operators shall interpret their
+   right-hand operand as a regular  expression  and  their  left-hand
+   operand as a string. If the regular expression matches the string,
+   the  &#39;~&#39;  expression  shall evaluate to a value of 1, and the &quot;!~&quot;
+   expression shall evaluate to a value of 0. (The regular expression
+   matching operation is as defined by the term matched in  the  Base
+   Definitions   volume   of   POSIX.1‐2017,   Section  9.1,  Regular
+   Expression Definitions, where a match occurs on any  part  of  the
+   string   unless   the  regular  expression  is  limited  with  the
+   &lt;circumflex&gt; or &lt;dollar-sign&gt; special characters.) If the  regular
+   expression  does  not  match  the string, the &#39;~&#39; expression shall
+   evaluate to a value of 0, and the &quot;!~&quot; expression  shall  evaluate
+   to a value of 1. If the right-hand operand is any expression other
+   than  the  lexical  token  ERE, the string value of the expression
+   shall be interpreted as an extended regular expression,  including
+   the  escape  conventions  described  above.   Note that these same
+   escape conventions shall also be applied in determining the  value
+   of  a string literal (the lexical token STRING), and thus shall be
+   applied a second time when  a  string  literal  is  used  in  this
+   context.
+
+   When  an  ERE  token appears as an expression in any context other
+   than as the right-hand of the &#39;~&#39; or &quot;!~&quot; operator or  as  one  of
+   the  built-in function arguments described below, the value of the
+   resulting expression shall be the equivalent of:
+
+       $0 ~ /ere/
+
+   The ere argument to the gsub, match, sub  functions,  and  the  fs
+   argument  to  the  split  function (see String Functions) shall be
+   interpreted as extended regular expressions. These can  be  either
+   ERE  tokens  or arbitrary expressions, and shall be interpreted in
+   the same manner  as  the  right-hand  side  of  the  &#39;~&#39;  or  &quot;!~&quot;
+   operator.
+
+   An  extended  regular expression can be used to separate fields by
+   assigning a string  containing  the  expression  to  the  built-in
+   variable  FS,  either directly or as a consequence of using the -F
+   sepstring option.  The default value of the FS variable shall be a
+   single &lt;space&gt;.  The following describes FS behavior:
+
+    1. If FS is a null string, the behavior is unspecified.
+
+    2. If FS is a single character:
+
+        a. If FS is &lt;space&gt;, skip leading and trailing &lt;blank&gt; and
+           &lt;newline&gt; characters; fields shall be delimited by sets of
+           one or more &lt;blank&gt; or &lt;newline&gt; characters.
+
+        b. Otherwise, if FS is any other character c, fields shall be
+           delimited by each single occurrence of c.
+
+    3. Otherwise, the string value of FS shall be considered to be an
+       extended regular expression. Each occurrence of a sequence
+       matching the extended regular expression shall delimit fields.
+
+   Except for the &#39;~&#39; and &quot;!~&quot; operators, and in the gsub, match,
+   split, and sub built-in functions, ERE matching shall be based on
+   input records; that is, record separator characters (the first
+   character of the value of the variable RS, &lt;newline&gt; by default)
+   cannot be embedded in the expression, and no expression shall
+   match the record separator character. If the record separator is
+   not &lt;newline&gt;, &lt;newline&gt; characters embedded in the expression can
+   be matched. For the &#39;~&#39; and &quot;!~&quot; operators, and in those four
+   built-in functions, ERE matching shall be based on text strings;
+   that is, any character (including &lt;newline&gt; and the record
+   separator) can be embedded in the pattern, and an appropriate
+   pattern shall match any character. However, in all awk ERE
+   matching, the use of one or more NUL characters in the pattern,
+   input record, or text string produces undefined results.
+</code></pre>
+<p>   Patterns<br>       A pattern is any valid expression, a range specified by two<br>       expressions separated by a comma, or one of the two special<br>       patterns BEGIN or END.</p>
+<p>   Special Patterns<br>       The awk utility shall recognize two special patterns, BEGIN and<br>       END.  Each BEGIN pattern shall be matched once and its associated<br>       action executed before the first record of input is read—except<br>       possibly by use of the getline function (see Input&#x2F;Output and<br>       General Functions) in a prior BEGIN action—and before command line<br>       assignment is done. Each END pattern shall be matched once and its<br>       associated action executed after the last record of input has been<br>       read. These two patterns shall have associated actions.</p>
+<pre><code>   BEGIN and END shall not combine with other patterns. Multiple
+   BEGIN and END patterns shall be allowed. The actions associated
+   with the BEGIN patterns shall be executed in the order specified
+   in the program, as are the END actions. An END pattern can precede
+   a BEGIN pattern in a program.
+
+   If an awk program consists of only actions with the pattern BEGIN,
+   and the BEGIN action contains no getline function, awk shall exit
+   without reading its input when the last statement in the last
+   BEGIN action is executed. If an awk program consists of only
+   actions with the pattern END or only actions with the patterns
+   BEGIN and END, the input shall be read before the statements in
+   the END actions are executed.
+</code></pre>
+<p>   Expression Patterns<br>       An expression pattern shall be evaluated as if it were an<br>       expression in a Boolean context. If the result is true, the<br>       pattern shall be considered to match, and the associated action<br>       (if any) shall be executed. If the result is false, the action<br>       shall not be executed.</p>
+<p>   Pattern Ranges<br>       A pattern range consists of two expressions separated by a comma;<br>       in this case, the action shall be performed for all records<br>       between a match of the first expression and the following match of<br>       the second expression, inclusive. At this point, the pattern range<br>       can be repeated starting at input records subsequent to the end of<br>       the matched range.</p>
+<p>   Actions<br>       An action is a sequence of statements as shown in the grammar in<br>       Grammar.  Any single statement can be replaced by a statement list<br>       enclosed in curly braces. The application shall ensure that<br>       statements in a statement list are separated by <newline> or<br>       <semicolon> characters. Statements in a statement list shall be<br>       executed sequentially in the order that they appear.</p>
+<pre><code>   The expression acting as the conditional in an if statement shall
+   be evaluated and if it is non-zero or non-null, the following
+   statement shall be executed; otherwise, if else is present, the
+   statement following the else shall be executed.
+
+   The if, while, do...while, for, break, and continue statements are
+   based on the ISO C standard (see Section 1.1.2, Concepts Derived
+   from the ISO C Standard), except that the Boolean expressions
+   shall be treated as described in Expressions in awk, and except in
+   the case of:
+
+       for (variable in array)
+
+   which shall iterate, assigning each index of array to variable in
+   an unspecified order. The results of adding new elements to array
+   within such a for loop are undefined. If a break or continue
+   statement occurs outside of a loop, the behavior is undefined.
+
+   The delete statement shall remove an individual array element.
+   Thus, the following code deletes an entire array:
+
+       for (index in array)
+           delete array[index]
+
+   The next statement shall cause all further processing of the
+   current input record to be abandoned. The behavior is undefined if
+   a next statement appears or is invoked in a BEGIN or END action.
+
+   The exit statement shall invoke all END actions in the order in
+   which they occur in the program source and then terminate the
+   program without reading further input. An exit statement inside an
+   END action shall terminate the program without further execution
+   of END actions. If an expression is specified in an exit
+   statement, its numeric value shall be the exit status of awk,
+   unless subsequent errors are encountered or a subsequent exit
+   statement with an expression is executed.
+</code></pre>
+<p>   Output Statements<br>       Both print and printf statements shall write to standard output by<br>       default. The output shall be written to the location specified by<br>       output_redirection if one is supplied, as follows:</p>
+<pre><code>       &gt; expression
+       &gt;&gt; expression
+       | expression
+
+   In all cases, the expression shall be evaluated to produce a
+   string that is used as a pathname into which to write (for &#39;&gt;&#39; or
+   &quot;&gt;&gt;&quot;) or as a command to be executed (for &#39;|&#39;).  Using the first
+   two forms, if the file of that name is not currently open, it
+   shall be opened, creating it if necessary and using the first
+   form, truncating the file. The output then shall be appended to
+   the file. As long as the file remains open, subsequent calls in
+   which expression evaluates to the same string value shall simply
+   append output to the file. The file remains open until the close
+   function (see Input/Output and General Functions) is called with
+   an expression that evaluates to the same string value.
+
+   The third form shall write output onto a stream piped to the input
+   of a command. The stream shall be created if no stream is
+   currently open with the value of expression as its command name.
+   The stream created shall be equivalent to one created by a call to
+   the popen() function defined in the System Interfaces volume of
+   POSIX.1‐2017 with the value of expression as the command argument
+   and a value of w as the mode argument. As long as the stream
+   remains open, subsequent calls in which expression evaluates to
+   the same string value shall write output to the existing stream.
+   The stream shall remain open until the close function (see
+   Input/Output and General Functions) is called with an expression
+   that evaluates to the same string value.  At that time, the stream
+   shall be closed as if by a call to the pclose() function defined
+   in the System Interfaces volume of POSIX.1‐2017.
+
+   As described in detail by the grammar in Grammar, these output
+   statements shall take a &lt;comma&gt;-separated list of expressions
+   referred to in the grammar by the non-terminal symbols expr_list,
+   print_expr_list, or print_expr_list_opt.  This list is referred to
+   here as the expression list, and each member is referred to as an
+   expression argument.
+
+   The print statement shall write the value of each expression
+   argument onto the indicated output stream separated by the current
+   output field separator (see variable OFS above), and terminated by
+   the output record separator (see variable ORS above). All
+   expression arguments shall be taken as strings, being converted if
+   necessary; this conversion shall be as described in Expressions in
+   awk, with the exception that the printf format in OFMT shall be
+   used instead of the value in CONVFMT.  An empty expression list
+   shall stand for the whole input record ($0).
+
+   The printf statement shall produce output based on a notation
+   similar to the File Format Notation used to describe file formats
+   in this volume of POSIX.1‐2017 (see the Base Definitions volume of
+   POSIX.1‐2017, Chapter 5, File Format Notation).  Output shall be
+   produced as specified with the first expression argument as the
+   string format and subsequent expression arguments as the strings
+   arg1 to argn, inclusive, with the following exceptions:
+
+    1. The format shall be an actual character string rather than a
+       graphical representation. Therefore, it cannot contain empty
+       character positions. The &lt;space&gt; in the format string, in any
+       context other than a flag of a conversion specification, shall
+       be treated as an ordinary character that is copied to the
+       output.
+
+    2. If the character set contains a &#39;&#39; character and that
+       character appears in the format string, it shall be treated as
+       an ordinary character that is copied to the output.
+
+    3. The escape sequences beginning with a &lt;backslash&gt; character
+       shall be treated as sequences of ordinary characters that are
+       copied to the output. Note that these same sequences shall be
+       interpreted lexically by awk when they appear in literal
+       strings, but they shall not be treated specially by the printf
+       statement.
+
+    4. A field width or precision can be specified as the &#39;*&#39;
+       character instead of a digit string. In this case the next
+       argument from the expression list shall be fetched and its
+       numeric value taken as the field width or precision.
+
+    5. The implementation shall not precede or follow output from the
+       d or u conversion specifier characters with &lt;blank&gt; characters
+       not specified by the format string.
+
+    6. The implementation shall not precede output from the o
+       conversion specifier character with leading zeros not
+       specified by the format string.
+
+    7. For the c conversion specifier character: if the argument has
+       a numeric value, the character whose encoding is that value
+       shall be output. If the value is zero or is not the encoding
+       of any character in the character set, the behavior is
+       undefined. If the argument does not have a numeric value, the
+       first character of the string value shall be output; if the
+       string does not contain any characters, the behavior is
+       undefined.
+
+    8. For each conversion specification that consumes an argument,
+       the next expression argument shall be evaluated. With the
+       exception of the c conversion specifier character, the value
+       shall be converted (according to the rules specified in
+       Expressions in awk) to the appropriate type for the conversion
+       specification.
+
+    9. If there are insufficient expression arguments to satisfy all
+       the conversion specifications in the format string, the
+       behavior is undefined.
+
+   10. If any character sequence in the format string begins with a
+       &#39;%&#39; character, but does not form a valid conversion
+       specification, the behavior is unspecified.
+
+   Both print and printf can output at least &#123;LINE_MAX&#125; bytes.
+</code></pre>
+<p>   Functions<br>       The awk language has a variety of built-in functions: arithmetic,<br>       string, input&#x2F;output, and general.</p>
+<p>   Arithmetic Functions<br>       The arithmetic functions, except for int, shall be based on the<br>       ISO C standard (see Section 1.1.2, Concepts Derived from the ISO C<br>       Standard).  The behavior is undefined in cases where the ISO C<br>       standard specifies that an error be returned or that the behavior<br>       is undefined. Although the grammar (see Grammar) permits built-in<br>       functions to appear with no arguments or parentheses, unless the<br>       argument or parentheses are indicated as optional in the following<br>       list (by displaying them within the “[]” brackets), such use is<br>       undefined.</p>
+<pre><code>   atan2(y,x)
+             Return arctangent of y/x in radians in the range [-π,π].
+
+   cos(x)    Return cosine of x, where x is in radians.
+
+   sin(x)    Return sine of x, where x is in radians.
+
+   exp(x)    Return the exponential function of x.
+
+   log(x)    Return the natural logarithm of x.
+
+   sqrt(x)   Return the square root of x.
+
+   int(x)    Return the argument truncated to an integer. Truncation
+             shall be toward 0 when x&gt;0.
+
+   rand()    Return a random number n, such that 0≤n&lt;1.
+
+   srand([expr])
+             Set the seed value for rand to expr or use the time of
+             day if expr is omitted. The previous seed value shall be
+             returned.
+</code></pre>
+<p>   String Functions<br>       The string functions in the following list shall be supported.<br>       Although the grammar (see Grammar) permits built-in functions to<br>       appear with no arguments or parentheses, unless the argument or<br>       parentheses are indicated as optional in the following list (by<br>       displaying them within the “[]” brackets), such use is undefined.</p>
+<pre><code>   gsub(ere, repl[, in])
+             Behave like sub (see below), except that it shall
+             replace all occurrences of the regular expression (like
+             the ed utility global substitute) in $0 or in the in
+             argument, when specified.
+
+   index(s, t)
+             Return the position, in characters, numbering from 1, in
+             string s where string t first occurs, or zero if it does
+             not occur at all.
+
+   length[([s])]
+             Return the length, in characters, of its argument taken
+             as a string, or of the whole record, $0, if there is no
+             argument.
+
+   match(s, ere)
+             Return the position, in characters, numbering from 1, in
+             string s where the extended regular expression ere
+             occurs, or zero if it does not occur at all. RSTART
+             shall be set to the starting position (which is the same
+             as the returned value), zero if no match is found;
+             RLENGTH shall be set to the length of the matched
+             string, -1 if no match is found.
+
+   split(s, a[, fs ])
+             Split the string s into array elements a[1], a[2], ...,
+             a[n], and return n.  All elements of the array shall be
+             deleted before the split is performed. The separation
+             shall be done with the ERE fs or with the field
+             separator FS if fs is not given. Each array element
+             shall have a string value when created and, if
+             appropriate, the array element shall be considered a
+             numeric string (see Expressions in awk).  The effect of
+             a null string as the value of fs is unspecified.
+
+   sprintf(fmt, expr, expr, ...)
+             Format the expressions according to the printf format
+             given by fmt and return the resulting string.
+
+   sub(ere, repl[, in ])
+             Substitute the string repl in place of the first
+             instance of the extended regular expression ERE in
+             string in and return the number of substitutions. An
+             &lt;ampersand&gt; (&#39;&amp;&#39;) appearing in the string repl shall be
+             replaced by the string from in that matches the ERE. An
+             &lt;ampersand&gt; preceded with a &lt;backslash&gt; shall be
+             interpreted as the literal &lt;ampersand&gt; character. An
+             occurrence of two consecutive &lt;backslash&gt; characters
+             shall be interpreted as just a single literal
+             &lt;backslash&gt; character. Any other occurrence of a
+             &lt;backslash&gt; (for example, preceding any other character)
+             shall be treated as a literal &lt;backslash&gt; character.
+             Note that if repl is a string literal (the lexical token
+             STRING; see Grammar), the handling of the &lt;ampersand&gt;
+             character occurs after any lexical processing, including
+             any lexical &lt;backslash&gt;-escape sequence processing. If
+             in is specified and it is not an lvalue (see Expressions
+             in awk), the behavior is undefined. If in is omitted,
+             awk shall use the current record ($0) in its place.
+
+   substr(s, m[, n ])
+             Return the at most n-character substring of s that
+             begins at position m, numbering from 1. If n is omitted,
+             or if n specifies more characters than are left in the
+             string, the length of the substring shall be limited by
+             the length of the string s.
+
+   tolower(s)
+             Return a string based on the string s.  Each character
+             in s that is an uppercase letter specified to have a
+             tolower mapping by the LC_CTYPE category of the current
+             locale shall be replaced in the returned string by the
+             lowercase letter specified by the mapping. Other
+             characters in s shall be unchanged in the returned
+             string.
+
+   toupper(s)
+             Return a string based on the string s.  Each character
+             in s that is a lowercase letter specified to have a
+             toupper mapping by the LC_CTYPE category of the current
+             locale is replaced in the returned string by the
+             uppercase letter specified by the mapping. Other
+             characters in s are unchanged in the returned string.
+
+   All of the preceding functions that take ERE as a parameter expect
+   a pattern or a string valued expression that is a regular
+   expression as defined in Regular Expressions.
+</code></pre>
+<p>   Input&#x2F;Output and General Functions<br>       The input&#x2F;output and general functions are:</p>
+<pre><code>   close(expression)
+             Close the file or pipe opened by a print or printf
+             statement or a call to getline with the same string-
+             valued expression.  The limit on the number of open
+             expression arguments is implementation-defined. If the
+             close was successful, the function shall return zero;
+             otherwise, it shall return non-zero.
+
+   expression | getline [var]
+             Read a record of input from a stream piped from the
+             output of a command. The stream shall be created if no
+             stream is currently open with the value of expression as
+             its command name. The stream created shall be equivalent
+             to one created by a call to the popen() function with
+             the value of expression as the command argument and a
+             value of r as the mode argument. As long as the stream
+             remains open, subsequent calls in which expression
+             evaluates to the same string value shall read subsequent
+             records from the stream. The stream shall remain open
+             until the close function is called with an expression
+             that evaluates to the same string value. At that time,
+             the stream shall be closed as if by a call to the
+             pclose() function. If var is omitted, $0 and NF shall be
+             set; otherwise, var shall be set and, if appropriate, it
+             shall be considered a numeric string (see Expressions in
+             awk).
+
+             The getline operator can form ambiguous constructs when
+             there are unparenthesized operators (including
+             concatenate) to the left of the &#39;|&#39; (to the beginning of
+             the expression containing getline).  In the context of
+             the &#39;$&#39; operator, &#39;|&#39; shall behave as if it had a lower
+             precedence than &#39;$&#39;.  The result of evaluating other
+             operators is unspecified, and conforming applications
+             shall parenthesize properly all such usages.
+
+   getline   Set $0 to the next input record from the current input
+             file. This form of getline shall set the NF, NR, and FNR
+             variables.
+
+   getline var
+             Set variable var to the next input record from the
+             current input file and, if appropriate, var shall be
+             considered a numeric string (see Expressions in awk).
+             This form of getline shall set the FNR and NR variables.
+
+   getline [var] &lt; expression
+             Read the next record of input from a named file. The
+             expression shall be evaluated to produce a string that
+             is used as a pathname.  If the file of that name is not
+             currently open, it shall be opened. As long as the
+             stream remains open, subsequent calls in which
+             expression evaluates to the same string value shall read
+             subsequent records from the file. The file shall remain
+             open until the close function is called with an
+             expression that evaluates to the same string value. If
+             var is omitted, $0 and NF shall be set; otherwise, var
+             shall be set and, if appropriate, it shall be considered
+             a numeric string (see Expressions in awk).
+
+             The getline operator can form ambiguous constructs when
+             there are unparenthesized binary operators (including
+             concatenate) to the right of the &#39;&lt;&#39; (up to the end of
+             the expression containing the getline).  The result of
+             evaluating such a construct is unspecified, and
+             conforming applications shall parenthesize properly all
+             such usages.
+
+   system(expression)
+             Execute the command given by expression in a manner
+             equivalent to the system() function defined in the
+             System Interfaces volume of POSIX.1‐2017 and return the
+             exit status of the command.
+
+   All forms of getline shall return 1 for successful input, zero for
+   end-of-file, and -1 for an error.
+
+   Where strings are used as the name of a file or pipeline, the
+   application shall ensure that the strings are textually identical.
+   The terminology ``same string value&#39;&#39; implies that ``equivalent
+   strings&#39;&#39;, even those that differ only by &lt;space&gt; characters,
+   represent different files.
+</code></pre>
+<p>   User-Defined Functions<br>       The awk language also provides user-defined functions. Such<br>       functions can be defined as:</p>
+<pre><code>       function name([parameter, ...]) &#123; statements &#125;
+
+   A function can be referred to anywhere in an awk program; in
+   particular, its use can precede its definition. The scope of a
+   function is global.
+
+   Function parameters, if present, can be either scalars or arrays;
+   the behavior is undefined if an array name is passed as a
+   parameter that the function uses as a scalar, or if a scalar
+   expression is passed as a parameter that the function uses as an
+   array. Function parameters shall be passed by value if scalar and
+   by reference if array name.
+
+   The number of parameters in the function definition need not match
+   the number of parameters in the function call. Excess formal
+   parameters can be used as local variables. If fewer arguments are
+   supplied in a function call than are in the function definition,
+   the extra parameters that are used in the function body as scalars
+   shall evaluate to the uninitialized value until they are otherwise
+   initialized, and the extra parameters that are used in the
+   function body as arrays shall be treated as uninitialized arrays
+   where each element evaluates to the uninitialized value until
+   otherwise initialized.
+
+   When invoking a function, no white space can be placed between the
+   function name and the opening parenthesis. Function calls can be
+   nested and recursive calls can be made upon functions. Upon return
+   from any nested or recursive function call, the values of all of
+   the calling function&#39;s parameters shall be unchanged, except for
+   array parameters passed by reference. The return statement can be
+   used to return a value. If a return statement appears outside of a
+   function definition, the behavior is undefined.
+
+   In the function definition, &lt;newline&gt; characters shall be optional
+   before the opening brace and after the closing brace. Function
+   definitions can appear anywhere in the program where a pattern-
+   action pair is allowed.
+</code></pre>
+<p>   Grammar<br>       The grammar in this section and the lexical conventions in the<br>       following section shall together describe the syntax for awk<br>       programs. The general conventions for this style of grammar are<br>       described in Section 1.3, Grammar Conventions.  A valid program<br>       can be represented as the non-terminal symbol program in the<br>       grammar. This formal syntax shall take precedence over the<br>       preceding text syntax description.</p>
+<pre><code>       %token NAME NUMBER STRING ERE
+       %token FUNC_NAME   /* Name followed by &#39;(&#39; without white space. */
+
+       /* Keywords */
+       %token       Begin   End
+       /*          &#39;BEGIN&#39; &#39;END&#39;                            */
+
+       %token       Break   Continue   Delete   Do   Else
+       /*          &#39;break&#39; &#39;continue&#39; &#39;delete&#39; &#39;do&#39; &#39;else&#39;  */
+
+       %token       Exit   For   Function   If   In
+       /*          &#39;exit&#39; &#39;for&#39; &#39;function&#39; &#39;if&#39; &#39;in&#39;        */
+
+       %token       Next   Print   Printf   Return   While
+       /*          &#39;next&#39; &#39;print&#39; &#39;printf&#39; &#39;return&#39; &#39;while&#39; */
+
+       /* Reserved function names */
+       %token BUILTIN_FUNC_NAME
+                   /* One token for the following:
+                    * atan2 cos sin exp log sqrt int rand srand
+                    * gsub index length match split sprintf sub
+                    * substr tolower toupper close system
+                    */
+       %token GETLINE
+                   /* Syntactically different from other built-ins. */
+
+       /* Two-character tokens. */
+       %token ADD_ASSIGN SUB_ASSIGN MUL_ASSIGN DIV_ASSIGN MOD_ASSIGN POW_ASSIGN
+       /*     &#39;+=&#39;       &#39;-=&#39;       &#39;*=&#39;       &#39;/=&#39;       &#39;%=&#39;       &#39;^=&#39; */
+
+       %token OR   AND  NO_MATCH   EQ   LE   GE   NE   INCR  DECR  APPEND
+       /*     &#39;||&#39; &#39;&amp;&amp;&#39; &#39;!~&#39; &#39;==&#39; &#39;&lt;=&#39; &#39;&gt;=&#39; &#39;!=&#39; &#39;++&#39;  &#39;--&#39;  &#39;&gt;&gt;&#39;   */
+
+       /* One-character tokens. */
+       %token &#39;&#123;&#39; &#39;&#125;&#39; &#39;(&#39; &#39;)&#39; &#39;[&#39; &#39;]&#39; &#39;,&#39; &#39;;&#39; NEWLINE
+       %token &#39;+&#39; &#39;-&#39; &#39;*&#39; &#39;%&#39; &#39;^&#39; &#39;!&#39; &#39;&gt;&#39; &#39;&lt;&#39; &#39;|&#39; &#39;?&#39; &#39;:&#39; &#39;~&#39; &#39;$&#39; &#39;=&#39;
+
+       %start program
+       %%
+
+       program          : item_list
+                        | item_list item
+                        ;
+
+       item_list        : /* empty */
+                        | item_list item terminator
+                        ;
+
+       item             : action
+                        | pattern action
+                        | normal_pattern
+                        | Function NAME      &#39;(&#39; param_list_opt &#39;)&#39;
+                              newline_opt action
+                        | Function FUNC_NAME &#39;(&#39; param_list_opt &#39;)&#39;
+                              newline_opt action
+                        ;
+
+       param_list_opt   : /* empty */
+                        | param_list
+                        ;
+
+       param_list       : NAME
+                        | param_list &#39;,&#39; NAME
+                        ;
+
+       pattern          : normal_pattern
+                        | special_pattern
+                        ;
+
+       normal_pattern   : expr
+                        | expr &#39;,&#39; newline_opt expr
+                        ;
+
+       special_pattern  : Begin
+                        | End
+                        ;
+
+       action           : &#39;&#123;&#39; newline_opt                             &#39;&#125;&#39;
+                        | &#39;&#123;&#39; newline_opt terminated_statement_list   &#39;&#125;&#39;
+                        | &#39;&#123;&#39; newline_opt unterminated_statement_list &#39;&#125;&#39;
+                        ;
+
+       terminator       : terminator NEWLINE
+                        |            &#39;;&#39;
+                        |            NEWLINE
+                        ;
+
+       terminated_statement_list : terminated_statement
+                        | terminated_statement_list terminated_statement
+                        ;
+
+       unterminated_statement_list : unterminated_statement
+                        | terminated_statement_list unterminated_statement
+                        ;
+
+       terminated_statement : action newline_opt
+                        | If &#39;(&#39; expr &#39;)&#39; newline_opt terminated_statement
+                        | If &#39;(&#39; expr &#39;)&#39; newline_opt terminated_statement
+                              Else newline_opt terminated_statement
+                        | While &#39;(&#39; expr &#39;)&#39; newline_opt terminated_statement
+                        | For &#39;(&#39; simple_statement_opt &#39;;&#39;
+                             expr_opt &#39;;&#39; simple_statement_opt &#39;)&#39; newline_opt
+                             terminated_statement
+                        | For &#39;(&#39; NAME In NAME &#39;)&#39; newline_opt
+                             terminated_statement
+                        | &#39;;&#39; newline_opt
+                        | terminatable_statement NEWLINE newline_opt
+                        | terminatable_statement &#39;;&#39;     newline_opt
+                        ;
+
+       unterminated_statement : terminatable_statement
+                        | If &#39;(&#39; expr &#39;)&#39; newline_opt unterminated_statement
+                        | If &#39;(&#39; expr &#39;)&#39; newline_opt terminated_statement
+                             Else newline_opt unterminated_statement
+                        | While &#39;(&#39; expr &#39;)&#39; newline_opt unterminated_statement
+                        | For &#39;(&#39; simple_statement_opt &#39;;&#39;
+                         expr_opt &#39;;&#39; simple_statement_opt &#39;)&#39; newline_opt
+                             unterminated_statement
+                        | For &#39;(&#39; NAME In NAME &#39;)&#39; newline_opt
+                             unterminated_statement
+                        ;
+
+       terminatable_statement : simple_statement
+                        | Break
+                        | Continue
+                        | Next
+                        | Exit expr_opt
+                        | Return expr_opt
+                        | Do newline_opt terminated_statement While &#39;(&#39; expr &#39;)&#39;
+                        ;
+
+       simple_statement_opt : /* empty */
+                        | simple_statement
+                        ;
+
+       simple_statement : Delete NAME &#39;[&#39; expr_list &#39;]&#39;
+                        | expr
+                        | print_statement
+                        ;
+
+       print_statement  : simple_print_statement
+                        | simple_print_statement output_redirection
+                        ;
+
+       simple_print_statement : Print  print_expr_list_opt
+                        | Print  &#39;(&#39; multiple_expr_list &#39;)&#39;
+                        | Printf print_expr_list
+                        | Printf &#39;(&#39; multiple_expr_list &#39;)&#39;
+                        ;
+
+       output_redirection : &#39;&gt;&#39;    expr
+                        | APPEND expr
+                        | &#39;|&#39;    expr
+                        ;
+
+       expr_list_opt    : /* empty */
+                        | expr_list
+                        ;
+
+       expr_list        : expr
+                        | multiple_expr_list
+                        ;
+
+       multiple_expr_list : expr &#39;,&#39; newline_opt expr
+                        | multiple_expr_list &#39;,&#39; newline_opt expr
+                        ;
+
+       expr_opt         : /* empty */
+                        | expr
+                        ;
+
+       expr             : unary_expr
+                        | non_unary_expr
+                        ;
+
+       unary_expr       : &#39;+&#39; expr
+                        | &#39;-&#39; expr
+                        | unary_expr &#39;^&#39;      expr
+                        | unary_expr &#39;*&#39;      expr
+                        | unary_expr &#39;/&#39;      expr
+                        | unary_expr &#39;%&#39;      expr
+                        | unary_expr &#39;+&#39;      expr
+                        | unary_expr &#39;-&#39;      expr
+                        | unary_expr          non_unary_expr
+                        | unary_expr &#39;&lt;&#39;      expr
+                        | unary_expr LE       expr
+                        | unary_expr NE       expr
+                        | unary_expr EQ       expr
+                        | unary_expr &#39;&gt;&#39;      expr
+                        | unary_expr GE       expr
+                        | unary_expr &#39;~&#39;      expr
+                        | unary_expr NO_MATCH expr
+                        | unary_expr In NAME
+                        | unary_expr AND newline_opt expr
+                        | unary_expr OR  newline_opt expr
+                        | unary_expr &#39;?&#39; expr &#39;:&#39; expr
+                        | unary_input_function
+                        ;
+
+       non_unary_expr   : &#39;(&#39; expr &#39;)&#39;
+                        | &#39;!&#39; expr
+                        | non_unary_expr &#39;^&#39;      expr
+                        | non_unary_expr &#39;*&#39;      expr
+                        | non_unary_expr &#39;/&#39;      expr
+                        | non_unary_expr &#39;%&#39;      expr
+                        | non_unary_expr &#39;+&#39;      expr
+                        | non_unary_expr &#39;-&#39;      expr
+                        | non_unary_expr          non_unary_expr
+                        | non_unary_expr &#39;&lt;&#39;      expr
+                        | non_unary_expr LE       expr
+                        | non_unary_expr NE       expr
+                        | non_unary_expr EQ       expr
+                        | non_unary_expr &#39;&gt;&#39;      expr
+                        | non_unary_expr GE       expr
+                        | non_unary_expr &#39;~&#39;      expr
+                        | non_unary_expr NO_MATCH expr
+                        | non_unary_expr In NAME
+                        | &#39;(&#39; multiple_expr_list &#39;)&#39; In NAME
+                        | non_unary_expr AND newline_opt expr
+                        | non_unary_expr OR  newline_opt expr
+                        | non_unary_expr &#39;?&#39; expr &#39;:&#39; expr
+                        | NUMBER
+                        | STRING
+                        | lvalue
+                        | ERE
+                        | lvalue INCR
+                        | lvalue DECR
+                        | INCR lvalue
+                        | DECR lvalue
+                        | lvalue POW_ASSIGN expr
+                        | lvalue MOD_ASSIGN expr
+                        | lvalue MUL_ASSIGN expr
+                        | lvalue DIV_ASSIGN expr
+                        | lvalue ADD_ASSIGN expr
+                        | lvalue SUB_ASSIGN expr
+                        | lvalue &#39;=&#39; expr
+                        | FUNC_NAME &#39;(&#39; expr_list_opt &#39;)&#39;
+                             /* no white space allowed before &#39;(&#39; */
+                        | BUILTIN_FUNC_NAME &#39;(&#39; expr_list_opt &#39;)&#39;
+                        | BUILTIN_FUNC_NAME
+                        | non_unary_input_function
+                        ;
+
+       print_expr_list_opt : /* empty */
+                        | print_expr_list
+                        ;
+
+       print_expr_list  : print_expr
+                        | print_expr_list &#39;,&#39; newline_opt print_expr
+                        ;
+
+       print_expr       : unary_print_expr
+                        | non_unary_print_expr
+                        ;
+
+       unary_print_expr : &#39;+&#39; print_expr
+                        | &#39;-&#39; print_expr
+                        | unary_print_expr &#39;^&#39;      print_expr
+                        | unary_print_expr &#39;*&#39;      print_expr
+                        | unary_print_expr &#39;/&#39;      print_expr
+                        | unary_print_expr &#39;%&#39;      print_expr
+                        | unary_print_expr &#39;+&#39;      print_expr
+                        | unary_print_expr &#39;-&#39;      print_expr
+                        | unary_print_expr          non_unary_print_expr
+                        | unary_print_expr &#39;~&#39;      print_expr
+                        | unary_print_expr NO_MATCH print_expr
+                        | unary_print_expr In NAME
+                        | unary_print_expr AND newline_opt print_expr
+                        | unary_print_expr OR  newline_opt print_expr
+                        | unary_print_expr &#39;?&#39; print_expr &#39;:&#39; print_expr
+                        ;
+
+       non_unary_print_expr : &#39;(&#39; expr &#39;)&#39;
+                        | &#39;!&#39; print_expr
+                        | non_unary_print_expr &#39;^&#39;      print_expr
+                        | non_unary_print_expr &#39;*&#39;      print_expr
+                        | non_unary_print_expr &#39;/&#39;      print_expr
+                        | non_unary_print_expr &#39;%&#39;      print_expr
+                        | non_unary_print_expr &#39;+&#39;      print_expr
+                        | non_unary_print_expr &#39;-&#39;      print_expr
+                        | non_unary_print_expr          non_unary_print_expr
+                        | non_unary_print_expr &#39;~&#39;      print_expr
+                        | non_unary_print_expr NO_MATCH print_expr
+                        | non_unary_print_expr In NAME
+                        | &#39;(&#39; multiple_expr_list &#39;)&#39; In NAME
+                        | non_unary_print_expr AND newline_opt print_expr
+                        | non_unary_print_expr OR  newline_opt print_expr
+                        | non_unary_print_expr &#39;?&#39; print_expr &#39;:&#39; print_expr
+                        | NUMBER
+                        | STRING
+                        | lvalue
+                        | ERE
+                        | lvalue INCR
+                        | lvalue DECR
+                        | INCR lvalue
+                        | DECR lvalue
+                        | lvalue POW_ASSIGN print_expr
+                        | lvalue MOD_ASSIGN print_expr
+                        | lvalue MUL_ASSIGN print_expr
+                        | lvalue DIV_ASSIGN print_expr
+                        | lvalue ADD_ASSIGN print_expr
+                        | lvalue SUB_ASSIGN print_expr
+                        | lvalue &#39;=&#39; print_expr
+                        | FUNC_NAME &#39;(&#39; expr_list_opt &#39;)&#39;
+                            /* no white space allowed before &#39;(&#39; */
+                        | BUILTIN_FUNC_NAME &#39;(&#39; expr_list_opt &#39;)&#39;
+                        | BUILTIN_FUNC_NAME
+                        ;
+
+       lvalue           : NAME
+                        | NAME &#39;[&#39; expr_list &#39;]&#39;
+                        | &#39;$&#39; expr
+                        ;
+
+       non_unary_input_function : simple_get
+                        | simple_get &#39;&lt;&#39; expr
+                        | non_unary_expr &#39;|&#39; simple_get
+                        ;
+
+       unary_input_function : unary_expr &#39;|&#39; simple_get
+                        ;
+
+       simple_get       : GETLINE
+                        | GETLINE lvalue
+                        ;
+
+       newline_opt      : /* empty */
+                        | newline_opt NEWLINE
+                        ;
+
+   This grammar has several ambiguities that shall be resolved as
+   follows:
+
+    *  Operator precedence and associativity shall be as described in
+       Table 4-1, Expressions in Decreasing Precedence in awk.
+
+    *  In case of ambiguity, an else shall be associated with the
+       most immediately preceding if that would satisfy the grammar.
+
+    *  In some contexts, a &lt;slash&gt; (&#39;/&#39;) that is used to surround an
+       ERE could also be the division operator.  This shall be
+       resolved in such a way that wherever the division operator
+       could appear, a &lt;slash&gt; is assumed to be the division
+       operator. (There is no unary division operator.)
+
+   Each expression in an awk program shall conform to the precedence
+   and associativity rules, even when this is not needed to resolve
+   an ambiguity. For example, because &#39;$&#39; has higher precedence than
+   &#39;++&#39;, the string &quot;$x++--&quot; is not a valid awk expression, even
+   though it is unambiguously parsed by the grammar as &quot;$(x++)--&quot;.
+
+   One convention that might not be obvious from the formal grammar
+   is where &lt;newline&gt; characters are acceptable. There are several
+   obvious placements such as terminating a statement, and a
+   &lt;backslash&gt; can be used to escape &lt;newline&gt; characters between any
+   lexical tokens. In addition, &lt;newline&gt; characters without
+   &lt;backslash&gt; characters can follow a comma, an open brace, logical
+   AND operator (&quot;&amp;&amp;&quot;), logical OR operator (&quot;||&quot;), the do keyword,
+   the else keyword, and the closing parenthesis of an if, for, or
+   while statement. For example:
+
+       &#123; print  $1,
+                $2 &#125;
+</code></pre>
+<p>   Lexical Conventions<br>       The lexical conventions for awk programs, with respect to the<br>       preceding grammar, shall be as follows:</p>
+<pre><code>    1. Except as noted, awk shall recognize the longest possible
+       token or delimiter beginning at a given point.
+
+    2. A comment shall consist of any characters beginning with the
+       &lt;number-sign&gt; character and terminated by, but excluding the
+       next occurrence of, a &lt;newline&gt;.  Comments shall have no
+       effect, except to delimit lexical tokens.
+
+    3. The &lt;newline&gt; shall be recognized as the token NEWLINE.
+
+    4. A &lt;backslash&gt; character immediately followed by a &lt;newline&gt;
+       shall have no effect.
+
+    5. The token STRING shall represent a string constant. A string
+       constant shall begin with the character &#39;&quot;&#39;.  Within a string
+       constant, a &lt;backslash&gt; character shall be considered to begin
+       an escape sequence as specified in the table in the Base
+       Definitions volume of POSIX.1‐2017, Chapter 5, File Format
+       Notation (&#39;\\&#39;, &#39;\a&#39;, &#39;\b&#39;, &#39;\f&#39;, &#39;\n&#39;, &#39;\r&#39;, &#39;\t&#39;, &#39;\v&#39;).  In
+       addition, the escape sequences in Table 4-2, Escape Sequences
+       in awk shall be recognized. A &lt;newline&gt; shall not occur within
+       a string constant. A string constant shall be terminated by
+       the first unescaped occurrence of the character &#39;&quot;&#39; after the
+       one that begins the string constant. The value of the string
+       shall be the sequence of all unescaped characters and values
+       of escape sequences between, but not including, the two
+       delimiting &#39;&quot;&#39; characters.
+
+    6. The token ERE represents an extended regular expression
+       constant. An ERE constant shall begin with the &lt;slash&gt;
+       character. Within an ERE constant, a &lt;backslash&gt; character
+       shall be considered to begin an escape sequence as specified
+       in the table in the Base Definitions volume of POSIX.1‐2017,
+       Chapter 5, File Format Notation.  In addition, the escape
+       sequences in Table 4-2, Escape Sequences in awk shall be
+       recognized. The application shall ensure that a &lt;newline&gt; does
+       not occur within an ERE constant. An ERE constant shall be
+       terminated by the first unescaped occurrence of the &lt;slash&gt;
+       character after the one that begins the ERE constant. The
+       extended regular expression represented by the ERE constant
+       shall be the sequence of all unescaped characters and values
+       of escape sequences between, but not including, the two
+       delimiting &lt;slash&gt; characters.
+
+    7. A &lt;blank&gt; shall have no effect, except to delimit lexical
+       tokens or within STRING or ERE tokens.
+
+    8. The token NUMBER shall represent a numeric constant. Its form
+       and numeric value shall either be equivalent to the decimal-
+       floating-constant token as specified by the ISO C standard, or
+       it shall be a sequence of decimal digits and shall be
+       evaluated as an integer constant in decimal. In addition,
+       implementations may accept numeric constants with the form and
+       numeric value equivalent to the hexadecimal-constant and
+       hexadecimal-floating-constant tokens as specified by the ISO C
+       standard.
+
+       If the value is too large or too small to be representable
+       (see Section 1.1.2, Concepts Derived from the ISO C Standard),
+       the behavior is undefined.
+
+    9. A sequence of underscores, digits, and alphabetics from the
+       portable character set (see the Base Definitions volume of
+       POSIX.1‐2017, Section 6.1, Portable Character Set), beginning
+       with an &lt;underscore&gt; or alphabetic character, shall be
+       considered a word.
+
+   10. The following words are keywords that shall be recognized as
+       individual tokens; the name of the token is the same as the
+       keyword:
+       BEGIN      delete     END        function   in         printf
+       break      do         exit       getline    next       return
+       continue   else       for        if         print      while
+
+   11. The following words are names of built-in functions and shall
+       be recognized as the token BUILTIN_FUNC_NAME:
+       atan2     gsub      log       split     sub       toupper
+       close     index     match     sprintf   substr
+       cos       int       rand      sqrt      system
+       exp       length    sin       srand     tolower
+
+       The above-listed keywords and names of built-in functions are
+       considered reserved words.
+
+   12. The token NAME shall consist of a word that is not a keyword
+       or a name of a built-in function and is not followed
+       immediately (without any delimiters) by the &#39;(&#39; character.
+
+   13. The token FUNC_NAME shall consist of a word that is not a
+       keyword or a name of a built-in function, followed immediately
+       (without any delimiters) by the &#39;(&#39; character. The &#39;(&#39;
+       character shall not be included as part of the token.
+
+   14. The following two-character sequences shall be recognized as
+       the named tokens:
+             ┌────────────┬──────────┬────────────┬──────────┐
+             │ Token Name │ Sequence │ Token Name │ Sequence │
+             ├────────────┼──────────┼────────────┼──────────┤
+             │ ADD_ASSIGN │    +=    │ NO_MATCH   │    !~    │
+             │ SUB_ASSIGN │    -=    │ EQ         │    ==    │
+             │ MUL_ASSIGN │    *=    │ LE         │    &lt;=    │
+             │ DIV_ASSIGN │    /=    │ GE         │    &gt;=    │
+             │ MOD_ASSIGN │    %=    │ NE         │    !=    │
+             │ POW_ASSIGN │    ^=    │ INCR       │    ++    │
+             │ OR         │    ||    │ DECR       │    --    │
+             │ AND        │    &amp;&amp;    │ APPEND     │    &gt;&gt;    │
+             └────────────┴──────────┴────────────┴──────────┘
+
+   15. The following single characters shall be recognized as tokens
+       whose names are the character:
+
+           &lt;newline&gt; &#123; &#125; ( ) [ ] , ; + - * % ^ ! &gt; &lt; | ? : ~ $ =
+
+   There is a lexical ambiguity between the token ERE and the tokens
+   &#39;/&#39; and DIV_ASSIGN.  When an input sequence begins with a &lt;slash&gt;
+   character in any syntactic context where the token &#39;/&#39; or
+   DIV_ASSIGN could appear as the next token in a valid program, the
+   longer of those two tokens that can be recognized shall be
+   recognized. In any other syntactic context where the token ERE
+   could appear as the next token in a valid program, the token ERE
+   shall be recognized.
+</code></pre>
+<p>EXIT STATUS </p>
+<pre><code>   The following exit values shall be returned:
+
+    0    All input files were processed successfully.
+
+   &gt;0    An error occurred.
+
+   The exit status can be altered within the program by using an exit
+   expression.
+</code></pre>
+<p>CONSEQUENCES OF ERRORS </p>
+<pre><code>   If any file operand is specified and the named file cannot be
+   accessed, awk shall write a diagnostic message to standard error
+   and terminate without any further action.
+
+   If the program specified by either the program operand or a
+   progfile operand is not a valid awk program (as specified in the
+   EXTENDED DESCRIPTION section), the behavior is undefined.
+
+   The following sections are informative.
+</code></pre>
+<p>APPLICATION USAGE </p>
+<pre><code>   The index, length, match, and substr functions should not be
+   confused with similar functions in the ISO C standard; the awk
+   versions deal with characters, while the ISO C standard deals with
+   bytes.
+
+   Because the concatenation operation is represented by adjacent
+   expressions rather than an explicit operator, it is often
+   necessary to use parentheses to enforce the proper evaluation
+   precedence.
+
+   When using awk to process pathnames, it is recommended that
+   LC_ALL, or at least LC_CTYPE and LC_COLLATE, are set to POSIX or C
+   in the environment, since pathnames can contain byte sequences
+   that do not form valid characters in some locales, in which case
+   the utility&#39;s behavior would be undefined. In the POSIX locale
+   each byte is a valid single-byte character, and therefore this
+   problem is avoided.
+
+   On implementations where the &quot;==&quot; operator checks if strings
+   collate equally, applications needing to check whether strings are
+   identical can use:
+
+       length(a) == length(b) &amp;&amp; index(a,b) == 1
+
+   On implementations where the &quot;==&quot; operator checks if strings are
+   identical, applications needing to check whether strings collate
+   equally can use:
+
+       a &lt;= b &amp;&amp; a &gt;= b
+</code></pre>
+<p>EXAMPLES </p>
+<pre><code>   The awk program specified in the command line is most easily
+   specified within single-quotes (for example, &#39;program&#39;) for
+   applications using sh, because awk programs commonly contain
+   characters that are special to the shell, including double-quotes.
+   In the cases where an awk program contains single-quote
+   characters, it is usually easiest to specify most of the program
+   as strings within single-quotes concatenated by the shell with
+   quoted single-quote characters. For example:
+
+       awk &#39;/&#39;\&#39;&#39;/ &#123; print &quot;quote:&quot;, $0 &#125;&#39;
+
+   prints all lines from the standard input containing a single-quote
+   character, prefixed with quote:.
+
+   The following are examples of simple awk programs:
+
+    1. Write to the standard output all input lines for which field 3
+       is greater than 5:
+
+           $3 &gt; 5
+
+    2. Write every tenth line:
+
+           (NR % 10) == 0
+
+    3. Write any line with a substring matching the regular
+       expression:
+
+           /(G|D)(2[0-9][[:alpha:]]*)/
+
+    4. Print any line with a substring containing a &#39;G&#39; or &#39;D&#39;,
+       followed by a sequence of digits and characters. This example
+       uses character classes digit and alpha to match language-
+       independent digit and alphabetic characters respectively:
+
+           /(G|D)([[:digit:][:alpha:]]*)/
+
+    5. Write any line in which the second field matches the regular
+       expression and the fourth field does not:
+
+           $2 ~ /xyz/ &amp;&amp; $4 !~ /xyz/
+
+    6. Write any line in which the second field contains a
+       &lt;backslash&gt;:
+
+           $2 ~ /\\/
+
+    7. Write any line in which the second field contains a
+       &lt;backslash&gt;.  Note that &lt;backslash&gt;-escapes are interpreted
+       twice; once in lexical processing of the string and once in
+       processing the regular expression:
+
+           $2 ~ &quot;\\\\&quot;
+
+    8. Write the second to the last and the last field in each line.
+       Separate the fields by a &lt;colon&gt;:
+
+           &#123;OFS=&quot;:&quot;;print $(NF-1), $NF&#125;
+
+    9. Write the line number and number of fields in each line. The
+       three strings representing the line number, the &lt;colon&gt;, and
+       the number of fields are concatenated and that string is
+       written to standard output:
+
+           &#123;print NR &quot;:&quot; NF&#125;
+
+   10. Write lines longer than 72 characters:
+
+           length($0) &gt; 72
+
+   11. Write the first two fields in opposite order separated by OFS:
+
+           &#123; print $2, $1 &#125;
+
+   12. Same, with input fields separated by a &lt;comma&gt; or &lt;space&gt; and
+       &lt;tab&gt; characters, or both:
+
+           BEGIN &#123; FS = &quot;,[ \t]*|[ \t]+&quot; &#125;
+                 &#123; print $2, $1 &#125;
+
+   13. Add up the first column, print sum, and average:
+
+                 &#123;s += $1 &#125;
+           END   &#123;print &quot;sum is &quot;, s, &quot; average is&quot;, s/NR&#125;
+
+   14. Write fields in reverse order, one per line (many lines out
+       for each line in):
+
+           &#123; for (i = NF; i &gt; 0; --i) print $i &#125;
+
+   15. Write all lines between occurrences of the strings start and
+       stop:
+
+           /start/, /stop/
+
+   16. Write all lines whose first field is different from the
+       previous one:
+
+           $1 != prev &#123; print; prev = $1 &#125;
+
+   17. Simulate echo:
+
+           BEGIN  &#123;
+                   for (i = 1; i &lt; ARGC; ++i)
+                   printf(&quot;%s%s&quot;, ARGV[i], i==ARGC-1?&quot;\n&quot;:&quot; &quot;)
+           &#125;
+
+   18. Write the path prefixes contained in the PATH environment
+       variable, one per line:
+
+           BEGIN  &#123;
+                   n = split (ENVIRON[&quot;PATH&quot;], path, &quot;:&quot;)
+                   for (i = 1; i &lt;= n; ++i)
+                   print path[i]
+           &#125;
+
+   19. If there is a file named input containing page headers of the
+       form: Page #
+
+       and a file named program that contains:
+
+           /Page/   &#123; $2 = n++; &#125;
+                    &#123; print &#125;
+
+       then the command line:
+
+           awk -f program n=5 input
+
+       prints the file input, filling in page numbers starting at 5.
+</code></pre>
+<p>RATIONALE </p>
+<pre><code>   This description is based on the new awk, ``nawk&#39;&#39;, (see the
+   referenced The AWK Programming Language), which introduced a
+   number of new features to the historical awk:
+
+    1. New keywords: delete, do, function, return
+
+    2. New built-in functions: atan2, close, cos, gsub, match, rand,
+       sin, srand, sub, system
+
+    3. New predefined variables: FNR, ARGC, ARGV, RSTART, RLENGTH,
+       SUBSEP
+
+    4. New expression operators: ?, :, ,, ^
+
+    5. The FS variable and the third argument to split, now treated
+       as extended regular expressions.
+
+    6. The operator precedence, changed to more closely match the C
+       language.  Two examples of code that operate differently are:
+
+           while ( n /= 10 &gt; 1) ...
+           if (!&quot;wk&quot; ~ /bwk/) ...
+
+   Several features have been added based on newer implementations of
+   awk:
+
+    *  Multiple instances of -f progfile are permitted.
+
+    *  The new option -v assignment.
+
+    *  The new predefined variable ENVIRON.
+
+    *  New built-in functions toupper and tolower.
+
+    *  More formatting capabilities are added to printf to match the
+       ISO C standard.
+
+   Earlier versions of this standard required implementations to
+   support multiple adjacent &lt;semicolon&gt;s, lines with one or more
+   &lt;semicolon&gt; before a rule (pattern-action pairs), and lines with
+   only &lt;semicolon&gt;(s).  These are not required by this standard and
+   are considered poor programming practice, but can be accepted by
+   an implementation of awk as an extension.
+
+   The overall awk syntax has always been based on the C language,
+   with a few features from the shell command language and other
+   sources. Because of this, it is not completely compatible with any
+   other language, which has caused confusion for some users. It is
+   not the intent of the standard developers to address such issues.
+   A few relatively minor changes toward making the language more
+   compatible with the ISO C standard were made; most of these
+   changes are based on similar changes in recent implementations, as
+   described above. There remain several C-language conventions that
+   are not in awk.  One of the notable ones is the &lt;comma&gt; operator,
+   which is commonly used to specify multiple expressions in the C
+   language for statement. Also, there are various places where awk
+   is more restrictive than the C language regarding the type of
+   expression that can be used in a given context. These limitations
+   are due to the different features that the awk language does
+   provide.
+
+   Regular expressions in awk have been extended somewhat from
+   historical implementations to make them a pure superset of
+   extended regular expressions, as defined by POSIX.1‐2008 (see the
+   Base Definitions volume of POSIX.1‐2017, Section 9.4, Extended
+   Regular Expressions).  The main extensions are
+   internationalization features and interval expressions. Historical
+   implementations of awk have long supported &lt;backslash&gt;-escape
+   sequences as an extension to extended regular expressions, and
+   this extension has been retained despite inconsistency with other
+   utilities. The number of escape sequences recognized in both
+   extended regular expressions and strings has varied (generally
+   increasing with time) among implementations. The set specified by
+   POSIX.1‐2008 includes most sequences known to be supported by
+   popular implementations and by the ISO C standard. One sequence
+   that is not supported is hexadecimal value escapes beginning with
+   &#39;\x&#39;.  This would allow values expressed in more than 9 bits to be
+   used within awk as in the ISO C standard. However, because this
+   syntax has a non-deterministic length, it does not permit the
+   subsequent character to be a hexadecimal digit. This limitation
+   can be dealt with in the C language by the use of lexical string
+   concatenation. In the awk language, concatenation could also be a
+   solution for strings, but not for extended regular expressions
+   (either lexical ERE tokens or strings used dynamically as regular
+   expressions). Because of this limitation, the feature has not been
+   added to POSIX.1‐2008.
+
+   When a string variable is used in a context where an extended
+   regular expression normally appears (where the lexical token ERE
+   is used in the grammar) the string does not contain the literal
+   &lt;slash&gt; characters.
+
+   Some versions of awk allow the form:
+
+       func name(args, ... ) &#123; statements &#125;
+
+   This has been deprecated by the authors of the language, who asked
+   that it not be specified.
+
+   Historical implementations of awk produce an error if a next
+   statement is executed in a BEGIN action, and cause awk to
+   terminate if a next statement is executed in an END action. This
+   behavior has not been documented, and it was not believed that it
+   was necessary to standardize it.
+
+   The specification of conversions between string and numeric values
+   is much more detailed than in the documentation of historical
+   implementations or in the referenced The AWK Programming Language.
+   Although most of the behavior is designed to be intuitive, the
+   details are necessary to ensure compatible behavior from different
+   implementations. This is especially important in relational
+   expressions since the types of the operands determine whether a
+   string or numeric comparison is performed. From the perspective of
+   an application developer, it is usually sufficient to expect
+   intuitive behavior and to force conversions (by adding zero or
+   concatenating a null string) when the type of an expression does
+   not obviously match what is needed. The intent has been to specify
+   historical practice in almost all cases. The one exception is
+   that, in historical implementations, variables and constants
+   maintain both string and numeric values after their original value
+   is converted by any use. This means that referencing a variable or
+   constant can have unexpected side-effects. For example, with
+   historical implementations the following program:
+
+       &#123;
+           a = &quot;+2&quot;
+           b = 2
+           if (NR % 2)
+               c = a + b
+           if (a == b)
+               print &quot;numeric comparison&quot;
+           else
+               print &quot;string comparison&quot;
+       &#125;
+
+   would perform a numeric comparison (and output numeric comparison)
+   for each odd-numbered line, but perform a string comparison (and
+   output string comparison) for each even-numbered line.
+   POSIX.1‐2008 ensures that comparisons will be numeric if
+   necessary. With historical implementations, the following program:
+
+       BEGIN &#123;
+           OFMT = &quot;%e&quot;
+           print 3.14
+           OFMT = &quot;%f&quot;
+           print 3.14
+       &#125;
+
+   would output &quot;3.140000e+00&quot; twice, because in the second print
+   statement the constant &quot;3.14&quot; would have a string value from the
+   previous conversion. POSIX.1‐2008 requires that the output of the
+   second print statement be &quot;3.140000&quot;.  The behavior of historical
+   implementations was seen as too unintuitive and unpredictable.
+
+   It was pointed out that with the rules contained in early drafts,
+   the following script would print nothing:
+
+       BEGIN &#123;
+           y[1.5] = 1
+           OFMT = &quot;%e&quot;
+           print y[1.5]
+       &#125;
+
+   Therefore, a new variable, CONVFMT, was introduced. The OFMT
+   variable is now restricted to affecting output conversions of
+   numbers to strings and CONVFMT is used for internal conversions,
+   such as comparisons or array indexing. The default value is the
+   same as that for OFMT, so unless a program changes CONVFMT (which
+   no historical program would do), it will receive the historical
+   behavior associated with internal string conversions.
+
+   The POSIX awk lexical and syntactic conventions are specified more
+   formally than in other sources. Again the intent has been to
+   specify historical practice. One convention that may not be
+   obvious from the formal grammar as in other verbal descriptions is
+   where &lt;newline&gt; characters are acceptable. There are several
+   obvious placements such as terminating a statement, and a
+   &lt;backslash&gt; can be used to escape &lt;newline&gt; characters between any
+   lexical tokens. In addition, &lt;newline&gt; characters without
+   &lt;backslash&gt; characters can follow a comma, an open brace, a
+   logical AND operator (&quot;&amp;&amp;&quot;), a logical OR operator (&quot;||&quot;), the do
+   keyword, the else keyword, and the closing parenthesis of an if,
+   for, or while statement. For example:
+
+       &#123; print $1,
+               $2 &#125;
+
+   The requirement that awk add a trailing &lt;newline&gt; to the program
+   argument text is to simplify the grammar, making it match a text
+   file in form. There is no way for an application or test suite to
+   determine whether a literal &lt;newline&gt; is added or whether awk
+   simply acts as if it did.
+
+   POSIX.1‐2008 requires several changes from historical
+   implementations in order to support internationalization. Probably
+   the most subtle of these is the use of the decimal-point
+   character, defined by the LC_NUMERIC category of the locale, in
+   representations of floating-point numbers.  This locale-specific
+   character is used in recognizing numeric input, in converting
+   between strings and numeric values, and in formatting output.
+   However, regardless of locale, the &lt;period&gt; character (the
+   decimal-point character of the POSIX locale) is the decimal-point
+   character recognized in processing awk programs (including
+   assignments in command line arguments). This is essentially the
+   same convention as the one used in the ISO C standard. The
+   difference is that the C language includes the setlocale()
+   function, which permits an application to modify its locale.
+   Because of this capability, a C application begins executing with
+   its locale set to the C locale, and only executes in the
+   environment-specified locale after an explicit call to
+   setlocale().  However, adding such an elaborate new feature to the
+   awk language was seen as inappropriate for POSIX.1‐2008. It is
+   possible to execute an awk program explicitly in any desired
+   locale by setting the environment in the shell.
+
+   The undefined behavior resulting from NULs in extended regular
+   expressions allows future extensions for the GNU gawk program to
+   process binary data.
+
+   The behavior in the case of invalid awk programs (including
+   lexical, syntactic, and semantic errors) is undefined because it
+   was considered overly limiting on implementations to specify. In
+   most cases such errors can be expected to produce a diagnostic and
+   a non-zero exit status. However, some implementations may choose
+   to extend the language in ways that make use of certain invalid
+   constructs. Other invalid constructs might be deemed worthy of a
+   warning, but otherwise cause some reasonable behavior. Still other
+   constructs may be very difficult to detect in some
+   implementations.  Also, different implementations might detect a
+   given error during an initial parsing of the program (before
+   reading any input files) while others might detect it when
+   executing the program after reading some input. Implementors
+   should be aware that diagnosing errors as early as possible and
+   producing useful diagnostics can ease debugging of applications,
+   and thus make an implementation more usable.
+
+   The unspecified behavior from using multi-character RS values is
+   to allow possible future extensions based on extended regular
+   expressions used for record separators. Historical implementations
+   take the first character of the string and ignore the others.
+
+   Unspecified behavior when split(string,array,&lt;null&gt;) is used is to
+   allow a proposed future extension that would split up a string
+   into an array of individual characters.
+
+   In the context of the getline function, equally good arguments for
+   different precedences of the | and &lt; operators can be made.
+   Historical practice has been that:
+
+       getline &lt; &quot;a&quot; &quot;b&quot;
+
+   is parsed as:
+
+       ( getline &lt; &quot;a&quot; ) &quot;b&quot;
+
+   although many would argue that the intent was that the file ab
+   should be read. However:
+
+       getline &lt; &quot;x&quot; + 1
+
+   parses as:
+
+       getline &lt; ( &quot;x&quot; + 1 )
+
+   Similar problems occur with the | version of getline, particularly
+   in combination with $.  For example:
+
+       $&quot;echo hi&quot; | getline
+
+   (This situation is particularly problematic when used in a print
+   statement, where the |getline part might be a redirection of the
+   print.)
+
+   Since in most cases such constructs are not (or at least should
+   not) be used (because they have a natural ambiguity for which
+   there is no conventional parsing), the meaning of these constructs
+   has been made explicitly unspecified. (The effect is that a
+   conforming application that runs into the problem must
+   parenthesize to resolve the ambiguity.)  There appeared to be few
+   if any actual uses of such constructs.
+
+   Grammars can be written that would cause an error under these
+   circumstances. Where backwards-compatibility is not a large
+   consideration, implementors may wish to use such grammars.
+
+   Some historical implementations have allowed some built-in
+   functions to be called without an argument list, the result being
+   a default argument list chosen in some ``reasonable&#39;&#39; way. Use of
+   length as a synonym for length($0) is the only one of these forms
+   that is thought to be widely known or widely used; this particular
+   form is documented in various places (for example, most historical
+   awk reference pages, although not in the referenced The AWK
+   Programming Language) as legitimate practice.  With this
+   exception, default argument lists have always been undocumented
+   and vaguely defined, and it is not at all clear how (or if) they
+   should be generalized to user-defined functions. They add no
+   useful functionality and preclude possible future extensions that
+   might need to name functions without calling them. Not
+   standardizing them seems the simplest course. The standard
+   developers considered that length merited special treatment,
+   however, since it has been documented in the past and sees
+   possibly substantial use in historical programs.  Accordingly,
+   this usage has been made legitimate, but Issue 5 removed the
+   obsolescent marking for XSI-conforming implementations and many
+   otherwise conforming applications depend on this feature.
+
+   In sub and gsub, if repl is a string literal (the lexical token
+   STRING), then two consecutive &lt;backslash&gt; characters should be
+   used in the string to ensure a single &lt;backslash&gt; will precede the
+   &lt;ampersand&gt; when the resultant string is passed to the function.
+   (For example, to specify one literal &lt;ampersand&gt; in the
+   replacement string, use gsub(ERE, &quot;\\&amp;&quot;).)
+
+   Historically, the only special character in the repl argument of
+   sub and gsub string functions was the &lt;ampersand&gt; (&#39;&amp;&#39;) character
+   and preceding it with the &lt;backslash&gt; character was used to turn
+   off its special meaning.
+
+   The description in the ISO POSIX‐2:1993 standard introduced
+   behavior such that the &lt;backslash&gt; character was another special
+   character and it was unspecified whether there were any other
+   special characters. This description introduced several
+   portability problems, some of which are described below, and so it
+   has been replaced with the more historical description. Some of
+   the problems include:
+
+    *  Historically, to create the replacement string, a script could
+       use gsub(ERE, &quot;\\&amp;&quot;), but with the ISO POSIX‐2:1993 standard
+       wording, it was necessary to use gsub(ERE, &quot;\\\\&amp;&quot;).  The
+       &lt;backslash&gt; characters are doubled here because all string
+       literals are subject to lexical analysis, which would reduce
+       each pair of &lt;backslash&gt; characters to a single &lt;backslash&gt;
+       before being passed to gsub.
+
+    *  Since it was unspecified what the special characters were, for
+       portable scripts to guarantee that characters are printed
+       literally, each character had to be preceded with a
+       &lt;backslash&gt;.  (For example, a portable script had to use
+       gsub(ERE, &quot;\\h\\i&quot;) to produce a replacement string of &quot;hi&quot;.)
+
+   The description for comparisons in the ISO POSIX‐2:1993 standard
+   did not properly describe historical practice because of the way
+   numeric strings are compared as numbers. The current rules cause
+   the following code:
+
+       if (0 == &quot;000&quot;)
+           print &quot;strange, but true&quot;
+       else
+           print &quot;not true&quot;
+
+   to do a numeric comparison, causing the if to succeed. It should
+   be intuitively obvious that this is incorrect behavior, and
+   indeed, no historical implementation of awk actually behaves this
+   way.
+
+   To fix this problem, the definition of numeric string was enhanced
+   to include only those values obtained from specific circumstances
+   (mostly external sources) where it is not possible to determine
+   unambiguously whether the value is intended to be a string or a
+   numeric.
+
+   Variables that are assigned to a numeric string shall also be
+   treated as a numeric string. (For example, the notion of a numeric
+   string can be propagated across assignments.) In comparisons, all
+   variables having the uninitialized value are to be treated as a
+   numeric operand evaluating to the numeric value zero.
+
+   Uninitialized variables include all types of variables including
+   scalars, array elements, and fields. The definition of an
+   uninitialized value in Variables and Special Variables is
+   necessary to describe the value placed on uninitialized variables
+   and on fields that are valid (for example, &lt; $NF) but have no
+   characters in them and to describe how these variables are to be
+   used in comparisons. A valid field, such as $1, that has no
+   characters in it can be obtained from an input line of &quot;\t\t&quot; when
+   FS=&#39;\t&#39;.  Historically, the comparison ($1&lt;10) was done
+   numerically after evaluating $1 to the value zero.
+
+   The phrase ``... also shall have the numeric value of the numeric
+   string&#39;&#39; was removed from several sections of the ISO POSIX‐2:1993
+   standard because is specifies an unnecessary implementation
+   detail. It is not necessary for POSIX.1‐2008 to specify that these
+   objects be assigned two different values.  It is only necessary to
+   specify that these objects may evaluate to two different values
+   depending on context.
+
+   Historical implementations of awk did not parse hexadecimal
+   integer or floating constants like &quot;0xa&quot; and &quot;0xap0&quot;.  Due to an
+   oversight, the 2001 through 2004 editions of this standard
+   required support for hexadecimal floating constants. This was due
+   to the reference to atof().  This version of the standard allows
+   but does not require implementations to use atof() and includes a
+   description of how floating-point numbers are recognized as an
+   alternative to match historic behavior. The intent of this change
+   is to allow implementations to recognize floating-point constants
+   according to either the ISO/IEC 9899:1990 standard or
+   ISO/IEC 9899:1999 standard, and to allow (but not require)
+   implementations to recognize hexadecimal integer constants.
+
+   Historical implementations of awk did not support floating-point
+   infinities and NaNs in numeric strings; e.g., &quot;-INF&quot; and &quot;NaN&quot;.
+   However, implementations that use the atof() or strtod() functions
+   to do the conversion picked up support for these values if they
+   used a ISO/IEC 9899:1999 standard version of the function instead
+   of a ISO/IEC 9899:1990 standard version. Due to an oversight, the
+   2001 through 2004 editions of this standard did not allow support
+   for infinities and NaNs, but in this revision support is allowed
+   (but not required). This is a silent change to the behavior of awk
+   programs; for example, in the POSIX locale the expression:
+
+       (&quot;-INF&quot; + 0 &lt; 0)
+
+   formerly had the value 0 because &quot;-INF&quot; converted to 0, but now it
+   may have the value 0 or 1.
+</code></pre>
+<p>FUTURE DIRECTIONS </p>
+<pre><code>   A future version of this standard may require the &quot;!=&quot; and &quot;==&quot;
+   operators to perform string comparisons by checking if the strings
+   are identical (and not by checking if they collate equally).
+</code></pre>
+<p>SEE ALSO </p>
+<pre><code>   Section 1.3, Grammar Conventions, grep(1p), lex(1p), sed(1p)
+
+   The Base Definitions volume of POSIX.1‐2017, Chapter 5, File
+   Format Notation, Section 6.1, Portable Character Set, Chapter 8,
+   Environment Variables, Chapter 9, Regular Expressions, Section
+   12.2, Utility Syntax Guidelines
+
+   The System Interfaces volume of POSIX.1‐2017, atof(3p), exec(1p),
+   isspace(3p), popen(3p), setlocale(3p), strtod(3p)
+</code></pre>
+<p>COPYRIGHT </p>
+<pre><code>   Portions of this text are reprinted and reproduced in electronic
+   form from IEEE Std 1003.1-2017, Standard for Information
+   Technology -- Portable Operating System Interface (POSIX), The
+   Open Group Base Specifications Issue 7, 2018 Edition, Copyright
+   (C) 2018 by the Institute of Electrical and Electronics Engineers,
+   Inc and The Open Group.  In the event of any discrepancy between
+   this version and the original IEEE and The Open Group Standard,
+   the original IEEE and The Open Group Standard is the referee
+   document. The original Standard can be obtained online at
+   http://www.opengroup.org/unix/online.html .
+
+   Any typographical or formatting errors that appear in this page
+   are most likely to have been introduced during the conversion of
+   the source files to man page format. To report such errors, see
+   https://www.kernel.org/doc/man-pages/reporting_bugs.html .
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.crsky.uk">Chan Revival</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.crsky.uk/posts/linux-cmd-awk.html">https://blog.crsky.uk/posts/linux-cmd-awk.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.crsky.uk" target="_blank">Chan Revival Sky</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/">Linux工具箱·Linux Toolbox</a><a class="post-meta__tags" href="/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/">科技·Tech</a><a class="post-meta__tags" href="/tags/awk/">awk</a></div><div class="post-share"><div class="social-share" data-image="/images/linux.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/linux-cmd-w.html" title="w命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">w命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途w 命令用于显示当前登录系统的用户信息及其正在执行的进程，包括用户、终端、来源 IP、登录时间、空闲时间及活动进程等。 常用用法示例 默认显示所有登录用户及活动 12345w12:34:56 up 1:23, 3 users, load average: 0.00, 0.01, 0.05USER TTY FROM LOGIN@ IDLE JCPU PCPU WHATuser1 pts/0 192.168.1.10 11:15 5.00s 0.10s 0.00s sshd: user1user2 tty2 :0 10:30 2:00m 1:20 0.02s /usr/bin/bash 显示当前所有登录用户的详细信息，包括终端、来源、空闲时间及运行命令。  仅显示指定用户的信息 1234w user112:34:56 up 1:23, 3 users, load average: 0.00, 0.01, 0.05USER TTY FROM LOGIN@ IDLE JCPU PCPU WHATuser1 pts/0 192.168.1.10 11:15...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-top.html" title="top命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">top命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途top 命令是 Linux 系统中用于实时监控系统进程和资源使用情况的动态工具，可查看 CPU、内存、任务负载等信息，并按需排序或过滤进程。 常用用法示例 默认启动，实时监控系统状态 12top（输出包含进程列表、CPU/内存使用率、负载等动态信息） 默认界面每3秒刷新一次，展示所有进程的资源占用情况。  按 CPU 使用率排序进程 123top（进入界面后按大写 P）（进程列表按 CPU% 从高到低排序） 通过交互命令 P 快速定位高 CPU 消耗的进程。  按内存使用率排序进程 123top（进入界面后按大写 M）（进程列表按 MEM% 从高到低排序） 通过交互命令 M 快速定位高内存占用的进程。  仅监控指定用户的进程 12top -u www-data（仅显示用户 www-data 的进程） 过滤特定用户的进程，便于针对性分析。  设置刷新间隔为2秒 12top -d 2（界面刷新间隔调整为2秒） 通过 -d 参数自定义刷新频率。  显示完整命令路径 12top -c（COMMAND...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-time.html" title="time命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">time命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途time 命令用于测量 Linux 命令的执行时间，输出其实际运行时间（real）、用户态 CPU 时间（user）和内核态 CPU 时间（sys），帮助分析命令性能。 常用用法示例 基本用法：测量命令执行时间 1234time ls -lreal 0m0.003suser 0m0.001ssys 0m0.002s 测量 ls -l 命令的执行时间，输出各阶段耗时。  测量长时间运行的命令 1234time sleep 1real 0m1.002suser 0m0.001ssys 0m0.001s 测量 sleep 1 的执行时间，real 接近 1 秒，而 CPU 占用极低。  将输出重定向到文件 12345/usr/bin/time -o output.txt lsoutput.txt 内容0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 1784maxresident)k0inputs+0outputs (0major+76minor)pagefaults 0swaps 使用...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-tail.html" title="tail命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">tail命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途tail 命令用于显示文件的末尾内容（默认显示最后10行），常用于实时监控日志文件更新。 常用用法示例 显示文件末尾默认10行 12345tail file.log[Line 91] 2023-10-01 12:00:00 INFO Service started[Line 92] 2023-10-01 12:00:05 DEBUG Processing request...[Line 100] 2023-10-01 12:00:30 INFO Connection closed 输出 file.log 的最后10行内容。  指定显示末尾行数 1234tail -n 5 file.log[Line 96] 2023-10-01 12:00:25 WARN Low memory...[Line 100] 2023-10-01 12:00:30 INFO Connection closed 仅显示文件最后5行。  实时跟踪文件更新 12tail -f access.log（持续输出新增内容，直到按 Ctrl+C...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">smartctl命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途smartctl 是 Linux 中用于监控和分析磁盘驱动器 SMART（Self-Monitoring, Analysis and Reporting Technology）数据的工具，可检测磁盘健康状态并预测潜在故障。 常用用法示例 检查磁盘健康状态  12smartctl -H /dev/sdaSMART overall-health self-assessment test result: PASSED 输出 PASSED 表示磁盘健康状态正常，FAILED 表示存在潜在故障。  显示磁盘全部 SMART 信息  12345678910smartctl -a /dev/sda=== START OF INFORMATION SECTION ===Model Family: Western Digital Blue...=== START OF READ SMART DATA SECTION ===SMART Attributes Data Structure revision number: 16Vendor Specific SMART...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-rpm.html" title="rpm命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-06</div><div class="info-item-2">rpm命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途rpm（Red Hat Package Manager）是 Linux 系统中用于管理软件包的核心命令，主要用于安装、卸载、查询、验证和更新 .rpm 格式的软件包。 常用用法示例 安装软件包 1234rpm -ivh package.rpmPreparing... #################### [100%]Updating/installing...1:package-1 .0-1 #################### [100%] 通过 -ivh 参数安装软件包，显示详细安装进度。  升级软件包 1234rpm -Uvh package-new.rpmPreparing... #################### [100%]Updating/installing...1:package-new-2 .0-1 #################### [100%] 使用 -Uvh 升级已安装的软件包，若未安装则直接安装新版本。  卸载软件包 1rpm -e package-name 通过 -e...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-rm.html" title="rm命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-06</div><div class="info-item-2">rm命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途rm（remove）是 Linux&#x2F;Unix 系统中用于删除文件或目录的命令，可永久移除数据（谨慎使用）。 常用用法示例 删除单个文件 1rm file1.txt 直接删除 file1.txt，不提示确认。  删除多个文件 1rm file1.txt file2.log file3.jpg 一次性删除多个文件，文件名用空格分隔。  强制删除忽略提示 1rm -f protected_file -f 参数强制删除，忽略不存在的文件或权限错误。  交互式确认删除 12rm -i important_docrm: remove regular file &#x27;important_doc&#x27;? y -i 参数要求用户确认每个删除操作（输入 y 确认）。  递归删除目录及其内容 1rm -r dir1/ -r 参数递归删除目录（需目录非空）。  删除空目录 1rm -d empty_dir/ -d 参数删除空目录（等同 rmdir）。  显示删除详情 12rm -v temp.logremoved...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-nohup.html" title="nohup命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-05</div><div class="info-item-2">nohup命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途nohup（no hang up）命令用于在用户退出终端或断开连接时，让进程继续在后台运行，避免被系统挂断信号（SIGHUP）终止。 常用用法示例 基本用法：运行命令并忽略挂断信号 123nohup sleep 120 &amp;[1] 12345nohup: ignoring input and appending output to &#x27;nohup.out&#x27; 命令会在后台运行 sleep 120，输出默认追加到 nohup.out 文件。  指定输出文件 123nohup ping example.com &gt; ping.log &amp;[1] 12346nohup: ignoring input and redirecting stderr to stdout 输出内容重定向到 ping.log，错误输出合并到标准输出。  后台运行并关闭输出 12nohup command &gt; /dev/null 2&gt;&amp;1 &amp;[1]...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chan Revival</div><div class="author-info-description">Chan Revival Sky</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">128</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">192</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chanrevival"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/chanrevival" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:chanrevival@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">天上星，亮晶晶，永灿烂，长安宁。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%94%A8%E9%80%94"><span class="toc-number">1.</span> <span class="toc-text">命令用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">常用用法示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E9%80%89%E9%A1%B9"><span class="toc-number">3.</span> <span class="toc-text">常用参数选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%8E%82%E6%96%87%E6%A1%A3"><span class="toc-number">4.</span> <span class="toc-text">原厂文档</span></a></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-w.html" title="w命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="w命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-w.html" title="w命令">w命令</a><time datetime="2025-03-07T15:15:00.000Z" title="发表于 2025-03-07 23:15:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-top.html" title="top命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-top.html" title="top命令">top命令</a><time datetime="2025-03-07T04:46:00.000Z" title="发表于 2025-03-07 12:46:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-time.html" title="time命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="time命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-time.html" title="time命令">time命令</a><time datetime="2025-03-07T04:36:00.000Z" title="发表于 2025-03-07 12:36:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-tail.html" title="tail命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tail命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-tail.html" title="tail命令">tail命令</a><time datetime="2025-03-07T04:30:00.000Z" title="发表于 2025-03-07 12:30:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="smartctl命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-smartctl.html" title="smartctl命令">smartctl命令</a><time datetime="2025-03-07T02:50:00.000Z" title="发表于 2025-03-07 10:50:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-rpm.html" title="rpm命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rpm命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-rpm.html" title="rpm命令">rpm命令</a><time datetime="2025-03-06T13:29:00.000Z" title="发表于 2025-03-06 21:29:00">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-rm.html" title="rm命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rm命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-rm.html" title="rm命令">rm命令</a><time datetime="2025-03-06T12:37:00.000Z" title="发表于 2025-03-06 20:37:00">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-nohup.html" title="nohup命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="nohup命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-nohup.html" title="nohup命令">nohup命令</a><time datetime="2025-03-05T07:07:00.000Z" title="发表于 2025-03-05 15:07:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ls.html" title="ls命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ls命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ls.html" title="ls命令">ls命令</a><time datetime="2025-03-05T06:56:00.000Z" title="发表于 2025-03-05 14:56:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ln.html" title="ln命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ln命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ln.html" title="ln命令">ln命令</a><time datetime="2025-03-05T06:48:00.000Z" title="发表于 2025-03-05 14:48:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-less.html" title="less命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="less命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-less.html" title="less命令">less命令</a><time datetime="2025-03-05T06:18:00.000Z" title="发表于 2025-03-05 14:18:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd.html" title="ld命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ld命令"></a><div class="content"><a class="title" href="/posts/linux-cmd.html" title="ld命令">ld命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-pwd.html" title="pwd命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pwd命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-pwd.html" title="pwd命令">pwd命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ld.html" title="ld命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ld命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ld.html" title="ld命令">ld命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-watch.html" title="watch命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="watch命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-watch.html" title="watch命令">watch命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-wget.html" title="wget命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="wget命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-wget.html" title="wget命令">wget命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-lastb.html" title="lastb命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="lastb命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-lastb.html" title="lastb命令">lastb命令</a><time datetime="2025-03-05T04:56:00.000Z" title="发表于 2025-03-05 12:56:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-last.html" title="last命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="last命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-last.html" title="last命令">last命令</a><time datetime="2025-03-05T04:41:00.000Z" title="发表于 2025-03-05 12:41:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-jobs.html" title="jobs命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jobs命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-jobs.html" title="jobs命令">jobs命令</a><time datetime="2025-03-05T04:32:00.000Z" title="发表于 2025-03-05 12:32:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-id.html" title="id命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="id命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-id.html" title="id命令">id命令</a><time datetime="2025-03-04T14:25:00.000Z" title="发表于 2025-03-04 22:25:00">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-kill.html" title="kill命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="kill命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-kill.html" title="kill命令">kill命令</a><time datetime="2025-03-04T14:10:00.000Z" title="发表于 2025-03-04 22:10:00">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-hostnamectl.html" title="hostnamectl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hostnamectl命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-hostnamectl.html" title="hostnamectl命令">hostnamectl命令</a><time datetime="2025-03-04T14:10:00.000Z" title="发表于 2025-03-04 22:10:00">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-pidstat.html" title="pidstat命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pidstat命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-pidstat.html" title="pidstat命令">pidstat命令</a><time datetime="2025-02-26T02:35:00.000Z" title="发表于 2025-02-26 10:35:00">2025-02-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-groupadd.html" title="groupadd命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="groupadd命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-groupadd.html" title="groupadd命令">groupadd命令</a><time datetime="2025-02-24T13:31:00.000Z" title="发表于 2025-02-24 21:31:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-find.html" title="find命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="find命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-find.html" title="find命令">find命令</a><time datetime="2025-02-24T13:31:00.000Z" title="发表于 2025-02-24 21:31:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-groupdel.html" title="groupdel命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="groupdel命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-groupdel.html" title="groupdel命令">groupdel命令</a><time datetime="2025-02-24T13:31:00.000Z" title="发表于 2025-02-24 21:31:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-echo.html" title="echo命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="echo命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-echo.html" title="echo命令">echo命令</a><time datetime="2025-02-24T12:35:00.000Z" title="发表于 2025-02-24 20:35:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-dnf.html" title="dnf命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dnf命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-dnf.html" title="dnf命令">dnf命令</a><time datetime="2025-02-22T15:53:00.000Z" title="发表于 2025-02-22 23:53:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-dir.html" title="dir命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dir命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-dir.html" title="dir命令">dir命令</a><time datetime="2025-02-22T15:42:00.000Z" title="发表于 2025-02-22 23:42:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-chown.html" title="chown命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chown命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-chown.html" title="chown命令">chown命令</a><time datetime="2025-02-22T15:16:00.000Z" title="发表于 2025-02-22 23:16:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-date.html" title="date命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="date命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-date.html" title="date命令">date命令</a><time datetime="2025-02-22T15:16:00.000Z" title="发表于 2025-02-22 23:16:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-cd.html" title="cd命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cd命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-cd.html" title="cd命令">cd命令</a><time datetime="2025-02-22T10:37:00.000Z" title="发表于 2025-02-22 18:37:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-chmod.html" title="chmod命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chmod命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-chmod.html" title="chmod命令">chmod命令</a><time datetime="2025-02-22T10:37:00.000Z" title="发表于 2025-02-22 18:37:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-cat.html" title="cat命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cat命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-cat.html" title="cat命令">cat命令</a><time datetime="2025-02-21T15:36:00.000Z" title="发表于 2025-02-21 23:36:00">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-arping.html" title="arping命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arping命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-arping.html" title="arping命令">arping命令</a><time datetime="2025-02-21T07:38:00.000Z" title="发表于 2025-02-21 15:38:00">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-blkid.html" title="blkid命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="blkid命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-blkid.html" title="blkid命令">blkid命令</a><time datetime="2025-02-21T07:38:00.000Z" title="发表于 2025-02-21 15:38:00">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-awk.html" title="awk命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="awk命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-awk.html" title="awk命令">awk命令</a><time datetime="2025-02-20T15:52:00.000Z" title="发表于 2025-02-20 23:52:00">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html" title="Linux命令速查手册索引"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令速查手册索引"></a><div class="content"><a class="title" href="/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html" title="Linux命令速查手册索引">Linux命令速查手册索引</a><time datetime="2025-02-20T11:45:00.000Z" title="发表于 2025-02-20 19:45:00">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-scp.html" title="scp命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="scp命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-scp.html" title="scp命令">scp命令</a><time datetime="2025-02-20T09:39:00.000Z" title="发表于 2025-02-20 17:39:00">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-arp.html" title="arp命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arp命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-arp.html" title="arp命令">arp命令</a><time datetime="2025-02-18T02:27:00.000Z" title="发表于 2025-02-18 10:27:00">2025-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ss.html" title="ss命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ss命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ss.html" title="ss命令">ss命令</a><time datetime="2025-02-18T02:27:00.000Z" title="发表于 2025-02-18 10:27:00">2025-02-18</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-w.html" title="w命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="w命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-w.html" title="w命令">w命令</a><time datetime="2025-03-07T15:15:00.000Z" title="发表于 2025-03-07 23:15:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-top.html" title="top命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-top.html" title="top命令">top命令</a><time datetime="2025-03-07T04:46:00.000Z" title="发表于 2025-03-07 12:46:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-time.html" title="time命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="time命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-time.html" title="time命令">time命令</a><time datetime="2025-03-07T04:36:00.000Z" title="发表于 2025-03-07 12:36:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-tail.html" title="tail命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tail命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-tail.html" title="tail命令">tail命令</a><time datetime="2025-03-07T04:30:00.000Z" title="发表于 2025-03-07 12:30:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="smartctl命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-smartctl.html" title="smartctl命令">smartctl命令</a><time datetime="2025-03-07T02:50:00.000Z" title="发表于 2025-03-07 10:50:00">2025-03-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Chan Revival</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'u4i90Gtr4z5ltiEyAwZXwAaG-gzGzoHsz',
+      appKey: '5QCoDhscDztlH49YntlyPmVV',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('/pluginsSrc/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>查看哪些程序占用SWAP | Chan Revival Sky</title><meta name="author" content="Chan Revival"><meta name="copyright" content="Chan Revival"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="生产系统技术支撑中经常接到SWAP使用率超标的告警，可通过以下命令查看是哪些程序占用了SWAP。 123456789for i in $(ls &#x2F;proc | grep &quot;^[0-9]&quot; | awk &#x27;$0&gt;100&#x27;); do     if [ -f &quot;&#x2F;proc&#x2F;$i&#x2F;smaps&quot; ]; then        swap&#x3D;$(aw">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查看哪些程序占用SWAP">
+<meta property="og:url" content="https://blog.crsky.uk/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="生产系统技术支撑中经常接到SWAP使用率超标的告警，可通过以下命令查看是哪些程序占用了SWAP。 123456789for i in $(ls &#x2F;proc | grep &quot;^[0-9]&quot; | awk &#x27;$0&gt;100&#x27;); do     if [ -f &quot;&#x2F;proc&#x2F;$i&#x2F;smaps&quot; ]; then        swap&#x3D;$(aw">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.crsky.uk/images/20250115000.jpg">
+<meta property="article:published_time" content="2025-01-15T07:52:00.000Z">
+<meta property="article:modified_time" content="2025-02-04T15:16:43.547Z">
+<meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="OS">
+<meta property="article:tag" content="SWAP">
+<meta property="article:tag" content="主机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.crsky.uk/images/20250115000.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "查看哪些程序占用SWAP",
+  "url": "https://blog.crsky.uk/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap.html",
+  "image": "https://blog.crsky.uk/images/20250115000.jpg",
+  "datePublished": "2025-01-15T07:52:00.000Z",
+  "dateModified": "2025-02-04T15:16:43.547Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Chan Revival",
+      "url": "https://blog.crsky.uk/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.crsky.uk/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap.html"><link rel="preconnect"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-1930969495144394',
+  enable_page_level_ads: 'true'
+});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-VN485BL2P4')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-VN485BL2P4', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '查看哪些程序占用SWAP',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="/pluginsSrc/pace-js/themes/blue/pace-theme-minimal.css"/><script src="/pluginsSrc/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">128</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">192</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页·Home</span></a></div><div class="menus_item"><a class="site-page" href="/news/"><i class="fa-fw fas fa-newspaper"></i><span> 新闻·News</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-cogs"></i><span> 技术·Tech</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/exoplanets/"><i class="fa-fw fas fa-globe"></i><span> 地外文明·Exoplanets</span></a></li><li><a class="site-page child" href="/software/"><i class="fa-fw fas fa-code"></i><span> 软件技术·Software</span></a></li><li><a class="site-page child" href="/database/"><i class="fa-fw fas fa-database"></i><span> 数据库技术·Databases</span></a></li><li><a class="site-page child" href="/linux_tools/"><i class="fa-fw fas fa-terminal"></i><span> Linux工具箱·Linux Tools</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 休闲·Leisure</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/literature/"><i class="fa-fw fas fa-newspaper"></i><span> 美文共赏·Literature</span></a></li><li><a class="site-page child" href="/photography2/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影艺术·Photography</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐潮流·Music</span></a></li><li><a class="site-page child" href="/cinema/"><i class="fa-fw fas fa-film"></i><span> 影视艺术·Cinema</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-comments"></i><span> 关于·About</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/feedback/"><i class="fa-fw fas fa-comments"></i><span> 留言板·Feedback</span></a></li><li><a class="site-page child" href="/voice/"><i class="fa-fw fas fa-user"></i><span> 站主之声·Voice</span></a></li><li><a class="site-page child" href="/updates/"><i class="fa-fw fas fa-cogs"></i><span> 网站更新·Updates</span></a></li><li><a class="site-page child" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系我们·Contact</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Chan Revival Sky</span></a><a class="nav-page-title" href="/"><span class="site-name">查看哪些程序占用SWAP</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页·Home</span></a></div><div class="menus_item"><a class="site-page" href="/news/"><i class="fa-fw fas fa-newspaper"></i><span> 新闻·News</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-cogs"></i><span> 技术·Tech</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/exoplanets/"><i class="fa-fw fas fa-globe"></i><span> 地外文明·Exoplanets</span></a></li><li><a class="site-page child" href="/software/"><i class="fa-fw fas fa-code"></i><span> 软件技术·Software</span></a></li><li><a class="site-page child" href="/database/"><i class="fa-fw fas fa-database"></i><span> 数据库技术·Databases</span></a></li><li><a class="site-page child" href="/linux_tools/"><i class="fa-fw fas fa-terminal"></i><span> Linux工具箱·Linux Tools</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 休闲·Leisure</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/literature/"><i class="fa-fw fas fa-newspaper"></i><span> 美文共赏·Literature</span></a></li><li><a class="site-page child" href="/photography2/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影艺术·Photography</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐潮流·Music</span></a></li><li><a class="site-page child" href="/cinema/"><i class="fa-fw fas fa-film"></i><span> 影视艺术·Cinema</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-comments"></i><span> 关于·About</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/feedback/"><i class="fa-fw fas fa-comments"></i><span> 留言板·Feedback</span></a></li><li><a class="site-page child" href="/voice/"><i class="fa-fw fas fa-user"></i><span> 站主之声·Voice</span></a></li><li><a class="site-page child" href="/updates/"><i class="fa-fw fas fa-cogs"></i><span> 网站更新·Updates</span></a></li><li><a class="site-page child" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系我们·Contact</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">查看哪些程序占用SWAP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-01-15T07:52:00.000Z" title="发表于 2025-01-15 15:52:00">2025-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-04T15:16:43.547Z" title="更新于 2025-02-04 23:16:43">2025-02-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF/">科技前沿</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6/">计算机软件</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-04 23:16:43&quot;}" hidden></div><p>生产系统技术支撑中经常接到SWAP使用率超标的告警，可通过以下命令查看是哪些程序占用了SWAP。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(<span class="built_in">ls</span> /proc | grep <span class="string">&quot;^[0-9]&quot;</span> | awk <span class="string">&#x27;$0&gt;100&#x27;</span>); <span class="keyword">do</span> </span><br><span class="line">    <span class="keyword">if</span> [ -f <span class="string">&quot;/proc/<span class="variable">$i</span>/smaps&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">        swap=$(awk <span class="string">&#x27;/Swap:/&#123;a=a+$2&#125;END&#123;print a/1024&quot;M&quot;&#125;&#x27;</span> /proc/<span class="variable">$i</span>/smaps)</span><br><span class="line">        <span class="comment">#proc_name=$(ps -p $i -o comm= 2&gt;/dev/null)</span></span><br><span class="line">        cmd_line=$(ps -p <span class="variable">$i</span> -o args= 2&gt;/dev/null)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$i</span> <span class="variable">$swap</span> <span class="variable">$proc_name</span> <span class="variable">$cmd_line</span>&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span> | <span class="built_in">sort</span> -k2nr | <span class="built_in">head</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>返回的数据如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2203 22.0664M  /usr/bin/gnome-shell</span><br><span class="line">899 18.2031M  /usr/bin/python2 -Es /usr/sbin/firewalld --nofork --nopid</span><br><span class="line">1264 10.5156M  /usr/bin/python2 -Es /usr/sbin/tuned -l -P</span><br><span class="line">2276 6.59375M  /usr/libexec/geoclue -t 5</span><br><span class="line">2476 6.51562M  /usr/bin/gnome-software --gapplication-service</span><br><span class="line">1343 6.45312M  /usr/bin/X :0 -background none -noreset -audit 4 -verbose -auth /run/gdm/auth-for-gdm-3jlvD6/database -seat seat0 -nolisten tcp vt1</span><br><span class="line">1278 5.88672M  /usr/sbin/libvirtd</span><br><span class="line">2293 5.55078M  /usr/libexec/goa-daemon</span><br><span class="line">826 4.78516M  /usr/lib/polkit-1/polkitd --no-debug</span><br><span class="line">2616 3.98438M  /usr/libexec/evolution-addressbook-factory</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第1列是pid</li>
+<li>第2列是占用SWAP的大小</li>
+<li>第3列是进程的命令行</li>
+</ul>
+<p>贴一张数据库生产系统中运行的效果图：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/vx_images/373093367465815.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.crsky.uk">Chan Revival</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.crsky.uk/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap.html">https://blog.crsky.uk/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.crsky.uk" target="_blank">Chan Revival Sky</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/OS/">OS</a><a class="post-meta__tags" href="/tags/SWAP/">SWAP</a><a class="post-meta__tags" href="/tags/%E4%B8%BB%E6%9C%BA/">主机</a></div><div class="post-share"><div class="social-share" data-image="/images/20250115000.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/common-cos-yum-repo-conf.html" title="Common CentOS Yum Repository Configurations"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-13</div><div class="info-item-2">Common CentOS Yum Repository Configurations</div></div><div class="info-2"><div class="info-item-1">Common CentOS Yum Repository ConfigurationsConfiguring a Local Yum RepositoryMount and Use an ISO Image Directly  Backup the original yum repository configuration file  1cp -p /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   Mount the ISO image  1mount -t iso9660 -o loop /home/OracleLinux-R6-U5-Server-x86_64-dvd.iso /mnt   Edit the configuration file  1vi /etc/yum.repos.d/local.repo  The content of the configuration file is as...</div></div></div></a><a class="pagination-related" href="/posts/centos-yum-yuan-chang-yong-ming-ling.html" title="CentOS yum源常用配置"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-13</div><div class="info-item-2">CentOS yum源常用配置</div></div><div class="info-2"><div class="info-item-1">CentOS yum源常用配置配置本地yum源直接挂载使用ISO镜像  备份原yum源配置文件  1cp -p /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup   挂载ISO镜像  1mount -t iso9660 -o loop /home/OracleLinux-R6-U5-Server-x86_64-dvd.iso /mnt   编辑配置文件  1vi /etc/yum.repos.d/local.repo  配置文件内容如下 12345[local_server]name=local_repobaseurl=file:///mntenabled=1gpgcheck=0   清理yum缓存并生成新的缓存  1yum clean all &amp;&amp; yum makecache   配置中国国内yum源 备份原yum源配置文件  1cp -p /etc/yum.repos.d/CentOS-Base.repo...</div></div></div></a><a class="pagination-related" href="/posts/linux-ming-ling-da-quan.html" title="Linux命令大全"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-04</div><div class="info-item-2">Linux命令大全</div></div><div class="info-2"><div class="info-item-1">...</div></div></div></a><a class="pagination-related" href="/posts/shi-yong-udev-zai-linux7-cao-zuo-xi-tong-xia-wei-ci-pan-pei-zhi-ming-cheng-v1-0.html" title="使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2017-08-16</div><div class="info-item-2">使用UDEV在Linux7操作系统下为磁盘配置名称_v1.0</div></div><div class="info-2"><div class="info-item-1">使用UDEV在Linux7操作系统下为磁盘配置名称适用于Linux操作系统 – Oracle Linux 7.0版本及更新Linux x86-64 目标如何使用udev在Oracle Linux 7平台设置自定义的设备名称。 解决方案为&#x2F;dev&#x2F;sdb设置自定义的设备名(&#x2F;dev&#x2F;asmdisk01p1)，配置udev规则如下：  找出设备的UUID 12/usr/lib/udev/scsi_id -g -u /dev/sdb1IET_00020002 保存该UUID，这个ID稍后将会用到。  创建新的udev规划在以下合适的位置创建新的udev规划文件： 1vi /etc/udev/rules.d/99-my-asmdevices.rules 在99-mydevices.rules文件里添加以下内容： 1KERNEL==&quot;sd*[!0-9]&quot;, ENV&#123;DEVTYPE&#125;==&quot;disk&quot;, SUBSYSTEM==&quot;block&quot;,...</div></div></div></a><a class="pagination-related" href="/posts/linux-shang-de-luo-she-bei.html" title="Linux上的裸设备"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2017-01-19</div><div class="info-item-2">Linux上的裸设备</div></div><div class="info-2"><div class="info-item-1">Linux 上的裸设备什么是裸设备？裸设备，也称为裸分区，是一个未被挂载且不由Linux文件系统（如ext2&#x2F;ext3、reiserfs）或Oracle集群文件系统（OCFS、OCFS2）写入的磁盘分区，而是通过字符设备驱动程序直接访问。应用程序负责组织数据如何写入磁盘分区的细节。 如何识别裸设备？所有硬件设备看起来都像是常规文件；它们可以使用与操作文件相同的、标准的系统调用来打开、关闭、读取和写入。系统中的每个设备都由一个设备特殊文件表示，例如系统中的第一个IDE磁盘由&#x2F;dev&#x2F;hda表示。对于块（磁盘）和字符设备，这些设备特殊文件是由mknod命令创建的，它们使用主设备号和次设备号来描述设备。 由同一个设备驱动程序控制的所有设备都有一个共同的主设备号。...</div></div></div></a><a class="pagination-related" href="/posts/ru-he-shi-yong-udev-fei-asmlib-she-zhi-fen-qu-hua-de-linux-kuai-she-bei-bing-jiang-ta-men-fen-pei-gei-asm.html" title="如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/oracle_db.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2016-05-22</div><div class="info-item-2">如何使用UDEV（非ASMLIB）设置分区化的Linux块设备并将它们分配给ASM？</div></div><div class="info-2"><div class="info-item-1">本文档适用于Oracle数据库 - 标准版 - 版本10.2.0.1至12.1.0.2 [发行版10.2至12.1]Oracle数据库 - 企业版 - 版本12.1.0.2至12.1.0.2 [发行版12.1]本文档中的信息适用于任何平台。 目标本文档提供了一个示例，说明如何使用udev（非ASMLIB）设置&#x2F;配置分区化的Linux块设备，并将它们作为ASM的候选成员磁盘分配给ASM。 解决方案 此示例在OEL 6.3配置上执行（ASM版本11.2.0.3 - 64位）： 1234567[grid@asmlnx2 ~]$ uname -aLinux asmlnx2 2.6.39-200.24.1.el6uek.x86_64 #1 SMP Sat Jun 23 02:39:07 EDT 2012 x86_64 x86_64 x86_64 GNU/Linux[grid@asmlnx2 ~]$ cat /etc/*release*Oracle Linux Server release 6.3Red Hat Enterprise Linux Server release...</div></div></div></a><a class="pagination-related" href="/posts/shi-yong-yum-xia-zai-rpm-bao.html" title="使用yum下载rpm包"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-26</div><div class="info-item-2">使用yum下载rpm包</div></div><div class="info-2"><div class="info-item-1">使用yum下载rpm包使用yum下载rpm包的命令是： 1yum install --downloadonly --downloaddir=/tmp &lt;package-name&gt;  请注意，如果下载的包包含未满足的依赖关系，yum将会下载所有依赖关系的包，但不会进行安装。 另外，对于CentOS&#x2F;RHEL 6或更早期版本，需要安装一个名为yum-plugin-downloadonly的yum插件，才能使用–downloadonly命令选项。 </div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chan Revival</div><div class="author-info-description">Chan Revival Sky</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">128</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">192</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chanrevival"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/chanrevival" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:chanrevival@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">天上星，亮晶晶，永灿烂，长安宁。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-w.html" title="w命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="w命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-w.html" title="w命令">w命令</a><time datetime="2025-03-07T15:15:00.000Z" title="发表于 2025-03-07 23:15:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-top.html" title="top命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-top.html" title="top命令">top命令</a><time datetime="2025-03-07T04:46:00.000Z" title="发表于 2025-03-07 12:46:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-time.html" title="time命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="time命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-time.html" title="time命令">time命令</a><time datetime="2025-03-07T04:36:00.000Z" title="发表于 2025-03-07 12:36:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-tail.html" title="tail命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tail命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-tail.html" title="tail命令">tail命令</a><time datetime="2025-03-07T04:30:00.000Z" title="发表于 2025-03-07 12:30:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="smartctl命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-smartctl.html" title="smartctl命令">smartctl命令</a><time datetime="2025-03-07T02:50:00.000Z" title="发表于 2025-03-07 10:50:00">2025-03-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Chan Revival</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'u4i90Gtr4z5ltiEyAwZXwAaG-gzGzoHsz',
+      appKey: '5QCoDhscDztlH49YntlyPmVV',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('/pluginsSrc/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

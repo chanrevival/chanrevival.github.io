@@ -1,0 +1,810 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ss命令 | Chan Revival Sky</title><meta name="author" content="Chan Revival"><meta name="copyright" content="Chan Revival"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="回到手册索引  命令用途ss 命令主要用于显示套接字信息，可以用来查看系统当前活动的网络连接和其状态。它能提供关于 TCP、UDP、Unix 域套接字等多种协议的详细数据。 常用用法示例查看所有 TCP 套接字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ss命令">
+<meta property="og:url" content="https://blog.crsky.uk/posts/linux-cmd-ss.html">
+<meta property="og:site_name" content="Chan Revival Sky">
+<meta property="og:description" content="回到手册索引  命令用途ss 命令主要用于显示套接字信息，可以用来查看系统当前活动的网络连接和其状态。它能提供关于 TCP、UDP、Unix 域套接字等多种协议的详细数据。 常用用法示例查看所有 TCP 套接字">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.crsky.uk/images/linux.jpg">
+<meta property="article:published_time" content="2025-02-18T02:27:00.000Z">
+<meta property="article:modified_time" content="2025-02-22T10:34:18.315Z">
+<meta property="article:author" content="Chan Revival">
+<meta property="article:tag" content="Linux工具箱·Linux Toolbox">
+<meta property="article:tag" content="科技·Tech">
+<meta property="article:tag" content="arp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.crsky.uk/images/linux.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ss命令",
+  "url": "https://blog.crsky.uk/posts/linux-cmd-ss.html",
+  "image": "https://blog.crsky.uk/images/linux.jpg",
+  "datePublished": "2025-02-18T02:27:00.000Z",
+  "dateModified": "2025-02-22T10:34:18.315Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Chan Revival",
+      "url": "https://blog.crsky.uk/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.crsky.uk/posts/linux-cmd-ss.html"><link rel="preconnect"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-1930969495144394',
+  enable_page_level_ads: 'true'
+});</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-VN485BL2P4"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-VN485BL2P4')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-VN485BL2P4', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ss命令',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="/pluginsSrc/pace-js/themes/blue/pace-theme-minimal.css"/><script src="/pluginsSrc/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">128</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">192</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页·Home</span></a></div><div class="menus_item"><a class="site-page" href="/news/"><i class="fa-fw fas fa-newspaper"></i><span> 新闻·News</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-cogs"></i><span> 技术·Tech</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/exoplanets/"><i class="fa-fw fas fa-globe"></i><span> 地外文明·Exoplanets</span></a></li><li><a class="site-page child" href="/software/"><i class="fa-fw fas fa-code"></i><span> 软件技术·Software</span></a></li><li><a class="site-page child" href="/database/"><i class="fa-fw fas fa-database"></i><span> 数据库技术·Databases</span></a></li><li><a class="site-page child" href="/linux_tools/"><i class="fa-fw fas fa-terminal"></i><span> Linux工具箱·Linux Tools</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 休闲·Leisure</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/literature/"><i class="fa-fw fas fa-newspaper"></i><span> 美文共赏·Literature</span></a></li><li><a class="site-page child" href="/photography2/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影艺术·Photography</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐潮流·Music</span></a></li><li><a class="site-page child" href="/cinema/"><i class="fa-fw fas fa-film"></i><span> 影视艺术·Cinema</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-comments"></i><span> 关于·About</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/feedback/"><i class="fa-fw fas fa-comments"></i><span> 留言板·Feedback</span></a></li><li><a class="site-page child" href="/voice/"><i class="fa-fw fas fa-user"></i><span> 站主之声·Voice</span></a></li><li><a class="site-page child" href="/updates/"><i class="fa-fw fas fa-cogs"></i><span> 网站更新·Updates</span></a></li><li><a class="site-page child" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系我们·Contact</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Chan Revival Sky</span></a><a class="nav-page-title" href="/"><span class="site-name">ss命令</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页·Home</span></a></div><div class="menus_item"><a class="site-page" href="/news/"><i class="fa-fw fas fa-newspaper"></i><span> 新闻·News</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-cogs"></i><span> 技术·Tech</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/exoplanets/"><i class="fa-fw fas fa-globe"></i><span> 地外文明·Exoplanets</span></a></li><li><a class="site-page child" href="/software/"><i class="fa-fw fas fa-code"></i><span> 软件技术·Software</span></a></li><li><a class="site-page child" href="/database/"><i class="fa-fw fas fa-database"></i><span> 数据库技术·Databases</span></a></li><li><a class="site-page child" href="/linux_tools/"><i class="fa-fw fas fa-terminal"></i><span> Linux工具箱·Linux Tools</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 休闲·Leisure</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/literature/"><i class="fa-fw fas fa-newspaper"></i><span> 美文共赏·Literature</span></a></li><li><a class="site-page child" href="/photography2/"><i class="fa-fw fas fa-camera-retro"></i><span> 摄影艺术·Photography</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐潮流·Music</span></a></li><li><a class="site-page child" href="/cinema/"><i class="fa-fw fas fa-film"></i><span> 影视艺术·Cinema</span></a></li></ul></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-comments"></i><span> 关于·About</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/feedback/"><i class="fa-fw fas fa-comments"></i><span> 留言板·Feedback</span></a></li><li><a class="site-page child" href="/voice/"><i class="fa-fw fas fa-user"></i><span> 站主之声·Voice</span></a></li><li><a class="site-page child" href="/updates/"><i class="fa-fw fas fa-cogs"></i><span> 网站更新·Updates</span></a></li><li><a class="site-page child" href="/contact/"><i class="fa-fw fas fa-envelope"></i><span> 联系我们·Contact</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">ss命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-18T02:27:00.000Z" title="发表于 2025-02-18 10:27:00">2025-02-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-22T10:34:18.315Z" title="更新于 2025-02-22 18:34:18">2025-02-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80%C2%B7Tech/">科技·Tech</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A7%91%E6%8A%80%C2%B7Tech/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/">Linux工具箱·Linux Toolbox</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2025-02-22 18:34:18&quot;}" hidden></div><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>ss 命令主要用于显示套接字信息，可以用来查看系统当前活动的网络连接和其状态。它能提供关于 TCP、UDP、Unix 域套接字等多种协议的详细数据。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><h3 id="查看所有-TCP-套接字"><a href="#查看所有-TCP-套接字" class="headerlink" title="查看所有 TCP 套接字"></a>查看所有 TCP 套接字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ss -t -a</span><br><span class="line">State      Recv-Q    Send-Q        Local Address:Port        Peer Address:Port</span><br><span class="line">ESTAB      0         0             192.168.1.10:ssh         192.168.1.2:22</span><br><span class="line">LISTEN     0         128           0.0.0.0:http              0.0.0.0:*</span><br></pre></td></tr></table></figure>
+
+<p>State 表示套接字的当前状态（如 ESTAB 表示已建立连接，LISTEN 表示正在监听）。<br>Recv-Q 和 Send-Q 表示接收和发送队列的大小。<br>Local Address:Port 和 Peer Address:Port 分别表示本地和远程的地址与端口。</p>
+<h3 id="查看所有-UDP-套接字"><a href="#查看所有-UDP-套接字" class="headerlink" title="查看所有 UDP 套接字"></a>查看所有 UDP 套接字</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ss -u -a</span><br><span class="line">State      Recv-Q    Send-Q        Local Address:Port        Peer Address:Port</span><br><span class="line">UNCONN     0         0             0.0.0.0:123               0.0.0.0:*</span><br><span class="line">UNCONN     0         0             0.0.0.0:53                0.0.0.0:*</span><br></pre></td></tr></table></figure>
+
+<p>这种输出展示了所有未连接的 UDP 套接字。</p>
+<h3 id="查看-SSH-连接"><a href="#查看-SSH-连接" class="headerlink" title="查看 SSH 连接"></a>查看 SSH 连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ss -o state established <span class="string">&#x27;( dport = :ssh or sport = :ssh )&#x27;</span></span><br><span class="line">State      Recv-Q    Send-Q        Local Address:Port        Peer Address:Port</span><br><span class="line">ESTAB      0         0             192.168.1.10:ssh         192.168.1.2:22</span><br></pre></td></tr></table></figure>
+
+<p>该命令列出了所有已建立的 SSH 连接。</p>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><p>-h, –help：显示命令的帮助信息。<br>-V, –version：输出 ss 命令的版本信息。<br>-n, –numeric：不解析服务名称，显示精确的端口号。<br>-a, –all：显示所有套接字，包括监听和非监听状态的套接字。<br>-l, –listening：仅显示监听状态的套接字。<br>-o, –options：显示定时器信息（如 TCP 重传定时器、连接保持活跃定时器等）。<br>-p, –processes：显示使用套接字的进程信息。<br>-T, –threads：显示使用套接字的线程信息，默认与 -p 选项一起使用。<br>-e, –extended：显示详细的套接字信息，如 UID、inode 等。<br>-s, –summary：打印套接字的统计信息，适用于大量套接字的情况。<br>-4, –ipv4：仅显示 IPv4 套接字。<br>-6, –ipv6：仅显示 IPv6 套接字。<br>-t, –tcp：仅显示 TCP 套接字。<br>-u, –udp：仅显示 UDP 套接字。</p>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>NAME         </p>
+<pre><code>   ss - another utility to investigate sockets
+</code></pre>
+<p>SYNOPSIS         </p>
+<pre><code>   ss [options] [ FILTER ]
+</code></pre>
+<p>DESCRIPTION         </p>
+<pre><code>   ss is used to dump socket statistics. It allows showing
+   information similar to netstat.  It can display more TCP and state
+   information than other tools.
+</code></pre>
+<p>OPTIONS         </p>
+<pre><code>   When no option is used ss displays a list of open non-listening
+   sockets (e.g. TCP/UNIX/UDP) that have established connection.
+
+   -h, --help
+          Show summary of options.
+
+   -V, --version
+          Output version information.
+
+   -H, --no-header
+          Suppress header line.
+
+   -Q, --no-queues
+          Suppress sending and receiving queue columns.
+
+   -O, --oneline
+          Print each socket&#39;s data on a single line.
+
+   -n, --numeric
+          Do not try to resolve service names. Show exact bandwidth
+          values, instead of human-readable.
+
+   -r, --resolve
+          Try to resolve numeric address/ports.
+
+   -a, --all
+          Display both listening and non-listening (for TCP this
+          means established connections) sockets.
+
+   -l, --listening
+          Display only listening sockets (these are omitted by
+          default).
+
+   -B, --bound-inactive
+          Display only TCP bound but inactive (not listening,
+          connecting, etc.) sockets (these are omitted by default).
+
+   -o, --options
+          Show timer information. For TCP protocol, the output format
+          is:
+
+          timer:(&lt;timer_name&gt;,&lt;expire_time&gt;,&lt;retrans&gt;)
+
+          &lt;timer_name&gt;
+                 the name of the timer, there are five kind of timer
+                 names:
+
+                 on : means one of these timers: TCP retrans timer,
+                 TCP early retrans timer and tail loss probe timer
+
+                 keepalive: tcp keep alive timer
+
+                 timewait: timewait stage timer
+
+                 persist: zero window probe timer
+
+                 unknown: none of the above timers
+
+          &lt;expire_time&gt;
+                 how long time the timer will expire
+
+          &lt;retrans&gt;
+                 how many times the retransmission occurred
+
+   -e, --extended
+          Show detailed socket information. The output format is:
+
+          uid:&lt;uid_number&gt; ino:&lt;inode_number&gt; sk:&lt;cookie&gt;
+
+          &lt;uid_number&gt;
+                 the user id the socket belongs to
+
+          &lt;inode_number&gt;
+                 the socket&#39;s inode number in VFS
+
+          &lt;cookie&gt;
+                 an uuid of the socket
+
+   -m, --memory
+          Show socket memory usage. The output format is:
+
+          skmem:(r&lt;rmem_alloc&gt;,rb&lt;rcv_buf&gt;,t&lt;wmem_alloc&gt;,tb&lt;snd_buf&gt;,
+                        f&lt;fwd_alloc&gt;,w&lt;wmem_queued&gt;,o&lt;opt_mem&gt;,
+                        bl&lt;back_log&gt;,d&lt;sock_drop&gt;)
+
+          &lt;rmem_alloc&gt;
+                 the memory allocated for receiving packet
+
+          &lt;rcv_buf&gt;
+                 the total memory can be allocated for receiving
+                 packet
+
+          &lt;wmem_alloc&gt;
+                 the memory used for sending packet (which has been
+                 sent to layer 3)
+
+          &lt;snd_buf&gt;
+                 the total memory can be allocated for sending packet
+
+          &lt;fwd_alloc&gt;
+                 the memory allocated by the socket as cache, but not
+                 used for receiving/sending packet yet. If need
+                 memory to send/receive packet, the memory in this
+                 cache will be used before allocate additional
+                 memory.
+
+          &lt;wmem_queued&gt;
+                 The memory allocated for sending packet (which has
+                 not been sent to layer 3)
+
+          &lt;opt_mem&gt;
+                 The memory used for storing socket option, e.g., the
+                 key for TCP MD5 signature
+
+          &lt;back_log&gt;
+                 The memory used for the sk backlog queue. On a
+                 process context, if the process is receiving packet,
+                 and a new packet is received, it will be put into
+                 the sk backlog queue, so it can be received by the
+                 process immediately
+
+          &lt;sock_drop&gt;
+                 the number of packets dropped before they are de-
+                 multiplexed into the socket
+
+   -p, --processes
+          Show process using socket.
+
+   -T, --threads
+          Show thread using socket. Implies -p.
+
+   -i, --info
+          Show internal TCP information. Below fields may appear:
+
+          ts     show string &quot;ts&quot; if the timestamp option is set
+
+          sack   show string &quot;sack&quot; if the sack option is set
+
+          ecn    show string &quot;ecn&quot; if the explicit congestion
+                 notification option is set
+
+          ecnseen
+                 show string &quot;ecnseen&quot; if the saw ecn flag is found
+                 in received packets
+
+          fastopen
+                 show string &quot;fastopen&quot; if the fastopen option is set
+
+          cong_alg
+                 the congestion algorithm name, the default
+                 congestion algorithm is &quot;cubic&quot;
+
+          wscale:&lt;snd_wscale&gt;:&lt;rcv_wscale&gt;
+                 if window scale option is used, this field shows the
+                 send scale factor and receive scale factor
+
+          rto:&lt;icsk_rto&gt;
+                 tcp re-transmission timeout value, the unit is
+                 millisecond
+
+          backoff:&lt;icsk_backoff&gt;
+                 used for exponential backoff re-transmission, the
+                 actual re-transmission timeout value is icsk_rto &lt;&lt;
+                 icsk_backoff
+
+          rtt:&lt;rtt&gt;/&lt;rttvar&gt;
+                 rtt is the average round trip time, rttvar is the
+                 mean deviation of rtt, their units are millisecond
+
+          ato:&lt;ato&gt;
+                 ack timeout, unit is millisecond, used for delay ack
+                 mode
+
+          mss:&lt;mss&gt;
+                 max segment size
+
+          cwnd:&lt;cwnd&gt;
+                 congestion window size
+
+          pmtu:&lt;pmtu&gt;
+                 path MTU value
+
+          ssthresh:&lt;ssthresh&gt;
+                 tcp congestion window slow start threshold
+
+          bytes_acked:&lt;bytes_acked&gt;
+                 bytes acked
+
+          bytes_received:&lt;bytes_received&gt;
+                 bytes received
+
+          segs_out:&lt;segs_out&gt;
+                 segments sent out
+
+          segs_in:&lt;segs_in&gt;
+                 segments received
+
+          send &lt;send_bps&gt;bps
+                 egress bps
+
+          lastsnd:&lt;lastsnd&gt;
+                 how long time since the last packet sent, the unit
+                 is millisecond
+
+          lastrcv:&lt;lastrcv&gt;
+                 how long time since the last packet received, the
+                 unit is millisecond
+
+          lastack:&lt;lastack&gt;
+                 how long time since the last ack received, the unit
+                 is millisecond
+
+          pacing_rate &lt;pacing_rate&gt;bps/&lt;max_pacing_rate&gt;bps
+                 the pacing rate and max pacing rate
+
+          rcv_space:&lt;rcv_space&gt;
+                 a helper variable for TCP internal auto tuning
+                 socket receive buffer
+
+          tcp-ulp-mptcp flags:[MmBbJjecv]
+          token:&lt;rem_token(rem_id)/loc_token(loc_id)&gt; seq:&lt;sn&gt;
+          sfseq:&lt;ssn&gt; ssnoff:&lt;off&gt; maplen:&lt;maplen&gt;
+                 MPTCP subflow information
+
+   --tos  Show ToS and priority information. Below fields may appear:
+
+          tos    IPv4 Type-of-Service byte
+
+          tclass IPv6 Traffic Class byte
+
+          class_id
+                 Class id set by net_cls cgroup. If class is zero
+                 this shows priority set by SO_PRIORITY.
+
+   --cgroup
+          Show cgroup information. Below fields may appear:
+
+          cgroup Cgroup v2 pathname. This pathname is relative to the
+                 mount point of the hierarchy.
+
+   --tipcinfo
+          Show internal tipc socket information.
+
+   -K, --kill
+          Attempts to forcibly close sockets. This option displays
+          sockets that are successfully closed and silently skips
+          sockets that the kernel does not support closing. It
+          supports IPv4 and IPv6 sockets only.
+
+   -s, --summary
+          Print summary statistics. This option does not parse socket
+          lists obtaining summary from various sources. It is useful
+          when amount of sockets is so huge that parsing
+          /proc/net/tcp is painful.
+
+   -E, --events
+          Continually display sockets as they are destroyed
+
+   -Z, --context
+          As the -p option but also shows process security context.
+          If the -T option is used, also shows thread security
+          context.
+
+          For netlink(7) sockets the initiating process context is
+          displayed as follows:
+
+                 1.  If valid pid show the process context.
+
+                 2.  If destination is kernel (pid = 0) show kernel
+                     initial context.
+
+                 3.  If a unique identifier has been allocated by the
+                     kernel or netlink user, show context as
+                     &quot;unavailable&quot;. This will generally indicate that
+                     a process has more than one netlink socket
+                     active.
+
+   -z, --contexts
+          As the -Z option but also shows the socket context. The
+          socket context is taken from the associated inode and is
+          not the actual socket context held by the kernel. Sockets
+          are typically labeled with the context of the creating
+          process, however the context shown will reflect any policy
+          role, type and/or range transition rules applied, and is
+          therefore a useful reference.
+
+   -N NSNAME, --net=NSNAME
+          Switch to the specified network namespace name.
+
+   -b, --bpf
+          Show socket classic BPF filters (only administrators are
+          allowed to get these information).
+
+   -4, --ipv4
+          Display only IP version 4 sockets (alias for -f inet).
+
+   -6, --ipv6
+          Display only IP version 6 sockets (alias for -f inet6).
+
+   -0, --packet
+          Display PACKET sockets (alias for -f link).
+
+   -t, --tcp
+          Display TCP sockets.
+
+   -u, --udp
+          Display UDP sockets.
+
+   -d, --dccp
+          Display DCCP sockets.
+
+   -w, --raw
+          Display RAW sockets.
+
+   -x, --unix
+          Display Unix domain sockets (alias for -f unix).
+
+   -S, --sctp
+          Display SCTP sockets.
+
+   --tipc Display tipc sockets (alias for -f tipc).
+
+   --vsock
+          Display vsock sockets (alias for -f vsock).
+
+   --xdp  Display XDP sockets (alias for -f xdp).
+
+   -M, --mptcp
+          Display MPTCP sockets.
+
+   --inet-sockopt
+          Display inet socket options.
+
+   -f FAMILY, --family=FAMILY
+          Display sockets of type FAMILY.  Currently the following
+          families are supported: unix, inet, inet6, link, netlink,
+          vsock, tipc, xdp.
+
+   -A QUERY, --query=QUERY, --socket=QUERY
+          List of socket tables to dump, separated by commas. The
+          following identifiers are understood: all, inet, tcp, udp,
+          raw, unix, packet, netlink, unix_dgram, unix_stream,
+          unix_seqpacket, packet_raw, packet_dgram, dccp, sctp, tipc,
+          vsock_stream, vsock_dgram, xdp, mptcp. Any item in the list
+          may optionally be prefixed by an exclamation mark (!)  to
+          exclude that socket table from being dumped.
+
+   -D FILE, --diag=FILE
+          Do not display anything, just dump raw information about
+          TCP sockets to FILE after applying filters. If FILE is -
+          stdout is used.
+
+   -F FILE, --filter=FILE
+          Read filter information from FILE.  Each line of FILE is
+          interpreted like single command line option. If FILE is -
+          stdin is used.
+
+   --bpf-maps
+          Pretty-print all the BPF socket-local data entries for each
+          socket.
+
+   --bpf-map-id=MAP_ID
+          Pretty-print the BPF socket-local data entries for the
+          requested map ID. Can be used more than once.
+
+   FILTER := [ state STATE-FILTER ] [ EXPRESSION ]
+          Please take a look at the official documentation for
+          details regarding filters.
+</code></pre>
+<p>STATE-FILTER         </p>
+<pre><code>   STATE-FILTER allows one to construct arbitrary set of states to
+   match. Its syntax is sequence of keywords state and exclude
+   followed by identifier of state.
+
+   Available identifiers are:
+
+          All standard TCP states: established, syn-sent, syn-recv,
+          fin-wait-1, fin-wait-2, time-wait, closed, close-wait,
+          last-ack, listening and closing.
+
+          all - for all the states
+
+          connected - all the states except for listening and closed
+
+          synchronized - all the connected states except for syn-sent
+
+          bucket - states, which are maintained as minisockets, i.e.
+          time-wait and syn-recv
+
+          big - opposite to bucket
+
+          bound-inactive - bound but otherwise inactive sockets (not
+          listening, connecting, etc.)
+</code></pre>
+<p>EXPRESSION         </p>
+<pre><code>   EXPRESSION allows filtering based on specific criteria.
+   EXPRESSION consists of a series of predicates combined by boolean
+   operators. The possible operators in increasing order of
+   precedence are or (or | or ||), and (or &amp; or &amp;&amp;), and not (or !).
+   If no operator is between consecutive predicates, an implicit and
+   operator is assumed. Subexpressions can be grouped with &quot;(&quot; and
+   &quot;)&quot;.
+
+   The following predicates are supported:
+
+   &#123;dst|src&#125; [=] HOST
+          Test if the destination or source matches HOST. See HOST
+          SYNTAX for details.
+
+   &#123;dport|sport&#125; [OP] [FAMILY:]:PORT
+          Compare the destination or source port to PORT. OP can be
+          any of &quot;&lt;&quot;, &quot;&lt;=&quot;, &quot;=&quot;, &quot;!=&quot;, &quot;&gt;=&quot; and &quot;&gt;&quot;. Following normal
+          arithmetic rules. FAMILY and PORT are as described in HOST
+          SYNTAX below.
+
+   dev [=|!=] DEVICE
+          Match based on the device the connection uses. DEVICE can
+          either be a device name or the index of the interface.
+
+   fwmark [=|!=] MASK
+          Matches based on the fwmark value for the connection. This
+          can either be a specific mark value or a mark value
+          followed by a &quot;/&quot; and a bitmask of which bits to use in the
+          comparison. For example &quot;fwmark = 0x01/0x03&quot; would match if
+          the two least significant bits of the fwmark were 0x01.
+
+   cgroup [=|!=] PATH
+          Match if the connection is part of a cgroup at the given
+          path.
+
+   autobound
+          Match if the port or path of the source address was
+          automatically allocated (rather than explicitly specified).
+
+   Most operators have aliases. If no operator is supplied &quot;=&quot; is
+   assumed.  Each of the following groups of operators are all
+   equivalent:
+
+          • = == eq
+
+          • != ne neq
+
+          • &gt; gt
+
+          • &lt; lt
+
+          • &gt;= ge geq
+
+          • &lt;= le leq
+
+          • ! not
+
+          • | || or
+
+          • &amp; &amp;&amp; and
+</code></pre>
+<p>HOST SYNTAX         </p>
+<pre><code>   The general host syntax is [FAMILY:]ADDRESS[:PORT].
+
+   FAMILY must be one of the families supported by the -f option. If
+   not given it defaults to the family given with the -f option, and
+   if that is also missing, will assume either inet or inet6. Note
+   that all host conditions in the expression should either all be
+   the same family or be only inet and inet6. If there is some other
+   mixture of families, the results will probably be unexpected.
+
+   The form of ADDRESS and PORT depends on the family used. &quot;*&quot; can
+   be used as a wildcard for either the address or port. The details
+   for each family are as follows:
+
+   unix   ADDRESS is a glob pattern (see fnmatch(3)) that will be
+          matched case-insensitively against the unix socket&#39;s
+          address. Both path and abstract names are supported. Unix
+          addresses do not support a port, and &quot;*&quot; cannot be used as
+          a wildcard.
+
+   link   ADDRESS is the case-insensitive name of an Ethernet
+          protocol to match. PORT is either a device name or a device
+          index for the desired link device, as seen in the output of
+          ip link.
+
+   netlink
+          ADDRESS is a descriptor of the netlink family. Possible
+          values come from /etc/iproute2/nl_protos. PORT is the port
+          id of the socket, which is usually the same as the owning
+          process id. The value &quot;kernel&quot; can be used to represent the
+          kernel (port id of 0).
+
+   vsock  ADDRESS is an integer representing the CID address, and
+          PORT is the port.
+
+   inet and inet6
+          ADDRESS is an ip address (either v4 or v6 depending on the
+          family) or a DNS hostname that resolves to an ip address of
+          the required version. An ipv6 address must be enclosed in
+          &quot;[&quot; and &quot;]&quot; to disambiguate the port separator. The address
+          may additionally have a prefix length given in CIDR
+          notation (a slash followed by the prefix length in bits).
+          PORT is either the numerical socket port, or the service
+          name for the port to match.
+</code></pre>
+<p>USAGE EXAMPLES         </p>
+<pre><code>   ss -t -a
+          Display all TCP sockets.
+
+   ss -t -a -Z
+          Display all TCP sockets with process SELinux security
+          contexts.
+
+   ss -u -a
+          Display all UDP sockets.
+
+   ss -o state established &#39;( dport = :ssh or sport = :ssh )&#39;
+          Display all established ssh connections.
+
+   ss -x src /tmp/.X11-unix/*
+          Find all local processes connected to X server.
+
+   ss -o state fin-wait-1 &#39;( sport = :http or sport = :https )&#39; dst
+   193.233.7/24
+          List all the tcp sockets in state FIN-WAIT-1 for our apache
+          to network 193.233.7/24 and look at their timers.
+
+   ss -a -A &#39;all,!tcp&#39;
+          List sockets in all states from all socket tables but TCP.
+</code></pre>
+<p>SEE ALSO         </p>
+<pre><code>   ip(8),
+   RFC 793 - https://tools.ietf.org/rfc/rfc793.txt (TCP states)
+</code></pre>
+<p>AUTHOR         </p>
+<pre><code>   ss was written by Alexey Kuznetsov, &lt;kuznet@ms2.inr.ac.ru&gt;.
+
+   This manual page was written by Michael Prokop &lt;mika@grml.org&gt; for
+   the Debian project (but may be used by others).
+</code></pre>
+<p>COLOPHON         </p>
+<pre><code>   This page is part of the iproute2 (utilities for controlling
+   TCP/IP networking and traffic) project.  Information about the
+   project can be found at 
+   ⟨http://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2⟩.
+   If you have a bug report for this manual page, send it to
+   netdev@vger.kernel.org, shemminger@osdl.org.  This page was
+   obtained from the project&#39;s upstream Git repository
+   ⟨https://git.kernel.org/pub/scm/network/iproute2/iproute2.git⟩ on
+   2025-02-02.  (At that time, the date of the most recent commit
+   that was found in the repository was 2025-01-21.)  If you discover
+   any rendering problems in this HTML version of the page, or you
+   believe there is a better or more up-to-date source for the page,
+   or you have corrections or improvements to the information in this
+   COLOPHON (which is not part of the original manual page), send a
+   mail to man-pages@man7.org
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://blog.crsky.uk">Chan Revival</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://blog.crsky.uk/posts/linux-cmd-ss.html">https://blog.crsky.uk/posts/linux-cmd-ss.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.crsky.uk" target="_blank">Chan Revival Sky</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/">Linux工具箱·Linux Toolbox</a><a class="post-meta__tags" href="/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/">科技·Tech</a><a class="post-meta__tags" href="/tags/arp/">arp</a></div><div class="post-share"><div class="social-share" data-image="/images/linux.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/posts/linux-cmd-arp.html" title="arp命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-18</div><div class="info-item-2">arp命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途arp 命令用于管理系统的 ARP（地址解析协议）缓存。通过该命令，用户可以查看、添加或删除 ARP 表中的条目。ARP 协议用于解析本地网络中 IPv4 地址对应的 MAC 地址。 常用用法示例查看 ARP 缓存1arp -a  执行该命令后，系统会显示当前ARP缓存的所有条目，包括每个条目的IP地址、MAC地址以及接口信息。示例如下： 1? (192.168.0.1) at 00:14:22:01:23:45 [ether] on eth0  该条目表示IP地址为192.168.0.1的设备，MAC地址为00:14:22:01:23:45，通过eth0接口与系统通信。 删除ARP缓存中的条目1arp -d 192.168.0.1  执行后，系统会删除与192.168.0.1对应的ARP缓存条目。删除ARP表中的条目通常需要root或网络管理员权限。 添加一个新的ARP条目1arp -s 192.168.0.100...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-w.html" title="w命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">w命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途w 命令用于显示当前登录系统的用户信息及其正在执行的进程，包括用户、终端、来源 IP、登录时间、空闲时间及活动进程等。 常用用法示例 默认显示所有登录用户及活动 12345w12:34:56 up 1:23, 3 users, load average: 0.00, 0.01, 0.05USER TTY FROM LOGIN@ IDLE JCPU PCPU WHATuser1 pts/0 192.168.1.10 11:15 5.00s 0.10s 0.00s sshd: user1user2 tty2 :0 10:30 2:00m 1:20 0.02s /usr/bin/bash 显示当前所有登录用户的详细信息，包括终端、来源、空闲时间及运行命令。  仅显示指定用户的信息 1234w user112:34:56 up 1:23, 3 users, load average: 0.00, 0.01, 0.05USER TTY FROM LOGIN@ IDLE JCPU PCPU WHATuser1 pts/0 192.168.1.10 11:15...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-top.html" title="top命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">top命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途top 命令是 Linux 系统中用于实时监控系统进程和资源使用情况的动态工具，可查看 CPU、内存、任务负载等信息，并按需排序或过滤进程。 常用用法示例 默认启动，实时监控系统状态 12top（输出包含进程列表、CPU/内存使用率、负载等动态信息） 默认界面每3秒刷新一次，展示所有进程的资源占用情况。  按 CPU 使用率排序进程 123top（进入界面后按大写 P）（进程列表按 CPU% 从高到低排序） 通过交互命令 P 快速定位高 CPU 消耗的进程。  按内存使用率排序进程 123top（进入界面后按大写 M）（进程列表按 MEM% 从高到低排序） 通过交互命令 M 快速定位高内存占用的进程。  仅监控指定用户的进程 12top -u www-data（仅显示用户 www-data 的进程） 过滤特定用户的进程，便于针对性分析。  设置刷新间隔为2秒 12top -d 2（界面刷新间隔调整为2秒） 通过 -d 参数自定义刷新频率。  显示完整命令路径 12top -c（COMMAND...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-time.html" title="time命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">time命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途time 命令用于测量 Linux 命令的执行时间，输出其实际运行时间（real）、用户态 CPU 时间（user）和内核态 CPU 时间（sys），帮助分析命令性能。 常用用法示例 基本用法：测量命令执行时间 1234time ls -lreal 0m0.003suser 0m0.001ssys 0m0.002s 测量 ls -l 命令的执行时间，输出各阶段耗时。  测量长时间运行的命令 1234time sleep 1real 0m1.002suser 0m0.001ssys 0m0.001s 测量 sleep 1 的执行时间，real 接近 1 秒，而 CPU 占用极低。  将输出重定向到文件 12345/usr/bin/time -o output.txt lsoutput.txt 内容0.00user 0.00system 0:00.00elapsed 100%CPU (0avgtext+0avgdata 1784maxresident)k0inputs+0outputs (0major+76minor)pagefaults 0swaps 使用...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-tail.html" title="tail命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">tail命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途tail 命令用于显示文件的末尾内容（默认显示最后10行），常用于实时监控日志文件更新。 常用用法示例 显示文件末尾默认10行 12345tail file.log[Line 91] 2023-10-01 12:00:00 INFO Service started[Line 92] 2023-10-01 12:00:05 DEBUG Processing request...[Line 100] 2023-10-01 12:00:30 INFO Connection closed 输出 file.log 的最后10行内容。  指定显示末尾行数 1234tail -n 5 file.log[Line 96] 2023-10-01 12:00:25 WARN Low memory...[Line 100] 2023-10-01 12:00:30 INFO Connection closed 仅显示文件最后5行。  实时跟踪文件更新 12tail -f access.log（持续输出新增内容，直到按 Ctrl+C...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-07</div><div class="info-item-2">smartctl命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途smartctl 是 Linux 中用于监控和分析磁盘驱动器 SMART（Self-Monitoring, Analysis and Reporting Technology）数据的工具，可检测磁盘健康状态并预测潜在故障。 常用用法示例 检查磁盘健康状态  12smartctl -H /dev/sdaSMART overall-health self-assessment test result: PASSED 输出 PASSED 表示磁盘健康状态正常，FAILED 表示存在潜在故障。  显示磁盘全部 SMART 信息  12345678910smartctl -a /dev/sda=== START OF INFORMATION SECTION ===Model Family: Western Digital Blue...=== START OF READ SMART DATA SECTION ===SMART Attributes Data Structure revision number: 16Vendor Specific SMART...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-rpm.html" title="rpm命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-06</div><div class="info-item-2">rpm命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途rpm（Red Hat Package Manager）是 Linux 系统中用于管理软件包的核心命令，主要用于安装、卸载、查询、验证和更新 .rpm 格式的软件包。 常用用法示例 安装软件包 1234rpm -ivh package.rpmPreparing... #################### [100%]Updating/installing...1:package-1 .0-1 #################### [100%] 通过 -ivh 参数安装软件包，显示详细安装进度。  升级软件包 1234rpm -Uvh package-new.rpmPreparing... #################### [100%]Updating/installing...1:package-new-2 .0-1 #################### [100%] 使用 -Uvh 升级已安装的软件包，若未安装则直接安装新版本。  卸载软件包 1rpm -e package-name 通过 -e...</div></div></div></a><a class="pagination-related" href="/posts/linux-cmd-rm.html" title="rm命令"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-06</div><div class="info-item-2">rm命令</div></div><div class="info-2"><div class="info-item-1">回到手册索引  命令用途rm（remove）是 Linux&#x2F;Unix 系统中用于删除文件或目录的命令，可永久移除数据（谨慎使用）。 常用用法示例 删除单个文件 1rm file1.txt 直接删除 file1.txt，不提示确认。  删除多个文件 1rm file1.txt file2.log file3.jpg 一次性删除多个文件，文件名用空格分隔。  强制删除忽略提示 1rm -f protected_file -f 参数强制删除，忽略不存在的文件或权限错误。  交互式确认删除 12rm -i important_docrm: remove regular file &#x27;important_doc&#x27;? y -i 参数要求用户确认每个删除操作（输入 y 确认）。  递归删除目录及其内容 1rm -r dir1/ -r 参数递归删除目录（需目录非空）。  删除空目录 1rm -d empty_dir/ -d 参数删除空目录（等同 rmdir）。  显示删除详情 12rm -v temp.logremoved...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Chan Revival</div><div class="author-info-description">Chan Revival Sky</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">128</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">192</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chanrevival"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/chanrevival" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:chanrevival@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">天上星，亮晶晶，永灿烂，长安宁。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%94%A8%E9%80%94"><span class="toc-number">1.</span> <span class="toc-text">命令用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">常用用法示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89-TCP-%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-number">2.1.</span> <span class="toc-text">查看所有 TCP 套接字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89-UDP-%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-number">2.2.</span> <span class="toc-text">查看所有 UDP 套接字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B-SSH-%E8%BF%9E%E6%8E%A5"><span class="toc-number">2.3.</span> <span class="toc-text">查看 SSH 连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E9%80%89%E9%A1%B9"><span class="toc-number">3.</span> <span class="toc-text">常用参数选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%8E%82%E6%96%87%E6%A1%A3"><span class="toc-number">4.</span> <span class="toc-text">原厂文档</span></a></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>系列文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-w.html" title="w命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="w命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-w.html" title="w命令">w命令</a><time datetime="2025-03-07T15:15:00.000Z" title="发表于 2025-03-07 23:15:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-top.html" title="top命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-top.html" title="top命令">top命令</a><time datetime="2025-03-07T04:46:00.000Z" title="发表于 2025-03-07 12:46:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-time.html" title="time命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="time命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-time.html" title="time命令">time命令</a><time datetime="2025-03-07T04:36:00.000Z" title="发表于 2025-03-07 12:36:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-tail.html" title="tail命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tail命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-tail.html" title="tail命令">tail命令</a><time datetime="2025-03-07T04:30:00.000Z" title="发表于 2025-03-07 12:30:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="smartctl命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-smartctl.html" title="smartctl命令">smartctl命令</a><time datetime="2025-03-07T02:50:00.000Z" title="发表于 2025-03-07 10:50:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-rpm.html" title="rpm命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rpm命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-rpm.html" title="rpm命令">rpm命令</a><time datetime="2025-03-06T13:29:00.000Z" title="发表于 2025-03-06 21:29:00">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-rm.html" title="rm命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="rm命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-rm.html" title="rm命令">rm命令</a><time datetime="2025-03-06T12:37:00.000Z" title="发表于 2025-03-06 20:37:00">2025-03-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-nohup.html" title="nohup命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="nohup命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-nohup.html" title="nohup命令">nohup命令</a><time datetime="2025-03-05T07:07:00.000Z" title="发表于 2025-03-05 15:07:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ls.html" title="ls命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ls命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ls.html" title="ls命令">ls命令</a><time datetime="2025-03-05T06:56:00.000Z" title="发表于 2025-03-05 14:56:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ln.html" title="ln命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ln命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ln.html" title="ln命令">ln命令</a><time datetime="2025-03-05T06:48:00.000Z" title="发表于 2025-03-05 14:48:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-less.html" title="less命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="less命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-less.html" title="less命令">less命令</a><time datetime="2025-03-05T06:18:00.000Z" title="发表于 2025-03-05 14:18:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd.html" title="ld命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ld命令"></a><div class="content"><a class="title" href="/posts/linux-cmd.html" title="ld命令">ld命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-pwd.html" title="pwd命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pwd命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-pwd.html" title="pwd命令">pwd命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ld.html" title="ld命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ld命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ld.html" title="ld命令">ld命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-watch.html" title="watch命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="watch命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-watch.html" title="watch命令">watch命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-wget.html" title="wget命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="wget命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-wget.html" title="wget命令">wget命令</a><time datetime="2025-03-05T06:10:00.000Z" title="发表于 2025-03-05 14:10:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-lastb.html" title="lastb命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="lastb命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-lastb.html" title="lastb命令">lastb命令</a><time datetime="2025-03-05T04:56:00.000Z" title="发表于 2025-03-05 12:56:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-last.html" title="last命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="last命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-last.html" title="last命令">last命令</a><time datetime="2025-03-05T04:41:00.000Z" title="发表于 2025-03-05 12:41:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-jobs.html" title="jobs命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jobs命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-jobs.html" title="jobs命令">jobs命令</a><time datetime="2025-03-05T04:32:00.000Z" title="发表于 2025-03-05 12:32:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-id.html" title="id命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="id命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-id.html" title="id命令">id命令</a><time datetime="2025-03-04T14:25:00.000Z" title="发表于 2025-03-04 22:25:00">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-kill.html" title="kill命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="kill命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-kill.html" title="kill命令">kill命令</a><time datetime="2025-03-04T14:10:00.000Z" title="发表于 2025-03-04 22:10:00">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-hostnamectl.html" title="hostnamectl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hostnamectl命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-hostnamectl.html" title="hostnamectl命令">hostnamectl命令</a><time datetime="2025-03-04T14:10:00.000Z" title="发表于 2025-03-04 22:10:00">2025-03-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-pidstat.html" title="pidstat命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pidstat命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-pidstat.html" title="pidstat命令">pidstat命令</a><time datetime="2025-02-26T02:35:00.000Z" title="发表于 2025-02-26 10:35:00">2025-02-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-groupadd.html" title="groupadd命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="groupadd命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-groupadd.html" title="groupadd命令">groupadd命令</a><time datetime="2025-02-24T13:31:00.000Z" title="发表于 2025-02-24 21:31:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-find.html" title="find命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="find命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-find.html" title="find命令">find命令</a><time datetime="2025-02-24T13:31:00.000Z" title="发表于 2025-02-24 21:31:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-groupdel.html" title="groupdel命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="groupdel命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-groupdel.html" title="groupdel命令">groupdel命令</a><time datetime="2025-02-24T13:31:00.000Z" title="发表于 2025-02-24 21:31:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-echo.html" title="echo命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="echo命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-echo.html" title="echo命令">echo命令</a><time datetime="2025-02-24T12:35:00.000Z" title="发表于 2025-02-24 20:35:00">2025-02-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-dnf.html" title="dnf命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dnf命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-dnf.html" title="dnf命令">dnf命令</a><time datetime="2025-02-22T15:53:00.000Z" title="发表于 2025-02-22 23:53:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-dir.html" title="dir命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dir命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-dir.html" title="dir命令">dir命令</a><time datetime="2025-02-22T15:42:00.000Z" title="发表于 2025-02-22 23:42:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-chown.html" title="chown命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chown命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-chown.html" title="chown命令">chown命令</a><time datetime="2025-02-22T15:16:00.000Z" title="发表于 2025-02-22 23:16:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-date.html" title="date命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="date命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-date.html" title="date命令">date命令</a><time datetime="2025-02-22T15:16:00.000Z" title="发表于 2025-02-22 23:16:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-cd.html" title="cd命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cd命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-cd.html" title="cd命令">cd命令</a><time datetime="2025-02-22T10:37:00.000Z" title="发表于 2025-02-22 18:37:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-chmod.html" title="chmod命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="chmod命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-chmod.html" title="chmod命令">chmod命令</a><time datetime="2025-02-22T10:37:00.000Z" title="发表于 2025-02-22 18:37:00">2025-02-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-cat.html" title="cat命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cat命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-cat.html" title="cat命令">cat命令</a><time datetime="2025-02-21T15:36:00.000Z" title="发表于 2025-02-21 23:36:00">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-arping.html" title="arping命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arping命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-arping.html" title="arping命令">arping命令</a><time datetime="2025-02-21T07:38:00.000Z" title="发表于 2025-02-21 15:38:00">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-blkid.html" title="blkid命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="blkid命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-blkid.html" title="blkid命令">blkid命令</a><time datetime="2025-02-21T07:38:00.000Z" title="发表于 2025-02-21 15:38:00">2025-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-awk.html" title="awk命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="awk命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-awk.html" title="awk命令">awk命令</a><time datetime="2025-02-20T15:52:00.000Z" title="发表于 2025-02-20 23:52:00">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html" title="Linux命令速查手册索引"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令速查手册索引"></a><div class="content"><a class="title" href="/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html" title="Linux命令速查手册索引">Linux命令速查手册索引</a><time datetime="2025-02-20T11:45:00.000Z" title="发表于 2025-02-20 19:45:00">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-scp.html" title="scp命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="scp命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-scp.html" title="scp命令">scp命令</a><time datetime="2025-02-20T09:39:00.000Z" title="发表于 2025-02-20 17:39:00">2025-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-arp.html" title="arp命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arp命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-arp.html" title="arp命令">arp命令</a><time datetime="2025-02-18T02:27:00.000Z" title="发表于 2025-02-18 10:27:00">2025-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-ss.html" title="ss命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ss命令"></a><div class="content"><a class="title" href="/posts/linux-cmd-ss.html" title="ss命令">ss命令</a><time datetime="2025-02-18T02:27:00.000Z" title="发表于 2025-02-18 10:27:00">2025-02-18</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-w.html" title="w命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="w命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-w.html" title="w命令">w命令</a><time datetime="2025-03-07T15:15:00.000Z" title="发表于 2025-03-07 23:15:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-top.html" title="top命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-top.html" title="top命令">top命令</a><time datetime="2025-03-07T04:46:00.000Z" title="发表于 2025-03-07 12:46:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-time.html" title="time命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="time命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-time.html" title="time命令">time命令</a><time datetime="2025-03-07T04:36:00.000Z" title="发表于 2025-03-07 12:36:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-tail.html" title="tail命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="tail命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-tail.html" title="tail命令">tail命令</a><time datetime="2025-03-07T04:30:00.000Z" title="发表于 2025-03-07 12:30:00">2025-03-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/linux-cmd-smartctl.html" title="smartctl命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/linux.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="smartctl命令"/></a><div class="content"><a class="title" href="/posts/linux-cmd-smartctl.html" title="smartctl命令">smartctl命令</a><time datetime="2025-03-07T02:50:00.000Z" title="发表于 2025-03-07 10:50:00">2025-03-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Chan Revival</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'u4i90Gtr4z5ltiEyAwZXwAaG-gzGzoHsz',
+      appKey: '5QCoDhscDztlH49YntlyPmVV',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: true,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('/pluginsSrc/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
