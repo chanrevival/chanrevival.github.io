@@ -9,6 +9,27 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/%25E6%25B1%25BD%25E8%25BD%25A6%25C2%25B7Automotive/</loc>
+        <lastmod>2025-03-10T13:32:39.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
+        <lastmod>2025-03-10T13:32:39.489Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/%25E6%25B1%25BD%25E8%25BD%25A6/</loc>
+        <lastmod>2025-03-10T13:27:16.043Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/Linux%25E5%25B7%25A5%25E5%2585%25B7%25E7%25AE%25B1%25C2%25B7Linux-Toolbox/</loc>
         <lastmod>2025-03-10T04:46:41.542Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -60,13 +81,6 @@
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/Doris/</loc>
         <lastmod>2025-03-05T14:59:24.254Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
-        <lastmod>2025-03-05T08:24:01.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
