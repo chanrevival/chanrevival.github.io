@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/hexo-ben-di-sou-suo-yi-chang-chu-li.html</loc>
+        <lastmod>2025-03-11T01:20:22.521Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/20250310-global-hybrid-technology-demystified-four-schools-in-a-showdown-who-holds-the-ultimate-answer-for-the-carbon-neutral-era.html</loc>
         <lastmod>2025-03-10T13:32:39.489Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -203,14 +211,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
         <lastmod>2025-03-05T06:46:10.830Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-ld.html</loc>
-        <lastmod>2025-03-05T06:16:42.909Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
