@@ -9,21 +9,21 @@
 
 
     <url>
-        <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/</loc>
-        <lastmod>2025-03-12T05:28:25.893Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E6%2591%2584%25E5%25BD%25B1%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Photography/</loc>
-        <lastmod>2025-03-11T07:18:01.036Z</lastmod>
+        <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Cinema/</loc>
+        <lastmod>2025-03-12T07:23:50.196Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/</loc>
+        <lastmod>2025-03-12T07:23:50.196Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E6%2591%2584%25E5%25BD%25B1%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Photography/</loc>
         <lastmod>2025-03-11T07:18:01.036Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -191,6 +191,13 @@
     </url>
 
     <url>
+        <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/</loc>
+        <lastmod>2025-02-03T14:52:35.411Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/categories/%25E9%259A%258F%25E7%25AC%2594/</loc>
         <lastmod>2025-02-03T14:52:35.411Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -214,13 +221,6 @@
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E5%25AD%25A6%25E6%258E%25A2%25E7%25B4%25A2/%25E5%25AE%2587%25E5%25AE%2599/</loc>
         <lastmod>2025-02-03T14:52:35.397Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF/</loc>
-        <lastmod>2025-02-03T14:52:35.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
