@@ -34,9 +34,9 @@
       </tags>
   </entry>
   <entry>
-    <title>大文件</title>
+    <title>林忆莲_至少还有你</title>
     <url>/posts/bo-fang-da-wen-jian.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"autoplay":true,"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"http://ddns.crsky.uk:60000/s9e01.mp4","pic":"./images/林忆莲_至少还有你.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"autoplay":true,"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"https://ddns.crsky.uk:60000/s9e01.mp4","pic":"./images/林忆莲_至少还有你.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
       <categories>
         <category>文化纵览</category>
       </categories>
@@ -1751,6 +1751,76 @@
       </tags>
   </entry>
   <entry>
+    <title>groupadd命令</title>
+    <url>/posts/linux-cmd-groupadd.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>groupadd 是一个用于在 Linux 系统中创建新用户组的命令。通过该命令，管理员可以轻松地添加新的用户组并设置相关属性。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>创建一个新用户组  </p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd developers</span></span><br></pre></td></tr></table></figure>
+<p>此命令会在系统中创建一个名为 developers 的新用户组。 </p>
+</li>
+<li><p>指定 GID 创建用户组  </p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd</span> -g <span class="number">1010</span> testers</span><br></pre></td></tr></table></figure>
+<p>此命令创建了一个名为 testers 的用户组，并指定了其 GID（组 ID）为 1010。 </p>
+</li>
+<li><p>强制创建系统组  </p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">groupadd -<span class="attribute">r</span> admins</span><br></pre></td></tr></table></figure>
+<p>此命令创建了一个名为 admins 的系统组。系统组通常用于运行系统服务，其 GID 范围通常较小。 </p>
+</li>
+<li><p>检查是否已存在同名组  </p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd -f backup</span></span><br></pre></td></tr></table></figure>
+<p>如果组 backup 已经存在，则不会报错，也不会覆盖原有组。 </p>
+</li>
+<li><p>创建一个带有特定密码的组  </p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd</span> -p $(openssl passwd -<span class="number">1</span> mypassword) securegroup</span><br></pre></td></tr></table></figure>
+<p>此命令创建了一个名为 securegroup 的组，并为其设置了加密密码。 </p>
+</li>
+<li><p>查看创建组后的 &#x2F;etc&#x2F;group 文件  </p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">groupadd engineers &amp;&amp; cat /etc/<span class="keyword">group</span> <span class="title">| grep</span> engineers</span><br><span class="line">engineers:x:<span class="number">1001</span>:</span><br></pre></td></tr></table></figure>
+<p>此命令创建了 engineers 组，并通过 cat 和 grep 查看 &#x2F;etc&#x2F;group 文件中新增的条目。 </p>
+</li>
+<li><p>创建一个非标准 GID 范围的组  </p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">groupadd -K <span class="attribute">GID_MIN</span>=2000 -K <span class="attribute">GID_MAX</span>=2999 customgroup</span><br></pre></td></tr></table></figure>
+<p>此命令创建了一个名为 customgroup 的组，其 GID 被限制在 2000-2999 范围内。 </p>
+</li>
+<li><p>尝试创建一个无效的组名  </p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">groupadd -g <span class="number">100</span> invalid-<span class="keyword">group</span>!</span><br><span class="line">groupadd: invalid <span class="keyword">group</span> <span class="type">name</span> <span class="string">&#x27;invalid-group!&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>此命令尝试创建一个包含非法字符的组名，导致命令失败并返回错误信息。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
+<li><p>-g, –gid GID<br>指定新组的 GID（组 ID）。例如：groupadd -g 1010 testers。 </p>
+</li>
+<li><p>-r, –system<br>创建一个系统组。系统组通常用于运行系统服务，其 GID 范围较小。 </p>
+</li>
+<li><p>-f, –force<br>强制创建组。如果组已经存在，则不会报错。 </p>
+</li>
+<li><p>-p, –password PASSWORD<br>为新组设置加密密码。例如：groupadd -p $(openssl passwd -1 mypassword) securegroup。 </p>
+</li>
+<li><p>-K, –key KEY&#x3D;VALUE<br>覆盖默认的 &#x2F;etc&#x2F;login.defs 配置文件中的值。例如：groupadd -K GID_MIN&#x3D;2000 -K GID_MAX&#x3D;2999 customgroup。 </p>
+</li>
+<li><p>-o, –non-unique<br>允许创建具有非唯一 GID 的组。例如：groupadd -g 1000 -o duplicategroup。 </p>
+</li>
+<li><p>-h, –help<br>显示帮助信息并退出。例如：groupadd –help。 </p>
+</li>
+<li><p>-R, –root CHROOT_DIR<br>在指定的根目录（chroot 环境）中应用更改。例如：groupadd -R &#x2F;mnt&#x2F;chroot newgroup。</p>
+</li>
+</ul>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NAME</span><br><span class="line">       groupadd - create a new group</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       groupadd [OPTIONS] NEWGROUP</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">       The groupadd <span class="built_in">command</span> creates a new group account using the values</span><br><span class="line">       specified on the <span class="built_in">command</span> line plus the default values from the system.</span><br><span class="line">       The new group will be entered into the system files as needed.</span><br><span class="line"></span><br><span class="line">       Groupnames may contain only lower and upper <span class="keyword">case</span> letters, digits,</span><br><span class="line">       underscores, or dashes. They can end with a dollar sign. Dashes are not</span><br><span class="line">       allowed at the beginning of the groupname. Fully numeric groupnames and</span><br><span class="line">       groupnames . or .. are also disallowed.</span><br><span class="line"></span><br><span class="line">       Groupnames may only be up to 32 characters long.</span><br><span class="line"></span><br><span class="line">OPTIONS</span><br><span class="line">       The options <span class="built_in">which</span> apply to the groupadd <span class="built_in">command</span> are:</span><br><span class="line"></span><br><span class="line">       -f, --force</span><br><span class="line">           This option causes the <span class="built_in">command</span> to simply <span class="built_in">exit</span> with success status <span class="keyword">if</span></span><br><span class="line">           the specified group already exists. When used with -g, and the</span><br><span class="line">           specified GID already exists, another (unique) GID is chosen (i.e.</span><br><span class="line">           -g is turned off).</span><br><span class="line"></span><br><span class="line">       -g, --gid GID</span><br><span class="line">           The numerical value of the group<span class="string">&#x27;s ID.  GID must be unique, unless</span></span><br><span class="line"><span class="string">           the -o option is used. The value must be non-negative. The default is</span></span><br><span class="line"><span class="string">           to use the smallest ID value greater than or equal to GID_MIN and</span></span><br><span class="line"><span class="string">           greater than every other group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           See also the -r option and the GID_MAX description.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -h, --help</span></span><br><span class="line"><span class="string">           Display help message and exit.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -K, --key KEY=VALUE</span></span><br><span class="line"><span class="string">           Overrides /etc/login.defs defaults (GID_MIN, GID_MAX and others).</span></span><br><span class="line"><span class="string">           Multiple -K options can be specified.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           Example: -K GID_MIN=100  -K GID_MAX=499</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           Note: -K GID_MIN=10,GID_MAX=499 doesn&#x27;</span>t work yet.</span><br><span class="line"></span><br><span class="line">       -o, --non-unique</span><br><span class="line">           permits the creation of a group with an already used numerical ID. As</span><br><span class="line">           a result, <span class="keyword">for</span> this GID, the mapping towards group NEWGROUP may not be</span><br><span class="line">           unique.</span><br><span class="line"></span><br><span class="line">       -p, --password PASSWORD</span><br><span class="line">           defines an initial password <span class="keyword">for</span> the group account. PASSWORD is</span><br><span class="line">           expected to be encrypted, as returned by crypt (3).</span><br><span class="line"></span><br><span class="line">           Without this option, the group account will be locked and with no</span><br><span class="line">           password defined, i.e. a single exclamation mark <span class="keyword">in</span> the respective</span><br><span class="line">           field of ths system account file /etc/group or /etc/gshadow.</span><br><span class="line"></span><br><span class="line">           Note: This option is not recommended because the password (or</span><br><span class="line">           encrypted password) will be visible by <span class="built_in">users</span> listing the processes.</span><br><span class="line"></span><br><span class="line">           You should make sure the password respects the system<span class="string">&#x27;s password</span></span><br><span class="line"><span class="string">           policy.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -r, --system</span></span><br><span class="line"><span class="string">           Create a system group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The numeric identifiers of new system groups are chosen in the</span></span><br><span class="line"><span class="string">           SYS_GID_MIN-SYS_GID_MAX range, defined in login.defs, instead of</span></span><br><span class="line"><span class="string">           GID_MIN-GID_MAX.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -R, --root CHROOT_DIR</span></span><br><span class="line"><span class="string">           Apply changes in the CHROOT_DIR directory and use the configuration</span></span><br><span class="line"><span class="string">           files from the CHROOT_DIR directory. Only absolute paths are</span></span><br><span class="line"><span class="string">           supported.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -P, --prefix PREFIX_DIR</span></span><br><span class="line"><span class="string">           Apply changes to configuration files under the root filesystem found</span></span><br><span class="line"><span class="string">           under the directory PREFIX_DIR. This option does not chroot and is</span></span><br><span class="line"><span class="string">           intended for preparing a cross-compilation target. Some limitations:</span></span><br><span class="line"><span class="string">           NIS and LDAP users/groups are not verified. PAM authentication is</span></span><br><span class="line"><span class="string">           using the host files. No SELINUX support.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -U, --users</span></span><br><span class="line"><span class="string">           A list of usernames to add as members of the group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default behavior (if the -g, -N, and -U options are not</span></span><br><span class="line"><span class="string">           specified) is defined by the USERGROUPS_ENAB variable in</span></span><br><span class="line"><span class="string">           /etc/login.defs.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">CONFIGURATION</span></span><br><span class="line"><span class="string">       The following configuration variables in /etc/login.defs change the</span></span><br><span class="line"><span class="string">       behavior of this tool:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GID_MAX (number), GID_MIN (number)</span></span><br><span class="line"><span class="string">           Range of group IDs used for the creation of regular groups by</span></span><br><span class="line"><span class="string">           useradd, groupadd, or newusers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default value for GID_MIN (resp.  GID_MAX) is 1000 (resp. 60000).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       MAX_MEMBERS_PER_GROUP (number)</span></span><br><span class="line"><span class="string">           Maximum members per group entry. When the maximum is reached, a new</span></span><br><span class="line"><span class="string">           group entry (line) is started in /etc/group (with the same name, same</span></span><br><span class="line"><span class="string">           password, and same GID).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default value is 0, meaning that there are no limits in the</span></span><br><span class="line"><span class="string">           number of members in a group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           This feature (split group) permits to limit the length of lines in</span></span><br><span class="line"><span class="string">           the group file. This is useful to make sure that lines for NIS groups</span></span><br><span class="line"><span class="string">           are not larger than 1024 characters.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           If you need to enforce such limit, you can use 25.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           Note: split groups may not be supported by all tools (even in the</span></span><br><span class="line"><span class="string">           Shadow toolsuite). You should not use this variable unless you really</span></span><br><span class="line"><span class="string">           need it.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       SYS_GID_MAX (number), SYS_GID_MIN (number)</span></span><br><span class="line"><span class="string">           Range of group IDs used for the creation of system groups by useradd,</span></span><br><span class="line"><span class="string">           groupadd, or newusers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default value for SYS_GID_MIN (resp.  SYS_GID_MAX) is 101 (resp.</span></span><br><span class="line"><span class="string">           GID_MIN-1).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">FILES</span></span><br><span class="line"><span class="string">       /etc/group</span></span><br><span class="line"><span class="string">           Group account information.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       /etc/gshadow</span></span><br><span class="line"><span class="string">           Secure group account information.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       /etc/login.defs</span></span><br><span class="line"><span class="string">           Shadow password suite configuration.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">CAVEATS</span></span><br><span class="line"><span class="string">       You may not add a NIS or LDAP group. This must be performed on the</span></span><br><span class="line"><span class="string">       corresponding server.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       If the groupname already exists in an external group database such as NIS</span></span><br><span class="line"><span class="string">       or LDAP, groupadd will deny the group creation request.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">EXIT VALUES</span></span><br><span class="line"><span class="string">       The groupadd command exits with the following values:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       0</span></span><br><span class="line"><span class="string">           success</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       2</span></span><br><span class="line"><span class="string">           invalid command syntax</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       3</span></span><br><span class="line"><span class="string">           invalid argument to option</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       4</span></span><br><span class="line"><span class="string">           GID is already used (when called without -o)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       9</span></span><br><span class="line"><span class="string">           group name is already used</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       10</span></span><br><span class="line"><span class="string">           can&#x27;</span>t update group file</span><br><span class="line"></span><br><span class="line">SEE ALSO</span><br><span class="line">       chfn(1), chsh(1), passwd(1), gpasswd(8), groupdel(8), groupmod(8),</span><br><span class="line">       login.defs(5), useradd(8), userdel(8), usermod(8).</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>Linux工具箱·Linux Toolbox</category>
+      </categories>
+      <tags>
+        <tag>Linux工具箱·Linux Toolbox</tag>
+        <tag>科技·Tech</tag>
+        <tag>groupadd</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>groupdel命令</title>
     <url>/posts/linux-cmd-groupdel.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
@@ -1819,76 +1889,6 @@
         <tag>Linux工具箱·Linux Toolbox</tag>
         <tag>科技·Tech</tag>
         <tag>groupdel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>groupadd命令</title>
-    <url>/posts/linux-cmd-groupadd.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
-<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>groupadd 是一个用于在 Linux 系统中创建新用户组的命令。通过该命令，管理员可以轻松地添加新的用户组并设置相关属性。</p>
-<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
-<li><p>创建一个新用户组  </p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd developers</span></span><br></pre></td></tr></table></figure>
-<p>此命令会在系统中创建一个名为 developers 的新用户组。 </p>
-</li>
-<li><p>指定 GID 创建用户组  </p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd</span> -g <span class="number">1010</span> testers</span><br></pre></td></tr></table></figure>
-<p>此命令创建了一个名为 testers 的用户组，并指定了其 GID（组 ID）为 1010。 </p>
-</li>
-<li><p>强制创建系统组  </p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">groupadd -<span class="attribute">r</span> admins</span><br></pre></td></tr></table></figure>
-<p>此命令创建了一个名为 admins 的系统组。系统组通常用于运行系统服务，其 GID 范围通常较小。 </p>
-</li>
-<li><p>检查是否已存在同名组  </p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd -f backup</span></span><br></pre></td></tr></table></figure>
-<p>如果组 backup 已经存在，则不会报错，也不会覆盖原有组。 </p>
-</li>
-<li><p>创建一个带有特定密码的组  </p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd</span> -p $(openssl passwd -<span class="number">1</span> mypassword) securegroup</span><br></pre></td></tr></table></figure>
-<p>此命令创建了一个名为 securegroup 的组，并为其设置了加密密码。 </p>
-</li>
-<li><p>查看创建组后的 &#x2F;etc&#x2F;group 文件  </p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">groupadd engineers &amp;&amp; cat /etc/<span class="keyword">group</span> <span class="title">| grep</span> engineers</span><br><span class="line">engineers:x:<span class="number">1001</span>:</span><br></pre></td></tr></table></figure>
-<p>此命令创建了 engineers 组，并通过 cat 和 grep 查看 &#x2F;etc&#x2F;group 文件中新增的条目。 </p>
-</li>
-<li><p>创建一个非标准 GID 范围的组  </p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">groupadd -K <span class="attribute">GID_MIN</span>=2000 -K <span class="attribute">GID_MAX</span>=2999 customgroup</span><br></pre></td></tr></table></figure>
-<p>此命令创建了一个名为 customgroup 的组，其 GID 被限制在 2000-2999 范围内。 </p>
-</li>
-<li><p>尝试创建一个无效的组名  </p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">groupadd -g <span class="number">100</span> invalid-<span class="keyword">group</span>!</span><br><span class="line">groupadd: invalid <span class="keyword">group</span> <span class="type">name</span> <span class="string">&#x27;invalid-group!&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>此命令尝试创建一个包含非法字符的组名，导致命令失败并返回错误信息。</p>
-</li>
-</ol>
-<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
-<li><p>-g, –gid GID<br>指定新组的 GID（组 ID）。例如：groupadd -g 1010 testers。 </p>
-</li>
-<li><p>-r, –system<br>创建一个系统组。系统组通常用于运行系统服务，其 GID 范围较小。 </p>
-</li>
-<li><p>-f, –force<br>强制创建组。如果组已经存在，则不会报错。 </p>
-</li>
-<li><p>-p, –password PASSWORD<br>为新组设置加密密码。例如：groupadd -p $(openssl passwd -1 mypassword) securegroup。 </p>
-</li>
-<li><p>-K, –key KEY&#x3D;VALUE<br>覆盖默认的 &#x2F;etc&#x2F;login.defs 配置文件中的值。例如：groupadd -K GID_MIN&#x3D;2000 -K GID_MAX&#x3D;2999 customgroup。 </p>
-</li>
-<li><p>-o, –non-unique<br>允许创建具有非唯一 GID 的组。例如：groupadd -g 1000 -o duplicategroup。 </p>
-</li>
-<li><p>-h, –help<br>显示帮助信息并退出。例如：groupadd –help。 </p>
-</li>
-<li><p>-R, –root CHROOT_DIR<br>在指定的根目录（chroot 环境）中应用更改。例如：groupadd -R &#x2F;mnt&#x2F;chroot newgroup。</p>
-</li>
-</ul>
-<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NAME</span><br><span class="line">       groupadd - create a new group</span><br><span class="line"></span><br><span class="line">SYNOPSIS</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">       groupadd [OPTIONS] NEWGROUP</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">       The groupadd <span class="built_in">command</span> creates a new group account using the values</span><br><span class="line">       specified on the <span class="built_in">command</span> line plus the default values from the system.</span><br><span class="line">       The new group will be entered into the system files as needed.</span><br><span class="line"></span><br><span class="line">       Groupnames may contain only lower and upper <span class="keyword">case</span> letters, digits,</span><br><span class="line">       underscores, or dashes. They can end with a dollar sign. Dashes are not</span><br><span class="line">       allowed at the beginning of the groupname. Fully numeric groupnames and</span><br><span class="line">       groupnames . or .. are also disallowed.</span><br><span class="line"></span><br><span class="line">       Groupnames may only be up to 32 characters long.</span><br><span class="line"></span><br><span class="line">OPTIONS</span><br><span class="line">       The options <span class="built_in">which</span> apply to the groupadd <span class="built_in">command</span> are:</span><br><span class="line"></span><br><span class="line">       -f, --force</span><br><span class="line">           This option causes the <span class="built_in">command</span> to simply <span class="built_in">exit</span> with success status <span class="keyword">if</span></span><br><span class="line">           the specified group already exists. When used with -g, and the</span><br><span class="line">           specified GID already exists, another (unique) GID is chosen (i.e.</span><br><span class="line">           -g is turned off).</span><br><span class="line"></span><br><span class="line">       -g, --gid GID</span><br><span class="line">           The numerical value of the group<span class="string">&#x27;s ID.  GID must be unique, unless</span></span><br><span class="line"><span class="string">           the -o option is used. The value must be non-negative. The default is</span></span><br><span class="line"><span class="string">           to use the smallest ID value greater than or equal to GID_MIN and</span></span><br><span class="line"><span class="string">           greater than every other group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           See also the -r option and the GID_MAX description.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -h, --help</span></span><br><span class="line"><span class="string">           Display help message and exit.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -K, --key KEY=VALUE</span></span><br><span class="line"><span class="string">           Overrides /etc/login.defs defaults (GID_MIN, GID_MAX and others).</span></span><br><span class="line"><span class="string">           Multiple -K options can be specified.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           Example: -K GID_MIN=100  -K GID_MAX=499</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           Note: -K GID_MIN=10,GID_MAX=499 doesn&#x27;</span>t work yet.</span><br><span class="line"></span><br><span class="line">       -o, --non-unique</span><br><span class="line">           permits the creation of a group with an already used numerical ID. As</span><br><span class="line">           a result, <span class="keyword">for</span> this GID, the mapping towards group NEWGROUP may not be</span><br><span class="line">           unique.</span><br><span class="line"></span><br><span class="line">       -p, --password PASSWORD</span><br><span class="line">           defines an initial password <span class="keyword">for</span> the group account. PASSWORD is</span><br><span class="line">           expected to be encrypted, as returned by crypt (3).</span><br><span class="line"></span><br><span class="line">           Without this option, the group account will be locked and with no</span><br><span class="line">           password defined, i.e. a single exclamation mark <span class="keyword">in</span> the respective</span><br><span class="line">           field of ths system account file /etc/group or /etc/gshadow.</span><br><span class="line"></span><br><span class="line">           Note: This option is not recommended because the password (or</span><br><span class="line">           encrypted password) will be visible by <span class="built_in">users</span> listing the processes.</span><br><span class="line"></span><br><span class="line">           You should make sure the password respects the system<span class="string">&#x27;s password</span></span><br><span class="line"><span class="string">           policy.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -r, --system</span></span><br><span class="line"><span class="string">           Create a system group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The numeric identifiers of new system groups are chosen in the</span></span><br><span class="line"><span class="string">           SYS_GID_MIN-SYS_GID_MAX range, defined in login.defs, instead of</span></span><br><span class="line"><span class="string">           GID_MIN-GID_MAX.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -R, --root CHROOT_DIR</span></span><br><span class="line"><span class="string">           Apply changes in the CHROOT_DIR directory and use the configuration</span></span><br><span class="line"><span class="string">           files from the CHROOT_DIR directory. Only absolute paths are</span></span><br><span class="line"><span class="string">           supported.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -P, --prefix PREFIX_DIR</span></span><br><span class="line"><span class="string">           Apply changes to configuration files under the root filesystem found</span></span><br><span class="line"><span class="string">           under the directory PREFIX_DIR. This option does not chroot and is</span></span><br><span class="line"><span class="string">           intended for preparing a cross-compilation target. Some limitations:</span></span><br><span class="line"><span class="string">           NIS and LDAP users/groups are not verified. PAM authentication is</span></span><br><span class="line"><span class="string">           using the host files. No SELINUX support.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -U, --users</span></span><br><span class="line"><span class="string">           A list of usernames to add as members of the group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default behavior (if the -g, -N, and -U options are not</span></span><br><span class="line"><span class="string">           specified) is defined by the USERGROUPS_ENAB variable in</span></span><br><span class="line"><span class="string">           /etc/login.defs.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">CONFIGURATION</span></span><br><span class="line"><span class="string">       The following configuration variables in /etc/login.defs change the</span></span><br><span class="line"><span class="string">       behavior of this tool:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GID_MAX (number), GID_MIN (number)</span></span><br><span class="line"><span class="string">           Range of group IDs used for the creation of regular groups by</span></span><br><span class="line"><span class="string">           useradd, groupadd, or newusers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default value for GID_MIN (resp.  GID_MAX) is 1000 (resp. 60000).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       MAX_MEMBERS_PER_GROUP (number)</span></span><br><span class="line"><span class="string">           Maximum members per group entry. When the maximum is reached, a new</span></span><br><span class="line"><span class="string">           group entry (line) is started in /etc/group (with the same name, same</span></span><br><span class="line"><span class="string">           password, and same GID).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default value is 0, meaning that there are no limits in the</span></span><br><span class="line"><span class="string">           number of members in a group.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           This feature (split group) permits to limit the length of lines in</span></span><br><span class="line"><span class="string">           the group file. This is useful to make sure that lines for NIS groups</span></span><br><span class="line"><span class="string">           are not larger than 1024 characters.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           If you need to enforce such limit, you can use 25.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           Note: split groups may not be supported by all tools (even in the</span></span><br><span class="line"><span class="string">           Shadow toolsuite). You should not use this variable unless you really</span></span><br><span class="line"><span class="string">           need it.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       SYS_GID_MAX (number), SYS_GID_MIN (number)</span></span><br><span class="line"><span class="string">           Range of group IDs used for the creation of system groups by useradd,</span></span><br><span class="line"><span class="string">           groupadd, or newusers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">           The default value for SYS_GID_MIN (resp.  SYS_GID_MAX) is 101 (resp.</span></span><br><span class="line"><span class="string">           GID_MIN-1).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">FILES</span></span><br><span class="line"><span class="string">       /etc/group</span></span><br><span class="line"><span class="string">           Group account information.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       /etc/gshadow</span></span><br><span class="line"><span class="string">           Secure group account information.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       /etc/login.defs</span></span><br><span class="line"><span class="string">           Shadow password suite configuration.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">CAVEATS</span></span><br><span class="line"><span class="string">       You may not add a NIS or LDAP group. This must be performed on the</span></span><br><span class="line"><span class="string">       corresponding server.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       If the groupname already exists in an external group database such as NIS</span></span><br><span class="line"><span class="string">       or LDAP, groupadd will deny the group creation request.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">EXIT VALUES</span></span><br><span class="line"><span class="string">       The groupadd command exits with the following values:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       0</span></span><br><span class="line"><span class="string">           success</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       2</span></span><br><span class="line"><span class="string">           invalid command syntax</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       3</span></span><br><span class="line"><span class="string">           invalid argument to option</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       4</span></span><br><span class="line"><span class="string">           GID is already used (when called without -o)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       9</span></span><br><span class="line"><span class="string">           group name is already used</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       10</span></span><br><span class="line"><span class="string">           can&#x27;</span>t update group file</span><br><span class="line"></span><br><span class="line">SEE ALSO</span><br><span class="line">       chfn(1), chsh(1), passwd(1), gpasswd(8), groupdel(8), groupmod(8),</span><br><span class="line">       login.defs(5), useradd(8), userdel(8), usermod(8).</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>科技·Tech</category>
-        <category>Linux工具箱·Linux Toolbox</category>
-      </categories>
-      <tags>
-        <tag>Linux工具箱·Linux Toolbox</tag>
-        <tag>科技·Tech</tag>
-        <tag>groupadd</tag>
       </tags>
   </entry>
   <entry>
@@ -7283,6 +7283,61 @@ When running a standby server, you must set this parameter to the same or higher
       </tags>
   </entry>
   <entry>
+    <title>CentOS yum源常用配置</title>
+    <url>/posts/centos-yum-yuan-chang-yong-ming-ling.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="CentOS-yum源常用配置"><a href="#CentOS-yum源常用配置" class="headerlink" title="CentOS yum源常用配置"></a>CentOS yum源常用配置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p>直接挂载使用ISO镜像</p>
+<ol>
+<li>备份原yum源配置文件</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>挂载ISO镜像</li>
+</ol>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>编辑配置文件</li>
+</ol>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
+
+<p>配置文件内容如下</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>清理yum缓存并生成新的缓存</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="配置中国国内yum源"><a href="#配置中国国内yum源" class="headerlink" title="配置中国国内yum源"></a>配置中国国内yum源</h2><ol>
+<li>备份原yum源配置文件</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>下载阿里云的yum源配置文件</li>
+</ol>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>清理yum缓存并生成新的缓存</li>
+</ol>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>科技前沿</category>
+        <category>计算机软件</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>OS</tag>
+        <tag>yum</tag>
+        <tag>CentOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Common CentOS Yum Repository Configurations</title>
     <url>/posts/common-cos-yum-repo-conf.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Common-CentOS-Yum-Repository-Configurations"><a href="#Common-CentOS-Yum-Repository-Configurations" class="headerlink" title="Common CentOS Yum Repository Configurations"></a>Common CentOS Yum Repository Configurations</h1><h2 id="Configuring-a-Local-Yum-Repository"><a href="#Configuring-a-Local-Yum-Repository" class="headerlink" title="Configuring a Local Yum Repository"></a>Configuring a Local Yum Repository</h2><p>Mount and Use an ISO Image Directly</p>
@@ -7333,61 +7388,6 @@ When running a standby server, you must set this parameter to the same or higher
         <category>Technology</category>
         <category>OS</category>
         <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
-        <tag>yum</tag>
-        <tag>CentOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CentOS yum源常用配置</title>
-    <url>/posts/centos-yum-yuan-chang-yong-ming-ling.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="CentOS-yum源常用配置"><a href="#CentOS-yum源常用配置" class="headerlink" title="CentOS yum源常用配置"></a>CentOS yum源常用配置</h1><h2 id="配置本地yum源"><a href="#配置本地yum源" class="headerlink" title="配置本地yum源"></a>配置本地yum源</h2><p>直接挂载使用ISO镜像</p>
-<ol>
-<li>备份原yum源配置文件</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>挂载ISO镜像</li>
-</ol>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>编辑配置文件</li>
-</ol>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
-
-<p>配置文件内容如下</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>清理yum缓存并生成新的缓存</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="配置中国国内yum源"><a href="#配置中国国内yum源" class="headerlink" title="配置中国国内yum源"></a>配置中国国内yum源</h2><ol>
-<li>备份原yum源配置文件</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>下载阿里云的yum源配置文件</li>
-</ol>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>清理yum缓存并生成新的缓存</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>科技前沿</category>
-        <category>计算机软件</category>
       </categories>
       <tags>
         <tag>Linux</tag>
