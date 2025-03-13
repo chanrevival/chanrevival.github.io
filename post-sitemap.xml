@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/ke-ji-shu-ju-ku-ji-zhu.html</loc>
+        <lastmod>2025-03-13T08:42:46.695Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/postgresql-pei-zhi-wen-jian-zhong-postgresql.conf-yu-postgresql.auto.conf-de-yi-tong-dian.html</loc>
+        <lastmod>2025-03-13T07:36:05.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</loc>
         <lastmod>2025-03-13T06:11:43.406Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -83,14 +99,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/postgresql-cha-kan-biao-de-peng-zhang-lu.html</loc>
         <lastmod>2025-03-13T06:06:50.946Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/ke-ji-shu-ju-ku-ji-zhu.html</loc>
-        <lastmod>2025-03-13T05:47:38.416Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
