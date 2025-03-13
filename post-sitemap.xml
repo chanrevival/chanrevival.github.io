@@ -9,8 +9,120 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</loc>
+        <lastmod>2025-03-13T06:11:43.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/crs-pltm-o-db-mig-solu-diff-byt-ord.html</loc>
+        <lastmod>2025-03-13T06:10:40.527Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/oracle-ri-zhi-wa-jue-an-li.html</loc>
+        <lastmod>2025-03-13T06:10:25.350Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/kua-ping-tai-bu-tong-zi-jie-xu-oracle-shu-ju-ku-qian-yi-fang-an.html</loc>
+        <lastmod>2025-03-13T06:10:20.801Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/sheng-chan-huan-jing-postgresql-shu-ju-ku-can-shu-tan-jiu.html</loc>
+        <lastmod>2025-03-13T06:08:16.522Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/tan-tan-sheng-chan-huan-jing-zhong-postgresql-can-shu-de-yi-yi.html</loc>
+        <lastmod>2025-03-13T06:08:09.450Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/postgresql-yun-wei-chang-yong-ming-ling.html</loc>
+        <lastmod>2025-03-13T06:08:03.050Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/postgresql-de-mi-ma-wen-jian.html</loc>
+        <lastmod>2025-03-13T06:07:56.570Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/postgresql-de-pageinspect-cha-jian.html</loc>
+        <lastmod>2025-03-13T06:07:00.075Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/postgresql-cha-kan-biao-de-peng-zhang-lu.html</loc>
+        <lastmod>2025-03-13T06:06:50.946Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/ke-ji-shu-ju-ku-ji-zhu.html</loc>
+        <lastmod>2025-03-13T05:47:38.416Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/xiao-zhu-bei-qi-di-9-ji.html</loc>
-        <lastmod>2025-03-12T07:23:50.196Z</lastmod>
+        <lastmod>2025-03-13T05:25:11.333Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/shou-ba-shou-jiao-ni-wan-zhuan-mongodb-an-zhuang-pei-zhi.html</loc>
+        <lastmod>2025-03-13T05:24:06.110Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/oracle-log-mining-case-study.html</loc>
+        <lastmod>2025-03-13T05:23:34.492Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/postgresql-huan-jing-xia-de-fu-zhi-gai-shu.html</loc>
+        <lastmod>2025-03-13T05:23:06.923Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -169,14 +281,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/sheng-chan-huan-jing-postgresql-shu-ju-ku-can-shu-tan-jiu.html</loc>
-        <lastmod>2025-03-05T15:01:21.256Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/doris-pi-pan-huan-pan-fang-fa.html</loc>
         <lastmod>2025-03-05T14:59:24.254Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -187,14 +291,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/ru-he-zai-asm-11gr2-zhong-chong-ming-ming-ci-pan-zu.html</loc>
         <lastmod>2025-03-05T14:54:39.479Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/kua-ping-tai-bu-tong-zi-jie-xu-oracle-shu-ju-ku-qian-yi-fang-an.html</loc>
-        <lastmod>2025-03-05T13:59:59.096Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -633,22 +729,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</loc>
-        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/postgresql-huan-jing-xia-de-fu-zhi-gai-shu.html</loc>
-        <lastmod>2025-02-06T11:46:19.311Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/ru-he-jiang-asm-shu-ju-ku-wen-jian-cong-yi-ge-ci-pan-zu-yi-dong-dao-ling-yi-ge-ci-pan-zu.html</loc>
         <lastmod>2025-02-05T13:40:40.034Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -681,72 +761,8 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/tan-tan-sheng-chan-huan-jing-zhong-postgresql-can-shu-de-yi-yi.html</loc>
-        <lastmod>2025-02-05T09:30:50.821Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/postgresql-yun-wei-chang-yong-ming-ling.html</loc>
-        <lastmod>2025-02-05T09:30:45.069Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/postgresql-de-mi-ma-wen-jian.html</loc>
-        <lastmod>2025-02-05T09:30:39.261Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/postgresql-de-pageinspect-cha-jian.html</loc>
-        <lastmod>2025-02-05T09:30:33.204Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/postgresql-cha-kan-biao-de-peng-zhang-lu.html</loc>
-        <lastmod>2025-02-05T09:30:26.045Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/a-step-by-step-guide-to-mastering-mongodb-installation-and-configuration.html</loc>
         <lastmod>2025-02-05T08:39:21.123Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/shou-ba-shou-jiao-ni-wan-zhuan-mongodb-an-zhuang-pei-zhi.html</loc>
-        <lastmod>2025-02-05T08:39:06.532Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/oracle-ri-zhi-wa-jue-an-li.html</loc>
-        <lastmod>2025-02-05T08:28:19.389Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/oracle-log-mining-case-study.html</loc>
-        <lastmod>2025-02-05T08:27:57.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1027,14 +1043,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/early-spring-flower-rain-scene.html</loc>
         <lastmod>2025-02-03T14:52:35.371Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/crs-pltm-o-db-mig-solu-diff-byt-ord.html</loc>
-        <lastmod>2025-02-03T14:52:35.369Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

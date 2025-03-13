@@ -9,15 +9,50 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/Oracle/</loc>
+        <lastmod>2025-03-13T06:11:43.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
+        <lastmod>2025-03-13T06:11:43.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
+        <lastmod>2025-03-13T06:11:43.406Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/PostgreSQL/</loc>
+        <lastmod>2025-03-13T06:08:16.522Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Cinema/</loc>
-        <lastmod>2025-03-12T07:23:50.196Z</lastmod>
+        <lastmod>2025-03-13T05:25:11.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/</loc>
-        <lastmod>2025-03-12T07:23:50.196Z</lastmod>
+        <lastmod>2025-03-13T05:25:11.333Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/MongoDB/</loc>
+        <lastmod>2025-03-13T05:24:06.110Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -31,13 +66,6 @@
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/Linux%25E5%25B7%25A5%25E5%2585%25B7%25E7%25AE%25B1%25C2%25B7Linux-Toolbox/</loc>
-        <lastmod>2025-03-11T07:13:06.537Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
         <lastmod>2025-03-11T07:13:06.537Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -86,13 +114,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
-        <lastmod>2025-03-05T15:01:21.256Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/Doris/</loc>
         <lastmod>2025-03-05T14:59:24.254Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -130,27 +151,6 @@
     <url>
         <loc>https://blog.crsky.uk/categories/%25E8%258B%25B1%25E8%25AF%25AD%25C2%25B7English/</loc>
         <lastmod>2025-02-09T09:44:13.482Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/Technology/Database/Oracle/</loc>
-        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/Technology/Database/</loc>
-        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/categories/Technology/</loc>
-        <lastmod>2025-02-08T09:31:55.031Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -248,6 +248,13 @@
 
     <url>
         <loc>https://blog.crsky.uk/categories/Technology/OS/</loc>
+        <lastmod>2025-02-03T14:52:35.373Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/Technology/</loc>
         <lastmod>2025-02-03T14:52:35.373Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
