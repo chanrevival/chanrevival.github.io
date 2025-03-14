@@ -10,6 +10,33 @@
     
     
     <url>
+        <loc>https://blog.crsky.uk/privacy/</loc>
+        <lastmod>2025-03-14T04:46:00.536Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.crsky.uk/contact/</loc>
+        <lastmod>2025-03-14T04:29:51.386Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://blog.crsky.uk/about/</loc>
+        <lastmod>2025-03-14T04:05:15.809Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://blog.crsky.uk/database/</loc>
         <lastmod>2025-03-13T08:22:18.502Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -138,24 +165,6 @@
     <url>
         <loc>https://blog.crsky.uk/feedback/</loc>
         <lastmod>2025-01-22T14:18:43.744Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.crsky.uk/contact/</loc>
-        <lastmod>2025-01-22T14:00:53.056Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://blog.crsky.uk/about/</loc>
-        <lastmod>2024-12-30T05:30:59.698Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>

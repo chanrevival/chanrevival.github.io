@@ -9,14 +9,21 @@
 
 
     <url>
-        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
-        <lastmod>2025-03-13T08:42:46.695Z</lastmod>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/hexo/</loc>
+        <lastmod>2025-03-14T03:24:17.691Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
+        <lastmod>2025-03-14T03:24:17.691Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
         <lastmod>2025-03-13T08:42:46.695Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
