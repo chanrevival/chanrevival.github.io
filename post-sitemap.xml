@@ -9,8 +9,24 @@
 
 
     <url>
-        <loc>https://blog.crsky.uk/posts/hexo.html</loc>
-        <lastmod>2025-03-14T03:24:17.691Z</lastmod>
+        <loc>https://blog.crsky.uk/posts/hexo-jian-she-ge-ren-wang-zhan-xi-lie-jiao-cheng-3.chuang-jian-ni-de-di-yi-ge-hexo-bo-ke-xiang-mu-dong-shou-shi-jian-pian.html</loc>
+        <lastmod>2025-03-14T09:44:40.548Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/hexo-jian-she-ge-ren-wang-zhan-xi-lie-jiao-cheng-2.huan-jing-da-jian-yu-hexo-an-zhuang-cong-ling-kai-shi-de-zhun-bei-gong-zuo.html</loc>
+        <lastmod>2025-03-14T08:42:19.618Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/hexo-jian-she-ge-ren-wang-zhan-xi-lie-jiao-cheng-1.chu-shi-hexo-kai-qi-bo-ke-xin-shi-dai.html</loc>
+        <lastmod>2025-03-14T06:42:06.255Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
