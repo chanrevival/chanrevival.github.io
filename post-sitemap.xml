@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/xiao-zhu-bei-qi-di-9-ji.html</loc>
+        <lastmod>2025-03-17T04:40:22.789Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html</loc>
         <lastmod>2025-03-17T04:29:03.562Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -451,14 +459,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/postgresql-cha-kan-biao-de-peng-zhang-lu.html</loc>
         <lastmod>2025-03-13T06:06:50.946Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/xiao-zhu-bei-qi-di-9-ji.html</loc>
-        <lastmod>2025-03-13T05:25:11.333Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
