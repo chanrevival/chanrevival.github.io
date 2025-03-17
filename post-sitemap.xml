@@ -9,6 +9,334 @@
 
 
     <url>
+        <loc>https://blog.crsky.uk/posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html</loc>
+        <lastmod>2025-03-17T04:29:03.562Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-hostnamectl.html</loc>
+        <lastmod>2025-03-17T02:42:14.131Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
+        <lastmod>2025-03-17T02:42:09.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-jobs.html</loc>
+        <lastmod>2025-03-17T02:42:05.427Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-kill.html</loc>
+        <lastmod>2025-03-17T02:42:00.804Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
+        <lastmod>2025-03-17T02:41:56.413Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-top.html</loc>
+        <lastmod>2025-03-17T02:41:53.251Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-w.html</loc>
+        <lastmod>2025-03-17T02:41:50.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-watch.html</loc>
+        <lastmod>2025-03-17T02:41:46.924Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-rm.html</loc>
+        <lastmod>2025-03-17T02:41:37.131Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-time.html</loc>
+        <lastmod>2025-03-17T02:41:33.803Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-rpm.html</loc>
+        <lastmod>2025-03-17T02:41:30.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-tail.html</loc>
+        <lastmod>2025-03-17T02:41:25.308Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-ss.html</loc>
+        <lastmod>2025-03-17T02:41:22.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-smartctl.html</loc>
+        <lastmod>2025-03-17T02:41:18.412Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
+        <lastmod>2025-03-17T02:41:14.549Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-wget.html</loc>
+        <lastmod>2025-03-17T02:41:10.924Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-last.html</loc>
+        <lastmod>2025-03-17T02:41:04.196Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-pidstat.html</loc>
+        <lastmod>2025-03-17T02:41:01.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-lastb.html</loc>
+        <lastmod>2025-03-17T02:40:57.724Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-nohup.html</loc>
+        <lastmod>2025-03-17T02:40:53.996Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-ls.html</loc>
+        <lastmod>2025-03-17T02:40:50.284Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
+        <lastmod>2025-03-17T02:40:45.773Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-ln.html</loc>
+        <lastmod>2025-03-17T02:40:41.270Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-yum.html</loc>
+        <lastmod>2025-03-17T02:40:35.909Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-groupadd.html</loc>
+        <lastmod>2025-03-17T02:39:34.870Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-find.html</loc>
+        <lastmod>2025-03-17T02:39:30.046Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
+        <lastmod>2025-03-17T02:39:23.166Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-dnf.html</loc>
+        <lastmod>2025-03-17T02:39:14.734Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-dir.html</loc>
+        <lastmod>2025-03-17T02:39:06.526Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-df.html</loc>
+        <lastmod>2025-03-17T02:38:57.047Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-date.html</loc>
+        <lastmod>2025-03-17T02:38:49.400Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-chown.html</loc>
+        <lastmod>2025-03-17T02:38:37.918Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-chmod.html</loc>
+        <lastmod>2025-03-17T02:38:31.263Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-cd.html</loc>
+        <lastmod>2025-03-17T02:38:27.503Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-cat.html</loc>
+        <lastmod>2025-03-17T02:38:20.839Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-groupdel.html</loc>
+        <lastmod>2025-03-17T02:38:12.495Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-blkid.html</loc>
+        <lastmod>2025-03-17T02:38:07.720Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-awk.html</loc>
+        <lastmod>2025-03-17T02:36:45.456Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-arping.html</loc>
+        <lastmod>2025-03-17T02:36:44.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/posts/linux-cmd-arp.html</loc>
+        <lastmod>2025-03-17T02:36:43.114Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/posts/hexo-jian-she-ge-ren-wang-zhan-xi-lie-jiao-cheng-3.chuang-jian-ni-de-di-yi-ge-hexo-bo-ke-xiang-mu-dong-shou-shi-jian-pian.html</loc>
         <lastmod>2025-03-14T09:44:40.548Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -185,24 +513,8 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-df.html</loc>
-        <lastmod>2025-03-11T03:21:10.105Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
         <lastmod>2025-03-11T03:18:23.301Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-yum.html</loc>
-        <lastmod>2025-03-11T03:16:48.005Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -225,88 +537,8 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-wget.html</loc>
-        <lastmod>2025-03-10T04:46:41.542Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-watch.html</loc>
-        <lastmod>2025-03-10T04:40:05.975Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-w.html</loc>
-        <lastmod>2025-03-07T15:19:29.818Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-top.html</loc>
-        <lastmod>2025-03-07T04:47:05.161Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-time.html</loc>
-        <lastmod>2025-03-07T04:38:16.403Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-tail.html</loc>
-        <lastmod>2025-03-07T04:32:17.299Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-smartctl.html</loc>
-        <lastmod>2025-03-07T03:10:49.834Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-rpm.html</loc>
-        <lastmod>2025-03-06T13:31:51.032Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-rm.html</loc>
-        <lastmod>2025-03-06T13:28:51.062Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</loc>
         <lastmod>2025-03-06T05:31:37.823Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
-        <lastmod>2025-03-05T15:17:03.537Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -345,88 +577,8 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-nohup.html</loc>
-        <lastmod>2025-03-05T07:17:46.129Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-ls.html</loc>
-        <lastmod>2025-03-05T07:01:24.317Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/posts/linux-cmd.html</loc>
         <lastmod>2025-03-05T06:55:15.964Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-ln.html</loc>
-        <lastmod>2025-03-05T06:52:42.241Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
-        <lastmod>2025-03-05T06:46:10.830Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-lastb.html</loc>
-        <lastmod>2025-03-05T05:00:25.266Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-last.html</loc>
-        <lastmod>2025-03-05T04:48:29.687Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-jobs.html</loc>
-        <lastmod>2025-03-05T04:32:41.955Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
-        <lastmod>2025-03-04T14:32:28.241Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-hostnamectl.html</loc>
-        <lastmod>2025-03-04T14:22:28.409Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-kill.html</loc>
-        <lastmod>2025-03-04T14:10:54.108Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -499,150 +651,6 @@
     <url>
         <loc>https://blog.crsky.uk/posts/xie-zai-chun-jie-li.html</loc>
         <lastmod>2025-02-26T07:51:41.310Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-pidstat.html</loc>
-        <lastmod>2025-02-26T02:35:40.243Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-groupdel.html</loc>
-        <lastmod>2025-02-25T01:27:11.356Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-groupadd.html</loc>
-        <lastmod>2025-02-25T01:11:57.294Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-find.html</loc>
-        <lastmod>2025-02-24T13:45:17.544Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
-        <lastmod>2025-02-24T13:24:12.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-dnf.html</loc>
-        <lastmod>2025-02-22T15:57:54.410Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-dir.html</loc>
-        <lastmod>2025-02-22T15:45:44.854Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-date.html</loc>
-        <lastmod>2025-02-22T15:39:09.573Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-chown.html</loc>
-        <lastmod>2025-02-22T15:16:48.461Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-chmod.html</loc>
-        <lastmod>2025-02-22T12:44:27.826Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-cd.html</loc>
-        <lastmod>2025-02-22T12:30:41.133Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-cat.html</loc>
-        <lastmod>2025-02-22T10:34:46.186Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-blkid.html</loc>
-        <lastmod>2025-02-22T10:34:40.994Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-arping.html</loc>
-        <lastmod>2025-02-22T10:34:36.370Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-awk.html</loc>
-        <lastmod>2025-02-22T10:34:29.387Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
-        <lastmod>2025-02-22T10:34:23.898Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-ss.html</loc>
-        <lastmod>2025-02-22T10:34:18.315Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/posts/linux-cmd-arp.html</loc>
-        <lastmod>2025-02-22T10:33:03.243Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

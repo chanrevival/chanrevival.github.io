@@ -1,6 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.crsky.uk/posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-hostnamectl.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-jobs.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-kill.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-top.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-w.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-watch.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-rm.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-time.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-rpm.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-tail.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-ss.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-smartctl.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-wget.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-last.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-pidstat.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-lastb.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-nohup.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-ls.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-ln.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-yum.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-groupadd.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-find.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-dnf.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-dir.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-df.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-date.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-chown.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-chmod.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-cd.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-cat.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-groupdel.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-blkid.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-awk.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-arping.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.crsky.uk/posts/linux-cmd-arp.html</loc>
+    <lastmod>2025-03-17</lastmod>
+  </url>
+  <url>
     <loc>https://blog.crsky.uk/posts/hexo-jian-she-ge-ren-wang-zhan-xi-lie-jiao-cheng-3.chuang-jian-ni-de-di-yi-ge-hexo-bo-ke-xiang-mu-dong-shou-shi-jian-pian.html</loc>
     <lastmod>2025-03-14</lastmod>
   </url>
@@ -93,15 +257,7 @@
     <lastmod>2025-03-11</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-df.html</loc>
-    <lastmod>2025-03-11</lastmod>
-  </url>
-  <url>
     <loc>https://blog.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
-    <lastmod>2025-03-11</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-yum.html</loc>
     <lastmod>2025-03-11</lastmod>
   </url>
   <url>
@@ -113,44 +269,8 @@
     <lastmod>2025-03-10</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-wget.html</loc>
-    <lastmod>2025-03-10</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-watch.html</loc>
-    <lastmod>2025-03-10</lastmod>
-  </url>
-  <url>
     <loc>https://blog.crsky.uk/music/xxx.html</loc>
     <lastmod>2025-03-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-w.html</loc>
-    <lastmod>2025-03-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-top.html</loc>
-    <lastmod>2025-03-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-time.html</loc>
-    <lastmod>2025-03-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-tail.html</loc>
-    <lastmod>2025-03-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-smartctl.html</loc>
-    <lastmod>2025-03-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-rpm.html</loc>
-    <lastmod>2025-03-06</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-rm.html</loc>
-    <lastmod>2025-03-06</lastmod>
   </url>
   <url>
     <loc>https://blog.crsky.uk/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</loc>
@@ -158,10 +278,6 @@
   </url>
   <url>
     <loc>https://blog.crsky.uk/photography2/index.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-pwd.html</loc>
     <lastmod>2025-03-05</lastmod>
   </url>
   <url>
@@ -185,48 +301,8 @@
     <lastmod>2025-03-05</lastmod>
   </url>
   <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-nohup.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-ls.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
     <loc>https://blog.crsky.uk/posts/linux-cmd.html</loc>
     <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-ln.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-less.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-lastb.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-last.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-jobs.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-id.html</loc>
-    <lastmod>2025-03-04</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-hostnamectl.html</loc>
-    <lastmod>2025-03-04</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-kill.html</loc>
-    <lastmod>2025-03-04</lastmod>
   </url>
   <url>
     <loc>https://blog.crsky.uk/posts/20170321-bei-jing-zi-zhu-yuan-gong-yuan.html</loc>
@@ -279,78 +355,6 @@
   <url>
     <loc>https://blog.crsky.uk/music/index.html</loc>
     <lastmod>2025-02-26</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-pidstat.html</loc>
-    <lastmod>2025-02-26</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-groupdel.html</loc>
-    <lastmod>2025-02-25</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-groupadd.html</loc>
-    <lastmod>2025-02-25</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-find.html</loc>
-    <lastmod>2025-02-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-echo.html</loc>
-    <lastmod>2025-02-24</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-dnf.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-dir.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-date.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-chown.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-chmod.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-cd.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-cat.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-blkid.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-arping.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-awk.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-scp.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-ss.html</loc>
-    <lastmod>2025-02-22</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.crsky.uk/posts/linux-cmd-arp.html</loc>
-    <lastmod>2025-02-22</lastmod>
   </url>
   <url>
     <loc>https://blog.crsky.uk/posts/the-lacerta-files.html</loc>
