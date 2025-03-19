@@ -752,14 +752,14 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/%E5%8C%97%E4%BA%AC/</loc>
+        <loc>https://blog.crsky.uk/tags/%E6%97%85%E6%B8%B8/</loc>
         <lastmod>2025-03-03T13:32:37.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/%E6%97%85%E6%B8%B8/</loc>
+        <loc>https://blog.crsky.uk/tags/%E5%8C%97%E4%BA%AC/</loc>
         <lastmod>2025-03-03T13:32:37.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1095,6 +1095,13 @@
     </url>
 
     <url>
+        <loc>https://blog.crsky.uk/tags/Graphics-Cards/</loc>
+        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://blog.crsky.uk/tags/5070/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1103,13 +1110,6 @@
 
     <url>
         <loc>https://blog.crsky.uk/tags/5090/</loc>
-        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://blog.crsky.uk/tags/Graphics-Cards/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
