@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>https://www.crsky.uk/updates/</loc>
+        <lastmod>2025-03-19T09:22:57.167Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://www.crsky.uk/cinema/</loc>
         <lastmod>2025-03-18T06:23:13.890Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -111,15 +120,6 @@
     <url>
         <loc>https://www.crsky.uk/music/</loc>
         <lastmod>2025-02-26T07:43:57.590Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://www.crsky.uk/updates/</loc>
-        <lastmod>2025-02-22T15:30:36.414Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
