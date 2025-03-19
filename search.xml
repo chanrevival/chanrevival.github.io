@@ -12714,8 +12714,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>北京</tag>
+        <tag>旅游</tag>
         <tag>奥林匹克森林公园</tag>
       </tags>
   </entry>
@@ -12735,8 +12735,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>北京</tag>
+        <tag>旅游</tag>
         <tag>紫竹院公园</tag>
       </tags>
   </entry>
@@ -12920,8 +12920,8 @@ When running a standby server, you must set this parameter to the same or higher
       </categories>
       <tags>
         <tag>文件系统</tag>
-        <tag>操作系统</tag>
         <tag>Solaris</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -13028,8 +13028,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>操作系统技术</category>
       </categories>
       <tags>
-        <tag>SunOS</tag>
         <tag>操作系统</tag>
+        <tag>SunOS</tag>
         <tag>软件安装</tag>
       </tags>
   </entry>
@@ -13051,9 +13051,9 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
+        <tag>旅游</tag>
         <tag>广州</tag>
         <tag>莲花山</tag>
-        <tag>旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -13075,8 +13075,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>广州</tag>
         <tag>旅游</tag>
+        <tag>广州</tag>
         <tag>南粤园</tag>
         <tag>宝墨园</tag>
       </tags>
@@ -13123,9 +13123,9 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>北京</tag>
         <tag>天安门</tag>
+        <tag>旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -13159,8 +13159,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>计算机软件</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>Solaris</tag>
+        <tag>操作系统</tag>
         <tag>SSH</tag>
       </tags>
   </entry>
