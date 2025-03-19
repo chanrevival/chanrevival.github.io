@@ -1095,13 +1095,6 @@
     </url>
 
     <url>
-        <loc>https://blog.crsky.uk/tags/Graphics-Cards/</loc>
-        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://blog.crsky.uk/tags/5070/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1110,6 +1103,13 @@
 
     <url>
         <loc>https://blog.crsky.uk/tags/5090/</loc>
+        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://blog.crsky.uk/tags/Graphics-Cards/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
