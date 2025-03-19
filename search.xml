@@ -7453,76 +7453,6 @@ When running a standby server, you must set this parameter to the same or higher
       </tags>
   </entry>
   <entry>
-    <title>date命令</title>
-    <url>/posts/linux-cmd-date.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
-<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>date 是 Linux&#x2F;Unix 系统中的一个命令，用于显示当前的系统日期和时间，或根据指定的格式输出日期和时间信息。它也可以用于设置系统日期和时间。</p>
-<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
-<li><p>显示当前日期和时间</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">date</span></span><br><span class="line"><span class="attribute">Thu</span> Feb <span class="number">22</span> <span class="number">14</span>:<span class="number">35</span>:<span class="number">20</span> CST <span class="number">2025</span></span><br></pre></td></tr></table></figure>
-<p>显示当前的日期和时间，格式为 星期 月 日 时:分:秒 时区 年。</p>
-</li>
-<li><p>显示指定格式的日期和时间</p>
-<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">date <span class="string">&quot;+<span class="variable">%Y</span>-<span class="variable">%m</span>-<span class="variable">%d</span> <span class="variable">%H</span>:<span class="variable">%M</span>:<span class="variable">%S</span>&quot;</span></span><br><span class="line"><span class="number">2024</span>-<span class="number">02</span>-<span class="number">22</span> <span class="number">14</span>:<span class="number">35</span>:<span class="number">20</span></span><br></pre></td></tr></table></figure>
-<p>使用 + 后跟格式化字符串来指定输出格式，这里是 年-月-日 时:分:秒。</p>
-</li>
-<li><p>显示当前日期的星期几</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%A&quot;</span></span><br><span class="line">Thursday</span><br></pre></td></tr></table></figure>
-<p>%A 显示完整的星期几名称。</p>
-</li>
-<li><p>显示当前月份的英文缩写</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%b&quot;</span></span><br><span class="line">Feb</span><br></pre></td></tr></table></figure>
-<p>%b 显示当前月份的英文缩写。</p>
-</li>
-<li><p>显示自定义格式的日期（仅显示年和月）</p>
-<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">date <span class="string">&quot;+<span class="variable">%Y</span>-<span class="variable">%m</span>&quot;</span></span><br><span class="line"><span class="number">2024</span>-<span class="number">02</span></span><br></pre></td></tr></table></figure>
-<p>%Y 表示年份，%m 表示月份。</p>
-</li>
-<li><p>显示 Unix 时间戳（自1970年1月1日起的秒数）</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%s&quot;</span></span><br><span class="line"><span class="number">1677051320</span></span><br></pre></td></tr></table></figure>
-<p>%s 显示自 1970 年 1 月 1 日以来的秒数（Unix 时间戳）。</p>
-</li>
-<li><p>将指定日期设置为当前日期（需要超级用户权限）</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> date <span class="number">022214352025</span></span><br><span class="line"><span class="attribute">Thu</span> Feb <span class="number">22</span> <span class="number">14</span>:<span class="number">35</span>:<span class="number">00</span> CST <span class="number">2025</span></span><br></pre></td></tr></table></figure>
-<p>将系统时间设置为 2025 年 2 月 22 日 14:35:00。命令格式为 MMDDhhmm[[CC]YY][.ss]。</p>
-</li>
-<li><p>指定输出日期为 UTC 时间</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">date</span> -u</span><br><span class="line"><span class="attribute">Thu</span> Feb <span class="number">22</span> <span class="number">06</span>:<span class="number">35</span>:<span class="number">20</span> UTC <span class="number">2025</span></span><br></pre></td></tr></table></figure>
-<p>使用 -u 选项来显示 UTC 时间，而非本地时区时间。</p>
-</li>
-</ol>
-<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
-<li><p>+FORMAT<br>用于指定自定义输出格式，FORMAT 是一个由占位符组成的字符串。常用的占位符包括 %Y（年份）、%m（月份）、%d（日期）、%H（小时）、%M（分钟）等。</p>
-</li>
-<li><p>-u<br>显示 UTC 时间，而不是本地时区时间。</p>
-</li>
-<li><p>-s<br>用于设置系统时间，格式为 YYYY-MM-DD HH:MM:SS，如 date -s “2024-02-22 14:35:00”。</p>
-</li>
-<li><p>-d 或 –date<br>用于指定一个时间字符串，返回对应的时间。例如：date -d “next Fri”。</p>
-</li>
-<li><p>-R 或 –rfc-2822<br>显示符合 RFC 2822 标准的日期格式，例如：Thu, 22 Feb 2025 14:35:20 +0800。</p>
-</li>
-<li><p>-I 或 –iso-8601<br>显示符合 ISO 8601 标准的日期格式，如 2024-02-22T14:35:20+08:00。可以通过不同的参数进一步指定格式。</p>
-</li>
-<li><p>-v<br>用于显示相对于当前时间的日期。例如：date -v+1d 显示明天的日期，date -v-1d 显示昨天的日期。</p>
-</li>
-<li><p>-f FILE<br>从文件中读取时间字符串并转换为相应的日期。文件中的每一行都应该是有效的时间字符串。</p>
-</li>
-</ul>
-<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NAME </span><br><span class="line"></span><br><span class="line">       <span class="built_in">date</span> - <span class="built_in">print</span> or <span class="built_in">set</span> the system <span class="built_in">date</span> and <span class="keyword">time</span></span><br><span class="line"></span><br><span class="line">SYNOPSIS </span><br><span class="line"></span><br><span class="line">       <span class="built_in">date</span> [OPTION]... [+FORMAT]</span><br><span class="line">       <span class="built_in">date</span> [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</span><br><span class="line"></span><br><span class="line">DESCRIPTION </span><br><span class="line"></span><br><span class="line">       Display <span class="built_in">date</span> and <span class="keyword">time</span> <span class="keyword">in</span> the given FORMAT.  With -s, or with</span><br><span class="line">       [MMDDhhmm[[CC]YY][.ss]], <span class="built_in">set</span> the <span class="built_in">date</span> and <span class="keyword">time</span>.</span><br><span class="line"></span><br><span class="line">       Mandatory arguments to long options are mandatory <span class="keyword">for</span> short</span><br><span class="line">       options too.</span><br><span class="line"></span><br><span class="line">       -d, --<span class="built_in">date</span>=STRING</span><br><span class="line">              display <span class="keyword">time</span> described by STRING, not <span class="string">&#x27;now&#x27;</span></span><br><span class="line"></span><br><span class="line">       --debug</span><br><span class="line">              annotate the parsed <span class="built_in">date</span>, and warn about questionable usage</span><br><span class="line">              to stderr</span><br><span class="line"></span><br><span class="line">       -f, --file=DATEFILE</span><br><span class="line">              like --<span class="built_in">date</span>; once <span class="keyword">for</span> each line of DATEFILE</span><br><span class="line"></span><br><span class="line">       -I[FMT], --iso-8601[=FMT]</span><br><span class="line">              output <span class="built_in">date</span>/time <span class="keyword">in</span> ISO 8601 format.  FMT=<span class="string">&#x27;date&#x27;</span> <span class="keyword">for</span> <span class="built_in">date</span></span><br><span class="line">              only (the default), <span class="string">&#x27;hours&#x27;</span>, <span class="string">&#x27;minutes&#x27;</span>, <span class="string">&#x27;seconds&#x27;</span>, or <span class="string">&#x27;ns&#x27;</span></span><br><span class="line">              <span class="keyword">for</span> <span class="built_in">date</span> and <span class="keyword">time</span> to the indicated precision.  Example:</span><br><span class="line">              2006-08-14T02:34:56-06:00</span><br><span class="line"></span><br><span class="line">       --resolution</span><br><span class="line">              output the available resolution of timestamps Example:</span><br><span class="line">              0.000000001</span><br><span class="line"></span><br><span class="line">       -R, --rfc-email</span><br><span class="line">              output <span class="built_in">date</span> and <span class="keyword">time</span> <span class="keyword">in</span> RFC 5322 format.  Example: Mon, 14</span><br><span class="line">              Aug 2006 02:34:56 -0600</span><br><span class="line"></span><br><span class="line">       --rfc-3339=FMT</span><br><span class="line">              output <span class="built_in">date</span>/time <span class="keyword">in</span> RFC 3339 format.  FMT=<span class="string">&#x27;date&#x27;</span>,</span><br><span class="line">              <span class="string">&#x27;seconds&#x27;</span>, or <span class="string">&#x27;ns&#x27;</span> <span class="keyword">for</span> <span class="built_in">date</span> and <span class="keyword">time</span> to the indicated</span><br><span class="line">              precision.  Example: 2006-08-14 02:34:56-06:00</span><br><span class="line"></span><br><span class="line">       -r, --reference=FILE</span><br><span class="line">              display the last modification <span class="keyword">time</span> of FILE</span><br><span class="line"></span><br><span class="line">       -s, --<span class="built_in">set</span>=STRING</span><br><span class="line">              <span class="built_in">set</span> <span class="keyword">time</span> described by STRING</span><br><span class="line"></span><br><span class="line">       -u, --utc, --universal</span><br><span class="line">              <span class="built_in">print</span> or <span class="built_in">set</span> Coordinated Universal Time (UTC)</span><br><span class="line"></span><br><span class="line">       --<span class="built_in">help</span> display this <span class="built_in">help</span> and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       --version</span><br><span class="line">              output version information and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       All options that specify the <span class="built_in">date</span> to display are mutually</span><br><span class="line">       exclusive.  I.e.: --<span class="built_in">date</span>, --file, --reference, --resolution.</span><br><span class="line"></span><br><span class="line">       FORMAT controls the output.  Interpreted sequences are:</span><br><span class="line"></span><br><span class="line">       %%     a literal %</span><br><span class="line"></span><br><span class="line">       %a     locale<span class="string">&#x27;s abbreviated weekday name (e.g., Sun)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %A     locale&#x27;</span>s full weekday name (e.g., Sunday)</span><br><span class="line"></span><br><span class="line">       %b     locale<span class="string">&#x27;s abbreviated month name (e.g., Jan)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %B     locale&#x27;</span>s full month name (e.g., January)</span><br><span class="line"></span><br><span class="line">       %c     locale<span class="string">&#x27;s date and time (e.g., Thu Mar  3 23:05:25 2005)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %C     century; like %Y, except omit last two digits (e.g., 20)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %d     day of month (e.g., 01)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %D     date (ambiguous); same as %m/%d/%y</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %e     day of month, space padded; same as %_d</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %F     full date; like %+4Y-%m-%d</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %g     last two digits of year of ISO week number (ambiguous;</span></span><br><span class="line"><span class="string">              00-99); see %G</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %G     year of ISO week number; normally useful only with %V</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %h     same as %b</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %H     hour (00..23)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %I     hour (01..12)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %j     day of year (001..366)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %k     hour, space padded ( 0..23); same as %_H</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %l     hour, space padded ( 1..12); same as %_I</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %m     month (01..12)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %M     minute (00..59)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %n     a newline</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %N     nanoseconds (000000000..999999999)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %p     locale&#x27;</span>s equivalent of either AM or PM; blank <span class="keyword">if</span> not known</span><br><span class="line"></span><br><span class="line">       %P     like %p, but lower <span class="keyword">case</span></span><br><span class="line"></span><br><span class="line">       %q     quarter of year (1..4)</span><br><span class="line"></span><br><span class="line">       %r     locale<span class="string">&#x27;s 12-hour clock time (e.g., 11:11:04 PM)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %R     24-hour hour and minute; same as %H:%M</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %s     seconds since the Epoch (1970-01-01 00:00 UTC)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %S     second (00..60)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %t     a tab</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %T     time; same as %H:%M:%S</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %u     day of week (1..7); 1 is Monday</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %U     week number of year, with Sunday as first day of week</span></span><br><span class="line"><span class="string">              (00..53)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %V     ISO week number, with Monday as first day of week (01..53)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %w     day of week (0..6); 0 is Sunday</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %W     week number of year, with Monday as first day of week</span></span><br><span class="line"><span class="string">              (00..53)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %x     locale&#x27;</span>s <span class="built_in">date</span> (can be ambiguous; e.g., 12/31/99)</span><br><span class="line"></span><br><span class="line">       %X     locale<span class="string">&#x27;s time representation (e.g., 23:13:48)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %y     last two digits of year (ambiguous; 00..99)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %Y     year</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %z     +hhmm numeric time zone (e.g., -0400)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %:z    +hh:mm numeric time zone (e.g., -04:00)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %::z   +hh:mm:ss numeric time zone (e.g., -04:00:00)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %:::z  numeric time zone with : to necessary precision (e.g., -04,</span></span><br><span class="line"><span class="string">              +05:30)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %Z     alphabetic time zone abbreviation (e.g., EDT)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       By default, date pads numeric fields with zeroes.  The following</span></span><br><span class="line"><span class="string">       optional flags may follow &#x27;</span>%<span class="string">&#x27;:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -      (hyphen) do not pad the field</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       _      (underscore) pad with spaces</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       0      (zero) pad with zeros</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       +      pad with zeros, and put &#x27;</span>+<span class="string">&#x27; before future years with &gt;4</span></span><br><span class="line"><span class="string">              digits</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       ^      use upper case if possible</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       #      use opposite case if possible</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       After any flags comes an optional field width, as a decimal</span></span><br><span class="line"><span class="string">       number; then an optional modifier, which is either E to use the</span></span><br><span class="line"><span class="string">       locale&#x27;</span>s alternate representations <span class="keyword">if</span> available, or O to use the</span><br><span class="line">       locale<span class="string">&#x27;s alternate numeric symbols if available.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">EXAMPLES </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Convert seconds since the Epoch (1970-01-01 UTC) to a date</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              $ date --date=&#x27;</span>@2147483647<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Show the time on the west coast of the US (use tzselect(1) to find</span></span><br><span class="line"><span class="string">       TZ)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              $ TZ=&#x27;</span>America/Los_Angeles<span class="string">&#x27; date</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Show the local time for 9AM next Friday on the west coast of the</span></span><br><span class="line"><span class="string">       US</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              $ date --date=&#x27;</span>TZ=<span class="string">&quot;America/Los_Angeles&quot;</span> 09:00 next Fri<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">DATE STRING </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The --date=STRING is a mostly free format human readable date</span></span><br><span class="line"><span class="string">       string such as &quot;Sun, 29 Feb 2004 16:21:42 -0800&quot; or &quot;2004-02-29</span></span><br><span class="line"><span class="string">       16:21:42&quot; or even &quot;next Thursday&quot;.  A date string may contain</span></span><br><span class="line"><span class="string">       items indicating calendar date, time of day, time zone, day of</span></span><br><span class="line"><span class="string">       week, relative time, relative date, and numbers.  An empty string</span></span><br><span class="line"><span class="string">       indicates the beginning of the day.  The date string format is</span></span><br><span class="line"><span class="string">       more complex than is easily documented here but is fully described</span></span><br><span class="line"><span class="string">       in the info documentation.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">AUTHOR </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Written by David MacKenzie.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">REPORTING BUGS </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GNU coreutils online help:</span></span><br><span class="line"><span class="string">       &lt;https://www.gnu.org/software/coreutils/&gt;</span></span><br><span class="line"><span class="string">       Report any translation bugs to</span></span><br><span class="line"><span class="string">       &lt;https://translationproject.org/team/&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COPYRIGHT </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Copyright © 2025 Free Software Foundation, Inc.  License GPLv3+:</span></span><br><span class="line"><span class="string">       GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span></span><br><span class="line"><span class="string">       This is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="string">       There is NO WARRANTY, to the extent permitted by law.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SEE ALSO </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Full documentation &lt;https://www.gnu.org/software/coreutils/date&gt;</span></span><br><span class="line"><span class="string">       or available locally via: info &#x27;</span>(coreutils) <span class="built_in">date</span> invocation<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COLOPHON </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       This page is part of the coreutils (basic file, shell and text</span></span><br><span class="line"><span class="string">       manipulation utilities) project.  Information about the project</span></span><br><span class="line"><span class="string">       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you</span></span><br><span class="line"><span class="string">       have a bug report for this manual page, see</span></span><br><span class="line"><span class="string">       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained</span></span><br><span class="line"><span class="string">       from the tarball coreutils-9.6.tar.xz fetched from</span></span><br><span class="line"><span class="string">       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2024-02-02.  If you</span></span><br><span class="line"><span class="string">       discover any rendering problems in this HTML version of the page,</span></span><br><span class="line"><span class="string">       or you believe there is a better or more up-to-date source for the</span></span><br><span class="line"><span class="string">       page, or you have corrections or improvements to the information</span></span><br><span class="line"><span class="string">       in this COLOPHON (which is not part of the original manual page),</span></span><br><span class="line"><span class="string">       send a mail to man-pages@man7.org</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>科技·Tech</category>
-        <category>Linux工具箱·Linux Toolbox</category>
-      </categories>
-      <tags>
-        <tag>Linux工具箱·Linux Toolbox</tag>
-        <tag>科技·Tech</tag>
-        <tag>date</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>chown命令</title>
     <url>/posts/linux-cmd-chown.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
@@ -7593,63 +7523,63 @@ When running a standby server, you must set this parameter to the same or higher
       </tags>
   </entry>
   <entry>
-    <title>chmod命令</title>
-    <url>/posts/linux-cmd-chmod.html</url>
+    <title>date命令</title>
+    <url>/posts/linux-cmd-date.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
-<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>chmod（change mode）是 Linux&#x2F;Unix 系统中用来更改文件或目录权限的命令。它可以设置文件或目录的读、写、执行权限，并且可以指定权限的设置方式，通常用于控制文件的访问权限。</p>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>date 是 Linux&#x2F;Unix 系统中的一个命令，用于显示当前的系统日期和时间，或根据指定的格式输出日期和时间信息。它也可以用于设置系统日期和时间。</p>
 <h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
-<li><p>给文件添加执行权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x script.sh</span><br></pre></td></tr></table></figure>
-<p>这条命令给 script.sh 文件添加了执行权限。执行后，script.sh 文件将变为可执行文件。</p>
+<li><p>显示当前日期和时间</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">date</span></span><br><span class="line"><span class="attribute">Thu</span> Feb <span class="number">22</span> <span class="number">14</span>:<span class="number">35</span>:<span class="number">20</span> CST <span class="number">2025</span></span><br></pre></td></tr></table></figure>
+<p>显示当前的日期和时间，格式为 星期 月 日 时:分:秒 时区 年。</p>
 </li>
-<li><p>去除文件的写权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -w file.txt</span><br></pre></td></tr></table></figure>
-<p>去除了 file.txt 文件的写权限，执行后文件内容将无法编辑。</p>
+<li><p>显示指定格式的日期和时间</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">date <span class="string">&quot;+<span class="variable">%Y</span>-<span class="variable">%m</span>-<span class="variable">%d</span> <span class="variable">%H</span>:<span class="variable">%M</span>:<span class="variable">%S</span>&quot;</span></span><br><span class="line"><span class="number">2024</span>-<span class="number">02</span>-<span class="number">22</span> <span class="number">14</span>:<span class="number">35</span>:<span class="number">20</span></span><br></pre></td></tr></table></figure>
+<p>使用 + 后跟格式化字符串来指定输出格式，这里是 年-月-日 时:分:秒。</p>
 </li>
-<li><p>设置文件权限为 755</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 755 program</span><br></pre></td></tr></table></figure>
-<p>将 program 文件的权限设置为 rwxr-xr-x，即所有者可以读、写、执行，组用户和其他用户可以读取和执行。</p>
+<li><p>显示当前日期的星期几</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%A&quot;</span></span><br><span class="line">Thursday</span><br></pre></td></tr></table></figure>
+<p>%A 显示完整的星期几名称。</p>
 </li>
-<li><p>设置文件权限为 644</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 644 document.txt</span><br></pre></td></tr></table></figure>
-<p>将 document.txt 文件的权限设置为 rw-r–r–，即所有者可以读、写，组用户和其他用户只能读取。</p>
+<li><p>显示当前月份的英文缩写</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%b&quot;</span></span><br><span class="line">Feb</span><br></pre></td></tr></table></figure>
+<p>%b 显示当前月份的英文缩写。</p>
 </li>
-<li><p>递归更改目录及其子文件权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -R 755 /path/to/directory</span><br></pre></td></tr></table></figure>
-<p>使用 -R 选项递归地将 &#x2F;path&#x2F;to&#x2F;directory 目录及其下所有文件的权限设置为 rwxr-xr-x。</p>
+<li><p>显示自定义格式的日期（仅显示年和月）</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">date <span class="string">&quot;+<span class="variable">%Y</span>-<span class="variable">%m</span>&quot;</span></span><br><span class="line"><span class="number">2024</span>-<span class="number">02</span></span><br></pre></td></tr></table></figure>
+<p>%Y 表示年份，%m 表示月份。</p>
 </li>
-<li><p>给所有者和组用户添加写权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> ug+w file.txt</span><br></pre></td></tr></table></figure>
-<p>给 file.txt 文件的所有者和组用户添加写权限。此命令执行后，所有者和组用户都能修改文件内容。</p>
+<li><p>显示 Unix 时间戳（自1970年1月1日起的秒数）</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">date</span> <span class="string">&quot;+%s&quot;</span></span><br><span class="line"><span class="number">1677051320</span></span><br></pre></td></tr></table></figure>
+<p>%s 显示自 1970 年 1 月 1 日以来的秒数（Unix 时间戳）。</p>
 </li>
-<li><p>给文件去除执行权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -x script.sh</span><br></pre></td></tr></table></figure>
-<p>去除 script.sh 文件的执行权限，执行后文件将不再可以作为可执行文件运行。</p>
+<li><p>将指定日期设置为当前日期（需要超级用户权限）</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> date <span class="number">022214352025</span></span><br><span class="line"><span class="attribute">Thu</span> Feb <span class="number">22</span> <span class="number">14</span>:<span class="number">35</span>:<span class="number">00</span> CST <span class="number">2025</span></span><br></pre></td></tr></table></figure>
+<p>将系统时间设置为 2025 年 2 月 22 日 14:35:00。命令格式为 MMDDhhmm[[CC]YY][.ss]。</p>
 </li>
-<li><p>通过符号模式设置权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u=rwx,g=rx,o=r myfile</span><br></pre></td></tr></table></figure>
-<p>通过符号模式设置 myfile 文件的权限为所有者可读、写、执行，组用户可读、执行，其他用户只能读取。</p>
+<li><p>指定输出日期为 UTC 时间</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">date</span> -u</span><br><span class="line"><span class="attribute">Thu</span> Feb <span class="number">22</span> <span class="number">06</span>:<span class="number">35</span>:<span class="number">20</span> UTC <span class="number">2025</span></span><br></pre></td></tr></table></figure>
+<p>使用 -u 选项来显示 UTC 时间，而非本地时区时间。</p>
 </li>
 </ol>
 <h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
-<li><p>-R, –recursive<br>递归地更改目录及其所有子目录和文件的权限。例如，chmod -R 755 &#x2F;path&#x2F;to&#x2F;directory。</p>
+<li><p>+FORMAT<br>用于指定自定义输出格式，FORMAT 是一个由占位符组成的字符串。常用的占位符包括 %Y（年份）、%m（月份）、%d（日期）、%H（小时）、%M（分钟）等。</p>
 </li>
-<li><p>-v, –verbose<br>显示权限更改的详细信息。使用该选项后，每次权限更改都会在终端中输出提示信息。</p>
+<li><p>-u<br>显示 UTC 时间，而不是本地时区时间。</p>
 </li>
-<li><p>-c, –changes<br>仅在权限更改时输出信息。与 -v 类似，但只会在更改发生时打印出变更内容。</p>
+<li><p>-s<br>用于设置系统时间，格式为 YYYY-MM-DD HH:MM:SS，如 date -s “2024-02-22 14:35:00”。</p>
 </li>
-<li><p>-f, –silent, –quiet<br>忽略所有错误消息。如果操作失败，系统不会显示错误信息。</p>
+<li><p>-d 或 –date<br>用于指定一个时间字符串，返回对应的时间。例如：date -d “next Fri”。</p>
 </li>
-<li><p>–no-dereference<br>不改变符号链接的权限，仅影响文件本身。</p>
+<li><p>-R 或 –rfc-2822<br>显示符合 RFC 2822 标准的日期格式，例如：Thu, 22 Feb 2025 14:35:20 +0800。</p>
 </li>
-<li><p>–reference&#x3D;file<br>将 file 文件的权限复制到目标文件。例如，chmod –reference&#x3D;example.txt myfile 会将 example.txt 的权限应用到 myfile 上。</p>
+<li><p>-I 或 –iso-8601<br>显示符合 ISO 8601 标准的日期格式，如 2024-02-22T14:35:20+08:00。可以通过不同的参数进一步指定格式。</p>
 </li>
-<li><p>u, g, o<br>用于指定文件的所有者（user）、组（group）和其他用户（other）。例如，chmod u+x file 表示给所有者添加执行权限。</p>
+<li><p>-v<br>用于显示相对于当前时间的日期。例如：date -v+1d 显示明天的日期，date -v-1d 显示昨天的日期。</p>
 </li>
-<li><p>+&#x2F;-&#x2F;<br>用于增加、去除或设置权限。例如，chmod +x file 表示添加执行权限，chmod -x file 表示去除执行权限，chmod &#x3D;r file 表示只保留读取权限。</p>
+<li><p>-f FILE<br>从文件中读取时间字符串并转换为相应的日期。文件中的每一行都应该是有效的时间字符串。</p>
 </li>
 </ul>
-<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">NAME </span><br><span class="line"></span><br><span class="line">       <span class="built_in">chmod</span> - change file mode bits</span><br><span class="line"></span><br><span class="line">SYNOPSIS </span><br><span class="line"></span><br><span class="line">       <span class="built_in">chmod</span> [OPTION]... MODE[,MODE]... FILE...</span><br><span class="line">       <span class="built_in">chmod</span> [OPTION]... OCTAL-MODE FILE...</span><br><span class="line">       <span class="built_in">chmod</span> [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">DESCRIPTION </span><br><span class="line"></span><br><span class="line">       This manual page documents the GNU version of <span class="built_in">chmod</span>.  <span class="built_in">chmod</span></span><br><span class="line">       changes the file mode bits of each given file according to mode,</span><br><span class="line">       <span class="built_in">which</span> can be either a symbolic representation of changes to make,</span><br><span class="line">       or an octal number representing the bit pattern <span class="keyword">for</span> the new mode</span><br><span class="line">       bits.</span><br><span class="line"></span><br><span class="line">       The format of a symbolic mode is [ugoa...][[-+=][perms...]...],</span><br><span class="line">       <span class="built_in">where</span> perms is either zero or more letters from the <span class="built_in">set</span> rwxXst, or</span><br><span class="line">       a single letter from the <span class="built_in">set</span> ugo.  Multiple symbolic modes can be</span><br><span class="line">       given, separated by commas.</span><br><span class="line"></span><br><span class="line">       A combination of the letters ugoa controls <span class="built_in">which</span> <span class="built_in">users</span><span class="string">&#x27; access to</span></span><br><span class="line"><span class="string">       the file will be changed: the user who owns it (u), other users in</span></span><br><span class="line"><span class="string">       the file&#x27;</span>s group (g), other <span class="built_in">users</span> not <span class="keyword">in</span> the file<span class="string">&#x27;s group (o), or</span></span><br><span class="line"><span class="string">       all users (a).  If none of these are given, the effect is as if</span></span><br><span class="line"><span class="string">       (a) were given, but bits that are set in the umask are not</span></span><br><span class="line"><span class="string">       affected.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The operator + causes the selected file mode bits to be added to</span></span><br><span class="line"><span class="string">       the existing file mode bits of each file; - causes them to be</span></span><br><span class="line"><span class="string">       removed; and = causes them to be added and causes unmentioned bits</span></span><br><span class="line"><span class="string">       to be removed except that a directory&#x27;</span>s unmentioned <span class="built_in">set</span> user and</span><br><span class="line">       group ID bits are not affected.</span><br><span class="line"></span><br><span class="line">       The letters rwxXst <span class="keyword">select</span> file mode bits <span class="keyword">for</span> the affected <span class="built_in">users</span>:</span><br><span class="line">       <span class="built_in">read</span> (r), write (w), execute (or search <span class="keyword">for</span> directories) (x),</span><br><span class="line">       execute/search only <span class="keyword">if</span> the file is a directory or already has</span><br><span class="line">       execute permission <span class="keyword">for</span> some user (X), <span class="built_in">set</span> user or group ID on</span><br><span class="line">       execution (s), restricted deletion flag or sticky bit (t).</span><br><span class="line">       Instead of one or more of these letters, you can specify exactly</span><br><span class="line">       one of the letters ugo: the permissions granted to the user <span class="built_in">who</span></span><br><span class="line">       owns the file (u), the permissions granted to other <span class="built_in">users</span> <span class="built_in">who</span> are</span><br><span class="line">       members of the file<span class="string">&#x27;s group (g), and the permissions granted to</span></span><br><span class="line"><span class="string">       users that are in neither of the two preceding categories (o).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       A numeric mode is from one to four octal digits (0-7), derived by</span></span><br><span class="line"><span class="string">       adding up the bits with values 4, 2, and 1.  Omitted digits are</span></span><br><span class="line"><span class="string">       assumed to be leading zeros.  The first digit selects the set user</span></span><br><span class="line"><span class="string">       ID (4) and set group ID (2) and restricted deletion or sticky (1)</span></span><br><span class="line"><span class="string">       attributes.  The second digit selects permissions for the user who</span></span><br><span class="line"><span class="string">       owns the file: read (4), write (2), and execute (1); the third</span></span><br><span class="line"><span class="string">       selects permissions for other users in the file&#x27;</span>s group, with the</span><br><span class="line">       same values; and the fourth <span class="keyword">for</span> other <span class="built_in">users</span> not <span class="keyword">in</span> the file<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">       group, with the same values.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       chmod doesn&#x27;</span>t change the permissions of symbolic links; the <span class="built_in">chmod</span></span><br><span class="line">       system call cannot change their permissions on most systems, and</span><br><span class="line">       most systems ignore permissions of symbolic links.  However, <span class="keyword">for</span></span><br><span class="line">       each symbolic <span class="built_in">link</span> listed on the <span class="built_in">command</span> line, <span class="built_in">chmod</span> changes the</span><br><span class="line">       permissions of the pointed-to file.  In contrast, <span class="built_in">chmod</span> ignores</span><br><span class="line">       symbolic links encountered during recursive directory traversals.</span><br><span class="line">       Options that modify this behavior are described <span class="keyword">in</span> the OPTIONS</span><br><span class="line">       section.</span><br><span class="line"></span><br><span class="line">SETUID AND SETGID BITS </span><br><span class="line"></span><br><span class="line">       <span class="built_in">chmod</span> clears the set-group-ID bit of a regular file <span class="keyword">if</span> the file<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">       group ID does not match the user&#x27;</span>s effective group ID or one of</span><br><span class="line">       the user<span class="string">&#x27;s supplementary group IDs, unless the user has</span></span><br><span class="line"><span class="string">       appropriate privileges.  Additional restrictions may cause the</span></span><br><span class="line"><span class="string">       set-user-ID and set-group-ID bits of MODE or RFILE to be ignored.</span></span><br><span class="line"><span class="string">       This behavior depends on the policy and functionality of the</span></span><br><span class="line"><span class="string">       underlying chmod system call.  When in doubt, check the underlying</span></span><br><span class="line"><span class="string">       system behavior.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       For directories chmod preserves set-user-ID and set-group-ID bits</span></span><br><span class="line"><span class="string">       unless you explicitly specify otherwise.  You can set or clear the</span></span><br><span class="line"><span class="string">       bits with symbolic modes like u+s and g-s.  To clear these bits</span></span><br><span class="line"><span class="string">       for directories with a numeric mode requires an additional leading</span></span><br><span class="line"><span class="string">       zero like 00755, leading minus like -6000, or leading equals like</span></span><br><span class="line"><span class="string">       =755.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">RESTRICTED DELETION FLAG OR STICKY BIT </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The restricted deletion flag or sticky bit is a single bit, whose</span></span><br><span class="line"><span class="string">       interpretation depends on the file type.  For directories, it</span></span><br><span class="line"><span class="string">       prevents unprivileged users from removing or renaming a file in</span></span><br><span class="line"><span class="string">       the directory unless they own the file or the directory; this is</span></span><br><span class="line"><span class="string">       called the restricted deletion flag for the directory, and is</span></span><br><span class="line"><span class="string">       commonly found on world-writable directories like /tmp.  For</span></span><br><span class="line"><span class="string">       regular files on some older systems, the bit saves the program&#x27;</span>s</span><br><span class="line">       text image on the swap device so it will load more quickly when</span><br><span class="line">       run; this is called the sticky bit.</span><br><span class="line"></span><br><span class="line">OPTIONS </span><br><span class="line"></span><br><span class="line">       Change the mode of each FILE to MODE.  With --reference, change</span><br><span class="line">       the mode of each FILE to that of RFILE.</span><br><span class="line"></span><br><span class="line">       -c, --changes</span><br><span class="line">              like verbose but report only when a change is made</span><br><span class="line"></span><br><span class="line">       -f, --silent, --quiet</span><br><span class="line">              suppress most error messages</span><br><span class="line"></span><br><span class="line">       -v, --verbose</span><br><span class="line">              output a diagnostic <span class="keyword">for</span> every file processed</span><br><span class="line"></span><br><span class="line">       --dereference</span><br><span class="line">              affect the referent of each symbolic <span class="built_in">link</span>, rather than the</span><br><span class="line">              symbolic <span class="built_in">link</span> itself</span><br><span class="line"></span><br><span class="line">       -h, --no-dereference</span><br><span class="line">              affect each symbolic <span class="built_in">link</span>, rather than the referent</span><br><span class="line"></span><br><span class="line">       --no-preserve-root</span><br><span class="line">              <span class="keyword">do</span> not treat <span class="string">&#x27;/&#x27;</span> specially (the default)</span><br><span class="line"></span><br><span class="line">       --preserve-root</span><br><span class="line">              fail to operate recursively on <span class="string">&#x27;/&#x27;</span></span><br><span class="line"></span><br><span class="line">       --reference=RFILE</span><br><span class="line">              use RFILE<span class="string">&#x27;s mode instead of specifying MODE values.  RFILE</span></span><br><span class="line"><span class="string">              is always dereferenced if a symbolic link.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -R, --recursive</span></span><br><span class="line"><span class="string">              change files and directories recursively</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The following options modify how a hierarchy is traversed when the</span></span><br><span class="line"><span class="string">       -R option is also specified.  If more than one is specified, only</span></span><br><span class="line"><span class="string">       the final one takes effect. -H is the default.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -H     if a command line argument is a symbolic link to a</span></span><br><span class="line"><span class="string">              directory, traverse it</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -L     traverse every symbolic link to a directory encountered</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -P     do not traverse any symbolic links</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       --help display this help and exit</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       --version</span></span><br><span class="line"><span class="string">              output version information and exit</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Each MODE is of the form</span></span><br><span class="line"><span class="string">       &#x27;</span>[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+<span class="string">&#x27;.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">AUTHOR </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Written by David MacKenzie and Jim Meyering.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">REPORTING BUGS </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GNU coreutils online help:</span></span><br><span class="line"><span class="string">       &lt;https://www.gnu.org/software/coreutils/&gt;</span></span><br><span class="line"><span class="string">       Report any translation bugs to</span></span><br><span class="line"><span class="string">       &lt;https://translationproject.org/team/&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COPYRIGHT </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Copyright © 2025 Free Software Foundation, Inc.  License GPLv3+:</span></span><br><span class="line"><span class="string">       GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span></span><br><span class="line"><span class="string">       This is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="string">       There is NO WARRANTY, to the extent permitted by law.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SEE ALSO </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       chmod(2)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Full documentation &lt;https://www.gnu.org/software/coreutils/chmod&gt;</span></span><br><span class="line"><span class="string">       or available locally via: info &#x27;</span>(coreutils) <span class="built_in">chmod</span> invocation<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COLOPHON </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       This page is part of the coreutils (basic file, shell and text</span></span><br><span class="line"><span class="string">       manipulation utilities) project.  Information about the project</span></span><br><span class="line"><span class="string">       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you</span></span><br><span class="line"><span class="string">       have a bug report for this manual page, see</span></span><br><span class="line"><span class="string">       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained</span></span><br><span class="line"><span class="string">       from the tarball coreutils-9.6.tar.xz fetched from</span></span><br><span class="line"><span class="string">       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2024-02-02.  If you</span></span><br><span class="line"><span class="string">       discover any rendering problems in this HTML version of the page,</span></span><br><span class="line"><span class="string">       or you believe there is a better or more up-to-date source for the</span></span><br><span class="line"><span class="string">       page, or you have corrections or improvements to the information</span></span><br><span class="line"><span class="string">       in this COLOPHON (which is not part of the original manual page),</span></span><br><span class="line"><span class="string">       send a mail to man-pages@man7.org</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">NAME </span><br><span class="line"></span><br><span class="line">       <span class="built_in">date</span> - <span class="built_in">print</span> or <span class="built_in">set</span> the system <span class="built_in">date</span> and <span class="keyword">time</span></span><br><span class="line"></span><br><span class="line">SYNOPSIS </span><br><span class="line"></span><br><span class="line">       <span class="built_in">date</span> [OPTION]... [+FORMAT]</span><br><span class="line">       <span class="built_in">date</span> [-u|--utc|--universal] [MMDDhhmm[[CC]YY][.ss]]</span><br><span class="line"></span><br><span class="line">DESCRIPTION </span><br><span class="line"></span><br><span class="line">       Display <span class="built_in">date</span> and <span class="keyword">time</span> <span class="keyword">in</span> the given FORMAT.  With -s, or with</span><br><span class="line">       [MMDDhhmm[[CC]YY][.ss]], <span class="built_in">set</span> the <span class="built_in">date</span> and <span class="keyword">time</span>.</span><br><span class="line"></span><br><span class="line">       Mandatory arguments to long options are mandatory <span class="keyword">for</span> short</span><br><span class="line">       options too.</span><br><span class="line"></span><br><span class="line">       -d, --<span class="built_in">date</span>=STRING</span><br><span class="line">              display <span class="keyword">time</span> described by STRING, not <span class="string">&#x27;now&#x27;</span></span><br><span class="line"></span><br><span class="line">       --debug</span><br><span class="line">              annotate the parsed <span class="built_in">date</span>, and warn about questionable usage</span><br><span class="line">              to stderr</span><br><span class="line"></span><br><span class="line">       -f, --file=DATEFILE</span><br><span class="line">              like --<span class="built_in">date</span>; once <span class="keyword">for</span> each line of DATEFILE</span><br><span class="line"></span><br><span class="line">       -I[FMT], --iso-8601[=FMT]</span><br><span class="line">              output <span class="built_in">date</span>/time <span class="keyword">in</span> ISO 8601 format.  FMT=<span class="string">&#x27;date&#x27;</span> <span class="keyword">for</span> <span class="built_in">date</span></span><br><span class="line">              only (the default), <span class="string">&#x27;hours&#x27;</span>, <span class="string">&#x27;minutes&#x27;</span>, <span class="string">&#x27;seconds&#x27;</span>, or <span class="string">&#x27;ns&#x27;</span></span><br><span class="line">              <span class="keyword">for</span> <span class="built_in">date</span> and <span class="keyword">time</span> to the indicated precision.  Example:</span><br><span class="line">              2006-08-14T02:34:56-06:00</span><br><span class="line"></span><br><span class="line">       --resolution</span><br><span class="line">              output the available resolution of timestamps Example:</span><br><span class="line">              0.000000001</span><br><span class="line"></span><br><span class="line">       -R, --rfc-email</span><br><span class="line">              output <span class="built_in">date</span> and <span class="keyword">time</span> <span class="keyword">in</span> RFC 5322 format.  Example: Mon, 14</span><br><span class="line">              Aug 2006 02:34:56 -0600</span><br><span class="line"></span><br><span class="line">       --rfc-3339=FMT</span><br><span class="line">              output <span class="built_in">date</span>/time <span class="keyword">in</span> RFC 3339 format.  FMT=<span class="string">&#x27;date&#x27;</span>,</span><br><span class="line">              <span class="string">&#x27;seconds&#x27;</span>, or <span class="string">&#x27;ns&#x27;</span> <span class="keyword">for</span> <span class="built_in">date</span> and <span class="keyword">time</span> to the indicated</span><br><span class="line">              precision.  Example: 2006-08-14 02:34:56-06:00</span><br><span class="line"></span><br><span class="line">       -r, --reference=FILE</span><br><span class="line">              display the last modification <span class="keyword">time</span> of FILE</span><br><span class="line"></span><br><span class="line">       -s, --<span class="built_in">set</span>=STRING</span><br><span class="line">              <span class="built_in">set</span> <span class="keyword">time</span> described by STRING</span><br><span class="line"></span><br><span class="line">       -u, --utc, --universal</span><br><span class="line">              <span class="built_in">print</span> or <span class="built_in">set</span> Coordinated Universal Time (UTC)</span><br><span class="line"></span><br><span class="line">       --<span class="built_in">help</span> display this <span class="built_in">help</span> and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       --version</span><br><span class="line">              output version information and <span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">       All options that specify the <span class="built_in">date</span> to display are mutually</span><br><span class="line">       exclusive.  I.e.: --<span class="built_in">date</span>, --file, --reference, --resolution.</span><br><span class="line"></span><br><span class="line">       FORMAT controls the output.  Interpreted sequences are:</span><br><span class="line"></span><br><span class="line">       %%     a literal %</span><br><span class="line"></span><br><span class="line">       %a     locale<span class="string">&#x27;s abbreviated weekday name (e.g., Sun)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %A     locale&#x27;</span>s full weekday name (e.g., Sunday)</span><br><span class="line"></span><br><span class="line">       %b     locale<span class="string">&#x27;s abbreviated month name (e.g., Jan)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %B     locale&#x27;</span>s full month name (e.g., January)</span><br><span class="line"></span><br><span class="line">       %c     locale<span class="string">&#x27;s date and time (e.g., Thu Mar  3 23:05:25 2005)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %C     century; like %Y, except omit last two digits (e.g., 20)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %d     day of month (e.g., 01)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %D     date (ambiguous); same as %m/%d/%y</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %e     day of month, space padded; same as %_d</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %F     full date; like %+4Y-%m-%d</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %g     last two digits of year of ISO week number (ambiguous;</span></span><br><span class="line"><span class="string">              00-99); see %G</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %G     year of ISO week number; normally useful only with %V</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %h     same as %b</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %H     hour (00..23)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %I     hour (01..12)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %j     day of year (001..366)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %k     hour, space padded ( 0..23); same as %_H</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %l     hour, space padded ( 1..12); same as %_I</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %m     month (01..12)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %M     minute (00..59)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %n     a newline</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %N     nanoseconds (000000000..999999999)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %p     locale&#x27;</span>s equivalent of either AM or PM; blank <span class="keyword">if</span> not known</span><br><span class="line"></span><br><span class="line">       %P     like %p, but lower <span class="keyword">case</span></span><br><span class="line"></span><br><span class="line">       %q     quarter of year (1..4)</span><br><span class="line"></span><br><span class="line">       %r     locale<span class="string">&#x27;s 12-hour clock time (e.g., 11:11:04 PM)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %R     24-hour hour and minute; same as %H:%M</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %s     seconds since the Epoch (1970-01-01 00:00 UTC)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %S     second (00..60)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %t     a tab</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %T     time; same as %H:%M:%S</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %u     day of week (1..7); 1 is Monday</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %U     week number of year, with Sunday as first day of week</span></span><br><span class="line"><span class="string">              (00..53)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %V     ISO week number, with Monday as first day of week (01..53)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %w     day of week (0..6); 0 is Sunday</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %W     week number of year, with Monday as first day of week</span></span><br><span class="line"><span class="string">              (00..53)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %x     locale&#x27;</span>s <span class="built_in">date</span> (can be ambiguous; e.g., 12/31/99)</span><br><span class="line"></span><br><span class="line">       %X     locale<span class="string">&#x27;s time representation (e.g., 23:13:48)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %y     last two digits of year (ambiguous; 00..99)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %Y     year</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %z     +hhmm numeric time zone (e.g., -0400)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %:z    +hh:mm numeric time zone (e.g., -04:00)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %::z   +hh:mm:ss numeric time zone (e.g., -04:00:00)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %:::z  numeric time zone with : to necessary precision (e.g., -04,</span></span><br><span class="line"><span class="string">              +05:30)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       %Z     alphabetic time zone abbreviation (e.g., EDT)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       By default, date pads numeric fields with zeroes.  The following</span></span><br><span class="line"><span class="string">       optional flags may follow &#x27;</span>%<span class="string">&#x27;:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -      (hyphen) do not pad the field</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       _      (underscore) pad with spaces</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       0      (zero) pad with zeros</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       +      pad with zeros, and put &#x27;</span>+<span class="string">&#x27; before future years with &gt;4</span></span><br><span class="line"><span class="string">              digits</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       ^      use upper case if possible</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       #      use opposite case if possible</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       After any flags comes an optional field width, as a decimal</span></span><br><span class="line"><span class="string">       number; then an optional modifier, which is either E to use the</span></span><br><span class="line"><span class="string">       locale&#x27;</span>s alternate representations <span class="keyword">if</span> available, or O to use the</span><br><span class="line">       locale<span class="string">&#x27;s alternate numeric symbols if available.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">EXAMPLES </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Convert seconds since the Epoch (1970-01-01 UTC) to a date</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              $ date --date=&#x27;</span>@2147483647<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Show the time on the west coast of the US (use tzselect(1) to find</span></span><br><span class="line"><span class="string">       TZ)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              $ TZ=&#x27;</span>America/Los_Angeles<span class="string">&#x27; date</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Show the local time for 9AM next Friday on the west coast of the</span></span><br><span class="line"><span class="string">       US</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">              $ date --date=&#x27;</span>TZ=<span class="string">&quot;America/Los_Angeles&quot;</span> 09:00 next Fri<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">DATE STRING </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The --date=STRING is a mostly free format human readable date</span></span><br><span class="line"><span class="string">       string such as &quot;Sun, 29 Feb 2004 16:21:42 -0800&quot; or &quot;2004-02-29</span></span><br><span class="line"><span class="string">       16:21:42&quot; or even &quot;next Thursday&quot;.  A date string may contain</span></span><br><span class="line"><span class="string">       items indicating calendar date, time of day, time zone, day of</span></span><br><span class="line"><span class="string">       week, relative time, relative date, and numbers.  An empty string</span></span><br><span class="line"><span class="string">       indicates the beginning of the day.  The date string format is</span></span><br><span class="line"><span class="string">       more complex than is easily documented here but is fully described</span></span><br><span class="line"><span class="string">       in the info documentation.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">AUTHOR </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Written by David MacKenzie.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">REPORTING BUGS </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GNU coreutils online help:</span></span><br><span class="line"><span class="string">       &lt;https://www.gnu.org/software/coreutils/&gt;</span></span><br><span class="line"><span class="string">       Report any translation bugs to</span></span><br><span class="line"><span class="string">       &lt;https://translationproject.org/team/&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COPYRIGHT </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Copyright © 2025 Free Software Foundation, Inc.  License GPLv3+:</span></span><br><span class="line"><span class="string">       GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span></span><br><span class="line"><span class="string">       This is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="string">       There is NO WARRANTY, to the extent permitted by law.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SEE ALSO </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Full documentation &lt;https://www.gnu.org/software/coreutils/date&gt;</span></span><br><span class="line"><span class="string">       or available locally via: info &#x27;</span>(coreutils) <span class="built_in">date</span> invocation<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COLOPHON </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       This page is part of the coreutils (basic file, shell and text</span></span><br><span class="line"><span class="string">       manipulation utilities) project.  Information about the project</span></span><br><span class="line"><span class="string">       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you</span></span><br><span class="line"><span class="string">       have a bug report for this manual page, see</span></span><br><span class="line"><span class="string">       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained</span></span><br><span class="line"><span class="string">       from the tarball coreutils-9.6.tar.xz fetched from</span></span><br><span class="line"><span class="string">       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2024-02-02.  If you</span></span><br><span class="line"><span class="string">       discover any rendering problems in this HTML version of the page,</span></span><br><span class="line"><span class="string">       or you believe there is a better or more up-to-date source for the</span></span><br><span class="line"><span class="string">       page, or you have corrections or improvements to the information</span></span><br><span class="line"><span class="string">       in this COLOPHON (which is not part of the original manual page),</span></span><br><span class="line"><span class="string">       send a mail to man-pages@man7.org</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -7659,7 +7589,7 @@ When running a standby server, you must set this parameter to the same or higher
       <tags>
         <tag>Linux工具箱·Linux Toolbox</tag>
         <tag>科技·Tech</tag>
-        <tag>chmod</tag>
+        <tag>date</tag>
       </tags>
   </entry>
   <entry>
@@ -7733,6 +7663,76 @@ When running a standby server, you must set this parameter to the same or higher
       </tags>
   </entry>
   <entry>
+    <title>chmod命令</title>
+    <url>/posts/linux-cmd-chmod.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>chmod（change mode）是 Linux&#x2F;Unix 系统中用来更改文件或目录权限的命令。它可以设置文件或目录的读、写、执行权限，并且可以指定权限的设置方式，通常用于控制文件的访问权限。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>给文件添加执行权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x script.sh</span><br></pre></td></tr></table></figure>
+<p>这条命令给 script.sh 文件添加了执行权限。执行后，script.sh 文件将变为可执行文件。</p>
+</li>
+<li><p>去除文件的写权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -w file.txt</span><br></pre></td></tr></table></figure>
+<p>去除了 file.txt 文件的写权限，执行后文件内容将无法编辑。</p>
+</li>
+<li><p>设置文件权限为 755</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 755 program</span><br></pre></td></tr></table></figure>
+<p>将 program 文件的权限设置为 rwxr-xr-x，即所有者可以读、写、执行，组用户和其他用户可以读取和执行。</p>
+</li>
+<li><p>设置文件权限为 644</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 644 document.txt</span><br></pre></td></tr></table></figure>
+<p>将 document.txt 文件的权限设置为 rw-r–r–，即所有者可以读、写，组用户和其他用户只能读取。</p>
+</li>
+<li><p>递归更改目录及其子文件权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -R 755 /path/to/directory</span><br></pre></td></tr></table></figure>
+<p>使用 -R 选项递归地将 &#x2F;path&#x2F;to&#x2F;directory 目录及其下所有文件的权限设置为 rwxr-xr-x。</p>
+</li>
+<li><p>给所有者和组用户添加写权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> ug+w file.txt</span><br></pre></td></tr></table></figure>
+<p>给 file.txt 文件的所有者和组用户添加写权限。此命令执行后，所有者和组用户都能修改文件内容。</p>
+</li>
+<li><p>给文件去除执行权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> -x script.sh</span><br></pre></td></tr></table></figure>
+<p>去除 script.sh 文件的执行权限，执行后文件将不再可以作为可执行文件运行。</p>
+</li>
+<li><p>通过符号模式设置权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u=rwx,g=rx,o=r myfile</span><br></pre></td></tr></table></figure>
+<p>通过符号模式设置 myfile 文件的权限为所有者可读、写、执行，组用户可读、执行，其他用户只能读取。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
+<li><p>-R, –recursive<br>递归地更改目录及其所有子目录和文件的权限。例如，chmod -R 755 &#x2F;path&#x2F;to&#x2F;directory。</p>
+</li>
+<li><p>-v, –verbose<br>显示权限更改的详细信息。使用该选项后，每次权限更改都会在终端中输出提示信息。</p>
+</li>
+<li><p>-c, –changes<br>仅在权限更改时输出信息。与 -v 类似，但只会在更改发生时打印出变更内容。</p>
+</li>
+<li><p>-f, –silent, –quiet<br>忽略所有错误消息。如果操作失败，系统不会显示错误信息。</p>
+</li>
+<li><p>–no-dereference<br>不改变符号链接的权限，仅影响文件本身。</p>
+</li>
+<li><p>–reference&#x3D;file<br>将 file 文件的权限复制到目标文件。例如，chmod –reference&#x3D;example.txt myfile 会将 example.txt 的权限应用到 myfile 上。</p>
+</li>
+<li><p>u, g, o<br>用于指定文件的所有者（user）、组（group）和其他用户（other）。例如，chmod u+x file 表示给所有者添加执行权限。</p>
+</li>
+<li><p>+&#x2F;-&#x2F;<br>用于增加、去除或设置权限。例如，chmod +x file 表示添加执行权限，chmod -x file 表示去除执行权限，chmod &#x3D;r file 表示只保留读取权限。</p>
+</li>
+</ul>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">NAME </span><br><span class="line"></span><br><span class="line">       <span class="built_in">chmod</span> - change file mode bits</span><br><span class="line"></span><br><span class="line">SYNOPSIS </span><br><span class="line"></span><br><span class="line">       <span class="built_in">chmod</span> [OPTION]... MODE[,MODE]... FILE...</span><br><span class="line">       <span class="built_in">chmod</span> [OPTION]... OCTAL-MODE FILE...</span><br><span class="line">       <span class="built_in">chmod</span> [OPTION]... --reference=RFILE FILE...</span><br><span class="line"></span><br><span class="line">DESCRIPTION </span><br><span class="line"></span><br><span class="line">       This manual page documents the GNU version of <span class="built_in">chmod</span>.  <span class="built_in">chmod</span></span><br><span class="line">       changes the file mode bits of each given file according to mode,</span><br><span class="line">       <span class="built_in">which</span> can be either a symbolic representation of changes to make,</span><br><span class="line">       or an octal number representing the bit pattern <span class="keyword">for</span> the new mode</span><br><span class="line">       bits.</span><br><span class="line"></span><br><span class="line">       The format of a symbolic mode is [ugoa...][[-+=][perms...]...],</span><br><span class="line">       <span class="built_in">where</span> perms is either zero or more letters from the <span class="built_in">set</span> rwxXst, or</span><br><span class="line">       a single letter from the <span class="built_in">set</span> ugo.  Multiple symbolic modes can be</span><br><span class="line">       given, separated by commas.</span><br><span class="line"></span><br><span class="line">       A combination of the letters ugoa controls <span class="built_in">which</span> <span class="built_in">users</span><span class="string">&#x27; access to</span></span><br><span class="line"><span class="string">       the file will be changed: the user who owns it (u), other users in</span></span><br><span class="line"><span class="string">       the file&#x27;</span>s group (g), other <span class="built_in">users</span> not <span class="keyword">in</span> the file<span class="string">&#x27;s group (o), or</span></span><br><span class="line"><span class="string">       all users (a).  If none of these are given, the effect is as if</span></span><br><span class="line"><span class="string">       (a) were given, but bits that are set in the umask are not</span></span><br><span class="line"><span class="string">       affected.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The operator + causes the selected file mode bits to be added to</span></span><br><span class="line"><span class="string">       the existing file mode bits of each file; - causes them to be</span></span><br><span class="line"><span class="string">       removed; and = causes them to be added and causes unmentioned bits</span></span><br><span class="line"><span class="string">       to be removed except that a directory&#x27;</span>s unmentioned <span class="built_in">set</span> user and</span><br><span class="line">       group ID bits are not affected.</span><br><span class="line"></span><br><span class="line">       The letters rwxXst <span class="keyword">select</span> file mode bits <span class="keyword">for</span> the affected <span class="built_in">users</span>:</span><br><span class="line">       <span class="built_in">read</span> (r), write (w), execute (or search <span class="keyword">for</span> directories) (x),</span><br><span class="line">       execute/search only <span class="keyword">if</span> the file is a directory or already has</span><br><span class="line">       execute permission <span class="keyword">for</span> some user (X), <span class="built_in">set</span> user or group ID on</span><br><span class="line">       execution (s), restricted deletion flag or sticky bit (t).</span><br><span class="line">       Instead of one or more of these letters, you can specify exactly</span><br><span class="line">       one of the letters ugo: the permissions granted to the user <span class="built_in">who</span></span><br><span class="line">       owns the file (u), the permissions granted to other <span class="built_in">users</span> <span class="built_in">who</span> are</span><br><span class="line">       members of the file<span class="string">&#x27;s group (g), and the permissions granted to</span></span><br><span class="line"><span class="string">       users that are in neither of the two preceding categories (o).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       A numeric mode is from one to four octal digits (0-7), derived by</span></span><br><span class="line"><span class="string">       adding up the bits with values 4, 2, and 1.  Omitted digits are</span></span><br><span class="line"><span class="string">       assumed to be leading zeros.  The first digit selects the set user</span></span><br><span class="line"><span class="string">       ID (4) and set group ID (2) and restricted deletion or sticky (1)</span></span><br><span class="line"><span class="string">       attributes.  The second digit selects permissions for the user who</span></span><br><span class="line"><span class="string">       owns the file: read (4), write (2), and execute (1); the third</span></span><br><span class="line"><span class="string">       selects permissions for other users in the file&#x27;</span>s group, with the</span><br><span class="line">       same values; and the fourth <span class="keyword">for</span> other <span class="built_in">users</span> not <span class="keyword">in</span> the file<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">       group, with the same values.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       chmod doesn&#x27;</span>t change the permissions of symbolic links; the <span class="built_in">chmod</span></span><br><span class="line">       system call cannot change their permissions on most systems, and</span><br><span class="line">       most systems ignore permissions of symbolic links.  However, <span class="keyword">for</span></span><br><span class="line">       each symbolic <span class="built_in">link</span> listed on the <span class="built_in">command</span> line, <span class="built_in">chmod</span> changes the</span><br><span class="line">       permissions of the pointed-to file.  In contrast, <span class="built_in">chmod</span> ignores</span><br><span class="line">       symbolic links encountered during recursive directory traversals.</span><br><span class="line">       Options that modify this behavior are described <span class="keyword">in</span> the OPTIONS</span><br><span class="line">       section.</span><br><span class="line"></span><br><span class="line">SETUID AND SETGID BITS </span><br><span class="line"></span><br><span class="line">       <span class="built_in">chmod</span> clears the set-group-ID bit of a regular file <span class="keyword">if</span> the file<span class="string">&#x27;s</span></span><br><span class="line"><span class="string">       group ID does not match the user&#x27;</span>s effective group ID or one of</span><br><span class="line">       the user<span class="string">&#x27;s supplementary group IDs, unless the user has</span></span><br><span class="line"><span class="string">       appropriate privileges.  Additional restrictions may cause the</span></span><br><span class="line"><span class="string">       set-user-ID and set-group-ID bits of MODE or RFILE to be ignored.</span></span><br><span class="line"><span class="string">       This behavior depends on the policy and functionality of the</span></span><br><span class="line"><span class="string">       underlying chmod system call.  When in doubt, check the underlying</span></span><br><span class="line"><span class="string">       system behavior.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       For directories chmod preserves set-user-ID and set-group-ID bits</span></span><br><span class="line"><span class="string">       unless you explicitly specify otherwise.  You can set or clear the</span></span><br><span class="line"><span class="string">       bits with symbolic modes like u+s and g-s.  To clear these bits</span></span><br><span class="line"><span class="string">       for directories with a numeric mode requires an additional leading</span></span><br><span class="line"><span class="string">       zero like 00755, leading minus like -6000, or leading equals like</span></span><br><span class="line"><span class="string">       =755.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">RESTRICTED DELETION FLAG OR STICKY BIT </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The restricted deletion flag or sticky bit is a single bit, whose</span></span><br><span class="line"><span class="string">       interpretation depends on the file type.  For directories, it</span></span><br><span class="line"><span class="string">       prevents unprivileged users from removing or renaming a file in</span></span><br><span class="line"><span class="string">       the directory unless they own the file or the directory; this is</span></span><br><span class="line"><span class="string">       called the restricted deletion flag for the directory, and is</span></span><br><span class="line"><span class="string">       commonly found on world-writable directories like /tmp.  For</span></span><br><span class="line"><span class="string">       regular files on some older systems, the bit saves the program&#x27;</span>s</span><br><span class="line">       text image on the swap device so it will load more quickly when</span><br><span class="line">       run; this is called the sticky bit.</span><br><span class="line"></span><br><span class="line">OPTIONS </span><br><span class="line"></span><br><span class="line">       Change the mode of each FILE to MODE.  With --reference, change</span><br><span class="line">       the mode of each FILE to that of RFILE.</span><br><span class="line"></span><br><span class="line">       -c, --changes</span><br><span class="line">              like verbose but report only when a change is made</span><br><span class="line"></span><br><span class="line">       -f, --silent, --quiet</span><br><span class="line">              suppress most error messages</span><br><span class="line"></span><br><span class="line">       -v, --verbose</span><br><span class="line">              output a diagnostic <span class="keyword">for</span> every file processed</span><br><span class="line"></span><br><span class="line">       --dereference</span><br><span class="line">              affect the referent of each symbolic <span class="built_in">link</span>, rather than the</span><br><span class="line">              symbolic <span class="built_in">link</span> itself</span><br><span class="line"></span><br><span class="line">       -h, --no-dereference</span><br><span class="line">              affect each symbolic <span class="built_in">link</span>, rather than the referent</span><br><span class="line"></span><br><span class="line">       --no-preserve-root</span><br><span class="line">              <span class="keyword">do</span> not treat <span class="string">&#x27;/&#x27;</span> specially (the default)</span><br><span class="line"></span><br><span class="line">       --preserve-root</span><br><span class="line">              fail to operate recursively on <span class="string">&#x27;/&#x27;</span></span><br><span class="line"></span><br><span class="line">       --reference=RFILE</span><br><span class="line">              use RFILE<span class="string">&#x27;s mode instead of specifying MODE values.  RFILE</span></span><br><span class="line"><span class="string">              is always dereferenced if a symbolic link.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -R, --recursive</span></span><br><span class="line"><span class="string">              change files and directories recursively</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       The following options modify how a hierarchy is traversed when the</span></span><br><span class="line"><span class="string">       -R option is also specified.  If more than one is specified, only</span></span><br><span class="line"><span class="string">       the final one takes effect. -H is the default.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -H     if a command line argument is a symbolic link to a</span></span><br><span class="line"><span class="string">              directory, traverse it</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -L     traverse every symbolic link to a directory encountered</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       -P     do not traverse any symbolic links</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       --help display this help and exit</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       --version</span></span><br><span class="line"><span class="string">              output version information and exit</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Each MODE is of the form</span></span><br><span class="line"><span class="string">       &#x27;</span>[ugoa]*([-+=]([rwxXst]*|[ugo]))+|[-+=][0-7]+<span class="string">&#x27;.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">AUTHOR </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Written by David MacKenzie and Jim Meyering.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">REPORTING BUGS </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       GNU coreutils online help:</span></span><br><span class="line"><span class="string">       &lt;https://www.gnu.org/software/coreutils/&gt;</span></span><br><span class="line"><span class="string">       Report any translation bugs to</span></span><br><span class="line"><span class="string">       &lt;https://translationproject.org/team/&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COPYRIGHT </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Copyright © 2025 Free Software Foundation, Inc.  License GPLv3+:</span></span><br><span class="line"><span class="string">       GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;.</span></span><br><span class="line"><span class="string">       This is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="string">       There is NO WARRANTY, to the extent permitted by law.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SEE ALSO </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       chmod(2)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       Full documentation &lt;https://www.gnu.org/software/coreutils/chmod&gt;</span></span><br><span class="line"><span class="string">       or available locally via: info &#x27;</span>(coreutils) <span class="built_in">chmod</span> invocation<span class="string">&#x27;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">COLOPHON </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       This page is part of the coreutils (basic file, shell and text</span></span><br><span class="line"><span class="string">       manipulation utilities) project.  Information about the project</span></span><br><span class="line"><span class="string">       can be found at ⟨http://www.gnu.org/software/coreutils/⟩.  If you</span></span><br><span class="line"><span class="string">       have a bug report for this manual page, see</span></span><br><span class="line"><span class="string">       ⟨http://www.gnu.org/software/coreutils/⟩.  This page was obtained</span></span><br><span class="line"><span class="string">       from the tarball coreutils-9.6.tar.xz fetched from</span></span><br><span class="line"><span class="string">       ⟨http://ftp.gnu.org/gnu/coreutils/⟩ on 2024-02-02.  If you</span></span><br><span class="line"><span class="string">       discover any rendering problems in this HTML version of the page,</span></span><br><span class="line"><span class="string">       or you believe there is a better or more up-to-date source for the</span></span><br><span class="line"><span class="string">       page, or you have corrections or improvements to the information</span></span><br><span class="line"><span class="string">       in this COLOPHON (which is not part of the original manual page),</span></span><br><span class="line"><span class="string">       send a mail to man-pages@man7.org</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>Linux工具箱·Linux Toolbox</category>
+      </categories>
+      <tags>
+        <tag>Linux工具箱·Linux Toolbox</tag>
+        <tag>科技·Tech</tag>
+        <tag>chmod</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>cat命令</title>
     <url>/posts/linux-cmd-cat.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
@@ -7800,6 +7800,175 @@ When running a standby server, you must set this parameter to the same or higher
         <tag>Linux工具箱·Linux Toolbox</tag>
         <tag>科技·Tech</tag>
         <tag>cat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>arping命令</title>
+    <url>/posts/linux-cmd-arping.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
+<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>arping 是一个用于向邻居主机发送 ARP 请求的命令，通常用于检查网络中某个设备是否在线，或者检测网络上的 MAC 地址是否响应。</p>
+<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
+<li><p>发送一个 ARP 请求到目标主机</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">60 bytes from 192.168.1.1 (00:11:22:33:44:55): icmp_seq=1 ttl=64 <span class="keyword">time</span>=1.234 ms</span><br></pre></td></tr></table></figure>
+<p> 该命令向 IP 地址 192.168.1.1 发送 ARP 请求，并接收到来自该地址的 ARP 响应。</p>
+</li>
+<li><p>指定网络接口发送 ARP 请求</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -I eth0 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>同上，只是 ARP 请求通过 eth0 接口发送。</p>
+</li>
+<li><p>发送指定数量的 ARP 请求并退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -c 5 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">5 packets transmitted, 5 received, 0% packet loss</span><br></pre></td></tr></table></figure>
+<p>发送 5 次 ARP 请求，并在收到 5 次响应后退出。</p>
+</li>
+<li><p>无声模式（不输出任何内容）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -q 192.168.1.1</span><br></pre></td></tr></table></figure>
+<p>无任何输出，命令执行后无显示信息。</p>
+</li>
+<li><p>检测目标 IP 地址的 MAC 地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -A 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100 (00:11:22:33:44:55) using eth0</span><br></pre></td></tr></table></figure>
+<p>该命令发送 ARP 请求并使用 ARP 回复更新目标主机的缓存。</p>
+</li>
+<li><p>设置 ARP 请求的源 IP 地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -s 192.168.1.100 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100 using eth0</span><br></pre></td></tr></table></figure>
+<p> 使用指定的源 IP 地址发送 ARP 请求。</p>
+</li>
+<li><p>执行重复地址检测（DAD）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -D 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 0.0.0.0 using eth0</span><br><span class="line">Duplicate address detected</span><br></pre></td></tr></table></figure>
+<p>执行重复地址检测，检查目标 IP 是否已经被其他主机使用。</p>
+</li>
+<li><p>设置超时并限制发送次数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -w 10 -c 5 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">5 packets transmitted, 5 received, 0% packet loss</span><br></pre></td></tr></table></figure>
+<p>设置 10 秒超时，发送 5 次 ARP 请求，完成后退出。</p>
+</li>
+</ol>
+<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
+<li><p>-A<br>使用 ARP 回复包，而不是 ARP 请求包进行通信。</p>
+</li>
+<li><p>-b<br>仅发送 MAC 层的广播，而非单播。</p>
+</li>
+<li><p>-c count<br>指定发送的 ARP 请求次数，命令将执行指定次数的请求后退出。</p>
+</li>
+<li><p>-D<br>启用重复地址检测模式（DAD），检查目标地址是否已被其他主机占用。</p>
+</li>
+<li><p>-f<br>在收到第一个 ARP 回复后立即退出，适用于快速检测目标是否在线。</p>
+</li>
+<li><p>-I interface<br>指定发送 ARP 请求的网络接口。</p>
+</li>
+<li><p>-h<br>显示帮助信息并退出，提供命令的用法说明。</p>
+</li>
+<li><p>-q<br>启用静默模式，执行命令时不会显示任何输出。</p>
+</li>
+</ul>
+<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>NAME </p>
+<pre><code>   arping - send ARP REQUEST to a neighbour host
+</code></pre>
+<p>SYNOPSIS </p>
+<pre><code>   arping [-AbDfhqUV] [-c count] [-w deadline] [-i interval]
+          [-s source] [-I interface] &#123;destination&#125;
+</code></pre>
+<p>DESCRIPTION </p>
+<pre><code>   Ping destination on device interface by ARP packets, using source
+   address source.
+
+   arping supports IPv4 addresses only. For IPv6, see ndisc6(8).
+</code></pre>
+<p>OPTIONS </p>
+<pre><code>   -A
+       The same as -U, but ARP REPLY packets used instead of ARP
+       REQUEST.
+
+   -b
+       Send only MAC level broadcasts. Normally arping starts from
+       sending broadcast, and switch to unicast after reply received.
+
+   -c count
+       Stop after sending count ARP REQUEST packets. With deadline
+       option, instead wait for count ARP REPLY packets, or until the
+       timeout expires.
+
+   -D
+       Duplicate address detection mode (DAD). See RFC2131, 4.4.1.
+       Returns 0, if DAD succeeded i.e. no replies are received.
+
+   -f
+       Finish after the first reply confirming that target is alive.
+
+   -I interface
+       Name of network device where to send ARP REQUEST packets.
+
+   -h
+       Print help page and exit.
+
+   -q
+       Quiet output. Nothing is displayed.
+
+   -s source
+       IP source address to use in ARP packets. If this option is
+       absent, source address is:
+
+           • In DAD mode (with option -D) set to 0.0.0.0.
+
+           • In Unsolicited ARP mode (with options -U or -A) set to
+           destination.
+
+           • Otherwise, it is calculated from routing tables.
+
+   -U
+       Unsolicited ARP mode to update neighbours&#39; ARP caches. No
+       replies are expected.
+
+   -V
+       Print version of the program and exit.
+
+   -w deadline
+       Specify a timeout, in seconds, before arping exits regardless
+       of how many packets have been sent or received. If any replies
+       are received, exit with status 0, otherwise status 1. When
+       combined with the count option, exit with status 0 if count
+       replies are received before the deadline expiration, otherwise
+       status 1.
+
+   -i interval
+       Specify an interval, in seconds, between packets.
+</code></pre>
+<p>SEE ALSO </p>
+<pre><code>   ndisc6(8), ping(8), clockdiff(8), tracepath(8).
+</code></pre>
+<p>AUTHOR </p>
+<pre><code>   arping was written by Alexey Kuznetsov &lt;kuznet@ms2.inr.ac.ru&gt;.
+</code></pre>
+<p>SECURITY </p>
+<pre><code>   arping requires CAP_NET_RAW capability to be executed. It is not
+   recommended to be used as set-uid root, because it allows user to
+   modify ARP caches of neighbour hosts.
+</code></pre>
+<p>AVAILABILITY </p>
+<pre><code>   arping is part of iputils package.
+</code></pre>
+<p>COLOPHON </p>
+<pre><code>   This page is part of the iputils (IP utilities) project.
+   Information about the project can be found at 
+   ⟨http://www.skbuff.net/iputils/⟩.  If you have a bug report for
+   this manual page, send it to yoshfuji@skbuff.net,
+   netdev@vger.kernel.org.  This page was obtained from the project&#39;s
+   upstream Git repository ⟨https://github.com/iputils/iputils.git⟩
+   on 2024-02-02.  (At that time, the date of the most recent commit
+   that was found in the repository was 2024-01-13.)  If you discover
+   any rendering problems in this HTML version of the page, or you
+   believe there is a better or more up-to-date source for the page,
+   or you have corrections or improvements to the information in this
+   COLOPHON (which is not part of the original manual page), send a
+   mail to man-pages@man7.org
+</code></pre>
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>Linux工具箱·Linux Toolbox</category>
+      </categories>
+      <tags>
+        <tag>Linux工具箱·Linux Toolbox</tag>
+        <tag>科技·Tech</tag>
+        <tag>arping</tag>
       </tags>
   </entry>
   <entry>
@@ -8193,175 +8362,6 @@ When running a standby server, you must set this parameter to the same or higher
         <tag>Linux工具箱·Linux Toolbox</tag>
         <tag>科技·Tech</tag>
         <tag>blkid</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>arping命令</title>
-    <url>/posts/linux-cmd-arping.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html">回到手册索引</a> </p>
-<h2 id="命令用途"><a href="#命令用途" class="headerlink" title="命令用途"></a>命令用途</h2><p>arping 是一个用于向邻居主机发送 ARP 请求的命令，通常用于检查网络中某个设备是否在线，或者检测网络上的 MAC 地址是否响应。</p>
-<h2 id="常用用法示例"><a href="#常用用法示例" class="headerlink" title="常用用法示例"></a>常用用法示例</h2><ol>
-<li><p>发送一个 ARP 请求到目标主机</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">60 bytes from 192.168.1.1 (00:11:22:33:44:55): icmp_seq=1 ttl=64 <span class="keyword">time</span>=1.234 ms</span><br></pre></td></tr></table></figure>
-<p> 该命令向 IP 地址 192.168.1.1 发送 ARP 请求，并接收到来自该地址的 ARP 响应。</p>
-</li>
-<li><p>指定网络接口发送 ARP 请求</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -I eth0 192.168.1.1</span><br></pre></td></tr></table></figure>
-<p>同上，只是 ARP 请求通过 eth0 接口发送。</p>
-</li>
-<li><p>发送指定数量的 ARP 请求并退出</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -c 5 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">5 packets transmitted, 5 received, 0% packet loss</span><br></pre></td></tr></table></figure>
-<p>发送 5 次 ARP 请求，并在收到 5 次响应后退出。</p>
-</li>
-<li><p>无声模式（不输出任何内容）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -q 192.168.1.1</span><br></pre></td></tr></table></figure>
-<p>无任何输出，命令执行后无显示信息。</p>
-</li>
-<li><p>检测目标 IP 地址的 MAC 地址</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -A 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100 (00:11:22:33:44:55) using eth0</span><br></pre></td></tr></table></figure>
-<p>该命令发送 ARP 请求并使用 ARP 回复更新目标主机的缓存。</p>
-</li>
-<li><p>设置 ARP 请求的源 IP 地址</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -s 192.168.1.100 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100 using eth0</span><br></pre></td></tr></table></figure>
-<p> 使用指定的源 IP 地址发送 ARP 请求。</p>
-</li>
-<li><p>执行重复地址检测（DAD）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -D 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 0.0.0.0 using eth0</span><br><span class="line">Duplicate address detected</span><br></pre></td></tr></table></figure>
-<p>执行重复地址检测，检查目标 IP 是否已经被其他主机使用。</p>
-</li>
-<li><p>设置超时并限制发送次数</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">arping -w 10 -c 5 192.168.1.1</span><br><span class="line">ARPING 192.168.1.1 from 192.168.1.100</span><br><span class="line">5 packets transmitted, 5 received, 0% packet loss</span><br></pre></td></tr></table></figure>
-<p>设置 10 秒超时，发送 5 次 ARP 请求，完成后退出。</p>
-</li>
-</ol>
-<h2 id="常用参数选项"><a href="#常用参数选项" class="headerlink" title="常用参数选项"></a>常用参数选项</h2><ul>
-<li><p>-A<br>使用 ARP 回复包，而不是 ARP 请求包进行通信。</p>
-</li>
-<li><p>-b<br>仅发送 MAC 层的广播，而非单播。</p>
-</li>
-<li><p>-c count<br>指定发送的 ARP 请求次数，命令将执行指定次数的请求后退出。</p>
-</li>
-<li><p>-D<br>启用重复地址检测模式（DAD），检查目标地址是否已被其他主机占用。</p>
-</li>
-<li><p>-f<br>在收到第一个 ARP 回复后立即退出，适用于快速检测目标是否在线。</p>
-</li>
-<li><p>-I interface<br>指定发送 ARP 请求的网络接口。</p>
-</li>
-<li><p>-h<br>显示帮助信息并退出，提供命令的用法说明。</p>
-</li>
-<li><p>-q<br>启用静默模式，执行命令时不会显示任何输出。</p>
-</li>
-</ul>
-<h2 id="原厂文档"><a href="#原厂文档" class="headerlink" title="原厂文档"></a>原厂文档</h2><p>NAME </p>
-<pre><code>   arping - send ARP REQUEST to a neighbour host
-</code></pre>
-<p>SYNOPSIS </p>
-<pre><code>   arping [-AbDfhqUV] [-c count] [-w deadline] [-i interval]
-          [-s source] [-I interface] &#123;destination&#125;
-</code></pre>
-<p>DESCRIPTION </p>
-<pre><code>   Ping destination on device interface by ARP packets, using source
-   address source.
-
-   arping supports IPv4 addresses only. For IPv6, see ndisc6(8).
-</code></pre>
-<p>OPTIONS </p>
-<pre><code>   -A
-       The same as -U, but ARP REPLY packets used instead of ARP
-       REQUEST.
-
-   -b
-       Send only MAC level broadcasts. Normally arping starts from
-       sending broadcast, and switch to unicast after reply received.
-
-   -c count
-       Stop after sending count ARP REQUEST packets. With deadline
-       option, instead wait for count ARP REPLY packets, or until the
-       timeout expires.
-
-   -D
-       Duplicate address detection mode (DAD). See RFC2131, 4.4.1.
-       Returns 0, if DAD succeeded i.e. no replies are received.
-
-   -f
-       Finish after the first reply confirming that target is alive.
-
-   -I interface
-       Name of network device where to send ARP REQUEST packets.
-
-   -h
-       Print help page and exit.
-
-   -q
-       Quiet output. Nothing is displayed.
-
-   -s source
-       IP source address to use in ARP packets. If this option is
-       absent, source address is:
-
-           • In DAD mode (with option -D) set to 0.0.0.0.
-
-           • In Unsolicited ARP mode (with options -U or -A) set to
-           destination.
-
-           • Otherwise, it is calculated from routing tables.
-
-   -U
-       Unsolicited ARP mode to update neighbours&#39; ARP caches. No
-       replies are expected.
-
-   -V
-       Print version of the program and exit.
-
-   -w deadline
-       Specify a timeout, in seconds, before arping exits regardless
-       of how many packets have been sent or received. If any replies
-       are received, exit with status 0, otherwise status 1. When
-       combined with the count option, exit with status 0 if count
-       replies are received before the deadline expiration, otherwise
-       status 1.
-
-   -i interval
-       Specify an interval, in seconds, between packets.
-</code></pre>
-<p>SEE ALSO </p>
-<pre><code>   ndisc6(8), ping(8), clockdiff(8), tracepath(8).
-</code></pre>
-<p>AUTHOR </p>
-<pre><code>   arping was written by Alexey Kuznetsov &lt;kuznet@ms2.inr.ac.ru&gt;.
-</code></pre>
-<p>SECURITY </p>
-<pre><code>   arping requires CAP_NET_RAW capability to be executed. It is not
-   recommended to be used as set-uid root, because it allows user to
-   modify ARP caches of neighbour hosts.
-</code></pre>
-<p>AVAILABILITY </p>
-<pre><code>   arping is part of iputils package.
-</code></pre>
-<p>COLOPHON </p>
-<pre><code>   This page is part of the iputils (IP utilities) project.
-   Information about the project can be found at 
-   ⟨http://www.skbuff.net/iputils/⟩.  If you have a bug report for
-   this manual page, send it to yoshfuji@skbuff.net,
-   netdev@vger.kernel.org.  This page was obtained from the project&#39;s
-   upstream Git repository ⟨https://github.com/iputils/iputils.git⟩
-   on 2024-02-02.  (At that time, the date of the most recent commit
-   that was found in the repository was 2024-01-13.)  If you discover
-   any rendering problems in this HTML version of the page, or you
-   believe there is a better or more up-to-date source for the page,
-   or you have corrections or improvements to the information in this
-   COLOPHON (which is not part of the original manual page), send a
-   mail to man-pages@man7.org
-</code></pre>
-]]></content>
-      <categories>
-        <category>科技·Tech</category>
-        <category>Linux工具箱·Linux Toolbox</category>
-      </categories>
-      <tags>
-        <tag>Linux工具箱·Linux Toolbox</tag>
-        <tag>科技·Tech</tag>
-        <tag>arping</tag>
       </tags>
   </entry>
   <entry>
@@ -12714,8 +12714,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>北京</tag>
         <tag>旅游</tag>
+        <tag>北京</tag>
         <tag>奥林匹克森林公园</tag>
       </tags>
   </entry>
@@ -12735,8 +12735,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>北京</tag>
         <tag>旅游</tag>
+        <tag>北京</tag>
         <tag>紫竹院公园</tag>
       </tags>
   </entry>
@@ -12920,8 +12920,8 @@ When running a standby server, you must set this parameter to the same or higher
       </categories>
       <tags>
         <tag>文件系统</tag>
-        <tag>Solaris</tag>
         <tag>操作系统</tag>
+        <tag>Solaris</tag>
       </tags>
   </entry>
   <entry>
@@ -13028,8 +13028,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>操作系统技术</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>SunOS</tag>
+        <tag>操作系统</tag>
         <tag>软件安装</tag>
       </tags>
   </entry>
@@ -13051,9 +13051,9 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>广州</tag>
         <tag>莲花山</tag>
+        <tag>旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -13075,8 +13075,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
-        <tag>旅游</tag>
         <tag>广州</tag>
+        <tag>旅游</tag>
         <tag>南粤园</tag>
         <tag>宝墨园</tag>
       </tags>
@@ -13123,9 +13123,9 @@ When running a standby server, you must set this parameter to the same or higher
         <category>摄影艺术·Photography</category>
       </categories>
       <tags>
+        <tag>旅游</tag>
         <tag>北京</tag>
         <tag>天安门</tag>
-        <tag>旅游</tag>
       </tags>
   </entry>
   <entry>
@@ -13159,8 +13159,8 @@ When running a standby server, you must set this parameter to the same or higher
         <category>计算机软件</category>
       </categories>
       <tags>
-        <tag>Solaris</tag>
         <tag>操作系统</tag>
+        <tag>Solaris</tag>
         <tag>SSH</tag>
       </tags>
   </entry>
@@ -13263,126 +13263,6 @@ When running a standby server, you must set this parameter to the same or higher
         <tag>数据库技术</tag>
         <tag>AIX操作系统</tag>
         <tag>文件系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Oracle日志挖掘案例</title>
-    <url>/posts/oracle-ri-zhi-wa-jue-an-li.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档是笔者阅读Oracle官方文档Oracle Database Utilities 11g Release 2 (11.2) E22490-05的读书笔记，主要介绍了logmnr数据挖掘的若干个实例。</p>
-<h2 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h2><h3 id="操作系统版本"><a href="#操作系统版本" class="headerlink" title="操作系统版本"></a>操作系统版本</h3><p>Microsoft Windows Version 6.1.7601</p>
-<h3 id="数据库版本"><a href="#数据库版本" class="headerlink" title="数据库版本"></a>数据库版本</h3><p>Oracle 11g Release 11.2.0.1.0</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>构建一张测试表，后续的实验均基于这张测试表。</p>
-<ol>
-<li>   复制scott用户emp中的部分数据</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">create table</span> scott.tab_emp <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> ename,sal <span class="keyword">from</span> scott.emp;</span><br><span class="line">表已创建。</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>   查看测试表的数据</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> scott.tab_emp;</span><br><span class="line">ENAME             SAL</span><br><span class="line"><span class="comment">---------- ----------</span></span><br><span class="line">SMITH             <span class="number">800</span></span><br><span class="line">ALLEN            <span class="number">1600</span></span><br><span class="line">WARD             <span class="number">1250</span></span><br><span class="line">JONES            <span class="number">2975</span></span><br><span class="line">MARTIN           <span class="number">1250</span></span><br><span class="line">BLAKE            <span class="number">2850</span></span><br><span class="line">CLARK            <span class="number">2450</span></span><br><span class="line">SCOTT            <span class="number">3000</span></span><br><span class="line">KING             <span class="number">5000</span></span><br><span class="line">TURNER           <span class="number">1500</span></span><br><span class="line">ADAMS            <span class="number">1100</span></span><br><span class="line">JAMES             <span class="number">950</span></span><br><span class="line">FORD             <span class="number">3000</span></span><br><span class="line">MILLER           <span class="number">1300</span></span><br><span class="line"><span class="number">14</span> <span class="keyword">rows</span> selected.</span><br></pre></td></tr></table></figure>
-
-<h2 id="日志挖掘实例"><a href="#日志挖掘实例" class="headerlink" title="日志挖掘实例"></a>日志挖掘实例</h2><h3 id="查看最后归档的重做日志文件的更改"><a href="#查看最后归档的重做日志文件的更改" class="headerlink" title="查看最后归档的重做日志文件的更改"></a>查看最后归档的重做日志文件的更改</h3><ol>
-<li>   定位最后归档的重做日志文件路径<br>假设我们要查看的操作是刚刚发生的，该日志记录在最新的归档日志文件里。</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> NAME <span class="keyword">FROM</span> V$ARCHIVED_LOG <span class="keyword">WHERE</span> FIRST_TIME <span class="operator">=</span> (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(FIRST_TIME) <span class="keyword">FROM</span> V$ARCHIVED_LOG);</span><br><span class="line">NAME</span><br><span class="line"><span class="comment">--------------------------------------------------------------------------------</span></span><br><span class="line">E:\ORACLE\ARCH_LOG\ARC0000000021_0831311361<span class="number">.0001</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>   指定要分析的日志文件列表</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.ADD_LOGFILE(LOGFILENAME<span class="operator">=</span><span class="operator">&gt;</span><span class="string">&#x27;E:\ORACLE\ARCH_LOG\ARC0000000021_0831311361.0001&#x27;</span>,OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.NEW);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>   开始挖掘</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>   查看v$logmnr_contents</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- --------------------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1075293</span> SYS      <span class="keyword">ALTER TABLE</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; RENAME <span class="keyword">TO</span> &quot;BIN$tQR5Z7zsQLWDs5RPAA3kFg==$0&quot; ;</span><br><span class="line">   <span class="number">1075296</span> SYS      <span class="keyword">drop</span> <span class="keyword">table</span> scott.tab_emp <span class="keyword">AS</span> &quot;BIN$tQR5Z7zsQLWDs5RPAA3kFg==$0&quot; ;</span><br><span class="line">   <span class="number">1075320</span> SYS      <span class="keyword">create table</span> scott.tab_emp <span class="keyword">as</span> <span class="keyword">select</span> ename,sal <span class="keyword">from</span> scott.emp;</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;SMITH&#x27;</span>,<span class="string">&#x27;800&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;ALLEN&#x27;</span>,<span class="string">&#x27;1600&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;WARD&#x27;</span>,<span class="string">&#x27;1250&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;JONES&#x27;</span>,<span class="string">&#x27;2975&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;MARTIN&#x27;</span>,<span class="string">&#x27;1250&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;BLAKE&#x27;</span>,<span class="string">&#x27;2850&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;CLARK&#x27;</span>,<span class="string">&#x27;2450&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;SCOTT&#x27;</span>,<span class="string">&#x27;3000&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;KING&#x27;</span>,<span class="string">&#x27;5000&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;TURNER&#x27;</span>,<span class="string">&#x27;1500&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;ADAMS&#x27;</span>,<span class="string">&#x27;1100&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;JAMES&#x27;</span>,<span class="string">&#x27;950&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;FORD&#x27;</span>,<span class="string">&#x27;3000&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;MILLER&#x27;</span>,<span class="string">&#x27;1300&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>   结束挖掘会话</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="查看最后归档的重做日志文件中已经提交了的更改"><a href="#查看最后归档的重做日志文件中已经提交了的更改" class="headerlink" title="查看最后归档的重做日志文件中已经提交了的更改"></a>查看最后归档的重做日志文件中已经提交了的更改</h3><p>前面的例子中，分析出的数据包含了未提交的SQL语句，本例将只查询出已经提交的SQL语句。</p>
-<ol>
-<li>   查看测试表的数据</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> scott.tab_emp;</span><br><span class="line">ENAME             SAL</span><br><span class="line"><span class="comment">---------- ----------</span></span><br><span class="line">SMITH             <span class="number">800</span></span><br><span class="line">ALLEN            <span class="number">1600</span></span><br><span class="line">WARD             <span class="number">1250</span></span><br><span class="line">JONES            <span class="number">2975</span></span><br><span class="line">MARTIN           <span class="number">1250</span></span><br><span class="line">BLAKE            <span class="number">2850</span></span><br><span class="line">CLARK            <span class="number">2450</span></span><br><span class="line">SCOTT            <span class="number">3000</span></span><br><span class="line">KING             <span class="number">5000</span></span><br><span class="line">TURNER           <span class="number">1500</span></span><br><span class="line">ADAMS            <span class="number">1100</span></span><br><span class="line">JAMES             <span class="number">950</span></span><br><span class="line">FORD             <span class="number">3000</span></span><br><span class="line">MILLER           <span class="number">1300</span></span><br><span class="line"><span class="number">14</span> <span class="keyword">rows</span> selected.</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>   执行SQL语句</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">delete</span> <span class="keyword">from</span> scott.tab_emp <span class="keyword">where</span> ename <span class="keyword">in</span> (<span class="string">&#x27;TURNER&#x27;</span>,<span class="string">&#x27;ADAMS&#x27;</span>);</span><br><span class="line"><span class="number">2</span> <span class="keyword">rows</span> deleted.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">rollback</span>;</span><br><span class="line"><span class="keyword">Rollback</span> complete.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">update</span> scott.tab_emp <span class="keyword">set</span> sal<span class="operator">=</span><span class="number">8888</span> <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;SCOTT&#x27;</span>;</span><br><span class="line"><span class="number">1</span> <span class="type">row</span> updated.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">Commit</span> complete.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">alter</span> <span class="keyword">system</span> switch logfile;</span><br><span class="line"><span class="keyword">System</span> altered.</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>   定位最后归档的重做日志文件路径</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> NAME <span class="keyword">FROM</span> V$ARCHIVED_LOG <span class="keyword">WHERE</span> FIRST_TIME <span class="operator">=</span> (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(FIRST_TIME) <span class="keyword">FROM</span> V$ARCHIVED_LOG);</span><br><span class="line">NAME</span><br><span class="line"><span class="comment">------------------------------------------------------</span></span><br><span class="line">E:\ORACLE\ARCH_LOG\ARC0000000023_0831311361<span class="number">.0001</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>   添加待分析的日志文件</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.ADD_LOGFILE(LOGFILENAME<span class="operator">=</span><span class="operator">&gt;</span><span class="string">&#x27;E:\ORACLE\ARCH_LOG\ARC0000000023_0831311361.0001&#x27;</span>,OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.NEW);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>   开始分析日志</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>   查看v$logmnr_contents</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- ----------------------------------------------------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082062</span> <span class="literal">UNKNOWN</span>  <span class="keyword">delete</span> <span class="keyword">from</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">where</span> &quot;ENAME&quot; <span class="operator">=</span> <span class="string">&#x27;TURNER&#x27;</span> <span class="keyword">and</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;1500&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAJ&#x27;</span>;</span><br><span class="line">   <span class="number">1082062</span> <span class="literal">UNKNOWN</span>  <span class="keyword">delete</span> <span class="keyword">from</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">where</span> &quot;ENAME&quot; <span class="operator">=</span> <span class="string">&#x27;ADAMS&#x27;</span> <span class="keyword">and</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;1100&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAK&#x27;</span>;</span><br><span class="line">   <span class="number">1082088</span> <span class="literal">UNKNOWN</span>  <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;ADAMS&#x27;</span>,<span class="string">&#x27;1100&#x27;</span>);</span><br><span class="line">   <span class="number">1082088</span> <span class="literal">UNKNOWN</span>  <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;TURNER&#x27;</span>,<span class="string">&#x27;1500&#x27;</span>);</span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">set</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;8888&#x27;</span> <span class="keyword">where</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;3000&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>可见，这种分析方式下，Oracle把回滚前后的日志也分析出来了，若只想分析已经提交的事务，须添加COMMITTED_DATA_ONLY参数。</p>
-<ol start="7">
-<li>   分析已提交的事务</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS <span class="operator">=</span><span class="operator">&gt;</span> DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG <span class="operator">+</span> DBMS_LOGMNR.COMMITTED_DATA_ONLY);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>   查看v$logmnr_contents</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- ----------------------------------------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">set</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;8888&#x27;</span> <span class="keyword">where</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;3000&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>可见，同样的查询语句，logmnr已经把没有提交的delete语句给过滤掉了，只分析出已经提交的update语句。</p>
-<h3 id="格式化重构的SQL语句"><a href="#格式化重构的SQL语句" class="headerlink" title="格式化重构的SQL语句"></a>格式化重构的SQL语句</h3><p>前面的例子中，分析出的SQL语句均未经格式化，阅读起来非常困难，更不用说从一大堆SQL日志中找出需要的语句了。通过指定PRINT_PRETTY_SQL参数，可以将输出SQL语句格式化，但须引起注意的是，该参数可能会导致重构的语句无法直接执行。</p>
-<ol>
-<li>   分析日志，格式化输出的SQL语句</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS <span class="operator">=</span><span class="operator">&gt;</span> DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG <span class="operator">+</span> DBMS_LOGMNR.COMMITTED_DATA_ONLY <span class="operator">+</span> DBMS_LOGMNR.PRINT_PRETTY_SQL);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>   查看v$logmnr_contents</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- ---------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;</span><br><span class="line">                      <span class="keyword">set</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">8888</span></span><br><span class="line">                      <span class="keyword">where</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">3000</span> <span class="keyword">and</span></span><br><span class="line">                        ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_undo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_UNDO</span><br><span class="line"><span class="comment">---------- -------- ----------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;</span><br><span class="line">                      <span class="keyword">set</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">3000</span></span><br><span class="line">                      <span class="keyword">where</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">8888</span> <span class="keyword">and</span></span><br><span class="line">                        ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在重做日志文件中使用logmnr目录"><a href="#在重做日志文件中使用logmnr目录" class="headerlink" title="在重做日志文件中使用logmnr目录"></a>在重做日志文件中使用logmnr目录</h3><p>前面的例子中，日志挖掘均在与生成该日志相同的数据库上进行的，。</p>
-<ol>
-<li>   分析日志，格式化输出的SQL语句</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS <span class="operator">=</span><span class="operator">&gt;</span> DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG <span class="operator">+</span> DBMS_LOGMNR.COMMITTED_DATA_ONLY <span class="operator">+</span> DBMS_LOGMNR.PRINT_PRETTY_SQL);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="增补资料"><a href="#增补资料" class="headerlink" title="增补资料"></a>增补资料</h2><p>若发现部分语句分析不出来，或者语句不完整的情况，请参看Oracle官方的解释。</p>
-<ul>
-<li>Ensure that database was in minimum supplemental logging at the time that   the redo information was created；</li>
-<li>Ensure that all archive redo logs containing the necessary redo   information have been added to the LogMiner session.</li>
-</ul>
-<p>即，确保数据库运行在附加日志信息模式(Supplemental log data)下，且已经把相关的日志添加到日志分析队列中。<br>如何确保数据库运行在附加日志信息模式(Supplemental log data)下？</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> DATABASE <span class="keyword">ADD</span> SUPPLEMENTAL LOG DATA;</span><br><span class="line">Database altered</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> supplemental_log_data_min <span class="keyword">FROM</span> v$database;</span><br><span class="line">SUPPLEME</span><br><span class="line"><span class="comment">--------</span></span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>科技·Tech</category>
-        <category>数据库技术·Databases</category>
-        <category>Oracle</category>
-      </categories>
-      <tags>
-        <tag>数据库·Databases</tag>
-        <tag>Oracle</tag>
-        <tag>日志挖掘·Log Mining</tag>
       </tags>
   </entry>
   <entry>
@@ -13493,6 +13373,126 @@ When running a standby server, you must set this parameter to the same or higher
 <p>That is, ensure the database is running in Supplemental Log Data mode, and the relevant logs have been added to the log mining queue.</p>
 <p>How to ensure the database is running in Supplemental Log Data mode:</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> DATABASE <span class="keyword">ADD</span> SUPPLEMENTAL LOG DATA;</span><br><span class="line">Database altered</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> supplemental_log_data_min <span class="keyword">FROM</span> v$database;</span><br><span class="line">SUPPLEME</span><br><span class="line"><span class="comment">--------</span></span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>数据库技术·Databases</category>
+        <category>Oracle</category>
+      </categories>
+      <tags>
+        <tag>数据库·Databases</tag>
+        <tag>Oracle</tag>
+        <tag>日志挖掘·Log Mining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Oracle日志挖掘案例</title>
+    <url>/posts/oracle-ri-zhi-wa-jue-an-li.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文档是笔者阅读Oracle官方文档Oracle Database Utilities 11g Release 2 (11.2) E22490-05的读书笔记，主要介绍了logmnr数据挖掘的若干个实例。</p>
+<h2 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h2><h3 id="操作系统版本"><a href="#操作系统版本" class="headerlink" title="操作系统版本"></a>操作系统版本</h3><p>Microsoft Windows Version 6.1.7601</p>
+<h3 id="数据库版本"><a href="#数据库版本" class="headerlink" title="数据库版本"></a>数据库版本</h3><p>Oracle 11g Release 11.2.0.1.0</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>构建一张测试表，后续的实验均基于这张测试表。</p>
+<ol>
+<li>   复制scott用户emp中的部分数据</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">create table</span> scott.tab_emp <span class="keyword">as</span> </span><br><span class="line"><span class="keyword">select</span> ename,sal <span class="keyword">from</span> scott.emp;</span><br><span class="line">表已创建。</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   查看测试表的数据</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> scott.tab_emp;</span><br><span class="line">ENAME             SAL</span><br><span class="line"><span class="comment">---------- ----------</span></span><br><span class="line">SMITH             <span class="number">800</span></span><br><span class="line">ALLEN            <span class="number">1600</span></span><br><span class="line">WARD             <span class="number">1250</span></span><br><span class="line">JONES            <span class="number">2975</span></span><br><span class="line">MARTIN           <span class="number">1250</span></span><br><span class="line">BLAKE            <span class="number">2850</span></span><br><span class="line">CLARK            <span class="number">2450</span></span><br><span class="line">SCOTT            <span class="number">3000</span></span><br><span class="line">KING             <span class="number">5000</span></span><br><span class="line">TURNER           <span class="number">1500</span></span><br><span class="line">ADAMS            <span class="number">1100</span></span><br><span class="line">JAMES             <span class="number">950</span></span><br><span class="line">FORD             <span class="number">3000</span></span><br><span class="line">MILLER           <span class="number">1300</span></span><br><span class="line"><span class="number">14</span> <span class="keyword">rows</span> selected.</span><br></pre></td></tr></table></figure>
+
+<h2 id="日志挖掘实例"><a href="#日志挖掘实例" class="headerlink" title="日志挖掘实例"></a>日志挖掘实例</h2><h3 id="查看最后归档的重做日志文件的更改"><a href="#查看最后归档的重做日志文件的更改" class="headerlink" title="查看最后归档的重做日志文件的更改"></a>查看最后归档的重做日志文件的更改</h3><ol>
+<li>   定位最后归档的重做日志文件路径<br>假设我们要查看的操作是刚刚发生的，该日志记录在最新的归档日志文件里。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> NAME <span class="keyword">FROM</span> V$ARCHIVED_LOG <span class="keyword">WHERE</span> FIRST_TIME <span class="operator">=</span> (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(FIRST_TIME) <span class="keyword">FROM</span> V$ARCHIVED_LOG);</span><br><span class="line">NAME</span><br><span class="line"><span class="comment">--------------------------------------------------------------------------------</span></span><br><span class="line">E:\ORACLE\ARCH_LOG\ARC0000000021_0831311361<span class="number">.0001</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   指定要分析的日志文件列表</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.ADD_LOGFILE(LOGFILENAME<span class="operator">=</span><span class="operator">&gt;</span><span class="string">&#x27;E:\ORACLE\ARCH_LOG\ARC0000000021_0831311361.0001&#x27;</span>,OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.NEW);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>   开始挖掘</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>   查看v$logmnr_contents</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- --------------------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1075293</span> SYS      <span class="keyword">ALTER TABLE</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; RENAME <span class="keyword">TO</span> &quot;BIN$tQR5Z7zsQLWDs5RPAA3kFg==$0&quot; ;</span><br><span class="line">   <span class="number">1075296</span> SYS      <span class="keyword">drop</span> <span class="keyword">table</span> scott.tab_emp <span class="keyword">AS</span> &quot;BIN$tQR5Z7zsQLWDs5RPAA3kFg==$0&quot; ;</span><br><span class="line">   <span class="number">1075320</span> SYS      <span class="keyword">create table</span> scott.tab_emp <span class="keyword">as</span> <span class="keyword">select</span> ename,sal <span class="keyword">from</span> scott.emp;</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;SMITH&#x27;</span>,<span class="string">&#x27;800&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;ALLEN&#x27;</span>,<span class="string">&#x27;1600&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;WARD&#x27;</span>,<span class="string">&#x27;1250&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;JONES&#x27;</span>,<span class="string">&#x27;2975&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;MARTIN&#x27;</span>,<span class="string">&#x27;1250&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;BLAKE&#x27;</span>,<span class="string">&#x27;2850&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;CLARK&#x27;</span>,<span class="string">&#x27;2450&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;SCOTT&#x27;</span>,<span class="string">&#x27;3000&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;KING&#x27;</span>,<span class="string">&#x27;5000&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;TURNER&#x27;</span>,<span class="string">&#x27;1500&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;ADAMS&#x27;</span>,<span class="string">&#x27;1100&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;JAMES&#x27;</span>,<span class="string">&#x27;950&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;FORD&#x27;</span>,<span class="string">&#x27;3000&#x27;</span>);</span><br><span class="line">   <span class="number">1075330</span> SYS      <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;MILLER&#x27;</span>,<span class="string">&#x27;1300&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>   结束挖掘会话</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="查看最后归档的重做日志文件中已经提交了的更改"><a href="#查看最后归档的重做日志文件中已经提交了的更改" class="headerlink" title="查看最后归档的重做日志文件中已经提交了的更改"></a>查看最后归档的重做日志文件中已经提交了的更改</h3><p>前面的例子中，分析出的数据包含了未提交的SQL语句，本例将只查询出已经提交的SQL语句。</p>
+<ol>
+<li>   查看测试表的数据</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> scott.tab_emp;</span><br><span class="line">ENAME             SAL</span><br><span class="line"><span class="comment">---------- ----------</span></span><br><span class="line">SMITH             <span class="number">800</span></span><br><span class="line">ALLEN            <span class="number">1600</span></span><br><span class="line">WARD             <span class="number">1250</span></span><br><span class="line">JONES            <span class="number">2975</span></span><br><span class="line">MARTIN           <span class="number">1250</span></span><br><span class="line">BLAKE            <span class="number">2850</span></span><br><span class="line">CLARK            <span class="number">2450</span></span><br><span class="line">SCOTT            <span class="number">3000</span></span><br><span class="line">KING             <span class="number">5000</span></span><br><span class="line">TURNER           <span class="number">1500</span></span><br><span class="line">ADAMS            <span class="number">1100</span></span><br><span class="line">JAMES             <span class="number">950</span></span><br><span class="line">FORD             <span class="number">3000</span></span><br><span class="line">MILLER           <span class="number">1300</span></span><br><span class="line"><span class="number">14</span> <span class="keyword">rows</span> selected.</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   执行SQL语句</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">delete</span> <span class="keyword">from</span> scott.tab_emp <span class="keyword">where</span> ename <span class="keyword">in</span> (<span class="string">&#x27;TURNER&#x27;</span>,<span class="string">&#x27;ADAMS&#x27;</span>);</span><br><span class="line"><span class="number">2</span> <span class="keyword">rows</span> deleted.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">rollback</span>;</span><br><span class="line"><span class="keyword">Rollback</span> complete.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">update</span> scott.tab_emp <span class="keyword">set</span> sal<span class="operator">=</span><span class="number">8888</span> <span class="keyword">where</span> ename<span class="operator">=</span><span class="string">&#x27;SCOTT&#x27;</span>;</span><br><span class="line"><span class="number">1</span> <span class="type">row</span> updated.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">Commit</span> complete.</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">alter</span> <span class="keyword">system</span> switch logfile;</span><br><span class="line"><span class="keyword">System</span> altered.</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>   定位最后归档的重做日志文件路径</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> NAME <span class="keyword">FROM</span> V$ARCHIVED_LOG <span class="keyword">WHERE</span> FIRST_TIME <span class="operator">=</span> (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(FIRST_TIME) <span class="keyword">FROM</span> V$ARCHIVED_LOG);</span><br><span class="line">NAME</span><br><span class="line"><span class="comment">------------------------------------------------------</span></span><br><span class="line">E:\ORACLE\ARCH_LOG\ARC0000000023_0831311361<span class="number">.0001</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>   添加待分析的日志文件</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.ADD_LOGFILE(LOGFILENAME<span class="operator">=</span><span class="operator">&gt;</span><span class="string">&#x27;E:\ORACLE\ARCH_LOG\ARC0000000023_0831311361.0001&#x27;</span>,OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.NEW);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>   开始分析日志</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS<span class="operator">=</span><span class="operator">&gt;</span>DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>   查看v$logmnr_contents</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- ----------------------------------------------------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082062</span> <span class="literal">UNKNOWN</span>  <span class="keyword">delete</span> <span class="keyword">from</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">where</span> &quot;ENAME&quot; <span class="operator">=</span> <span class="string">&#x27;TURNER&#x27;</span> <span class="keyword">and</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;1500&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAJ&#x27;</span>;</span><br><span class="line">   <span class="number">1082062</span> <span class="literal">UNKNOWN</span>  <span class="keyword">delete</span> <span class="keyword">from</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">where</span> &quot;ENAME&quot; <span class="operator">=</span> <span class="string">&#x27;ADAMS&#x27;</span> <span class="keyword">and</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;1100&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAK&#x27;</span>;</span><br><span class="line">   <span class="number">1082088</span> <span class="literal">UNKNOWN</span>  <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;ADAMS&#x27;</span>,<span class="string">&#x27;1100&#x27;</span>);</span><br><span class="line">   <span class="number">1082088</span> <span class="literal">UNKNOWN</span>  <span class="keyword">insert into</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;(&quot;ENAME&quot;,&quot;SAL&quot;) <span class="keyword">values</span> (<span class="string">&#x27;TURNER&#x27;</span>,<span class="string">&#x27;1500&#x27;</span>);</span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">set</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;8888&#x27;</span> <span class="keyword">where</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;3000&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>可见，这种分析方式下，Oracle把回滚前后的日志也分析出来了，若只想分析已经提交的事务，须添加COMMITTED_DATA_ONLY参数。</p>
+<ol start="7">
+<li>   分析已提交的事务</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS <span class="operator">=</span><span class="operator">&gt;</span> DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG <span class="operator">+</span> DBMS_LOGMNR.COMMITTED_DATA_ONLY);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>   查看v$logmnr_contents</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- ----------------------------------------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot; <span class="keyword">set</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;8888&#x27;</span> <span class="keyword">where</span> &quot;SAL&quot; <span class="operator">=</span> <span class="string">&#x27;3000&#x27;</span> <span class="keyword">and</span> ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>可见，同样的查询语句，logmnr已经把没有提交的delete语句给过滤掉了，只分析出已经提交的update语句。</p>
+<h3 id="格式化重构的SQL语句"><a href="#格式化重构的SQL语句" class="headerlink" title="格式化重构的SQL语句"></a>格式化重构的SQL语句</h3><p>前面的例子中，分析出的SQL语句均未经格式化，阅读起来非常困难，更不用说从一大堆SQL日志中找出需要的语句了。通过指定PRINT_PRETTY_SQL参数，可以将输出SQL语句格式化，但须引起注意的是，该参数可能会导致重构的语句无法直接执行。</p>
+<ol>
+<li>   分析日志，格式化输出的SQL语句</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS <span class="operator">=</span><span class="operator">&gt;</span> DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG <span class="operator">+</span> DBMS_LOGMNR.COMMITTED_DATA_ONLY <span class="operator">+</span> DBMS_LOGMNR.PRINT_PRETTY_SQL);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>   查看v$logmnr_contents</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_redo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_REDO</span><br><span class="line"><span class="comment">---------- -------- ---------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;</span><br><span class="line">                      <span class="keyword">set</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">8888</span></span><br><span class="line">                      <span class="keyword">where</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">3000</span> <span class="keyword">and</span></span><br><span class="line">                        ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> scn,username,sql_undo <span class="keyword">from</span> v$logmnr_contents <span class="keyword">where</span> table_name <span class="operator">=</span><span class="string">&#x27;TAB_EMP&#x27;</span>;</span><br><span class="line">       SCN USERNAME SQL_UNDO</span><br><span class="line"><span class="comment">---------- -------- ----------------------------------------------------------------------</span></span><br><span class="line">   <span class="number">1082098</span> <span class="literal">UNKNOWN</span>  <span class="keyword">update</span> &quot;SCOTT&quot;.&quot;TAB_EMP&quot;</span><br><span class="line">                      <span class="keyword">set</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">3000</span></span><br><span class="line">                      <span class="keyword">where</span></span><br><span class="line">                        &quot;SAL&quot; <span class="operator">=</span> <span class="number">8888</span> <span class="keyword">and</span></span><br><span class="line">                        ROWID <span class="operator">=</span> <span class="string">&#x27;AAASNgAAEAAAAJ7AAH&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在重做日志文件中使用logmnr目录"><a href="#在重做日志文件中使用logmnr目录" class="headerlink" title="在重做日志文件中使用logmnr目录"></a>在重做日志文件中使用logmnr目录</h3><p>前面的例子中，日志挖掘均在与生成该日志相同的数据库上进行的，。</p>
+<ol>
+<li>   分析日志，格式化输出的SQL语句</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">EXECUTE</span> DBMS_LOGMNR.START_LOGMNR(OPTIONS <span class="operator">=</span><span class="operator">&gt;</span> DBMS_LOGMNR.DICT_FROM_ONLINE_CATALOG <span class="operator">+</span> DBMS_LOGMNR.COMMITTED_DATA_ONLY <span class="operator">+</span> DBMS_LOGMNR.PRINT_PRETTY_SQL);</span><br><span class="line">PL<span class="operator">/</span><span class="keyword">SQL</span> <span class="keyword">procedure</span> successfully completed.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="增补资料"><a href="#增补资料" class="headerlink" title="增补资料"></a>增补资料</h2><p>若发现部分语句分析不出来，或者语句不完整的情况，请参看Oracle官方的解释。</p>
+<ul>
+<li>Ensure that database was in minimum supplemental logging at the time that   the redo information was created；</li>
+<li>Ensure that all archive redo logs containing the necessary redo   information have been added to the LogMiner session.</li>
+</ul>
+<p>即，确保数据库运行在附加日志信息模式(Supplemental log data)下，且已经把相关的日志添加到日志分析队列中。<br>如何确保数据库运行在附加日志信息模式(Supplemental log data)下？</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">ALTER</span> DATABASE <span class="keyword">ADD</span> SUPPLEMENTAL LOG DATA;</span><br><span class="line">Database altered</span><br><span class="line"><span class="keyword">SQL</span><span class="operator">&gt;</span> <span class="keyword">SELECT</span> supplemental_log_data_min <span class="keyword">FROM</span> v$database;</span><br><span class="line">SUPPLEME</span><br><span class="line"><span class="comment">--------</span></span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>科技·Tech</category>
