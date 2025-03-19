@@ -9,6 +9,20 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Cinema/</loc>
+        <lastmod>2025-03-19T07:00:54.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/</loc>
+        <lastmod>2025-03-19T07:00:54.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/hexo/</loc>
         <lastmod>2025-03-18T13:48:49.932Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,20 +53,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Tech/</loc>
         <lastmod>2025-03-17T16:13:22.742Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Cinema/</loc>
-        <lastmod>2025-03-17T04:42:34.852Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/</loc>
-        <lastmod>2025-03-17T04:42:34.852Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
