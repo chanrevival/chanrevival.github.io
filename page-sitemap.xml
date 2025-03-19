@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://blog.crsky.uk/</loc>
+        <loc>https://www.crsky.uk/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/cinema/</loc>
+        <loc>https://www.crsky.uk/cinema/</loc>
         <lastmod>2025-03-18T06:23:13.890Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/privacy/</loc>
+        <loc>https://www.crsky.uk/privacy/</loc>
         <lastmod>2025-03-14T04:49:19.484Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/contact/</loc>
+        <loc>https://www.crsky.uk/contact/</loc>
         <lastmod>2025-03-14T04:29:51.386Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -37,7 +37,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/about/</loc>
+        <loc>https://www.crsky.uk/about/</loc>
         <lastmod>2025-03-14T04:05:15.809Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -46,7 +46,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/database/</loc>
+        <loc>https://www.crsky.uk/database/</loc>
         <lastmod>2025-03-13T08:22:18.502Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -55,7 +55,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/music/xxx.html</loc>
+        <loc>https://www.crsky.uk/music/xxx.html</loc>
         <lastmod>2025-03-07T15:28:04.937Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -64,7 +64,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/photography2/</loc>
+        <loc>https://www.crsky.uk/photography2/</loc>
         <lastmod>2025-03-05T15:35:29.043Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -73,7 +73,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/linux_tools/</loc>
+        <loc>https://www.crsky.uk/linux_tools/</loc>
         <lastmod>2025-03-05T07:54:33.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -82,7 +82,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/software/</loc>
+        <loc>https://www.crsky.uk/software/</loc>
         <lastmod>2025-03-01T17:09:29.142Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -91,7 +91,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/exoplanets/</loc>
+        <loc>https://www.crsky.uk/exoplanets/</loc>
         <lastmod>2025-03-01T17:02:33.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -100,7 +100,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/literature/</loc>
+        <loc>https://www.crsky.uk/literature/</loc>
         <lastmod>2025-02-27T13:57:58.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -109,7 +109,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/music/</loc>
+        <loc>https://www.crsky.uk/music/</loc>
         <lastmod>2025-02-26T07:43:57.590Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -118,7 +118,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/updates/</loc>
+        <loc>https://www.crsky.uk/updates/</loc>
         <lastmod>2025-02-22T15:30:36.414Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -127,7 +127,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/news/</loc>
+        <loc>https://www.crsky.uk/news/</loc>
         <lastmod>2025-02-17T14:55:17.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -136,7 +136,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/music/%25E6%259E%2597%25E5%25BF%2586%25E8%258E%25B2_%25E8%2587%25B3%25E5%25B0%2591%25E8%25BF%2598%25E6%259C%2589%25E4%25BD%25A0.html</loc>
+        <loc>https://www.crsky.uk/music/%25E6%259E%2597%25E5%25BF%2586%25E8%258E%25B2_%25E8%2587%25B3%25E5%25B0%2591%25E8%25BF%2598%25E6%259C%2589%25E4%25BD%25A0.html</loc>
         <lastmod>2025-01-23T09:30:38.850Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -145,7 +145,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/music/%25E9%2587%2591%25E6%25B5%25B7%25E5%25BF%2583_%25E9%2582%25A3%25E4%25B9%2588%25E9%25AA%2584%25E5%2582%25B2.html</loc>
+        <loc>https://www.crsky.uk/music/%25E9%2587%2591%25E6%25B5%25B7%25E5%25BF%2583_%25E9%2582%25A3%25E4%25B9%2588%25E9%25AA%2584%25E5%2582%25B2.html</loc>
         <lastmod>2025-01-23T09:30:31.227Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -154,7 +154,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/voice/</loc>
+        <loc>https://www.crsky.uk/voice/</loc>
         <lastmod>2025-01-22T14:44:09.053Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -163,7 +163,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/feedback/</loc>
+        <loc>https://www.crsky.uk/feedback/</loc>
         <lastmod>2025-01-22T14:18:43.744Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -172,7 +172,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/thoughts/</loc>
+        <loc>https://www.crsky.uk/thoughts/</loc>
         <lastmod>2024-12-28T11:51:25.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -181,7 +181,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/thoughts/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0.html</loc>
+        <loc>https://www.crsky.uk/thoughts/%25E7%25AB%2599%25E4%25B8%25BB%25E4%25B9%258B%25E5%25A3%25B0.html</loc>
         <lastmod>2024-12-28T11:51:25.400Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -190,7 +190,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/rankings/web_browser/</loc>
+        <loc>https://www.crsky.uk/rankings/web_browser/</loc>
         <lastmod>2024-12-27T15:33:47.807Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -199,7 +199,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/rankings/data_visualization_monitoring/</loc>
+        <loc>https://www.crsky.uk/rankings/data_visualization_monitoring/</loc>
         <lastmod>2024-12-27T15:16:42.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -208,7 +208,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/rankings/file_sync_bak/data_visualization_monitoring/</loc>
+        <loc>https://www.crsky.uk/rankings/file_sync_bak/data_visualization_monitoring/</loc>
         <lastmod>2024-12-27T15:16:42.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -217,7 +217,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/rankings/text_editors/</loc>
+        <loc>https://www.crsky.uk/rankings/text_editors/</loc>
         <lastmod>2024-12-27T14:30:06.503Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -226,7 +226,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/rankings/system_software/</loc>
+        <loc>https://www.crsky.uk/rankings/system_software/</loc>
         <lastmod>2024-12-27T14:18:31.661Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -235,7 +235,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/internal_use/AI%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D.html</loc>
+        <loc>https://www.crsky.uk/internal_use/AI%25E6%258F%2590%25E7%25A4%25BA%25E8%25AF%258D.html</loc>
         <lastmod>2024-12-27T09:27:54.622Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -244,7 +244,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/rankings/</loc>
+        <loc>https://www.crsky.uk/rankings/</loc>
         <lastmod>2024-12-27T09:14:07.839Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -253,7 +253,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/internal_use/</loc>
+        <loc>https://www.crsky.uk/internal_use/</loc>
         <lastmod>2024-12-24T14:29:41.337Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -262,7 +262,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/internal_use/test.html</loc>
+        <loc>https://www.crsky.uk/internal_use/test.html</loc>
         <lastmod>2024-12-24T14:28:02.765Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -271,7 +271,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/internal_use/%25E5%2585%25AC%25E7%25BD%2591IP.html</loc>
+        <loc>https://www.crsky.uk/internal_use/%25E5%2585%25AC%25E7%25BD%2591IP.html</loc>
         <lastmod>2024-11-26T04:49:55.394Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -280,7 +280,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/tags/</loc>
+        <loc>https://www.crsky.uk/tags/</loc>
         <lastmod>2024-11-17T12:38:16.402Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -289,7 +289,7 @@
     
     
     <url>
-        <loc>https://blog.crsky.uk/categories/</loc>
+        <loc>https://www.crsky.uk/categories/</loc>
         <lastmod>2024-11-17T12:35:08.787Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
