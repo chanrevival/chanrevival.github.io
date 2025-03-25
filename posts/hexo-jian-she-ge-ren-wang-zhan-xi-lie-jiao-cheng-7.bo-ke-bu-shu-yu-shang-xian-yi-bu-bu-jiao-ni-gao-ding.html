@@ -231,7 +231,7 @@ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;
 <p>在 _config.yml 文件中，部署部分通常需要配置如下：</p>
 <p>deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BD%A0%E7%9A%84%E4%BB%93%E5%BA%93%E5%90%8D.git">https://github.com/你的用户名/你的仓库名.git</a><br>  branch: gh-pages</p>
 <p>如果你使用 SSH 方式，repo 地址可以改为：</p>
-<p>repo: <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:你的用户名&#x2F;你的仓库名.git</p>
+<p>repo: <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#x68;&#x75;&#x62;&#46;&#99;&#x6f;&#109;</a>:你的用户名&#x2F;你的仓库名.git</p>
 <p>请确保仓库地址和分支名称正确，通常 GitHub Pages 默认使用 gh-pages 分支，但有时也可以选择 master 或 main 分支。<br>2.3 执行部署命令</p>
 <p>完成配置后，在博客项目根目录中，执行以下命令生成静态文件并部署到 GitHub 仓库：</p>
 <p>hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</p>
@@ -374,7 +374,7 @@ npm install &amp;&amp; hexo generate
 </code></pre>
 <p>另外，Hexo 社区中有大量优秀的插件，可以扩展博客功能，如评论系统、代码高亮、文章分享等。探索社区资源，让你的博客更具吸引力与互动性。<br>六、综合部署案例示例</p>
 <p>下面将以一个完整的部署案例帮助你更直观地理解整个流程。假设你的博客项目名为 my-hexo-blog，目标仓库为 <a target="_blank" rel="noopener" href="https://github.com/yourusername/my-hexo-blog.git%EF%BC%8C%E4%BD%A0%E5%B8%8C%E6%9C%9B%E9%83%A8%E7%BD%B2%E5%88%B0">https://github.com/yourusername/my-hexo-blog.git，你希望部署到</a> gh-pages 分支，并使用自定义域名 <a target="_blank" rel="noopener" href="http://www.example.com./">www.example.com。</a><br>6.1 修改 _config.yml 部署部分</p>
-<p>deploy:<br>  type: git<br>  repo: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#x6d;</a>:yourusername&#x2F;my-hexo-blog.git<br>  branch: gh-pages</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#109;</a>:yourusername&#x2F;my-hexo-blog.git<br>  branch: gh-pages</p>
 <p>6.2 在项目根目录创建 CNAME 文件</p>
 <p>在 source 或 public 目录下（推荐放在 public 目录中），新建一个名为 CNAME 的文件，内容为：</p>
 <p><a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a></p>
