@@ -3,6 +3,34 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/tags/%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/Linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E6%8A%80%E6%9C%AF%C2%B7Tech/</loc>
+        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/Linux/</loc>
+        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E6%9D%8E%E5%A4%9A%E6%85%A7/</loc>
         <lastmod>2025-03-25T15:17:08.355Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -74,13 +102,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/hexo-%E5%BB%BA%E7%AB%99/</loc>
-        <lastmod>2025-03-24T03:22:14.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%8A%80%E6%9C%AF%C2%B7Tech/</loc>
         <lastmod>2025-03-24T03:22:14.393Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -871,14 +892,14 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/tags/%E5%8C%97%E4%BA%AC/</loc>
+        <loc>https://www.crsky.uk/tags/%E6%97%85%E6%B8%B8/</loc>
         <lastmod>2025-03-03T13:32:37.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/tags/%E6%97%85%E6%B8%B8/</loc>
+        <loc>https://www.crsky.uk/tags/%E5%8C%97%E4%BA%AC/</loc>
         <lastmod>2025-03-03T13:32:37.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1005,13 +1026,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/OS/</loc>
-        <lastmod>2025-02-18T02:32:56.123Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Linux/</loc>
         <lastmod>2025-02-18T02:32:56.123Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
