@@ -9,6 +9,38 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/posts/linux-cmd-du.html</loc>
+        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
+        <lastmod>2025-04-11T11:49:31.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/posts/linux-ru-men-jiao-cheng-2-linux-xi-tong-ji-chu-ming-ling.html</loc>
+        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/posts/linux-ru-men-jiao-cheng-3-linux-yong-hu-yu-quan-xian-guan-li.html</loc>
+        <lastmod>2025-03-26T08:59:11.339Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/posts/linux-ru-men-jiao-cheng-1-linux-jian-jie-yu-an-zhuang.html</loc>
         <lastmod>2025-03-26T08:45:43.546Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -419,14 +451,6 @@
     <url>
         <loc>https://www.crsky.uk/posts/linux-cmd-yum.html</loc>
         <lastmod>2025-03-24T03:00:29.367Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/posts/linux-ming-ling-su-cha-shou-ce-suo-yin.html</loc>
-        <lastmod>2025-03-19T14:31:45.833Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

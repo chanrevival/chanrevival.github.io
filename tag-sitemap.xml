@@ -3,29 +3,50 @@
 
 
     <url>
-        <loc>https://www.crsky.uk/tags/%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <loc>https://www.crsky.uk/tags/du/</loc>
+        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/tags/Linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <loc>https://www.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
+        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
+        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.crsky.uk/tags/%E6%8A%80%E6%9C%AF%C2%B7Tech/</loc>
-        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <lastmod>2025-04-11T11:49:31.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/Linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
+        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.crsky.uk/tags/Linux/</loc>
-        <lastmod>2025-03-26T08:45:43.546Z</lastmod>
+        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -158,20 +179,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/blkid/</loc>
-        <lastmod>2025-03-24T03:05:38.410Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
-        <lastmod>2025-03-24T03:05:38.410Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
         <lastmod>2025-03-24T03:05:38.410Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
