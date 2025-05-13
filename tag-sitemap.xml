@@ -17,55 +17,6 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/tags/du/</loc>
-        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E7%A7%91%E6%8A%80%C2%B7Tech/</loc>
-        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Linux%E5%B7%A5%E5%85%B7%E7%AE%B1%C2%B7Linux-Toolbox/</loc>
-        <lastmod>2025-04-11T12:30:55.716Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%8A%80%E6%9C%AF%C2%B7Tech/</loc>
-        <lastmod>2025-04-11T11:49:31.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Linux%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc>
-        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Linux/</loc>
-        <lastmod>2025-03-26T09:11:40.133Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/tags/%E6%9D%8E%E5%A4%9A%E6%85%A7/</loc>
         <lastmod>2025-03-25T15:17:08.355Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -82,62 +33,6 @@
     <url>
         <loc>https://www.crsky.uk/tags/%E4%BC%91%E9%97%B2%C2%B7Leisure/</loc>
         <lastmod>2025-03-25T15:17:08.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5/</loc>
-        <lastmod>2025-03-24T03:22:46.216Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E7%BD%91%E7%AB%99/</loc>
-        <lastmod>2025-03-24T03:22:46.216Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%BB%BA%E7%AB%99/</loc>
-        <lastmod>2025-03-24T03:22:46.216Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/hexo/</loc>
-        <lastmod>2025-03-24T03:22:46.216Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%BC%82%E5%B8%B8/</loc>
-        <lastmod>2025-03-24T03:22:14.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%90%9C%E7%B4%A2/</loc>
-        <lastmod>2025-03-24T03:22:14.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%9C%AC%E5%9C%B0/</loc>
-        <lastmod>2025-03-24T03:22:14.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/hexo-%E5%BB%BA%E7%AB%99/</loc>
-        <lastmod>2025-03-24T03:22:14.393Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -178,7 +73,28 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/%E5%BB%BA%E7%AB%99/</loc>
+        <lastmod>2025-03-24T03:20:31.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/butterfly/</loc>
+        <lastmod>2025-03-24T03:20:31.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/hexo/</loc>
+        <lastmod>2025-03-24T03:20:31.533Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/hexo-%E5%BB%BA%E7%AB%99/</loc>
         <lastmod>2025-03-24T03:20:31.533Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -187,286 +103,6 @@
     <url>
         <loc>https://www.crsky.uk/tags/%E7%A7%91%E6%8A%80%E5%89%8D%E6%B2%BF/</loc>
         <lastmod>2025-03-24T03:20:31.533Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/blkid/</loc>
-        <lastmod>2025-03-24T03:05:38.410Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/cat/</loc>
-        <lastmod>2025-03-24T03:05:34.657Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/cd/</loc>
-        <lastmod>2025-03-24T03:05:30.393Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/pidstat/</loc>
-        <lastmod>2025-03-24T03:05:25.144Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/pwd/</loc>
-        <lastmod>2025-03-24T03:05:19.762Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/rpm/</loc>
-        <lastmod>2025-03-24T03:05:15.954Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/scp/</loc>
-        <lastmod>2025-03-24T03:05:12.266Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/watch/</loc>
-        <lastmod>2025-03-24T03:05:08.562Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/w/</loc>
-        <lastmod>2025-03-24T03:05:04.530Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/time/</loc>
-        <lastmod>2025-03-24T03:05:00.522Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/top/</loc>
-        <lastmod>2025-03-24T03:04:56.570Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/wget/</loc>
-        <lastmod>2025-03-24T03:04:52.226Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/tail/</loc>
-        <lastmod>2025-03-24T03:04:45.635Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/arp/</loc>
-        <lastmod>2025-03-24T03:04:41.619Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/smartctl/</loc>
-        <lastmod>2025-03-24T03:04:36.851Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/chmod/</loc>
-        <lastmod>2025-03-24T03:04:31.811Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/rm/</loc>
-        <lastmod>2025-03-24T03:04:26.163Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/nohup/</loc>
-        <lastmod>2025-03-24T03:04:21.883Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/chown/</loc>
-        <lastmod>2025-03-24T03:04:16.563Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/ls/</loc>
-        <lastmod>2025-03-24T03:04:11.636Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/ln/</loc>
-        <lastmod>2025-03-24T03:04:06.619Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/df/</loc>
-        <lastmod>2025-03-24T03:04:01.940Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/date/</loc>
-        <lastmod>2025-03-24T03:03:47.788Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/less/</loc>
-        <lastmod>2025-03-24T03:03:39.884Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/lastb/</loc>
-        <lastmod>2025-03-24T03:03:35.987Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/last/</loc>
-        <lastmod>2025-03-24T03:03:30.179Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/kill/</loc>
-        <lastmod>2025-03-24T03:03:23.595Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/jobs/</loc>
-        <lastmod>2025-03-24T03:03:19.268Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/id/</loc>
-        <lastmod>2025-03-24T03:03:14.324Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/hostnamectl/</loc>
-        <lastmod>2025-03-24T03:03:09.285Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/groupdel/</loc>
-        <lastmod>2025-03-24T03:03:03.236Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/groupadd/</loc>
-        <lastmod>2025-03-24T03:02:58.317Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/find/</loc>
-        <lastmod>2025-03-24T03:02:54.301Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/echo/</loc>
-        <lastmod>2025-03-24T03:02:50.482Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/dir/</loc>
-        <lastmod>2025-03-24T03:02:44.845Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/dnf/</loc>
-        <lastmod>2025-03-24T03:02:39.037Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/awk/</loc>
-        <lastmod>2025-03-24T03:02:16.181Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/arping/</loc>
-        <lastmod>2025-03-24T03:02:09.902Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/ld/</loc>
-        <lastmod>2025-03-24T03:01:52.846Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/yum/</loc>
-        <lastmod>2025-03-24T03:00:29.367Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -1039,6 +675,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/Linux/</loc>
+        <lastmod>2025-02-18T02:32:56.123Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E7%BE%8E%E5%9B%BD/</loc>
         <lastmod>2025-02-15T14:40:44.362Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1228,6 +871,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/Graphics-Cards/</loc>
+        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/5070/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1236,13 +886,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/5090/</loc>
-        <lastmod>2025-02-15T14:34:01.124Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Graphics-Cards/</loc>
         <lastmod>2025-02-15T14:34:01.124Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -1503,6 +1146,20 @@
     <url>
         <loc>https://www.crsky.uk/tags/%E5%AE%87%E5%AE%99/</loc>
         <lastmod>2025-02-03T14:52:35.397Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/rpm/</loc>
+        <lastmod>2025-02-03T14:52:35.387Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/yum/</loc>
+        <lastmod>2025-02-03T14:52:35.387Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
