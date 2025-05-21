@@ -9,27 +9,6 @@
 
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/PostgreSQL/</loc>
-        <lastmod>2025-04-13T00:02:10.692Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/</loc>
-        <lastmod>2025-04-13T00:02:10.692Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Tech/</loc>
-        <lastmod>2025-04-13T00:02:10.692Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Cinema/</loc>
         <lastmod>2025-03-25T15:17:08.355Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -44,29 +23,8 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Tech/hexo-%25E5%25BB%25BA%25E7%25AB%2599/</loc>
-        <lastmod>2025-03-24T03:20:31.533Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
         <lastmod>2025-03-19T13:02:46.906Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/Linux/</loc>
-        <lastmod>2025-03-18T06:26:26.500Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
-        <lastmod>2025-03-18T06:26:26.500Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -79,8 +37,8 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/PostgreSQL/</loc>
-        <lastmod>2025-03-13T07:36:05.427Z</lastmod>
+        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
+        <lastmod>2025-03-13T08:42:46.695Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -88,20 +46,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/Oracle/</loc>
         <lastmod>2025-03-13T06:11:43.406Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/MongoDB/</loc>
-        <lastmod>2025-03-13T05:24:06.110Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E6%2591%2584%25E5%25BD%25B1%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Photography/</loc>
-        <lastmod>2025-03-11T07:18:01.036Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -128,13 +72,6 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593%25E6%258A%2580%25E6%259C%25AF%25C2%25B7Databases/Doris/</loc>
-        <lastmod>2025-03-05T14:59:24.254Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E5%259C%25B0%25E5%25A4%2596%25E6%2596%2587%25E6%2598%258E%25C2%25B7Exoplanets/</loc>
         <lastmod>2025-02-21T05:43:22.866Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -142,71 +79,8 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25E5%2589%258D%25E6%25B2%25BF/%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E8%25BD%25AF%25E4%25BB%25B6/</loc>
-        <lastmod>2025-02-18T02:32:56.123Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25E5%2589%258D%25E6%25B2%25BF/</loc>
-        <lastmod>2025-02-18T02:32:56.123Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD%25C2%25B7AI/</loc>
         <lastmod>2025-02-10T15:25:37.708Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E8%258B%25B1%25E8%25AF%25AD%25C2%25B7English/</loc>
-        <lastmod>2025-02-09T09:44:13.482Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB/%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E6%258A%2580%25E6%259C%25AF/Linux/</loc>
-        <lastmod>2025-02-05T08:27:39.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB/%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E6%258A%2580%25E6%259C%25AF/</loc>
-        <lastmod>2025-02-05T08:27:39.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB/</loc>
-        <lastmod>2025-02-05T08:27:39.038Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/%25E6%2596%2587%25E5%25AD%25A6%25E9%25A3%258E%25E4%25BA%2591/</loc>
-        <lastmod>2025-02-03T14:52:35.411Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%2596%2587%25E5%258C%2596%25E7%25BA%25B5%25E8%25A7%2588/</loc>
-        <lastmod>2025-02-03T14:52:35.411Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E9%259A%258F%25E7%25AC%2594/</loc>
-        <lastmod>2025-02-03T14:52:35.411Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -240,13 +114,6 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB/%25E7%25BC%2596%25E7%25A8%258B%25E6%258A%2580%25E6%259C%25AF/</loc>
-        <lastmod>2025-02-03T14:52:35.378Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/categories/Technology/OS/Linux/</loc>
         <lastmod>2025-02-03T14:52:35.373Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -268,8 +135,8 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF%25E5%2588%2586%25E4%25BA%25AB/%25E6%2593%258D%25E4%25BD%259C%25E7%25B3%25BB%25E7%25BB%259F%25E6%258A%2580%25E6%259C%25AF/AIX/</loc>
-        <lastmod>2025-02-03T14:52:35.363Z</lastmod>
+        <loc>https://www.crsky.uk/categories/%25E9%259A%258F%25E7%25AC%2594/</loc>
+        <lastmod>2025-02-03T14:52:35.348Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

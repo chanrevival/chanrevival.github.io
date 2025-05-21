@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.crsky.uk/posts/ji-yi-ci-telepg-shu-ju-ku-nian-ling-guo-da-dao-zhi-fu-wu-zhong-duan-shi-jian-de-chu-zhi-an-li.html</loc>
-    <lastmod>2025-04-13</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/li-duo-hui.html</loc>
     <lastmod>2025-03-25</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/zai-hexo-zhong-cha-ru-yin-le-bo-fang-qi.html</loc>
-    <lastmod>2025-03-24</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/xiao-zhu-bei-qi-di-9-ji.html</loc>
-    <lastmod>2025-03-19</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/posts/20250314-reflections-behind-the-box-office-miracle-of-nezha-2.html</loc>
@@ -23,10 +11,6 @@
   <url>
     <loc>https://www.crsky.uk/posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html</loc>
     <lastmod>2025-03-19</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/zi-ding-yi-doris-jian-kong.html</loc>
-    <lastmod>2025-03-18</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/cinema/index.html</loc>
@@ -41,68 +25,12 @@
     <lastmod>2025-03-13</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/postgresql-pei-zhi-wen-jian-zhong-postgresql.conf-yu-postgresql.auto.conf-de-yi-tong-dian.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/crs-pltm-o-db-mig-solu-diff-byt-ord.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/oracle-ri-zhi-wa-jue-an-li.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/kua-ping-tai-bu-tong-zi-jie-xu-oracle-shu-ju-ku-qian-yi-fang-an.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/sheng-chan-huan-jing-postgresql-shu-ju-ku-can-shu-tan-jiu.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/tan-tan-sheng-chan-huan-jing-zhong-postgresql-can-shu-de-yi-yi.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/postgresql-yun-wei-chang-yong-ming-ling.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/postgresql-de-mi-ma-wen-jian.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/postgresql-de-pageinspect-cha-jian.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/postgresql-cha-kan-biao-de-peng-zhang-lu.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/shou-ba-shou-jiao-ni-wan-zhuan-mongodb-an-zhuang-pei-zhi.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/oracle-log-mining-case-study.html</loc>
-    <lastmod>2025-03-13</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/postgresql-huan-jing-xia-de-fu-zhi-gai-shu.html</loc>
     <lastmod>2025-03-13</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/posts/qian-nu-you-hun-1987.html</loc>
     <lastmod>2025-03-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/fu-zhou.html</loc>
-    <lastmod>2025-03-11</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/posts/20250310-quan-qiu-hun-dong-ji-zhu-da-jie-mi-si-da-liu-pai-dui-jue-shui-cai-shi-tan-zhong-he-shi-dai-de-zhong-ji-da-an.html</loc>
@@ -125,14 +53,6 @@
     <lastmod>2025-03-05</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/doris-pi-pan-huan-pan-fang-fa.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/ru-he-zai-asm-11gr2-zhong-chong-ming-ming-ci-pan-zu.html</loc>
-    <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/20250225-is-deepseek-the-disruptor-of-the-new-era-of-artificial-intelligence-or-a-time-bomb-in-the-global-race.html</loc>
     <lastmod>2025-03-05</lastmod>
   </url>
@@ -143,26 +63,6 @@
   <url>
     <loc>https://www.crsky.uk/linux_tools/index.html</loc>
     <lastmod>2025-03-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/20170321-bei-jing-zi-zhu-yuan-gong-yuan.html</loc>
-    <lastmod>2025-03-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/20170324-bei-jing-ao-lin-pi-ke-sen-lin-gong-yuan.html</loc>
-    <lastmod>2025-03-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/20151024-guang-zhou-lian-hua-shan.html</loc>
-    <lastmod>2025-03-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/20150927-guang-zhou-nan-yue-yuan-bao-mo-yuan.html</loc>
-    <lastmod>2025-03-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/20150415-bei-jing-tian-an-men.html</loc>
-    <lastmod>2025-03-03</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/software/index.html</loc>
@@ -181,16 +81,8 @@
     <lastmod>2025-02-28</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/xin-wei-min-meng-bu-mie.html</loc>
-    <lastmod>2025-02-27</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/literature/index.html</loc>
     <lastmod>2025-02-27</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/xie-zai-chun-jie-li.html</loc>
-    <lastmod>2025-02-26</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/music/index.html</loc>
@@ -199,10 +91,6 @@
   <url>
     <loc>https://www.crsky.uk/posts/the-lacerta-files.html</loc>
     <lastmod>2025-02-21</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/linux-ming-ling-da-quan.html</loc>
-    <lastmod>2025-02-18</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/news/index.html</loc>
@@ -253,127 +141,15 @@
     <lastmod>2025-02-10</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/niu-jin-gao-pin-ying-yu-dan-ci-3000.html</loc>
-    <lastmod>2025-02-09</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/ru-he-jiang-asm-shu-ju-ku-wen-jian-cong-yi-ge-ci-pan-zu-yi-dong-dao-ling-yi-ge-ci-pan-zu.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/lai-se-ta-dang-an-1.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/lai-se-ta-dang-an-2.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/lai-se-ta-dang-an-jian-jie.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/a-step-by-step-guide-to-mastering-mongodb-installation-and-configuration.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/ru-he-shi-yong-udev-fei-asmlib-she-zhi-fen-qu-hua-de-linux-kuai-she-bei-bing-jiang-ta-men-fen-pei-gei-asm.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/bu-guan-bi-zhu-ku-shi-yong-rman-fu-zhi-chuang-jian-wu-li-bei-ku.html</loc>
-    <lastmod>2025-02-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/cha-kan-na-xie-cheng-xu-zhan-yong-swap.html</loc>
-    <lastmod>2025-02-04</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/zhan-zhu-zhi-sheng.html</loc>
     <lastmod>2025-02-04</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/sui-bi-20111225-yue-xia-du-si.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/sui-bi-wu-ti.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/sui-bi-20110307-zao-chun-hua-yu-tu.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/pei-zhi-solaris-yun-xu-ssh-yuan-cheng-deng-lu.html</loc>
-    <lastmod>2025-02-03</lastmod>
   </url>
   <url>
     <loc>https://www.crsky.uk/posts/xie-ding-e-de-mao.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/cheng-xu-jin-ru-dll-shi-dai.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/you-yi-chong-sheng-huo.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/shu-qi-bang-zqy-zheng-dian-nao.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/chun-jie-zhe-ji-tian.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/shu-qi-bang-wyh-zheng-dian-nao.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/chun-meng-du-hao.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/wu-ren-zhi-xiao-da-an-de-wen-ti.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/wo-de-cun-chu-xi-tong.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/kai-qi-win10-wu-ren-can-yu-xi-tong-shui-mian-chao-shi.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/kai-qi-win10-zhuo-yue-xing-neng-dian-yuan-mo-shi.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/da-xue-sheng-huo-2-qiu-ai-qiao-shang.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/chu-lun.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/da-xue-sheng-huo-1-chu-dao-nong-da.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/chi-bao-xia-xie-fang-chu-he.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/shi-yong-yum-xia-zai-rpm-bao.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/shi-yong-udev-zai-linux7-cao-zuo-xi-tong-xia-wei-ci-pan-pei-zhi-ming-cheng-v1-0.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
@@ -385,39 +161,11 @@
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/syncthing.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/sunos6-10-an-zhuang-di-san-fang-ruan-jian-can-kao.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/solaris-diao-zheng-wen-jian-xi-tong-can-kao.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/python-jian-kong-gong-wang-ip-bian-hua-fa-qq-you-jian-tong-zhi.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/common-cos-yum-repo-conf.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
-    <loc>https://www.crsky.uk/posts/linux-shang-de-luo-she-bei.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
     <loc>https://www.crsky.uk/posts/early-spring-flower-rain-scene.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/centos-yum-yuan-chang-yong-ming-ling.html</loc>
-    <lastmod>2025-02-03</lastmod>
-  </url>
-  <url>
-    <loc>https://www.crsky.uk/posts/aix-diao-zheng-wen-jian-xi-tong-can-kao-v1-4.html</loc>
     <lastmod>2025-02-03</lastmod>
   </url>
   <url>
