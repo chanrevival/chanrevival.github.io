@@ -18,7 +18,7 @@
 <h2 id="In-Conclusion"><a href="#In-Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h2><p>The essence of the Nezha 2 phenomenon is an artistic reflection and alleviation of the collective anxieties of a transforming society. At a critical juncture in the shift of economic growth paradigms, cultural products are taking on social functions that far exceed mere entertainment. The box office myth created by this film is both an emotional projection by individuals seeking certainty amid uncertainty and a rehearsal for the cultural industry’s adaptation to a new economic reality. As the cry to “defy destiny” transforms into the wisdom of “coexisting with fate,” this narrative shift may well symbolize an elevation in collective consciousness—finding possibilities within limitations and pursuing ideals while embracing reality. This may be the most precious survival philosophy in challenging times.</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Economy</category>
       </categories>
       <tags>
         <tag>Nezha 2</tag>
@@ -59,8 +59,7 @@
 <h2 id="Conclusion-There’s-No-One-Size-Fits-All-Technology—Only-the-Right-Choice"><a href="#Conclusion-There’s-No-One-Size-Fits-All-Technology—Only-the-Right-Choice" class="headerlink" title="Conclusion: There’s No One-Size-Fits-All Technology—Only the Right Choice"></a>Conclusion: There’s No One-Size-Fits-All Technology—Only the Right Choice</h2><p>In California’s sun-drenched communities, plug-in hybrids might be the optimal solution; in the frigid expanses of Alaska, Toyota’s HEVs remain an irreplaceable lifeline; and for the elites in Shanghai’s Lujiazui, the driving passion delivered by BMW’s eDrive might well justify the extra tens of thousands of dollars. As the automotive industry stands at the crossroads of a power revolution, hybrid technology proves—with its diversity and inclusiveness—that the road to carbon neutrality is never a binary choice.</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
-        <category>汽车·Automotive</category>
+        <category>Technology</category>
       </categories>
       <tags>
         <tag>汽车·Automotive</tag>
@@ -108,8 +107,7 @@
 <p>Let’s gear up, move forward boldly, and face the world with courage!<br>Any additional thoughts? Feel free to leave a comment.</p>
 ]]></content>
       <categories>
-        <category>休闲·Leisure</category>
-        <category>美文共赏·Literature</category>
+        <category>Society</category>
       </categories>
       <tags>
         <tag>休闲·Leisure</tag>
@@ -129,8 +127,7 @@
 <p>In the end, I wish the best for both of us!</p>
 ]]></content>
       <categories>
-        <category>休闲·Leisure</category>
-        <category>美文共赏·Literature</category>
+        <category>Education</category>
       </categories>
       <tags>
         <tag>休闲·Leisure</tag>
@@ -155,7 +152,7 @@
 <p>Is DeepSeek the disruptor of the AI industry or a ticking time bomb in the global race? The answer may unfold in the coming months or even years.</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Technology</category>
       </categories>
       <tags>
         <tag>GPU</tag>
@@ -311,7 +308,7 @@
 <p>Wildfires are a form of natural disaster with immeasurable consequences. To combat the frequent occurrence of wildfires, collective efforts are needed to reduce their occurrence at the source and protect the Earth’s ecological environment and human safety.  </p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Society</category>
       </categories>
       <tags>
         <tag>Wildfire</tag>
@@ -343,7 +340,7 @@
 <p>The release of the NVIDIA RTX 50 series marks the beginning of a new era in GPU performance. Its AI computing capabilities will continue to drive innovation in artificial intelligence, scientific research, and the creative industry.</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Technology</category>
       </categories>
       <tags>
         <tag>NVIDIA</tag>
@@ -368,7 +365,7 @@
 <p>在地震灾害中，保持冷静和遵循自救指南至关重要，有助于减少伤害并确保自身安全。</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Society</category>
       </categories>
       <tags>
         <tag>新闻·News</tag>
@@ -396,7 +393,7 @@
 <p>河山添锦绣，星光映万家。让我们满怀希望，迎接新的一年。祝祖国时和岁丰、繁荣昌盛！祝大家所愿皆所成，多喜乐、长安宁！</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Politics</category>
       </categories>
       <tags>
         <tag>中国</tag>
@@ -405,65 +402,6 @@
         <tag>高质量发展</tag>
         <tag>民生改善</tag>
         <tag>国际合作</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Common CentOS Yum Repository Configurations</title>
-    <url>/posts/common-cos-yum-repo-conf.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Common-CentOS-Yum-Repository-Configurations"><a href="#Common-CentOS-Yum-Repository-Configurations" class="headerlink" title="Common CentOS Yum Repository Configurations"></a>Common CentOS Yum Repository Configurations</h1><h2 id="Configuring-a-Local-Yum-Repository"><a href="#Configuring-a-Local-Yum-Repository" class="headerlink" title="Configuring a Local Yum Repository"></a>Configuring a Local Yum Repository</h2><p>Mount and Use an ISO Image Directly</p>
-<ol>
-<li>Backup the original yum repository configuration file</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Mount the ISO image</li>
-</ol>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">mount -t iso9660 -o loop /home/OracleLinux-R6-U5-<span class="built_in">Server</span>-x86_64-dvd.iso /mnt</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Edit the configuration file</li>
-</ol>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">vi /etc/yum.repos.d/<span class="keyword">local</span>.repo</span><br></pre></td></tr></table></figure>
-
-<p>The content of the configuration file is as follows:</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[local_server]</span></span><br><span class="line"><span class="attr">name</span>=local_repo</span><br><span class="line"><span class="attr">baseurl</span>=file:///mnt</span><br><span class="line"><span class="attr">enabled</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">gpgcheck</span>=<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Clear Yum Cache and Generate a New Cache</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="Configuring-a-Yum-Repository-for-China"><a href="#Configuring-a-Yum-Repository-for-China" class="headerlink" title="Configuring a Yum Repository for China"></a>Configuring a Yum Repository for China</h2><ol>
-<li>Backup the original yum repository configuration file</li>
-</ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cp -<span class="selector-tag">p</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span> /etc/yum<span class="selector-class">.repos</span>.d/CentOS-Base<span class="selector-class">.repo</span>.backup</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Download the Alibaba Cloud Yum repository configuration file</li>
-</ol>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/etc/yum</span>.repos.d<span class="regexp">/CentOS-Base.repo http:/</span><span class="regexp">/mirrors.aliyun.com/</span>repo/Centos-<span class="number">7</span>.repo</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Clear Yum cache and generate a new cache</li>
-</ol>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line">yum clean all <span class="meta">&amp;&amp; yum makecache</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Technology</category>
-        <category>OS</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>OS</tag>
-        <tag>yum</tag>
-        <tag>CentOS</tag>
       </tags>
   </entry>
   <entry>
@@ -553,7 +491,7 @@
 <p>If Congress confirms Trump has secured more than 270 electoral votes, he will officially be sworn in on January 20, 2025, to begin his four-year term. In closing, he called on the nation to set aside differences, unite for the country’s interests, and work together toward shared goals.</p>
 ]]></content>
       <categories>
-        <category>新闻·News</category>
+        <category>Politics</category>
       </categories>
       <tags>
         <tag>Trump</tag>
@@ -561,44 +499,6 @@
         <tag>Victory Speech</tag>
         <tag>Border Issues</tag>
         <tag>Golden Age</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>How to Rename a Disk Group in ASM 11gR2?</title>
-    <url>/posts/how-to-rename-a-disk-group-in-asm-11gr2.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This guide outlines the correct steps to rename an ASM disk group in the 11gR2 version. Please note that during this process, you should avoid using the renamedg command to rename the OCR&#x2F;VOTE disk groups, as it could lead to unnecessary risks.</p>
-<ol>
-<li>First, you need to unmount the disk group you want to rename (if it’s a RAC configuration, unmount it from each node):</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd umount &lt;OLD_DG_NAME&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Verify that the required disk group has been unmounted:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line">State Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line">MOUNTED NORMAL N 512 4096 1048576 32756 31828 244 15792 0 N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line">MOUNTED EXTERN N 512 4096 1048576 16378 10134 0 10134 0 N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Then, execute the rename command:</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># renamedg phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=true</span></span><br><span class="line">Parsing parameters..</span><br><span class="line">Parameters <span class="keyword">in</span> effect:</span><br><span class="line">Old DG name : &lt;OLD_DG_NAME&gt;</span><br><span class="line">New DG name : &lt;NEW_DG_NAME&gt;</span><br><span class="line">Phases :</span><br><span class="line">Phase 1</span><br><span class="line">Phase 2</span><br><span class="line">Discovery str : (null)</span><br><span class="line">Clean : TRUE</span><br><span class="line">Raw only : TRUE</span><br><span class="line">renamedg operation: phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=<span class="literal">true</span></span><br><span class="line">Executing phase 1</span><br><span class="line">Discovering the group</span><br><span class="line">Performing discovery with string:</span><br><span class="line">Identified disk ASM:/opt/oracle/extapi/64/asm/orcl/1/libasm.so:ORCL:&lt;DISK_NAME&gt;1 with disk number:0 and timestamp (32925601 -972709888)</span><br><span class="line">Identified disk ASM:/opt/oracle/extapi/64/asm/orcl/1/libasm.so:ORCL:&lt;DISK_NAME&gt;2 with disk number:1 and timestamp (32925601 -972709888)</span><br><span class="line">Identified disk ASM:/opt/oracle/extapi/64/asm/orcl/1/libasm.so:ORCL:&lt;DISK_NAME&gt;3 with disk number:2 and timestamp (32925601 -972709888)</span><br><span class="line">Checking <span class="keyword">for</span> hearbeat...</span><br><span class="line">Re-discovering the group</span><br><span class="line">Performing discovery with string:</span><br><span class="line">Identified disk ASM:/opt/oracle/extapi/64/asm/orcl/1/libasm.so:ORCL:&lt;DISK_NAME&gt;1 with disk number:0 and timestamp (32925601 -972709888)</span><br><span class="line">Identified disk ASM:/opt/oracle/extapi/64/asm/orcl/1/libasm.so:ORCL:&lt;DISK_NAME&gt;2 with disk number:1 and timestamp (32925601 -972709888)</span><br><span class="line">Identified disk ASM:/opt/oracle/extapi/64/asm/orcl/1/libasm.so:ORCL:&lt;DISK_NAME&gt;3 with disk number:2 and timestamp (32925601 -972709888)</span><br><span class="line">Checking <span class="keyword">if</span> the diskgroup is mounted</span><br><span class="line">Checking disk number:0</span><br><span class="line">Checking disk number:1</span><br><span class="line">Checking disk number:2</span><br><span class="line">Checking <span class="keyword">if</span> diskgroup is used by CSS</span><br><span class="line">Generating configuration file..</span><br><span class="line">Completed phase 1</span><br><span class="line">Executing phase 2</span><br><span class="line">Looking <span class="keyword">for</span> ORCL:&lt;DISK_NAME&gt;1</span><br><span class="line">Modifying the header</span><br><span class="line">Looking <span class="keyword">for</span> ORCL:&lt;DISK_NAME&gt;2</span><br><span class="line">Modifying the header</span><br><span class="line">Looking <span class="keyword">for</span> ORCL:&lt;DISK_NAME&gt;3</span><br><span class="line">Modifying the header</span><br><span class="line">Completed phase 2</span><br><span class="line">Terminating kgfd context 0x2af21517e0a0</span><br></pre></td></tr></table></figure>
-<p>I<br>f the above command fails and searches for the disks, you need to include the disk string. In that case, you should use:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">renamedg phase=both dgname=&lt;OLD_DG_NAME&gt; newdgname=&lt;NEW_DG_NAME&gt; verbose=<span class="literal">true</span> asm_diskstring=<span class="string">&#x27;&lt;discoverystring1&gt;&#x27;</span>,<span class="string">&#x27;&lt;discoverystring2&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Finally, mount the renamed disk group and verify that it has been successfully mounted (if it’s a RAC configuration, verify on each node):</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># asmcmd mount &lt;NEW_DG_NAME&gt;</span></span><br><span class="line"><span class="comment"># asmcmd lsdg</span></span><br><span class="line"></span><br><span class="line">State Type Rebal Sector Block AU Total_MB Free_MB Req_mir_free_MB Usable_file_MB Offline_disks Voting_files Name</span><br><span class="line"></span><br><span class="line">MOUNTED NORMAL N 512 4096 1048576 32756 31828 244 15792 0 N &lt;OLD_DG_NAME&gt;_OCR/</span><br><span class="line"></span><br><span class="line">MOUNTED EXTERN N 512 4096 1048576 24567 14267 0 14267 0 N &lt;NEW_DG_NAME&gt;/</span><br><span class="line">MOUNTED EXTERN N 512 4096 1048576 16378 10134 0 10134 0 N LOB&lt;OLD_DG_NAME&gt;/</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>科技·Tech</category>
-        <category>数据库技术·Databases</category>
-        <category>Oracle</category>
-      </categories>
-      <tags>
-        <tag>Database</tag>
-        <tag>Oracle</tag>
-        <tag>ASM</tag>
       </tags>
   </entry>
   <entry>
@@ -801,76 +701,6 @@
         <tag>双语</tag>
         <tag>宇宙</tag>
         <tag>生命</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2012-1-1 随笔</title>
-    <url>/posts/2012-1-1-sui-bi.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="2012-1-1-随笔"><a href="#2012-1-1-随笔" class="headerlink" title="2012-1-1_随笔"></a>2012-1-1_随笔</h1><p>大好的假期，闲来也无事，想着假期过后就得考试，却也没心情出去打酱油了，到底是没那么淡定。保存的喜悦是未读的CPCW2011合订本，这也算是具有我个人特色的心理平衡方法了。随手翻了几刊，2011也算发生了不少大事，比如说，拉登K.O.了。这让我纠结了一下如今的信息安全，无疑，这位大虾就是败在信息安全。当今的定位能力，一颗反辐射导弹就可以轻松跟踪，并干掉某个人。拉登当然没有那么蠢，坏事的就是那个SB信使，好好的用什么电子通讯……话说老美还真是有几把刷子，那黑鹰隐形武装直升机，竟然能突入巴基斯坦境内几百公里，而不被巴方雷达检测到。看看奥巴马观看袭击拉登的照片，打电玩似的，可见老美的信息化作战能力是多么强悍，其单兵装备的信息化水平，以及协同作战数据链都是首屈一指的。</p>
-<p>进而联想到最近IT界闹得沸沸扬扬的密码泄露事件。老实说，我是从来不相信某些所谓安全公司的云安全，云存储，云备份云云。云概念才刚刚出炉，就急着为自己的产品冠以云概念，忽悠我们纯情的消费者。这大概就是所谓的坑DADDY了。什么叫“云”：美帝那套搞定拉登的数据链才算真正意义上的云技术。不是我长它国志气，灭自己威风。人家的技术就是扎实，不像国内一些砖家级的企业，太浮躁，不踏实，满脑子商业性的水货。服务器的存储成本，维护成本，带宽成本很高的，那些以盈利为目的的企业会真的如此公益吗？我们家鱼都看不下去了，都拿头撞石头了<del>罢了</del>新年的第一天不能“愤青”，字里行间要和谐，要有爱，不解释<del>你懂的</del></p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Essays, December 25, 2011 — Alone Thinking Under the Moon</title>
-    <url>/posts/alone-thinking-under-the-moon.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Essays-December-25-2011-—-Alone-Thinking-Under-the-Moon"><a href="#Essays-December-25-2011-—-Alone-Thinking-Under-the-Moon" class="headerlink" title="Essays, December 25, 2011 — Alone Thinking Under the Moon"></a>Essays, December 25, 2011 — Alone Thinking Under the Moon</h1><p>Tonight, the moonlight is especially bright,<br>I sit alone, quietly in deep thought.<br>Brewing a pot of tea, the fragrance lingers on my hands,<br>When will I be able to gather the moon and dream of returning to my hometown?</p>
-<p>The faint starlight makes the air feel slightly cool,<br>Who would wish to drape the cloak of dreams over me?<br>What does the fairy in the moon look like,<br>And what scene does the dawn moon and gentle breeze leave behind?</p>
-<p>You once softly whispered in my ear,<br>That on the other side of the mountain lies a beautiful dream.<br>As time passes, everything changes,<br>But faith remains unchanged, soaring eternally.</p>
-<p>Yesterday’s regrets are today’s dreams,<br>Can they courageously and freely soar?<br>The musings of one, the thoughts of one,<br>Finally lead me into a dream of endless imagination.</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Essays, March 7, 2011 — Early Spring Flower Rain Scene</title>
-    <url>/posts/early-spring-flower-rain-scene.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Essays-March-7-2011-—-Early-Spring-Flower-Rain-Scene"><a href="#Essays-March-7-2011-—-Early-Spring-Flower-Rain-Scene" class="headerlink" title="Essays, March 7, 2011 — Early Spring Flower Rain Scene"></a>Essays, March 7, 2011 — Early Spring Flower Rain Scene</h1><p>Essays, March 7, 2011 — Early Spring Flower Rain Scene</p>
-<p>The campus after the rain is refreshing. The water droplets have washed away the dust from the leaves, and each green leaf seems to have been carefully cleaned.<br>The mud and sand on the blue-and-white marble have also been washed away, gleaming and reflecting the newly bloomed flowers along the path.</p>
-<p>The campus after the rain is beautiful. The raindrops have awakened the flowers in the bushes, and like a busy market, they bloom all at once.<br>The gentle drizzle, the shimmering lake, the clear bird calls, and the soft whispers of the flowers.</p>
-<p>The campus after the rain has a coolness to it. Passersby speak little, perhaps like me, intoxicated by this early spring flower rain scene.<br>I walk on, gazing ahead, hoping that there, as here, the scenery is as simple and beautiful.</p>
-<p>Written by the side of Guanyin Lake, drafted in the North Garden<br>March 7, 2011</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Written During the Spring Festival</title>
-    <url>/posts/write-during-spring-festival.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Written-During-the-Spring-Festival"><a href="#Written-During-the-Spring-Festival" class="headerlink" title="Written During the Spring Festival"></a>Written During the Spring Festival</h1><p>On a moonlit night,<br>I lean alone by the small western window.<br>Suddenly, the sound of firecrackers rises,<br>And I realize the New Year has arrived.</p>
-<p>The world is quiet,<br>Yet I still remember the joys of the past.<br>When will I return to the dreams of childhood,<br>But alas, here I am, in the turmoil of life.</p>
-<p>— At Hongqi New Village<br>January 19, 2009<br>Reflections under the Moon</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>There is a way of life like this</title>
-    <url>/posts/there-s-a-way-of-life.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="There-is-a-way-of-life-like-this"><a href="#There-is-a-way-of-life-like-this" class="headerlink" title="There is a way of life like this"></a>There is a way of life like this</h1><p>There is a way of life like this:<br>Holding my beloved ultra-portable laptop, I leisurely lie on the hammock on the balcony. The warm sunlight, refreshing tea, and the subtle scent of fresh grass—yes, this is life…</p>
-]]></content>
-      <categories>
-        <category>Essays</category>
-      </categories>
-      <tags>
-        <tag>Essays</tag>
       </tags>
   </entry>
 </search>
