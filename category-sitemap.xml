@@ -9,8 +9,15 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/Health/</loc>
+        <lastmod>2025-06-10T03:17:14.543Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/Politics/</loc>
-        <lastmod>2025-06-05T07:51:30.955Z</lastmod>
+        <lastmod>2025-06-10T03:06:06.123Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
