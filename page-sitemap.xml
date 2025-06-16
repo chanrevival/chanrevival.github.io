@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>https://www.crsky.uk/privacy/</loc>
+        <lastmod>2025-06-16T08:19:09.211Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://www.crsky.uk/education/</loc>
         <lastmod>2025-05-22T06:19:54.854Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -91,15 +100,6 @@
     
     
     <url>
-        <loc>https://www.crsky.uk/privacy/</loc>
-        <lastmod>2025-03-14T04:49:19.484Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://www.crsky.uk/contact/</loc>
         <lastmod>2025-03-14T04:29:51.386Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -145,7 +145,7 @@
     
     
     <url>
-        <loc>https://www.crsky.uk/news/</loc>
+        <loc>https://www.crsky.uk/news%2520-%2520%25E5%2589%25AF%25E6%259C%25AC%2520(7)%2520-%2520%25E5%2589%25AF%25E6%259C%25AC/</loc>
         <lastmod>2025-02-17T14:55:17.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -154,7 +154,7 @@
     
     
     <url>
-        <loc>https://www.crsky.uk/news%2520-%2520%25E5%2589%25AF%25E6%259C%25AC%2520(7)%2520-%2520%25E5%2589%25AF%25E6%259C%25AC/</loc>
+        <loc>https://www.crsky.uk/news/</loc>
         <lastmod>2025-02-17T14:55:17.539Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
