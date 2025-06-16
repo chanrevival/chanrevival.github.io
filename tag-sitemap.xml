@@ -164,13 +164,6 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/tags/GPU/</loc>
-        <lastmod>2025-05-22T06:24:16.514Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/tags/AI/</loc>
         <lastmod>2025-05-22T06:24:16.514Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -179,6 +172,13 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/DeepSeek/</loc>
+        <lastmod>2025-05-22T06:24:16.514Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/GPU/</loc>
         <lastmod>2025-05-22T06:24:16.514Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -213,6 +213,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/%E5%9C%B0%E9%9C%87/</loc>
+        <lastmod>2025-05-22T06:23:38.538Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E8%A5%BF%E8%97%8F/</loc>
         <lastmod>2025-05-22T06:23:38.538Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -221,13 +228,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/%E6%96%B0%E9%97%BB%C2%B7News/</loc>
-        <lastmod>2025-05-22T06:23:38.538Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%9C%B0%E9%9C%87/</loc>
         <lastmod>2025-05-22T06:23:38.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
