@@ -79,6 +79,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
+        <lastmod>2025-03-19T13:01:58.067Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E5%259C%25B0%25E5%25A4%2596%25E6%2596%2587%25E6%2598%258E%25C2%25B7Exoplanets/</loc>
         <lastmod>2025-02-21T05:43:22.866Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -88,13 +95,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/</loc>
         <lastmod>2025-02-21T05:43:22.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%2596%25B0%25E9%2597%25BB%25C2%25B7News/</loc>
-        <lastmod>2025-02-15T14:40:08.059Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
