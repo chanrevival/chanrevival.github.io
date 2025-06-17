@@ -3,6 +3,48 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/tags/Career/</loc>
+        <lastmod>2025-06-17T01:35:47.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/PUA/</loc>
+        <lastmod>2025-06-17T01:35:47.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/Society/</loc>
+        <lastmod>2025-06-17T01:35:47.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E6%9D%8E%E5%A4%9A%E6%85%A7/</loc>
+        <lastmod>2025-06-16T09:53:46.164Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E5%BD%B1%E8%A7%86%E8%89%BA%E6%9C%AF%C2%B7Cinema/</loc>
+        <lastmod>2025-06-16T09:53:46.164Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/Culture/</loc>
+        <lastmod>2025-06-16T09:53:46.164Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
         <lastmod>2025-06-16T09:49:21.098Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -193,13 +235,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/Reflections/</loc>
-        <lastmod>2025-05-22T06:24:59.578Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/Society/</loc>
         <lastmod>2025-05-22T06:24:59.578Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -411,20 +446,6 @@
     <url>
         <loc>https://www.crsky.uk/tags/Trump/</loc>
         <lastmod>2025-05-22T03:21:54.623Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%9D%8E%E5%A4%9A%E6%85%A7/</loc>
-        <lastmod>2025-03-25T15:17:08.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%BD%B1%E8%A7%86%E8%89%BA%E6%9C%AF%C2%B7Cinema/</loc>
-        <lastmod>2025-03-25T15:17:08.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

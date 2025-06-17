@@ -9,6 +9,20 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/Society/</loc>
+        <lastmod>2025-06-17T01:35:47.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/categories/Culture/</loc>
+        <lastmod>2025-06-16T09:53:46.164Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/%25E6%258A%2580%25E6%259C%25AF/</loc>
         <lastmod>2025-06-16T09:49:21.098Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -44,22 +58,8 @@
     </url>
 
     <url>
-        <loc>https://www.crsky.uk/categories/Culture/</loc>
-        <lastmod>2025-05-23T09:03:11.181Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://www.crsky.uk/categories/Education/</loc>
         <lastmod>2025-05-22T06:26:00.296Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/Society/</loc>
-        <lastmod>2025-05-22T06:25:37.657Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -74,20 +74,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/Technology/</loc>
         <lastmod>2025-05-22T06:24:31.026Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/%25E5%25BD%25B1%25E8%25A7%2586%25E8%2589%25BA%25E6%259C%25AF%25C2%25B7Cinema/</loc>
-        <lastmod>2025-03-25T15:17:08.355Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E4%25BC%2591%25E9%2597%25B2%25C2%25B7Leisure/</loc>
-        <lastmod>2025-03-25T15:17:08.355Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
