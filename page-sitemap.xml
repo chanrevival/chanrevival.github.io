@@ -10,6 +10,15 @@
     
     
     <url>
+        <loc>https://www.crsky.uk/voice/</loc>
+        <lastmod>2025-06-17T17:05:03.693Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://www.crsky.uk/feedback/</loc>
         <lastmod>2025-06-17T16:59:04.206Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -183,15 +192,6 @@
     <url>
         <loc>https://www.crsky.uk/music/%25E9%2587%2591%25E6%25B5%25B7%25E5%25BF%2583_%25E9%2582%25A3%25E4%25B9%2588%25E9%25AA%2584%25E5%2582%25B2.html</loc>
         <lastmod>2025-01-23T09:30:31.227Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://www.crsky.uk/voice/</loc>
-        <lastmod>2025-01-22T14:44:09.053Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
