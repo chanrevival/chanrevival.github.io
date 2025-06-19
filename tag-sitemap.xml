@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/tags/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/</loc>
+        <lastmod>2025-06-18T07:53:50.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
+        <lastmod>2025-06-18T07:53:50.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E5%8F%8C%E8%AF%AD/</loc>
+        <lastmod>2025-06-18T07:53:50.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/Career/</loc>
         <lastmod>2025-06-17T01:35:47.086Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -593,27 +614,6 @@
     <url>
         <loc>https://www.crsky.uk/tags/Virtual-Reality/</loc>
         <lastmod>2025-02-10T15:25:25.327Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84%E7%8C%AB/</loc>
-        <lastmod>2025-02-03T14:52:35.407Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6/</loc>
-        <lastmod>2025-02-03T14:52:35.407Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%8F%8C%E8%AF%AD/</loc>
-        <lastmod>2025-02-03T14:52:35.407Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

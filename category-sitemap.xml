@@ -9,6 +9,20 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E5%25AD%25A6%25E6%258E%25A2%25E7%25B4%25A2/%25E9%2587%258F%25E5%25AD%2590%25E5%258A%259B%25E5%25AD%25A6/</loc>
+        <lastmod>2025-06-18T07:53:50.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E5%25AD%25A6%25E6%258E%25A2%25E7%25B4%25A2/</loc>
+        <lastmod>2025-06-18T07:53:50.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/Society/</loc>
         <lastmod>2025-06-17T01:35:47.086Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -102,20 +116,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E6%258A%2580%25C2%25B7Tech/%25E4%25BA%25BA%25E5%25B7%25A5%25E6%2599%25BA%25E8%2583%25BD%25C2%25B7AI/</loc>
         <lastmod>2025-02-10T15:25:25.327Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E5%25AD%25A6%25E6%258E%25A2%25E7%25B4%25A2/%25E9%2587%258F%25E5%25AD%2590%25E5%258A%259B%25E5%25AD%25A6/</loc>
-        <lastmod>2025-02-03T14:52:35.407Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E5%25AD%25A6%25E6%258E%25A2%25E7%25B4%25A2/</loc>
-        <lastmod>2025-02-03T14:52:35.407Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
