@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/%25E6%2594%25BF%25E6%25B2%25BB/</loc>
+        <lastmod>2025-06-20T01:53:07.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/%25E7%25A7%2591%25E5%25AD%25A6%25E6%258E%25A2%25E7%25B4%25A2/%25E9%2587%258F%25E5%25AD%2590%25E5%258A%259B%25E5%25AD%25A6/</loc>
         <lastmod>2025-06-18T07:53:50.157Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -46,13 +53,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/%25E7%25BB%258F%25E6%25B5%258E/</loc>
         <lastmod>2025-06-16T09:48:52.354Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E6%2594%25BF%25E6%25B2%25BB/</loc>
-        <lastmod>2025-06-16T09:41:44.346Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
