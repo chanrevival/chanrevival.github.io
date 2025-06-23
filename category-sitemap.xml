@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/Health/</loc>
+        <lastmod>2025-06-23T07:10:48.115Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/%25E6%2594%25BF%25E6%25B2%25BB/</loc>
         <lastmod>2025-06-23T07:06:48.162Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -67,13 +74,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/%25E7%25BB%258F%25E6%25B5%258E/</loc>
         <lastmod>2025-06-16T09:48:52.354Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/Health/</loc>
-        <lastmod>2025-06-16T09:39:11.550Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
