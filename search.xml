@@ -5,11 +5,24 @@
     <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250702-us-stablecoins-arrive-ushering-in-a-new-era-of-global-finance.html">英文</a> </p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
-<h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
+<h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
 <div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
     <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
   </div>
-]]></content>
+<p>电机和控制器就不更换了，做了一些基础测试，极限速度40公里每小时，40安的电流。市区内通勤够用了。控制器如下图。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
+  </div>
+<p>动力电池组用定制的不锈钢体装配，内部加上防爆抗震棉。装车图如下。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
+  </div>
+<p>最后就是动力电池组保护板的参数调教了，初始app界面如下。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="保护板参数调校"><a href="#保护板参数调校" class="headerlink" title="保护板参数调校"></a>保护板参数调校</h2>]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -328,6 +341,78 @@
       </tags>
   </entry>
   <entry>
+    <title>歼-10C击落阵风 中国武器改写南亚力量格局</title>
+    <url>/posts/20250512-jian-10c-ji-luo-zhen-feng-zhong-guo-wu-qi-gai-xie-nan-ya-li-liang-ge-ju.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250512-j10c-shoots-down-rafale-chinese-weapons-reshape-south-asian-power-dynamics.html">英文</a> </p>
+<h2 id="冲突始末"><a href="#冲突始末" class="headerlink" title="冲突始末"></a>冲突始末</h2><ul>
+<li><p>2025年4月22日<br>印控克什米尔帕哈尔加姆（Pahalgam）地区发生针对印度游客的恐怖袭击，造成26名印度人员死亡。印度政府迅速指控得到巴基斯坦支持的“抵抗阵线”（The Resistance Front, TRF）是幕后策划者，巴方则坚决否认一切指责。</p>
+</li>
+<li><p>2025年4月24日<br>印度总理莫迪政府以此为由，宣布暂停具有半个世纪历史的《印度河用水条约》，切断了流入巴基斯坦的60%农业用水；同时关闭两国边境、驱逐巴方外交人员。巴基斯坦方面将此举斥为“水恐怖主义”，并对印度关闭领空、暂停双边贸易以示反制。</p>
+</li>
+<li><p>2025年5月7日：辛杜尔行动<br>印度发起“辛杜尔行动”（Operation Sindhur），对巴控克什米尔及巴基斯坦本土共9个军事目标发射巡航导弹与空对地导弹。巴基斯坦空军在当地时间当天迅速反击，宣称击落印度6架战机（其中包括3架法国“阵风” Rafale、1架苏-30MKI、1架米格-29），并成功摧毁一处配备俄制S-400防空系统的指挥部，且自身无一伤亡。</p>
+</li>
+<li><p>空战亮点<br>巴军歼-10C战机配备国产超视距PL-15E空空导弹，在ZDK-03预警机指挥下，对印度战机进行远距离锁定和一击必中。<br>巴空军通过预警 – 指挥 – 作战平台的数据链实时共享，形成“侦察—控制—打击”闭环。印军则因多国装备兼容性差、预警机数量稀少，未能有效协同反制。</p>
+</li>
+<li><p>2025年5月10–13日：多国斡旋与停火<br>在中国、美国等大国的紧急外交斡旋下，双方于5月13日宣布停火。印方因“阵风”战机至少损失4架、外资紧急撤离达47亿美元、卢比汇率一度跌至1:95的经济冲击，不得不回到谈判桌；巴方则在重启《印度河用水条约》的前提下，为下一步外交博弈赢得了主动。</p>
+</li>
+</ul>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250620.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="巴基斯坦以弱胜强-中式体系作战的胜利"><a href="#巴基斯坦以弱胜强-中式体系作战的胜利" class="headerlink" title="巴基斯坦以弱胜强 中式体系作战的胜利"></a>巴基斯坦以弱胜强 中式体系作战的胜利</h2><p>尽管印度军费是巴方5倍（2025年达840亿美元），却遭遇“体系性溃败”，关键原因如下：</p>
+<table>
+<thead>
+<tr>
+<th>制胜关键</th>
+<th>巴基斯坦优势</th>
+<th>印度短板</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>装备质量</td>
+<td>歼-10C战机搭载PL-15E导弹，射程超150公里，具有高灵敏度目标识别能力</td>
+<td>识别能力	多国装备混用，流星导弹射程仅120公里，兼容性差</td>
+</tr>
+<tr>
+<td>作战体系</td>
+<td>ZDK-03预警机 + 红旗-9B地空导弹 + 战机数据链，形成全天候侦控网</td>
+<td>S-400部署匮乏演练，对地面配合与空中联动不足</td>
+</tr>
+<tr>
+<td>战术原则</td>
+<td>“有限反击”精准打击已开火敌机，控制冲突范围内升级风险</td>
+<td>过度依赖数量优势，战术轻敌，训练和联合演习不足</td>
+</tr>
+<tr>
+<td>后勤与情报</td>
+<td>获得全天候后勤与情报支持，无政治附加条款限制</td>
+<td>供应受制于西方禁运条款，情报共享渠道不畅</td>
+</tr>
+</tbody></table>
+<p>核心洞见：将预警、电侦、火力高度融合的作战体系，才是现代空战胜负的关键；单纯依靠“单兵利器”或数量优势，已经无法适应信息化战争的节奏。</p>
+<h2 id="中式武器与中国国际地位的跃升"><a href="#中式武器与中国国际地位的跃升" class="headerlink" title="中式武器与中国国际地位的跃升"></a>中式武器与中国国际地位的跃升</h2><ul>
+<li>破除“中式武器数据造假”论<br>实战证明，国产歼-10C在空战中全面压制欧洲主流四代半战机“阵风”，PL-15E导弹的命中率和动能管理均超越欧美同类产品。</li>
+<li>极高的性价比<br>相同作战效能下，中式装备造价仅为欧美1&#x2F;3左右。沙特、土耳其等国加速磋商采购歼-10C、红旗-9防空系统。</li>
+<li>国际调停中的“共同邻国”角色<br>冲突期间，中国以“印巴共同邻国”身份发起多轮外交喊话，呼吁双方克制，最终为停火创造条件。中国中立而不失影响力的立场，进一步巩固了其在南亚与中东地区的战略话语权。</li>
+</ul>
+<h2 id="全球反应与未来走向"><a href="#全球反应与未来走向" class="headerlink" title="全球反应与未来走向"></a>全球反应与未来走向</h2><ul>
+<li>西方阵营<br>北约内部评估报告指出：“中式体系作战模式已颠覆传统空战思维”，法国达索股价单日大跌12%；美国国防部拟重新评估对华高技术封锁清单。</li>
+<li>全球南方国家<br>马来西亚、印度尼西亚表态将重新审视国防采购计划；沙特阿拉伯启动“歼-10C+预警机”组合谈判，以期替代F‑15系列。</li>
+<li>俄罗斯<br>苏-30、S-400的实战表现被认为“未达预期”，俄方军贸订单受到冲击，印度或缩减未来订单规模。</li>
+</ul>
+<p>展望未来：<br>此次印巴冲突不仅重塑了南亚军事力量版图，也为世界各国提供了新的安全方案范本——重视体系化协同作战、坚持有限反击以避免大规模冲突升级，以及借助中立调停策略提升国家软实力。随着更多国家对中式武器和整体解决方案的认可，中国或将从传统武器供应国，升级为全球安全合作的重要伙伴。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>现代战争的胜负，不再仅由某一款“明星战机”决定，而是依赖于预警、电侦、指挥与火力的深度整合。印巴冲突中，巴基斯坦在“弱对强”博弈中所展现出的体系制胜与有限反击理念，正是中国推动的“新安全观”在实践中的一次检验与宣示。未来，随着更多国家采纳中式武器与作战模式，全球军事平衡或将迎来新的再分配。</p>
+]]></content>
+      <categories>
+        <category>政治</category>
+      </categories>
+      <tags>
+        <tag>政治</tag>
+        <tag>印巴冲突</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>J10C Shoots Down Rafale Chinese Weapons Reshape South Asian Power Dynamics</title>
     <url>/posts/20250512-j10c-shoots-down-rafale-chinese-weapons-reshape-south-asian-power-dynamics.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250512-jian-10c-ji-luo-zhen-feng-zhong-guo-wu-qi-gai-xie-nan-ya-li-liang-ge-ju.html">中文</a></p>
@@ -400,78 +485,6 @@
       <tags>
         <tag>politics</tag>
         <tag>India-Pakistan conflict</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>歼-10C击落阵风 中国武器改写南亚力量格局</title>
-    <url>/posts/20250512-jian-10c-ji-luo-zhen-feng-zhong-guo-wu-qi-gai-xie-nan-ya-li-liang-ge-ju.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250512-j10c-shoots-down-rafale-chinese-weapons-reshape-south-asian-power-dynamics.html">英文</a> </p>
-<h2 id="冲突始末"><a href="#冲突始末" class="headerlink" title="冲突始末"></a>冲突始末</h2><ul>
-<li><p>2025年4月22日<br>印控克什米尔帕哈尔加姆（Pahalgam）地区发生针对印度游客的恐怖袭击，造成26名印度人员死亡。印度政府迅速指控得到巴基斯坦支持的“抵抗阵线”（The Resistance Front, TRF）是幕后策划者，巴方则坚决否认一切指责。</p>
-</li>
-<li><p>2025年4月24日<br>印度总理莫迪政府以此为由，宣布暂停具有半个世纪历史的《印度河用水条约》，切断了流入巴基斯坦的60%农业用水；同时关闭两国边境、驱逐巴方外交人员。巴基斯坦方面将此举斥为“水恐怖主义”，并对印度关闭领空、暂停双边贸易以示反制。</p>
-</li>
-<li><p>2025年5月7日：辛杜尔行动<br>印度发起“辛杜尔行动”（Operation Sindhur），对巴控克什米尔及巴基斯坦本土共9个军事目标发射巡航导弹与空对地导弹。巴基斯坦空军在当地时间当天迅速反击，宣称击落印度6架战机（其中包括3架法国“阵风” Rafale、1架苏-30MKI、1架米格-29），并成功摧毁一处配备俄制S-400防空系统的指挥部，且自身无一伤亡。</p>
-</li>
-<li><p>空战亮点<br>巴军歼-10C战机配备国产超视距PL-15E空空导弹，在ZDK-03预警机指挥下，对印度战机进行远距离锁定和一击必中。<br>巴空军通过预警 – 指挥 – 作战平台的数据链实时共享，形成“侦察—控制—打击”闭环。印军则因多国装备兼容性差、预警机数量稀少，未能有效协同反制。</p>
-</li>
-<li><p>2025年5月10–13日：多国斡旋与停火<br>在中国、美国等大国的紧急外交斡旋下，双方于5月13日宣布停火。印方因“阵风”战机至少损失4架、外资紧急撤离达47亿美元、卢比汇率一度跌至1:95的经济冲击，不得不回到谈判桌；巴方则在重启《印度河用水条约》的前提下，为下一步外交博弈赢得了主动。</p>
-</li>
-</ul>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250620.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="巴基斯坦以弱胜强-中式体系作战的胜利"><a href="#巴基斯坦以弱胜强-中式体系作战的胜利" class="headerlink" title="巴基斯坦以弱胜强 中式体系作战的胜利"></a>巴基斯坦以弱胜强 中式体系作战的胜利</h2><p>尽管印度军费是巴方5倍（2025年达840亿美元），却遭遇“体系性溃败”，关键原因如下：</p>
-<table>
-<thead>
-<tr>
-<th>制胜关键</th>
-<th>巴基斯坦优势</th>
-<th>印度短板</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>装备质量</td>
-<td>歼-10C战机搭载PL-15E导弹，射程超150公里，具有高灵敏度目标识别能力</td>
-<td>识别能力	多国装备混用，流星导弹射程仅120公里，兼容性差</td>
-</tr>
-<tr>
-<td>作战体系</td>
-<td>ZDK-03预警机 + 红旗-9B地空导弹 + 战机数据链，形成全天候侦控网</td>
-<td>S-400部署匮乏演练，对地面配合与空中联动不足</td>
-</tr>
-<tr>
-<td>战术原则</td>
-<td>“有限反击”精准打击已开火敌机，控制冲突范围内升级风险</td>
-<td>过度依赖数量优势，战术轻敌，训练和联合演习不足</td>
-</tr>
-<tr>
-<td>后勤与情报</td>
-<td>获得全天候后勤与情报支持，无政治附加条款限制</td>
-<td>供应受制于西方禁运条款，情报共享渠道不畅</td>
-</tr>
-</tbody></table>
-<p>核心洞见：将预警、电侦、火力高度融合的作战体系，才是现代空战胜负的关键；单纯依靠“单兵利器”或数量优势，已经无法适应信息化战争的节奏。</p>
-<h2 id="中式武器与中国国际地位的跃升"><a href="#中式武器与中国国际地位的跃升" class="headerlink" title="中式武器与中国国际地位的跃升"></a>中式武器与中国国际地位的跃升</h2><ul>
-<li>破除“中式武器数据造假”论<br>实战证明，国产歼-10C在空战中全面压制欧洲主流四代半战机“阵风”，PL-15E导弹的命中率和动能管理均超越欧美同类产品。</li>
-<li>极高的性价比<br>相同作战效能下，中式装备造价仅为欧美1&#x2F;3左右。沙特、土耳其等国加速磋商采购歼-10C、红旗-9防空系统。</li>
-<li>国际调停中的“共同邻国”角色<br>冲突期间，中国以“印巴共同邻国”身份发起多轮外交喊话，呼吁双方克制，最终为停火创造条件。中国中立而不失影响力的立场，进一步巩固了其在南亚与中东地区的战略话语权。</li>
-</ul>
-<h2 id="全球反应与未来走向"><a href="#全球反应与未来走向" class="headerlink" title="全球反应与未来走向"></a>全球反应与未来走向</h2><ul>
-<li>西方阵营<br>北约内部评估报告指出：“中式体系作战模式已颠覆传统空战思维”，法国达索股价单日大跌12%；美国国防部拟重新评估对华高技术封锁清单。</li>
-<li>全球南方国家<br>马来西亚、印度尼西亚表态将重新审视国防采购计划；沙特阿拉伯启动“歼-10C+预警机”组合谈判，以期替代F‑15系列。</li>
-<li>俄罗斯<br>苏-30、S-400的实战表现被认为“未达预期”，俄方军贸订单受到冲击，印度或缩减未来订单规模。</li>
-</ul>
-<p>展望未来：<br>此次印巴冲突不仅重塑了南亚军事力量版图，也为世界各国提供了新的安全方案范本——重视体系化协同作战、坚持有限反击以避免大规模冲突升级，以及借助中立调停策略提升国家软实力。随着更多国家对中式武器和整体解决方案的认可，中国或将从传统武器供应国，升级为全球安全合作的重要伙伴。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>现代战争的胜负，不再仅由某一款“明星战机”决定，而是依赖于预警、电侦、指挥与火力的深度整合。印巴冲突中，巴基斯坦在“弱对强”博弈中所展现出的体系制胜与有限反击理念，正是中国推动的“新安全观”在实践中的一次检验与宣示。未来，随着更多国家采纳中式武器与作战模式，全球军事平衡或将迎来新的再分配。</p>
-]]></content>
-      <categories>
-        <category>政治</category>
-      </categories>
-      <tags>
-        <tag>政治</tag>
-        <tag>印巴冲突</tag>
       </tags>
   </entry>
   <entry>
@@ -831,11 +844,11 @@
         <category>新闻·News</category>
       </categories>
       <tags>
-        <tag>地震</tag>
         <tag>宫崎县</tag>
         <tag>强震</tag>
         <tag>海啸</tag>
         <tag>震感</tag>
+        <tag>地震</tag>
         <tag>日本</tag>
       </tags>
   </entry>
@@ -949,9 +962,9 @@
         <category>Society</category>
       </categories>
       <tags>
+        <tag>地震</tag>
         <tag>新闻·News</tag>
         <tag>西藏</tag>
-        <tag>地震</tag>
       </tags>
   </entry>
   <entry>
