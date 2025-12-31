@@ -3,7 +3,7 @@
   <entry>
     <title></title>
     <url>/posts/date.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>2025-12-31 15:37:37<br>2025-12-31 15:38:01</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>2025-12-31 15:37:37<br>2025-12-31 15:38:01<br>2025-12-31 15:39:01<br>2025-12-31 15:40:01</p>
 ]]></content>
   </entry>
   <entry>
@@ -96,73 +96,6 @@
   </entry>
   <entry>
     <title>自己动手组建电动车动力系统及使用报告</title>
-    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
-<h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
-  </div>
-<p>电机和控制器就不更换了，做了一些基础测试，极限速度40公里每小时，40安的电流。市区内通勤够用了。控制器如下图。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
-  </div>
-<p>动力电池组用定制的不锈钢体装配，内部加上防爆抗震棉。装车图如下。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
-  </div>
-<p>最后就是动力电池组保护板的参数调教了，初始app界面如下。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="玩转动力电池保护板"><a href="#玩转动力电池保护板" class="headerlink" title="玩转动力电池保护板"></a>玩转动力电池保护板</h2><h3 id="保护板信息"><a href="#保护板信息" class="headerlink" title="保护板信息"></a>保护板信息</h3><ul>
-<li><p>电池功率<br>表示当前电池输出或者输入的总功率，其值是当前电池电压和电池电流绝对值之积，单位：W。</p>
-</li>
-<li><p>单体平均<br>表示当前电池的单体平均电压，单位：V。</p>
-</li>
-<li><p>电池容量<br>表示当前保护板通过高精度 SOC 所计算得到的电池实际容量，单位为：AH。（该值需要电池做一个完整的放电和充电循环后才更新）。</p>
-</li>
-<li><p>最大压差<br>最大压差表示当前整组电池，最高电芯电压和最低电芯电压的差值，单位：V。</p>
-</li>
-<li><p>均衡电流<br>当保护板开启均衡功能，且达到均衡条件时，均衡电流显示区域实时显示均衡电流，单位：A。<br>当均衡进行时，实时状态的单体电压显示区域，蓝色代表放电的电池，红色代表被充电的电池。均衡电流负电流表示电池在放电，此时蓝色闪烁，均衡电流正电流表示在电池在充电，此时红色闪烁。<br>保护板采用主动均衡技术，均衡的原理是从高电压的电芯取电，存放到保护板，然后再放给低电压的电芯。</p>
-</li>
-</ul>
-<h3 id="保护板参数调校"><a href="#保护板参数调校" class="headerlink" title="保护板参数调校"></a>保护板参数调校</h3><p><strong>保护板的参数非常多，且配置不当有损坏电池的风险，因此如果不是确切明白参数意义，不要随便调整！</strong><br>以下列出最重要的参数，及相关作用。</p>
-<ul>
-<li><p>单体数量<br>单体数量表示当前电池的电芯数量，在使用之前，请准确的设定该值，否则保护板不能正常工作。</p>
-</li>
-<li><p>触发均衡压差<br>在均衡开关打开的情况下，当电池组最大压差超过该值，且当前单体电压超过均衡起始电压，均衡开始，直到压差低于该值或单体电压低于均衡起始电压时均衡结束。比如设定均衡触发压差为 0.01V，当电池组压差大于 0.01V 时开始均衡，低于 0.01V 时结束均衡。（建议 50AH 以上的电池设定均衡触发压差为 0.005V，50AH 以下的电池设定触发均衡压差为0.01V）。</p>
-</li>
-<li><p>均衡起始电压<br>均衡起始电压用来控制均衡的电压阶段，只有当单体电压超过该值，且电池组最大压差超过均衡触发压差，均衡才会被触发。</p>
-</li>
-<li><p>“单体过充电压”、“单体过充恢复”<br>“单体过充电压”是指电芯的饱和电压，只要电池组中任一单体电压超过该值时，产生‘单体过充报警’，同时保护板关闭充电 MOS，此时电池不能充电，只能放电。当报警产生以后，只有全部单体电压值低于“单体过充恢复”的值以后，保护板解除‘单体过充报警’，同时开启充电开关。</p>
-</li>
-<li><p>“单体欠压保护”、“单体欠压恢复”<br>“单体欠压保护”是指电芯的截止电压，只要电池组中任一单体电压低于该值时，产生‘单体欠压报警’，同时保护板关闭放电 MOS，此时电池不能放电，只能充电。当报警产生以后，只有全部单体电压值超过“单体电压恢复”的值以后，保护板解除‘单体欠压报警’，同时开启放电 MOS。</p>
-</li>
-<li><p>推荐充电电压<br>“推荐充电电压”是指 BMS 为了最佳电池性能和安全而建议的充电电压范围或具体数值。这个推荐值是根据电池类型、制造商的建议、BMS 设计的特性以及充电器的特性来确定的。</p>
-</li>
-<li><p>“SOC-100%电压”、“SOC-0%电压”<br>“SOC-100%电压”是指电芯 SOC 值为 100%时的电压，该值略低于单体过充电压，当电芯电压大于或等于该值时，即认为该电芯为满电状态；“SOC-0%电压”是指电芯 SOC值为 0%时的电压，该值略高于单体欠压保护电压，当电芯电压小于或等于该值时，即认为该电芯电量为 0。</p>
-</li>
-<li><p>自动关机电压<br>自动关机电压表示保护板工作的最低电压，当电池组中最高单体的电压低于该值时，保护板关闭。该值必须低于“单体欠压保护”。</p>
-</li>
-</ul>
-<h3 id="本人配置的参数值"><a href="#本人配置的参数值" class="headerlink" title="本人配置的参数值"></a>本人配置的参数值</h3><p>（欢迎交流，持续更新！）</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>新能源</tag>
-        <tag>DIY</tag>
-        <tag>技术</tag>
-        <tag>电动车</tag>
-        <tag>电池</tag>
-        <tag>动力系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自己动手组建电动车动力系统及使用报告</title>
     <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao-1.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
@@ -229,36 +162,70 @@
       </tags>
   </entry>
   <entry>
-    <title>美国“稳定币”来袭 开启全球金融新玩法</title>
-    <url>/posts/20250702-mei-guo-wen-ding-bi-lai-xi-kai-qi-quan-qiu-jin-rong-xin-wan-fa.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250702-us-stablecoins-arrive-ushering-in-a-new-era-of-global-finance.html">英文</a> </p>
-<h2 id="何为“稳定币”？"><a href="#何为“稳定币”？" class="headerlink" title="何为“稳定币”？"></a>何为“稳定币”？</h2><p>稳定币（Stablecoin）是一类加密数字货币，其价值通常锚定于某种法定货币（如美元、欧元）或其他可度量的金融资产（如现金、政府债券）。与比特币（Bitcoin）、以太坊（Ethereum）等价格波动剧烈的加密资产不同，稳定币借助抵押资产或算法机制，力求使币值保持相对稳定，从而兼具加密货币的可编程性和法币的价值稳定性。</p>
+    <title>自己动手组建电动车动力系统及使用报告</title>
+    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
+<h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
 <div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250702.jpg","alt":"","title":""}]</div>
+    <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
+  </div>
+<p>电机和控制器就不更换了，做了一些基础测试，极限速度40公里每小时，40安的电流。市区内通勤够用了。控制器如下图。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
+  </div>
+<p>动力电池组用定制的不锈钢体装配，内部加上防爆抗震棉。装车图如下。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
+  </div>
+<p>最后就是动力电池组保护板的参数调教了，初始app界面如下。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
   </div>
 
-<p>按抵押方式，稳定币可分为三大类：</p>
-<ul>
-<li>法币抵押型<br>发行机构持有与发行量等值的法币储备，用户可随时以1:1比例兑换。例如，USDC 由美国合规银行和托管机构储备美元支持。</li>
-<li>加密资产抵押型<br>通过超额抵押加密资产（如 ETH）保证价值稳定，例如 DAI。</li>
-<li>算法型<br>不依赖实物资产，利用自动化算法在市场中调节币量以维持价格稳定。</li>
+<h2 id="玩转动力电池保护板"><a href="#玩转动力电池保护板" class="headerlink" title="玩转动力电池保护板"></a>玩转动力电池保护板</h2><h3 id="保护板信息"><a href="#保护板信息" class="headerlink" title="保护板信息"></a>保护板信息</h3><ul>
+<li><p>电池功率<br>表示当前电池输出或者输入的总功率，其值是当前电池电压和电池电流绝对值之积，单位：W。</p>
+</li>
+<li><p>单体平均<br>表示当前电池的单体平均电压，单位：V。</p>
+</li>
+<li><p>电池容量<br>表示当前保护板通过高精度 SOC 所计算得到的电池实际容量，单位为：AH。（该值需要电池做一个完整的放电和充电循环后才更新）。</p>
+</li>
+<li><p>最大压差<br>最大压差表示当前整组电池，最高电芯电压和最低电芯电压的差值，单位：V。</p>
+</li>
+<li><p>均衡电流<br>当保护板开启均衡功能，且达到均衡条件时，均衡电流显示区域实时显示均衡电流，单位：A。<br>当均衡进行时，实时状态的单体电压显示区域，蓝色代表放电的电池，红色代表被充电的电池。均衡电流负电流表示电池在放电，此时蓝色闪烁，均衡电流正电流表示在电池在充电，此时红色闪烁。<br>保护板采用主动均衡技术，均衡的原理是从高电压的电芯取电，存放到保护板，然后再放给低电压的电芯。</p>
+</li>
 </ul>
-<p>稳定币的核心特征是与美元等法定货币保持固定汇率。发行方需承诺随时兑换对应法币或等值资产。支持即时、跨境的点对点交易，兼容智能合约与去中心化金融（DeFi）生态。</p>
-<h2 id="美国发行“稳定币”的意义"><a href="#美国发行“稳定币”的意义" class="headerlink" title="美国发行“稳定币”的意义"></a>美国发行“稳定币”的意义</h2><p>2025年6月，美国参议院以压倒性多数通过了《指导与建立美国稳定币国家创新法案》（GENIUS Act），正式为支付稳定币（Payment Stablecoin）制定了联邦层面的监管框架。该法案对“许可支付稳定币发行人”（Permitted Payment Stablecoin Issuer, PPSI）进行严格定义，只有获得联邦或州级批准的银行及非银行实体才能合法发行稳定币。<br>美国这样做无疑是想继续维护美元的主导地位。通过将美元延伸到区块链领域，使“链上美元”与传统美元同享美国政府信用，从而固化美元在全球储备货币和结算货币的优势位置。同时，修订后法案特别限制Meta、苹果、亚马逊等大型科技公司未经严格审查而发行稳定币，体现了国会对数据垄断与金融基础设施掌控的警惕。为中小金融机构和支付企业提供清晰合规路径，促进更多创新型支付产品与应用在美国本土试点，增强金融市场活力。有观点指出，美国政府希望借助稳定币这一“链上美元”工具，拓宽债务融资渠道，缓解因债务负担过重而带来的利率上行压力。</p>
-<h2 id="稳定币对世界政治经济的影响"><a href="#稳定币对世界政治经济的影响" class="headerlink" title="稳定币对世界政治经济的影响"></a>稳定币对世界政治经济的影响</h2><p>美元稳定币的推出，将进一步扩大美元在全球支付和储备体系中的影响力，构建起“链上”金融版图。这不仅巩固了美国的货币霸权，也对其他货币体系形成潜在竞争压力，迫使各国重新评估本币国际化战略。稳定币能够实现即时、低成本的跨境转账，极大提高了国际汇款效率。随着越来越多国际贸易结算和金融交易采用稳定币结算，传统SWIFT体系和现有清算银行可能面临重大挑战，全球支付生态将出现新一轮洗牌。在美欧、人民币数字化（e-CNY）等多边竞争态势下，稳定币成为各国政府和跨国企业角力的新战场。美国若借助稳定币深度绑定全球金融网络，将使其他国家难以在数字支付领域取得同等话语权，进而影响国际政治经济格局。全球范围内稳定币生态尚处于起步阶段，多起“脱锚”事件曾引发市场恐慌（如2022年USDT脱锚、2023年USDC脱锚），强调监管必须国际协同。美国一旦在国内形成先行范式，将推动G20、FATF等国际组织加快规则制定，强化跨境监管合作。</p>
-<h2 id="对中国的机遇与影响"><a href="#对中国的机遇与影响" class="headerlink" title="对中国的机遇与影响"></a>对中国的机遇与影响</h2><p>面对美元稳定币的挑战，中国可借鉴美国监管框架经验，加快数字人民币（e-CNY）的跨境试点与推广，强化与“一带一路”沿线国家的支付互联互通，提升人民币在全球贸易和金融中的使用率。在稳定币技术标准、监管合规和基础设施建设方面，中国企业已有较为成熟的应用场景（如跨境贸易区块链平台）。美国标准许可模式的出台，为国内金融科技公司提供了参照蓝本，有利于自主可控的稳定币和数字资产解决方案快速落地。随着美国在国际舞台上推广“链上美元”规则，中国需加紧在国际组织中发出声音，参与稳定币监管标准的制定与磋商，维护数字主权和金融安全。美国市场对合规稳定币支付的需求增加，为中国支付机构、数字资产服务商提供了参与美国或第三国市场的合作机会。例如，通过与合规发牌实体合作，共同开发跨境支付网络和数字资产托管服务。</p>
-<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>美国发行稳定币并构建联邦监管框架，不仅是对加密货币行业的重大政策信号，也成为全球数字货币治理的重要分水岭。从维护美元主导地位、推动金融创新到参与国际监管协作，美国正试图在“链上”世界复制其“链下”影响力。<br>展望未来，多极化竞争将加剧。欧盟、英国、日韩以及中国的数字货币和稳定币政策都将加速落地，全球金融体系面对更多创新与挑战并存的格局。监管合作与技术标准融合。各国需在反洗钱、消费者保护、稳定币储备透明度等方面加强对话，形成可执行的跨境监管机制。新型金融生态形成。稳定币、央行数字货币（CBDC）与传统银行体系的融合，将催生包括去中心化交易所（DEX）、智能合约贷款等在内的全新金融服务模式。<br>对于中国而言，既要警惕美元稳定币带来的竞争压力，更应抓住主动参与国际规则制定和技术创新应用的历史性机遇，助力中国数字经济与金融治理体系迈向更高水平。</p>
+<h3 id="保护板参数调校"><a href="#保护板参数调校" class="headerlink" title="保护板参数调校"></a>保护板参数调校</h3><p><strong>保护板的参数非常多，且配置不当有损坏电池的风险，因此如果不是确切明白参数意义，不要随便调整！</strong><br>以下列出最重要的参数，及相关作用。</p>
+<ul>
+<li><p>单体数量<br>单体数量表示当前电池的电芯数量，在使用之前，请准确的设定该值，否则保护板不能正常工作。</p>
+</li>
+<li><p>触发均衡压差<br>在均衡开关打开的情况下，当电池组最大压差超过该值，且当前单体电压超过均衡起始电压，均衡开始，直到压差低于该值或单体电压低于均衡起始电压时均衡结束。比如设定均衡触发压差为 0.01V，当电池组压差大于 0.01V 时开始均衡，低于 0.01V 时结束均衡。（建议 50AH 以上的电池设定均衡触发压差为 0.005V，50AH 以下的电池设定触发均衡压差为0.01V）。</p>
+</li>
+<li><p>均衡起始电压<br>均衡起始电压用来控制均衡的电压阶段，只有当单体电压超过该值，且电池组最大压差超过均衡触发压差，均衡才会被触发。</p>
+</li>
+<li><p>“单体过充电压”、“单体过充恢复”<br>“单体过充电压”是指电芯的饱和电压，只要电池组中任一单体电压超过该值时，产生‘单体过充报警’，同时保护板关闭充电 MOS，此时电池不能充电，只能放电。当报警产生以后，只有全部单体电压值低于“单体过充恢复”的值以后，保护板解除‘单体过充报警’，同时开启充电开关。</p>
+</li>
+<li><p>“单体欠压保护”、“单体欠压恢复”<br>“单体欠压保护”是指电芯的截止电压，只要电池组中任一单体电压低于该值时，产生‘单体欠压报警’，同时保护板关闭放电 MOS，此时电池不能放电，只能充电。当报警产生以后，只有全部单体电压值超过“单体电压恢复”的值以后，保护板解除‘单体欠压报警’，同时开启放电 MOS。</p>
+</li>
+<li><p>推荐充电电压<br>“推荐充电电压”是指 BMS 为了最佳电池性能和安全而建议的充电电压范围或具体数值。这个推荐值是根据电池类型、制造商的建议、BMS 设计的特性以及充电器的特性来确定的。</p>
+</li>
+<li><p>“SOC-100%电压”、“SOC-0%电压”<br>“SOC-100%电压”是指电芯 SOC 值为 100%时的电压，该值略低于单体过充电压，当电芯电压大于或等于该值时，即认为该电芯为满电状态；“SOC-0%电压”是指电芯 SOC值为 0%时的电压，该值略高于单体欠压保护电压，当电芯电压小于或等于该值时，即认为该电芯电量为 0。</p>
+</li>
+<li><p>自动关机电压<br>自动关机电压表示保护板工作的最低电压，当电池组中最高单体的电压低于该值时，保护板关闭。该值必须低于“单体欠压保护”。</p>
+</li>
+</ul>
+<h3 id="本人配置的参数值"><a href="#本人配置的参数值" class="headerlink" title="本人配置的参数值"></a>本人配置的参数值</h3><p>（欢迎交流，持续更新！）</p>
 ]]></content>
       <categories>
-        <category>经济</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>经济</tag>
-        <tag>美国</tag>
-        <tag>金融</tag>
-        <tag>稳定币</tag>
-        <tag>GENIUS</tag>
-        <tag>数字货币</tag>
+        <tag>新能源</tag>
+        <tag>DIY</tag>
+        <tag>技术</tag>
+        <tag>电动车</tag>
+        <tag>电池</tag>
+        <tag>动力系统</tag>
       </tags>
   </entry>
   <entry>
@@ -288,11 +255,44 @@
       </categories>
       <tags>
         <tag>USA</tag>
-        <tag>GENIUS</tag>
         <tag>Economy</tag>
         <tag>Finance</tag>
         <tag>Stablecoin</tag>
+        <tag>GENIUS</tag>
         <tag>Cryptocurrency</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美国“稳定币”来袭 开启全球金融新玩法</title>
+    <url>/posts/20250702-mei-guo-wen-ding-bi-lai-xi-kai-qi-quan-qiu-jin-rong-xin-wan-fa.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250702-us-stablecoins-arrive-ushering-in-a-new-era-of-global-finance.html">英文</a> </p>
+<h2 id="何为“稳定币”？"><a href="#何为“稳定币”？" class="headerlink" title="何为“稳定币”？"></a>何为“稳定币”？</h2><p>稳定币（Stablecoin）是一类加密数字货币，其价值通常锚定于某种法定货币（如美元、欧元）或其他可度量的金融资产（如现金、政府债券）。与比特币（Bitcoin）、以太坊（Ethereum）等价格波动剧烈的加密资产不同，稳定币借助抵押资产或算法机制，力求使币值保持相对稳定，从而兼具加密货币的可编程性和法币的价值稳定性。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250702.jpg","alt":"","title":""}]</div>
+  </div>
+
+<p>按抵押方式，稳定币可分为三大类：</p>
+<ul>
+<li>法币抵押型<br>发行机构持有与发行量等值的法币储备，用户可随时以1:1比例兑换。例如，USDC 由美国合规银行和托管机构储备美元支持。</li>
+<li>加密资产抵押型<br>通过超额抵押加密资产（如 ETH）保证价值稳定，例如 DAI。</li>
+<li>算法型<br>不依赖实物资产，利用自动化算法在市场中调节币量以维持价格稳定。</li>
+</ul>
+<p>稳定币的核心特征是与美元等法定货币保持固定汇率。发行方需承诺随时兑换对应法币或等值资产。支持即时、跨境的点对点交易，兼容智能合约与去中心化金融（DeFi）生态。</p>
+<h2 id="美国发行“稳定币”的意义"><a href="#美国发行“稳定币”的意义" class="headerlink" title="美国发行“稳定币”的意义"></a>美国发行“稳定币”的意义</h2><p>2025年6月，美国参议院以压倒性多数通过了《指导与建立美国稳定币国家创新法案》（GENIUS Act），正式为支付稳定币（Payment Stablecoin）制定了联邦层面的监管框架。该法案对“许可支付稳定币发行人”（Permitted Payment Stablecoin Issuer, PPSI）进行严格定义，只有获得联邦或州级批准的银行及非银行实体才能合法发行稳定币。<br>美国这样做无疑是想继续维护美元的主导地位。通过将美元延伸到区块链领域，使“链上美元”与传统美元同享美国政府信用，从而固化美元在全球储备货币和结算货币的优势位置。同时，修订后法案特别限制Meta、苹果、亚马逊等大型科技公司未经严格审查而发行稳定币，体现了国会对数据垄断与金融基础设施掌控的警惕。为中小金融机构和支付企业提供清晰合规路径，促进更多创新型支付产品与应用在美国本土试点，增强金融市场活力。有观点指出，美国政府希望借助稳定币这一“链上美元”工具，拓宽债务融资渠道，缓解因债务负担过重而带来的利率上行压力。</p>
+<h2 id="稳定币对世界政治经济的影响"><a href="#稳定币对世界政治经济的影响" class="headerlink" title="稳定币对世界政治经济的影响"></a>稳定币对世界政治经济的影响</h2><p>美元稳定币的推出，将进一步扩大美元在全球支付和储备体系中的影响力，构建起“链上”金融版图。这不仅巩固了美国的货币霸权，也对其他货币体系形成潜在竞争压力，迫使各国重新评估本币国际化战略。稳定币能够实现即时、低成本的跨境转账，极大提高了国际汇款效率。随着越来越多国际贸易结算和金融交易采用稳定币结算，传统SWIFT体系和现有清算银行可能面临重大挑战，全球支付生态将出现新一轮洗牌。在美欧、人民币数字化（e-CNY）等多边竞争态势下，稳定币成为各国政府和跨国企业角力的新战场。美国若借助稳定币深度绑定全球金融网络，将使其他国家难以在数字支付领域取得同等话语权，进而影响国际政治经济格局。全球范围内稳定币生态尚处于起步阶段，多起“脱锚”事件曾引发市场恐慌（如2022年USDT脱锚、2023年USDC脱锚），强调监管必须国际协同。美国一旦在国内形成先行范式，将推动G20、FATF等国际组织加快规则制定，强化跨境监管合作。</p>
+<h2 id="对中国的机遇与影响"><a href="#对中国的机遇与影响" class="headerlink" title="对中国的机遇与影响"></a>对中国的机遇与影响</h2><p>面对美元稳定币的挑战，中国可借鉴美国监管框架经验，加快数字人民币（e-CNY）的跨境试点与推广，强化与“一带一路”沿线国家的支付互联互通，提升人民币在全球贸易和金融中的使用率。在稳定币技术标准、监管合规和基础设施建设方面，中国企业已有较为成熟的应用场景（如跨境贸易区块链平台）。美国标准许可模式的出台，为国内金融科技公司提供了参照蓝本，有利于自主可控的稳定币和数字资产解决方案快速落地。随着美国在国际舞台上推广“链上美元”规则，中国需加紧在国际组织中发出声音，参与稳定币监管标准的制定与磋商，维护数字主权和金融安全。美国市场对合规稳定币支付的需求增加，为中国支付机构、数字资产服务商提供了参与美国或第三国市场的合作机会。例如，通过与合规发牌实体合作，共同开发跨境支付网络和数字资产托管服务。</p>
+<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>美国发行稳定币并构建联邦监管框架，不仅是对加密货币行业的重大政策信号，也成为全球数字货币治理的重要分水岭。从维护美元主导地位、推动金融创新到参与国际监管协作，美国正试图在“链上”世界复制其“链下”影响力。<br>展望未来，多极化竞争将加剧。欧盟、英国、日韩以及中国的数字货币和稳定币政策都将加速落地，全球金融体系面对更多创新与挑战并存的格局。监管合作与技术标准融合。各国需在反洗钱、消费者保护、稳定币储备透明度等方面加强对话，形成可执行的跨境监管机制。新型金融生态形成。稳定币、央行数字货币（CBDC）与传统银行体系的融合，将催生包括去中心化交易所（DEX）、智能合约贷款等在内的全新金融服务模式。<br>对于中国而言，既要警惕美元稳定币带来的竞争压力，更应抓住主动参与国际规则制定和技术创新应用的历史性机遇，助力中国数字经济与金融治理体系迈向更高水平。</p>
+]]></content>
+      <categories>
+        <category>经济</category>
+      </categories>
+      <tags>
+        <tag>GENIUS</tag>
+        <tag>经济</tag>
+        <tag>美国</tag>
+        <tag>金融</tag>
+        <tag>稳定币</tag>
+        <tag>数字货币</tag>
       </tags>
   </entry>
   <entry>
@@ -471,32 +471,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从 “印度神曲”《我们的飞机被打了》看中印军工真实差距</title>
-    <url>/posts/20250518-wo-men-de-fei-ji-bei-da-liao-re-qu-bei-hou-zhong-yin-jun-gong-zhen-shi-jiao-liang-yu-he-ping-qi-shi.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250518-from-the-indian-viral-song-our-plane-was-shot-down-to-the-real-gap-between-chinese-and-indian-military-industries.html">英文</a> </p>
-<h2 id="事件回顾"><a href="#事件回顾" class="headerlink" title="事件回顾"></a>事件回顾</h2><p>2025年5月6日至10日，印度与巴基斯坦在克什米尔地区爆发空中冲突。根据多方报道，巴基斯坦方面在“辛多尔行动”中发射了多枚空对空导弹，成功击落印度空军的多型战机，包括三架阵风（Rafale）战斗机、一架苏-30MKI战机和一架米格-29战机，另有航拍无人机被击毁，造成多名飞行员受伤或被俘。印度方面则声称在印控克什米尔地区击落巴基斯坦无人机，并对巴方目标实施了导弹打击，但并未否认自己损失飞机。5月7日，巴基斯坦军方甚至宣称已削弱印度境内70%的电网，尽管印度随即否认此说法。冲突期间，双方都在国际舆论前相互指责，但尚未正式升级至全面战争。<br>紧接着，一则由中国大陆网红“豪哥哥”于5月10日发布的恶搞视频迅速在国内外网络走红。该视频基于印度著名Punjabi舞曲《Tunak Tunak Tun》进行改编，以“刚买的飞机被打啦！”为主题，用夸张的节奏和嘲讽式歌词对印度空军在本次空战中损失多架战机进行“调侃式庆祝”。视频不仅在中国短视频平台刷屏，也在国际社交媒体上形成二次传播。然而，印度网民迅速对此表达强烈不满，认为这是在“丑化印度文化”和“侵害国家尊严”，纷纷要求封禁该内容，甚至有极端者呼吁通过外交渠道进行抗议</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250605-Our-Plane-Was-Shot-Down.jpg","alt":"","title":""}]</div>
-  </div>
-
-
-
-<h2 id="中印网民的不同心态侧写"><a href="#中印网民的不同心态侧写" class="headerlink" title="中印网民的不同心态侧写"></a>中印网民的不同心态侧写</h2><ul>
-<li>中国网民心态<br>在“刚买的飞机被打啦”走红后，不少中国网友将其视为对“印度空军高调炫技却遭重创”事实的一种戏谑，尤其在年轻群体中，这类“神曲+恶搞”表达方式符合网络亚文化下的幽默逻辑。体现了中国网民对此事件的调侃与幽默。<br>部分网友借此事件表达对“我国兄弟国家（巴基斯坦）在空战中取得胜利”的欢欣；与此同时，也暗含对“印度军工水平低于预期”的优越感，突出中华民族的自豪感。<br>更多网友并非出于深层民族情绪，而是单纯觉得节奏洗脑、恶搞歌词“朗朗上口”，将其当作一种“网络搞笑梗”加以二次剪辑、模仿转发。体现出互联网娱乐至上的理念。</li>
-<li>印度网民心态<br>对于“豪哥哥”视频使用印度神曲改编并带有强烈诋毁意味，不少印度网友认为这是对“印式文化符号”和“印度军队”集体形象的侮辱。印度网友的民族尊严受到严重打击。<br>在社交媒体上，一些印度网民主动发起#BanChinesePropaganda标签，呼吁各大平台封禁相关视频，并指责海外“反印势力”的刻意抹黑。<br>也有少数理性声音认为，此次空战双方都有损失，“火上浇油”式的互相嘲讽并不能解决实质问题，应更多关注自身国防建设中的短板。</li>
-</ul>
-<h2 id="印度军工真实水平"><a href="#印度军工真实水平" class="headerlink" title="印度军工真实水平"></a>印度军工真实水平</h2><p>印度空军现役以法国Dassault Rafale、俄罗斯Su-30MKI、米格-29UPG等进口机型为主。这些机型经过多轮改进，但印度国产飞机（如HAL Tejas）的数量与服役质量尚难以与进口机型平起平坐。本次空战中，被击落的三架Rafale、1架Su-30MKI和1架MiG-29均属于高端进口机型，尽管这些战机在设计上具备卓越的机动性和武器挂载能力，但在实战中并未完全发挥预期性能，暴露出印度在配套电子战、后勤维护、飞行员训练等方面的薄弱之处。<br>虽然印度在近年通过引入先进导弹（SCALP EG巡航导弹、Iron Hammer精确制导炸弹等）和国产预警机（Netra AEW&amp;C）进行装备升级，但在电子侦察、网络对抗等软实力层面仍显不足。实战中，巴方歼-10CE战机搭配PL-15导弹封锁了部分Rafale的红外制导通道，使得印度战机在攻防转换时出现致盲状况。<br>后勤保障方面，印度空军多型机型来源复杂，零部件供应链多元且互不兼容，导致在多机种并存的情况下维修效率低下；另一方面，“地勤人员-飞行员”协同演练不足，实战经验匮乏也是造成高青损比的重要原因。近年来，印度空军虽强化了美印联合军演（如Cope India、Red Flag）等训练项目，但由于地缘政治限制，实战环境模拟仍与真实交战有差距。本次空战中，不少Rafale飞行员反馈在“高强度电子干扰+地对空拦截火力”下，指挥链延迟和敌情态势感知迟钝成为致命短板。<br>总体而言，印度军工在装备引进上不惜重金，但整体技术整合能力、国产化进度与后勤训练水平均未形成闭环，导致在实战冲突中难以发挥“进口价格应有的战斗力”。</p>
-<h2 id="中国军工真实水平"><a href="#中国军工真实水平" class="headerlink" title="中国军工真实水平"></a>中国军工真实水平</h2><p>中国自1998年歼-10首飞后，历经歼-10A、歼-10S到歼-10C多次改进，长期服役并形成成熟供应链。巴基斯坦空军引进的歼-10CE在本次冲突中成功配合PL-15中远程导弹击落了多架印度Rafale和Su-30MKI，这是歼-10系列首次在实战中取得空对空战绩，可见中国在中型单发战机领域已达世界一流水平。除歼-10外，国产歼-20隐形战机、运-20战略运输机、Z-10攻击直升机等都体现了从设计研发到批量化生产的完整能力。以Z-10（霹雳火）为例，其全天候精确打击能力在现代陆航中属领先行列，配合新一代雷达与导弹系统，可在复杂电磁环境下保持较高生存与打击效率。目前，包括巴基斯坦、缅甸、埃及等在内的多国对华制武器持积极采购态度，其中J-10CE、Z-10的出口价明显低于西方同类机型，却具备不逊色的实战能力，已多次在中东和南亚冲突中被验证为“性价比之王”。<br>系统研发与制造一体化：中国军工以国企主导，配合民营配套企业，形成了从轴承、复合材料到发动机、电子设备的完整供应链，保证了武器装备的批量化、标准化生产。以歼-10C为例，国产WS-10高推重比发动机、数字化航电系统、第四代雷达等关键部件均已实现国产化。2024年底，中国陆续公开第五代隐身机“歼-36”、空警-3000预警机、搭载电磁弹射的076两栖攻击舰等先进装备，显示了在新武器系统设计、风洞试验、碳纤维复合材料制造等方面已达到世界领先水平。先进的风洞实验设施与数字化仿真系统使得新机型能在“试错成本最小化”前提下加速推向部队。中国军工体系长期整合高校、研究所与企业资源，形成“军校研企”协同创新机制。在“航空强国战略”与“军民融合”方针下，军工领域拥有充沛的科研经费与人才储备，使得新技术能在最短时间内转化为战斗力。以歼-20、歼-10C为例，中国空军各场站具备完善的基地配套能力，地勤、飞行员和指挥员间的磨合效率高，实战化训练频次正在不断提升，综合作战能力稳步提高。<br>总体来看，中国军工已不仅仅停留在“跟跑”或“并跑”阶段，而是在多个新型武器系统领域实现了“领跑”：从第四代战机到准六代战机，从远航航母到电磁弹射，从远程预警机到新一代无人作战系统，体现了“全产业链、全要素配套”的综合实力。</p>
-<h2 id="对中国军力提升与世界和平的意义"><a href="#对中国军力提升与世界和平的意义" class="headerlink" title="对中国军力提升与世界和平的意义"></a>对中国军力提升与世界和平的意义</h2><p>中国军工的持续升级，使得区域内军力平衡得到进一步稳固。以一国之力带动区域安全态势向“多极互控”方向演进，可有效遏制局部冲突的扩大化风险。印度与巴基斯坦虽在局部冲突中摩擦不断，但若中国持续保持先进的军工水平，能够在必要时通过军事威慑与外交斡旋同步发力，为南亚乃至亚洲和平提供更有力保障。中国军工与民用科技的深度融合，不仅使武器系统性能日益精进，也反哺航空航天、电子信息等民用领域。以卫星导航、5G通信、人工智能为例，早在军工系统的高标准要求下，这些技术已在民用市场中广泛渗透，提升了中国乃至全球的科技发展水平。如此一来，当世界多国共同分享这些技术红利时，区域内的沟通协作更为顺畅，冲突成本也相应提高。中国常强调“和平共处五项原则”和“共同、综合、合作、可持续的安全观”。当中国军工水平进入全球一流水平后，就意味着中国能够在更多国际维和、联合巡逻、反恐演习等多边平台中承担更为重要的角色。通过派遣维和部队、提供反恐装备和智慧，中国已在多次地区冲突中展现了“负责任大国”的形象——既不挑起事端，也不回避履责。未来，随着新型远程打击系统、海空联合作战编队和信息化指挥平台的成熟，中国将更加具备“用足够实力捍卫和平”的底气。当下，各国军工产业呈现“合作与竞争并存”的格局。中国通过“一带一路”倡议等多边框架，正与多国展开武器系统联合研发、军工技术转移和定期联合演习。以中巴军工合作为例，JF-17“枭龙”战机与巴基斯坦国产化率持续提升，已经成为“性价比高、技术成熟”的范范。这样的合作既促进了区域国家的防务现代化，也在一定程度上通过多边平台推动了军备发展透明度以及出口管控规范化。<br>从“刚买的飞机被打啦”的网络热梗，到印度与巴基斯坦空中冲突的血与火，再到中巴军工合作与全球军火市场的激烈竞争，无不映射出当今世界安全环境的复杂性与多元化趋势。作为一个拥有14亿人口的大国，中国通过自身军工水平的稳步提升，不仅巩固了国防安全与领土完整，更在全球范围内为塑造“和平、安全、合作”的国际秩序提供了鲜明案例。未来，伴随高精尖技术的不断迭代，中国军工将继续发力科技创新与军民融合，为世界和平贡献更强有力的“硬支撑”与“软影响”。</p>
-]]></content>
-      <categories>
-        <category>政治</category>
-      </categories>
-      <tags>
-        <tag>政治</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>From the “Indian Viral Song” “Our Plane Was Shot Down” to the Real Gap between Chinese and Indian Military Industries</title>
     <url>/posts/20250518-from-the-indian-viral-song-our-plane-was-shot-down-to-the-real-gap-between-chinese-and-indian-military-industries.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250518-wo-men-de-fei-ji-bei-da-liao-re-qu-bei-hou-zhong-yin-jun-gong-zhen-shi-jiao-liang-yu-he-ping-qi-shi.html">中文</a> </p>
@@ -531,6 +505,32 @@
       </categories>
       <tags>
         <tag>Politics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从 “印度神曲”《我们的飞机被打了》看中印军工真实差距</title>
+    <url>/posts/20250518-wo-men-de-fei-ji-bei-da-liao-re-qu-bei-hou-zhong-yin-jun-gong-zhen-shi-jiao-liang-yu-he-ping-qi-shi.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250518-from-the-indian-viral-song-our-plane-was-shot-down-to-the-real-gap-between-chinese-and-indian-military-industries.html">英文</a> </p>
+<h2 id="事件回顾"><a href="#事件回顾" class="headerlink" title="事件回顾"></a>事件回顾</h2><p>2025年5月6日至10日，印度与巴基斯坦在克什米尔地区爆发空中冲突。根据多方报道，巴基斯坦方面在“辛多尔行动”中发射了多枚空对空导弹，成功击落印度空军的多型战机，包括三架阵风（Rafale）战斗机、一架苏-30MKI战机和一架米格-29战机，另有航拍无人机被击毁，造成多名飞行员受伤或被俘。印度方面则声称在印控克什米尔地区击落巴基斯坦无人机，并对巴方目标实施了导弹打击，但并未否认自己损失飞机。5月7日，巴基斯坦军方甚至宣称已削弱印度境内70%的电网，尽管印度随即否认此说法。冲突期间，双方都在国际舆论前相互指责，但尚未正式升级至全面战争。<br>紧接着，一则由中国大陆网红“豪哥哥”于5月10日发布的恶搞视频迅速在国内外网络走红。该视频基于印度著名Punjabi舞曲《Tunak Tunak Tun》进行改编，以“刚买的飞机被打啦！”为主题，用夸张的节奏和嘲讽式歌词对印度空军在本次空战中损失多架战机进行“调侃式庆祝”。视频不仅在中国短视频平台刷屏，也在国际社交媒体上形成二次传播。然而，印度网民迅速对此表达强烈不满，认为这是在“丑化印度文化”和“侵害国家尊严”，纷纷要求封禁该内容，甚至有极端者呼吁通过外交渠道进行抗议</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250605-Our-Plane-Was-Shot-Down.jpg","alt":"","title":""}]</div>
+  </div>
+
+
+
+<h2 id="中印网民的不同心态侧写"><a href="#中印网民的不同心态侧写" class="headerlink" title="中印网民的不同心态侧写"></a>中印网民的不同心态侧写</h2><ul>
+<li>中国网民心态<br>在“刚买的飞机被打啦”走红后，不少中国网友将其视为对“印度空军高调炫技却遭重创”事实的一种戏谑，尤其在年轻群体中，这类“神曲+恶搞”表达方式符合网络亚文化下的幽默逻辑。体现了中国网民对此事件的调侃与幽默。<br>部分网友借此事件表达对“我国兄弟国家（巴基斯坦）在空战中取得胜利”的欢欣；与此同时，也暗含对“印度军工水平低于预期”的优越感，突出中华民族的自豪感。<br>更多网友并非出于深层民族情绪，而是单纯觉得节奏洗脑、恶搞歌词“朗朗上口”，将其当作一种“网络搞笑梗”加以二次剪辑、模仿转发。体现出互联网娱乐至上的理念。</li>
+<li>印度网民心态<br>对于“豪哥哥”视频使用印度神曲改编并带有强烈诋毁意味，不少印度网友认为这是对“印式文化符号”和“印度军队”集体形象的侮辱。印度网友的民族尊严受到严重打击。<br>在社交媒体上，一些印度网民主动发起#BanChinesePropaganda标签，呼吁各大平台封禁相关视频，并指责海外“反印势力”的刻意抹黑。<br>也有少数理性声音认为，此次空战双方都有损失，“火上浇油”式的互相嘲讽并不能解决实质问题，应更多关注自身国防建设中的短板。</li>
+</ul>
+<h2 id="印度军工真实水平"><a href="#印度军工真实水平" class="headerlink" title="印度军工真实水平"></a>印度军工真实水平</h2><p>印度空军现役以法国Dassault Rafale、俄罗斯Su-30MKI、米格-29UPG等进口机型为主。这些机型经过多轮改进，但印度国产飞机（如HAL Tejas）的数量与服役质量尚难以与进口机型平起平坐。本次空战中，被击落的三架Rafale、1架Su-30MKI和1架MiG-29均属于高端进口机型，尽管这些战机在设计上具备卓越的机动性和武器挂载能力，但在实战中并未完全发挥预期性能，暴露出印度在配套电子战、后勤维护、飞行员训练等方面的薄弱之处。<br>虽然印度在近年通过引入先进导弹（SCALP EG巡航导弹、Iron Hammer精确制导炸弹等）和国产预警机（Netra AEW&amp;C）进行装备升级，但在电子侦察、网络对抗等软实力层面仍显不足。实战中，巴方歼-10CE战机搭配PL-15导弹封锁了部分Rafale的红外制导通道，使得印度战机在攻防转换时出现致盲状况。<br>后勤保障方面，印度空军多型机型来源复杂，零部件供应链多元且互不兼容，导致在多机种并存的情况下维修效率低下；另一方面，“地勤人员-飞行员”协同演练不足，实战经验匮乏也是造成高青损比的重要原因。近年来，印度空军虽强化了美印联合军演（如Cope India、Red Flag）等训练项目，但由于地缘政治限制，实战环境模拟仍与真实交战有差距。本次空战中，不少Rafale飞行员反馈在“高强度电子干扰+地对空拦截火力”下，指挥链延迟和敌情态势感知迟钝成为致命短板。<br>总体而言，印度军工在装备引进上不惜重金，但整体技术整合能力、国产化进度与后勤训练水平均未形成闭环，导致在实战冲突中难以发挥“进口价格应有的战斗力”。</p>
+<h2 id="中国军工真实水平"><a href="#中国军工真实水平" class="headerlink" title="中国军工真实水平"></a>中国军工真实水平</h2><p>中国自1998年歼-10首飞后，历经歼-10A、歼-10S到歼-10C多次改进，长期服役并形成成熟供应链。巴基斯坦空军引进的歼-10CE在本次冲突中成功配合PL-15中远程导弹击落了多架印度Rafale和Su-30MKI，这是歼-10系列首次在实战中取得空对空战绩，可见中国在中型单发战机领域已达世界一流水平。除歼-10外，国产歼-20隐形战机、运-20战略运输机、Z-10攻击直升机等都体现了从设计研发到批量化生产的完整能力。以Z-10（霹雳火）为例，其全天候精确打击能力在现代陆航中属领先行列，配合新一代雷达与导弹系统，可在复杂电磁环境下保持较高生存与打击效率。目前，包括巴基斯坦、缅甸、埃及等在内的多国对华制武器持积极采购态度，其中J-10CE、Z-10的出口价明显低于西方同类机型，却具备不逊色的实战能力，已多次在中东和南亚冲突中被验证为“性价比之王”。<br>系统研发与制造一体化：中国军工以国企主导，配合民营配套企业，形成了从轴承、复合材料到发动机、电子设备的完整供应链，保证了武器装备的批量化、标准化生产。以歼-10C为例，国产WS-10高推重比发动机、数字化航电系统、第四代雷达等关键部件均已实现国产化。2024年底，中国陆续公开第五代隐身机“歼-36”、空警-3000预警机、搭载电磁弹射的076两栖攻击舰等先进装备，显示了在新武器系统设计、风洞试验、碳纤维复合材料制造等方面已达到世界领先水平。先进的风洞实验设施与数字化仿真系统使得新机型能在“试错成本最小化”前提下加速推向部队。中国军工体系长期整合高校、研究所与企业资源，形成“军校研企”协同创新机制。在“航空强国战略”与“军民融合”方针下，军工领域拥有充沛的科研经费与人才储备，使得新技术能在最短时间内转化为战斗力。以歼-20、歼-10C为例，中国空军各场站具备完善的基地配套能力，地勤、飞行员和指挥员间的磨合效率高，实战化训练频次正在不断提升，综合作战能力稳步提高。<br>总体来看，中国军工已不仅仅停留在“跟跑”或“并跑”阶段，而是在多个新型武器系统领域实现了“领跑”：从第四代战机到准六代战机，从远航航母到电磁弹射，从远程预警机到新一代无人作战系统，体现了“全产业链、全要素配套”的综合实力。</p>
+<h2 id="对中国军力提升与世界和平的意义"><a href="#对中国军力提升与世界和平的意义" class="headerlink" title="对中国军力提升与世界和平的意义"></a>对中国军力提升与世界和平的意义</h2><p>中国军工的持续升级，使得区域内军力平衡得到进一步稳固。以一国之力带动区域安全态势向“多极互控”方向演进，可有效遏制局部冲突的扩大化风险。印度与巴基斯坦虽在局部冲突中摩擦不断，但若中国持续保持先进的军工水平，能够在必要时通过军事威慑与外交斡旋同步发力，为南亚乃至亚洲和平提供更有力保障。中国军工与民用科技的深度融合，不仅使武器系统性能日益精进，也反哺航空航天、电子信息等民用领域。以卫星导航、5G通信、人工智能为例，早在军工系统的高标准要求下，这些技术已在民用市场中广泛渗透，提升了中国乃至全球的科技发展水平。如此一来，当世界多国共同分享这些技术红利时，区域内的沟通协作更为顺畅，冲突成本也相应提高。中国常强调“和平共处五项原则”和“共同、综合、合作、可持续的安全观”。当中国军工水平进入全球一流水平后，就意味着中国能够在更多国际维和、联合巡逻、反恐演习等多边平台中承担更为重要的角色。通过派遣维和部队、提供反恐装备和智慧，中国已在多次地区冲突中展现了“负责任大国”的形象——既不挑起事端，也不回避履责。未来，随着新型远程打击系统、海空联合作战编队和信息化指挥平台的成熟，中国将更加具备“用足够实力捍卫和平”的底气。当下，各国军工产业呈现“合作与竞争并存”的格局。中国通过“一带一路”倡议等多边框架，正与多国展开武器系统联合研发、军工技术转移和定期联合演习。以中巴军工合作为例，JF-17“枭龙”战机与巴基斯坦国产化率持续提升，已经成为“性价比高、技术成熟”的范范。这样的合作既促进了区域国家的防务现代化，也在一定程度上通过多边平台推动了军备发展透明度以及出口管控规范化。<br>从“刚买的飞机被打啦”的网络热梗，到印度与巴基斯坦空中冲突的血与火，再到中巴军工合作与全球军火市场的激烈竞争，无不映射出当今世界安全环境的复杂性与多元化趋势。作为一个拥有14亿人口的大国，中国通过自身军工水平的稳步提升，不仅巩固了国防安全与领土完整，更在全球范围内为塑造“和平、安全、合作”的国际秩序提供了鲜明案例。未来，伴随高精尖技术的不断迭代，中国军工将继续发力科技创新与军民融合，为世界和平贡献更强有力的“硬支撑”与“软影响”。</p>
+]]></content>
+      <categories>
+        <category>政治</category>
+      </categories>
+      <tags>
+        <tag>政治</tag>
       </tags>
   </entry>
   <entry>
@@ -681,6 +681,34 @@
       </tags>
   </entry>
   <entry>
+    <title>Reflections Behind the Box Office Miracle of Nezha 2</title>
+    <url>/posts/20250314-reflections-behind-the-box-office-miracle-of-nezha-2.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html">中文</a> </p>
+<h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a>Introduction：</h2><p>Since its release during the 2025 Spring Festival, Nezha 2 has emerged as a phenomenal cultural event, achieving a record-breaking box office of 6.83 billion yuan (as of March 12). The success of this domestic animated film is not merely reflected in its commercial numbers but also mirrors a collective shift in public sentiment amid a global economic downturn. Against the backdrop of modest economic growth and high youth unemployment, the film’s miraculous audience turnout acts like a prism, refracting the complex spectrum of China’s social transformation.</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250314_neza2.jpg","alt":"","title":""}]</div>
+  </div>
+
+
+<h2 id="I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption"><a href="#I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption" class="headerlink" title="I. The Evolving “Lipstick Effect” in Cultural Consumption"></a>I. The Evolving “Lipstick Effect” in Cultural Consumption</h2><p>The traditional economic concept of the “lipstick effect” is undergoing a qualitative transformation in China. Unlike the simple logic of consumers turning to affordable beauty products during the 2008 financial crisis, the Chinese market in 2025 exhibits both accelerated consumption stratification and an upgrade in emotional spending. Data from the National Bureau of Statistics indicates that while the average movie ticket price dropped by 12% in 2024 compared to the previous year, the total annual box office revenue surged by 23%—an indication of an explosive increase in movie attendance. Behind these seemingly contradictory figures lies the collective choice to treat movie-going as a cost-effective form of emotional healing.<br>Nezha 2’s audience composition is remarkably representative: 58% of viewers are between 25 and 35 years old, and 63% of them hold a bachelor’s degree or higher, reflecting the mounting pressures this demographic faces in the job market. The film’s narrative shift—from Nezha’s defiance of destiny to his eventual reconciliation with fate—strikes directly at the identity anxieties of mid-career professionals. As avenues for upward mobility in reality narrow, the mythological reimagining on screen provides a form of compensatory satisfaction, evolving cultural consumption into a public arena for collective emotional catharsis.</p>
+<h2 id="II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction"><a href="#II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction" class="headerlink" title="II. Collective Resonance through Myth Deconstruction and Value Reconstruction"></a>II. Collective Resonance through Myth Deconstruction and Value Reconstruction</h2><p>The director’s team’s modern reinterpretation of a traditional intellectual property stands as a textbook example. In contrast to the rebellious spirit emphasized in its predecessor, Nezha 2 shifts its narrative focus toward “trauma recovery” and “intergenerational reconciliation.” Ao Bing transforms from a hostile adversary into a partner in fate, while Li Jing and his wife evolve from symbols of authority into reflective figures. This character reformation resonates with the profound changes in today’s social relationships. Sociological research indicates that 38.6% of parents born in the 1980s are trying to break away from traditional patriarchal norms, echoing the film’s interdimensional dialogue where parents even apologize to Nezha.<br>Particularly noteworthy is the film’s philosophical deconstruction of fatalism. When Shen Gongbao declares, “There is no predestined ending, only a continuous process of choice,” this line sparked over 230 million discussions on social media. In an era marked by surging uncertainty, the film’s “gentle resistance” narrative—acknowledging structural dilemmas while emphasizing individual agency at the micro level—perfectly balances idealism with realism, constructing a narrative of hope that audiences can embrace.</p>
+<h2 id="III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics"><a href="#III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics" class="headerlink" title="III. The Emotionally Immersive System Built on Technological Aesthetics"></a>III. The Emotionally Immersive System Built on Technological Aesthetics</h2><p>Nezha 2’s breakthroughs in visual presentation signal a new era of “affective computing” in China’s animation industry. The production team developed the “Yuanshen Particle” engine, which can capture subtle facial expressions in real time (as evidenced by special screening data) and dynamically adjust scene lighting and musical rhythm. When Nezha endures his heavenly tribulations, 87% of viewers experience a synchronized increase in heart rate—a physiological empathy that elevates the film beyond a traditional viewing experience into a collective emotional resonance event.<br>The industrial logic behind this technological innovation is equally thought-provoking. With hardware investments slowing down (cinema equipment update rates in 2024 dropped by 7.2% year-on-year), iterative technological advances on the production side have become the key to breaking new ground. The film’s 22-minute ink-wash battle scene is not only a digital reinterpretation of Song Dynasty landscape aesthetics but also an implicit contemporary take on “slow aesthetics.” In an era dominated by algorithm-driven short videos, this deliberately crafted sense of immersion has become a rare and cherished experience.</p>
+<h2 id="IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning"><a href="#IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning" class="headerlink" title="IV. Subcultural Crossover and the Reproduction of Meaning"></a>IV. Subcultural Crossover and the Reproduction of Meaning</h2><p>The subcultural phenomenon spawned by the film—often referred to as the “Lotus Root Cake” couple (Nezha and Ao Bing)—reveals a new paradigm of meaning-making among Generation Z. On Bilibili, related fan-made videos have amassed over 1.5 billion views, with 63% of the content completely detaching from the original narrative to engage in deconstructive reinterpretation. Behind this subcultural revelry lies a playful dismantling of authoritative narratives by young people. As economic pressures ripple into the job market, humorous expression serves as a psychological defense mechanism, while the official endorsement of fan creations (evidenced by the production company hosting a fan art contest) marks a historic shift in mainstream culture’s attitude toward subculture.<br>Even more profound is the cross-border flow of cultural symbols. The film achieved a box office of 920 million yuan in the Southeast Asian market, and Vietnamese audiences launched a “Rewrite Fate” hashtag challenge on social media. This form of cultural export—distinct from the traditional kung fu film model—marks the emergence of Chinese popular culture as a provider of universal value frameworks.</p>
+<h2 id="V-The-Butterfly-Effect-of-Industry-Transformation"><a href="#V-The-Butterfly-Effect-of-Industry-Transformation" class="headerlink" title="V. The Butterfly Effect of Industry Transformation"></a>V. The Butterfly Effect of Industry Transformation</h2><p>The success of Nezha 2 is reshaping the ecosystem of the film and television industry. The production company’s adoption of a “dynamic production” model—adjusting script details based on 100,000 pieces of audience feedback collected weekly—has pioneered a revolution in movie production processes. While integrating big data analysis into the creative process has sparked debates over artistic purity, it has objectively achieved a new balance between commercial viability and creative authorship.<br>The explosive growth in the derivatives market is even more enlightening. The “Huntian Ling” digital collectible, released simultaneously with the film, set a record with 270 million yuan in transactions on a blockchain platform within just 48 hours. This hybrid model of virtual and physical consumption suggests that cultural products are breaking through physical boundaries and extending into the digital ecosystem. As the real economy’s growth slows, the counter-cyclical nature of virtual consumption may well give rise to new growth engines.</p>
+<h2 id="In-Conclusion"><a href="#In-Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h2><p>The essence of the Nezha 2 phenomenon is an artistic reflection and alleviation of the collective anxieties of a transforming society. At a critical juncture in the shift of economic growth paradigms, cultural products are taking on social functions that far exceed mere entertainment. The box office myth created by this film is both an emotional projection by individuals seeking certainty amid uncertainty and a rehearsal for the cultural industry’s adaptation to a new economic reality. As the cry to “defy destiny” transforms into the wisdom of “coexisting with fate,” this narrative shift may well symbolize an elevation in collective consciousness—finding possibilities within limitations and pursuing ideals while embracing reality. This may be the most precious survival philosophy in challenging times.</p>
+]]></content>
+      <categories>
+        <category>Economy</category>
+      </categories>
+      <tags>
+        <tag>Nezha 2</tag>
+        <tag>Film</tag>
+        <tag>Box Office</tag>
+        <tag>Society</tag>
+        <tag>Reflections</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《哪吒2》票房奇迹背后的思考</title>
     <url>/posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250314-reflections-behind-the-box-office-miracle-of-nezha-2.html">English</a> </p>
@@ -712,34 +740,6 @@
         <tag>票房</tag>
         <tag>社会</tag>
         <tag>思考</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reflections Behind the Box Office Miracle of Nezha 2</title>
-    <url>/posts/20250314-reflections-behind-the-box-office-miracle-of-nezha-2.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html">中文</a> </p>
-<h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a>Introduction：</h2><p>Since its release during the 2025 Spring Festival, Nezha 2 has emerged as a phenomenal cultural event, achieving a record-breaking box office of 6.83 billion yuan (as of March 12). The success of this domestic animated film is not merely reflected in its commercial numbers but also mirrors a collective shift in public sentiment amid a global economic downturn. Against the backdrop of modest economic growth and high youth unemployment, the film’s miraculous audience turnout acts like a prism, refracting the complex spectrum of China’s social transformation.</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250314_neza2.jpg","alt":"","title":""}]</div>
-  </div>
-
-
-<h2 id="I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption"><a href="#I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption" class="headerlink" title="I. The Evolving “Lipstick Effect” in Cultural Consumption"></a>I. The Evolving “Lipstick Effect” in Cultural Consumption</h2><p>The traditional economic concept of the “lipstick effect” is undergoing a qualitative transformation in China. Unlike the simple logic of consumers turning to affordable beauty products during the 2008 financial crisis, the Chinese market in 2025 exhibits both accelerated consumption stratification and an upgrade in emotional spending. Data from the National Bureau of Statistics indicates that while the average movie ticket price dropped by 12% in 2024 compared to the previous year, the total annual box office revenue surged by 23%—an indication of an explosive increase in movie attendance. Behind these seemingly contradictory figures lies the collective choice to treat movie-going as a cost-effective form of emotional healing.<br>Nezha 2’s audience composition is remarkably representative: 58% of viewers are between 25 and 35 years old, and 63% of them hold a bachelor’s degree or higher, reflecting the mounting pressures this demographic faces in the job market. The film’s narrative shift—from Nezha’s defiance of destiny to his eventual reconciliation with fate—strikes directly at the identity anxieties of mid-career professionals. As avenues for upward mobility in reality narrow, the mythological reimagining on screen provides a form of compensatory satisfaction, evolving cultural consumption into a public arena for collective emotional catharsis.</p>
-<h2 id="II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction"><a href="#II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction" class="headerlink" title="II. Collective Resonance through Myth Deconstruction and Value Reconstruction"></a>II. Collective Resonance through Myth Deconstruction and Value Reconstruction</h2><p>The director’s team’s modern reinterpretation of a traditional intellectual property stands as a textbook example. In contrast to the rebellious spirit emphasized in its predecessor, Nezha 2 shifts its narrative focus toward “trauma recovery” and “intergenerational reconciliation.” Ao Bing transforms from a hostile adversary into a partner in fate, while Li Jing and his wife evolve from symbols of authority into reflective figures. This character reformation resonates with the profound changes in today’s social relationships. Sociological research indicates that 38.6% of parents born in the 1980s are trying to break away from traditional patriarchal norms, echoing the film’s interdimensional dialogue where parents even apologize to Nezha.<br>Particularly noteworthy is the film’s philosophical deconstruction of fatalism. When Shen Gongbao declares, “There is no predestined ending, only a continuous process of choice,” this line sparked over 230 million discussions on social media. In an era marked by surging uncertainty, the film’s “gentle resistance” narrative—acknowledging structural dilemmas while emphasizing individual agency at the micro level—perfectly balances idealism with realism, constructing a narrative of hope that audiences can embrace.</p>
-<h2 id="III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics"><a href="#III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics" class="headerlink" title="III. The Emotionally Immersive System Built on Technological Aesthetics"></a>III. The Emotionally Immersive System Built on Technological Aesthetics</h2><p>Nezha 2’s breakthroughs in visual presentation signal a new era of “affective computing” in China’s animation industry. The production team developed the “Yuanshen Particle” engine, which can capture subtle facial expressions in real time (as evidenced by special screening data) and dynamically adjust scene lighting and musical rhythm. When Nezha endures his heavenly tribulations, 87% of viewers experience a synchronized increase in heart rate—a physiological empathy that elevates the film beyond a traditional viewing experience into a collective emotional resonance event.<br>The industrial logic behind this technological innovation is equally thought-provoking. With hardware investments slowing down (cinema equipment update rates in 2024 dropped by 7.2% year-on-year), iterative technological advances on the production side have become the key to breaking new ground. The film’s 22-minute ink-wash battle scene is not only a digital reinterpretation of Song Dynasty landscape aesthetics but also an implicit contemporary take on “slow aesthetics.” In an era dominated by algorithm-driven short videos, this deliberately crafted sense of immersion has become a rare and cherished experience.</p>
-<h2 id="IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning"><a href="#IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning" class="headerlink" title="IV. Subcultural Crossover and the Reproduction of Meaning"></a>IV. Subcultural Crossover and the Reproduction of Meaning</h2><p>The subcultural phenomenon spawned by the film—often referred to as the “Lotus Root Cake” couple (Nezha and Ao Bing)—reveals a new paradigm of meaning-making among Generation Z. On Bilibili, related fan-made videos have amassed over 1.5 billion views, with 63% of the content completely detaching from the original narrative to engage in deconstructive reinterpretation. Behind this subcultural revelry lies a playful dismantling of authoritative narratives by young people. As economic pressures ripple into the job market, humorous expression serves as a psychological defense mechanism, while the official endorsement of fan creations (evidenced by the production company hosting a fan art contest) marks a historic shift in mainstream culture’s attitude toward subculture.<br>Even more profound is the cross-border flow of cultural symbols. The film achieved a box office of 920 million yuan in the Southeast Asian market, and Vietnamese audiences launched a “Rewrite Fate” hashtag challenge on social media. This form of cultural export—distinct from the traditional kung fu film model—marks the emergence of Chinese popular culture as a provider of universal value frameworks.</p>
-<h2 id="V-The-Butterfly-Effect-of-Industry-Transformation"><a href="#V-The-Butterfly-Effect-of-Industry-Transformation" class="headerlink" title="V. The Butterfly Effect of Industry Transformation"></a>V. The Butterfly Effect of Industry Transformation</h2><p>The success of Nezha 2 is reshaping the ecosystem of the film and television industry. The production company’s adoption of a “dynamic production” model—adjusting script details based on 100,000 pieces of audience feedback collected weekly—has pioneered a revolution in movie production processes. While integrating big data analysis into the creative process has sparked debates over artistic purity, it has objectively achieved a new balance between commercial viability and creative authorship.<br>The explosive growth in the derivatives market is even more enlightening. The “Huntian Ling” digital collectible, released simultaneously with the film, set a record with 270 million yuan in transactions on a blockchain platform within just 48 hours. This hybrid model of virtual and physical consumption suggests that cultural products are breaking through physical boundaries and extending into the digital ecosystem. As the real economy’s growth slows, the counter-cyclical nature of virtual consumption may well give rise to new growth engines.</p>
-<h2 id="In-Conclusion"><a href="#In-Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h2><p>The essence of the Nezha 2 phenomenon is an artistic reflection and alleviation of the collective anxieties of a transforming society. At a critical juncture in the shift of economic growth paradigms, cultural products are taking on social functions that far exceed mere entertainment. The box office myth created by this film is both an emotional projection by individuals seeking certainty amid uncertainty and a rehearsal for the cultural industry’s adaptation to a new economic reality. As the cry to “defy destiny” transforms into the wisdom of “coexisting with fate,” this narrative shift may well symbolize an elevation in collective consciousness—finding possibilities within limitations and pursuing ideals while embracing reality. This may be the most precious survival philosophy in challenging times.</p>
-]]></content>
-      <categories>
-        <category>Economy</category>
-      </categories>
-      <tags>
-        <tag>Nezha 2</tag>
-        <tag>Film</tag>
-        <tag>Box Office</tag>
-        <tag>Society</tag>
-        <tag>Reflections</tag>
       </tags>
   </entry>
   <entry>
