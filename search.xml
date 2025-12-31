@@ -21,74 +21,6 @@
       </tags>
   </entry>
   <entry>
-    <title>DIY Assembly of an Electric Bike Power System and Usage Report</title>
-    <url>/posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html">中文</a> </p>
-<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>The original vehicle used five 12V lead-acid batteries — a two-wheeler from a certain domestic traditional brand. After less than two years of use, its range had dropped to under 30 km.<br>Although I could have exchanged the old batteries for new lead-acid ones, lead-acid has a drawback: as the charge level falls, the output voltage also drops, and the vehicle’s power performance degrades significantly. So I decided to DIY a lithium-ion power system.</p>
-<h2 id="DIY-Process"><a href="#DIY-Process" class="headerlink" title="DIY Process"></a>DIY Process</h2><p>There weren’t many cell options: either ternary lithium (NMC&#x2F;NCA) or lithium iron phosphate (LFP).<br>Compared side-by-side, ternary lithium clearly has higher energy density and overall better performance, but it can be temperamental. In normal use it’s usually fine, but if something goes wrong, it can be disastrous.<br>So I chose lithium iron phosphate as the final solution.<br>LFP has many advantages: stable discharge voltage and high safety, though its low-temperature performance isn’t great. However, I live in a city in the southeast corner of China — low temperatures aren’t a concern.<br>Because of manufacturing reasons, LFP cells have slightly worse consistency, so an active-balancing protection board should be used.<br>Both the cells and the protection board were sourced from Chinese brands; I won’t advertise the specific brand names here.<br>During the National Day (Golden Week) holiday I bought 20 cells and asked the seller to balance-test them.<br>Next came grouping and welding the cells, testing, and packaging. The preliminary finished product looks like this:</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
-  </div>
-<p>I didn’t replace the motor or controller — I ran some basic tests. Top speed is 40 km&#x2F;h with 40 A current. That’s plenty for city commuting. The controller looks like this:</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
-  </div>
-<p>The power battery pack was assembled in a custom stainless steel case with explosion-proof, shock-absorbing foam inside. The installed pack looks like this:</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
-  </div>
-<p>Finally, I tuned the protection board parameters for the power pack. The initial app interface is shown below.</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="Working-with-the-Power-Battery-Protection-Board"><a href="#Working-with-the-Power-Battery-Protection-Board" class="headerlink" title="Working with the Power Battery Protection Board"></a>Working with the Power Battery Protection Board</h2><h3 id="Protection-Board-Information"><a href="#Protection-Board-Information" class="headerlink" title="Protection Board Information"></a>Protection Board Information</h3><ul>
-<li><p>Battery Power<br>Shows the total instantaneous power output or input of the battery pack. The value is the product of the current pack voltage and the absolute value of the pack current. Unit: W.</p>
-</li>
-<li><p>Average Cell Voltage<br>Shows the average voltage of the individual cells in the pack. Unit: V.</p>
-</li>
-<li><p>Battery Capacity<br>Indicates the actual battery capacity calculated by the protection board’s high-precision SOC algorithm. Unit: AH. (This value updates only after the battery undergoes a full discharge and charge cycle.)</p>
-</li>
-<li><p>Maximum Voltage Difference<br>The maximum voltage difference is the voltage gap between the highest and lowest cell in the pack. Unit: V.</p>
-</li>
-<li><p>Balancing Current<br>When the balancing function is enabled and balancing conditions are met, this field displays the real-time balancing current. Unit: A.<br>During balancing, in the real-time cell voltage display, blue indicates a discharging cell and red indicates a charging cell. A negative balancing current means the cell is discharging (blue will flash), and a positive balancing current means the cell is charging (red will flash).<br>The protection board uses active balancing: it takes charge from higher-voltage cells, stores it in the board, then supplies it to lower-voltage cells.</p>
-</li>
-</ul>
-<h3 id="Protection-Board-Parameter-Tuning"><a href="#Protection-Board-Parameter-Tuning" class="headerlink" title="Protection Board Parameter Tuning"></a>Protection Board Parameter Tuning</h3><p><strong>The protection board has many parameters, and incorrect configuration can damage the battery. Do not adjust parameters unless you fully understand their meaning!</strong></p>
-<p>Below are the most important parameters and their functions.</p>
-<ul>
-<li><p>Number of Cells<br>The number of cells indicates how many individual cells are in the pack. Set this value accurately before use; otherwise the protection board will not work properly.</p>
-</li>
-<li><p>Balancing Trigger Voltage Difference<br>When balancing is enabled, balancing starts if the pack’s maximum voltage difference exceeds this value and an individual cell’s voltage is above the balancing start voltage. Balancing continues until the difference falls below this trigger or the cell voltage drops below the start voltage. For example, if the trigger is set to 0.01 V, balancing starts when the pack difference exceeds 0.01 V and stops when it falls below 0.01 V. (Recommendation: for batteries ≥ 50 AH set the trigger to 0.005 V; for batteries &lt; 50 AH set it to 0.01 V.)</p>
-</li>
-<li><p>Balancing Start Voltage<br>The balancing start voltage controls the voltage stage at which balancing is allowed. Balancing is only triggered when a cell’s voltage exceeds this value and the pack’s maximum voltage difference exceeds the balancing trigger.</p>
-</li>
-<li><p>“Cell Overcharge Voltage” and “Cell Overcharge Recovery”<br>“Cell overcharge voltage” refers to the saturation voltage of a cell. If any cell’s voltage exceeds this value, a ‘cell overcharge alarm’ is triggered and the protection board disables the charging MOSFET, preventing further charging (discharging is still allowed). After the alarm, charging is only re-enabled when all cell voltages fall below the “cell overcharge recovery” value.</p>
-</li>
-<li><p>“Cell Under-voltage Protection” and “Cell Under-voltage Recovery”<br>“Cell under-voltage protection” is the cutoff voltage for a cell. If any cell’s voltage falls below this value, a ‘cell under-voltage alarm’ is triggered and the protection board disables the discharging MOSFET, preventing further discharging (charging is still allowed). After the alarm, discharging is re-enabled only when all cell voltages rise above the “cell under-voltage recovery” value.</p>
-</li>
-<li><p>Recommended Charging Voltage<br>“Recommended charging voltage” is the BMS-recommended charging range or value for optimal battery performance and safety. This recommendation is based on cell type, manufacturer guidance, BMS design characteristics, and charger features.</p>
-</li>
-<li><p>“SOC-100% Voltage” and “SOC-0% Voltage”<br>“SOC-100% voltage” is the voltage when a cell’s SOC is considered 100%. This value is slightly lower than the cell overcharge voltage; when a cell’s voltage is greater than or equal to this value it’s considered full. “SOC-0% voltage” is the voltage when a cell’s SOC is considered 0%. This value is slightly higher than the cell under-voltage protection voltage; when a cell’s voltage is less than or equal to this value it’s considered empty.</p>
-</li>
-<li><p>Auto Shutdown Voltage<br>The auto shutdown voltage is the minimum voltage at which the protection board remains operational. When the highest cell voltage in the pack drops below this value, the protection board shuts down. This value must be lower than the “cell under-voltage protection” setting.</p>
-</li>
-</ul>
-<h3 id="My-Configured-Parameter-Values"><a href="#My-Configured-Parameter-Values" class="headerlink" title="My Configured Parameter Values"></a>My Configured Parameter Values</h3><p>(Welcome to discuss — updates will be posted!)</p>
-]]></content>
-      <categories>
-        <category>Technology</category>
-      </categories>
-      <tags>
-        <tag>DIY</tag>
-        <tag>Electric Bike</tag>
-        <tag>Battery</tag>
-        <tag>Power System</tag>
-        <tag>New Energy</tag>
-        <tag>Technology</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自己动手组建电动车动力系统及使用报告</title>
     <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
@@ -148,8 +80,8 @@
       </categories>
       <tags>
         <tag>新能源</tag>
-        <tag>DIY</tag>
         <tag>技术</tag>
+        <tag>DIY</tag>
         <tag>电动车</tag>
         <tag>电池</tag>
         <tag>动力系统</tag>
@@ -215,11 +147,79 @@
       </categories>
       <tags>
         <tag>新能源</tag>
-        <tag>DIY</tag>
         <tag>技术</tag>
+        <tag>DIY</tag>
         <tag>电动车</tag>
         <tag>电池</tag>
         <tag>动力系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DIY Assembly of an Electric Bike Power System and Usage Report</title>
+    <url>/posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html">中文</a> </p>
+<h2 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h2><p>The original vehicle used five 12V lead-acid batteries — a two-wheeler from a certain domestic traditional brand. After less than two years of use, its range had dropped to under 30 km.<br>Although I could have exchanged the old batteries for new lead-acid ones, lead-acid has a drawback: as the charge level falls, the output voltage also drops, and the vehicle’s power performance degrades significantly. So I decided to DIY a lithium-ion power system.</p>
+<h2 id="DIY-Process"><a href="#DIY-Process" class="headerlink" title="DIY Process"></a>DIY Process</h2><p>There weren’t many cell options: either ternary lithium (NMC&#x2F;NCA) or lithium iron phosphate (LFP).<br>Compared side-by-side, ternary lithium clearly has higher energy density and overall better performance, but it can be temperamental. In normal use it’s usually fine, but if something goes wrong, it can be disastrous.<br>So I chose lithium iron phosphate as the final solution.<br>LFP has many advantages: stable discharge voltage and high safety, though its low-temperature performance isn’t great. However, I live in a city in the southeast corner of China — low temperatures aren’t a concern.<br>Because of manufacturing reasons, LFP cells have slightly worse consistency, so an active-balancing protection board should be used.<br>Both the cells and the protection board were sourced from Chinese brands; I won’t advertise the specific brand names here.<br>During the National Day (Golden Week) holiday I bought 20 cells and asked the seller to balance-test them.<br>Next came grouping and welding the cells, testing, and packaging. The preliminary finished product looks like this:</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
+  </div>
+<p>I didn’t replace the motor or controller — I ran some basic tests. Top speed is 40 km&#x2F;h with 40 A current. That’s plenty for city commuting. The controller looks like this:</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
+  </div>
+<p>The power battery pack was assembled in a custom stainless steel case with explosion-proof, shock-absorbing foam inside. The installed pack looks like this:</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
+  </div>
+<p>Finally, I tuned the protection board parameters for the power pack. The initial app interface is shown below.</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="Working-with-the-Power-Battery-Protection-Board"><a href="#Working-with-the-Power-Battery-Protection-Board" class="headerlink" title="Working with the Power Battery Protection Board"></a>Working with the Power Battery Protection Board</h2><h3 id="Protection-Board-Information"><a href="#Protection-Board-Information" class="headerlink" title="Protection Board Information"></a>Protection Board Information</h3><ul>
+<li><p>Battery Power<br>Shows the total instantaneous power output or input of the battery pack. The value is the product of the current pack voltage and the absolute value of the pack current. Unit: W.</p>
+</li>
+<li><p>Average Cell Voltage<br>Shows the average voltage of the individual cells in the pack. Unit: V.</p>
+</li>
+<li><p>Battery Capacity<br>Indicates the actual battery capacity calculated by the protection board’s high-precision SOC algorithm. Unit: AH. (This value updates only after the battery undergoes a full discharge and charge cycle.)</p>
+</li>
+<li><p>Maximum Voltage Difference<br>The maximum voltage difference is the voltage gap between the highest and lowest cell in the pack. Unit: V.</p>
+</li>
+<li><p>Balancing Current<br>When the balancing function is enabled and balancing conditions are met, this field displays the real-time balancing current. Unit: A.<br>During balancing, in the real-time cell voltage display, blue indicates a discharging cell and red indicates a charging cell. A negative balancing current means the cell is discharging (blue will flash), and a positive balancing current means the cell is charging (red will flash).<br>The protection board uses active balancing: it takes charge from higher-voltage cells, stores it in the board, then supplies it to lower-voltage cells.</p>
+</li>
+</ul>
+<h3 id="Protection-Board-Parameter-Tuning"><a href="#Protection-Board-Parameter-Tuning" class="headerlink" title="Protection Board Parameter Tuning"></a>Protection Board Parameter Tuning</h3><p><strong>The protection board has many parameters, and incorrect configuration can damage the battery. Do not adjust parameters unless you fully understand their meaning!</strong></p>
+<p>Below are the most important parameters and their functions.</p>
+<ul>
+<li><p>Number of Cells<br>The number of cells indicates how many individual cells are in the pack. Set this value accurately before use; otherwise the protection board will not work properly.</p>
+</li>
+<li><p>Balancing Trigger Voltage Difference<br>When balancing is enabled, balancing starts if the pack’s maximum voltage difference exceeds this value and an individual cell’s voltage is above the balancing start voltage. Balancing continues until the difference falls below this trigger or the cell voltage drops below the start voltage. For example, if the trigger is set to 0.01 V, balancing starts when the pack difference exceeds 0.01 V and stops when it falls below 0.01 V. (Recommendation: for batteries ≥ 50 AH set the trigger to 0.005 V; for batteries &lt; 50 AH set it to 0.01 V.)</p>
+</li>
+<li><p>Balancing Start Voltage<br>The balancing start voltage controls the voltage stage at which balancing is allowed. Balancing is only triggered when a cell’s voltage exceeds this value and the pack’s maximum voltage difference exceeds the balancing trigger.</p>
+</li>
+<li><p>“Cell Overcharge Voltage” and “Cell Overcharge Recovery”<br>“Cell overcharge voltage” refers to the saturation voltage of a cell. If any cell’s voltage exceeds this value, a ‘cell overcharge alarm’ is triggered and the protection board disables the charging MOSFET, preventing further charging (discharging is still allowed). After the alarm, charging is only re-enabled when all cell voltages fall below the “cell overcharge recovery” value.</p>
+</li>
+<li><p>“Cell Under-voltage Protection” and “Cell Under-voltage Recovery”<br>“Cell under-voltage protection” is the cutoff voltage for a cell. If any cell’s voltage falls below this value, a ‘cell under-voltage alarm’ is triggered and the protection board disables the discharging MOSFET, preventing further discharging (charging is still allowed). After the alarm, discharging is re-enabled only when all cell voltages rise above the “cell under-voltage recovery” value.</p>
+</li>
+<li><p>Recommended Charging Voltage<br>“Recommended charging voltage” is the BMS-recommended charging range or value for optimal battery performance and safety. This recommendation is based on cell type, manufacturer guidance, BMS design characteristics, and charger features.</p>
+</li>
+<li><p>“SOC-100% Voltage” and “SOC-0% Voltage”<br>“SOC-100% voltage” is the voltage when a cell’s SOC is considered 100%. This value is slightly lower than the cell overcharge voltage; when a cell’s voltage is greater than or equal to this value it’s considered full. “SOC-0% voltage” is the voltage when a cell’s SOC is considered 0%. This value is slightly higher than the cell under-voltage protection voltage; when a cell’s voltage is less than or equal to this value it’s considered empty.</p>
+</li>
+<li><p>Auto Shutdown Voltage<br>The auto shutdown voltage is the minimum voltage at which the protection board remains operational. When the highest cell voltage in the pack drops below this value, the protection board shuts down. This value must be lower than the “cell under-voltage protection” setting.</p>
+</li>
+</ul>
+<h3 id="My-Configured-Parameter-Values"><a href="#My-Configured-Parameter-Values" class="headerlink" title="My Configured Parameter Values"></a>My Configured Parameter Values</h3><p>(Welcome to discuss — updates will be posted!)</p>
+]]></content>
+      <categories>
+        <category>Technology</category>
+      </categories>
+      <tags>
+        <tag>DIY</tag>
+        <tag>Electric Bike</tag>
+        <tag>Battery</tag>
+        <tag>Power System</tag>
+        <tag>New Energy</tag>
+        <tag>Technology</tag>
       </tags>
   </entry>
   <entry>
@@ -290,6 +290,28 @@
       </tags>
   </entry>
   <entry>
+    <title>这个世界不太平 以色列伊朗爆发军事冲突</title>
+    <url>/posts/20250623-zhe-ge-shi-jie-bu-tai-ping-yi-se-lie-yi-lang-bao-fa-jun-shi-chong-tu.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250623-the-world-isnt-at-peace-israel-and-iran-erupt-into-military-conflict.html">英文</a> </p>
+<p>这个世界不太平唉，印巴冲突刚结束不久，俄乌战争还在继续，以色列伊朗又再爆发军事冲突。</p>
+<h2 id="冲突大概情况"><a href="#冲突大概情况" class="headerlink" title="冲突大概情况"></a>冲突大概情况</h2><p>2025年6月13日凌晨，以色列发起代号“雄狮崛起”（Operation Rising Lion）的空袭行动，目标直指伊朗境内的核设施和关键军事基地。据伊朗官方统计，首次打击就造成至少224人死亡、1000余人受伤，其中不乏平民伤亡。<br>伊朗也不客气，很快动用弹道导弹和无人机对以色列进行报复性打击，发射导弹20余枚，造成以色列境内数十人受伤，多处基础设施受损。<br>6月22日，美国也插手其中，动用了B-2隐形轰炸机打击福尔多、纳坦兹和伊斯法罕核设施，美方宣称已严重削弱伊核能力，但伊朗方面反驳说损伤有限。至此，一场由空袭引发的中东新一轮大规模冲突正式升级。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250512.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="历史地缘博弈"><a href="#历史地缘博弈" class="headerlink" title="历史地缘博弈"></a>历史地缘博弈</h2><p>以色列与伊朗的敌对，可追溯到1979年伊朗伊斯兰革命后新政权上台，宣示“反犹”和“反美”立场，逐步通过资助真主党（Hezbollah）等什叶派武装对以色列及其盟友展开代理人战争。<br>以色列则多次在叙利亚和黎巴嫩境内对伊朗势力发动空袭，试图遏制德黑兰的地区影响力。这次冲突爆发前，双方虽未公开宣战，却早已在叙利亚多次交锋，中东呈现“火药桶”常态。周边国家态度各不相同：伊拉克、叙利亚、巴基斯坦强烈谴责以色列；沙特、阿联酋等海湾国家则呼吁克制；土耳其和俄罗斯也对地区稳定表示关切；西方大多数国家支持以色列的“自卫权”。<br>长期的宗教、民族和国家利益纠葛，让这场冲突不仅是两国对抗，也是整个中东博弈格局的延伸。</p>
+<h2 id="冲突的必然性"><a href="#冲突的必然性" class="headerlink" title="冲突的必然性"></a>冲突的必然性</h2><p>从战略角度看，这轮冲突几乎是迟早的事儿。首先，伊朗的核计划在过去数年里不断提速，以高浓缩铀储量达400公斤为标志，已逼近武器级门槛，令以色列深感不安。<br>其次，经过2023—2024年加沙与黎巴嫩战场的反复较量，伊朗的代理网络——真主党与哈马斯——相继遭受重创，已不足以对以色列形成有效威慑，给了以色列一次先发制人的战略机会。<br>再者，国内政治也在推动：以色列政府希望通过对外军事行动巩固国内支持，伊朗内部则面临经济制裁和国内不满，同样不愿显得软弱。多重因素叠加，使得这场冲突几乎无法避免。</p>
+<h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><p>这场冲突不仅在中东掀起涟漪，也让大国重新审视各自利益。美国深度介入，既展示了与以色列的牢固联盟，也引发国内外对总统越权发动战争的激烈争论。<br>俄罗斯与中国则呼吁立即停火，警告冲突可能引爆更大规模战争。全球油价应声上涨，国际能源市场动荡；联合国安理会多次召开紧急磋商，但因美俄分歧难以形成一致决议。展望未来，若冲突持续升级，可能出现更多代理人战争及地区国家的全面介入；若各方警惕战争风险，也可能在国际斡旋下逐步降温。总的来说，这场危机是对国际秩序的一次重要考验，未来走势将在大国博弈与地区实际间寻找微妙平衡。</p>
+]]></content>
+      <categories>
+        <category>政治</category>
+      </categories>
+      <tags>
+        <tag>政治</tag>
+        <tag>伊以冲突</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>The World Isn’t at Peace Israel and Iran Erupt into Military Conflict</title>
     <url>/posts/20250623-the-world-isnt-at-peace-israel-and-iran-erupt-into-military-conflict.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250623-zhe-ge-shi-jie-bu-tai-ping-yi-se-lie-yi-lang-bao-fa-jun-shi-chong-tu.html">中文</a> </p>
@@ -316,28 +338,6 @@
       <tags>
         <tag>Politics</tag>
         <tag>Israel–Iran Conflict</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>这个世界不太平 以色列伊朗爆发军事冲突</title>
-    <url>/posts/20250623-zhe-ge-shi-jie-bu-tai-ping-yi-se-lie-yi-lang-bao-fa-jun-shi-chong-tu.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250623-the-world-isnt-at-peace-israel-and-iran-erupt-into-military-conflict.html">英文</a> </p>
-<p>这个世界不太平唉，印巴冲突刚结束不久，俄乌战争还在继续，以色列伊朗又再爆发军事冲突。</p>
-<h2 id="冲突大概情况"><a href="#冲突大概情况" class="headerlink" title="冲突大概情况"></a>冲突大概情况</h2><p>2025年6月13日凌晨，以色列发起代号“雄狮崛起”（Operation Rising Lion）的空袭行动，目标直指伊朗境内的核设施和关键军事基地。据伊朗官方统计，首次打击就造成至少224人死亡、1000余人受伤，其中不乏平民伤亡。<br>伊朗也不客气，很快动用弹道导弹和无人机对以色列进行报复性打击，发射导弹20余枚，造成以色列境内数十人受伤，多处基础设施受损。<br>6月22日，美国也插手其中，动用了B-2隐形轰炸机打击福尔多、纳坦兹和伊斯法罕核设施，美方宣称已严重削弱伊核能力，但伊朗方面反驳说损伤有限。至此，一场由空袭引发的中东新一轮大规模冲突正式升级。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250512.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="历史地缘博弈"><a href="#历史地缘博弈" class="headerlink" title="历史地缘博弈"></a>历史地缘博弈</h2><p>以色列与伊朗的敌对，可追溯到1979年伊朗伊斯兰革命后新政权上台，宣示“反犹”和“反美”立场，逐步通过资助真主党（Hezbollah）等什叶派武装对以色列及其盟友展开代理人战争。<br>以色列则多次在叙利亚和黎巴嫩境内对伊朗势力发动空袭，试图遏制德黑兰的地区影响力。这次冲突爆发前，双方虽未公开宣战，却早已在叙利亚多次交锋，中东呈现“火药桶”常态。周边国家态度各不相同：伊拉克、叙利亚、巴基斯坦强烈谴责以色列；沙特、阿联酋等海湾国家则呼吁克制；土耳其和俄罗斯也对地区稳定表示关切；西方大多数国家支持以色列的“自卫权”。<br>长期的宗教、民族和国家利益纠葛，让这场冲突不仅是两国对抗，也是整个中东博弈格局的延伸。</p>
-<h2 id="冲突的必然性"><a href="#冲突的必然性" class="headerlink" title="冲突的必然性"></a>冲突的必然性</h2><p>从战略角度看，这轮冲突几乎是迟早的事儿。首先，伊朗的核计划在过去数年里不断提速，以高浓缩铀储量达400公斤为标志，已逼近武器级门槛，令以色列深感不安。<br>其次，经过2023—2024年加沙与黎巴嫩战场的反复较量，伊朗的代理网络——真主党与哈马斯——相继遭受重创，已不足以对以色列形成有效威慑，给了以色列一次先发制人的战略机会。<br>再者，国内政治也在推动：以色列政府希望通过对外军事行动巩固国内支持，伊朗内部则面临经济制裁和国内不满，同样不愿显得软弱。多重因素叠加，使得这场冲突几乎无法避免。</p>
-<h2 id="展望未来"><a href="#展望未来" class="headerlink" title="展望未来"></a>展望未来</h2><p>这场冲突不仅在中东掀起涟漪，也让大国重新审视各自利益。美国深度介入，既展示了与以色列的牢固联盟，也引发国内外对总统越权发动战争的激烈争论。<br>俄罗斯与中国则呼吁立即停火，警告冲突可能引爆更大规模战争。全球油价应声上涨，国际能源市场动荡；联合国安理会多次召开紧急磋商，但因美俄分歧难以形成一致决议。展望未来，若冲突持续升级，可能出现更多代理人战争及地区国家的全面介入；若各方警惕战争风险，也可能在国际斡旋下逐步降温。总的来说，这场危机是对国际秩序的一次重要考验，未来走势将在大国博弈与地区实际间寻找微妙平衡。</p>
-]]></content>
-      <categories>
-        <category>政治</category>
-      </categories>
-      <tags>
-        <tag>政治</tag>
-        <tag>伊以冲突</tag>
       </tags>
   </entry>
   <entry>
