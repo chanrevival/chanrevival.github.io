@@ -90,7 +90,7 @@
   </entry>
   <entry>
     <title>自己动手组建电动车动力系统及使用报告</title>
-    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao-1.html</url>
+    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
 <h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
@@ -157,7 +157,7 @@
   </entry>
   <entry>
     <title>自己动手组建电动车动力系统及使用报告</title>
-    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
+    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao-1.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
 <h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
