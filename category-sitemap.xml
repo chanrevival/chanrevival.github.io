@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/categories/%25E5%2581%25A5%25E5%25BA%25B7/</loc>
+        <lastmod>2026-02-06T09:29:01.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/categories/%25E6%2594%25BF%25E6%25B2%25BB/</loc>
         <lastmod>2026-02-04T14:15:15.237Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,13 +25,6 @@
     <url>
         <loc>https://www.crsky.uk/categories/Politics/</loc>
         <lastmod>2026-02-04T14:14:01.392Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/categories/%25E5%2581%25A5%25E5%25BA%25B7/</loc>
-        <lastmod>2026-01-30T06:14:43.606Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

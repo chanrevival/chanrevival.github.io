@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://www.crsky.uk/tags/%E8%8D%89%E8%8E%93/</loc>
+        <lastmod>2026-02-06T09:29:01.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E6%B0%B4%E5%9F%B9/</loc>
+        <lastmod>2026-02-06T09:29:01.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://www.crsky.uk/tags/%E5%81%A5%E5%BA%B7/</loc>
+        <lastmod>2026-02-06T09:29:01.364Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E9%A9%AC%E6%9D%9C%E7%BD%97/</loc>
         <lastmod>2026-02-04T14:15:15.237Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -68,27 +89,6 @@
     <url>
         <loc>https://www.crsky.uk/tags/Politics/</loc>
         <lastmod>2026-02-04T14:14:01.392Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E8%8D%89%E8%8E%93/</loc>
-        <lastmod>2026-01-30T06:14:43.606Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E6%B0%B4%E5%9F%B9/</loc>
-        <lastmod>2026-01-30T06:14:43.606Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%81%A5%E5%BA%B7/</loc>
-        <lastmod>2026-01-30T06:14:43.606Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -178,6 +178,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/GENIUS/</loc>
+        <lastmod>2025-07-12T15:05:11.507Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/</loc>
         <lastmod>2025-07-12T15:05:11.507Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -200,13 +207,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/%E7%BB%8F%E6%B5%8E/</loc>
-        <lastmod>2025-07-12T15:05:11.507Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/GENIUS/</loc>
         <lastmod>2025-07-12T15:05:11.507Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -598,6 +598,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/%E5%9C%B0%E9%9C%87/</loc>
+        <lastmod>2025-05-22T06:23:38.538Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E8%A5%BF%E8%97%8F/</loc>
         <lastmod>2025-05-22T06:23:38.538Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -606,13 +613,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/%E6%96%B0%E9%97%BB%C2%B7News/</loc>
-        <lastmod>2025-05-22T06:23:38.538Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/%E5%9C%B0%E9%9C%87/</loc>
         <lastmod>2025-05-22T06:23:38.538Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
