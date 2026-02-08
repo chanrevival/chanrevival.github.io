@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>/posts/20230501-schrodingers-cat.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Schrodinger’s cat<br>薛定谔的猫</p>
-<p>Austrian physicist Erwin Schrödinger is one of the founders of quantum mechanics, but he’s most famous for something he never actually did: a thought experiment involving a cat.<br>奥地利物理学家埃尔温·薛定谔是量子力学的创始人之一，但他最为人所知的却是他从未真正实施过的一件事：一个涉及一只猫的思维实验。</p>
-<p>He imagined taking a cat and placing it in a sealed box with a device that had a 50% chance of killing the cat in the next hour. At the end of that hour, he asked, “What is the state of the cat?”<br>他设想了一只猫，并将其放入一个密封的盒子中，盒子里有一个装置，这个装置有50%的几率在下一个小时内杀死猫。在那一小时结束时，他问道：“猫的状态如何？”</p>
-<p>Common sense suggests that the cat is either alive or dead, but Schrödinger pointed out that according to quantum physics, at the instant before the box is opened, the cat is equal parts alive and dead, at the same time.<br>常识告诉我们，猫要么活着要么死了，但薛定谔指出，根据量子物理学，在盒子打开前的瞬间，猫同时处于既活着又死了的状态。</p>
-<p>It’s only when the box is opened that we see a single definite state.<br>只有当盒子被打开时，我们才能看到一种确定的状态。</p>
-<p>Until then, the cat is a blur of probability, half one thing and half the other.<br>在此之前，猫是一种概率的模糊状态，一半是这样，一半是那样。</p>
-<p>This seems absurd, which was Schrödinger’s point.<br>这听起来很荒谬，这正是薛定谔想要表达的观点。</p>
-<p>He found quantum physics so philosophically disturbing, that he abandoned the theory he had helped make and turned to writing about biology.<br>他发现量子物理学在哲学上如此令人不安，以至于他放弃了参与创立的理论，转而开始撰写关于生物学的文章。</p>
-<p>As absurd as it may seem, though, Schrödinger’s cat is very real. In fact, it’s essential.<br>尽管这可能看起来很荒谬，但薛定谔的猫却是非常真实的。实际上，它至关重要。</p>
-<p>If it weren’t possible for quantum objects to be in two states at once, the computer you’re using to watch this couldn’t exist.<br>如果量子物体不可能同时处于两种状态，那么您用来观看这个的计算机就无法存在。</p>
-<p>The quantum phenomenon of superposition is a consequence of the dual particle and wave nature of everything.<br>量子现象中的叠加态是万物兼具粒子性和波动性的结果。</p>
-<p>In order for an object to have a wavelength, it must extend over some region of space, which means it occupies many positions at the same time.<br>为了使一个物体具有波长，它必须在空间中扩展一定的区域，这意味着它同时占据了许多位置。</p>
-<p>The wavelength of an object limited to a small region of space can’t be perfectly defined, though.<br>然而，一个被限制在空间小区域内的物体的波长是无法被精确定义的。</p>
-<p>So it exists in many different wavelengths at the same time.<br>因此，它同时存在于许多不同的波长中。</p>
-<p>We don’t see these wave properties for everyday objects because the wavelength decreases as the momentum increases.<br>我们不会在日常物体中看到这些波动性质，因为波长会随着动量的增加而减小。</p>
-<p>And a cat is relatively big and heavy.<br>而猫相对较大且重。</p>
-<p>If we took a single atom and blew it up to the size of the Solar System, the wavelength of a cat running from a physicist would be as small as an atom within that Solar System.<br>如果我们把一个原子放大到太阳系那么大，那么一只猫从物理学家那里逃跑的波长就会像那个太阳系中的原子一样小。</p>
-<p>That’s far too small to detect, so we’ll never see wave behavior from a cat.<br>这太小了，以至于无法检测到，所以我们永远不会看到猫表现出波动行为。</p>
-<p>A tiny particle, like an electron, though, can show dramatic evidence of its dual nature.<br>然而，像电子这样的微小粒子，可以显著地展示其双重性质。</p>
-<p>If we shoot electrons one at a time at a set of two narrow slits cut in a barrier, each electron on the far side is detected at a single place at a specific instant, like a particle.<br>如果我们一次向一个屏障上切出的两个狭缝射击电子，远处的每个电子都会在特定的瞬间在单个位置被检测到，就像一个粒子一样。</p>
-<p>But if you repeat this experiment many times, keeping track of all the individual detections, you’ll see them trace out a pattern that’s characteristic of wave behavior: a set of stripes - regions with many electrons separated by regions where there are none at all.<br>但是，如果您多次重复这个实验，并记录下所有单个检测点，您会看到它们描绘出一个典型的波动行为模式：一组条纹——许多电子集中的区域与完全没有电子的区域相间隔。</p>
-<p>Block one of the slits and the stripes go away.<br>如果阻挡其中一个狭缝，条纹就会消失。</p>
-<p>This shows that the pattern is a result of each electron going through both slits at the same time.<br>这表明这个图案是每个电子同时通过两个狭缝的结果。</p>
-<p>A single electron isn’t choosing to go left or right but left and right simultaneously.<br>单个电子不是选择向左或向右，而是同时向左和向右。</p>
-<p>This superposition of states also leads to modern technology.<br>这种状态的叠加也导致了现代技术的产生。</p>
-<p>An electron near the nucleus of an atom exists in a spread out, wave-like orbit.<br>原子核附近的电子存在于一个扩散开的、类似波动的轨道上。</p>
-<p>Bring two atoms close together, and the electrons don’t need to choose just one atom but are shared between them.<br>当两个原子靠得很近时，电子不必只选择一个原子，而是在它们之间共享。</p>
-<p>This is how some chemical bonds form.<br>这就是一些化学键形成的方式。</p>
-<p>An electron in a molecule isn’t on just atom A or atom B, but A+ B.<br>分子中的电子不仅仅在原子A或原子B上，而是在A和B之间。</p>
-<p>As you add more atoms, the electrons spread out more, shared between vast numbers of atoms at the same time.<br>当您添加更多原子时，电子会扩散得更广，同时被大量原子共享。</p>
-<p>The electrons in a solid aren’t bound to a particular atom but shared among all of them, extending over a large range of space.<br>固体中的电子不是绑定在特定的原子上，而是被所有原子共享，扩展在广阔的空间范围内。</p>
-<p>This gigantic superposition of states determines the ways electrons move through the material, whether it’s a conductor or an insulator or a semiconductor.<br>这种巨大的状态叠加决定了电子在材料中的运动方式，无论是导体、绝缘体还是半导体。</p>
-<p>Understanding how electrons are shared among atoms allows us to precisely control the properties of semiconductor materials, like silicon.<br>理解电子如何在原子之间共享，使我们能够精确控制半导体材料（如硅）的性质。</p>
-<p>Combining different semiconductors in the right way allows us to make transistors on a tiny scale, millions on a single computer chip.<br>以正确的方式组合不同的半导体，使我们能够在微小的尺度上制造晶体管，单个计算机芯片上可以有数百万个。</p>
-<p>Those chips and their spread out electrons power the computer you’re using to watch this video.<br>正是这些芯片及其分散的电子为您正在观看这个视频的计算机提供了动力。</p>
-<p>An old joke says that the Internet exists to allow the sharing of cat videos.<br>一个老笑话说道，互联网的存在就是为了允许分享猫的视频。</p>
-<p>At a very deep level, though, the Internet owes its existence to an Austrian physicist and his imaginary cat.<br>然而，在更深层次上，互联网的存在归功于一位奥地利物理学家和他的虚构猫。</p>
-]]></content>
-      <categories>
-        <category>科学探索</category>
-        <category>量子力学</category>
-      </categories>
-      <tags>
-        <tag>双语</tag>
-        <tag>量子力学</tag>
-        <tag>薛定谔的猫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Trump Wins Reelection  Promises to  Lead America into a Golden Age</title>
     <url>/posts/20241106trump-wins-reelection.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Trump-Wins-Reelection-Promises-to-Lead-America-into-a-Golden-Age"><a href="#Trump-Wins-Reelection-Promises-to-Lead-America-into-a-Golden-Age" class="headerlink" title="Trump Wins Reelection  Promises to  Lead America into a Golden Age"></a>Trump Wins Reelection  Promises to  Lead America into a Golden Age</h1><p><strong>[November 6, 2024]</strong><br>Former U.S. President Donald Trump has successfully won the 2024 presidential election. Early this morning, he delivered a victory speech at the West Palm Beach Convention Center in Florida, declaring himself the second president in U.S. history to serve non-consecutive terms. The atmosphere at the event was electrifying, with supporters chanting “USA” to express their excitement.</p>
@@ -101,6 +50,57 @@
         <tag>高质量发展</tag>
         <tag>民生改善</tag>
         <tag>国际合作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/posts/20230501-schrodingers-cat.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Schrodinger’s cat<br>薛定谔的猫</p>
+<p>Austrian physicist Erwin Schrödinger is one of the founders of quantum mechanics, but he’s most famous for something he never actually did: a thought experiment involving a cat.<br>奥地利物理学家埃尔温·薛定谔是量子力学的创始人之一，但他最为人所知的却是他从未真正实施过的一件事：一个涉及一只猫的思维实验。</p>
+<p>He imagined taking a cat and placing it in a sealed box with a device that had a 50% chance of killing the cat in the next hour. At the end of that hour, he asked, “What is the state of the cat?”<br>他设想了一只猫，并将其放入一个密封的盒子中，盒子里有一个装置，这个装置有50%的几率在下一个小时内杀死猫。在那一小时结束时，他问道：“猫的状态如何？”</p>
+<p>Common sense suggests that the cat is either alive or dead, but Schrödinger pointed out that according to quantum physics, at the instant before the box is opened, the cat is equal parts alive and dead, at the same time.<br>常识告诉我们，猫要么活着要么死了，但薛定谔指出，根据量子物理学，在盒子打开前的瞬间，猫同时处于既活着又死了的状态。</p>
+<p>It’s only when the box is opened that we see a single definite state.<br>只有当盒子被打开时，我们才能看到一种确定的状态。</p>
+<p>Until then, the cat is a blur of probability, half one thing and half the other.<br>在此之前，猫是一种概率的模糊状态，一半是这样，一半是那样。</p>
+<p>This seems absurd, which was Schrödinger’s point.<br>这听起来很荒谬，这正是薛定谔想要表达的观点。</p>
+<p>He found quantum physics so philosophically disturbing, that he abandoned the theory he had helped make and turned to writing about biology.<br>他发现量子物理学在哲学上如此令人不安，以至于他放弃了参与创立的理论，转而开始撰写关于生物学的文章。</p>
+<p>As absurd as it may seem, though, Schrödinger’s cat is very real. In fact, it’s essential.<br>尽管这可能看起来很荒谬，但薛定谔的猫却是非常真实的。实际上，它至关重要。</p>
+<p>If it weren’t possible for quantum objects to be in two states at once, the computer you’re using to watch this couldn’t exist.<br>如果量子物体不可能同时处于两种状态，那么您用来观看这个的计算机就无法存在。</p>
+<p>The quantum phenomenon of superposition is a consequence of the dual particle and wave nature of everything.<br>量子现象中的叠加态是万物兼具粒子性和波动性的结果。</p>
+<p>In order for an object to have a wavelength, it must extend over some region of space, which means it occupies many positions at the same time.<br>为了使一个物体具有波长，它必须在空间中扩展一定的区域，这意味着它同时占据了许多位置。</p>
+<p>The wavelength of an object limited to a small region of space can’t be perfectly defined, though.<br>然而，一个被限制在空间小区域内的物体的波长是无法被精确定义的。</p>
+<p>So it exists in many different wavelengths at the same time.<br>因此，它同时存在于许多不同的波长中。</p>
+<p>We don’t see these wave properties for everyday objects because the wavelength decreases as the momentum increases.<br>我们不会在日常物体中看到这些波动性质，因为波长会随着动量的增加而减小。</p>
+<p>And a cat is relatively big and heavy.<br>而猫相对较大且重。</p>
+<p>If we took a single atom and blew it up to the size of the Solar System, the wavelength of a cat running from a physicist would be as small as an atom within that Solar System.<br>如果我们把一个原子放大到太阳系那么大，那么一只猫从物理学家那里逃跑的波长就会像那个太阳系中的原子一样小。</p>
+<p>That’s far too small to detect, so we’ll never see wave behavior from a cat.<br>这太小了，以至于无法检测到，所以我们永远不会看到猫表现出波动行为。</p>
+<p>A tiny particle, like an electron, though, can show dramatic evidence of its dual nature.<br>然而，像电子这样的微小粒子，可以显著地展示其双重性质。</p>
+<p>If we shoot electrons one at a time at a set of two narrow slits cut in a barrier, each electron on the far side is detected at a single place at a specific instant, like a particle.<br>如果我们一次向一个屏障上切出的两个狭缝射击电子，远处的每个电子都会在特定的瞬间在单个位置被检测到，就像一个粒子一样。</p>
+<p>But if you repeat this experiment many times, keeping track of all the individual detections, you’ll see them trace out a pattern that’s characteristic of wave behavior: a set of stripes - regions with many electrons separated by regions where there are none at all.<br>但是，如果您多次重复这个实验，并记录下所有单个检测点，您会看到它们描绘出一个典型的波动行为模式：一组条纹——许多电子集中的区域与完全没有电子的区域相间隔。</p>
+<p>Block one of the slits and the stripes go away.<br>如果阻挡其中一个狭缝，条纹就会消失。</p>
+<p>This shows that the pattern is a result of each electron going through both slits at the same time.<br>这表明这个图案是每个电子同时通过两个狭缝的结果。</p>
+<p>A single electron isn’t choosing to go left or right but left and right simultaneously.<br>单个电子不是选择向左或向右，而是同时向左和向右。</p>
+<p>This superposition of states also leads to modern technology.<br>这种状态的叠加也导致了现代技术的产生。</p>
+<p>An electron near the nucleus of an atom exists in a spread out, wave-like orbit.<br>原子核附近的电子存在于一个扩散开的、类似波动的轨道上。</p>
+<p>Bring two atoms close together, and the electrons don’t need to choose just one atom but are shared between them.<br>当两个原子靠得很近时，电子不必只选择一个原子，而是在它们之间共享。</p>
+<p>This is how some chemical bonds form.<br>这就是一些化学键形成的方式。</p>
+<p>An electron in a molecule isn’t on just atom A or atom B, but A+ B.<br>分子中的电子不仅仅在原子A或原子B上，而是在A和B之间。</p>
+<p>As you add more atoms, the electrons spread out more, shared between vast numbers of atoms at the same time.<br>当您添加更多原子时，电子会扩散得更广，同时被大量原子共享。</p>
+<p>The electrons in a solid aren’t bound to a particular atom but shared among all of them, extending over a large range of space.<br>固体中的电子不是绑定在特定的原子上，而是被所有原子共享，扩展在广阔的空间范围内。</p>
+<p>This gigantic superposition of states determines the ways electrons move through the material, whether it’s a conductor or an insulator or a semiconductor.<br>这种巨大的状态叠加决定了电子在材料中的运动方式，无论是导体、绝缘体还是半导体。</p>
+<p>Understanding how electrons are shared among atoms allows us to precisely control the properties of semiconductor materials, like silicon.<br>理解电子如何在原子之间共享，使我们能够精确控制半导体材料（如硅）的性质。</p>
+<p>Combining different semiconductors in the right way allows us to make transistors on a tiny scale, millions on a single computer chip.<br>以正确的方式组合不同的半导体，使我们能够在微小的尺度上制造晶体管，单个计算机芯片上可以有数百万个。</p>
+<p>Those chips and their spread out electrons power the computer you’re using to watch this video.<br>正是这些芯片及其分散的电子为您正在观看这个视频的计算机提供了动力。</p>
+<p>An old joke says that the Internet exists to allow the sharing of cat videos.<br>一个老笑话说道，互联网的存在就是为了允许分享猫的视频。</p>
+<p>At a very deep level, though, the Internet owes its existence to an Austrian physicist and his imaginary cat.<br>然而，在更深层次上，互联网的存在归功于一位奥地利物理学家和他的虚构猫。</p>
+]]></content>
+      <categories>
+        <category>科学探索</category>
+        <category>量子力学</category>
+      </categories>
+      <tags>
+        <tag>双语</tag>
+        <tag>量子力学</tag>
+        <tag>薛定谔的猫</tag>
       </tags>
   </entry>
   <entry>
@@ -326,34 +326,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Reflections Behind the Box Office Miracle of Nezha 2</title>
-    <url>/posts/20250314-reflections-behind-the-box-office-miracle-of-nezha-2.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html">中文</a> </p>
-<h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a>Introduction：</h2><p>Since its release during the 2025 Spring Festival, Nezha 2 has emerged as a phenomenal cultural event, achieving a record-breaking box office of 6.83 billion yuan (as of March 12). The success of this domestic animated film is not merely reflected in its commercial numbers but also mirrors a collective shift in public sentiment amid a global economic downturn. Against the backdrop of modest economic growth and high youth unemployment, the film’s miraculous audience turnout acts like a prism, refracting the complex spectrum of China’s social transformation.</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250314_neza2.jpg","alt":"","title":""}]</div>
-  </div>
-
-
-<h2 id="I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption"><a href="#I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption" class="headerlink" title="I. The Evolving “Lipstick Effect” in Cultural Consumption"></a>I. The Evolving “Lipstick Effect” in Cultural Consumption</h2><p>The traditional economic concept of the “lipstick effect” is undergoing a qualitative transformation in China. Unlike the simple logic of consumers turning to affordable beauty products during the 2008 financial crisis, the Chinese market in 2025 exhibits both accelerated consumption stratification and an upgrade in emotional spending. Data from the National Bureau of Statistics indicates that while the average movie ticket price dropped by 12% in 2024 compared to the previous year, the total annual box office revenue surged by 23%—an indication of an explosive increase in movie attendance. Behind these seemingly contradictory figures lies the collective choice to treat movie-going as a cost-effective form of emotional healing.<br>Nezha 2’s audience composition is remarkably representative: 58% of viewers are between 25 and 35 years old, and 63% of them hold a bachelor’s degree or higher, reflecting the mounting pressures this demographic faces in the job market. The film’s narrative shift—from Nezha’s defiance of destiny to his eventual reconciliation with fate—strikes directly at the identity anxieties of mid-career professionals. As avenues for upward mobility in reality narrow, the mythological reimagining on screen provides a form of compensatory satisfaction, evolving cultural consumption into a public arena for collective emotional catharsis.</p>
-<h2 id="II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction"><a href="#II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction" class="headerlink" title="II. Collective Resonance through Myth Deconstruction and Value Reconstruction"></a>II. Collective Resonance through Myth Deconstruction and Value Reconstruction</h2><p>The director’s team’s modern reinterpretation of a traditional intellectual property stands as a textbook example. In contrast to the rebellious spirit emphasized in its predecessor, Nezha 2 shifts its narrative focus toward “trauma recovery” and “intergenerational reconciliation.” Ao Bing transforms from a hostile adversary into a partner in fate, while Li Jing and his wife evolve from symbols of authority into reflective figures. This character reformation resonates with the profound changes in today’s social relationships. Sociological research indicates that 38.6% of parents born in the 1980s are trying to break away from traditional patriarchal norms, echoing the film’s interdimensional dialogue where parents even apologize to Nezha.<br>Particularly noteworthy is the film’s philosophical deconstruction of fatalism. When Shen Gongbao declares, “There is no predestined ending, only a continuous process of choice,” this line sparked over 230 million discussions on social media. In an era marked by surging uncertainty, the film’s “gentle resistance” narrative—acknowledging structural dilemmas while emphasizing individual agency at the micro level—perfectly balances idealism with realism, constructing a narrative of hope that audiences can embrace.</p>
-<h2 id="III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics"><a href="#III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics" class="headerlink" title="III. The Emotionally Immersive System Built on Technological Aesthetics"></a>III. The Emotionally Immersive System Built on Technological Aesthetics</h2><p>Nezha 2’s breakthroughs in visual presentation signal a new era of “affective computing” in China’s animation industry. The production team developed the “Yuanshen Particle” engine, which can capture subtle facial expressions in real time (as evidenced by special screening data) and dynamically adjust scene lighting and musical rhythm. When Nezha endures his heavenly tribulations, 87% of viewers experience a synchronized increase in heart rate—a physiological empathy that elevates the film beyond a traditional viewing experience into a collective emotional resonance event.<br>The industrial logic behind this technological innovation is equally thought-provoking. With hardware investments slowing down (cinema equipment update rates in 2024 dropped by 7.2% year-on-year), iterative technological advances on the production side have become the key to breaking new ground. The film’s 22-minute ink-wash battle scene is not only a digital reinterpretation of Song Dynasty landscape aesthetics but also an implicit contemporary take on “slow aesthetics.” In an era dominated by algorithm-driven short videos, this deliberately crafted sense of immersion has become a rare and cherished experience.</p>
-<h2 id="IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning"><a href="#IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning" class="headerlink" title="IV. Subcultural Crossover and the Reproduction of Meaning"></a>IV. Subcultural Crossover and the Reproduction of Meaning</h2><p>The subcultural phenomenon spawned by the film—often referred to as the “Lotus Root Cake” couple (Nezha and Ao Bing)—reveals a new paradigm of meaning-making among Generation Z. On Bilibili, related fan-made videos have amassed over 1.5 billion views, with 63% of the content completely detaching from the original narrative to engage in deconstructive reinterpretation. Behind this subcultural revelry lies a playful dismantling of authoritative narratives by young people. As economic pressures ripple into the job market, humorous expression serves as a psychological defense mechanism, while the official endorsement of fan creations (evidenced by the production company hosting a fan art contest) marks a historic shift in mainstream culture’s attitude toward subculture.<br>Even more profound is the cross-border flow of cultural symbols. The film achieved a box office of 920 million yuan in the Southeast Asian market, and Vietnamese audiences launched a “Rewrite Fate” hashtag challenge on social media. This form of cultural export—distinct from the traditional kung fu film model—marks the emergence of Chinese popular culture as a provider of universal value frameworks.</p>
-<h2 id="V-The-Butterfly-Effect-of-Industry-Transformation"><a href="#V-The-Butterfly-Effect-of-Industry-Transformation" class="headerlink" title="V. The Butterfly Effect of Industry Transformation"></a>V. The Butterfly Effect of Industry Transformation</h2><p>The success of Nezha 2 is reshaping the ecosystem of the film and television industry. The production company’s adoption of a “dynamic production” model—adjusting script details based on 100,000 pieces of audience feedback collected weekly—has pioneered a revolution in movie production processes. While integrating big data analysis into the creative process has sparked debates over artistic purity, it has objectively achieved a new balance between commercial viability and creative authorship.<br>The explosive growth in the derivatives market is even more enlightening. The “Huntian Ling” digital collectible, released simultaneously with the film, set a record with 270 million yuan in transactions on a blockchain platform within just 48 hours. This hybrid model of virtual and physical consumption suggests that cultural products are breaking through physical boundaries and extending into the digital ecosystem. As the real economy’s growth slows, the counter-cyclical nature of virtual consumption may well give rise to new growth engines.</p>
-<h2 id="In-Conclusion"><a href="#In-Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h2><p>The essence of the Nezha 2 phenomenon is an artistic reflection and alleviation of the collective anxieties of a transforming society. At a critical juncture in the shift of economic growth paradigms, cultural products are taking on social functions that far exceed mere entertainment. The box office myth created by this film is both an emotional projection by individuals seeking certainty amid uncertainty and a rehearsal for the cultural industry’s adaptation to a new economic reality. As the cry to “defy destiny” transforms into the wisdom of “coexisting with fate,” this narrative shift may well symbolize an elevation in collective consciousness—finding possibilities within limitations and pursuing ideals while embracing reality. This may be the most precious survival philosophy in challenging times.</p>
-]]></content>
-      <categories>
-        <category>Economy</category>
-      </categories>
-      <tags>
-        <tag>Nezha 2</tag>
-        <tag>Film</tag>
-        <tag>Box Office</tag>
-        <tag>Society</tag>
-        <tag>Reflections</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>全球混动技术大解密：四大流派对决，谁才是碳中和时代的终极答案？</title>
     <url>/posts/20250310-quan-qiu-hun-dong-ji-zhu-da-jie-mi-si-da-liu-pai-dui-jue-shui-cai-shi-tan-zhong-he-shi-dai-de-zhong-ji-da-an.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250310-global-hybrid-technology-demystified-four-schools-in-a-showdown-who-holds-the-ultimate-answer-for-the-carbon-neutral-era.html">English</a> </p>
@@ -392,6 +364,34 @@
         <tag>混合动力</tag>
         <tag>电车</tag>
         <tag>新能源汽车</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reflections Behind the Box Office Miracle of Nezha 2</title>
+    <url>/posts/20250314-reflections-behind-the-box-office-miracle-of-nezha-2.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250314-na-zha-2-piao-fang-qi-ji-bei-hou-de-si-kao.html">中文</a> </p>
+<h2 id="Introduction："><a href="#Introduction：" class="headerlink" title="Introduction："></a>Introduction：</h2><p>Since its release during the 2025 Spring Festival, Nezha 2 has emerged as a phenomenal cultural event, achieving a record-breaking box office of 6.83 billion yuan (as of March 12). The success of this domestic animated film is not merely reflected in its commercial numbers but also mirrors a collective shift in public sentiment amid a global economic downturn. Against the backdrop of modest economic growth and high youth unemployment, the film’s miraculous audience turnout acts like a prism, refracting the complex spectrum of China’s social transformation.</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250314_neza2.jpg","alt":"","title":""}]</div>
+  </div>
+
+
+<h2 id="I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption"><a href="#I-The-Evolving-“Lipstick-Effect”-in-Cultural-Consumption" class="headerlink" title="I. The Evolving “Lipstick Effect” in Cultural Consumption"></a>I. The Evolving “Lipstick Effect” in Cultural Consumption</h2><p>The traditional economic concept of the “lipstick effect” is undergoing a qualitative transformation in China. Unlike the simple logic of consumers turning to affordable beauty products during the 2008 financial crisis, the Chinese market in 2025 exhibits both accelerated consumption stratification and an upgrade in emotional spending. Data from the National Bureau of Statistics indicates that while the average movie ticket price dropped by 12% in 2024 compared to the previous year, the total annual box office revenue surged by 23%—an indication of an explosive increase in movie attendance. Behind these seemingly contradictory figures lies the collective choice to treat movie-going as a cost-effective form of emotional healing.<br>Nezha 2’s audience composition is remarkably representative: 58% of viewers are between 25 and 35 years old, and 63% of them hold a bachelor’s degree or higher, reflecting the mounting pressures this demographic faces in the job market. The film’s narrative shift—from Nezha’s defiance of destiny to his eventual reconciliation with fate—strikes directly at the identity anxieties of mid-career professionals. As avenues for upward mobility in reality narrow, the mythological reimagining on screen provides a form of compensatory satisfaction, evolving cultural consumption into a public arena for collective emotional catharsis.</p>
+<h2 id="II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction"><a href="#II-Collective-Resonance-through-Myth-Deconstruction-and-Value-Reconstruction" class="headerlink" title="II. Collective Resonance through Myth Deconstruction and Value Reconstruction"></a>II. Collective Resonance through Myth Deconstruction and Value Reconstruction</h2><p>The director’s team’s modern reinterpretation of a traditional intellectual property stands as a textbook example. In contrast to the rebellious spirit emphasized in its predecessor, Nezha 2 shifts its narrative focus toward “trauma recovery” and “intergenerational reconciliation.” Ao Bing transforms from a hostile adversary into a partner in fate, while Li Jing and his wife evolve from symbols of authority into reflective figures. This character reformation resonates with the profound changes in today’s social relationships. Sociological research indicates that 38.6% of parents born in the 1980s are trying to break away from traditional patriarchal norms, echoing the film’s interdimensional dialogue where parents even apologize to Nezha.<br>Particularly noteworthy is the film’s philosophical deconstruction of fatalism. When Shen Gongbao declares, “There is no predestined ending, only a continuous process of choice,” this line sparked over 230 million discussions on social media. In an era marked by surging uncertainty, the film’s “gentle resistance” narrative—acknowledging structural dilemmas while emphasizing individual agency at the micro level—perfectly balances idealism with realism, constructing a narrative of hope that audiences can embrace.</p>
+<h2 id="III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics"><a href="#III-The-Emotionally-Immersive-System-Built-on-Technological-Aesthetics" class="headerlink" title="III. The Emotionally Immersive System Built on Technological Aesthetics"></a>III. The Emotionally Immersive System Built on Technological Aesthetics</h2><p>Nezha 2’s breakthroughs in visual presentation signal a new era of “affective computing” in China’s animation industry. The production team developed the “Yuanshen Particle” engine, which can capture subtle facial expressions in real time (as evidenced by special screening data) and dynamically adjust scene lighting and musical rhythm. When Nezha endures his heavenly tribulations, 87% of viewers experience a synchronized increase in heart rate—a physiological empathy that elevates the film beyond a traditional viewing experience into a collective emotional resonance event.<br>The industrial logic behind this technological innovation is equally thought-provoking. With hardware investments slowing down (cinema equipment update rates in 2024 dropped by 7.2% year-on-year), iterative technological advances on the production side have become the key to breaking new ground. The film’s 22-minute ink-wash battle scene is not only a digital reinterpretation of Song Dynasty landscape aesthetics but also an implicit contemporary take on “slow aesthetics.” In an era dominated by algorithm-driven short videos, this deliberately crafted sense of immersion has become a rare and cherished experience.</p>
+<h2 id="IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning"><a href="#IV-Subcultural-Crossover-and-the-Reproduction-of-Meaning" class="headerlink" title="IV. Subcultural Crossover and the Reproduction of Meaning"></a>IV. Subcultural Crossover and the Reproduction of Meaning</h2><p>The subcultural phenomenon spawned by the film—often referred to as the “Lotus Root Cake” couple (Nezha and Ao Bing)—reveals a new paradigm of meaning-making among Generation Z. On Bilibili, related fan-made videos have amassed over 1.5 billion views, with 63% of the content completely detaching from the original narrative to engage in deconstructive reinterpretation. Behind this subcultural revelry lies a playful dismantling of authoritative narratives by young people. As economic pressures ripple into the job market, humorous expression serves as a psychological defense mechanism, while the official endorsement of fan creations (evidenced by the production company hosting a fan art contest) marks a historic shift in mainstream culture’s attitude toward subculture.<br>Even more profound is the cross-border flow of cultural symbols. The film achieved a box office of 920 million yuan in the Southeast Asian market, and Vietnamese audiences launched a “Rewrite Fate” hashtag challenge on social media. This form of cultural export—distinct from the traditional kung fu film model—marks the emergence of Chinese popular culture as a provider of universal value frameworks.</p>
+<h2 id="V-The-Butterfly-Effect-of-Industry-Transformation"><a href="#V-The-Butterfly-Effect-of-Industry-Transformation" class="headerlink" title="V. The Butterfly Effect of Industry Transformation"></a>V. The Butterfly Effect of Industry Transformation</h2><p>The success of Nezha 2 is reshaping the ecosystem of the film and television industry. The production company’s adoption of a “dynamic production” model—adjusting script details based on 100,000 pieces of audience feedback collected weekly—has pioneered a revolution in movie production processes. While integrating big data analysis into the creative process has sparked debates over artistic purity, it has objectively achieved a new balance between commercial viability and creative authorship.<br>The explosive growth in the derivatives market is even more enlightening. The “Huntian Ling” digital collectible, released simultaneously with the film, set a record with 270 million yuan in transactions on a blockchain platform within just 48 hours. This hybrid model of virtual and physical consumption suggests that cultural products are breaking through physical boundaries and extending into the digital ecosystem. As the real economy’s growth slows, the counter-cyclical nature of virtual consumption may well give rise to new growth engines.</p>
+<h2 id="In-Conclusion"><a href="#In-Conclusion" class="headerlink" title="In Conclusion"></a>In Conclusion</h2><p>The essence of the Nezha 2 phenomenon is an artistic reflection and alleviation of the collective anxieties of a transforming society. At a critical juncture in the shift of economic growth paradigms, cultural products are taking on social functions that far exceed mere entertainment. The box office myth created by this film is both an emotional projection by individuals seeking certainty amid uncertainty and a rehearsal for the cultural industry’s adaptation to a new economic reality. As the cry to “defy destiny” transforms into the wisdom of “coexisting with fate,” this narrative shift may well symbolize an elevation in collective consciousness—finding possibilities within limitations and pursuing ideals while embracing reality. This may be the most precious survival philosophy in challenging times.</p>
+]]></content>
+      <categories>
+        <category>Economy</category>
+      </categories>
+      <tags>
+        <tag>Nezha 2</tag>
+        <tag>Film</tag>
+        <tag>Box Office</tag>
+        <tag>Society</tag>
+        <tag>Reflections</tag>
       </tags>
   </entry>
   <entry>
@@ -576,32 +576,6 @@
       </tags>
   </entry>
   <entry>
-    <title>从 “印度神曲”《我们的飞机被打了》看中印军工真实差距</title>
-    <url>/posts/20250518-wo-men-de-fei-ji-bei-da-liao-re-qu-bei-hou-zhong-yin-jun-gong-zhen-shi-jiao-liang-yu-he-ping-qi-shi.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250518-from-the-indian-viral-song-our-plane-was-shot-down-to-the-real-gap-between-chinese-and-indian-military-industries.html">英文</a> </p>
-<h2 id="事件回顾"><a href="#事件回顾" class="headerlink" title="事件回顾"></a>事件回顾</h2><p>2025年5月6日至10日，印度与巴基斯坦在克什米尔地区爆发空中冲突。根据多方报道，巴基斯坦方面在“辛多尔行动”中发射了多枚空对空导弹，成功击落印度空军的多型战机，包括三架阵风（Rafale）战斗机、一架苏-30MKI战机和一架米格-29战机，另有航拍无人机被击毁，造成多名飞行员受伤或被俘。印度方面则声称在印控克什米尔地区击落巴基斯坦无人机，并对巴方目标实施了导弹打击，但并未否认自己损失飞机。5月7日，巴基斯坦军方甚至宣称已削弱印度境内70%的电网，尽管印度随即否认此说法。冲突期间，双方都在国际舆论前相互指责，但尚未正式升级至全面战争。<br>紧接着，一则由中国大陆网红“豪哥哥”于5月10日发布的恶搞视频迅速在国内外网络走红。该视频基于印度著名Punjabi舞曲《Tunak Tunak Tun》进行改编，以“刚买的飞机被打啦！”为主题，用夸张的节奏和嘲讽式歌词对印度空军在本次空战中损失多架战机进行“调侃式庆祝”。视频不仅在中国短视频平台刷屏，也在国际社交媒体上形成二次传播。然而，印度网民迅速对此表达强烈不满，认为这是在“丑化印度文化”和“侵害国家尊严”，纷纷要求封禁该内容，甚至有极端者呼吁通过外交渠道进行抗议</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250605-Our-Plane-Was-Shot-Down.jpg","alt":"","title":""}]</div>
-  </div>
-
-
-
-<h2 id="中印网民的不同心态侧写"><a href="#中印网民的不同心态侧写" class="headerlink" title="中印网民的不同心态侧写"></a>中印网民的不同心态侧写</h2><ul>
-<li>中国网民心态<br>在“刚买的飞机被打啦”走红后，不少中国网友将其视为对“印度空军高调炫技却遭重创”事实的一种戏谑，尤其在年轻群体中，这类“神曲+恶搞”表达方式符合网络亚文化下的幽默逻辑。体现了中国网民对此事件的调侃与幽默。<br>部分网友借此事件表达对“我国兄弟国家（巴基斯坦）在空战中取得胜利”的欢欣；与此同时，也暗含对“印度军工水平低于预期”的优越感，突出中华民族的自豪感。<br>更多网友并非出于深层民族情绪，而是单纯觉得节奏洗脑、恶搞歌词“朗朗上口”，将其当作一种“网络搞笑梗”加以二次剪辑、模仿转发。体现出互联网娱乐至上的理念。</li>
-<li>印度网民心态<br>对于“豪哥哥”视频使用印度神曲改编并带有强烈诋毁意味，不少印度网友认为这是对“印式文化符号”和“印度军队”集体形象的侮辱。印度网友的民族尊严受到严重打击。<br>在社交媒体上，一些印度网民主动发起#BanChinesePropaganda标签，呼吁各大平台封禁相关视频，并指责海外“反印势力”的刻意抹黑。<br>也有少数理性声音认为，此次空战双方都有损失，“火上浇油”式的互相嘲讽并不能解决实质问题，应更多关注自身国防建设中的短板。</li>
-</ul>
-<h2 id="印度军工真实水平"><a href="#印度军工真实水平" class="headerlink" title="印度军工真实水平"></a>印度军工真实水平</h2><p>印度空军现役以法国Dassault Rafale、俄罗斯Su-30MKI、米格-29UPG等进口机型为主。这些机型经过多轮改进，但印度国产飞机（如HAL Tejas）的数量与服役质量尚难以与进口机型平起平坐。本次空战中，被击落的三架Rafale、1架Su-30MKI和1架MiG-29均属于高端进口机型，尽管这些战机在设计上具备卓越的机动性和武器挂载能力，但在实战中并未完全发挥预期性能，暴露出印度在配套电子战、后勤维护、飞行员训练等方面的薄弱之处。<br>虽然印度在近年通过引入先进导弹（SCALP EG巡航导弹、Iron Hammer精确制导炸弹等）和国产预警机（Netra AEW&amp;C）进行装备升级，但在电子侦察、网络对抗等软实力层面仍显不足。实战中，巴方歼-10CE战机搭配PL-15导弹封锁了部分Rafale的红外制导通道，使得印度战机在攻防转换时出现致盲状况。<br>后勤保障方面，印度空军多型机型来源复杂，零部件供应链多元且互不兼容，导致在多机种并存的情况下维修效率低下；另一方面，“地勤人员-飞行员”协同演练不足，实战经验匮乏也是造成高青损比的重要原因。近年来，印度空军虽强化了美印联合军演（如Cope India、Red Flag）等训练项目，但由于地缘政治限制，实战环境模拟仍与真实交战有差距。本次空战中，不少Rafale飞行员反馈在“高强度电子干扰+地对空拦截火力”下，指挥链延迟和敌情态势感知迟钝成为致命短板。<br>总体而言，印度军工在装备引进上不惜重金，但整体技术整合能力、国产化进度与后勤训练水平均未形成闭环，导致在实战冲突中难以发挥“进口价格应有的战斗力”。</p>
-<h2 id="中国军工真实水平"><a href="#中国军工真实水平" class="headerlink" title="中国军工真实水平"></a>中国军工真实水平</h2><p>中国自1998年歼-10首飞后，历经歼-10A、歼-10S到歼-10C多次改进，长期服役并形成成熟供应链。巴基斯坦空军引进的歼-10CE在本次冲突中成功配合PL-15中远程导弹击落了多架印度Rafale和Su-30MKI，这是歼-10系列首次在实战中取得空对空战绩，可见中国在中型单发战机领域已达世界一流水平。除歼-10外，国产歼-20隐形战机、运-20战略运输机、Z-10攻击直升机等都体现了从设计研发到批量化生产的完整能力。以Z-10（霹雳火）为例，其全天候精确打击能力在现代陆航中属领先行列，配合新一代雷达与导弹系统，可在复杂电磁环境下保持较高生存与打击效率。目前，包括巴基斯坦、缅甸、埃及等在内的多国对华制武器持积极采购态度，其中J-10CE、Z-10的出口价明显低于西方同类机型，却具备不逊色的实战能力，已多次在中东和南亚冲突中被验证为“性价比之王”。<br>系统研发与制造一体化：中国军工以国企主导，配合民营配套企业，形成了从轴承、复合材料到发动机、电子设备的完整供应链，保证了武器装备的批量化、标准化生产。以歼-10C为例，国产WS-10高推重比发动机、数字化航电系统、第四代雷达等关键部件均已实现国产化。2024年底，中国陆续公开第五代隐身机“歼-36”、空警-3000预警机、搭载电磁弹射的076两栖攻击舰等先进装备，显示了在新武器系统设计、风洞试验、碳纤维复合材料制造等方面已达到世界领先水平。先进的风洞实验设施与数字化仿真系统使得新机型能在“试错成本最小化”前提下加速推向部队。中国军工体系长期整合高校、研究所与企业资源，形成“军校研企”协同创新机制。在“航空强国战略”与“军民融合”方针下，军工领域拥有充沛的科研经费与人才储备，使得新技术能在最短时间内转化为战斗力。以歼-20、歼-10C为例，中国空军各场站具备完善的基地配套能力，地勤、飞行员和指挥员间的磨合效率高，实战化训练频次正在不断提升，综合作战能力稳步提高。<br>总体来看，中国军工已不仅仅停留在“跟跑”或“并跑”阶段，而是在多个新型武器系统领域实现了“领跑”：从第四代战机到准六代战机，从远航航母到电磁弹射，从远程预警机到新一代无人作战系统，体现了“全产业链、全要素配套”的综合实力。</p>
-<h2 id="对中国军力提升与世界和平的意义"><a href="#对中国军力提升与世界和平的意义" class="headerlink" title="对中国军力提升与世界和平的意义"></a>对中国军力提升与世界和平的意义</h2><p>中国军工的持续升级，使得区域内军力平衡得到进一步稳固。以一国之力带动区域安全态势向“多极互控”方向演进，可有效遏制局部冲突的扩大化风险。印度与巴基斯坦虽在局部冲突中摩擦不断，但若中国持续保持先进的军工水平，能够在必要时通过军事威慑与外交斡旋同步发力，为南亚乃至亚洲和平提供更有力保障。中国军工与民用科技的深度融合，不仅使武器系统性能日益精进，也反哺航空航天、电子信息等民用领域。以卫星导航、5G通信、人工智能为例，早在军工系统的高标准要求下，这些技术已在民用市场中广泛渗透，提升了中国乃至全球的科技发展水平。如此一来，当世界多国共同分享这些技术红利时，区域内的沟通协作更为顺畅，冲突成本也相应提高。中国常强调“和平共处五项原则”和“共同、综合、合作、可持续的安全观”。当中国军工水平进入全球一流水平后，就意味着中国能够在更多国际维和、联合巡逻、反恐演习等多边平台中承担更为重要的角色。通过派遣维和部队、提供反恐装备和智慧，中国已在多次地区冲突中展现了“负责任大国”的形象——既不挑起事端，也不回避履责。未来，随着新型远程打击系统、海空联合作战编队和信息化指挥平台的成熟，中国将更加具备“用足够实力捍卫和平”的底气。当下，各国军工产业呈现“合作与竞争并存”的格局。中国通过“一带一路”倡议等多边框架，正与多国展开武器系统联合研发、军工技术转移和定期联合演习。以中巴军工合作为例，JF-17“枭龙”战机与巴基斯坦国产化率持续提升，已经成为“性价比高、技术成熟”的范范。这样的合作既促进了区域国家的防务现代化，也在一定程度上通过多边平台推动了军备发展透明度以及出口管控规范化。<br>从“刚买的飞机被打啦”的网络热梗，到印度与巴基斯坦空中冲突的血与火，再到中巴军工合作与全球军火市场的激烈竞争，无不映射出当今世界安全环境的复杂性与多元化趋势。作为一个拥有14亿人口的大国，中国通过自身军工水平的稳步提升，不仅巩固了国防安全与领土完整，更在全球范围内为塑造“和平、安全、合作”的国际秩序提供了鲜明案例。未来，伴随高精尖技术的不断迭代，中国军工将继续发力科技创新与军民融合，为世界和平贡献更强有力的“硬支撑”与“软影响”。</p>
-]]></content>
-      <categories>
-        <category>政治</category>
-      </categories>
-      <tags>
-        <tag>政治</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>From the “Indian Viral Song” “Our Plane Was Shot Down” to the Real Gap between Chinese and Indian Military Industries</title>
     <url>/posts/20250518-from-the-indian-viral-song-our-plane-was-shot-down-to-the-real-gap-between-chinese-and-indian-military-industries.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250518-wo-men-de-fei-ji-bei-da-liao-re-qu-bei-hou-zhong-yin-jun-gong-zhen-shi-jiao-liang-yu-he-ping-qi-shi.html">中文</a> </p>
@@ -636,6 +610,32 @@
       </categories>
       <tags>
         <tag>Politics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从 “印度神曲”《我们的飞机被打了》看中印军工真实差距</title>
+    <url>/posts/20250518-wo-men-de-fei-ji-bei-da-liao-re-qu-bei-hou-zhong-yin-jun-gong-zhen-shi-jiao-liang-yu-he-ping-qi-shi.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250518-from-the-indian-viral-song-our-plane-was-shot-down-to-the-real-gap-between-chinese-and-indian-military-industries.html">英文</a> </p>
+<h2 id="事件回顾"><a href="#事件回顾" class="headerlink" title="事件回顾"></a>事件回顾</h2><p>2025年5月6日至10日，印度与巴基斯坦在克什米尔地区爆发空中冲突。根据多方报道，巴基斯坦方面在“辛多尔行动”中发射了多枚空对空导弹，成功击落印度空军的多型战机，包括三架阵风（Rafale）战斗机、一架苏-30MKI战机和一架米格-29战机，另有航拍无人机被击毁，造成多名飞行员受伤或被俘。印度方面则声称在印控克什米尔地区击落巴基斯坦无人机，并对巴方目标实施了导弹打击，但并未否认自己损失飞机。5月7日，巴基斯坦军方甚至宣称已削弱印度境内70%的电网，尽管印度随即否认此说法。冲突期间，双方都在国际舆论前相互指责，但尚未正式升级至全面战争。<br>紧接着，一则由中国大陆网红“豪哥哥”于5月10日发布的恶搞视频迅速在国内外网络走红。该视频基于印度著名Punjabi舞曲《Tunak Tunak Tun》进行改编，以“刚买的飞机被打啦！”为主题，用夸张的节奏和嘲讽式歌词对印度空军在本次空战中损失多架战机进行“调侃式庆祝”。视频不仅在中国短视频平台刷屏，也在国际社交媒体上形成二次传播。然而，印度网民迅速对此表达强烈不满，认为这是在“丑化印度文化”和“侵害国家尊严”，纷纷要求封禁该内容，甚至有极端者呼吁通过外交渠道进行抗议</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250605-Our-Plane-Was-Shot-Down.jpg","alt":"","title":""}]</div>
+  </div>
+
+
+
+<h2 id="中印网民的不同心态侧写"><a href="#中印网民的不同心态侧写" class="headerlink" title="中印网民的不同心态侧写"></a>中印网民的不同心态侧写</h2><ul>
+<li>中国网民心态<br>在“刚买的飞机被打啦”走红后，不少中国网友将其视为对“印度空军高调炫技却遭重创”事实的一种戏谑，尤其在年轻群体中，这类“神曲+恶搞”表达方式符合网络亚文化下的幽默逻辑。体现了中国网民对此事件的调侃与幽默。<br>部分网友借此事件表达对“我国兄弟国家（巴基斯坦）在空战中取得胜利”的欢欣；与此同时，也暗含对“印度军工水平低于预期”的优越感，突出中华民族的自豪感。<br>更多网友并非出于深层民族情绪，而是单纯觉得节奏洗脑、恶搞歌词“朗朗上口”，将其当作一种“网络搞笑梗”加以二次剪辑、模仿转发。体现出互联网娱乐至上的理念。</li>
+<li>印度网民心态<br>对于“豪哥哥”视频使用印度神曲改编并带有强烈诋毁意味，不少印度网友认为这是对“印式文化符号”和“印度军队”集体形象的侮辱。印度网友的民族尊严受到严重打击。<br>在社交媒体上，一些印度网民主动发起#BanChinesePropaganda标签，呼吁各大平台封禁相关视频，并指责海外“反印势力”的刻意抹黑。<br>也有少数理性声音认为，此次空战双方都有损失，“火上浇油”式的互相嘲讽并不能解决实质问题，应更多关注自身国防建设中的短板。</li>
+</ul>
+<h2 id="印度军工真实水平"><a href="#印度军工真实水平" class="headerlink" title="印度军工真实水平"></a>印度军工真实水平</h2><p>印度空军现役以法国Dassault Rafale、俄罗斯Su-30MKI、米格-29UPG等进口机型为主。这些机型经过多轮改进，但印度国产飞机（如HAL Tejas）的数量与服役质量尚难以与进口机型平起平坐。本次空战中，被击落的三架Rafale、1架Su-30MKI和1架MiG-29均属于高端进口机型，尽管这些战机在设计上具备卓越的机动性和武器挂载能力，但在实战中并未完全发挥预期性能，暴露出印度在配套电子战、后勤维护、飞行员训练等方面的薄弱之处。<br>虽然印度在近年通过引入先进导弹（SCALP EG巡航导弹、Iron Hammer精确制导炸弹等）和国产预警机（Netra AEW&amp;C）进行装备升级，但在电子侦察、网络对抗等软实力层面仍显不足。实战中，巴方歼-10CE战机搭配PL-15导弹封锁了部分Rafale的红外制导通道，使得印度战机在攻防转换时出现致盲状况。<br>后勤保障方面，印度空军多型机型来源复杂，零部件供应链多元且互不兼容，导致在多机种并存的情况下维修效率低下；另一方面，“地勤人员-飞行员”协同演练不足，实战经验匮乏也是造成高青损比的重要原因。近年来，印度空军虽强化了美印联合军演（如Cope India、Red Flag）等训练项目，但由于地缘政治限制，实战环境模拟仍与真实交战有差距。本次空战中，不少Rafale飞行员反馈在“高强度电子干扰+地对空拦截火力”下，指挥链延迟和敌情态势感知迟钝成为致命短板。<br>总体而言，印度军工在装备引进上不惜重金，但整体技术整合能力、国产化进度与后勤训练水平均未形成闭环，导致在实战冲突中难以发挥“进口价格应有的战斗力”。</p>
+<h2 id="中国军工真实水平"><a href="#中国军工真实水平" class="headerlink" title="中国军工真实水平"></a>中国军工真实水平</h2><p>中国自1998年歼-10首飞后，历经歼-10A、歼-10S到歼-10C多次改进，长期服役并形成成熟供应链。巴基斯坦空军引进的歼-10CE在本次冲突中成功配合PL-15中远程导弹击落了多架印度Rafale和Su-30MKI，这是歼-10系列首次在实战中取得空对空战绩，可见中国在中型单发战机领域已达世界一流水平。除歼-10外，国产歼-20隐形战机、运-20战略运输机、Z-10攻击直升机等都体现了从设计研发到批量化生产的完整能力。以Z-10（霹雳火）为例，其全天候精确打击能力在现代陆航中属领先行列，配合新一代雷达与导弹系统，可在复杂电磁环境下保持较高生存与打击效率。目前，包括巴基斯坦、缅甸、埃及等在内的多国对华制武器持积极采购态度，其中J-10CE、Z-10的出口价明显低于西方同类机型，却具备不逊色的实战能力，已多次在中东和南亚冲突中被验证为“性价比之王”。<br>系统研发与制造一体化：中国军工以国企主导，配合民营配套企业，形成了从轴承、复合材料到发动机、电子设备的完整供应链，保证了武器装备的批量化、标准化生产。以歼-10C为例，国产WS-10高推重比发动机、数字化航电系统、第四代雷达等关键部件均已实现国产化。2024年底，中国陆续公开第五代隐身机“歼-36”、空警-3000预警机、搭载电磁弹射的076两栖攻击舰等先进装备，显示了在新武器系统设计、风洞试验、碳纤维复合材料制造等方面已达到世界领先水平。先进的风洞实验设施与数字化仿真系统使得新机型能在“试错成本最小化”前提下加速推向部队。中国军工体系长期整合高校、研究所与企业资源，形成“军校研企”协同创新机制。在“航空强国战略”与“军民融合”方针下，军工领域拥有充沛的科研经费与人才储备，使得新技术能在最短时间内转化为战斗力。以歼-20、歼-10C为例，中国空军各场站具备完善的基地配套能力，地勤、飞行员和指挥员间的磨合效率高，实战化训练频次正在不断提升，综合作战能力稳步提高。<br>总体来看，中国军工已不仅仅停留在“跟跑”或“并跑”阶段，而是在多个新型武器系统领域实现了“领跑”：从第四代战机到准六代战机，从远航航母到电磁弹射，从远程预警机到新一代无人作战系统，体现了“全产业链、全要素配套”的综合实力。</p>
+<h2 id="对中国军力提升与世界和平的意义"><a href="#对中国军力提升与世界和平的意义" class="headerlink" title="对中国军力提升与世界和平的意义"></a>对中国军力提升与世界和平的意义</h2><p>中国军工的持续升级，使得区域内军力平衡得到进一步稳固。以一国之力带动区域安全态势向“多极互控”方向演进，可有效遏制局部冲突的扩大化风险。印度与巴基斯坦虽在局部冲突中摩擦不断，但若中国持续保持先进的军工水平，能够在必要时通过军事威慑与外交斡旋同步发力，为南亚乃至亚洲和平提供更有力保障。中国军工与民用科技的深度融合，不仅使武器系统性能日益精进，也反哺航空航天、电子信息等民用领域。以卫星导航、5G通信、人工智能为例，早在军工系统的高标准要求下，这些技术已在民用市场中广泛渗透，提升了中国乃至全球的科技发展水平。如此一来，当世界多国共同分享这些技术红利时，区域内的沟通协作更为顺畅，冲突成本也相应提高。中国常强调“和平共处五项原则”和“共同、综合、合作、可持续的安全观”。当中国军工水平进入全球一流水平后，就意味着中国能够在更多国际维和、联合巡逻、反恐演习等多边平台中承担更为重要的角色。通过派遣维和部队、提供反恐装备和智慧，中国已在多次地区冲突中展现了“负责任大国”的形象——既不挑起事端，也不回避履责。未来，随着新型远程打击系统、海空联合作战编队和信息化指挥平台的成熟，中国将更加具备“用足够实力捍卫和平”的底气。当下，各国军工产业呈现“合作与竞争并存”的格局。中国通过“一带一路”倡议等多边框架，正与多国展开武器系统联合研发、军工技术转移和定期联合演习。以中巴军工合作为例，JF-17“枭龙”战机与巴基斯坦国产化率持续提升，已经成为“性价比高、技术成熟”的范范。这样的合作既促进了区域国家的防务现代化，也在一定程度上通过多边平台推动了军备发展透明度以及出口管控规范化。<br>从“刚买的飞机被打啦”的网络热梗，到印度与巴基斯坦空中冲突的血与火，再到中巴军工合作与全球军火市场的激烈竞争，无不映射出当今世界安全环境的复杂性与多元化趋势。作为一个拥有14亿人口的大国，中国通过自身军工水平的稳步提升，不仅巩固了国防安全与领土完整，更在全球范围内为塑造“和平、安全、合作”的国际秩序提供了鲜明案例。未来，伴随高精尖技术的不断迭代，中国军工将继续发力科技创新与军民融合，为世界和平贡献更强有力的“硬支撑”与“软影响”。</p>
+]]></content>
+      <categories>
+        <category>政治</category>
+      </categories>
+      <tags>
+        <tag>政治</tag>
       </tags>
   </entry>
   <entry>
@@ -690,35 +690,6 @@
       </categories>
       <tags>
         <tag>Health</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The World Isn’t at Peace Israel and Iran Erupt into Military Conflict</title>
-    <url>/posts/20250623-the-world-isnt-at-peace-israel-and-iran-erupt-into-military-conflict.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250623-zhe-ge-shi-jie-bu-tai-ping-yi-se-lie-yi-lang-bao-fa-jun-shi-chong-tu.html">中文</a> </p>
-<p>Oh boy, the world really isn’t at peace—just as the India-Pakistan conflict wound down and the Russia-Ukraine war still rages, Israel and Iran have broken out into military clashes again.</p>
-<h2 id="Overview-of-the-Conflict"><a href="#Overview-of-the-Conflict" class="headerlink" title="Overview of the Conflict"></a>Overview of the Conflict</h2><p>In the early hours of June 13, 2025, Israel launched an air campaign codenamed “Operation Rising Lion,” directly targeting Iran’s nuclear facilities and key military bases. According to Iranian official figures, that first wave of strikes killed at least 224 people and injured over 1,000—civilians included.</p>
-<p>Iran responded swiftly and decisively, firing over 20 ballistic missiles and deploying armed drones in retaliatory strikes against Israel. The barrage wounded dozens of Israelis and damaged multiple infrastructure sites.</p>
-<p>On June 22, the United States entered the fray, deploying B-2 stealth bombers to hit Iran’s Fordow, Natanz, and Isfahan nuclear sites. U.S. officials claim they severely degraded Iran’s nuclear capabilities, though Tehran insists the damage was limited. With that, what began as an airstrike skirmish has escalated into a major new phase of Middle Eastern conflict.</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250512.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="Historical-Geopolitical-Struggle"><a href="#Historical-Geopolitical-Struggle" class="headerlink" title="Historical Geopolitical Struggle"></a>Historical Geopolitical Struggle</h2><p>The hostility between Israel and Iran dates back to the 1979 Iranian Islamic Revolution, when the new regime declared explicit “anti-Zionist” and “anti-American” stances. Over the decades, Tehran has funded Shiite militias such as Hezbollah to wage proxy wars against Israel and its allies.</p>
-<p>Israel, in turn, has repeatedly struck Iranian positions in Syria and Lebanon in an effort to curb Tehran’s regional influence. Though no formal declaration of war had been made, the two sides frequently clashed over Syrian airspace before this latest eruption. Neighboring states are divided: Iraq, Syria, and Pakistan have condemned Israel; Gulf states like Saudi Arabia and the UAE urge restraint; Turkey and Russia voice concerns for regional stability; most Western nations back Israel’s right to self-defense.</p>
-<p>Long-standing religious, ethnic, and strategic rivalries make this more than just a bilateral showdown—it’s an extension of the wider Middle Eastern power game.</p>
-<h2 id="Inevitability-of-the-Conflict"><a href="#Inevitability-of-the-Conflict" class="headerlink" title="Inevitability of the Conflict"></a>Inevitability of the Conflict</h2><p>Strategically, this flare-up was almost unavoidable. First, Iran’s nuclear program has accelerated in recent years—its high-enriched uranium stock has reached roughly 400 kg, edging toward weapons-grade levels and deeply unsettling Israel.</p>
-<p>Second, after the back-and-forth fights in Gaza and Lebanon from 2023 to 2024, Iran’s proxy forces—Hezbollah and Hamas—suffered heavy losses and could no longer deter Israel effectively. That, in turn, presented Israel with a window for a preemptive strike.</p>
-<p>Finally, domestic politics played a role: Israel’s leadership sought to shore up support through a decisive military action, while Iran faced crippling sanctions and internal discontent, and couldn’t risk appearing weak. All these factors combined made the conflict almost unavoidable.</p>
-<h2 id="Looking-Ahead"><a href="#Looking-Ahead" class="headerlink" title="Looking Ahead"></a>Looking Ahead</h2><p>This crisis has rippled far beyond the Middle East, forcing major powers to reassess their stakes. America’s intervention underscores the U.S.–Israel alliance but has sparked fierce debate at home over executive war powers.</p>
-<p>Russia and China have called for an immediate ceasefire, warning that the fighting could spiral into a broader war. Global oil prices have jumped, roiling energy markets; the UN Security Council has convened multiple emergency sessions, but U.S.–Russia divisions have blocked any unified resolution. If the fighting continues to escalate, we could see further proxy battles or full-scale interventions by other regional players. Conversely, if the world’s powers succeed in diplomatic pressure, this crisis might gradually cool. Either way, this showdown tests the international order—and its outcome will hinge on the delicate balance between great-power rivalry and on-the-ground realities.</p>
-]]></content>
-      <categories>
-        <category>Politics</category>
-      </categories>
-      <tags>
-        <tag>Politics</tag>
-        <tag>Israel–Iran Conflict</tag>
       </tags>
   </entry>
   <entry>
@@ -792,6 +763,35 @@
       </tags>
   </entry>
   <entry>
+    <title>The World Isn’t at Peace Israel and Iran Erupt into Military Conflict</title>
+    <url>/posts/20250623-the-world-isnt-at-peace-israel-and-iran-erupt-into-military-conflict.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250623-zhe-ge-shi-jie-bu-tai-ping-yi-se-lie-yi-lang-bao-fa-jun-shi-chong-tu.html">中文</a> </p>
+<p>Oh boy, the world really isn’t at peace—just as the India-Pakistan conflict wound down and the Russia-Ukraine war still rages, Israel and Iran have broken out into military clashes again.</p>
+<h2 id="Overview-of-the-Conflict"><a href="#Overview-of-the-Conflict" class="headerlink" title="Overview of the Conflict"></a>Overview of the Conflict</h2><p>In the early hours of June 13, 2025, Israel launched an air campaign codenamed “Operation Rising Lion,” directly targeting Iran’s nuclear facilities and key military bases. According to Iranian official figures, that first wave of strikes killed at least 224 people and injured over 1,000—civilians included.</p>
+<p>Iran responded swiftly and decisively, firing over 20 ballistic missiles and deploying armed drones in retaliatory strikes against Israel. The barrage wounded dozens of Israelis and damaged multiple infrastructure sites.</p>
+<p>On June 22, the United States entered the fray, deploying B-2 stealth bombers to hit Iran’s Fordow, Natanz, and Isfahan nuclear sites. U.S. officials claim they severely degraded Iran’s nuclear capabilities, though Tehran insists the damage was limited. With that, what began as an airstrike skirmish has escalated into a major new phase of Middle Eastern conflict.</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250512.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="Historical-Geopolitical-Struggle"><a href="#Historical-Geopolitical-Struggle" class="headerlink" title="Historical Geopolitical Struggle"></a>Historical Geopolitical Struggle</h2><p>The hostility between Israel and Iran dates back to the 1979 Iranian Islamic Revolution, when the new regime declared explicit “anti-Zionist” and “anti-American” stances. Over the decades, Tehran has funded Shiite militias such as Hezbollah to wage proxy wars against Israel and its allies.</p>
+<p>Israel, in turn, has repeatedly struck Iranian positions in Syria and Lebanon in an effort to curb Tehran’s regional influence. Though no formal declaration of war had been made, the two sides frequently clashed over Syrian airspace before this latest eruption. Neighboring states are divided: Iraq, Syria, and Pakistan have condemned Israel; Gulf states like Saudi Arabia and the UAE urge restraint; Turkey and Russia voice concerns for regional stability; most Western nations back Israel’s right to self-defense.</p>
+<p>Long-standing religious, ethnic, and strategic rivalries make this more than just a bilateral showdown—it’s an extension of the wider Middle Eastern power game.</p>
+<h2 id="Inevitability-of-the-Conflict"><a href="#Inevitability-of-the-Conflict" class="headerlink" title="Inevitability of the Conflict"></a>Inevitability of the Conflict</h2><p>Strategically, this flare-up was almost unavoidable. First, Iran’s nuclear program has accelerated in recent years—its high-enriched uranium stock has reached roughly 400 kg, edging toward weapons-grade levels and deeply unsettling Israel.</p>
+<p>Second, after the back-and-forth fights in Gaza and Lebanon from 2023 to 2024, Iran’s proxy forces—Hezbollah and Hamas—suffered heavy losses and could no longer deter Israel effectively. That, in turn, presented Israel with a window for a preemptive strike.</p>
+<p>Finally, domestic politics played a role: Israel’s leadership sought to shore up support through a decisive military action, while Iran faced crippling sanctions and internal discontent, and couldn’t risk appearing weak. All these factors combined made the conflict almost unavoidable.</p>
+<h2 id="Looking-Ahead"><a href="#Looking-Ahead" class="headerlink" title="Looking Ahead"></a>Looking Ahead</h2><p>This crisis has rippled far beyond the Middle East, forcing major powers to reassess their stakes. America’s intervention underscores the U.S.–Israel alliance but has sparked fierce debate at home over executive war powers.</p>
+<p>Russia and China have called for an immediate ceasefire, warning that the fighting could spiral into a broader war. Global oil prices have jumped, roiling energy markets; the UN Security Council has convened multiple emergency sessions, but U.S.–Russia divisions have blocked any unified resolution. If the fighting continues to escalate, we could see further proxy battles or full-scale interventions by other regional players. Conversely, if the world’s powers succeed in diplomatic pressure, this crisis might gradually cool. Either way, this showdown tests the international order—and its outcome will hinge on the delicate balance between great-power rivalry and on-the-ground realities.</p>
+]]></content>
+      <categories>
+        <category>Politics</category>
+      </categories>
+      <tags>
+        <tag>Politics</tag>
+        <tag>Israel–Iran Conflict</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>这个世界不太平 以色列伊朗爆发军事冲突</title>
     <url>/posts/20250623-zhe-ge-shi-jie-bu-tai-ping-yi-se-lie-yi-lang-bao-fa-jun-shi-chong-tu.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250623-the-world-isnt-at-peace-israel-and-iran-erupt-into-military-conflict.html">英文</a> </p>
@@ -811,39 +811,6 @@
       <tags>
         <tag>政治</tag>
         <tag>伊以冲突</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>美国“稳定币”来袭 开启全球金融新玩法</title>
-    <url>/posts/20250702-mei-guo-wen-ding-bi-lai-xi-kai-qi-quan-qiu-jin-rong-xin-wan-fa.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250702-us-stablecoins-arrive-ushering-in-a-new-era-of-global-finance.html">英文</a> </p>
-<h2 id="何为“稳定币”？"><a href="#何为“稳定币”？" class="headerlink" title="何为“稳定币”？"></a>何为“稳定币”？</h2><p>稳定币（Stablecoin）是一类加密数字货币，其价值通常锚定于某种法定货币（如美元、欧元）或其他可度量的金融资产（如现金、政府债券）。与比特币（Bitcoin）、以太坊（Ethereum）等价格波动剧烈的加密资产不同，稳定币借助抵押资产或算法机制，力求使币值保持相对稳定，从而兼具加密货币的可编程性和法币的价值稳定性。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250702.jpg","alt":"","title":""}]</div>
-  </div>
-
-<p>按抵押方式，稳定币可分为三大类：</p>
-<ul>
-<li>法币抵押型<br>发行机构持有与发行量等值的法币储备，用户可随时以1:1比例兑换。例如，USDC 由美国合规银行和托管机构储备美元支持。</li>
-<li>加密资产抵押型<br>通过超额抵押加密资产（如 ETH）保证价值稳定，例如 DAI。</li>
-<li>算法型<br>不依赖实物资产，利用自动化算法在市场中调节币量以维持价格稳定。</li>
-</ul>
-<p>稳定币的核心特征是与美元等法定货币保持固定汇率。发行方需承诺随时兑换对应法币或等值资产。支持即时、跨境的点对点交易，兼容智能合约与去中心化金融（DeFi）生态。</p>
-<h2 id="美国发行“稳定币”的意义"><a href="#美国发行“稳定币”的意义" class="headerlink" title="美国发行“稳定币”的意义"></a>美国发行“稳定币”的意义</h2><p>2025年6月，美国参议院以压倒性多数通过了《指导与建立美国稳定币国家创新法案》（GENIUS Act），正式为支付稳定币（Payment Stablecoin）制定了联邦层面的监管框架。该法案对“许可支付稳定币发行人”（Permitted Payment Stablecoin Issuer, PPSI）进行严格定义，只有获得联邦或州级批准的银行及非银行实体才能合法发行稳定币。<br>美国这样做无疑是想继续维护美元的主导地位。通过将美元延伸到区块链领域，使“链上美元”与传统美元同享美国政府信用，从而固化美元在全球储备货币和结算货币的优势位置。同时，修订后法案特别限制Meta、苹果、亚马逊等大型科技公司未经严格审查而发行稳定币，体现了国会对数据垄断与金融基础设施掌控的警惕。为中小金融机构和支付企业提供清晰合规路径，促进更多创新型支付产品与应用在美国本土试点，增强金融市场活力。有观点指出，美国政府希望借助稳定币这一“链上美元”工具，拓宽债务融资渠道，缓解因债务负担过重而带来的利率上行压力。</p>
-<h2 id="稳定币对世界政治经济的影响"><a href="#稳定币对世界政治经济的影响" class="headerlink" title="稳定币对世界政治经济的影响"></a>稳定币对世界政治经济的影响</h2><p>美元稳定币的推出，将进一步扩大美元在全球支付和储备体系中的影响力，构建起“链上”金融版图。这不仅巩固了美国的货币霸权，也对其他货币体系形成潜在竞争压力，迫使各国重新评估本币国际化战略。稳定币能够实现即时、低成本的跨境转账，极大提高了国际汇款效率。随着越来越多国际贸易结算和金融交易采用稳定币结算，传统SWIFT体系和现有清算银行可能面临重大挑战，全球支付生态将出现新一轮洗牌。在美欧、人民币数字化（e-CNY）等多边竞争态势下，稳定币成为各国政府和跨国企业角力的新战场。美国若借助稳定币深度绑定全球金融网络，将使其他国家难以在数字支付领域取得同等话语权，进而影响国际政治经济格局。全球范围内稳定币生态尚处于起步阶段，多起“脱锚”事件曾引发市场恐慌（如2022年USDT脱锚、2023年USDC脱锚），强调监管必须国际协同。美国一旦在国内形成先行范式，将推动G20、FATF等国际组织加快规则制定，强化跨境监管合作。</p>
-<h2 id="对中国的机遇与影响"><a href="#对中国的机遇与影响" class="headerlink" title="对中国的机遇与影响"></a>对中国的机遇与影响</h2><p>面对美元稳定币的挑战，中国可借鉴美国监管框架经验，加快数字人民币（e-CNY）的跨境试点与推广，强化与“一带一路”沿线国家的支付互联互通，提升人民币在全球贸易和金融中的使用率。在稳定币技术标准、监管合规和基础设施建设方面，中国企业已有较为成熟的应用场景（如跨境贸易区块链平台）。美国标准许可模式的出台，为国内金融科技公司提供了参照蓝本，有利于自主可控的稳定币和数字资产解决方案快速落地。随着美国在国际舞台上推广“链上美元”规则，中国需加紧在国际组织中发出声音，参与稳定币监管标准的制定与磋商，维护数字主权和金融安全。美国市场对合规稳定币支付的需求增加，为中国支付机构、数字资产服务商提供了参与美国或第三国市场的合作机会。例如，通过与合规发牌实体合作，共同开发跨境支付网络和数字资产托管服务。</p>
-<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>美国发行稳定币并构建联邦监管框架，不仅是对加密货币行业的重大政策信号，也成为全球数字货币治理的重要分水岭。从维护美元主导地位、推动金融创新到参与国际监管协作，美国正试图在“链上”世界复制其“链下”影响力。<br>展望未来，多极化竞争将加剧。欧盟、英国、日韩以及中国的数字货币和稳定币政策都将加速落地，全球金融体系面对更多创新与挑战并存的格局。监管合作与技术标准融合。各国需在反洗钱、消费者保护、稳定币储备透明度等方面加强对话，形成可执行的跨境监管机制。新型金融生态形成。稳定币、央行数字货币（CBDC）与传统银行体系的融合，将催生包括去中心化交易所（DEX）、智能合约贷款等在内的全新金融服务模式。<br>对于中国而言，既要警惕美元稳定币带来的竞争压力，更应抓住主动参与国际规则制定和技术创新应用的历史性机遇，助力中国数字经济与金融治理体系迈向更高水平。</p>
-]]></content>
-      <categories>
-        <category>经济</category>
-      </categories>
-      <tags>
-        <tag>经济</tag>
-        <tag>美国</tag>
-        <tag>金融</tag>
-        <tag>稳定币</tag>
-        <tag>GENIUS</tag>
-        <tag>数字货币</tag>
       </tags>
   </entry>
   <entry>
@@ -873,92 +840,44 @@
       </categories>
       <tags>
         <tag>USA</tag>
-        <tag>GENIUS</tag>
         <tag>Economy</tag>
         <tag>Finance</tag>
         <tag>Stablecoin</tag>
+        <tag>GENIUS</tag>
         <tag>Cryptocurrency</tag>
       </tags>
   </entry>
   <entry>
-    <title>【长期更新】露台水培草莓</title>
-    <url>/posts/20260130-shui-pei-cao-mei.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="【长期更新】露台水培草莓"><a href="#【长期更新】露台水培草莓" class="headerlink" title="【长期更新】露台水培草莓"></a>【长期更新】露台水培草莓</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在水培架上选定了三个孔位，位置靠近露台上日照最好的那一侧，保证每天能接受充足的直射或散射光。三个孔的间距我保持得足够让草莓的叶冠展开，避免相互遮挡；孔径选用约 4 厘米的范围，能方便放入定植棉与苗株根系。</p>
-<p>把定植棉放入耐热容器中，用开水烫洗消毒，然后把定植棉取出摊开在无尘的托盘上，自然冷却。冷却后轻轻挤出多余的水分，使棉体保持微润但不滴水。</p>
-<p>草莓苗是 A.E. 品种（果肉偏白、籽为红色），在定植前我先做了简单检查：确认无明显病斑、叶片无黄化、根系活力良好。为了去除原有基质并减少病源，用自来水冲洗根部，边冲洗边用手指轻轻拨散，将泥土、珍珠岩等基质颗粒冲净。冲洗时水流不要太强以免损伤根须，保持根系湿润但不拉断。</p>
-<p>清洗干净后，我把根系平铺在已消毒并微润的定植棉上，确保根系与棉体紧密接触但植株的根略高于棉面，避免直接浸水。然后把棉和苗一起塞入水培架的孔位中，使根部能稳固垂入营养液或接触到导水层。定植后轻按定植棉四周让苗稳固。</p>
-<h2 id="配置AB营养液"><a href="#配置AB营养液" class="headerlink" title="配置AB营养液"></a>配置AB营养液</h2><div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20260130_003.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="记录水培草莓生长情况"><a href="#记录水培草莓生长情况" class="headerlink" title="记录水培草莓生长情况"></a>记录水培草莓生长情况</h2><div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20260130_001.jpg","alt":"","title":""},{"url":"../../images/20260130_002.jpg","alt":"","title":""}]</div>
-  </div>
-
-]]></content>
-      <categories>
-        <category>健康</category>
-      </categories>
-      <tags>
-        <tag>健康</tag>
-        <tag>水培</tag>
-        <tag>草莓</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Respecting children&#39;s little habits</title>
-    <url>/posts/respect-and-understanding-the-love-in-the-details-between-parents-and-children.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>When my son eats instant noodles, he insists that they must be soaked, not boiled. And if it’s in a cup, he insists on using the cup itself—no switching to a regular bowl. But that’s not all. After soaking, he insists on sticking a fork into the lid, ensuring it doesn’t lift. My husband finds this troublesome and doesn’t understand it. He insists on using a basin, covering the noodles directly, thinking it’s more efficient. But I gently convinced him to follow my son’s way. In my opinion, this isn’t pampering, and my son isn’t being difficult. I understand that when he’s on the train, he’s seen others preparing noodles this way. Maybe the image is more vivid in his mind, enhanced by the hunger of travel, making it seem especially pleasant. So, that method of making noodles has become part of that pleasant experience. To preserve that happiness, every step of preparing the noodles must be followed exactly as he remembers it. If even a small detail is missed, it’s not right. It’s not just about the noodles; it’s about the feeling, the emotions, the happiness tied to a specific memory. It may seem like a small thing, but it’s actually significant. If we can handle these small things well, it’s one more step toward becoming friends with our children.</p>
-<p>I can clearly remember when I was a teenager, I had a similar attitude. My mom had a rather careless way of picking vegetables. Every time she made noodle soup with green beans, I’d almost always find a bug in the noodles, which came from the beans. She never checked the beans before snapping them and tossing them into the water. After washing them quickly, she’d throw them straight into the pot. Finding bugs always brought my mood down for days. So, I asked her to let me pick the beans from then on, making sure to remove every part that might have a bug. But she often forgot, and would still toss them in carelessly. So, every time I eagerly went to pick the beans, only to find the noodles already on the table, it was a feeling that words can’t describe. If I ate, I’d encounter those bugs. If I didn’t, I’d be left starving. After a few times, my emotions would get the better of me, and I’d snap at her. She couldn’t understand, but would stay silent. My anger would subside quickly, though. But my dad would often chime in, saying I was unreasonable, criticizing me for taking my anger out on the family but not daring to express it outside. His words only made things worse, fueling my frustration. There were many similar instances. For example, on some summer mornings, my mom would announce, “We’re having cold noodles for lunch today.” I’d get excited, imagining how refreshing it would be to eat cool noodles under the hot sun. But when lunchtime came, the noodles would be warm, at best just not hot. The huge disappointment instantly shattered my dream of cold noodles. The reason? My mom was worried that eating cold noodles might give us a stomach ache, so she purposely didn’t make them cold. Was she wrong? Not at all. She cared about me, and I knew that. But could that change the feeling of disappointment? No, it couldn’t. That disappointment wasn’t about her, but about the situation. Many things like this happened when I was a teenager, and I can still remember them clearly—the feelings and the expectations I had at the time.</p>
-<p>Even today, I still think that many emotions during the teenage years are actually quite simple. What parents see as a storm is often just the child’s breakdown from feeling misunderstood. It has nothing to do with respect or disrespect. Just like those moments with my mom, where she would often remain silent, and her silence would help me calm down. I would realize that my outbursts were inappropriate and that I should talk to her calmly. But at that moment, I couldn’t control myself. My dad’s unjust criticism, however, would only make my emotions escalate, sometimes even causing an explosion. The teenage years are the beginning of puberty. On the outside, kids may look like adults, but mentally, they’re still maturing, undergoing rapid development. They have a strong sense of self and yearn to be seen, respected, accepted, and understood. The daughter mentioned in the title is at that stage.</p>
-<p>As kids grow up, the first thing parents need to do is to know when to be quiet and trust their children. If they want to do something, let them do it willingly, without moralizing or blowing small things out of proportion. If my daughter wants to make noodles a certain way, let her. If she wants to do something her way, just ask her if she can do it that way, and if she says no, don’t push it. Respect her choices. If I truly think her way is unhealthy, I should voice my opinion in a respectful, consultative tone. That’s how I can show respect for her, and she will definitely feel that respect.</p>
-<p>When it comes to making instant noodles or cooking beef rice, even if my child hasn’t directly asked me to do something a certain way, as a mother, I should be able to sense what she really needs. Kids are so sensitive at this stage, and only those who’ve gone through it understand. In fact, kids don’t ask for too much; they simply want to be trusted and respected in their decisions. Even if, by accident, I go against their wishes, as parents, we always have the opportunity to make amends. In such situations, showing vulnerability often works best. Most people are inclined to protect the weaker party, which makes them feel strong, and everyone wants to feel strong.</p>
-<p>For example, if someone accidentally bumps into you and immediately offers a sincere apology, compared to someone who ignores it or adds, “It wasn’t on purpose,” which would you be more likely to forgive? Everyone makes mistakes; showing humility in those moments is the best way to resolve conflict.</p>
-<p>Sometimes, when my son asks me to do something and I inadvertently do it my way, I can sense a change in his mood once he notices. I immediately apologize, saying, “Oh dear, my brain must be rusty! You told me how you wanted it, and I even repeated it to myself, but I got distracted and messed it up. What now? Look at me, I’m all upset, and you’re the one comforting me!” He’d reassure me, “It’s okay, Mom, don’t worry about it. Just do it the right way next time.” I’d take the opportunity to say, “Alright, I guess my memory’s not as good as yours now. How about next time, we do it together? That way, we won’t run into problems.” My son is in first grade, and showing vulnerability works every time with him. Teens need their parents to show vulnerability. When they realize their parents rely on them, their sense of responsibility naturally grows.</p>
-<p>In the end, I wish the best for both of us!</p>
-]]></content>
-      <categories>
-        <category>Education</category>
-      </categories>
-      <tags>
-        <tag>休闲·Leisure</tag>
-        <tag>美文共赏·Literature</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>U.S. Delta Force Captures Venezuelan President Maduro and His Wife</title>
-    <url>/posts/us-delta-force-captures-venezuelan-president-maduro-and-his-wife.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/mei-jun-san-jiao-zhou-bu-dui-zhua-bu-wei-nei-rui-la-zong-tong-ma-du-luo-fu-fu.html">中文</a> </p>
-<h2 id="Lead"><a href="#Lead" class="headerlink" title="Lead"></a>Lead</h2><p>In the early hours of January 3, 2026, the silence of Caracas was broken by the roar of the U.S. military’s Delta Force. As Venezuelan President Maduro and his wife were escorted to New York, the operation—codenamed “law enforcement” but in effect a “decapitation” strike—not only altered Venezuela’s national trajectory but also landed a heavy blow on the international-law norms established after World War II.</p>
+    <title>美国“稳定币”来袭 开启全球金融新玩法</title>
+    <url>/posts/20250702-mei-guo-wen-ding-bi-lai-xi-kai-qi-quan-qiu-jin-rong-xin-wan-fa.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/20250702-us-stablecoins-arrive-ushering-in-a-new-era-of-global-finance.html">英文</a> </p>
+<h2 id="何为“稳定币”？"><a href="#何为“稳定币”？" class="headerlink" title="何为“稳定币”？"></a>何为“稳定币”？</h2><p>稳定币（Stablecoin）是一类加密数字货币，其价值通常锚定于某种法定货币（如美元、欧元）或其他可度量的金融资产（如现金、政府债券）。与比特币（Bitcoin）、以太坊（Ethereum）等价格波动剧烈的加密资产不同，稳定币借助抵押资产或算法机制，力求使币值保持相对稳定，从而兼具加密货币的可编程性和法币的价值稳定性。</p>
 <div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20260104_000.jpg","alt":"","title":""}]</div>
+    <div class="gallery-items">[{"url":"../../images/20250702.jpg","alt":"","title":""}]</div>
   </div>
 
-
-<h2 id="Rule-or-Force"><a href="#Rule-or-Force" class="headerlink" title="Rule or Force?"></a>Rule or Force?</h2><p>This was a high-reward, high-risk political gamble underscored by the tangled realities of technological dominance, the global energy map, and great-power competition.</p>
-<p>As the U.S. military’s Tier-One special operations unit, Delta Force once again demonstrated its terrifying efficiency in capturing high-value targets (HVTs) inside enemy-held territory. Supported silently by RQ-170 reconnaissance drones and fifth-generation fighters, this kind of “surgical” strike renders conventional defense systems impotent.</p>
-<p><strong>Consideration</strong> When a superpower can, citing “domestic criminal prosecution,” cross sovereign borders at will to seize another country’s head of state, has the traditional principle that “sovereignty is sacred and inviolable” become mere rhetoric in an era of raw power? This projection of force under the guise of law is blurring the lines between law enforcement and war, and setting a highly controversial — and dangerous — precedent.</p>
-<h2 id="Oil-Geopolitics-and-“Clearing-the-Field”"><a href="#Oil-Geopolitics-and-“Clearing-the-Field”" class="headerlink" title="Oil, Geopolitics and “Clearing the Field”"></a>Oil, Geopolitics and “Clearing the Field”</h2><p>Beneath the judicial façade lies a clear strategic objective.</p>
-<p>Venezuela possesses the world’s largest proven oil reserves. Immediately after the operation, U.S. authorities moved quickly to ease oil sanctions and to introduce large foreign capital—aiming to reincorporate Venezuela’s energy lifeline into a U.S. dollar-based settlement system.</p>
-<p>By uprooting the Maduro regime, the United States intends to create a strategic deterrent against the region’s centrifugal drift, attempting to squeeze China’s, Russia’s and Iran’s influence out of what it regards as its “backyard.”</p>
-<p><strong>Consideration</strong> This revival of a 19th-century Monroe Doctrine-style approach may yield short-term geopolitical gains, but in the long run does it deepen a global “security deficit”? An order inclined to resolve disputes by force risks dragging every actor into a jungle of mutual distrust.</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20260104_001.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="A-Broken-Pivot-in-South-America"><a href="#A-Broken-Pivot-in-South-America" class="headerlink" title="A Broken Pivot in South America"></a>A Broken Pivot in South America</h2><p>Venezuela now teeters on the edge of a power vacuum and a reordering of governance. Although a provisional government has stepped in, the societal trauma from a severe blow to sovereignty, the blood debt of dozens of casualties, and the handing over of economic lifelines to foreign capital all signal a future full of uncertainty for the country.</p>
-<p>For China, this is not only a diplomatic challenge but a test of concrete interests:<br>More than US$20 billion in investments and financial claims face legal risks of repudiation or expropriation by the new regime.<br>Venezuela had been a pioneer in settling oil transactions in renminbi; this upheaval directly undercuts that key testing ground for renminbi internationalization in the energy sector.</p>
-<h2 id="Crosswinds-in-the-Multipolar-Process"><a href="#Crosswinds-in-the-Multipolar-Process" class="headerlink" title="Crosswinds in the Multipolar Process"></a>Crosswinds in the Multipolar Process</h2><p>Tactically, the U.S. operation is a major win; diplomatically and reputationally, it is a high-stakes gamble. It has provoked a collective awakening across the Global South — joint condemnations from Latin American powers such as Brazil and Mexico, and pushback from China and Russia at the United Nations — reflecting a deep-seated global anxiety about unilateral hegemony.</p>
+<p>按抵押方式，稳定币可分为三大类：</p>
+<ul>
+<li>法币抵押型<br>发行机构持有与发行量等值的法币储备，用户可随时以1:1比例兑换。例如，USDC 由美国合规银行和托管机构储备美元支持。</li>
+<li>加密资产抵押型<br>通过超额抵押加密资产（如 ETH）保证价值稳定，例如 DAI。</li>
+<li>算法型<br>不依赖实物资产，利用自动化算法在市场中调节币量以维持价格稳定。</li>
+</ul>
+<p>稳定币的核心特征是与美元等法定货币保持固定汇率。发行方需承诺随时兑换对应法币或等值资产。支持即时、跨境的点对点交易，兼容智能合约与去中心化金融（DeFi）生态。</p>
+<h2 id="美国发行“稳定币”的意义"><a href="#美国发行“稳定币”的意义" class="headerlink" title="美国发行“稳定币”的意义"></a>美国发行“稳定币”的意义</h2><p>2025年6月，美国参议院以压倒性多数通过了《指导与建立美国稳定币国家创新法案》（GENIUS Act），正式为支付稳定币（Payment Stablecoin）制定了联邦层面的监管框架。该法案对“许可支付稳定币发行人”（Permitted Payment Stablecoin Issuer, PPSI）进行严格定义，只有获得联邦或州级批准的银行及非银行实体才能合法发行稳定币。<br>美国这样做无疑是想继续维护美元的主导地位。通过将美元延伸到区块链领域，使“链上美元”与传统美元同享美国政府信用，从而固化美元在全球储备货币和结算货币的优势位置。同时，修订后法案特别限制Meta、苹果、亚马逊等大型科技公司未经严格审查而发行稳定币，体现了国会对数据垄断与金融基础设施掌控的警惕。为中小金融机构和支付企业提供清晰合规路径，促进更多创新型支付产品与应用在美国本土试点，增强金融市场活力。有观点指出，美国政府希望借助稳定币这一“链上美元”工具，拓宽债务融资渠道，缓解因债务负担过重而带来的利率上行压力。</p>
+<h2 id="稳定币对世界政治经济的影响"><a href="#稳定币对世界政治经济的影响" class="headerlink" title="稳定币对世界政治经济的影响"></a>稳定币对世界政治经济的影响</h2><p>美元稳定币的推出，将进一步扩大美元在全球支付和储备体系中的影响力，构建起“链上”金融版图。这不仅巩固了美国的货币霸权，也对其他货币体系形成潜在竞争压力，迫使各国重新评估本币国际化战略。稳定币能够实现即时、低成本的跨境转账，极大提高了国际汇款效率。随着越来越多国际贸易结算和金融交易采用稳定币结算，传统SWIFT体系和现有清算银行可能面临重大挑战，全球支付生态将出现新一轮洗牌。在美欧、人民币数字化（e-CNY）等多边竞争态势下，稳定币成为各国政府和跨国企业角力的新战场。美国若借助稳定币深度绑定全球金融网络，将使其他国家难以在数字支付领域取得同等话语权，进而影响国际政治经济格局。全球范围内稳定币生态尚处于起步阶段，多起“脱锚”事件曾引发市场恐慌（如2022年USDT脱锚、2023年USDC脱锚），强调监管必须国际协同。美国一旦在国内形成先行范式，将推动G20、FATF等国际组织加快规则制定，强化跨境监管合作。</p>
+<h2 id="对中国的机遇与影响"><a href="#对中国的机遇与影响" class="headerlink" title="对中国的机遇与影响"></a>对中国的机遇与影响</h2><p>面对美元稳定币的挑战，中国可借鉴美国监管框架经验，加快数字人民币（e-CNY）的跨境试点与推广，强化与“一带一路”沿线国家的支付互联互通，提升人民币在全球贸易和金融中的使用率。在稳定币技术标准、监管合规和基础设施建设方面，中国企业已有较为成熟的应用场景（如跨境贸易区块链平台）。美国标准许可模式的出台，为国内金融科技公司提供了参照蓝本，有利于自主可控的稳定币和数字资产解决方案快速落地。随着美国在国际舞台上推广“链上美元”规则，中国需加紧在国际组织中发出声音，参与稳定币监管标准的制定与磋商，维护数字主权和金融安全。美国市场对合规稳定币支付的需求增加，为中国支付机构、数字资产服务商提供了参与美国或第三国市场的合作机会。例如，通过与合规发牌实体合作，共同开发跨境支付网络和数字资产托管服务。</p>
+<h2 id="总结与展望"><a href="#总结与展望" class="headerlink" title="总结与展望"></a>总结与展望</h2><p>美国发行稳定币并构建联邦监管框架，不仅是对加密货币行业的重大政策信号，也成为全球数字货币治理的重要分水岭。从维护美元主导地位、推动金融创新到参与国际监管协作，美国正试图在“链上”世界复制其“链下”影响力。<br>展望未来，多极化竞争将加剧。欧盟、英国、日韩以及中国的数字货币和稳定币政策都将加速落地，全球金融体系面对更多创新与挑战并存的格局。监管合作与技术标准融合。各国需在反洗钱、消费者保护、稳定币储备透明度等方面加强对话，形成可执行的跨境监管机制。新型金融生态形成。稳定币、央行数字货币（CBDC）与传统银行体系的融合，将催生包括去中心化交易所（DEX）、智能合约贷款等在内的全新金融服务模式。<br>对于中国而言，既要警惕美元稳定币带来的竞争压力，更应抓住主动参与国际规则制定和技术创新应用的历史性机遇，助力中国数字经济与金融治理体系迈向更高水平。</p>
 ]]></content>
       <categories>
-        <category>Politics</category>
+        <category>经济</category>
       </categories>
       <tags>
-        <tag>Politics</tag>
-        <tag>U.S. Military</tag>
-        <tag>Delta Force</tag>
-        <tag>Venezuela</tag>
-        <tag>Maduro</tag>
+        <tag>GENIUS</tag>
+        <tag>经济</tag>
+        <tag>美国</tag>
+        <tag>金融</tag>
+        <tag>稳定币</tag>
+        <tag>数字货币</tag>
       </tags>
   </entry>
   <entry>
@@ -1030,6 +949,175 @@
       </tags>
   </entry>
   <entry>
+    <title>【长期更新】露台水培草莓</title>
+    <url>/posts/20260130-shui-pei-cao-mei.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="【长期更新】露台水培草莓"><a href="#【长期更新】露台水培草莓" class="headerlink" title="【长期更新】露台水培草莓"></a>【长期更新】露台水培草莓</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在水培架上选定了三个孔位，位置靠近露台上日照最好的那一侧，保证每天能接受充足的直射或散射光。三个孔的间距我保持得足够让草莓的叶冠展开，避免相互遮挡；孔径选用约 4 厘米的范围，能方便放入定植棉与苗株根系。</p>
+<p>把定植棉放入耐热容器中，用开水烫洗消毒，然后把定植棉取出摊开在无尘的托盘上，自然冷却。冷却后轻轻挤出多余的水分，使棉体保持微润但不滴水。</p>
+<p>草莓苗是 A.E. 品种（果肉偏白、籽为红色），在定植前我先做了简单检查：确认无明显病斑、叶片无黄化、根系活力良好。为了去除原有基质并减少病源，用自来水冲洗根部，边冲洗边用手指轻轻拨散，将泥土、珍珠岩等基质颗粒冲净。冲洗时水流不要太强以免损伤根须，保持根系湿润但不拉断。</p>
+<p>清洗干净后，我把根系平铺在已消毒并微润的定植棉上，确保根系与棉体紧密接触但植株的根略高于棉面，避免直接浸水。然后把棉和苗一起塞入水培架的孔位中，使根部能稳固垂入营养液或接触到导水层。定植后轻按定植棉四周让苗稳固。</p>
+<h2 id="配置AB营养液"><a href="#配置AB营养液" class="headerlink" title="配置AB营养液"></a>配置AB营养液</h2><div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20260130_003.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="记录水培草莓生长情况"><a href="#记录水培草莓生长情况" class="headerlink" title="记录水培草莓生长情况"></a>记录水培草莓生长情况</h2><div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20260130_001.jpg","alt":"","title":""},{"url":"../../images/20260130_002.jpg","alt":"","title":""}]</div>
+  </div>
+
+]]></content>
+      <categories>
+        <category>健康</category>
+      </categories>
+      <tags>
+        <tag>健康</tag>
+        <tag>水培</tag>
+        <tag>草莓</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to Avoid Being Manipulated by PUA in Your Career or Life</title>
+    <url>/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20250306_pua.jpg","alt":"","title":""}]</div>
+  </div>
+
+<p>There are all kinds of people in this world! If someone keeps trying to manipulate you by pointing out these traits or labeling you, just flip the script with these responses:</p>
+<ul>
+<li>Introverted or unsociable? – When someone says you’re reclusive or not a team player, simply say you’re independent and self-reliant.</li>
+<li>Overly dependent? – If they claim you rely too much on others, say you’re excellent at collaborating.</li>
+<li>Broke? – If you’re short on cash, say you have enormous potential to build wealth.</li>
+<li>Materialistic? – When accused of caring only about money, claim that you’re highly driven in your career.</li>
+<li>Hindsight genius but clueless beforehand? – If they say you’re only smart after the fact, reply that you’re great at learning from your experiences.</li>
+<li>All talk and no action? – When criticized for poor execution, say you excel at strategic planning.</li>
+<li>Poor at noticing details? – If they point out your lack of observational skills, assert that you know how to focus on what’s important.</li>
+<li>Easily distracted? – When accused of browsing random news all day, explain that you’re just keeping up with developments across various fields.</li>
+<li>No standout qualities? – If you’re told you blend into the crowd, say you’re modest and low-key.</li>
+<li>Too flashy? – If they claim you’re overly confident or boastful, simply say you’re confident.</li>
+<li>Scattered focus? – When criticized for dabbling in too many things, say you’re curious with a wide range of interests.</li>
+<li>Lacking personal hobbies? – If someone points out that you don’t have many passions, say you’re capable of deep focus without getting sidetracked.</li>
+<li>Emotionally sensitive? – When labeled as having a “glass heart,” reply that you’re skilled at perceiving changes in your environment.</li>
+<li>Emotionally unresponsive? – If you’re seen as dull or insensitive to change, say you maintain a stable mindset.</li>
+<li>Stubborn and dismissive? – When accused of not listening to advice, say you’re firm in your beliefs.</li>
+<li>Indecisive? – If others say you lack your own opinions and are easily influenced, claim that you’re open to constructive feedback.</li>
+<li>Speaks without thinking? – When criticized for blurting out thoughts, say you’re sincere and straightforward.</li>
+<li>Slow to respond? – If you’re known for long pauses in conversation, say you speak carefully and thoughtfully.</li>
+<li>Always daydreaming? – When someone accuses you of letting your mind wander, say you have a rich inner world.</li>
+<li>Never thinking? – If you’re told you rarely use your brain, say that you’re pure-hearted.</li>
+<li>Bad at everything except eating? – When joked about for excelling only in eating, say that you’re passionate about food and that there’s nothing wrong with that.</li>
+<li>Finishes every bite? – If you’re noted for never leaving food behind, say you’re mindful about not wasting resources.</li>
+<li>Jack of all trades, master of none? – When accused of knowing a little bit about everything but not excelling at anything, say you have a broad knowledge base.</li>
+<li>Only a few quirky habits? – If someone criticizes you for having only a few eccentricities, say you’re deeply focused on your areas of interest.</li>
+<li>Constantly failing? – When you’re told you keep failing, reply that you’re resilient and always ready to try again.</li>
+<li>Stuck in your comfort zone? – If you’re afraid to step out of your comfort zone, say that you understand your own limits.</li>
+<li>Self-destructive? – When accused of giving up on yourself, say you’re good at recognizing your own weaknesses.</li>
+<li>Aspirations high but execution low? – If someone says you aim too high without the skills to match, claim that you have high aspirations.</li>
+<li>No ambitions at all? – When criticized for lacking drive, simply say you’re down-to-earth.</li>
+</ul>
+<p>Let’s gear up, move forward boldly, and face the world with courage!<br>Any additional thoughts? Feel free to leave a comment.</p>
+]]></content>
+      <categories>
+        <category>Society</category>
+      </categories>
+      <tags>
+        <tag>Society</tag>
+        <tag>PUA</tag>
+        <tag>Career</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Respecting children&#39;s little habits</title>
+    <url>/posts/respect-and-understanding-the-love-in-the-details-between-parents-and-children.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>When my son eats instant noodles, he insists that they must be soaked, not boiled. And if it’s in a cup, he insists on using the cup itself—no switching to a regular bowl. But that’s not all. After soaking, he insists on sticking a fork into the lid, ensuring it doesn’t lift. My husband finds this troublesome and doesn’t understand it. He insists on using a basin, covering the noodles directly, thinking it’s more efficient. But I gently convinced him to follow my son’s way. In my opinion, this isn’t pampering, and my son isn’t being difficult. I understand that when he’s on the train, he’s seen others preparing noodles this way. Maybe the image is more vivid in his mind, enhanced by the hunger of travel, making it seem especially pleasant. So, that method of making noodles has become part of that pleasant experience. To preserve that happiness, every step of preparing the noodles must be followed exactly as he remembers it. If even a small detail is missed, it’s not right. It’s not just about the noodles; it’s about the feeling, the emotions, the happiness tied to a specific memory. It may seem like a small thing, but it’s actually significant. If we can handle these small things well, it’s one more step toward becoming friends with our children.</p>
+<p>I can clearly remember when I was a teenager, I had a similar attitude. My mom had a rather careless way of picking vegetables. Every time she made noodle soup with green beans, I’d almost always find a bug in the noodles, which came from the beans. She never checked the beans before snapping them and tossing them into the water. After washing them quickly, she’d throw them straight into the pot. Finding bugs always brought my mood down for days. So, I asked her to let me pick the beans from then on, making sure to remove every part that might have a bug. But she often forgot, and would still toss them in carelessly. So, every time I eagerly went to pick the beans, only to find the noodles already on the table, it was a feeling that words can’t describe. If I ate, I’d encounter those bugs. If I didn’t, I’d be left starving. After a few times, my emotions would get the better of me, and I’d snap at her. She couldn’t understand, but would stay silent. My anger would subside quickly, though. But my dad would often chime in, saying I was unreasonable, criticizing me for taking my anger out on the family but not daring to express it outside. His words only made things worse, fueling my frustration. There were many similar instances. For example, on some summer mornings, my mom would announce, “We’re having cold noodles for lunch today.” I’d get excited, imagining how refreshing it would be to eat cool noodles under the hot sun. But when lunchtime came, the noodles would be warm, at best just not hot. The huge disappointment instantly shattered my dream of cold noodles. The reason? My mom was worried that eating cold noodles might give us a stomach ache, so she purposely didn’t make them cold. Was she wrong? Not at all. She cared about me, and I knew that. But could that change the feeling of disappointment? No, it couldn’t. That disappointment wasn’t about her, but about the situation. Many things like this happened when I was a teenager, and I can still remember them clearly—the feelings and the expectations I had at the time.</p>
+<p>Even today, I still think that many emotions during the teenage years are actually quite simple. What parents see as a storm is often just the child’s breakdown from feeling misunderstood. It has nothing to do with respect or disrespect. Just like those moments with my mom, where she would often remain silent, and her silence would help me calm down. I would realize that my outbursts were inappropriate and that I should talk to her calmly. But at that moment, I couldn’t control myself. My dad’s unjust criticism, however, would only make my emotions escalate, sometimes even causing an explosion. The teenage years are the beginning of puberty. On the outside, kids may look like adults, but mentally, they’re still maturing, undergoing rapid development. They have a strong sense of self and yearn to be seen, respected, accepted, and understood. The daughter mentioned in the title is at that stage.</p>
+<p>As kids grow up, the first thing parents need to do is to know when to be quiet and trust their children. If they want to do something, let them do it willingly, without moralizing or blowing small things out of proportion. If my daughter wants to make noodles a certain way, let her. If she wants to do something her way, just ask her if she can do it that way, and if she says no, don’t push it. Respect her choices. If I truly think her way is unhealthy, I should voice my opinion in a respectful, consultative tone. That’s how I can show respect for her, and she will definitely feel that respect.</p>
+<p>When it comes to making instant noodles or cooking beef rice, even if my child hasn’t directly asked me to do something a certain way, as a mother, I should be able to sense what she really needs. Kids are so sensitive at this stage, and only those who’ve gone through it understand. In fact, kids don’t ask for too much; they simply want to be trusted and respected in their decisions. Even if, by accident, I go against their wishes, as parents, we always have the opportunity to make amends. In such situations, showing vulnerability often works best. Most people are inclined to protect the weaker party, which makes them feel strong, and everyone wants to feel strong.</p>
+<p>For example, if someone accidentally bumps into you and immediately offers a sincere apology, compared to someone who ignores it or adds, “It wasn’t on purpose,” which would you be more likely to forgive? Everyone makes mistakes; showing humility in those moments is the best way to resolve conflict.</p>
+<p>Sometimes, when my son asks me to do something and I inadvertently do it my way, I can sense a change in his mood once he notices. I immediately apologize, saying, “Oh dear, my brain must be rusty! You told me how you wanted it, and I even repeated it to myself, but I got distracted and messed it up. What now? Look at me, I’m all upset, and you’re the one comforting me!” He’d reassure me, “It’s okay, Mom, don’t worry about it. Just do it the right way next time.” I’d take the opportunity to say, “Alright, I guess my memory’s not as good as yours now. How about next time, we do it together? That way, we won’t run into problems.” My son is in first grade, and showing vulnerability works every time with him. Teens need their parents to show vulnerability. When they realize their parents rely on them, their sense of responsibility naturally grows.</p>
+<p>In the end, I wish the best for both of us!</p>
+]]></content>
+      <categories>
+        <category>Education</category>
+      </categories>
+      <tags>
+        <tag>休闲·Leisure</tag>
+        <tag>美文共赏·Literature</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Is Our World Virtual？</title>
+    <url>/posts/is-our-world-virtual.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Is our world virtual? This question may sound like something straight out of a science fiction novel, but it actually touches on the profound core of both philosophy and science. From ancient times to the present, humanity has never ceased to question what is “real.” And when we attempt to answer whether this world could be virtual, we inevitably have to return to classic thought experiments and theoretical foundations to search for clues.</p>
+<p>Let’s begin with Descartes. This 17th-century philosopher laid the foundation for modern philosophy with a simple yet profound statement: “I think, therefore I am.” At first glance, this seems like just an affirmation of self-existence, but behind it lies a deep spirit of doubt: if we cannot even be certain that we ourselves exist, how can we trust everything we perceive? Descartes proposed an extreme possibility, known as the “evil demon hypothesis”: perhaps an all-powerful evil force is manipulating our senses, making everything we experience nothing but an illusion. In other words, everything we see, hear, and touch, even our own bodies, could be a carefully crafted deception. While this skeptical view is unsettling, it forces us to reconsider what is “real.” If we cannot verify the reality of the external world through our senses, what can we rely on as a trustworthy basis?</p>
+<p>Next, let’s turn to Plato’s Allegory of the Cave. In this famous metaphor, Plato depicts a group of people chained inside a cave, facing a wall, watching shadows cast by a fire behind them. To them, these shadows are their entire reality, as they have never seen the actual objects or the light source. It is only when one of them escapes the chains and steps out of the cave that he sees the real world bathed in sunlight for the first time. However, when he returns to tell the others the truth, he is ridiculed and even attacked because his description exceeds their limited understanding. This story not only reveals the limitations of human cognition, but it also hints at a deeper question: could we, like the prisoners in the cave, be living in a lower-dimensional projection, with true reality existing in a higher-dimensional space? If so, then perhaps “virtual” does not refer to a computer-generated simulation, but rather to the idea that our current experiences and cognitive abilities are insufficient to access ultimate truth.</p>
+<p>Of course, when discussing the nature of the world, we must address the debate between idealism and materialism. These two philosophical positions represent entirely different worldviews. Idealists argue that consciousness is the fundamental basis of the universe, and the material world is merely a product of consciousness. In other words, without an observer, there is no objectively existing world. For example, Bishop Berkeley once said, “To be is to be perceived,” a statement that may seem absurd at first, but upon closer inspection, it challenges our belief in “objective reality independent of consciousness.” If you close your eyes and then open them again, how can you prove that the scene you just saw still exists? If there is no continuous observer, will the world instantly disappear? These questions may seem abstract, but they strike at the heart of our understanding of reality.</p>
+<p>On the other hand, materialists maintain that matter is primary, and consciousness is merely the result of complex material systems, like the brain, at work. From this perspective, even if humans or other intelligent life forms did not exist, the Earth, solar system, and even the entire universe would still operate according to physical laws. This explanation clearly aligns with scientific knowledge, but it also presents some thorny issues. For example, since our senses and thoughts are made up of matter, can they truly and fully reflect the real nature of the external world? After all, the human eye can only capture a limited range of wavelengths of light, and the ear can only hear a certain range of frequencies. This means that our perception of the world is inherently limited. Further, if our brains are just machines processing information, might they, like computer programs, only present filtered and processed data, rather than the complete and unaltered “truth”?</p>
+<p>Interestingly, with the advancement of technology, especially in the fields of artificial intelligence, quantum mechanics, and brain science, these philosophical issues have once again gained new relevance. For example, the double-slit interference experiment in quantum mechanics shows that the behavior of particles can be influenced by how they are observed, as if they “know” they are being “watched.” This discovery brings to mind the idealist perspective: perhaps the observer’s consciousness does play a role in constructing reality. Additionally, advances in virtual reality technology have prompted people to reconsider: if, one day, we could create a sufficiently realistic digital world in which humans living within it could not distinguish between the virtual and the real, could such a world still be called “false”? Or, where exactly is the boundary between the virtual and the real?</p>
+<p>Returning to the question at the beginning: is our world virtual? The answer may not be as important as we think, because whether the world is real or virtual, we still face the same challenge: how to better understand it, adapt to it, and give it meaning. As the philosopher Kant said, what matters is not what the world is like, but how we perceive it. Perhaps we may never know the ultimate answer, but that does not stop us from continuing our exploration. After all, it is this unceasing curiosity that defines what it means to be human.</p>
+<p>Is our world virtual? This question may sound like a plot twist from a science fiction novel, but it has sparked profound discussions in physics and cosmology. From quantum mechanics to the multiverse hypothesis, and to information physicalism, scientists are using rigorous theoretical tools to explore what seems like an absurd question: could the reality we perceive be nothing more than some sort of “simulation” or “construct”? Let us dive into these fascinating thought experiments to see how they challenge our understanding of the world.</p>
+<p>We cannot discuss this without mentioning the observer effect and wave function collapse in quantum mechanics. If you are familiar with quantum mechanics, you have likely heard of Schrödinger’s cat, a thought experiment that reveals a puzzling fact: at the microscopic level, a particle’s state is not definite, but exists in a probabilistic form until it is observed, at which point it “chooses” a specific state. In other words, before being observed, an electron can exist in multiple positions simultaneously; but once measured, its wave function collapses into a definite position. This phenomenon raises the question: could the physical world itself depend on the act of “observation”? If so, does that mean what we call “reality” is a phenomenon that requires consciousness to participate in its existence? Further, if our entire universe follows similar rules, does that mean everything we experience is the result of a “program” generated by some higher-dimensional system? Of course, this is just a philosophical conjecture, but it certainly raises new questions about the nature of matter—perhaps matter is not as solid and reliable as we once thought, but rather a dynamic manifestation based on information.</p>
+<p>Another mind-boggling concept is the multiverse hypothesis. According to some modern physical theories, such as string theory or inflation theory, our universe may not be the only one. Instead, there could be countless parallel universes, each with its own unique physical laws, initial conditions, and even historical trajectories. If this hypothesis is true, then the world we inhabit is just one of many possibilities. Imagine that when you wake up in the morning and decide whether to wear a blue shirt or a red one, your choice might lead to two different universes branching out: in one universe, you wear the blue shirt to work; in the other, you choose the red one. Though these parallel universes operate independently and cannot communicate, their existence suggests a larger picture: what we perceive as “reality” may just be a small node in the vast multiverse network. If we think of the entire universe as a giant movie, the scene we each experience is just one frame. In this sense, the concept of “virtual” seems closer: if infinite possibilities exist, and we can only experience one version, does this mean our reality has some sort of “filtering mechanism,” much like a computer program generating specific scenes?</p>
+<p>Let’s also discuss information physicalism, an increasingly popular field in recent years. Traditional physics tends to view the universe as an entity composed of fundamental particles, but information physicalism proposes a radically different view: the core of the universe is not matter, but information. Simply put, all physical phenomena can be reduced to the process of information processing. For example, studies of black holes show that the amount of information stored on a black hole’s surface is proportional to its area, not its volume, known as the “holographic principle.” This discovery challenges our traditional understanding of three-dimensional space, suggesting that the entire universe might operate like a projection on a two-dimensional screen. If the universe is made of information, then the line between it and virtual reality becomes blurred. After all, whether in a computer game or artificial intelligence, the foundation is code and data flow. If the universe itself is a complex information system, then we, as part of it, might be like game characters, following predefined rules. This thought may be unsettling, but it is also poetic: we may each be a note in the grand symphony of the universe, collectively composing a movement about existence.</p>
+<p>Of course, these theories are still hypothetical and have not been fully proven. But it is these bold speculations that push science forward. They remind us not to accept reality at face value, but to keep our curiosity alive and continue questioning the fundamental issues hidden beneath the surface. Returning to the question at the beginning: is our world virtual? The answer may not matter much, because what is truly important is that, in this process, we learn to better understand ourselves and the universe. Even if we eventually prove that we live in a “real” world, the journey of thought itself will have been fascinating.</p>
+<p>When discussing whether “our world is virtual,” computer science and technology offer us many thought-provoking angles. From the simulation hypothesis to digital cosmology, to the discussion of artificial intelligence and consciousness, these concepts not only challenge our perception of reality but also make us rethink our position in this universe.</p>
+<p>Let’s talk about the Simulation Hypothesis. This theory was first proposed by philosopher Nick Bostrom, who argues that humanity might be living in a simulated world created by an advanced civilization. Imagine that, one day in the future, technology advances to the point where it can fully replicate every detail of the real world—including physical laws, social interactions, and even individual emotional experiences. Would such a simulation be indistinguishable from reality? Furthermore, if we cannot distinguish between what is “real,” how can we prove that everything we are experiencing is not the result of a supercomputer running a simulation? This may sound like a plot from The Matrix, but it has deep logical support. Modern computers are already able to generate realistic virtual environments through complex algorithms, and cutting-edge technologies like quantum computing and neural networks are rapidly pushing the boundaries of this capability. Therefore, some speculate that in a few hundred years, humanity might create a virtual world even more complex and realistic than today’s, and we might be part of that experiment. Of course, this raises an interesting question: if the simulation exists, who is controlling it? Is it an advanced civilization, or some entity beyond our understanding?</p>
+<p>We can also turn to Digital Cosmology, another way of viewing the nature of reality. Digital Cosmology suggests that our world might essentially be a massive digital simulation. In other words, the entire universe operates like a giant computer, where all matter, energy, and even time itself can be seen as composed of basic code or data. This may sound absurd, but it actually aligns with some findings in physics. For example, in quantum mechanics, scientists have found that the behavior of microscopic particles often exhibits discreteness rather than continuity. This discreteness resembles the “0” and “1” in binary code. Furthermore, research in information theory has shown that any system can be described in terms of information, and the process of information processing is akin to computation. Based on this, some scholars have proposed a bold hypothesis: perhaps our universe is not made of traditional matter, but of information, with these pieces of information following an extremely complex set of rules for computation. If this is true, then what we call “reality” is not what we see with our eyes, but rather a series of intertwined data flows.</p>
+<p>Finally, the most exciting and controversial topic is the relationship between artificial intelligence and consciousness. In recent years, with the rapid development of AI technology, more and more research has focused on whether machines can possess self-awareness. Although there is no definitive evidence that AI has true subjective experience yet, they have made astonishing progress in mimicking human thought. For example, language models like GPT-4 can generate fluent text that even seems to express emotions; AlphaGo’s victory over Go champion Lee Sedol demonstrated strategic intelligence that amazed many. However, as AI approaches human-level intelligence, an inevitable question arises: if, one day, AI truly gains self-awareness, can we still insist that our “reality” is unique? After all, if consciousness can be encoded into algorithms and embedded into machines, does that mean our own consciousness could also be the result of an advanced algorithm? In other words, could we just be a program within some larger system, mistaking ourselves for free, independent beings because we lack the proper perspective?</p>
+<p>To better understand this, let’s do a thought experiment. Suppose you are a programmer designing a highly intelligent game character. To make this character seem real enough, you give it memory, learning abilities, and a certain degree of autonomy. Over time, this character becomes more complex, even beginning to question its own existence and seeking answers. For it, the world within the game is its entire reality because it lacks the ability to step outside the frame and observe the real world. As the creator, would you tell it the truth? More importantly, if you choose to hide it, how could it ever know it is living in a virtual world? Expanding this metaphor to the entire universe, could we also be similar characters, trapped in some grand simulation, unable to find the exit?</p>
+<p>Of course, the above viewpoints are not without controversy. Critics point out that even if we could build highly realistic virtual worlds, it does not necessarily follow that we are living within one. After all, science is about empirical evidence, not mere speculation. Furthermore, even if the universe could be represented digitally, it does not mean it is an artificially created product; perhaps this is just a manifestation of natural laws. Additionally, the discussion about AI consciousness faces numerous challenges. We still do not understand the essence of consciousness, let alone reduce it to mathematical formulas or programming languages. Therefore, while these questions are captivating, there is still a long way to go before we arrive at definitive conclusions.</p>
+<p>Nonetheless, the value of such thinking lies in its ability to inspire us to reflect on the meaning of reality. No matter what the final answer is, exploring the question of whether “our world is virtual” helps us broaden our horizons and encourages us to understand life, the universe, and everything from a new perspective. Perhaps the truth does not matter, and what truly matters is what we learn and how we grow during this journey. After all, whether virtual or real, as long as we can feel love, hope, and creativity, the world is already beautiful enough.</p>
+]]></content>
+      <categories>
+        <category>科技·Tech</category>
+        <category>人工智能·AI</category>
+      </categories>
+      <tags>
+        <tag>Virtual Reality</tag>
+        <tag>Simulation Hypothesis</tag>
+        <tag>Quantum Mechanics</tag>
+        <tag>Idealism vs Materialism</tag>
+        <tag>Consciousness</tag>
+        <tag>Multiverse</tag>
+        <tag>Digital Cosmology</tag>
+        <tag>Artificial Intelligence</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>U.S. Delta Force Captures Venezuelan President Maduro and His Wife</title>
+    <url>/posts/us-delta-force-captures-venezuelan-president-maduro-and-his-wife.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/mei-jun-san-jiao-zhou-bu-dui-zhua-bu-wei-nei-rui-la-zong-tong-ma-du-luo-fu-fu.html">中文</a> </p>
+<h2 id="Lead"><a href="#Lead" class="headerlink" title="Lead"></a>Lead</h2><p>In the early hours of January 3, 2026, the silence of Caracas was broken by the roar of the U.S. military’s Delta Force. As Venezuelan President Maduro and his wife were escorted to New York, the operation—codenamed “law enforcement” but in effect a “decapitation” strike—not only altered Venezuela’s national trajectory but also landed a heavy blow on the international-law norms established after World War II.</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20260104_000.jpg","alt":"","title":""}]</div>
+  </div>
+
+
+<h2 id="Rule-or-Force"><a href="#Rule-or-Force" class="headerlink" title="Rule or Force?"></a>Rule or Force?</h2><p>This was a high-reward, high-risk political gamble underscored by the tangled realities of technological dominance, the global energy map, and great-power competition.</p>
+<p>As the U.S. military’s Tier-One special operations unit, Delta Force once again demonstrated its terrifying efficiency in capturing high-value targets (HVTs) inside enemy-held territory. Supported silently by RQ-170 reconnaissance drones and fifth-generation fighters, this kind of “surgical” strike renders conventional defense systems impotent.</p>
+<p><strong>Consideration</strong> When a superpower can, citing “domestic criminal prosecution,” cross sovereign borders at will to seize another country’s head of state, has the traditional principle that “sovereignty is sacred and inviolable” become mere rhetoric in an era of raw power? This projection of force under the guise of law is blurring the lines between law enforcement and war, and setting a highly controversial — and dangerous — precedent.</p>
+<h2 id="Oil-Geopolitics-and-“Clearing-the-Field”"><a href="#Oil-Geopolitics-and-“Clearing-the-Field”" class="headerlink" title="Oil, Geopolitics and “Clearing the Field”"></a>Oil, Geopolitics and “Clearing the Field”</h2><p>Beneath the judicial façade lies a clear strategic objective.</p>
+<p>Venezuela possesses the world’s largest proven oil reserves. Immediately after the operation, U.S. authorities moved quickly to ease oil sanctions and to introduce large foreign capital—aiming to reincorporate Venezuela’s energy lifeline into a U.S. dollar-based settlement system.</p>
+<p>By uprooting the Maduro regime, the United States intends to create a strategic deterrent against the region’s centrifugal drift, attempting to squeeze China’s, Russia’s and Iran’s influence out of what it regards as its “backyard.”</p>
+<p><strong>Consideration</strong> This revival of a 19th-century Monroe Doctrine-style approach may yield short-term geopolitical gains, but in the long run does it deepen a global “security deficit”? An order inclined to resolve disputes by force risks dragging every actor into a jungle of mutual distrust.</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20260104_001.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="A-Broken-Pivot-in-South-America"><a href="#A-Broken-Pivot-in-South-America" class="headerlink" title="A Broken Pivot in South America"></a>A Broken Pivot in South America</h2><p>Venezuela now teeters on the edge of a power vacuum and a reordering of governance. Although a provisional government has stepped in, the societal trauma from a severe blow to sovereignty, the blood debt of dozens of casualties, and the handing over of economic lifelines to foreign capital all signal a future full of uncertainty for the country.</p>
+<p>For China, this is not only a diplomatic challenge but a test of concrete interests:<br>More than US$20 billion in investments and financial claims face legal risks of repudiation or expropriation by the new regime.<br>Venezuela had been a pioneer in settling oil transactions in renminbi; this upheaval directly undercuts that key testing ground for renminbi internationalization in the energy sector.</p>
+<h2 id="Crosswinds-in-the-Multipolar-Process"><a href="#Crosswinds-in-the-Multipolar-Process" class="headerlink" title="Crosswinds in the Multipolar Process"></a>Crosswinds in the Multipolar Process</h2><p>Tactically, the U.S. operation is a major win; diplomatically and reputationally, it is a high-stakes gamble. It has provoked a collective awakening across the Global South — joint condemnations from Latin American powers such as Brazil and Mexico, and pushback from China and Russia at the United Nations — reflecting a deep-seated global anxiety about unilateral hegemony.</p>
+]]></content>
+      <categories>
+        <category>Politics</category>
+      </categories>
+      <tags>
+        <tag>Politics</tag>
+        <tag>U.S. Military</tag>
+        <tag>Delta Force</tag>
+        <tag>Venezuela</tag>
+        <tag>Maduro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Win10系统禁止更新</title>
     <url>/posts/win10-xi-tong-jin-zhi-geng-xin.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>被Win10更新折腾得受不了？用下面方法试试，延长更新时间到9999天。</p>
@@ -1094,29 +1182,6 @@
         <tag>聂小倩</tag>
         <tag>宁采臣</tag>
         <tag>香港电影</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>李多慧</title>
-    <url>/posts/li-duo-hui.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="舞蹈"><a href="#舞蹈" class="headerlink" title="舞蹈"></a>舞蹈</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"autoplay":true,"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"https://ddns.crsky.uk:60000/resources/Li_Duohui_dance.mp4","pic":"./images/peppa_pig.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-
-<BR>
-
-<h2 id="有风吹过"><a href="#有风吹过" class="headerlink" title="有风吹过"></a>有风吹过</h2><div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"autoplay":true,"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"https://ddns.crsky.uk:60000/resources/Li_Duohui_the_wind_is_strong.mp4","pic":"./images/peppa_pig.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
-
-<BR>
-
-
-
-]]></content>
-      <categories>
-        <category>Culture</category>
-      </categories>
-      <tags>
-        <tag>Culture</tag>
-        <tag>影视艺术·Cinema</tag>
-        <tag>李多慧</tag>
       </tags>
   </entry>
   <entry>
@@ -1247,120 +1312,26 @@
       </tags>
   </entry>
   <entry>
-    <title>How to Avoid Being Manipulated by PUA in Your Career or Life</title>
-    <url>/posts/how-to-avoid-being-manipulated-by-pua-in-your-career-or-life.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20250306_pua.jpg","alt":"","title":""}]</div>
-  </div>
+    <title>李多慧</title>
+    <url>/posts/li-duo-hui.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="舞蹈"><a href="#舞蹈" class="headerlink" title="舞蹈"></a>舞蹈</h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"autoplay":true,"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"https://ddns.crsky.uk:60000/resources/Li_Duohui_dance.mp4","pic":"./images/peppa_pig.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 
-<p>There are all kinds of people in this world! If someone keeps trying to manipulate you by pointing out these traits or labeling you, just flip the script with these responses:</p>
-<ul>
-<li>Introverted or unsociable? – When someone says you’re reclusive or not a team player, simply say you’re independent and self-reliant.</li>
-<li>Overly dependent? – If they claim you rely too much on others, say you’re excellent at collaborating.</li>
-<li>Broke? – If you’re short on cash, say you have enormous potential to build wealth.</li>
-<li>Materialistic? – When accused of caring only about money, claim that you’re highly driven in your career.</li>
-<li>Hindsight genius but clueless beforehand? – If they say you’re only smart after the fact, reply that you’re great at learning from your experiences.</li>
-<li>All talk and no action? – When criticized for poor execution, say you excel at strategic planning.</li>
-<li>Poor at noticing details? – If they point out your lack of observational skills, assert that you know how to focus on what’s important.</li>
-<li>Easily distracted? – When accused of browsing random news all day, explain that you’re just keeping up with developments across various fields.</li>
-<li>No standout qualities? – If you’re told you blend into the crowd, say you’re modest and low-key.</li>
-<li>Too flashy? – If they claim you’re overly confident or boastful, simply say you’re confident.</li>
-<li>Scattered focus? – When criticized for dabbling in too many things, say you’re curious with a wide range of interests.</li>
-<li>Lacking personal hobbies? – If someone points out that you don’t have many passions, say you’re capable of deep focus without getting sidetracked.</li>
-<li>Emotionally sensitive? – When labeled as having a “glass heart,” reply that you’re skilled at perceiving changes in your environment.</li>
-<li>Emotionally unresponsive? – If you’re seen as dull or insensitive to change, say you maintain a stable mindset.</li>
-<li>Stubborn and dismissive? – When accused of not listening to advice, say you’re firm in your beliefs.</li>
-<li>Indecisive? – If others say you lack your own opinions and are easily influenced, claim that you’re open to constructive feedback.</li>
-<li>Speaks without thinking? – When criticized for blurting out thoughts, say you’re sincere and straightforward.</li>
-<li>Slow to respond? – If you’re known for long pauses in conversation, say you speak carefully and thoughtfully.</li>
-<li>Always daydreaming? – When someone accuses you of letting your mind wander, say you have a rich inner world.</li>
-<li>Never thinking? – If you’re told you rarely use your brain, say that you’re pure-hearted.</li>
-<li>Bad at everything except eating? – When joked about for excelling only in eating, say that you’re passionate about food and that there’s nothing wrong with that.</li>
-<li>Finishes every bite? – If you’re noted for never leaving food behind, say you’re mindful about not wasting resources.</li>
-<li>Jack of all trades, master of none? – When accused of knowing a little bit about everything but not excelling at anything, say you have a broad knowledge base.</li>
-<li>Only a few quirky habits? – If someone criticizes you for having only a few eccentricities, say you’re deeply focused on your areas of interest.</li>
-<li>Constantly failing? – When you’re told you keep failing, reply that you’re resilient and always ready to try again.</li>
-<li>Stuck in your comfort zone? – If you’re afraid to step out of your comfort zone, say that you understand your own limits.</li>
-<li>Self-destructive? – When accused of giving up on yourself, say you’re good at recognizing your own weaknesses.</li>
-<li>Aspirations high but execution low? – If someone says you aim too high without the skills to match, claim that you have high aspirations.</li>
-<li>No ambitions at all? – When criticized for lacking drive, simply say you’re down-to-earth.</li>
-</ul>
-<p>Let’s gear up, move forward boldly, and face the world with courage!<br>Any additional thoughts? Feel free to leave a comment.</p>
+<BR>
+
+<h2 id="有风吹过"><a href="#有风吹过" class="headerlink" title="有风吹过"></a>有风吹过</h2><div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"autoplay":true,"theme":"#FADFA3","loop":true,"lang":"zh-cn//语言","screenshot":true,"hotkey":true,"preload":"auto","volume":0.9,"video":{"url":"https://ddns.crsky.uk:60000/resources/Li_Duohui_the_wind_is_strong.mp4","pic":"./images/peppa_pig.jpg"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+
+<BR>
+
+
+
 ]]></content>
       <categories>
-        <category>Society</category>
+        <category>Culture</category>
       </categories>
       <tags>
-        <tag>Society</tag>
-        <tag>PUA</tag>
-        <tag>Career</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自己动手组建电动车动力系统及使用报告</title>
-    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
-<h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
-  </div>
-<p>电机和控制器就不更换了，做了一些基础测试，极限速度40公里每小时，40安的电流。市区内通勤够用了。控制器如下图。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
-  </div>
-<p>动力电池组用定制的不锈钢体装配，内部加上防爆抗震棉。装车图如下。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
-  </div>
-<p>最后就是动力电池组保护板的参数调教了，初始app界面如下。</p>
-<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
-    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
-  </div>
-
-<h2 id="玩转动力电池保护板"><a href="#玩转动力电池保护板" class="headerlink" title="玩转动力电池保护板"></a>玩转动力电池保护板</h2><h3 id="保护板信息"><a href="#保护板信息" class="headerlink" title="保护板信息"></a>保护板信息</h3><ul>
-<li><p>电池功率<br>表示当前电池输出或者输入的总功率，其值是当前电池电压和电池电流绝对值之积，单位：W。</p>
-</li>
-<li><p>单体平均<br>表示当前电池的单体平均电压，单位：V。</p>
-</li>
-<li><p>电池容量<br>表示当前保护板通过高精度 SOC 所计算得到的电池实际容量，单位为：AH。（该值需要电池做一个完整的放电和充电循环后才更新）。</p>
-</li>
-<li><p>最大压差<br>最大压差表示当前整组电池，最高电芯电压和最低电芯电压的差值，单位：V。</p>
-</li>
-<li><p>均衡电流<br>当保护板开启均衡功能，且达到均衡条件时，均衡电流显示区域实时显示均衡电流，单位：A。<br>当均衡进行时，实时状态的单体电压显示区域，蓝色代表放电的电池，红色代表被充电的电池。均衡电流负电流表示电池在放电，此时蓝色闪烁，均衡电流正电流表示在电池在充电，此时红色闪烁。<br>保护板采用主动均衡技术，均衡的原理是从高电压的电芯取电，存放到保护板，然后再放给低电压的电芯。</p>
-</li>
-</ul>
-<h3 id="保护板参数调校"><a href="#保护板参数调校" class="headerlink" title="保护板参数调校"></a>保护板参数调校</h3><p><strong>保护板的参数非常多，且配置不当有损坏电池的风险，因此如果不是确切明白参数意义，不要随便调整！</strong><br>以下列出最重要的参数，及相关作用。</p>
-<ul>
-<li><p>单体数量<br>单体数量表示当前电池的电芯数量，在使用之前，请准确的设定该值，否则保护板不能正常工作。</p>
-</li>
-<li><p>触发均衡压差<br>在均衡开关打开的情况下，当电池组最大压差超过该值，且当前单体电压超过均衡起始电压，均衡开始，直到压差低于该值或单体电压低于均衡起始电压时均衡结束。比如设定均衡触发压差为 0.01V，当电池组压差大于 0.01V 时开始均衡，低于 0.01V 时结束均衡。（建议 50AH 以上的电池设定均衡触发压差为 0.005V，50AH 以下的电池设定触发均衡压差为0.01V）。</p>
-</li>
-<li><p>均衡起始电压<br>均衡起始电压用来控制均衡的电压阶段，只有当单体电压超过该值，且电池组最大压差超过均衡触发压差，均衡才会被触发。</p>
-</li>
-<li><p>“单体过充电压”、“单体过充恢复”<br>“单体过充电压”是指电芯的饱和电压，只要电池组中任一单体电压超过该值时，产生‘单体过充报警’，同时保护板关闭充电 MOS，此时电池不能充电，只能放电。当报警产生以后，只有全部单体电压值低于“单体过充恢复”的值以后，保护板解除‘单体过充报警’，同时开启充电开关。</p>
-</li>
-<li><p>“单体欠压保护”、“单体欠压恢复”<br>“单体欠压保护”是指电芯的截止电压，只要电池组中任一单体电压低于该值时，产生‘单体欠压报警’，同时保护板关闭放电 MOS，此时电池不能放电，只能充电。当报警产生以后，只有全部单体电压值超过“单体电压恢复”的值以后，保护板解除‘单体欠压报警’，同时开启放电 MOS。</p>
-</li>
-<li><p>推荐充电电压<br>“推荐充电电压”是指 BMS 为了最佳电池性能和安全而建议的充电电压范围或具体数值。这个推荐值是根据电池类型、制造商的建议、BMS 设计的特性以及充电器的特性来确定的。</p>
-</li>
-<li><p>“SOC-100%电压”、“SOC-0%电压”<br>“SOC-100%电压”是指电芯 SOC 值为 100%时的电压，该值略低于单体过充电压，当电芯电压大于或等于该值时，即认为该电芯为满电状态；“SOC-0%电压”是指电芯 SOC值为 0%时的电压，该值略高于单体欠压保护电压，当电芯电压小于或等于该值时，即认为该电芯电量为 0。</p>
-</li>
-<li><p>自动关机电压<br>自动关机电压表示保护板工作的最低电压，当电池组中最高单体的电压低于该值时，保护板关闭。该值必须低于“单体欠压保护”。</p>
-</li>
-</ul>
-<h3 id="本人配置的参数值"><a href="#本人配置的参数值" class="headerlink" title="本人配置的参数值"></a>本人配置的参数值</h3><p>（欢迎交流，持续更新！）</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>新能源</tag>
-        <tag>DIY</tag>
-        <tag>技术</tag>
-        <tag>电动车</tag>
-        <tag>电池</tag>
-        <tag>动力系统</tag>
+        <tag>Culture</tag>
+        <tag>影视艺术·Cinema</tag>
+        <tag>李多慧</tag>
       </tags>
   </entry>
   <entry>
@@ -1472,41 +1443,70 @@
       </tags>
   </entry>
   <entry>
-    <title>Is Our World Virtual？</title>
-    <url>/posts/is-our-world-virtual.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Is our world virtual? This question may sound like something straight out of a science fiction novel, but it actually touches on the profound core of both philosophy and science. From ancient times to the present, humanity has never ceased to question what is “real.” And when we attempt to answer whether this world could be virtual, we inevitably have to return to classic thought experiments and theoretical foundations to search for clues.</p>
-<p>Let’s begin with Descartes. This 17th-century philosopher laid the foundation for modern philosophy with a simple yet profound statement: “I think, therefore I am.” At first glance, this seems like just an affirmation of self-existence, but behind it lies a deep spirit of doubt: if we cannot even be certain that we ourselves exist, how can we trust everything we perceive? Descartes proposed an extreme possibility, known as the “evil demon hypothesis”: perhaps an all-powerful evil force is manipulating our senses, making everything we experience nothing but an illusion. In other words, everything we see, hear, and touch, even our own bodies, could be a carefully crafted deception. While this skeptical view is unsettling, it forces us to reconsider what is “real.” If we cannot verify the reality of the external world through our senses, what can we rely on as a trustworthy basis?</p>
-<p>Next, let’s turn to Plato’s Allegory of the Cave. In this famous metaphor, Plato depicts a group of people chained inside a cave, facing a wall, watching shadows cast by a fire behind them. To them, these shadows are their entire reality, as they have never seen the actual objects or the light source. It is only when one of them escapes the chains and steps out of the cave that he sees the real world bathed in sunlight for the first time. However, when he returns to tell the others the truth, he is ridiculed and even attacked because his description exceeds their limited understanding. This story not only reveals the limitations of human cognition, but it also hints at a deeper question: could we, like the prisoners in the cave, be living in a lower-dimensional projection, with true reality existing in a higher-dimensional space? If so, then perhaps “virtual” does not refer to a computer-generated simulation, but rather to the idea that our current experiences and cognitive abilities are insufficient to access ultimate truth.</p>
-<p>Of course, when discussing the nature of the world, we must address the debate between idealism and materialism. These two philosophical positions represent entirely different worldviews. Idealists argue that consciousness is the fundamental basis of the universe, and the material world is merely a product of consciousness. In other words, without an observer, there is no objectively existing world. For example, Bishop Berkeley once said, “To be is to be perceived,” a statement that may seem absurd at first, but upon closer inspection, it challenges our belief in “objective reality independent of consciousness.” If you close your eyes and then open them again, how can you prove that the scene you just saw still exists? If there is no continuous observer, will the world instantly disappear? These questions may seem abstract, but they strike at the heart of our understanding of reality.</p>
-<p>On the other hand, materialists maintain that matter is primary, and consciousness is merely the result of complex material systems, like the brain, at work. From this perspective, even if humans or other intelligent life forms did not exist, the Earth, solar system, and even the entire universe would still operate according to physical laws. This explanation clearly aligns with scientific knowledge, but it also presents some thorny issues. For example, since our senses and thoughts are made up of matter, can they truly and fully reflect the real nature of the external world? After all, the human eye can only capture a limited range of wavelengths of light, and the ear can only hear a certain range of frequencies. This means that our perception of the world is inherently limited. Further, if our brains are just machines processing information, might they, like computer programs, only present filtered and processed data, rather than the complete and unaltered “truth”?</p>
-<p>Interestingly, with the advancement of technology, especially in the fields of artificial intelligence, quantum mechanics, and brain science, these philosophical issues have once again gained new relevance. For example, the double-slit interference experiment in quantum mechanics shows that the behavior of particles can be influenced by how they are observed, as if they “know” they are being “watched.” This discovery brings to mind the idealist perspective: perhaps the observer’s consciousness does play a role in constructing reality. Additionally, advances in virtual reality technology have prompted people to reconsider: if, one day, we could create a sufficiently realistic digital world in which humans living within it could not distinguish between the virtual and the real, could such a world still be called “false”? Or, where exactly is the boundary between the virtual and the real?</p>
-<p>Returning to the question at the beginning: is our world virtual? The answer may not be as important as we think, because whether the world is real or virtual, we still face the same challenge: how to better understand it, adapt to it, and give it meaning. As the philosopher Kant said, what matters is not what the world is like, but how we perceive it. Perhaps we may never know the ultimate answer, but that does not stop us from continuing our exploration. After all, it is this unceasing curiosity that defines what it means to be human.</p>
-<p>Is our world virtual? This question may sound like a plot twist from a science fiction novel, but it has sparked profound discussions in physics and cosmology. From quantum mechanics to the multiverse hypothesis, and to information physicalism, scientists are using rigorous theoretical tools to explore what seems like an absurd question: could the reality we perceive be nothing more than some sort of “simulation” or “construct”? Let us dive into these fascinating thought experiments to see how they challenge our understanding of the world.</p>
-<p>We cannot discuss this without mentioning the observer effect and wave function collapse in quantum mechanics. If you are familiar with quantum mechanics, you have likely heard of Schrödinger’s cat, a thought experiment that reveals a puzzling fact: at the microscopic level, a particle’s state is not definite, but exists in a probabilistic form until it is observed, at which point it “chooses” a specific state. In other words, before being observed, an electron can exist in multiple positions simultaneously; but once measured, its wave function collapses into a definite position. This phenomenon raises the question: could the physical world itself depend on the act of “observation”? If so, does that mean what we call “reality” is a phenomenon that requires consciousness to participate in its existence? Further, if our entire universe follows similar rules, does that mean everything we experience is the result of a “program” generated by some higher-dimensional system? Of course, this is just a philosophical conjecture, but it certainly raises new questions about the nature of matter—perhaps matter is not as solid and reliable as we once thought, but rather a dynamic manifestation based on information.</p>
-<p>Another mind-boggling concept is the multiverse hypothesis. According to some modern physical theories, such as string theory or inflation theory, our universe may not be the only one. Instead, there could be countless parallel universes, each with its own unique physical laws, initial conditions, and even historical trajectories. If this hypothesis is true, then the world we inhabit is just one of many possibilities. Imagine that when you wake up in the morning and decide whether to wear a blue shirt or a red one, your choice might lead to two different universes branching out: in one universe, you wear the blue shirt to work; in the other, you choose the red one. Though these parallel universes operate independently and cannot communicate, their existence suggests a larger picture: what we perceive as “reality” may just be a small node in the vast multiverse network. If we think of the entire universe as a giant movie, the scene we each experience is just one frame. In this sense, the concept of “virtual” seems closer: if infinite possibilities exist, and we can only experience one version, does this mean our reality has some sort of “filtering mechanism,” much like a computer program generating specific scenes?</p>
-<p>Let’s also discuss information physicalism, an increasingly popular field in recent years. Traditional physics tends to view the universe as an entity composed of fundamental particles, but information physicalism proposes a radically different view: the core of the universe is not matter, but information. Simply put, all physical phenomena can be reduced to the process of information processing. For example, studies of black holes show that the amount of information stored on a black hole’s surface is proportional to its area, not its volume, known as the “holographic principle.” This discovery challenges our traditional understanding of three-dimensional space, suggesting that the entire universe might operate like a projection on a two-dimensional screen. If the universe is made of information, then the line between it and virtual reality becomes blurred. After all, whether in a computer game or artificial intelligence, the foundation is code and data flow. If the universe itself is a complex information system, then we, as part of it, might be like game characters, following predefined rules. This thought may be unsettling, but it is also poetic: we may each be a note in the grand symphony of the universe, collectively composing a movement about existence.</p>
-<p>Of course, these theories are still hypothetical and have not been fully proven. But it is these bold speculations that push science forward. They remind us not to accept reality at face value, but to keep our curiosity alive and continue questioning the fundamental issues hidden beneath the surface. Returning to the question at the beginning: is our world virtual? The answer may not matter much, because what is truly important is that, in this process, we learn to better understand ourselves and the universe. Even if we eventually prove that we live in a “real” world, the journey of thought itself will have been fascinating.</p>
-<p>When discussing whether “our world is virtual,” computer science and technology offer us many thought-provoking angles. From the simulation hypothesis to digital cosmology, to the discussion of artificial intelligence and consciousness, these concepts not only challenge our perception of reality but also make us rethink our position in this universe.</p>
-<p>Let’s talk about the Simulation Hypothesis. This theory was first proposed by philosopher Nick Bostrom, who argues that humanity might be living in a simulated world created by an advanced civilization. Imagine that, one day in the future, technology advances to the point where it can fully replicate every detail of the real world—including physical laws, social interactions, and even individual emotional experiences. Would such a simulation be indistinguishable from reality? Furthermore, if we cannot distinguish between what is “real,” how can we prove that everything we are experiencing is not the result of a supercomputer running a simulation? This may sound like a plot from The Matrix, but it has deep logical support. Modern computers are already able to generate realistic virtual environments through complex algorithms, and cutting-edge technologies like quantum computing and neural networks are rapidly pushing the boundaries of this capability. Therefore, some speculate that in a few hundred years, humanity might create a virtual world even more complex and realistic than today’s, and we might be part of that experiment. Of course, this raises an interesting question: if the simulation exists, who is controlling it? Is it an advanced civilization, or some entity beyond our understanding?</p>
-<p>We can also turn to Digital Cosmology, another way of viewing the nature of reality. Digital Cosmology suggests that our world might essentially be a massive digital simulation. In other words, the entire universe operates like a giant computer, where all matter, energy, and even time itself can be seen as composed of basic code or data. This may sound absurd, but it actually aligns with some findings in physics. For example, in quantum mechanics, scientists have found that the behavior of microscopic particles often exhibits discreteness rather than continuity. This discreteness resembles the “0” and “1” in binary code. Furthermore, research in information theory has shown that any system can be described in terms of information, and the process of information processing is akin to computation. Based on this, some scholars have proposed a bold hypothesis: perhaps our universe is not made of traditional matter, but of information, with these pieces of information following an extremely complex set of rules for computation. If this is true, then what we call “reality” is not what we see with our eyes, but rather a series of intertwined data flows.</p>
-<p>Finally, the most exciting and controversial topic is the relationship between artificial intelligence and consciousness. In recent years, with the rapid development of AI technology, more and more research has focused on whether machines can possess self-awareness. Although there is no definitive evidence that AI has true subjective experience yet, they have made astonishing progress in mimicking human thought. For example, language models like GPT-4 can generate fluent text that even seems to express emotions; AlphaGo’s victory over Go champion Lee Sedol demonstrated strategic intelligence that amazed many. However, as AI approaches human-level intelligence, an inevitable question arises: if, one day, AI truly gains self-awareness, can we still insist that our “reality” is unique? After all, if consciousness can be encoded into algorithms and embedded into machines, does that mean our own consciousness could also be the result of an advanced algorithm? In other words, could we just be a program within some larger system, mistaking ourselves for free, independent beings because we lack the proper perspective?</p>
-<p>To better understand this, let’s do a thought experiment. Suppose you are a programmer designing a highly intelligent game character. To make this character seem real enough, you give it memory, learning abilities, and a certain degree of autonomy. Over time, this character becomes more complex, even beginning to question its own existence and seeking answers. For it, the world within the game is its entire reality because it lacks the ability to step outside the frame and observe the real world. As the creator, would you tell it the truth? More importantly, if you choose to hide it, how could it ever know it is living in a virtual world? Expanding this metaphor to the entire universe, could we also be similar characters, trapped in some grand simulation, unable to find the exit?</p>
-<p>Of course, the above viewpoints are not without controversy. Critics point out that even if we could build highly realistic virtual worlds, it does not necessarily follow that we are living within one. After all, science is about empirical evidence, not mere speculation. Furthermore, even if the universe could be represented digitally, it does not mean it is an artificially created product; perhaps this is just a manifestation of natural laws. Additionally, the discussion about AI consciousness faces numerous challenges. We still do not understand the essence of consciousness, let alone reduce it to mathematical formulas or programming languages. Therefore, while these questions are captivating, there is still a long way to go before we arrive at definitive conclusions.</p>
-<p>Nonetheless, the value of such thinking lies in its ability to inspire us to reflect on the meaning of reality. No matter what the final answer is, exploring the question of whether “our world is virtual” helps us broaden our horizons and encourages us to understand life, the universe, and everything from a new perspective. Perhaps the truth does not matter, and what truly matters is what we learn and how we grow during this journey. After all, whether virtual or real, as long as we can feel love, hope, and creativity, the world is already beautiful enough.</p>
+    <title>自己动手组建电动车动力系统及使用报告</title>
+    <url>/posts/zi-ji-dong-shou-zu-jian-dian-dong-che-dong-li-xi-tong-ji-shi-yong-bao-gao.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><a href="../posts/diy-assembly-of-an-electric-bike-power-system-and-usage-report.html">英文</a> </p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>原车是5个12V铅酸蓄电池，某国产传统品牌二轮电动车。使用还不到两年，续航已经不到30公里了。<br>虽然可以以旧换新转换新铅酸蓄电池，但铅酸有个问题，就是随着电量下降，输出电压也会下降，整车动力水平损失得比较厉害。遂打算DIY一组锂离子动力系统。</p>
+<h2 id="DIY过程"><a href="#DIY过程" class="headerlink" title="DIY过程"></a>DIY过程</h2><p>可供选择的电芯也不算多：一是三元锂，二是磷酸铁锂。<br>二者相较，显然，三元锂能量密度大，综合性能更优，可脾气躁。正常使用一般是没问题，可万一出问题，那就玩完！<br>于是乎，磷酸铁锂选为最终方案。<br>磷酸铁锂优点不少，放电电压平衡，安全性高，就是耐低温性能不佳。然而，我是在中国东南角某城市啊，何来低温？<br>由于制造技术原因，磷酸铁锂一致性略差，应选用主动均衡的电芯保护板。<br>电芯和保护板均选用中国国产品牌，具体品牌名称本人在这里就不打广告了。<br>利用十一国庆假期，采购好20颗电芯，嘱咐店家做好分容。<br>再就是电池分组焊接，测试，打包。初步成品如下图。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_01.jpg","alt":"","title":""}]</div>
+  </div>
+<p>电机和控制器就不更换了，做了一些基础测试，极限速度40公里每小时，40安的电流。市区内通勤够用了。控制器如下图。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_02.jpg","alt":"","title":""}]</div>
+  </div>
+<p>动力电池组用定制的不锈钢体装配，内部加上防爆抗震棉。装车图如下。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_03.jpg","alt":"","title":""}]</div>
+  </div>
+<p>最后就是动力电池组保护板的参数调教了，初始app界面如下。</p>
+<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">
+    <div class="gallery-items">[{"url":"../../images/20251001_04.jpg","alt":"","title":""}]</div>
+  </div>
+
+<h2 id="玩转动力电池保护板"><a href="#玩转动力电池保护板" class="headerlink" title="玩转动力电池保护板"></a>玩转动力电池保护板</h2><h3 id="保护板信息"><a href="#保护板信息" class="headerlink" title="保护板信息"></a>保护板信息</h3><ul>
+<li><p>电池功率<br>表示当前电池输出或者输入的总功率，其值是当前电池电压和电池电流绝对值之积，单位：W。</p>
+</li>
+<li><p>单体平均<br>表示当前电池的单体平均电压，单位：V。</p>
+</li>
+<li><p>电池容量<br>表示当前保护板通过高精度 SOC 所计算得到的电池实际容量，单位为：AH。（该值需要电池做一个完整的放电和充电循环后才更新）。</p>
+</li>
+<li><p>最大压差<br>最大压差表示当前整组电池，最高电芯电压和最低电芯电压的差值，单位：V。</p>
+</li>
+<li><p>均衡电流<br>当保护板开启均衡功能，且达到均衡条件时，均衡电流显示区域实时显示均衡电流，单位：A。<br>当均衡进行时，实时状态的单体电压显示区域，蓝色代表放电的电池，红色代表被充电的电池。均衡电流负电流表示电池在放电，此时蓝色闪烁，均衡电流正电流表示在电池在充电，此时红色闪烁。<br>保护板采用主动均衡技术，均衡的原理是从高电压的电芯取电，存放到保护板，然后再放给低电压的电芯。</p>
+</li>
+</ul>
+<h3 id="保护板参数调校"><a href="#保护板参数调校" class="headerlink" title="保护板参数调校"></a>保护板参数调校</h3><p><strong>保护板的参数非常多，且配置不当有损坏电池的风险，因此如果不是确切明白参数意义，不要随便调整！</strong><br>以下列出最重要的参数，及相关作用。</p>
+<ul>
+<li><p>单体数量<br>单体数量表示当前电池的电芯数量，在使用之前，请准确的设定该值，否则保护板不能正常工作。</p>
+</li>
+<li><p>触发均衡压差<br>在均衡开关打开的情况下，当电池组最大压差超过该值，且当前单体电压超过均衡起始电压，均衡开始，直到压差低于该值或单体电压低于均衡起始电压时均衡结束。比如设定均衡触发压差为 0.01V，当电池组压差大于 0.01V 时开始均衡，低于 0.01V 时结束均衡。（建议 50AH 以上的电池设定均衡触发压差为 0.005V，50AH 以下的电池设定触发均衡压差为0.01V）。</p>
+</li>
+<li><p>均衡起始电压<br>均衡起始电压用来控制均衡的电压阶段，只有当单体电压超过该值，且电池组最大压差超过均衡触发压差，均衡才会被触发。</p>
+</li>
+<li><p>“单体过充电压”、“单体过充恢复”<br>“单体过充电压”是指电芯的饱和电压，只要电池组中任一单体电压超过该值时，产生‘单体过充报警’，同时保护板关闭充电 MOS，此时电池不能充电，只能放电。当报警产生以后，只有全部单体电压值低于“单体过充恢复”的值以后，保护板解除‘单体过充报警’，同时开启充电开关。</p>
+</li>
+<li><p>“单体欠压保护”、“单体欠压恢复”<br>“单体欠压保护”是指电芯的截止电压，只要电池组中任一单体电压低于该值时，产生‘单体欠压报警’，同时保护板关闭放电 MOS，此时电池不能放电，只能充电。当报警产生以后，只有全部单体电压值超过“单体电压恢复”的值以后，保护板解除‘单体欠压报警’，同时开启放电 MOS。</p>
+</li>
+<li><p>推荐充电电压<br>“推荐充电电压”是指 BMS 为了最佳电池性能和安全而建议的充电电压范围或具体数值。这个推荐值是根据电池类型、制造商的建议、BMS 设计的特性以及充电器的特性来确定的。</p>
+</li>
+<li><p>“SOC-100%电压”、“SOC-0%电压”<br>“SOC-100%电压”是指电芯 SOC 值为 100%时的电压，该值略低于单体过充电压，当电芯电压大于或等于该值时，即认为该电芯为满电状态；“SOC-0%电压”是指电芯 SOC值为 0%时的电压，该值略高于单体欠压保护电压，当电芯电压小于或等于该值时，即认为该电芯电量为 0。</p>
+</li>
+<li><p>自动关机电压<br>自动关机电压表示保护板工作的最低电压，当电池组中最高单体的电压低于该值时，保护板关闭。该值必须低于“单体欠压保护”。</p>
+</li>
+</ul>
+<h3 id="本人配置的参数值"><a href="#本人配置的参数值" class="headerlink" title="本人配置的参数值"></a>本人配置的参数值</h3><p>（欢迎交流，持续更新！）</p>
 ]]></content>
       <categories>
-        <category>科技·Tech</category>
-        <category>人工智能·AI</category>
+        <category>技术</category>
       </categories>
       <tags>
-        <tag>Virtual Reality</tag>
-        <tag>Simulation Hypothesis</tag>
-        <tag>Quantum Mechanics</tag>
-        <tag>Idealism vs Materialism</tag>
-        <tag>Consciousness</tag>
-        <tag>Multiverse</tag>
-        <tag>Digital Cosmology</tag>
-        <tag>Artificial Intelligence</tag>
+        <tag>新能源</tag>
+        <tag>DIY</tag>
+        <tag>技术</tag>
+        <tag>电动车</tag>
+        <tag>电池</tag>
+        <tag>动力系统</tag>
       </tags>
   </entry>
 </search>
