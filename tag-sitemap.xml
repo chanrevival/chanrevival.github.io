@@ -178,6 +178,13 @@
     </url>
 
     <url>
+        <loc>https://www.crsky.uk/tags/GENIUS/</loc>
+        <lastmod>2025-07-12T15:05:11.507Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://www.crsky.uk/tags/%E7%A8%B3%E5%AE%9A%E5%B8%81/</loc>
         <lastmod>2025-07-12T15:05:11.507Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -200,13 +207,6 @@
 
     <url>
         <loc>https://www.crsky.uk/tags/%E7%BB%8F%E6%B5%8E/</loc>
-        <lastmod>2025-07-12T15:05:11.507Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://www.crsky.uk/tags/GENIUS/</loc>
         <lastmod>2025-07-12T15:05:11.507Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
